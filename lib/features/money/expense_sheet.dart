@@ -23,6 +23,7 @@ import '../../services/config/feature_flags.dart';
 Future<void> showExpenseSheet(BuildContext context, {TransactionType type = TransactionType.expense}) =>
     showModalBottomSheet<void>(
       context: context,
+      useRootNavigator: true,
       isScrollControlled: true,
       builder: (_) => ExpenseSheet(type: type),
     );
@@ -248,6 +249,7 @@ Future<void> scanReceipt(BuildContext context, WidgetRef ref) async {
   final l = context.l10n;
   final source = await showModalBottomSheet<ImageSource>(
     context: context,
+    useRootNavigator: true,
     builder: (c) => SafeArea(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -288,6 +290,7 @@ Future<void> scanReceipt(BuildContext context, WidgetRef ref) async {
   }
   await showModalBottomSheet<void>(
     context: context,
+    useRootNavigator: true,
     isScrollControlled: true,
     builder: (c) => Column(
       mainAxisSize: MainAxisSize.min,

@@ -191,6 +191,7 @@ class SettingsScreen extends ConsumerWidget {
     final codes = [null, ...AppLocalizations.supportedLocales.map((x) => x.languageCode)];
     final picked = await showModalBottomSheet<String>(
       context: context,
+      useRootNavigator: true,
       builder: (c) => SafeArea(
         child: RadioGroup<String>(
           groupValue: current ?? '',
@@ -242,6 +243,7 @@ class SettingsScreen extends ConsumerWidget {
     final l = context.l10n;
     final ok = await showModalBottomSheet<bool>(
       context: context,
+      useRootNavigator: true,
       builder: (c) => StatefulBuilder(
         builder: (c, set) => Padding(
           padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.xl),

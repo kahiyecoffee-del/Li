@@ -47,6 +47,7 @@ class MoodPicker extends StatelessWidget {
 
 Future<void> showMoodSheet(BuildContext context, {int? initial}) => showModalBottomSheet<void>(
   context: context,
+  useRootNavigator: true,
   isScrollControlled: true,
   builder: (_) => _MoodSheet(initial: initial),
 );
@@ -113,6 +114,7 @@ Future<void> showSleepSheet(BuildContext context, WidgetRef ref) async {
   var hours = 7.5;
   final r = await showModalBottomSheet<double>(
     context: context,
+    useRootNavigator: true,
     builder: (c) => StatefulBuilder(
       builder: (c, set) => Padding(
         padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.xl),

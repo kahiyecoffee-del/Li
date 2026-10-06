@@ -9,8 +9,12 @@ import '../../core/theme/tokens.dart';
 import '../../domain/models/user_profile.dart';
 
 /// Bottom sheet to search a city (Open-Meteo geocoding). Returns the place.
-Future<Place?> pickCity(BuildContext context) =>
-    showModalBottomSheet<Place>(context: context, isScrollControlled: true, builder: (_) => const _CitySheet());
+Future<Place?> pickCity(BuildContext context) => showModalBottomSheet<Place>(
+  context: context,
+  useRootNavigator: true,
+  isScrollControlled: true,
+  builder: (_) => const _CitySheet(),
+);
 
 class _CitySheet extends ConsumerStatefulWidget {
   const _CitySheet();

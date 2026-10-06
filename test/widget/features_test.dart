@@ -89,7 +89,7 @@ void main() {
     await pumpUntil(tester, find.text('Gününe hızlı bir bakış.'));
     final ctx = tester.element(find.text('Gününe hızlı bir bakış.'));
     expect(Theme.of(ctx).brightness, Brightness.dark);
-    expect(find.text('Yaşam Skoru'.toUpperCase()), findsOneWidget);
+    expect(find.text('Yaşam Skoru'), findsOneWidget);
     await tearDownApp(tester);
   });
 
@@ -103,6 +103,8 @@ void main() {
     await tester.tap(find.byType(FloatingActionButton));
     await pumpUntil(tester, find.text('New task'));
     await tester.enterText(find.byType(TextField).first, 'Gym');
+    await tester.ensureVisible(find.text('Save'));
+    await tester.pump();
     await tester.tap(find.text('Save'));
     await pumpUntil(tester, find.text('Gym'));
     expect(app.analytics.logged(AnalyticsEvent.taskCreated), isTrue);

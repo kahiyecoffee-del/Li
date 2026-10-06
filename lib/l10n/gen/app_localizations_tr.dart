@@ -1947,6 +1947,20 @@ class AppLocalizationsTr extends AppLocalizations {
   String get aiSetupCta => 'Asistanı kur';
 
   @override
+  String mascotTip(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Bugün senin için $count önerim var.',
+      zero: 'Bugün acil bir şey yok — tadını çıkar.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mascotAsk => 'Lio’ya bir şey sormak için dokun';
+
+  @override
   String get allGoalsDone => 'Bugünün tüm hedefleri tamam — harikasın!';
 
   @override

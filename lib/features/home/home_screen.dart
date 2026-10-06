@@ -50,11 +50,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     return h < 12 ? MascotMood.happy : MascotMood.front;
   }
 
-  String _emoji() {
-    final h = DateTime.now().hour;
-    return h < 6 ? '🌙' : (h < 12 ? '☀️' : (h < 18 ? '🌤️' : '🌆'));
-  }
-
   String _greeting(BuildContext context, String name) {
     final l = context.l10n;
     if (name.isEmpty) return l.greetingNoName;
@@ -75,6 +70,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final today = ref.watch(todayProvider);
     final goals = ref.watch(dailyGoalsProvider);
     final allDone = goals.isNotEmpty && goals.every((g) => g.completed);
+    final openGoals = goals.where((g) => !g.completed).length;
     final weekend = today.weekday == DateTime.sunday || today.weekday == DateTime.monday;
 
     final cards = <Widget>[
@@ -106,8 +102,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               SliverAppBar(
                 floating: true,
                 title: Text(
-                  fmt.weekdayDayMonth(today),
-                  style: context.text.labelLarge?.copyWith(color: context.semantic.muted),
+                  fmt.weekdayDayMonth(today).toUpperCase(),
+                  style: context.text.labelMedium?.copyWith(color: context.semantic.muted, letterSpacing: 1.2),
                 ),
                 actions: const [ProfileButton()],
               ),
@@ -118,31 +114,51 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       FadeSlideIn(
-                        child: HeroBanner(
-                          padding: const EdgeInsets.fromLTRB(Space.xl, Space.lg, Space.md, Space.lg),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Semantics(
+                              header: true,
+                              child: Text(_greeting(context, profile?.name ?? ''), style: context.text.headlineMedium),
+                            ),
+                            const SizedBox(height: Space.xs),
+                            Text(
+                              l.dayAtAGlance,
+                              style: context.text.bodyLarge?.copyWith(color: context.semantic.muted),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: Space.lg),
+                      FadeSlideIn(
+                        delay: Motion.fast,
+                        child: AppCard(
+                          gradient: Theme.of(context).brightness == Brightness.dark
+                              ? Gradients.meadowDark
+                              : Gradients.meadow,
+                          padding: const EdgeInsets.fromLTRB(Space.md, Space.md, Space.lg, Space.md),
+                          onTap: () => context.go('/ai'),
                           child: Row(
                             children: [
+                              Mascot(mood: _mood(allDone), size: 92),
+                              const SizedBox(width: Space.md),
                               Expanded(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Semantics(
-                                      header: true,
-                                      child: Text(
-                                        '${_greeting(context, profile?.name ?? '')} ${_emoji()}',
-                                        style: context.text.headlineSmall,
-                                      ),
+                                    Text(
+                                      allDone ? l.allGoalsDone : l.mascotTip(openGoals),
+                                      style: context.text.titleMedium,
                                     ),
                                     const SizedBox(height: Space.xs),
                                     Text(
-                                      allDone ? l.allGoalsDone : l.dayAtAGlance,
-                                      style: context.text.bodyMedium?.copyWith(color: context.semantic.muted),
+                                      l.mascotAsk,
+                                      style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
                                     ),
                                   ],
                                 ),
                               ),
-                              const SizedBox(width: Space.sm),
-                              Mascot(mood: _mood(allDone), size: 104),
+                              Icon(Icons.arrow_forward_rounded, size: 20, color: context.colors.primary),
                             ],
                           ),
                         ),
@@ -168,10 +184,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
+      floatingActionButton: FloatingActionButton(
+        tooltip: l.quickAdd,
         onPressed: () => _quickAdd(context),
-        icon: const Icon(Icons.add),
-        label: Text(l.quickAdd),
+        child: const Icon(Icons.add_rounded, size: 28),
       ),
     );
   }
@@ -180,33 +196,55 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final l = context.l10n;
     final choice = await showModalBottomSheet<int>(
       context: context,
-      builder: (c) => SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ListTile(
-              leading: const Icon(Icons.payments_outlined),
-              title: Text(l.quickExpense),
-              onTap: () => Navigator.pop(c, 0),
+      useRootNavigator: true,
+      builder: (c) {
+        final items = [
+          (Icons.payments_rounded, l.quickExpense, Accent.money),
+          (Icons.check_circle_rounded, l.quickTask, Accent.plan),
+          (Icons.mood_rounded, l.quickMood, Accent.wellbeing),
+          (Icons.auto_awesome_rounded, l.quickAsk, Accent.ai),
+        ];
+        return SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.lg),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(l.quickAdd, style: c.text.headlineSmall),
+                const SizedBox(height: Space.lg),
+                GridView.count(
+                  crossAxisCount: 2,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  mainAxisSpacing: Space.md,
+                  crossAxisSpacing: Space.md,
+                  childAspectRatio: 1.9,
+                  children: [
+                    for (final (i, it) in items.indexed)
+                      FadeSlideIn(
+                        delay: Duration(milliseconds: 40 * i),
+                        child: AppCard(
+                          color: Color.alphaBlend(it.$3.tint(Theme.of(c).brightness), c.colors.surface),
+                          padding: const EdgeInsets.all(Space.md + 2),
+                          onTap: () => Navigator.pop(c, i),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Icon(it.$1, color: it.$3.color),
+                              Text(it.$2, style: c.text.titleSmall, maxLines: 1, overflow: TextOverflow.ellipsis),
+                            ],
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
+              ],
             ),
-            ListTile(
-              leading: const Icon(Icons.check_circle_outline),
-              title: Text(l.quickTask),
-              onTap: () => Navigator.pop(c, 1),
-            ),
-            ListTile(
-              leading: const Icon(Icons.mood_outlined),
-              title: Text(l.quickMood),
-              onTap: () => Navigator.pop(c, 2),
-            ),
-            ListTile(
-              leading: const Icon(Icons.auto_awesome_outlined),
-              title: Text(l.quickAsk),
-              onTap: () => Navigator.pop(c, 3),
-            ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
     if (!context.mounted) return;
     switch (choice) {

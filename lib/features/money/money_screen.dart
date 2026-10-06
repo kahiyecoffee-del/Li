@@ -306,6 +306,7 @@ class _TransactionTile extends ConsumerWidget {
 /// Monthly plan: income, fixed costs, savings goal and currency.
 Future<void> showBudgetSettings(BuildContext context) => showModalBottomSheet<void>(
   context: context,
+  useRootNavigator: true,
   isScrollControlled: true,
   builder: (_) => const _BudgetSettingsSheet(),
 );
@@ -405,8 +406,12 @@ class _BudgetSettingsSheetState extends ConsumerState<_BudgetSettingsSheet> {
 }
 
 /// Weekly total or monthly per-category spending limit.
-Future<void> showAddLimit(BuildContext context) =>
-    showModalBottomSheet<void>(context: context, isScrollControlled: true, builder: (_) => const _LimitSheet());
+Future<void> showAddLimit(BuildContext context) => showModalBottomSheet<void>(
+  context: context,
+  useRootNavigator: true,
+  isScrollControlled: true,
+  builder: (_) => const _LimitSheet(),
+);
 
 class _LimitSheet extends ConsumerStatefulWidget {
   const _LimitSheet();

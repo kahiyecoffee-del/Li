@@ -1963,6 +1963,21 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aiSetupCta => 'Set up assistant';
 
   @override
+  String mascotTip(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'I have $count ideas for your day.',
+      one: 'I have 1 idea for your day.',
+      zero: 'Nothing urgent today — enjoy it.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get mascotAsk => 'Tap to ask Lio anything';
+
+  @override
   String get allGoalsDone => 'All goals done today — amazing!';
 
   @override

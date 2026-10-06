@@ -13,6 +13,7 @@ import '../../domain/models/task_item.dart';
 
 Future<void> showTaskEditor(BuildContext context, {TaskItem? task, DateTime? day}) => showModalBottomSheet<void>(
   context: context,
+  useRootNavigator: true,
   isScrollControlled: true,
   builder: (_) => TaskEditor(task: task, day: day),
 );

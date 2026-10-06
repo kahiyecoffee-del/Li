@@ -11,8 +11,9 @@ import 'services/settings/app_settings.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   LicenseRegistry.addLicense(() async* {
-    final text = await rootBundle.loadString('assets/fonts/OFL.txt');
-    yield LicenseEntryWithLineBreaks(['Nunito'], text);
+    for (final f in ['Fraunces', 'PlusJakartaSans']) {
+      yield LicenseEntryWithLineBreaks([f], await rootBundle.loadString('assets/fonts/OFL-$f.txt'));
+    }
   });
   final services = await buildServices();
   installErrorHandlers(services.crash);

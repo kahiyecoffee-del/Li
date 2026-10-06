@@ -654,6 +654,8 @@ s('offlineAiUnavailable', 'The offline assistant is not available yet.', 'Çevri
 s('aiSetupTitle', 'Turn on your assistant', 'Asistanını aç')
 s('aiSetupBody', 'Download the free on-device assistant once and chat any time — even without internet. Your messages never leave your phone.', 'Ücretsiz cihaz içi asistanı bir kez indir, istediğin zaman sohbet et — internet olmadan bile. Mesajların telefonundan hiç çıkmaz.')
 s('aiSetupCta', 'Set up assistant', 'Asistanı kur')
+s('mascotTip', '{count, plural, =0{Nothing urgent today — enjoy it.} =1{I have 1 idea for your day.} other{I have {count} ideas for your day.}}', '{count, plural, =0{Bugün acil bir şey yok — tadını çıkar.} other{Bugün senin için {count} önerim var.}}', count='int')
+s('mascotAsk', 'Tap to ask Lio anything', 'Lio’ya bir şey sormak için dokun')
 s('allGoalsDone', 'All goals done today — amazing!', 'Bugünün tüm hedefleri tamam — harikasın!')
 s('offlineAnswerLabel', 'Offline answer · on-device model', 'Çevrimdışı cevap · cihazdaki model')
 s('offlineModeChip', 'Offline mode', 'Çevrimdışı mod')

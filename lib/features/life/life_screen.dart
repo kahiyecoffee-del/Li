@@ -45,7 +45,13 @@ class LifeScreen extends ConsumerWidget {
           if (streak.current > 0)
             Padding(
               padding: const EdgeInsets.only(bottom: Space.md),
-              child: Text('🔥 ${l.streakDays(streak.current)}', style: context.text.titleMedium),
+              child: Row(
+                children: [
+                  Icon(Icons.local_fire_department_rounded, color: Accent.goals.color),
+                  const SizedBox(width: Space.xs),
+                  Text(l.streakDays(streak.current), style: context.text.titleMedium),
+                ],
+              ),
             ),
           GridView.count(
             crossAxisCount: 2,
@@ -53,7 +59,7 @@ class LifeScreen extends ConsumerWidget {
             physics: const NeverScrollableScrollPhysics(),
             mainAxisSpacing: Space.md,
             crossAxisSpacing: Space.md,
-            childAspectRatio: 1.2,
+            childAspectRatio: 1.25,
             children: [
               for (final (i, t) in tiles.indexed)
                 FadeSlideIn(
@@ -70,7 +76,6 @@ class LifeScreen extends ConsumerWidget {
   }
 
   Widget _tile(BuildContext context, (IconData, String, String, String?, Accent) t) => AppCard(
-    color: Color.alphaBlend(t.$5.color.withValues(alpha: 0.07), context.colors.surface),
     onTap: () => context.push(t.$3),
     semanticLabel: t.$2,
     child: Column(
@@ -78,7 +83,7 @@ class LifeScreen extends ConsumerWidget {
       children: [
         Row(
           children: [
-            IconBubble(icon: t.$1, accent: t.$5, size: 38),
+            IconBubble(icon: t.$1, accent: t.$5, size: 42),
             const Spacer(),
             if (t.$4 != null) Badge(label: Text(t.$4!)),
           ],

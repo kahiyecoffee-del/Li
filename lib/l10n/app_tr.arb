@@ -583,6 +583,8 @@
   "aiSetupTitle": "Asistanını aç",
   "aiSetupBody": "Ücretsiz cihaz içi asistanı bir kez indir, istediğin zaman sohbet et — internet olmadan bile. Mesajların telefonundan hiç çıkmaz.",
   "aiSetupCta": "Asistanı kur",
+  "mascotTip": "{count, plural, =0{Bugün acil bir şey yok — tadını çıkar.} other{Bugün senin için {count} önerim var.}}",
+  "mascotAsk": "Lio’ya bir şey sormak için dokun",
   "allGoalsDone": "Bugünün tüm hedefleri tamam — harikasın!",
   "offlineAnswerLabel": "Çevrimdışı cevap · cihazdaki model",
   "offlineModeChip": "Çevrimdışı mod",

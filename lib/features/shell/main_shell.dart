@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -26,36 +27,131 @@ class MainShell extends ConsumerWidget {
           ),
         ],
       ),
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: shell.currentIndex,
-        onDestinationSelected: (i) => shell.goBranch(i, initialLocation: i == shell.currentIndex),
-        destinations: [
-          NavigationDestination(
-            icon: const Icon(Icons.wb_sunny_outlined),
-            selectedIcon: const Icon(Icons.wb_sunny_rounded),
-            label: l.navHome,
-          ),
-          NavigationDestination(
-            icon: const Icon(Icons.event_note_outlined),
-            selectedIcon: const Icon(Icons.event_note_rounded),
-            label: l.navPlan,
-          ),
-          NavigationDestination(
-            icon: const Icon(Icons.account_balance_wallet_outlined),
-            selectedIcon: const Icon(Icons.account_balance_wallet_rounded),
-            label: l.navMoney,
-          ),
-          NavigationDestination(
-            icon: const Icon(Icons.spa_outlined),
-            selectedIcon: const Icon(Icons.spa_rounded),
-            label: l.navLife,
-          ),
-          NavigationDestination(
-            icon: const Icon(Icons.auto_awesome_outlined),
-            selectedIcon: const Icon(Icons.auto_awesome),
-            label: l.navAi,
-          ),
+      bottomNavigationBar: _FloatingNavBar(
+        index: shell.currentIndex,
+        onSelect: (i) => shell.goBranch(i, initialLocation: i == shell.currentIndex),
+        items: [
+          (Icons.wb_sunny_outlined, Icons.wb_sunny_rounded, l.navHome),
+          (Icons.event_note_outlined, Icons.event_note_rounded, l.navPlan),
+          (Icons.account_balance_wallet_outlined, Icons.account_balance_wallet_rounded, l.navMoney),
+          (Icons.spa_outlined, Icons.spa_rounded, l.navLife),
+          (Icons.auto_awesome_outlined, Icons.auto_awesome, l.navAi),
         ],
+      ),
+    );
+  }
+}
+
+/// Floating, rounded tab bar with a sliding pill under the active icon.
+class _FloatingNavBar extends StatelessWidget {
+  const _FloatingNavBar({required this.index, required this.onSelect, required this.items});
+
+  final int index;
+  final ValueChanged<int> onSelect;
+  final List<(IconData, IconData, String)> items;
+
+  @override
+  Widget build(BuildContext context) {
+    final b = Theme.of(context).brightness;
+    return SafeArea(
+      top: false,
+      minimum: const EdgeInsets.only(bottom: Space.sm),
+      child: Container(
+        margin: const EdgeInsets.fromLTRB(Space.lg, Space.xs, Space.lg, Space.xs),
+        height: 68,
+        decoration: BoxDecoration(
+          color: context.colors.surface,
+          borderRadius: BorderRadius.circular(Radii.lg),
+          boxShadow: [
+            if (b == Brightness.light) ...Shadows.soft(b),
+            if (b == Brightness.light)
+              BoxShadow(
+                color: const Color(0xFF3B2A1E).withValues(alpha: 0.06),
+                blurRadius: 40,
+                offset: const Offset(0, 18),
+              ),
+          ],
+          border: b == Brightness.dark ? Border.all(color: context.semantic.border) : null,
+        ),
+        child: Row(
+          children: [
+            for (var i = 0; i < items.length; i++)
+              Expanded(
+                child: _NavItem(
+                  icon: items[i].$1,
+                  selectedIcon: items[i].$2,
+                  label: items[i].$3,
+                  selected: i == index,
+                  onTap: () {
+                    HapticFeedback.selectionClick();
+                    onSelect(i);
+                  },
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _NavItem extends StatelessWidget {
+  const _NavItem({
+    required this.icon,
+    required this.selectedIcon,
+    required this.label,
+    required this.selected,
+    required this.onTap,
+  });
+
+  final IconData icon;
+  final IconData selectedIcon;
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final color = selected ? context.colors.primary : context.semantic.muted;
+    final d = Motion.of(context, Motion.normal);
+    return Semantics(
+      selected: selected,
+      button: true,
+      child: InkResponse(
+        onTap: onTap,
+        radius: 36,
+        highlightShape: BoxShape.rectangle,
+        containedInkWell: false,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AnimatedContainer(
+              duration: d,
+              curve: Motion.curve,
+              width: selected ? 52 : 36,
+              height: 30,
+              decoration: BoxDecoration(
+                color: selected ? context.colors.primary.withValues(alpha: 0.13) : Colors.transparent,
+                borderRadius: BorderRadius.circular(Radii.pill),
+              ),
+              child: AnimatedSwitcher(
+                duration: d,
+                transitionBuilder: (c, a) => ScaleTransition(scale: Tween(begin: 0.8, end: 1.0).animate(a), child: c),
+                child: Icon(selected ? selectedIcon : icon, key: ValueKey(selected), size: 22, color: color),
+              ),
+            ),
+            const SizedBox(height: 4),
+            AnimatedDefaultTextStyle(
+              duration: d,
+              style: context.text.labelSmall!.copyWith(
+                color: color,
+                fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
+                fontSize: 11,
+              ),
+              child: Text(label, maxLines: 1, overflow: TextOverflow.fade, softWrap: false),
+            ),
+          ],
+        ),
       ),
     );
   }

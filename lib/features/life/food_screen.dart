@@ -172,6 +172,7 @@ class _FoodScreenState extends ConsumerState<FoodScreen> {
 
   Future<void> _editPrefs(BuildContext context, UserProfile p) => showModalBottomSheet<void>(
     context: context,
+    useRootNavigator: true,
     isScrollControlled: true,
     builder: (_) => _FoodPrefsSheet(profile: p),
   );
@@ -196,6 +197,7 @@ class RecipeCard extends ConsumerWidget {
     return AppCard(
       onTap: () => showModalBottomSheet<void>(
         context: context,
+        useRootNavigator: true,
         isScrollControlled: true,
         builder: (_) => _RecipeDetail(recipe: recipe),
       ),

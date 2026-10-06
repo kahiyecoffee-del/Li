@@ -77,6 +77,7 @@ class HabitsScreen extends ConsumerWidget {
 
   Future<void> _editHabit(BuildContext context, WidgetRef ref, [Habit? existing]) => showModalBottomSheet<void>(
     context: context,
+    useRootNavigator: true,
     isScrollControlled: true,
     builder: (_) => _HabitEditor(existing: existing),
   );

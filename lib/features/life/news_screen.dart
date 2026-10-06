@@ -114,6 +114,7 @@ class _ArticleCard extends ConsumerWidget {
     });
     await showModalBottomSheet<void>(
       context: context,
+      useRootNavigator: true,
       builder: (c) => Padding(
         padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.xl),
         child: FutureBuilder<AiTaskResponse>(

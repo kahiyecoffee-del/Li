@@ -1148,6 +1148,15 @@
   "aiSetupTitle": "Turn on your assistant",
   "aiSetupBody": "Download the free on-device assistant once and chat any time — even without internet. Your messages never leave your phone.",
   "aiSetupCta": "Set up assistant",
+  "mascotTip": "{count, plural, =0{Nothing urgent today — enjoy it.} =1{I have 1 idea for your day.} other{I have {count} ideas for your day.}}",
+  "@mascotTip": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "mascotAsk": "Tap to ask Lio anything",
   "allGoalsDone": "All goals done today — amazing!",
   "offlineAnswerLabel": "Offline answer · on-device model",
   "offlineModeChip": "Offline mode",

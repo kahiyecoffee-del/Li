@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../l10n/labels.dart';
 import '../theme/tokens.dart';
 import 'mascot.dart';
 
-/// Rounded surface used for every Home/Money card.
-class AppCard extends StatelessWidget {
+/// Rounded surface used for every Home/Money card: soft layered shadow,
+/// no outline, and a subtle press-in when tappable.
+class AppCard extends StatefulWidget {
   const AppCard({
     super.key,
     required this.child,
     this.onTap,
-    this.padding = const EdgeInsets.all(Space.lg),
+    this.padding = const EdgeInsets.all(Space.lg + 2),
     this.semanticLabel,
     this.color,
+    this.gradient,
   });
 
   final Widget child;
@@ -20,22 +23,61 @@ class AppCard extends StatelessWidget {
   final EdgeInsetsGeometry padding;
   final String? semanticLabel;
   final Color? color;
+  final Gradient? gradient;
+
+  @override
+  State<AppCard> createState() => _AppCardState();
+}
+
+class _AppCardState extends State<AppCard> {
+  bool _down = false;
+
+  void _set(bool v) {
+    if (widget.onTap != null && _down != v) setState(() => _down = v);
+  }
 
   @override
   Widget build(BuildContext context) {
-    final card = Card(
-      color: color,
-      clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: onTap,
-        child: Padding(padding: padding, child: child),
+    final b = Theme.of(context).brightness;
+    final radius = BorderRadius.circular(Radii.lg);
+    final card = AnimatedScale(
+      scale: _down ? 0.975 : 1,
+      duration: Motion.fast,
+      curve: Motion.curve,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: widget.gradient == null ? (widget.color ?? context.colors.surface) : null,
+          gradient: widget.gradient,
+          borderRadius: radius,
+          boxShadow: Shadows.soft(b),
+          border: b == Brightness.dark ? Border.all(color: context.semantic.border) : null,
+        ),
+        child: Material(
+          type: MaterialType.transparency,
+          borderRadius: radius,
+          clipBehavior: Clip.antiAlias,
+          child: InkWell(
+            onTap: widget.onTap == null
+                ? null
+                : () {
+                    HapticFeedback.selectionClick();
+                    widget.onTap!();
+                  },
+            onHighlightChanged: _set,
+            splashFactory: NoSplash.splashFactory,
+            highlightColor: context.colors.onSurface.withValues(alpha: 0.03),
+            child: Padding(padding: widget.padding, child: widget.child),
+          ),
+        ),
       ),
     );
-    return semanticLabel == null ? card : Semantics(label: semanticLabel, button: onTap != null, child: card);
+    return widget.semanticLabel == null
+        ? card
+        : Semantics(label: widget.semanticLabel, button: widget.onTap != null, child: card);
   }
 }
 
-/// Small uppercase label + optional trailing action, above a card's content.
+/// Card title row: small tinted icon, sentence-case title, optional trailing.
 class CardHeader extends StatelessWidget {
   const CardHeader({super.key, required this.icon, required this.title, this.trailing, this.accent});
 
@@ -47,23 +89,17 @@ class CardHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Row(
     children: [
-      if (accent == null)
-        Icon(icon, size: 18, color: context.semantic.muted)
-      else
-        IconBubble(icon: icon, accent: accent!, size: 30),
-      const SizedBox(width: Space.sm),
+      IconBubble(icon: icon, accent: accent ?? Accent.ai, size: 30),
+      const SizedBox(width: Space.sm + 2),
       Expanded(
-        child: Text(
-          title.toUpperCase(),
-          style: context.text.labelSmall?.copyWith(color: context.semantic.muted, letterSpacing: 1.0),
-        ),
+        child: Text(title, style: context.text.titleSmall?.copyWith(color: context.semantic.muted)),
       ),
       ?trailing,
     ],
   );
 }
 
-/// Pastel rounded square holding a colored icon.
+/// Softly tinted rounded square holding an earth-toned icon.
 class IconBubble extends StatelessWidget {
   const IconBubble({super.key, required this.icon, required this.accent, this.size = 40});
 
@@ -77,7 +113,7 @@ class IconBubble extends StatelessWidget {
     height: size,
     decoration: BoxDecoration(
       color: accent.tint(Theme.of(context).brightness),
-      borderRadius: BorderRadius.circular(size * 0.36),
+      borderRadius: BorderRadius.circular(size * 0.32),
     ),
     child: Icon(icon, size: size * 0.56, color: accent.color),
   );
@@ -258,17 +294,32 @@ class ProgressBar extends StatelessWidget {
   final String? label;
 
   @override
-  Widget build(BuildContext context) => Semantics(
-    label: label,
-    value: '${(value.clamp(0, 1) * 100).round()}%',
-    child: ClipRRect(
-      borderRadius: BorderRadius.circular(Radii.pill),
-      child: LinearProgressIndicator(value: value.clamp(0, 1), minHeight: height, color: color),
-    ),
-  );
+  Widget build(BuildContext context) {
+    final c = color ?? context.colors.primary;
+    final v = value.clamp(0.0, 1.0);
+    return Semantics(
+      label: label,
+      value: '${(v * 100).round()}%',
+      child: Container(
+        height: height,
+        decoration: BoxDecoration(color: context.semantic.surfaceAlt, borderRadius: BorderRadius.circular(Radii.pill)),
+        alignment: Alignment.centerLeft,
+        child: FractionallySizedBox(
+          widthFactor: v,
+          heightFactor: 1,
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(Radii.pill),
+              gradient: LinearGradient(colors: [c.withValues(alpha: 0.7), c]),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
 
-/// Circular score gauge.
+/// Circular score gauge with a soft gradient arc.
 class ScoreRing extends StatelessWidget {
   const ScoreRing({super.key, required this.score, this.size = 96, this.stroke = 9});
 
@@ -285,37 +336,77 @@ class ScoreRing extends StatelessWidget {
       child: SizedBox(
         width: size,
         height: size,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            SizedBox.expand(
-              child: TweenAnimationBuilder<double>(
-                tween: Tween(begin: 0, end: (score ?? 0) / 100),
-                duration: Motion.normal * 3,
-                curve: Motion.curve,
-                builder: (_, v, _) => CircularProgressIndicator(
-                  value: v,
-                  strokeWidth: stroke,
-                  strokeCap: StrokeCap.round,
-                  color: color,
-                  backgroundColor: context.semantic.surfaceAlt,
+        child: TweenAnimationBuilder<double>(
+          tween: Tween(begin: 0, end: (score ?? 0) / 100),
+          duration: Motion.of(context, Motion.slow * 2),
+          curve: Motion.curve,
+          builder: (_, v, _) => CustomPaint(
+            painter: _RingPainter(value: v, color: color, track: context.semantic.surfaceAlt, stroke: stroke),
+            child: Center(
+              child: ExcludeSemantics(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      score == null ? '–' : '${(v * 100).round()}',
+                      style: context.text.headlineMedium?.copyWith(
+                        fontSize: size * 0.31,
+                        height: 1,
+                        fontFeatures: const [FontFeature.tabularFigures()],
+                      ),
+                    ),
+                    if (size >= 90)
+                      Text('/100', style: context.text.labelSmall?.copyWith(color: context.semantic.muted)),
+                  ],
                 ),
               ),
             ),
-            ExcludeSemantics(
-              child: Text(
-                score?.toString() ?? '–',
-                style: context.text.headlineMedium?.copyWith(
-                  fontSize: size * 0.32,
-                  fontFeatures: const [FontFeature.tabularFigures()],
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
   }
+}
+
+class _RingPainter extends CustomPainter {
+  _RingPainter({required this.value, required this.color, required this.track, required this.stroke});
+
+  final double value;
+  final Color color;
+  final Color track;
+  final double stroke;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final rect = Offset.zero & size;
+    final r = rect.deflate(stroke / 2);
+    canvas.drawArc(
+      r,
+      0,
+      6.2832,
+      false,
+      Paint()
+        ..color = track
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = stroke,
+    );
+    if (value <= 0) return;
+    final sweep = 6.2832 * value;
+    final paint = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = stroke
+      ..strokeCap = StrokeCap.round
+      ..shader = SweepGradient(
+        startAngle: 0,
+        endAngle: sweep < 0.01 ? 0.01 : sweep,
+        colors: [color.withValues(alpha: 0.45), color],
+        transform: const GradientRotation(-1.5708),
+      ).createShader(rect);
+    canvas.drawArc(r, -1.5708, sweep, false, paint);
+  }
+
+  @override
+  bool shouldRepaint(_RingPainter old) => old.value != value || old.color != color || old.track != track;
 }
 
 class OfflineBanner extends StatelessWidget {

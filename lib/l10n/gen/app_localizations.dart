@@ -3590,6 +3590,18 @@ abstract class AppLocalizations {
   /// **'Set up assistant'**
   String get aiSetupCta;
 
+  /// No description provided for @mascotTip.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Nothing urgent today — enjoy it.} =1{I have 1 idea for your day.} other{I have {count} ideas for your day.}}'**
+  String mascotTip(int count);
+
+  /// No description provided for @mascotAsk.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to ask Lio anything'**
+  String get mascotAsk;
+
   /// No description provided for @allGoalsDone.
   ///
   /// In en, this message translates to:

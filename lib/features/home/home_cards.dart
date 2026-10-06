@@ -34,7 +34,7 @@ class LifeScoreCard extends ConsumerWidget {
       onTap: () => context.push('/score'),
       child: Row(
         children: [
-          ScoreRing(score: total),
+          ScoreRing(score: total, size: 104, stroke: 10),
           const SizedBox(width: Space.lg),
           Expanded(
             child: Column(
@@ -87,7 +87,24 @@ class DailyGoalsCard extends ConsumerWidget {
             title: l.dailyGoals,
             accent: Accent.goals,
             trailing: streak.current > 1
-                ? Text('🔥 ${l.streakDays(streak.current)}', style: context.text.labelMedium)
+                ? Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Accent.goals.tint(Theme.of(context).brightness),
+                      borderRadius: BorderRadius.circular(Radii.pill),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.local_fire_department_rounded, size: 15, color: Accent.goals.color),
+                        const SizedBox(width: 4),
+                        Text(
+                          l.streakDays(streak.current),
+                          style: context.text.labelMedium?.copyWith(color: Accent.goals.color),
+                        ),
+                      ],
+                    ),
+                  )
                 : null,
           ),
           const SizedBox(height: Space.md),
@@ -402,10 +419,7 @@ class InsightCard extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  l.insight.toUpperCase(),
-                  style: context.text.labelSmall?.copyWith(color: context.semantic.muted, letterSpacing: 1),
-                ),
+                Text(l.insight, style: context.text.titleSmall?.copyWith(color: context.semantic.muted)),
                 const SizedBox(height: Space.xs),
                 Text(insights.isEmpty ? l.insightNone : l.insightText(insights.first), style: context.text.bodyLarge),
               ],
@@ -474,10 +488,7 @@ class NewsTeaserCard extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  l.forYou.toUpperCase(),
-                  style: context.text.labelSmall?.copyWith(color: context.semantic.muted, letterSpacing: 1),
-                ),
+                Text(l.forYou, style: context.text.titleSmall?.copyWith(color: context.semantic.muted)),
                 Text(l.importantStories(count.clamp(0, 3)), style: context.text.titleMedium),
               ],
             ),

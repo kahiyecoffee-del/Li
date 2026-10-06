@@ -99,6 +99,7 @@ class JournalScreen extends ConsumerWidget {
     final c = TextEditingController();
     final text = await showModalBottomSheet<String>(
       context: context,
+      useRootNavigator: true,
       isScrollControlled: true,
       builder: (s) => Padding(
         padding: EdgeInsets.fromLTRB(Space.page, 0, Space.page, MediaQuery.viewInsetsOf(s).bottom + Space.xl),
