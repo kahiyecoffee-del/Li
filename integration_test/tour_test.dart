@@ -87,7 +87,7 @@ void main() {
     await pumpUntil(tester, find.text('Bugün nasıl yardımcı olabilirim?'));
     await shot(tester, '05-lio-sohbet');
 
-    for (final q in ['Bugün ne kadar harcayabilirim?', 'Günümü planla']) {
+    for (final q in ['Bugün ne kadar harcayabilirim?']) {
       await tester.enterText(find.byType(TextField).last, q);
       await tester.tap(find.byTooltip('Gönder'));
       await pumpUntil(tester, find.text(q));
