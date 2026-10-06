@@ -956,6 +956,28 @@ s('gSpendToday', 'How much can I spend today?', 'Bugün ne kadar harcayabilirim?
 s('gMyScore', 'My Life Score', 'Yaşam puanım')
 s('gOpenMyDay', 'Open My day', 'Günüm’ü aç')
 
+# ---------------- Lio: plan my day
+s('pPrompt', 'Let’s plan your day! What do you need to get done today? Separate them with commas.', 'Hadi gününü planlayalım! Bugün neler yapman gerekiyor? Virgülle ayırarak yaz.')
+s('pAlready', 'You already have these today: {tasks}. Add them to the plan?', 'Bugün listende zaten şunlar var: {tasks}. Plana ekleyeyim mi?', tasks='String')
+s('pYes', 'Yes', 'Evet')
+s('pNo', 'No', 'Hayır')
+s('pImportant', 'Which one matters most?', 'Hangisi en önemli?')
+s('pAllSame', 'All equal', 'Hepsi eşit')
+s('pDuration', 'Roughly how long does each one take?', 'Her biri ortalama ne kadar sürer?')
+s('pHours', '{hours} h', '{hours} saat', hours='int')
+s('pStart', 'When should we start?', 'Ne zaman başlayalım?')
+s('pNow', 'Now', 'Şimdi')
+s('pTimeFail', 'Write a time like 09:30.', 'Saati 09:30 gibi yaz.')
+s('pResult', 'Here’s your plan for today:', 'İşte bugünkü planın:')
+s('pFixed', 'already scheduled', 'zaten planlı')
+s('pBreaks', 'I left 10 minutes between tasks so you can breathe.', 'Aralara 10 dakika nefes payı bıraktım.')
+s('pDidntFit', 'These didn’t fit today: {tasks}', 'Bunlar bugüne sığmadı: {tasks}', tasks='String')
+s('pAddToDay', 'Add to my day', 'Günüme ekle')
+s('pAdded', 'Done! Your plan is in Plan, with reminders.', 'Tamam! Planın hatırlatmalarıyla birlikte Plan ekranında.')
+s('pRedo', 'Plan again', 'Yeniden planla')
+s('pOpenPlan', 'Open Plan', 'Plan’ı aç')
+s('pNothing', 'Nothing to plan yet. Tell me at least one thing to do.', 'Planlanacak bir şey yok. En az bir iş yaz.')
+
 def build(lang_index, locale):
     arb = {'@@locale': locale}
     for key, (en, tr, ph) in S.items():

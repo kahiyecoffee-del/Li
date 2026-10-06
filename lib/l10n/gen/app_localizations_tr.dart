@@ -2890,4 +2890,70 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get gOpenMyDay => 'Günüm’ü aç';
+
+  @override
+  String get pPrompt => 'Hadi gününü planlayalım! Bugün neler yapman gerekiyor? Virgülle ayırarak yaz.';
+
+  @override
+  String pAlready(String tasks) {
+    return 'Bugün listende zaten şunlar var: $tasks. Plana ekleyeyim mi?';
+  }
+
+  @override
+  String get pYes => 'Evet';
+
+  @override
+  String get pNo => 'Hayır';
+
+  @override
+  String get pImportant => 'Hangisi en önemli?';
+
+  @override
+  String get pAllSame => 'Hepsi eşit';
+
+  @override
+  String get pDuration => 'Her biri ortalama ne kadar sürer?';
+
+  @override
+  String pHours(int hours) {
+    return '$hours saat';
+  }
+
+  @override
+  String get pStart => 'Ne zaman başlayalım?';
+
+  @override
+  String get pNow => 'Şimdi';
+
+  @override
+  String get pTimeFail => 'Saati 09:30 gibi yaz.';
+
+  @override
+  String get pResult => 'İşte bugünkü planın:';
+
+  @override
+  String get pFixed => 'zaten planlı';
+
+  @override
+  String get pBreaks => 'Aralara 10 dakika nefes payı bıraktım.';
+
+  @override
+  String pDidntFit(String tasks) {
+    return 'Bunlar bugüne sığmadı: $tasks';
+  }
+
+  @override
+  String get pAddToDay => 'Günüme ekle';
+
+  @override
+  String get pAdded => 'Tamam! Planın hatırlatmalarıyla birlikte Plan ekranında.';
+
+  @override
+  String get pRedo => 'Yeniden planla';
+
+  @override
+  String get pOpenPlan => 'Plan’ı aç';
+
+  @override
+  String get pNothing => 'Planlanacak bir şey yok. En az bir iş yaz.';
 }

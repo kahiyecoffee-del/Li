@@ -93,6 +93,9 @@ class TestApp {
   final FakeAi ai;
   LocalStore? seeded;
 
+  /// Repositories over the seeded store (to check what the app saved).
+  UserRepos get seededRepos => UserRepos(seeded!, journalKeys: MemoryJournalKeyStore());
+
   /// A signed-in (local) user who already finished onboarding.
   static Future<TestApp> onboarded({Map<String, Object> prefs = const {}, bool online = true}) async {
     final app = await create(prefs: {'local_uid': 'local-test', ...prefs}, online: online);

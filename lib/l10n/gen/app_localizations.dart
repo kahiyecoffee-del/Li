@@ -5305,6 +5305,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Open My day'**
   String get gOpenMyDay;
+
+  /// No description provided for @pPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Let’s plan your day! What do you need to get done today? Separate them with commas.'**
+  String get pPrompt;
+
+  /// No description provided for @pAlready.
+  ///
+  /// In en, this message translates to:
+  /// **'You already have these today: {tasks}. Add them to the plan?'**
+  String pAlready(String tasks);
+
+  /// No description provided for @pYes.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get pYes;
+
+  /// No description provided for @pNo.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get pNo;
+
+  /// No description provided for @pImportant.
+  ///
+  /// In en, this message translates to:
+  /// **'Which one matters most?'**
+  String get pImportant;
+
+  /// No description provided for @pAllSame.
+  ///
+  /// In en, this message translates to:
+  /// **'All equal'**
+  String get pAllSame;
+
+  /// No description provided for @pDuration.
+  ///
+  /// In en, this message translates to:
+  /// **'Roughly how long does each one take?'**
+  String get pDuration;
+
+  /// No description provided for @pHours.
+  ///
+  /// In en, this message translates to:
+  /// **'{hours} h'**
+  String pHours(int hours);
+
+  /// No description provided for @pStart.
+  ///
+  /// In en, this message translates to:
+  /// **'When should we start?'**
+  String get pStart;
+
+  /// No description provided for @pNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Now'**
+  String get pNow;
+
+  /// No description provided for @pTimeFail.
+  ///
+  /// In en, this message translates to:
+  /// **'Write a time like 09:30.'**
+  String get pTimeFail;
+
+  /// No description provided for @pResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Here’s your plan for today:'**
+  String get pResult;
+
+  /// No description provided for @pFixed.
+  ///
+  /// In en, this message translates to:
+  /// **'already scheduled'**
+  String get pFixed;
+
+  /// No description provided for @pBreaks.
+  ///
+  /// In en, this message translates to:
+  /// **'I left 10 minutes between tasks so you can breathe.'**
+  String get pBreaks;
+
+  /// No description provided for @pDidntFit.
+  ///
+  /// In en, this message translates to:
+  /// **'These didn’t fit today: {tasks}'**
+  String pDidntFit(String tasks);
+
+  /// No description provided for @pAddToDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to my day'**
+  String get pAddToDay;
+
+  /// No description provided for @pAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Done! Your plan is in Plan, with reminders.'**
+  String get pAdded;
+
+  /// No description provided for @pRedo.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan again'**
+  String get pRedo;
+
+  /// No description provided for @pOpenPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Plan'**
+  String get pOpenPlan;
+
+  /// No description provided for @pNothing.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing to plan yet. Tell me at least one thing to do.'**
+  String get pNothing;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

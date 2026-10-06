@@ -13,10 +13,14 @@ import '../../core/theme/tokens.dart';
 import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
 import '../../core/widgets/mascot.dart';
+import '../../core/utils/dates.dart';
+import '../../core/utils/ids.dart';
 import '../../domain/engines/meal_engine.dart';
+import '../../domain/engines/plan_optimizer.dart';
 import '../../domain/engines/recipe_library.dart';
 import '../../domain/lio/lio_brain.dart';
 import '../../domain/models/enums.dart';
+import '../../domain/models/task_item.dart';
 import '../../domain/problem/problem_solver.dart';
 import '../../domain/problem/quantities.dart';
 import '../../domain/templates/message_templates.dart';
@@ -116,6 +120,9 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
     if (widget.topic == 'write') {
       _user(l.quickWrite);
       _write();
+    } else if (widget.topic == 'plan') {
+      _user(l.quickPlan);
+      _plan();
     } else if (widget.initialText != null && widget.initialText!.trim().isNotEmpty) {
       _free(widget.initialText!);
     }
@@ -246,6 +253,7 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
       _Choice(l.quickFood, _food, emoji: '🍳'),
       _Choice(l.quickWrite, _write, emoji: '✍️'),
       _Choice(l.quickCalc, _calc, emoji: '🧮'),
+      _Choice(l.quickPlan, _plan, emoji: '📅'),
       _Choice(l.gRemind, _remind, emoji: '⏰'),
       _Choice(l.gMood, _mood, emoji: '💛'),
       _Choice(l.exploreMyDay, _myDay, emoji: '☀️'),
@@ -655,6 +663,137 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
         _Choice(l.gOtherTone, () => _tone(t, values), emoji: '🎚️'),
         _Choice(l.gOtherMessage, _write, emoji: '✍️'),
         _Choice(l.gMainMenu, () => _root()),
+      ],
+    );
+  }
+
+  // ---------------------------------------------------------------- plan my day
+
+  String _duration(int m) => m < 60 ? l.recipeMinutes(m) : l.pHours(m ~/ 60);
+
+  void _plan() {
+    final now = DateTime.now();
+    final today = Dates.dateOnly(now);
+    final todays = (ref.read(tasksProvider).value ?? const <TaskItem>[])
+        .where((t) => !t.deleted && !t.isCompleted && t.anchorDate != null && Dates.sameDay(t.anchorDate!, today))
+        .toList();
+    final fixed = todays.where((t) => t.scheduledAt != null).toList();
+    final loose = todays.where((t) => t.scheduledAt == null).toList();
+
+    void askNew(List<TaskItem> carry) => _ask(l.pPrompt, (v) {
+      final names = [for (final n in _splitList(v)) n.length > 1 ? '${n[0].toUpperCase()}${n.substring(1)}' : n];
+      if (names.isEmpty && carry.isEmpty) {
+        _say(l.pNothing);
+        _plan();
+        return;
+      }
+      _important(names, carry, fixed);
+    });
+
+    if (loose.isEmpty) return askNew(const []);
+    _say(l.pAlready(loose.map((t) => t.title).join(', ')));
+    setState(() => _choices = [_Choice(l.pYes, () => askNew(loose)), _Choice(l.pNo, () => askNew(const []))]);
+  }
+
+  void _important(List<String> names, List<TaskItem> carry, List<TaskItem> fixed) {
+    void next(String? top) => _menu(l.pDuration, [
+      for (final m in [30, 45, 60, 120]) _Choice(_duration(m), () => _start(names, carry, fixed, top, m)),
+    ]);
+    final all = [...names, ...carry.map((t) => t.title)];
+    if (all.length < 2) return next(null);
+    _menu(l.pImportant, [
+      for (final n in all.take(8)) _Choice(n, () => next(n)),
+      _Choice(l.pAllSame, () => next(null)),
+    ]);
+  }
+
+  void _start(List<String> names, List<TaskItem> carry, List<TaskItem> fixed, String? top, int minutes) {
+    void build(DateTime start) {
+      final now = DateTime.now();
+      final fresh = [
+        for (final n in names)
+          TaskItem(
+            id: newId(),
+            updatedAt: now,
+            createdAt: now,
+            title: n,
+            estimatedMinutes: minutes,
+            priority: n == top ? TaskPriority.high : TaskPriority.medium,
+          ),
+      ];
+      final flexible = [
+        ...fresh,
+        for (final t in carry) t.copyWith(priority: t.title == top ? TaskPriority.high : null),
+      ];
+      final day = Dates.dateOnly(now);
+      final slots = const PlanOptimizer().schedule(
+        flexible: flexible,
+        fixed: fixed,
+        now: start,
+        dayStart: start,
+        dayEnd: DateTime(day.year, day.month, day.day, 23),
+      );
+      final fmt = ref.read(fmtProvider(Localizations.localeOf(context).toLanguageTag()));
+      final rows = <(DateTime, String, String)>[
+        for (final sl in slots) (sl.start, '${fmt.time(sl.start)}–${fmt.time(sl.end)}', sl.task.title),
+        for (final f in fixed) (f.scheduledAt!, fmt.time(f.scheduledAt!), '${f.title} · ${l.pFixed}'),
+      ]..sort((a, b) => a.$1.compareTo(b.$1));
+      final placed = slots.map((x) => x.task.id).toSet();
+      final left = flexible.where((t) => !placed.contains(t.id)).map((t) => t.title).toList();
+      _say(
+        l.pResult,
+        rows: [for (final r in rows) (r.$2, r.$3)],
+        note: [if (slots.length > 1) l.pBreaks, if (left.isNotEmpty) l.pDidntFit(left.join(', '))].join('\n'),
+      );
+      _log('plan_day');
+      setState(
+        () => _choices = [
+          _Choice(l.pAddToDay, () async {
+            final actions = ref.read(actionsProvider);
+            final freshIds = fresh.map((t) => t.id).toSet();
+            for (final sl in slots) {
+              await actions.saveTask(sl.task.copyWith(scheduledAt: sl.start), isNew: freshIds.contains(sl.task.id));
+            }
+            if (!mounted) return;
+            _say(l.pAdded);
+            setState(
+              () => _choices = [
+                _Choice(l.pOpenPlan, () {
+                  context.push('/plan');
+                  _root();
+                }, emoji: '📅'),
+                _Choice(l.gMainMenu, () => _root()),
+              ],
+            );
+          }, emoji: '✅'),
+          _Choice(l.pRedo, _plan, emoji: '🔁'),
+          _Choice(l.gMainMenu, () => _root()),
+        ],
+      );
+    }
+
+    DateTime at(int h, [int m = 0]) {
+      final n = DateTime.now();
+      return DateTime(n.year, n.month, n.day, h, m);
+    }
+
+    void handle(String v) {
+      final m = RegExp(r'(\d{1,2})(?:[:.](\d{2}))?').firstMatch(v);
+      final h = m == null ? null : int.tryParse(m.group(1)!);
+      if (h == null || h > 23) {
+        _ask(l.pTimeFail, handle);
+        return;
+      }
+      build(at(h, int.tryParse(m!.group(2) ?? '0') ?? 0));
+    }
+
+    _ask(
+      l.pStart,
+      handle,
+      keyboard: TextInputType.datetime,
+      quick: [
+        _Choice(l.pNow, () => build(DateTime.now())),
+        for (final h in [9, 10, 13, 18]) _Choice.answer('${h.toString().padLeft(2, '0')}:00', '$h:00'),
       ],
     );
   }

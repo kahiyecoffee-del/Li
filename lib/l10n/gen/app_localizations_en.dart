@@ -2919,4 +2919,70 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get gOpenMyDay => 'Open My day';
+
+  @override
+  String get pPrompt => 'Let’s plan your day! What do you need to get done today? Separate them with commas.';
+
+  @override
+  String pAlready(String tasks) {
+    return 'You already have these today: $tasks. Add them to the plan?';
+  }
+
+  @override
+  String get pYes => 'Yes';
+
+  @override
+  String get pNo => 'No';
+
+  @override
+  String get pImportant => 'Which one matters most?';
+
+  @override
+  String get pAllSame => 'All equal';
+
+  @override
+  String get pDuration => 'Roughly how long does each one take?';
+
+  @override
+  String pHours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get pStart => 'When should we start?';
+
+  @override
+  String get pNow => 'Now';
+
+  @override
+  String get pTimeFail => 'Write a time like 09:30.';
+
+  @override
+  String get pResult => 'Here’s your plan for today:';
+
+  @override
+  String get pFixed => 'already scheduled';
+
+  @override
+  String get pBreaks => 'I left 10 minutes between tasks so you can breathe.';
+
+  @override
+  String pDidntFit(String tasks) {
+    return 'These didn’t fit today: $tasks';
+  }
+
+  @override
+  String get pAddToDay => 'Add to my day';
+
+  @override
+  String get pAdded => 'Done! Your plan is in Plan, with reminders.';
+
+  @override
+  String get pRedo => 'Plan again';
+
+  @override
+  String get pOpenPlan => 'Open Plan';
+
+  @override
+  String get pNothing => 'Nothing to plan yet. Tell me at least one thing to do.';
 }

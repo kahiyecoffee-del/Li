@@ -53,17 +53,32 @@ class HomeScreen extends ConsumerWidget {
                       ],
                     ),
                     const SizedBox(height: Space.lg),
-                    SizedBox(
-                      width: double.infinity,
-                      child: FilledButton.icon(
-                        onPressed: () {
-                          HapticFeedback.selectionClick();
-                          context.go('/ai');
-                        },
-                        icon: const Icon(Icons.auto_awesome_rounded),
-                        label: Text(l.solve),
-                        style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(58)),
-                      ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: FilledButton.icon(
+                            onPressed: () {
+                              HapticFeedback.selectionClick();
+                              context.go('/ai');
+                            },
+                            icon: const Icon(Icons.auto_awesome_rounded),
+                            label: Text(l.solve),
+                            style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(58)),
+                          ),
+                        ),
+                        const SizedBox(width: Space.md),
+                        Expanded(
+                          child: FilledButton.tonalIcon(
+                            onPressed: () {
+                              HapticFeedback.selectionClick();
+                              context.go('/ai?topic=plan&n=${DateTime.now().microsecondsSinceEpoch}');
+                            },
+                            icon: const Icon(Icons.event_available_rounded),
+                            label: Text(l.quickPlan),
+                            style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(58)),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

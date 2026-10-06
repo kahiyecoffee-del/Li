@@ -1681,5 +1681,46 @@
   "gTodayPlan": "Today’s plan",
   "gSpendToday": "How much can I spend today?",
   "gMyScore": "My Life Score",
-  "gOpenMyDay": "Open My day"
+  "gOpenMyDay": "Open My day",
+  "pPrompt": "Let’s plan your day! What do you need to get done today? Separate them with commas.",
+  "pAlready": "You already have these today: {tasks}. Add them to the plan?",
+  "@pAlready": {
+    "placeholders": {
+      "tasks": {
+        "type": "String"
+      }
+    }
+  },
+  "pYes": "Yes",
+  "pNo": "No",
+  "pImportant": "Which one matters most?",
+  "pAllSame": "All equal",
+  "pDuration": "Roughly how long does each one take?",
+  "pHours": "{hours} h",
+  "@pHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "pStart": "When should we start?",
+  "pNow": "Now",
+  "pTimeFail": "Write a time like 09:30.",
+  "pResult": "Here’s your plan for today:",
+  "pFixed": "already scheduled",
+  "pBreaks": "I left 10 minutes between tasks so you can breathe.",
+  "pDidntFit": "These didn’t fit today: {tasks}",
+  "@pDidntFit": {
+    "placeholders": {
+      "tasks": {
+        "type": "String"
+      }
+    }
+  },
+  "pAddToDay": "Add to my day",
+  "pAdded": "Done! Your plan is in Plan, with reminders.",
+  "pRedo": "Plan again",
+  "pOpenPlan": "Open Plan",
+  "pNothing": "Nothing to plan yet. Tell me at least one thing to do."
 }

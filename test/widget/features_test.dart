@@ -296,6 +296,27 @@ void main() {
       await tearDownApp(tester);
     });
 
+    testWidgets('plan my day: Lio asks, schedules and adds the tasks', (tester) async {
+      usePhoneViewport(tester);
+      final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+      await tester.pumpWidget(app.widget());
+      await pumpUntil(tester, find.text('What should we solve today?'));
+      await tester.tap(find.text('Plan').first);
+      await pumpUntil(tester, find.textContaining('plan your day'));
+      await answer(tester, 'write the report, gym');
+      await chip(tester, 'Write the report');
+      await chip(tester, '1 h');
+      await chip(tester, '09:00');
+      await pumpUntil(tester, find.text('Here’s your plan for today:'));
+      expect(find.textContaining('09:00'), findsWidgets);
+      await chip(tester, 'Add to my day');
+      await pumpUntil(tester, find.textContaining('Your plan is in Plan'));
+      final tasks = await tester.runAsync(() => app.seededRepos.tasks.getAll());
+      expect(tasks!.map((t) => t.title), containsAll(['Write the report', 'Gym']));
+      expect(tasks.firstWhere((t) => t.title == 'Write the report').scheduledAt!.hour, 9);
+      await tearDownApp(tester);
+    });
+
     testWidgets('mood: feeling really bad shows where to get help', (tester) async {
       await openLio(tester);
       await chip(tester, 'Mood boost');
