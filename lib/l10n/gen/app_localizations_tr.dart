@@ -1907,90 +1907,6 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get offlineAiTitle => 'Çevrimdışı Lio';
-
-  @override
-  String get offlineAiBody =>
-      'Lio’nun internet olmadan sohbet edebilmesi için telefonuna küçük bir yapay zeka modeli indir. Cevaplar cihazında kalır. Çevrimiçi asistandan daha sınırlıdır ve uygulamada değişiklik yapamaz.';
-
-  @override
-  String offlineAiSize(int size) {
-    return 'İndirme boyutu: yaklaşık $size MB. Wi-Fi önerilir; 4 GB ve üzeri RAM olan telefonlarda en iyi çalışır.';
-  }
-
-  @override
-  String get offlineAiDownload => 'Modeli indir';
-
-  @override
-  String offlineAiDownloading(int progress) {
-    return 'İndiriliyor… %$progress';
-  }
-
-  @override
-  String get offlineAiReady => 'Hazır — internetsiz çalışır';
-
-  @override
-  String get offlineAiError => 'İndirme başarısız oldu. Bağlantını kontrol edip tekrar dene.';
-
-  @override
-  String get offlineAiDelete => 'Modeli sil';
-
-  @override
-  String get offlineAiPrefer => 'İnternet varken de çevrimdışı asistanı kullan';
-
-  @override
-  String get offlineAiPreferHelp =>
-      'Gizli ve ücretsiz ama daha az isabetli. Kapalıysa yalnızca internet yokken otomatik kullanılır.';
-
-  @override
-  String get offlineAiUnavailable => 'Çevrimdışı asistan henüz kullanılamıyor.';
-
-  @override
-  String offlineSingleInfo(int size) {
-    return 'Yaklaşık $size MB · herkeste aynı model. Wi-Fi önerilir.';
-  }
-
-  @override
-  String get offlineLiteTitle => 'Lio Lite';
-
-  @override
-  String offlineLiteBody(int size) {
-    return 'Yaklaşık $size MB · hızlı, çoğu telefonda çalışır';
-  }
-
-  @override
-  String get offlinePlusTitle => 'Lio Plus';
-
-  @override
-  String offlinePlusBody(int size) {
-    return 'Yaklaşık $size MB · daha akıllı, 4 GB+ RAM’li telefonlarda en iyisi';
-  }
-
-  @override
-  String get offlineRecommended => 'Önerilen';
-
-  @override
-  String get offlineInstalled => 'Yüklü';
-
-  @override
-  String offlineSwitchTo(String name) {
-    return '$name sürümüne geç';
-  }
-
-  @override
-  String get offlineOneAtATime => 'Telefonunda tek sürüm tutulur; geçiş yapınca eskisi silinir. Wi-Fi önerilir.';
-
-  @override
-  String get aiSetupTitle => 'Asistanını aç';
-
-  @override
-  String get aiSetupBody =>
-      'Ücretsiz cihaz içi asistanı bir kez indir, istediğin zaman sohbet et — internet olmadan bile. Mesajların telefonundan hiç çıkmaz.';
-
-  @override
-  String get aiSetupCta => 'Çevrimdışı Lio’yu indir';
-
-  @override
   String mascotTip(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -2006,15 +1922,6 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get allGoalsDone => 'Bugünün tüm hedefleri tamam — harikasın!';
-
-  @override
-  String get offlineAnswerLabel => 'Çevrimdışı cevap · cihazdaki model';
-
-  @override
-  String get offlineModeChip => 'Çevrimdışı mod';
-
-  @override
-  String get localModelsInfo => 'Harcama ve alışveriş kategorileri cihazında çalışan küçük modellerle tanınır.';
 
   @override
   String get lioName => 'Lio, yol arkadaşın';
@@ -2215,17 +2122,10 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get brainHelp =>
-      'Bugünkü planını, bütçeni, yemek fikirlerini ve Yaşam Skorunu anlatabilir, seni motive edebilirim. Serbest sohbet için Ayarlar’dan Çevrimdışı Lio’yu indir.';
+      'Aşağıdan bir konu seç — para, karar, yemek, mesaj ya da hızlı bir hesap — seni adım adım götüreyim.';
 
   @override
   String get brainFallback => 'Bunu henüz öğreniyorum. Bana planını, paranı, yemeği ya da günün nasıl geçtiğini sor.';
-
-  @override
-  String get aiSmarterTitle => 'Lio’yu daha akıllı yap';
-
-  @override
-  String get aiSmarterBody =>
-      'Lio günün hakkındaki soruları zaten cevaplıyor. Her konuda sohbet etmek için Çevrimdışı Lio’yu bir kez indir — internet olmadan bile.';
 
   @override
   String get brainAnswerLabel => 'Lio · telefonunda';

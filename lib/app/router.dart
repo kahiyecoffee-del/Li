@@ -28,7 +28,6 @@ import '../features/score/score_screen.dart';
 import '../features/settings/account_screen.dart';
 import '../features/settings/legal_screen.dart';
 import '../features/settings/memory_screen.dart';
-import '../features/settings/offline_ai_screen.dart';
 import '../features/settings/privacy_screen.dart';
 import '../features/settings/settings_screen.dart';
 import '../features/shell/main_shell.dart';
@@ -57,7 +56,6 @@ abstract final class Routes {
   static const settings = '/settings';
   static const privacy = '/settings/privacy';
   static const memory = '/settings/memory';
-  static const offlineAi = '/settings/offline-ai';
   static const account = '/settings/account';
   static const legal = '/legal';
   static const premium = '/premium';
@@ -164,7 +162,6 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: Routes.settings, builder: (_, _) => const SettingsScreen()),
       GoRoute(path: Routes.privacy, builder: (_, _) => const PrivacyScreen()),
       GoRoute(path: Routes.memory, builder: (_, _) => const MemoryScreen()),
-      GoRoute(path: Routes.offlineAi, builder: (_, _) => const OfflineAiScreen()),
       GoRoute(path: Routes.account, builder: (_, _) => const AccountScreen()),
       GoRoute(
         path: '${Routes.legal}/:doc',

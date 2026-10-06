@@ -3524,144 +3524,6 @@ abstract class AppLocalizations {
   /// **'{day, select, 1{Mon} 2{Tue} 3{Wed} 4{Thu} 5{Fri} 6{Sat} other{Sun}}'**
   String weekdayShort(String day);
 
-  /// No description provided for @offlineAiTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Offline Lio'**
-  String get offlineAiTitle;
-
-  /// No description provided for @offlineAiBody.
-  ///
-  /// In en, this message translates to:
-  /// **'Download a small AI model so Lio can chat without internet. Answers stay on your device. It is less capable than the online assistant and cannot make changes in the app.'**
-  String get offlineAiBody;
-
-  /// No description provided for @offlineAiSize.
-  ///
-  /// In en, this message translates to:
-  /// **'Download size: about {size} MB. Wi-Fi recommended; works best on phones with 4 GB+ RAM.'**
-  String offlineAiSize(int size);
-
-  /// No description provided for @offlineAiDownload.
-  ///
-  /// In en, this message translates to:
-  /// **'Download model'**
-  String get offlineAiDownload;
-
-  /// No description provided for @offlineAiDownloading.
-  ///
-  /// In en, this message translates to:
-  /// **'Downloading… {progress}%'**
-  String offlineAiDownloading(int progress);
-
-  /// No description provided for @offlineAiReady.
-  ///
-  /// In en, this message translates to:
-  /// **'Ready — works without internet'**
-  String get offlineAiReady;
-
-  /// No description provided for @offlineAiError.
-  ///
-  /// In en, this message translates to:
-  /// **'Download failed. Check your connection and try again.'**
-  String get offlineAiError;
-
-  /// No description provided for @offlineAiDelete.
-  ///
-  /// In en, this message translates to:
-  /// **'Delete model'**
-  String get offlineAiDelete;
-
-  /// No description provided for @offlineAiPrefer.
-  ///
-  /// In en, this message translates to:
-  /// **'Use offline assistant even when online'**
-  String get offlineAiPrefer;
-
-  /// No description provided for @offlineAiPreferHelp.
-  ///
-  /// In en, this message translates to:
-  /// **'Private and free, but less accurate. Otherwise it is used automatically when you are offline.'**
-  String get offlineAiPreferHelp;
-
-  /// No description provided for @offlineAiUnavailable.
-  ///
-  /// In en, this message translates to:
-  /// **'The offline assistant is not available yet.'**
-  String get offlineAiUnavailable;
-
-  /// No description provided for @offlineSingleInfo.
-  ///
-  /// In en, this message translates to:
-  /// **'About {size} MB · the same model for everyone. Wi-Fi recommended.'**
-  String offlineSingleInfo(int size);
-
-  /// No description provided for @offlineLiteTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Lio Lite'**
-  String get offlineLiteTitle;
-
-  /// No description provided for @offlineLiteBody.
-  ///
-  /// In en, this message translates to:
-  /// **'About {size} MB · fast, works on most phones'**
-  String offlineLiteBody(int size);
-
-  /// No description provided for @offlinePlusTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Lio Plus'**
-  String get offlinePlusTitle;
-
-  /// No description provided for @offlinePlusBody.
-  ///
-  /// In en, this message translates to:
-  /// **'About {size} MB · smarter, best on phones with 4 GB+ RAM'**
-  String offlinePlusBody(int size);
-
-  /// No description provided for @offlineRecommended.
-  ///
-  /// In en, this message translates to:
-  /// **'Recommended'**
-  String get offlineRecommended;
-
-  /// No description provided for @offlineInstalled.
-  ///
-  /// In en, this message translates to:
-  /// **'Installed'**
-  String get offlineInstalled;
-
-  /// No description provided for @offlineSwitchTo.
-  ///
-  /// In en, this message translates to:
-  /// **'Switch to {name}'**
-  String offlineSwitchTo(String name);
-
-  /// No description provided for @offlineOneAtATime.
-  ///
-  /// In en, this message translates to:
-  /// **'Only one version is kept on your phone; switching replaces the old one. Wi-Fi recommended.'**
-  String get offlineOneAtATime;
-
-  /// No description provided for @aiSetupTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Turn on your assistant'**
-  String get aiSetupTitle;
-
-  /// No description provided for @aiSetupBody.
-  ///
-  /// In en, this message translates to:
-  /// **'Download the free on-device assistant once and chat any time — even without internet. Your messages never leave your phone.'**
-  String get aiSetupBody;
-
-  /// No description provided for @aiSetupCta.
-  ///
-  /// In en, this message translates to:
-  /// **'Download Offline Lio'**
-  String get aiSetupCta;
-
   /// No description provided for @mascotTip.
   ///
   /// In en, this message translates to:
@@ -3679,24 +3541,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'All goals done today — amazing!'**
   String get allGoalsDone;
-
-  /// No description provided for @offlineAnswerLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Offline answer · on-device model'**
-  String get offlineAnswerLabel;
-
-  /// No description provided for @offlineModeChip.
-  ///
-  /// In en, this message translates to:
-  /// **'Offline mode'**
-  String get offlineModeChip;
-
-  /// No description provided for @localModelsInfo.
-  ///
-  /// In en, this message translates to:
-  /// **'Expense and shopping categories are recognised by small models that run on your device.'**
-  String get localModelsInfo;
 
   /// No description provided for @lioName.
   ///
@@ -4031,7 +3875,7 @@ abstract class AppLocalizations {
   /// No description provided for @brainHelp.
   ///
   /// In en, this message translates to:
-  /// **'I can tell you about today’s plan, your budget, meal ideas and your Life Score, and cheer you on. For free-form chats, download Offline Lio in Settings.'**
+  /// **'Pick a topic below — money, decisions, food, messages or a quick calculation — and I’ll walk you through it.'**
   String get brainHelp;
 
   /// No description provided for @brainFallback.
@@ -4039,18 +3883,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'I’m still learning that one. Try asking about your plan, money, food or how your day is going.'**
   String get brainFallback;
-
-  /// No description provided for @aiSmarterTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Make Lio smarter'**
-  String get aiSmarterTitle;
-
-  /// No description provided for @aiSmarterBody.
-  ///
-  /// In en, this message translates to:
-  /// **'Lio already answers questions about your day. Download Offline Lio once to chat about anything — even without internet.'**
-  String get aiSmarterBody;
 
   /// No description provided for @brainAnswerLabel.
   ///

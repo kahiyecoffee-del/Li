@@ -97,13 +97,8 @@ class _AiScreenState extends ConsumerState<AiScreen> {
   Widget build(BuildContext context) {
     final l = context.l10n;
     final chat = ref.watch(chatProvider);
-    final offlineReady = ref.watch(offlineModelStatusProvider).value?.ready ?? false;
-    // Lio's built-in brain always answers; cloud/model just make him smarter.
-    final smart = ref.watch(servicesProvider).aiEnabled || offlineReady;
-    // Re-evaluated on connectivity/settings changes.
+    // Re-evaluated on connectivity changes.
     ref.watch(onlineProvider);
-    ref.watch(settingsProvider.select((s) => s.preferOfflineAi));
-    final offlineNext = offlineReady && ref.read(chatProvider.notifier).shouldUseOffline();
     ref.listen(chatProvider.select((s) => s.value?.savedMemory), (_, m) {
       if (m != null) {
         showSnack(
@@ -132,7 +127,7 @@ class _AiScreenState extends ConsumerState<AiScreen> {
           children: [
             Expanded(
               child: s.conversation.messages.isEmpty
-                  ? _Empty(onPick: _send, smart: smart)
+                  ? _Empty(onPick: _send)
                   : ListView.builder(
                       controller: _scroll,
                       padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, Space.lg),
@@ -145,18 +140,6 @@ class _AiScreenState extends ConsumerState<AiScreen> {
             ),
             if (s.lastError != null) _ErrorBar(error: s.lastError!),
             const _CreditsLine(),
-            if (offlineNext)
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: Space.page),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Chip(
-                    avatar: const Icon(Icons.offline_bolt_outlined, size: 18),
-                    label: Text(context.l10n.offlineModeChip),
-                    visualDensity: VisualDensity.compact,
-                  ),
-                ),
-              ),
             _InputBar(controller: _input, enabled: !s.sending, onSend: _send),
           ],
         ),
@@ -166,12 +149,9 @@ class _AiScreenState extends ConsumerState<AiScreen> {
 }
 
 class _Empty extends ConsumerWidget {
-  const _Empty({required this.onPick, required this.smart});
+  const _Empty({required this.onPick});
 
   final ValueChanged<String> onPick;
-
-  /// Cloud assistant or an on-device model is available.
-  final bool smart;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -186,33 +166,6 @@ class _Empty extends ConsumerWidget {
         const SizedBox(height: Space.md),
         Text(l.aiEmptyTitle, style: context.text.headlineSmall, textAlign: TextAlign.center),
         const SizedBox(height: Space.xl),
-        if (!smart) ...[
-          FadeSlideIn(
-            delay: Motion.fast,
-            child: HeroBanner(
-              gradient: Gradients.forest,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(l.aiSmarterTitle, style: context.text.titleLarge?.copyWith(color: Colors.white)),
-                  const SizedBox(height: Space.xs),
-                  Text(
-                    l.aiSmarterBody,
-                    style: context.text.bodyMedium?.copyWith(color: Colors.white.withValues(alpha: 0.92)),
-                  ),
-                  const SizedBox(height: Space.lg),
-                  FilledButton.icon(
-                    style: FilledButton.styleFrom(backgroundColor: Colors.white, foregroundColor: Palette.accent),
-                    onPressed: () => context.push('/settings/offline-ai'),
-                    icon: const Icon(Icons.download_rounded),
-                    label: Text(l.aiSetupCta),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          const SizedBox(height: Space.xl),
-        ],
         Wrap(
           alignment: WrapAlignment.center,
           spacing: Space.sm,
@@ -323,7 +276,7 @@ class _Bubble extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: Space.xs),
             child: Text(
-              message.brain ? context.l10n.brainAnswerLabel : context.l10n.offlineAnswerLabel,
+              context.l10n.brainAnswerLabel,
               style: context.text.labelSmall?.copyWith(color: context.semantic.muted),
             ),
           ),

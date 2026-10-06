@@ -24,7 +24,6 @@ import '../../services/ai/ai_action_executor.dart';
 import '../../services/ai/ai_context_builder.dart';
 import '../../services/ai/ai_models.dart';
 import '../../services/ai/memory_manager.dart';
-import '../../services/ai/offline/offline_prompt.dart';
 import '../../services/analytics/analytics_service.dart';
 import '../../services/config/feature_flags.dart';
 import '../../services/config/remote_config_service.dart';
@@ -106,11 +105,7 @@ class ChatController extends AsyncNotifier<ChatState> {
     await ref.read(reposProvider).conversations.save(conv);
     unawaited(services.analytics.log(AnalyticsEvent.aiMessageSent, {'length_bucket': msg.length ~/ 50}));
 
-    if (shouldUseOffline()) {
-      await _replyLocally(conv, user, msg, locale);
-      return;
-    }
-    // No cloud assistant (or no internet) and no model: Lio's brain answers.
+    // No cloud assistant (or no internet): Lio's brain answers.
     if (!services.aiEnabled || !(ref.read(onlineProvider).value ?? true)) {
       await _replyBrain(conv, msg, locale);
       return;
@@ -161,12 +156,10 @@ class ChatController extends AsyncNotifier<ChatState> {
       await _persist(conv);
       state = AsyncData(_s.copyWith(sending: false, savedMemory: saved));
     } catch (e) {
-      // Network trouble: answer on device (model if installed, else brain).
+      // Network trouble: Lio's brain answers on the device.
       if (e is AppFailure &&
           (e.kind == FailureKind.network || e.kind == FailureKind.timeout || e.kind == FailureKind.unavailable)) {
-        services.offlineModel.current.ready
-            ? await _replyLocally(conv, user, msg, locale)
-            : await _replyBrain(conv, msg, locale);
+        await _replyBrain(conv, msg, locale);
         return;
       }
       final failed = ChatMessage(id: user.id, role: ChatRole.user, text: msg, at: now, failed: true);
@@ -177,36 +170,6 @@ class ChatController extends AsyncNotifier<ChatState> {
         unawaited(services.analytics.log(AnalyticsEvent.aiLimitReached));
         await ref.read(creditsProvider.notifier).refresh();
       }
-    }
-  }
-
-  /// Whether the next message is answered by the on-device model.
-  bool shouldUseOffline() {
-    final services = ref.read(servicesProvider);
-    if (!services.offlineModel.current.ready) return false;
-    final online = ref.read(onlineProvider).value ?? true;
-    return ref.read(settingsProvider).preferOfflineAi || !online || !services.aiEnabled;
-  }
-
-  Future<void> _replyLocally(AiConversation conv, ChatMessage user, String msg, String locale) async {
-    final services = ref.read(servicesProvider);
-    try {
-      final history = conv.messages
-          .where((m) => !m.failed && m.id != user.id)
-          .map((m) => AiTurn(m.role == ChatRole.user, m.text))
-          .toList();
-      final text = await services.offlineModel.reply(
-        system: OfflinePrompt.system(locale: locale, facts: _facts(_supported(locale)), now: DateTime.now()),
-        history: history,
-        message: msg,
-      );
-      final reply = ChatMessage(id: newId(), role: ChatRole.assistant, text: text, at: DateTime.now(), local: true);
-      await _persist(conv.copyWith(messages: [...conv.messages, reply]));
-      state = AsyncData(_s.copyWith(sending: false));
-      unawaited(services.analytics.log(AnalyticsEvent.aiMessageSent, {'offline': 1}));
-    } catch (_) {
-      // The model failed (e.g. not enough memory): Lio's brain still answers.
-      await _replyBrain(conv, msg, locale);
     }
   }
 

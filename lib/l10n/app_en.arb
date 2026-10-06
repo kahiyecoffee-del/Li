@@ -1123,71 +1123,6 @@
       }
     }
   },
-  "offlineAiTitle": "Offline Lio",
-  "offlineAiBody": "Download a small AI model so Lio can chat without internet. Answers stay on your device. It is less capable than the online assistant and cannot make changes in the app.",
-  "offlineAiSize": "Download size: about {size} MB. Wi-Fi recommended; works best on phones with 4 GB+ RAM.",
-  "@offlineAiSize": {
-    "placeholders": {
-      "size": {
-        "type": "int"
-      }
-    }
-  },
-  "offlineAiDownload": "Download model",
-  "offlineAiDownloading": "Downloading… {progress}%",
-  "@offlineAiDownloading": {
-    "placeholders": {
-      "progress": {
-        "type": "int"
-      }
-    }
-  },
-  "offlineAiReady": "Ready — works without internet",
-  "offlineAiError": "Download failed. Check your connection and try again.",
-  "offlineAiDelete": "Delete model",
-  "offlineAiPrefer": "Use offline assistant even when online",
-  "offlineAiPreferHelp": "Private and free, but less accurate. Otherwise it is used automatically when you are offline.",
-  "offlineAiUnavailable": "The offline assistant is not available yet.",
-  "offlineSingleInfo": "About {size} MB · the same model for everyone. Wi-Fi recommended.",
-  "@offlineSingleInfo": {
-    "placeholders": {
-      "size": {
-        "type": "int"
-      }
-    }
-  },
-  "offlineLiteTitle": "Lio Lite",
-  "offlineLiteBody": "About {size} MB · fast, works on most phones",
-  "@offlineLiteBody": {
-    "placeholders": {
-      "size": {
-        "type": "int"
-      }
-    }
-  },
-  "offlinePlusTitle": "Lio Plus",
-  "offlinePlusBody": "About {size} MB · smarter, best on phones with 4 GB+ RAM",
-  "@offlinePlusBody": {
-    "placeholders": {
-      "size": {
-        "type": "int"
-      }
-    }
-  },
-  "offlineRecommended": "Recommended",
-  "offlineInstalled": "Installed",
-  "offlineSwitchTo": "Switch to {name}",
-  "@offlineSwitchTo": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
-  "offlineOneAtATime": "Only one version is kept on your phone; switching replaces the old one. Wi-Fi recommended.",
-  "aiSetupTitle": "Turn on your assistant",
-  "aiSetupBody": "Download the free on-device assistant once and chat any time — even without internet. Your messages never leave your phone.",
-  "aiSetupCta": "Download Offline Lio",
   "mascotTip": "{count, plural, =0{Nothing urgent today — enjoy it.} =1{I have 1 idea for your day.} other{I have {count} ideas for your day.}}",
   "@mascotTip": {
     "placeholders": {
@@ -1198,9 +1133,6 @@
   },
   "mascotAsk": "Tap to ask Lio anything",
   "allGoalsDone": "All goals done today — amazing!",
-  "offlineAnswerLabel": "Offline answer · on-device model",
-  "offlineModeChip": "Offline mode",
-  "localModelsInfo": "Expense and shopping categories are recognised by small models that run on your device.",
   "lioName": "Lio, your companion",
   "lioAsk": "Ask Lio",
   "lioAnother": "Another one",
@@ -1332,10 +1264,8 @@
   "brainFeelLow": "I’m sorry today feels heavy. Try one tiny thing: a glass of water, a short walk or three slow breaths. Logging your mood can help too.",
   "brainSleep": "Keep a steady bedtime and put screens away 30 minutes before. You can log your sleep from Home.",
   "brainHabit": "Small habits win. Pick something that takes under two minutes and track it in Habits.",
-  "brainHelp": "I can tell you about today’s plan, your budget, meal ideas and your Life Score, and cheer you on. For free-form chats, download Offline Lio in Settings.",
+  "brainHelp": "Pick a topic below — money, decisions, food, messages or a quick calculation — and I’ll walk you through it.",
   "brainFallback": "I’m still learning that one. Try asking about your plan, money, food or how your day is going.",
-  "aiSmarterTitle": "Make Lio smarter",
-  "aiSmarterBody": "Lio already answers questions about your day. Download Offline Lio once to chat about anything — even without internet.",
   "brainAnswerLabel": "Lio · on your phone",
   "homeHello": "Hi {name} 👋",
   "@homeHello": {

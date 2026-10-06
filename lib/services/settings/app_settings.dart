@@ -20,7 +20,6 @@ class AppSettings {
     this.aiMemoryEnabled = true,
     this.aiScopes = const {AiDataScope.money, AiDataScope.tasks, AiDataScope.habits, AiDataScope.food},
     this.personalizedAds = true,
-    this.preferOfflineAi = false,
     this.showLio = true,
   });
 
@@ -36,9 +35,6 @@ class AppSettings {
   final Set<AiDataScope> aiScopes;
   final bool personalizedAds;
 
-  /// Use the downloaded on-device model even when online.
-  final bool preferOfflineAi;
-
   /// Lio, the floating companion that offers tips and inspiration.
   final bool showLio;
 
@@ -53,7 +49,6 @@ class AppSettings {
     bool? aiMemoryEnabled,
     Set<AiDataScope>? aiScopes,
     bool? personalizedAds,
-    bool? preferOfflineAi,
     bool? showLio,
   }) => AppSettings(
     themeMode: themeMode ?? this.themeMode,
@@ -65,7 +60,6 @@ class AppSettings {
     aiMemoryEnabled: aiMemoryEnabled ?? this.aiMemoryEnabled,
     aiScopes: aiScopes ?? this.aiScopes,
     personalizedAds: personalizedAds ?? this.personalizedAds,
-    preferOfflineAi: preferOfflineAi ?? this.preferOfflineAi,
     showLio: showLio ?? this.showLio,
   );
 }
@@ -94,7 +88,6 @@ class SettingsStore {
           ? const AppSettings().aiScopes
           : scopes.map((s) => byName(AiDataScope.values, s, AiDataScope.money)).toSet(),
       personalizedAds: _p.getBool('personalizedAds') ?? true,
-      preferOfflineAi: _p.getBool('preferOfflineAi') ?? false,
       showLio: _p.getBool('showLio') ?? true,
     );
   }
@@ -113,7 +106,6 @@ class SettingsStore {
     await _p.setBool('aiMemory', s.aiMemoryEnabled);
     await _p.setStringList('aiScopes', s.aiScopes.map((e) => e.name).toList());
     await _p.setBool('personalizedAds', s.personalizedAds);
-    await _p.setBool('preferOfflineAi', s.preferOfflineAi);
     await _p.setBool('showLio', s.showLio);
   }
 }

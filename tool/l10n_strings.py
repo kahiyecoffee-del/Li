@@ -643,35 +643,9 @@ s('weekdayShort', '{day, select, 1{Mon} 2{Tue} 3{Wed} 4{Thu} 5{Fri} 6{Sat} other
 
 
 # ---------------- Offline assistant (on-device model)
-s('offlineAiTitle', 'Offline Lio', 'Çevrimdışı Lio')
-s('offlineAiBody', 'Download a small AI model so Lio can chat without internet. Answers stay on your device. It is less capable than the online assistant and cannot make changes in the app.', 'Lio’nun internet olmadan sohbet edebilmesi için telefonuna küçük bir yapay zeka modeli indir. Cevaplar cihazında kalır. Çevrimiçi asistandan daha sınırlıdır ve uygulamada değişiklik yapamaz.')
-s('offlineAiSize', 'Download size: about {size} MB. Wi-Fi recommended; works best on phones with 4 GB+ RAM.', 'İndirme boyutu: yaklaşık {size} MB. Wi-Fi önerilir; 4 GB ve üzeri RAM olan telefonlarda en iyi çalışır.', size='int')
-s('offlineAiDownload', 'Download model', 'Modeli indir')
-s('offlineAiDownloading', 'Downloading… {progress}%', 'İndiriliyor… %{progress}', progress='int')
-s('offlineAiReady', 'Ready — works without internet', 'Hazır — internetsiz çalışır')
-s('offlineAiError', 'Download failed. Check your connection and try again.', 'İndirme başarısız oldu. Bağlantını kontrol edip tekrar dene.')
-s('offlineAiDelete', 'Delete model', 'Modeli sil')
-s('offlineAiPrefer', 'Use offline assistant even when online', 'İnternet varken de çevrimdışı asistanı kullan')
-s('offlineAiPreferHelp', 'Private and free, but less accurate. Otherwise it is used automatically when you are offline.', 'Gizli ve ücretsiz ama daha az isabetli. Kapalıysa yalnızca internet yokken otomatik kullanılır.')
-s('offlineAiUnavailable', 'The offline assistant is not available yet.', 'Çevrimdışı asistan henüz kullanılamıyor.')
-s('offlineSingleInfo', 'About {size} MB · the same model for everyone. Wi-Fi recommended.', 'Yaklaşık {size} MB · herkeste aynı model. Wi-Fi önerilir.', size='int')
-s('offlineLiteTitle', 'Lio Lite', 'Lio Lite')
-s('offlineLiteBody', 'About {size} MB · fast, works on most phones', 'Yaklaşık {size} MB · hızlı, çoğu telefonda çalışır', size='int')
-s('offlinePlusTitle', 'Lio Plus', 'Lio Plus')
-s('offlinePlusBody', 'About {size} MB · smarter, best on phones with 4 GB+ RAM', 'Yaklaşık {size} MB · daha akıllı, 4 GB+ RAM’li telefonlarda en iyisi', size='int')
-s('offlineRecommended', 'Recommended', 'Önerilen')
-s('offlineInstalled', 'Installed', 'Yüklü')
-s('offlineSwitchTo', 'Switch to {name}', '{name} sürümüne geç', name='String')
-s('offlineOneAtATime', 'Only one version is kept on your phone; switching replaces the old one. Wi-Fi recommended.', 'Telefonunda tek sürüm tutulur; geçiş yapınca eskisi silinir. Wi-Fi önerilir.')
-s('aiSetupTitle', 'Turn on your assistant', 'Asistanını aç')
-s('aiSetupBody', 'Download the free on-device assistant once and chat any time — even without internet. Your messages never leave your phone.', 'Ücretsiz cihaz içi asistanı bir kez indir, istediğin zaman sohbet et — internet olmadan bile. Mesajların telefonundan hiç çıkmaz.')
-s('aiSetupCta', 'Download Offline Lio', 'Çevrimdışı Lio’yu indir')
 s('mascotTip', '{count, plural, =0{Nothing urgent today — enjoy it.} =1{I have 1 idea for your day.} other{I have {count} ideas for your day.}}', '{count, plural, =0{Bugün acil bir şey yok — tadını çıkar.} other{Bugün senin için {count} önerim var.}}', count='int')
 s('mascotAsk', 'Tap to ask Lio anything', 'Lio’ya bir şey sormak için dokun')
 s('allGoalsDone', 'All goals done today — amazing!', 'Bugünün tüm hedefleri tamam — harikasın!')
-s('offlineAnswerLabel', 'Offline answer · on-device model', 'Çevrimdışı cevap · cihazdaki model')
-s('offlineModeChip', 'Offline mode', 'Çevrimdışı mod')
-s('localModelsInfo', 'Expense and shopping categories are recognised by small models that run on your device.', 'Harcama ve alışveriş kategorileri cihazında çalışan küçük modellerle tanınır.')
 
 
 
@@ -734,10 +708,8 @@ s('brainScoreNone', 'No score yet today — log your mood or finish a goal and i
 s('brainFeelLow', 'I’m sorry today feels heavy. Try one tiny thing: a glass of water, a short walk or three slow breaths. Logging your mood can help too.', 'Bugün ağır geldiği için üzgünüm. Küçük bir şey dene: bir bardak su, kısa bir yürüyüş ya da üç yavaş nefes. Ruh halini kaydetmek de iyi gelebilir.')
 s('brainSleep', 'Keep a steady bedtime and put screens away 30 minutes before. You can log your sleep from Home.', 'Her gün aynı saatte yatmaya çalış, yatmadan 30 dakika önce ekranı bırak. Uykunu Ana sayfadan kaydedebilirsin.')
 s('brainHabit', 'Small habits win. Pick something that takes under two minutes and track it in Habits.', 'Küçük alışkanlıklar kazanır. İki dakikadan kısa süren bir şey seç ve Alışkanlıklar’da takip et.')
-s('brainHelp', 'I can tell you about today’s plan, your budget, meal ideas and your Life Score, and cheer you on. For free-form chats, download Offline Lio in Settings.', 'Bugünkü planını, bütçeni, yemek fikirlerini ve Yaşam Skorunu anlatabilir, seni motive edebilirim. Serbest sohbet için Ayarlar’dan Çevrimdışı Lio’yu indir.')
+s('brainHelp', 'Pick a topic below — money, decisions, food, messages or a quick calculation — and I’ll walk you through it.', 'Aşağıdan bir konu seç — para, karar, yemek, mesaj ya da hızlı bir hesap — seni adım adım götüreyim.')
 s('brainFallback', 'I’m still learning that one. Try asking about your plan, money, food or how your day is going.', 'Bunu henüz öğreniyorum. Bana planını, paranı, yemeği ya da günün nasıl geçtiğini sor.')
-s('aiSmarterTitle', 'Make Lio smarter', 'Lio’yu daha akıllı yap')
-s('aiSmarterBody', 'Lio already answers questions about your day. Download Offline Lio once to chat about anything — even without internet.', 'Lio günün hakkındaki soruları zaten cevaplıyor. Her konuda sohbet etmek için Çevrimdışı Lio’yu bir kez indir — internet olmadan bile.')
 s('brainAnswerLabel', 'Lio · on your phone', 'Lio · telefonunda')
 
 # ---------------- Dayly: problem solving

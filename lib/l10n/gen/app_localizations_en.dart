@@ -1924,91 +1924,6 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get offlineAiTitle => 'Offline Lio';
-
-  @override
-  String get offlineAiBody =>
-      'Download a small AI model so Lio can chat without internet. Answers stay on your device. It is less capable than the online assistant and cannot make changes in the app.';
-
-  @override
-  String offlineAiSize(int size) {
-    return 'Download size: about $size MB. Wi-Fi recommended; works best on phones with 4 GB+ RAM.';
-  }
-
-  @override
-  String get offlineAiDownload => 'Download model';
-
-  @override
-  String offlineAiDownloading(int progress) {
-    return 'Downloading… $progress%';
-  }
-
-  @override
-  String get offlineAiReady => 'Ready — works without internet';
-
-  @override
-  String get offlineAiError => 'Download failed. Check your connection and try again.';
-
-  @override
-  String get offlineAiDelete => 'Delete model';
-
-  @override
-  String get offlineAiPrefer => 'Use offline assistant even when online';
-
-  @override
-  String get offlineAiPreferHelp =>
-      'Private and free, but less accurate. Otherwise it is used automatically when you are offline.';
-
-  @override
-  String get offlineAiUnavailable => 'The offline assistant is not available yet.';
-
-  @override
-  String offlineSingleInfo(int size) {
-    return 'About $size MB · the same model for everyone. Wi-Fi recommended.';
-  }
-
-  @override
-  String get offlineLiteTitle => 'Lio Lite';
-
-  @override
-  String offlineLiteBody(int size) {
-    return 'About $size MB · fast, works on most phones';
-  }
-
-  @override
-  String get offlinePlusTitle => 'Lio Plus';
-
-  @override
-  String offlinePlusBody(int size) {
-    return 'About $size MB · smarter, best on phones with 4 GB+ RAM';
-  }
-
-  @override
-  String get offlineRecommended => 'Recommended';
-
-  @override
-  String get offlineInstalled => 'Installed';
-
-  @override
-  String offlineSwitchTo(String name) {
-    return 'Switch to $name';
-  }
-
-  @override
-  String get offlineOneAtATime =>
-      'Only one version is kept on your phone; switching replaces the old one. Wi-Fi recommended.';
-
-  @override
-  String get aiSetupTitle => 'Turn on your assistant';
-
-  @override
-  String get aiSetupBody =>
-      'Download the free on-device assistant once and chat any time — even without internet. Your messages never leave your phone.';
-
-  @override
-  String get aiSetupCta => 'Download Offline Lio';
-
-  @override
   String mascotTip(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
@@ -2025,16 +1940,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get allGoalsDone => 'All goals done today — amazing!';
-
-  @override
-  String get offlineAnswerLabel => 'Offline answer · on-device model';
-
-  @override
-  String get offlineModeChip => 'Offline mode';
-
-  @override
-  String get localModelsInfo =>
-      'Expense and shopping categories are recognised by small models that run on your device.';
 
   @override
   String get lioName => 'Lio, your companion';
@@ -2239,18 +2144,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get brainHelp =>
-      'I can tell you about today’s plan, your budget, meal ideas and your Life Score, and cheer you on. For free-form chats, download Offline Lio in Settings.';
+      'Pick a topic below — money, decisions, food, messages or a quick calculation — and I’ll walk you through it.';
 
   @override
   String get brainFallback =>
       'I’m still learning that one. Try asking about your plan, money, food or how your day is going.';
-
-  @override
-  String get aiSmarterTitle => 'Make Lio smarter';
-
-  @override
-  String get aiSmarterBody =>
-      'Lio already answers questions about your day. Download Offline Lio once to chat about anything — even without internet.';
 
   @override
   String get brainAnswerLabel => 'Lio · on your phone';

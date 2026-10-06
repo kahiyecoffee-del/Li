@@ -99,34 +99,6 @@
       },
       "valueType": "JSON",
       "description": "Variant per experiment key, set by Firebase A/B Testing: onboarding, home_layout, rewarded_placement, paywall, notifications."
-    },
-    "offline_model_url": {
-      "defaultValue": {
-        "value": "https://github.com/kahiyecoffee-del/Li/releases/download/lio-model/lio-qwen2.5-1.5b-base_q4_block32_ekv1280.litertlm"
-      },
-      "valueType": "STRING",
-      "description": "Lio's on-device model (.litertlm or .task), same for everyone. Default: Qwen2.5-1.5B-Instruct converted to LiteRT-LM, served from the repo's lio-model release. Empty hides the offline model."
-    },
-    "offline_model_size_mb": {
-      "defaultValue": {
-        "value": "880"
-      },
-      "valueType": "NUMBER",
-      "description": "Lio Lite download size shown to users."
-    },
-    "offline_model_plus_url": {
-      "defaultValue": {
-        "value": ""
-      },
-      "valueType": "STRING",
-      "description": "Optional second (larger) on-device model, e.g. Qwen2.5 1.5B; empty = single fixed model."
-    },
-    "offline_model_plus_size_mb": {
-      "defaultValue": {
-        "value": "0"
-      },
-      "valueType": "NUMBER",
-      "description": "Size of the optional second model."
     }
   }
 }

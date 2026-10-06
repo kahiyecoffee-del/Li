@@ -137,21 +137,6 @@ void main() {
     await tearDownApp(tester);
   });
 
-  testWidgets('Offline: with the on-device model installed the assistant answers locally', (tester) async {
-    usePhoneViewport(tester);
-    final app = (await tester.runAsync(() => TestApp.onboarded(online: false, offlineModelReady: true)))!;
-    await tester.pumpWidget(app.widget());
-    await pumpUntil(tester, find.text('What should we solve today?'));
-    await tester.tap(find.text('AI').last);
-    await pumpUntil(tester, find.text('Offline mode'));
-    await tester.enterText(find.byType(TextField).last, 'Any tip for today?');
-    await tester.tap(find.byTooltip('Send'));
-    await pumpUntil(tester, find.text('Offline tip: drink water.'));
-    expect(find.text('Offline answer · on-device model'), findsOneWidget);
-    expect(app.ai.requests, isEmpty, reason: 'no cloud call, no credits used');
-    await tearDownApp(tester);
-  });
-
   testWidgets('Lio: tap for a tip, then jump to the assistant', (tester) async {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded(prefs: {'showLio': true})))!;
@@ -166,21 +151,6 @@ void main() {
     expect(find.text('Another one'), findsWidgets);
     await tester.tap(find.text('Ask Lio').last);
     await pumpUntil(tester, find.text('How can I help today?'));
-    await tearDownApp(tester);
-  });
-
-  testWidgets('Offline Lio: one fixed model for everyone', (tester) async {
-    usePhoneViewport(tester);
-    final app = (await tester.runAsync(() => TestApp.onboarded()))!;
-    await tester.pumpWidget(app.widget());
-    await pumpUntil(tester, find.text('What should we solve today?'));
-    await tester.tap(find.text('Profile').last);
-    await pumpUntil(tester, find.text('Lio companion'));
-    await tester.scrollUntilVisible(find.text('Offline Lio'), 200, scrollable: find.byType(Scrollable).last);
-    await tester.tap(find.text('Offline Lio'));
-    await pumpUntil(tester, find.textContaining('the same model for everyone'));
-    expect(find.text('Lio Plus'), findsNothing);
-    expect(find.text('Download model · Offline Lio'), findsOneWidget);
     await tearDownApp(tester);
   });
 

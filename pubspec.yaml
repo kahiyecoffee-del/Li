@@ -66,10 +66,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   url_launcher: ^6.3.3
-  flutter_edge_ai: ^2.0.0
-  flutter_edge_ai_mediapipe: ^1.0.9
   sembast_web: ^2.4.6
-  flutter_edge_ai_litertlm: ^1.8.7
   speech_to_text: ^7.5.0
 dev_dependencies:
   flutter_test:
