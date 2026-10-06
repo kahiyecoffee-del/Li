@@ -14,6 +14,7 @@ class TodayWidgetData {
     required this.summary,
     required this.staleHint,
     required this.route,
+    this.mood = 'happy',
   });
 
   /// `yyyy-MM-dd`; the widget hides [lines] once this is not today.
@@ -27,6 +28,17 @@ class TodayWidgetData {
 
   /// Where a tap opens the app.
   final String route;
+
+  /// Lio's pose in the widget: happy, curious, excited, thoughtful or sleepy.
+  final String mood;
+}
+
+/// How Lio looks in the widget, from the state of the day.
+String widgetMood({required int left, required bool doneToday, required DateTime now}) {
+  if (now.hour >= 22 || now.hour < 6) return 'sleepy';
+  if (left == 0) return doneToday ? 'excited' : 'curious';
+  if (left >= 5) return 'thoughtful';
+  return 'happy';
 }
 
 /// Today's unfinished tasks (and overdue ones), timed tasks first by time,
@@ -86,6 +98,7 @@ class DeviceHomeWidget implements HomeWidgetService {
       await HomeWidget.saveWidgetData<String>('summary', d.summary);
       await HomeWidget.saveWidgetData<String>('staleHint', d.staleHint);
       await HomeWidget.saveWidgetData<String>('route', d.route);
+      await HomeWidget.saveWidgetData<String>('mood', d.mood);
       await HomeWidget.updateWidget(iOSName: iOSKind, qualifiedAndroidName: androidProvider);
     } catch (_) {
       // No widget support (or none added): nothing to update.

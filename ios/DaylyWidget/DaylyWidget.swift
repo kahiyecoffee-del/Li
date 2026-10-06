@@ -17,6 +17,22 @@ struct DaylyEntry: TimelineEntry {
   let lines: [String]
   let summary: String
   let route: String
+  /// Lio's pose ("happy", "curious", …); alternates now and then so Lio moves.
+  var pose: String = "happy"
+  /// A small tilt that changes with the pose, for a lively feel.
+  var tilt: Double = 0
+}
+
+/// Lio's second pose for each mood: the widget swaps between the two every
+/// 20 minutes with an animated transition (iOS 17+). Asleep at night.
+private func partnerPose(_ mood: String) -> String {
+  switch mood {
+  case "happy": return "heart"
+  case "curious": return "thoughtful"
+  case "excited": return "happy"
+  case "thoughtful": return "curious"
+  default: return mood
+  }
 }
 
 private func dayKey(_ d: Date) -> String {
@@ -34,7 +50,8 @@ struct DaylyProvider: TimelineProvider {
       title: turkish ? "Bugün" : "Today",
       lines: turkish ? ["09:00  Ekip toplantısı", "•  Spor", "•  Annemi ara"] : ["09:00  Team meeting", "•  Workout", "•  Call mom"],
       summary: turkish ? "Bugün 3 iş kaldı" : "3 things left today",
-      route: "/plan"
+      route: "/plan",
+      pose: "happy"
     )
   }
 
@@ -45,9 +62,30 @@ struct DaylyProvider: TimelineProvider {
   }
 
   func getTimeline(in context: Context, completion: @escaping (Timeline<DaylyEntry>) -> Void) {
+    let base = load()
+    let now = Date()
     // Redraw after midnight so yesterday's plan does not linger.
-    let tomorrow = Calendar.current.startOfDay(for: Date().addingTimeInterval(24 * 3600))
-    completion(Timeline(entries: [load()], policy: .after(tomorrow.addingTimeInterval(60))))
+    let midnight = Calendar.current.startOfDay(for: now.addingTimeInterval(24 * 3600)).addingTimeInterval(60)
+    let mood = base.pose
+    var entries: [DaylyEntry] = []
+    let tilts: [Double] = [0, -6, 4, -3, 6, 0, -5, 3, 0]
+    // Every 20 minutes for 3 hours Lio switches pose and tilts a little.
+    for i in 0..<9 {
+      let at = now.addingTimeInterval(Double(i) * 20 * 60)
+      if at >= midnight { break }
+      let e = DaylyEntry(
+        date: at,
+        title: base.title,
+        lines: base.lines,
+        summary: base.summary,
+        route: base.route,
+        pose: i % 2 == 0 ? mood : partnerPose(mood),
+        tilt: mood == "sleepy" ? 0 : tilts[i]
+      )
+      entries.append(e)
+    }
+    let next = min(now.addingTimeInterval(3 * 3600), midnight)
+    completion(Timeline(entries: entries, policy: .after(next)))
   }
 
   func load() -> DaylyEntry {
@@ -59,7 +97,8 @@ struct DaylyProvider: TimelineProvider {
         title: turkish ? "Bugün" : "Today",
         lines: [],
         summary: d?.string(forKey: "staleHint") ?? (turkish ? "Bugünün planı için Dayly'yi aç" : "Open Dayly to see today's plan"),
-        route: "/plan"
+        route: "/plan",
+        pose: "curious"
       )
     }
     let lines = (d?.string(forKey: "lines") ?? "").split(separator: "\n").map(String.init)
@@ -68,7 +107,8 @@ struct DaylyProvider: TimelineProvider {
       title: title,
       lines: lines,
       summary: d?.string(forKey: "summary") ?? "",
-      route: d?.string(forKey: "route") ?? "/plan"
+      route: d?.string(forKey: "route") ?? "/plan",
+      pose: d?.string(forKey: "mood") ?? "happy"
     )
   }
 }
@@ -104,17 +144,56 @@ struct DaylyWidgetView: View {
       }
       .frame(maxWidth: .infinity, alignment: .leading)
       .accessoryBackground()
-    default:
-      VStack(alignment: .leading, spacing: 5) {
-        Text(entry.title).font(.headline).foregroundColor(accent).lineLimit(1)
-        ForEach(Array(entry.lines.prefix(family == .systemSmall ? 3 : 4).enumerated()), id: \.offset) { _, line in
-          Text(line).font(.subheadline).foregroundColor(ink).lineLimit(1)
-        }
-        Spacer(minLength: 0)
-        Text(entry.summary).font(.caption).foregroundColor(muted).lineLimit(2)
+    case .systemMedium:
+      HStack(alignment: .bottom, spacing: 8) {
+        textColumn(maxLines: 4)
+        lio(size: 74)
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
       .widgetBackground(paper)
+    default:
+      VStack(alignment: .leading, spacing: 4) {
+        HStack(alignment: .top) {
+          Text(entry.title).font(.headline).foregroundColor(accent).lineLimit(1)
+          Spacer(minLength: 2)
+          lio(size: 36)
+        }
+        ForEach(Array(entry.lines.prefix(2).enumerated()), id: \.offset) { _, line in
+          Text(line).font(.footnote).foregroundColor(ink).lineLimit(1)
+        }
+        Spacer(minLength: 0)
+        Text(entry.summary).font(.caption2).foregroundColor(muted).lineLimit(2)
+      }
+      .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+      .widgetBackground(paper)
+    }
+  }
+
+  private func textColumn(maxLines: Int) -> some View {
+    VStack(alignment: .leading, spacing: 5) {
+      Text(entry.title).font(.headline).foregroundColor(accent).lineLimit(1)
+      ForEach(Array(entry.lines.prefix(maxLines).enumerated()), id: \.offset) { _, line in
+        Text(line).font(.subheadline).foregroundColor(ink).lineLimit(1)
+      }
+      Spacer(minLength: 0)
+      Text(entry.summary).font(.caption).foregroundColor(muted).lineLimit(2)
+    }
+    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+  }
+
+  /// Lio, swapping pose between timeline entries with a little hop.
+  @ViewBuilder private func lio(size: CGFloat) -> some View {
+    let image = Image("lio_\(entry.pose)")
+      .resizable()
+      .scaledToFit()
+      .frame(height: size)
+      .rotationEffect(.degrees(entry.tilt))
+      .id(entry.pose)
+      .accessibilityHidden(true)
+    if #available(iOSApplicationExtension 17.0, *) {
+      image.transition(.push(from: .bottom))
+    } else {
+      image
     }
   }
 }

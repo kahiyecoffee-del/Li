@@ -260,6 +260,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
                   : (doneToday ? l.widgetAllDone : l.widgetEmpty),
               staleHint: l.widgetStale,
               route: program.isEmpty && !doneToday ? '/ai?topic=plan' : Routes.plan,
+              mood: widgetMood(left: program.length, doneToday: doneToday, now: now),
             ),
           );
     });

@@ -35,4 +35,12 @@ void main() {
     expect(DeviceHomeWidget.routeOf(Uri.parse('dayly://open?homeWidget')), '/plan');
     expect(DeviceHomeWidget.routeOf(Uri.parse('dayly://open?homeWidget&r=https://evil')), '/plan');
   });
+
+  test('Lio\'s pose follows the day', () {
+    expect(widgetMood(left: 2, doneToday: false, now: DateTime(2026, 6, 10, 9)), 'happy');
+    expect(widgetMood(left: 0, doneToday: true, now: DateTime(2026, 6, 10, 18)), 'excited');
+    expect(widgetMood(left: 0, doneToday: false, now: DateTime(2026, 6, 10, 9)), 'curious');
+    expect(widgetMood(left: 6, doneToday: false, now: DateTime(2026, 6, 10, 9)), 'thoughtful');
+    expect(widgetMood(left: 2, doneToday: false, now: DateTime(2026, 6, 10, 23)), 'sleepy');
+  });
 }

@@ -65,5 +65,12 @@ unless widget
   phases.insert(thin, embed)
 end
 
+# Lio's poses for the widget (asset catalog in the extension's resources).
+group = project.main_group.find_subpath(name)
+unless group.files.any? { |f| f.path == 'Assets.xcassets' }
+  assets = group.new_file('Assets.xcassets')
+  widget.resources_build_phase.add_file_reference(assets)
+end
+
 project.save
 puts "ok: #{project.targets.map(&:name).join(', ')}"
