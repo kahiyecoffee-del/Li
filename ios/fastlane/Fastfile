@@ -1,0 +1,63 @@
+# TestFlight upload from GitHub Actions (no Mac needed on the user's side).
+# Signing: fastlane match keeps the App Store certificate and profiles,
+# encrypted with MATCH_PASSWORD, in a private git repo. Apple access is an
+# App Store Connect API key. All values come from GitHub Secrets.
+default_platform(:ios)
+
+APP_ID = "com.dayly.app"
+WIDGET_ID = "com.dayly.app.DaylyWidget"
+
+platform :ios do
+  lane :beta do
+    setup_ci
+
+    api_key = app_store_connect_api_key(
+      key_id: ENV.fetch("ASC_KEY_ID"),
+      issuer_id: ENV.fetch("ASC_ISSUER_ID"),
+      key_content: ENV.fetch("ASC_KEY_P8"),
+      in_house: false
+    )
+
+    match(
+      type: "appstore",
+      app_identifier: [APP_ID, WIDGET_ID],
+      team_id: ENV.fetch("APPLE_TEAM_ID"),
+      git_url: ENV.fetch("MATCH_GIT_URL"),
+      git_basic_authorization: Base64.strict_encode64("x-access-token:#{ENV.fetch('MATCH_GIT_TOKEN')}"),
+      api_key: api_key,
+      readonly: ENV["MATCH_READONLY"] == "true"
+    )
+
+    { "Runner" => APP_ID, "DaylyWidget" => WIDGET_ID }.each do |target, id|
+      update_code_signing_settings(
+        use_automatic_signing: false,
+        path: "Runner.xcodeproj",
+        targets: [target],
+        team_id: ENV.fetch("APPLE_TEAM_ID"),
+        bundle_identifier: id,
+        code_sign_identity: "Apple Distribution",
+        profile_name: ENV.fetch("sigh_#{id}_appstore_profile-name")
+      )
+    end
+
+    build_app(
+      workspace: "Runner.xcworkspace",
+      scheme: "Runner",
+      configuration: "Release",
+      export_method: "app-store",
+      output_directory: "../build/ipa",
+      export_options: {
+        provisioningProfiles: {
+          APP_ID => ENV.fetch("sigh_#{APP_ID}_appstore_profile-name"),
+          WIDGET_ID => ENV.fetch("sigh_#{WIDGET_ID}_appstore_profile-name")
+        }
+      }
+    )
+
+    upload_to_testflight(
+      api_key: api_key,
+      skip_waiting_for_build_processing: true,
+      changelog: ENV["CHANGELOG"]
+    )
+  end
+end
