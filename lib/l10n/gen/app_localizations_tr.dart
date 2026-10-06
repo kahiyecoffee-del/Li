@@ -1937,6 +1937,14 @@ class AppLocalizationsTr extends AppLocalizations {
   String get offlineAiUnavailable => 'Çevrimdışı asistan henüz kullanılamıyor.';
 
   @override
+  String offlineSingleInfo(int size) {
+    return 'Lio, Google’ın Gemma 3 1B modelini kullanır · yaklaşık $size MB · herkeste aynı model. Wi-Fi önerilir; 4 GB+ RAM’li telefonlarda en iyi çalışır.';
+  }
+
+  @override
+  String get gemmaNotice => 'Gemma, Gemma Kullanım Koşulları’na tabi olarak sunulur.';
+
+  @override
   String get offlineLiteTitle => 'Lio Lite';
 
   @override

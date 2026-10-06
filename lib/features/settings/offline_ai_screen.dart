@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../app/providers.dart';
 import '../../core/l10n/labels.dart';
@@ -54,7 +55,7 @@ class _OfflineAiScreenState extends ConsumerState<OfflineAiScreen> {
     final url = selected.url;
     final locked = services.flags.isPremiumOnly(PremiumFeature.offlineAi) && !ref.watch(isPremiumProvider);
     final settings = ref.watch(settingsProvider);
-    final name = selected.plus ? l.offlinePlusTitle : l.offlineLiteTitle;
+    final name = plus == null ? l.offlineAiTitle : (selected.plus ? l.offlinePlusTitle : l.offlineLiteTitle);
 
     Widget action() {
       if (url.isEmpty) return Text(l.offlineAiUnavailable);
@@ -127,18 +128,34 @@ class _OfflineAiScreenState extends ConsumerState<OfflineAiScreen> {
           Text(l.offlineAiBody, style: context.text.bodyLarge),
           const SizedBox(height: Space.sm),
           const SizedBox(height: Space.md),
-          for (final v in [lite, ?plus])
-            Padding(
-              padding: const EdgeInsets.only(bottom: Space.sm),
-              child: _VariantTile(
-                title: v.plus ? l.offlinePlusTitle : l.offlineLiteTitle,
-                body: v.plus ? l.offlinePlusBody(v.sizeMb) : l.offlineLiteBody(v.sizeMb),
-                badge: installed == v.id ? l.offlineInstalled : (v.plus ? null : l.offlineRecommended),
-                selected: selected == v,
-                onTap: status.state == OfflineModelState.downloading ? null : () => setState(() => _plus = v.plus),
+          if (plus == null) ...[
+            Text(l.offlineSingleInfo(lite.sizeMb), style: context.text.bodyMedium),
+            const SizedBox(height: Space.xs),
+            InkWell(
+              onTap: () =>
+                  launchUrl(Uri.parse('https://ai.google.dev/gemma/terms'), mode: LaunchMode.externalApplication),
+              child: Text(
+                l.gemmaNotice,
+                style: context.text.bodySmall?.copyWith(
+                  color: context.semantic.muted,
+                  decoration: TextDecoration.underline,
+                ),
               ),
             ),
-          Text(l.offlineOneAtATime, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
+          ] else
+            for (final v in [lite, plus])
+              Padding(
+                padding: const EdgeInsets.only(bottom: Space.sm),
+                child: _VariantTile(
+                  title: v.plus ? l.offlinePlusTitle : l.offlineLiteTitle,
+                  body: v.plus ? l.offlinePlusBody(v.sizeMb) : l.offlineLiteBody(v.sizeMb),
+                  badge: installed == v.id ? l.offlineInstalled : (v.plus ? null : l.offlineRecommended),
+                  selected: selected == v,
+                  onTap: status.state == OfflineModelState.downloading ? null : () => setState(() => _plus = v.plus),
+                ),
+              ),
+          if (plus != null)
+            Text(l.offlineOneAtATime, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
           const SizedBox(height: Space.lg),
           AppCard(child: action()),
           if (status.ready) ...[

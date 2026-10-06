@@ -46,12 +46,15 @@ const Map<String, Object> remoteDefaults = {
   RcKeys.experiments: '{}',
   // On-device assistant model (MediaPipe .task). Default: Qwen2.5 1.5B
   // Instruct (Apache-2.0, no login needed). Empty hides the feature.
-  // Lio Lite (default): Qwen2.5 0.5B Instruct, Apache-2.0, no sign-in needed.
-  RcKeys.offlineModelUrl: 'https://huggingface.co/litert-community/Qwen2.5-0.5B-Instruct/resolve/main/Qwen2.5-0.5B-Instruct_multi-prefill-seq_q8_ekv1280.task',
-  RcKeys.offlineModelSizeMb: 520,
-  // Lio Plus (optional): Qwen2.5 1.5B Instruct, smarter but ~3x larger.
-  RcKeys.offlineModelPlusUrl: 'https://huggingface.co/litert-community/Qwen2.5-1.5B-Instruct/resolve/main/Qwen2.5-1.5B-Instruct_multi-prefill-seq_q8_ekv1280.task',
-  RcKeys.offlineModelPlusSizeMb: 1600,
+  // Lio's on-device model, the same for everyone: Gemma 3 1B IT (int4,
+  // ~720 MB), mirrored to a public GitHub release (see
+  // .github/workflows/mirror-lio-model.yml) so no account is needed.
+  RcKeys.offlineModelUrl:
+      'https://github.com/kahiyecoffee-del/Li/releases/download/lio-model-v1/gemma3-1b-it-q4-block32-ekv1280.task',
+  RcKeys.offlineModelSizeMb: 720,
+  // Optional second variant; empty = single fixed model.
+  RcKeys.offlineModelPlusUrl: '',
+  RcKeys.offlineModelPlusSizeMb: 0,
 };
 
 /// Read-only view of remote values.

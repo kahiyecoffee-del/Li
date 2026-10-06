@@ -3572,6 +3572,18 @@ abstract class AppLocalizations {
   /// **'The offline assistant is not available yet.'**
   String get offlineAiUnavailable;
 
+  /// No description provided for @offlineSingleInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio uses Gemma 3 1B by Google · about {size} MB · the same model for everyone. Wi-Fi recommended; works best on phones with 4 GB+ RAM.'**
+  String offlineSingleInfo(int size);
+
+  /// No description provided for @gemmaNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Gemma is provided under and subject to the Gemma Terms of Use.'**
+  String get gemmaNotice;
+
   /// No description provided for @offlineLiteTitle.
   ///
   /// In en, this message translates to:

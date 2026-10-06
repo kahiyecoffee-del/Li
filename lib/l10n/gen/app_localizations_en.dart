@@ -1953,6 +1953,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get offlineAiUnavailable => 'The offline assistant is not available yet.';
 
   @override
+  String offlineSingleInfo(int size) {
+    return 'Lio uses Gemma 3 1B by Google · about $size MB · the same model for everyone. Wi-Fi recommended; works best on phones with 4 GB+ RAM.';
+  }
+
+  @override
+  String get gemmaNotice => 'Gemma is provided under and subject to the Gemma Terms of Use.';
+
+  @override
   String get offlineLiteTitle => 'Lio Lite';
 
   @override
