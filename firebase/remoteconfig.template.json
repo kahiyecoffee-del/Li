@@ -1,0 +1,19 @@
+{
+  "parameters": {
+    "daily_free_ai_limit": { "defaultValue": { "value": "5" }, "valueType": "NUMBER", "description": "Free AI credits per day (server-enforced)." },
+    "rewarded_ai_limit": { "defaultValue": { "value": "3" }, "valueType": "NUMBER", "description": "Rewarded ads redeemable per day." },
+    "rewarded_credits_per_ad": { "defaultValue": { "value": "2" }, "valueType": "NUMBER", "description": "AI credits granted per rewarded ad." },
+    "premium_daily_fair_use": { "defaultValue": { "value": "200" }, "valueType": "NUMBER", "description": "Premium fair-use cap per day (server)." },
+    "ai_requests_per_minute": { "defaultValue": { "value": "8" }, "valueType": "NUMBER", "description": "Per-user rate limit (server)." },
+    "interstitial_frequency": { "defaultValue": { "value": "0" }, "valueType": "NUMBER", "description": "Minimum minutes between interstitials; 0 disables them." },
+    "interstitial_max_per_day": { "defaultValue": { "value": "2" }, "valueType": "NUMBER" },
+    "banner_enabled": { "defaultValue": { "value": "false" }, "valueType": "BOOLEAN", "description": "Banners on browsing screens (Life hub, reports)." },
+    "premium_price": { "defaultValue": { "value": "default" }, "valueType": "STRING", "description": "Paywall price-point variant label (prices come from Google Play)." },
+    "notification_frequency": { "defaultValue": { "value": "normal" }, "valueType": "STRING" },
+    "notification_daily_cap": { "defaultValue": { "value": "3" }, "valueType": "NUMBER", "description": "Max nudges per day." },
+    "free_memory_limit": { "defaultValue": { "value": "10" }, "valueType": "NUMBER" },
+    "feature_flags": { "defaultValue": { "value": "{\"news\":true,\"receipt_ocr\":true,\"weekly_report\":true,\"monthly_report\":true,\"pantry\":true}" }, "valueType": "JSON" },
+    "premium_features": { "defaultValue": { "value": "[\"unlimited_ai\",\"advanced_score\",\"advanced_analytics\",\"no_ads\",\"advanced_planning\",\"advanced_finance\",\"unlimited_meals\",\"ai_memory_unlimited\",\"monthly_report\"]" }, "valueType": "JSON" },
+    "experiments": { "defaultValue": { "value": "{}" }, "valueType": "JSON", "description": "Variant per experiment key, set by Firebase A/B Testing: onboarding, home_layout, rewarded_placement, paywall, notifications." }
+  }
+}

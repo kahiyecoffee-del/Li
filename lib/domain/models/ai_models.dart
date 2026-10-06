@@ -1,0 +1,131 @@
+import '../../core/utils/json.dart';
+import 'entity.dart';
+import 'enums.dart';
+
+/// Something the assistant remembers about the user, always user-visible and
+/// deletable from Settings → AI memory.
+class AiMemory extends Entity {
+  const AiMemory({
+    required super.id,
+    required super.updatedAt,
+    super.deleted,
+    required this.category,
+    required this.content,
+    required this.createdAt,
+  });
+
+  factory AiMemory.fromJson(Map<String, dynamic> j) => AiMemory(
+    id: Meta.idOf(j),
+    updatedAt: Meta.updated(j),
+    deleted: Meta.isDeleted(j),
+    category: J.enumByName(MemoryCategory.values, j['category'], MemoryCategory.preferences),
+    content: J.str(j, 'content'),
+    createdAt: J.date(j, 'createdAt') ?? Meta.updated(j),
+  );
+
+  static const codec = EntityCodec<AiMemory>(collection: 'ai_memories', fromJson: AiMemory.fromJson);
+
+  final MemoryCategory category;
+  final String content;
+  final DateTime createdAt;
+
+  @override
+  Map<String, dynamic> toJson() => {
+    'category': category.name,
+    'content': content,
+    'createdAt': createdAt.millisecondsSinceEpoch,
+  };
+}
+
+enum ChatRole { user, assistant }
+
+class ChatMessage {
+  const ChatMessage({
+    required this.id,
+    required this.role,
+    required this.text,
+    required this.at,
+    this.actions = const [],
+    this.failed = false,
+  });
+
+  factory ChatMessage.fromJson(Map<String, dynamic> j) => ChatMessage(
+    id: J.str(j, 'id'),
+    role: J.enumByName(ChatRole.values, j['role'], ChatRole.user),
+    text: J.str(j, 'text'),
+    at: J.date(j, 'at') ?? DateTime.now(),
+    actions: J.mapList(j, 'actions'),
+    failed: J.boolean(j, 'failed'),
+  );
+
+  final String id;
+  final ChatRole role;
+  final String text;
+  final DateTime at;
+
+  /// Raw (already validated) action payloads proposed with this message, with
+  /// their resolution state (`status`: pending | confirmed | dismissed).
+  final List<Map<String, dynamic>> actions;
+  final bool failed;
+
+  Map<String, dynamic> toJson() => {
+    'id': id,
+    'role': role.name,
+    'text': text,
+    'at': at.millisecondsSinceEpoch,
+    if (actions.isNotEmpty) 'actions': actions,
+    if (failed) 'failed': true,
+  };
+
+  ChatMessage copyWith({List<Map<String, dynamic>>? actions}) =>
+      ChatMessage(id: id, role: role, text: text, at: at, actions: actions ?? this.actions, failed: failed);
+}
+
+/// A chat thread. Stored on device only; the backend receives just the recent
+/// window plus a rolling [summary] (conversation compression).
+class AiConversation extends Entity {
+  const AiConversation({
+    required super.id,
+    required super.updatedAt,
+    super.deleted,
+    required this.messages,
+    this.summary = '',
+    this.summarizedCount = 0,
+  });
+
+  factory AiConversation.fromJson(Map<String, dynamic> j) => AiConversation(
+    id: Meta.idOf(j),
+    updatedAt: Meta.updated(j),
+    deleted: Meta.isDeleted(j),
+    messages: J.mapList(j, 'messages').map(ChatMessage.fromJson).toList(),
+    summary: J.str(j, 'summary'),
+    summarizedCount: J.integer(j, 'summarizedCount'),
+  );
+
+  static const codec = EntityCodec<AiConversation>(
+    collection: 'ai_conversations',
+    fromJson: AiConversation.fromJson,
+    syncs: false,
+  );
+
+  final List<ChatMessage> messages;
+  final String summary;
+
+  /// How many of the oldest messages are already folded into [summary].
+  final int summarizedCount;
+
+  @override
+  Map<String, dynamic> toJson() => {
+    'messages': messages.map((m) => m.toJson()).toList(),
+    'summary': summary,
+    'summarizedCount': summarizedCount,
+  };
+
+  AiConversation copyWith({List<ChatMessage>? messages, String? summary, int? summarizedCount}) => AiConversation(
+    id: id,
+    updatedAt: DateTime.now(),
+    messages: messages ?? this.messages,
+    summary: summary ?? this.summary,
+    summarizedCount: summarizedCount ?? this.summarizedCount,
+  );
+}

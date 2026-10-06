@@ -1,0 +1,14 @@
+{
+  "FUNCTIONS_REGION": "us-central1",
+  "GOOGLE_SERVER_CLIENT_ID": "1234567890-xxxxxxxx.apps.googleusercontent.com",
+  "ADMOB_REWARDED_ANDROID": "ca-app-pub-XXXXXXXXXXXXXXXX/NNNNNNNNNN",
+  "ADMOB_INTERSTITIAL_ANDROID": "ca-app-pub-XXXXXXXXXXXXXXXX/NNNNNNNNNN",
+  "ADMOB_BANNER_ANDROID": "ca-app-pub-XXXXXXXXXXXXXXXX/NNNNNNNNNN",
+  "PREMIUM_MONTHLY_ID": "lifeos_premium_monthly",
+  "PREMIUM_YEARLY_ID": "lifeos_premium_yearly",
+  "ANDROID_PACKAGE": "com.lifeos.lifeos",
+  "PRIVACY_POLICY_URL": "https://example.com/privacy",
+  "TERMS_URL": "https://example.com/terms",
+  "SUPPORT_EMAIL": "support@example.com",
+  "APP_VERSION": "1.0.0"
+}
