@@ -6,6 +6,7 @@ import argparse
 import os
 
 from litert_torch.generative.examples.qwen import qwen
+from litert_torch.generative.layers import kv_cache as kv_utils
 from litert_torch.generative.utilities import converter, export_config as export_config_lib
 from transformers import AutoTokenizer
 
@@ -22,6 +23,10 @@ def main():
     os.makedirs(args.out, exist_ok=True)
     tok = AutoTokenizer.from_pretrained(args.ckpt)
     model = qwen.build_1_5b_model(args.ckpt, mask_cache_size=args.kv)
+    # The LiteRT-LM runtime expects a [batch, heads, seq, dim] KV cache; the
+    # default layout makes every message fail with "prefill work group size
+    # exceeds available state entries".
+    export_config = export_config_lib.ExportConfig(kvcache_layout=kv_utils.KV_LAYOUT_TRANSPOSED)
     converter.convert_to_litert(
         model,
         output_path=args.out,
@@ -29,7 +34,7 @@ def main():
         prefill_seq_len=[32, 128, 512],
         kv_cache_max_len=args.kv,
         quantize=args.quantize,
-        export_config=export_config_lib.ExportConfig(),
+        export_config=export_config,
         output_format="litertlm",
         hf_tokenizer_model_path=os.path.join(args.ckpt, "tokenizer.json"),
         llm_model_type="qwen2p5",
