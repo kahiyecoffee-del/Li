@@ -104,6 +104,16 @@ class SettingsScreen extends ConsumerWidget {
             value: settings.showLio,
             onChanged: (v) => ctrl.update((x) => x.copyWith(showLio: v)),
           ),
+          ListTile(
+            leading: const Icon(Icons.badge_outlined),
+            title: Text(l.assistantNameSetting),
+            subtitle: Text(settings.assistantName),
+            trailing: const Icon(Icons.edit_outlined),
+            onTap: () async {
+              final name = await _askName(context, settings.assistantName);
+              if (name != null) await ctrl.update((x) => x.copyWith(assistantName: name));
+            },
+          ),
           SwitchListTile(
             secondary: const Icon(Icons.wb_sunny_outlined),
             title: Text(l.planReminderSetting),
@@ -316,4 +326,31 @@ class _Header extends StatelessWidget {
       ),
     ),
   );
+}
+
+/// Asks for the assistant's name (1–16 characters); null if cancelled.
+Future<String?> _askName(BuildContext context, String current) async {
+  final l = context.l10n;
+  final c = TextEditingController(text: current);
+  final name = await showDialog<String>(
+    context: context,
+    builder: (d) => AlertDialog(
+      title: Text(l.assistantNameSetting),
+      content: TextField(
+        controller: c,
+        autofocus: true,
+        maxLength: 16,
+        textCapitalization: TextCapitalization.words,
+        decoration: InputDecoration(helperText: l.assistantNameHelp),
+        onSubmitted: (v) => Navigator.pop(d, v),
+      ),
+      actions: [
+        TextButton(onPressed: () => Navigator.pop(d), child: Text(l.cancel)),
+        FilledButton(onPressed: () => Navigator.pop(d, c.text), child: Text(l.save)),
+      ],
+    ),
+  );
+  c.dispose();
+  final t = name?.trim() ?? '';
+  return t.isEmpty ? null : t;
 }

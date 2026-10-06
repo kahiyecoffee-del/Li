@@ -569,6 +569,8 @@
   "notifJournalBody": "Bugün nasıl geçti? Birkaç satır yeter.",
   "journalReminderSetting": "Akşam günlük hatırlatması",
   "planReminderSetting": "Sabah plan hatırlatması",
+  "assistantNameSetting": "Asistanın adı",
+  "assistantNameHelp": "Yardımcına istediğin adı ver.",
   "lioLearnsSetting": "Lio günlüğümden öğrensin",
   "lioLearnsHelp": "Lio yazılarındaki örüntüleri (ruh halini neyin yükselttiği ya da düşürdüğü) sadece bu telefonda bulur. Hiçbir şey cihazından çıkmaz.",
   "notifWeeklyTitle": "60 saniyede haftan",

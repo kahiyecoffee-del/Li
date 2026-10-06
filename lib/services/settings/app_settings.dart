@@ -24,6 +24,7 @@ class AppSettings {
     this.journalReminder = true,
     this.planReminder = true,
     this.lioLearnsJournal = true,
+    this.assistantName = 'Lio',
   });
 
   final ThemeMode themeMode;
@@ -48,6 +49,9 @@ class AppSettings {
   /// Lio may read journal entries on the device to learn mood patterns.
   final bool lioLearnsJournal;
 
+  /// What the user calls the assistant ("Lio" by default).
+  final String assistantName;
+
   AppSettings copyWith({
     ThemeMode? themeMode,
     bool? highContrast,
@@ -63,6 +67,7 @@ class AppSettings {
     bool? journalReminder,
     bool? planReminder,
     bool? lioLearnsJournal,
+    String? assistantName,
   }) => AppSettings(
     themeMode: themeMode ?? this.themeMode,
     highContrast: highContrast ?? this.highContrast,
@@ -77,6 +82,7 @@ class AppSettings {
     journalReminder: journalReminder ?? this.journalReminder,
     planReminder: planReminder ?? this.planReminder,
     lioLearnsJournal: lioLearnsJournal ?? this.lioLearnsJournal,
+    assistantName: assistantName ?? this.assistantName,
   );
 }
 
@@ -108,6 +114,7 @@ class SettingsStore {
       journalReminder: _p.getBool('journalReminder') ?? true,
       planReminder: _p.getBool('planReminder') ?? true,
       lioLearnsJournal: _p.getBool('lioLearnsJournal') ?? true,
+      assistantName: _p.getString('assistantName') ?? 'Lio',
     );
   }
 
@@ -129,5 +136,6 @@ class SettingsStore {
     await _p.setBool('journalReminder', s.journalReminder);
     await _p.setBool('planReminder', s.planReminder);
     await _p.setBool('lioLearnsJournal', s.lioLearnsJournal);
+    await _p.setString('assistantName', s.assistantName);
   }
 }

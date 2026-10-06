@@ -223,6 +223,17 @@ void main() {
     await tearDownApp(tester);
   });
 
+  testWidgets('The assistant can be renamed; Turkish suffixes follow the new name', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(prefs: {'locale': 'tr', 'assistantName': 'Maya'})))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
+    await tester.tap(find.text('YZ').last);
+    await pumpUntil(tester, find.text('Maya'));
+    expect(find.text('Lio'), findsNothing);
+    await tearDownApp(tester);
+  });
+
   testWidgets('Calculator works offline', (tester) async {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;

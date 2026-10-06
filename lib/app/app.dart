@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/theme/app_theme.dart';
 import '../l10n/gen/app_localizations.dart';
+import '../l10n/named_localizations.dart';
 import 'effects.dart';
 import 'providers.dart';
 import 'router.dart';
@@ -25,8 +26,8 @@ class LifeOsApp extends ConsumerWidget {
       highContrastDarkTheme: AppTheme.dark(highContrast: true),
       locale: ref.watch(localeProvider),
       supportedLocales: AppLocalizations.supportedLocales,
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
+      localizationsDelegates: [
+        NamedLocalizationsDelegate(settings.assistantName),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,

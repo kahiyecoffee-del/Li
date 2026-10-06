@@ -3506,6 +3506,18 @@ abstract class AppLocalizations {
   /// **'Morning plan reminder'**
   String get planReminderSetting;
 
+  /// No description provided for @assistantNameSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Assistant’s name'**
+  String get assistantNameSetting;
+
+  /// No description provided for @assistantNameHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Call your helper whatever you like.'**
+  String get assistantNameHelp;
+
   /// No description provided for @lioLearnsSetting.
   ///
   /// In en, this message translates to:

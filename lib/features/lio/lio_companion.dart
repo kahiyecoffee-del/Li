@@ -314,7 +314,7 @@ class _LioCompanionState extends ConsumerState<LioCompanion> with TickerProvider
   }
 }
 
-class _Bubble extends StatelessWidget {
+class _Bubble extends ConsumerWidget {
   const _Bubble({
     super.key,
     required this.line,
@@ -331,7 +331,7 @@ class _Bubble extends StatelessWidget {
   final VoidCallback onClose;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l = context.l10n;
     final b = Theme.of(context).brightness;
     return Semantics(
@@ -360,7 +360,10 @@ class _Bubble extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text('Lio', style: context.text.titleSmall?.copyWith(color: context.colors.primary)),
+                Text(
+                  ref.watch(settingsProvider.select((s) => s.assistantName)),
+                  style: context.text.titleSmall?.copyWith(color: context.colors.primary),
+                ),
                 const Spacer(),
                 IconButton(
                   visualDensity: VisualDensity.compact,

@@ -1904,6 +1904,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planReminderSetting => 'Morning plan reminder';
 
   @override
+  String get assistantNameSetting => 'Assistant’s name';
+
+  @override
+  String get assistantNameHelp => 'Call your helper whatever you like.';
+
+  @override
   String get lioLearnsSetting => 'Let Lio learn from my journal';
 
   @override

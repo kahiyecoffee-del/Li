@@ -1113,6 +1113,8 @@
   "notifJournalBody": "How was today? A few lines are enough.",
   "journalReminderSetting": "Evening journal reminder",
   "planReminderSetting": "Morning plan reminder",
+  "assistantNameSetting": "Assistant’s name",
+  "assistantNameHelp": "Call your helper whatever you like.",
   "lioLearnsSetting": "Let Lio learn from my journal",
   "lioLearnsHelp": "Lio finds patterns in your entries (what lifts or lowers your mood) on this phone only. Nothing leaves your device.",
   "notifWeeklyTitle": "Your week in 60 seconds",

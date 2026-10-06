@@ -1887,6 +1887,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get planReminderSetting => 'Sabah plan hatırlatması';
 
   @override
+  String get assistantNameSetting => 'Asistanın adı';
+
+  @override
+  String get assistantNameHelp => 'Yardımcına istediğin adı ver.';
+
+  @override
   String get lioLearnsSetting => 'Lio günlüğümden öğrensin';
 
   @override

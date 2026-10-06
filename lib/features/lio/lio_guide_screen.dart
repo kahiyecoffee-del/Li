@@ -952,7 +952,7 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
           children: [
             const Mascot(mood: MascotMood.happy, size: 34, float: false),
             const SizedBox(width: Space.sm),
-            Text('Lio', style: context.text.titleLarge),
+            Text(ref.watch(settingsProvider.select((s) => s.assistantName)), style: context.text.titleLarge),
           ],
         ),
         actions: [
