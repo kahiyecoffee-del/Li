@@ -11,6 +11,8 @@ void main() {
     await tester.pumpWidget(app.widget());
     await pumpUntil(tester, find.text('Your day at a glance.'));
 
+    await tester.tap(find.text('Life').last);
+    await pumpUntil(tester, find.text('Money'));
     await tester.tap(find.text('Money').last);
     await pumpUntil(tester, find.text('Add expense'));
     await tester.tap(find.byType(FloatingActionButton));
@@ -178,6 +180,21 @@ void main() {
     await tester.tap(find.text('Lio Plus'));
     await tester.pump();
     expect(find.text('Download model · Lio Plus'), findsOneWidget);
+    await tearDownApp(tester);
+  });
+
+  testWidgets('Lio answers with no cloud and no model (built-in brain)', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('Your day at a glance.'));
+    await tester.tap(find.text('AI').last);
+    await pumpUntil(tester, find.byType(TextField));
+    await tester.enterText(find.byType(TextField).last, 'How much can I spend today?');
+    await tester.testTextInput.receiveAction(TextInputAction.send);
+    await tester.pump();
+    await pumpUntil(tester, find.text('Lio · on your phone'));
+    expect(find.textContaining('safe daily amount'), findsOneWidget);
     await tearDownApp(tester);
   });
 }

@@ -1,12 +1,21 @@
 import 'dart:async';
 
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/derived_providers.dart';
 import '../../app/ml_providers.dart';
 import '../../app/providers.dart';
 import '../../core/errors/app_failure.dart';
+import '../../core/utils/dates.dart';
 import '../../core/utils/ids.dart';
+import '../../core/widgets/formatters.dart';
+import '../../domain/engines/meal_engine.dart';
+import '../../domain/engines/recipe_library.dart';
+import '../../domain/lio/lio_brain.dart';
+import '../../domain/models/enums.dart';
+import '../../l10n/gen/app_localizations.dart';
+import '../lio/lio_companion.dart';
 import '../../domain/ai/ai_action.dart';
 import '../../domain/ai/ai_action_validator.dart';
 import '../../domain/models/ai_models.dart';
@@ -99,6 +108,11 @@ class ChatController extends AsyncNotifier<ChatState> {
       await _replyLocally(conv, user, msg, locale);
       return;
     }
+    // No cloud assistant (or no internet) and no model: Lio's brain answers.
+    if (!services.aiEnabled || !(ref.read(onlineProvider).value ?? true)) {
+      await _replyBrain(conv, msg, locale);
+      return;
+    }
 
     try {
       final usable = conv.messages.where((m) => !m.failed).toList();
@@ -145,11 +159,12 @@ class ChatController extends AsyncNotifier<ChatState> {
       await _persist(conv);
       state = AsyncData(_s.copyWith(sending: false, savedMemory: saved));
     } catch (e) {
-      // Network trouble: answer on device if an offline model is installed.
+      // Network trouble: answer on device (model if installed, else brain).
       if (e is AppFailure &&
-          (e.kind == FailureKind.network || e.kind == FailureKind.timeout || e.kind == FailureKind.unavailable) &&
-          services.offlineModel.current.ready) {
-        await _replyLocally(conv, user, msg, locale);
+          (e.kind == FailureKind.network || e.kind == FailureKind.timeout || e.kind == FailureKind.unavailable)) {
+        services.offlineModel.current.ready
+            ? await _replyLocally(conv, user, msg, locale)
+            : await _replyBrain(conv, msg, locale);
         return;
       }
       final failed = ChatMessage(id: user.id, role: ChatRole.user, text: msg, at: now, failed: true);
@@ -187,11 +202,66 @@ class ChatController extends AsyncNotifier<ChatState> {
       await _persist(conv.copyWith(messages: [...conv.messages, reply]));
       state = AsyncData(_s.copyWith(sending: false));
       unawaited(services.analytics.log(AnalyticsEvent.aiMessageSent, {'offline': 1}));
-    } catch (e) {
-      final failed = ChatMessage(id: user.id, role: ChatRole.user, text: msg, at: user.at, failed: true);
-      await _persist(conv.copyWith(messages: [...conv.messages.where((m) => m.id != user.id), failed]));
-      state = AsyncData(_s.copyWith(sending: false, lastError: e));
+    } catch (_) {
+      // The model failed (e.g. not enough memory): Lio's brain still answers.
+      await _replyBrain(conv, msg, locale);
     }
+  }
+
+  /// Answers from app data with [LioBrain]; always works, instantly.
+  Future<void> _replyBrain(AiConversation conv, String msg, String locale) async {
+    final loc = _supported(locale);
+    final l = lookupAppLocalizations(loc);
+    final r = LioBrain.reply(msg, _facts(loc), l, inspirations: LioScript.inspirations(l));
+    final reply = ChatMessage(id: newId(), role: ChatRole.assistant, text: r.text, at: DateTime.now(), brain: true);
+    await _persist(conv.copyWith(messages: [...conv.messages, reply]));
+    state = AsyncData(_s.copyWith(sending: false));
+    unawaited(ref.read(servicesProvider).analytics.log(AnalyticsEvent.aiMessageSent, {'brain': 1}));
+  }
+
+  static Locale _supported(String locale) {
+    final code = locale.split(RegExp('[-_]')).first;
+    return AppLocalizations.supportedLocales.firstWhere(
+      (x) => x.languageCode == code,
+      orElse: () => const Locale('en'),
+    );
+  }
+
+  LioFacts _facts(Locale loc) {
+    final fmt = Fmt(loc.toLanguageTag(), ref.read(profileProvider).value?.currency ?? 'USD');
+    final now = DateTime.now();
+    final today = ref.read(todayProvider);
+    final tasks =
+        ref.read(tasksProvider).list.where((t) => t.anchorDate != null && Dates.sameDay(t.anchorDate!, today)).toList()
+          ..sort((a, b) => (a.scheduledAt ?? DateTime(9999)).compareTo(b.scheduledAt ?? DateTime(9999)));
+    final b = ref.read(budgetSnapshotProvider);
+    final goals = ref.read(dailyGoalsProvider);
+    final profile = ref.read(profileProvider).value ?? UserProfile.empty();
+    final mealType = now.hour < 10 ? MealType.breakfast : (now.hour < 15 ? MealType.lunch : MealType.dinner);
+    final meal = const MealEngine()
+        .suggestDay(
+          recipes: RecipeLibrary.all(loc.languageCode),
+          prefs: profile.food,
+          pantry: ref.read(pantryProvider).list.map((p) => p.name),
+          day: now,
+          types: [mealType],
+        )
+        .firstOrNull;
+    return LioFacts(
+      name: profile.name,
+      todayTasks: [
+        for (final t in tasks) (t.title, t.scheduledAt == null ? null : fmt.time(t.scheduledAt!), t.isCompleted),
+      ],
+      safeDaily: b == null ? null : fmt.money(b.safeDailyMinor),
+      leftToday: b == null || b.overToday ? null : fmt.money(b.remainingTodayMinor),
+      overToday: b != null && b.overToday ? fmt.money(-b.remainingTodayMinor) : null,
+      score: ref.read(lifeScoreProvider).score.total,
+      goalsLeft: goals.where((g) => !g.completed).length,
+      streak: ref.read(streakProvider).current,
+      mealName: meal?.name,
+      mealMinutes: meal?.prepMinutes,
+      hour: now.hour,
+    );
   }
 
   Future<void> retry(ChatMessage failed, {required String locale}) async {

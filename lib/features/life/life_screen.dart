@@ -23,6 +23,7 @@ class LifeScreen extends ConsumerWidget {
     final shopping = (ref.watch(shoppingProvider).list).where((s) => !s.checked).length;
     final badges = ref.watch(achievementsProvider).value?.length ?? 0;
     final tiles = <(IconData, String, String, String?, Accent)>[
+      (Icons.account_balance_wallet_rounded, l.navMoney, '/money', null, Accent.money),
       (Icons.repeat_rounded, l.lifeHabits, '/habits', null, Accent.goals),
       (Icons.mood_rounded, l.lifeMood, '/mood', null, Accent.wellbeing),
       (Icons.menu_book_rounded, l.lifeJournal, '/journal', null, Accent.insight),

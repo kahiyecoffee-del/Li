@@ -1176,7 +1176,7 @@
   "offlineOneAtATime": "Only one version is kept on your phone; switching replaces the old one. Wi-Fi recommended.",
   "aiSetupTitle": "Turn on your assistant",
   "aiSetupBody": "Download the free on-device assistant once and chat any time — even without internet. Your messages never leave your phone.",
-  "aiSetupCta": "Set up assistant",
+  "aiSetupCta": "Download Offline Lio",
   "mascotTip": "{count, plural, =0{Nothing urgent today — enjoy it.} =1{I have 1 idea for your day.} other{I have {count} ideas for your day.}}",
   "@mascotTip": {
     "placeholders": {
@@ -1247,5 +1247,83 @@
   "lioInspire9": "Done is a beautiful word.",
   "lioInspire10": "Take a deep breath. You’re doing better than you think.",
   "lioInspire11": "Today is a good day to start something small.",
-  "lioInspire12": "Kindness to yourself counts too."
+  "lioInspire12": "Kindness to yourself counts too.",
+  "brainGreeting": "Hi {name}! I’m Lio. Ask me about your plan, money, food or how you’re doing.",
+  "@brainGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "brainGreetingNoName": "Hi! I’m Lio. Ask me about your plan, money, food or how you’re doing.",
+  "brainThanks": "Anytime! I’m right here whenever you need me.",
+  "brainPlanNone": "Your plan for today is empty. Start by adding the one task that matters most — tap + on the Plan tab.",
+  "brainPlanList": "{count, plural, =1{You have 1 thing on your list today:} other{You have {count} things on your list today:}}",
+  "@brainPlanList": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "brainPlanNext": "Start with “{title}” — once it’s done, the rest feels lighter.",
+  "@brainPlanNext": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "brainPlanAllDone": "Everything on today’s list is done. Rest, or get a head start on tomorrow.",
+  "brainMoneyNoBudget": "You haven’t set a budget yet. Add your monthly income in Money and I’ll work out a safe daily amount.",
+  "brainMoneySafe": "You can still spend {left} today. Your safe daily amount is {safe}.",
+  "@brainMoneySafe": {
+    "placeholders": {
+      "left": {
+        "type": "String"
+      },
+      "safe": {
+        "type": "String"
+      }
+    }
+  },
+  "brainMoneyOver": "You’re {over} over today’s safe amount. Let’s go easy for the rest of the day.",
+  "@brainMoneyOver": {
+    "placeholders": {
+      "over": {
+        "type": "String"
+      }
+    }
+  },
+  "brainMoneyTip": "Tip: log expenses right away — just type “250 lunch”.",
+  "brainFood": "How about {meal}? It takes about {minutes} minutes. You’ll find more ideas in Food.",
+  "@brainFood": {
+    "placeholders": {
+      "meal": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "brainFoodNone": "Add what’s in your pantry and I’ll suggest meals that use it.",
+  "brainScore": "Your Life Score today is {score}/100.",
+  "@brainScore": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "brainScoreNone": "No score yet today — log your mood or finish a goal and it will appear.",
+  "brainFeelLow": "I’m sorry today feels heavy. Try one tiny thing: a glass of water, a short walk or three slow breaths. Logging your mood can help too.",
+  "brainSleep": "Keep a steady bedtime and put screens away 30 minutes before. You can log your sleep from Home.",
+  "brainHabit": "Small habits win. Pick something that takes under two minutes and track it in Habits.",
+  "brainHelp": "I can tell you about today’s plan, your budget, meal ideas and your Life Score, and cheer you on. For free-form chats, download Offline Lio in Settings.",
+  "brainFallback": "I’m still learning that one. Try asking about your plan, money, food or how your day is going.",
+  "aiSmarterTitle": "Make Lio smarter",
+  "aiSmarterBody": "Lio already answers questions about your day. Download Offline Lio once to chat about anything — even without internet.",
+  "brainAnswerLabel": "Lio · on your phone"
 }

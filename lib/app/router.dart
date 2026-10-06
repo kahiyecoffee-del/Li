@@ -113,9 +113,6 @@ final routerProvider = Provider<GoRouter>((ref) {
             routes: [GoRoute(path: Routes.plan, builder: (_, _) => const PlanScreen())],
           ),
           StatefulShellBranch(
-            routes: [GoRoute(path: Routes.money, builder: (_, _) => const MoneyScreen())],
-          ),
-          StatefulShellBranch(
             routes: [GoRoute(path: Routes.life, builder: (_, _) => const LifeScreen())],
           ),
           StatefulShellBranch(
@@ -128,6 +125,7 @@ final routerProvider = Provider<GoRouter>((ref) {
           ),
         ],
       ),
+      GoRoute(path: Routes.money, builder: (_, _) => const MoneyScreen()),
       GoRoute(path: Routes.score, builder: (_, _) => const ScoreScreen()),
       GoRoute(path: Routes.settings, builder: (_, _) => const SettingsScreen()),
       GoRoute(path: Routes.privacy, builder: (_, _) => const PrivacyScreen()),

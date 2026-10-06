@@ -169,7 +169,7 @@ class _GoalTile extends ConsumerWidget {
       case GoalKind.planDay:
         if (!goal.completed) await showTaskEditor(context);
       case GoalKind.spending:
-        context.go('/money');
+        await context.push('/money');
     }
   }
 
@@ -274,7 +274,7 @@ class MoneyCard extends ConsumerWidget {
     final fmt = ref.fmt(context);
     final b = ref.watch(budgetSnapshotProvider);
     return AppCard(
-      onTap: () => context.go('/money'),
+      onTap: () => context.push('/money'),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

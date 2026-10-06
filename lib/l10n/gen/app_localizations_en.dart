@@ -1991,7 +1991,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Download the free on-device assistant once and chat any time — even without internet. Your messages never leave your phone.';
 
   @override
-  String get aiSetupCta => 'Set up assistant';
+  String get aiSetupCta => 'Download Offline Lio';
 
   @override
   String mascotTip(int count) {
@@ -2143,4 +2143,100 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get lioInspire12 => 'Kindness to yourself counts too.';
+
+  @override
+  String brainGreeting(String name) {
+    return 'Hi $name! I’m Lio. Ask me about your plan, money, food or how you’re doing.';
+  }
+
+  @override
+  String get brainGreetingNoName => 'Hi! I’m Lio. Ask me about your plan, money, food or how you’re doing.';
+
+  @override
+  String get brainThanks => 'Anytime! I’m right here whenever you need me.';
+
+  @override
+  String get brainPlanNone =>
+      'Your plan for today is empty. Start by adding the one task that matters most — tap + on the Plan tab.';
+
+  @override
+  String brainPlanList(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'You have $count things on your list today:',
+      one: 'You have 1 thing on your list today:',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String brainPlanNext(String title) {
+    return 'Start with “$title” — once it’s done, the rest feels lighter.';
+  }
+
+  @override
+  String get brainPlanAllDone => 'Everything on today’s list is done. Rest, or get a head start on tomorrow.';
+
+  @override
+  String get brainMoneyNoBudget =>
+      'You haven’t set a budget yet. Add your monthly income in Money and I’ll work out a safe daily amount.';
+
+  @override
+  String brainMoneySafe(String left, String safe) {
+    return 'You can still spend $left today. Your safe daily amount is $safe.';
+  }
+
+  @override
+  String brainMoneyOver(String over) {
+    return 'You’re $over over today’s safe amount. Let’s go easy for the rest of the day.';
+  }
+
+  @override
+  String get brainMoneyTip => 'Tip: log expenses right away — just type “250 lunch”.';
+
+  @override
+  String brainFood(String meal, int minutes) {
+    return 'How about $meal? It takes about $minutes minutes. You’ll find more ideas in Food.';
+  }
+
+  @override
+  String get brainFoodNone => 'Add what’s in your pantry and I’ll suggest meals that use it.';
+
+  @override
+  String brainScore(int score) {
+    return 'Your Life Score today is $score/100.';
+  }
+
+  @override
+  String get brainScoreNone => 'No score yet today — log your mood or finish a goal and it will appear.';
+
+  @override
+  String get brainFeelLow =>
+      'I’m sorry today feels heavy. Try one tiny thing: a glass of water, a short walk or three slow breaths. Logging your mood can help too.';
+
+  @override
+  String get brainSleep =>
+      'Keep a steady bedtime and put screens away 30 minutes before. You can log your sleep from Home.';
+
+  @override
+  String get brainHabit => 'Small habits win. Pick something that takes under two minutes and track it in Habits.';
+
+  @override
+  String get brainHelp =>
+      'I can tell you about today’s plan, your budget, meal ideas and your Life Score, and cheer you on. For free-form chats, download Offline Lio in Settings.';
+
+  @override
+  String get brainFallback =>
+      'I’m still learning that one. Try asking about your plan, money, food or how your day is going.';
+
+  @override
+  String get aiSmarterTitle => 'Make Lio smarter';
+
+  @override
+  String get aiSmarterBody =>
+      'Lio already answers questions about your day. Download Offline Lio once to chat about anything — even without internet.';
+
+  @override
+  String get brainAnswerLabel => 'Lio · on your phone';
 }

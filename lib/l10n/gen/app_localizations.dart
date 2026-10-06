@@ -3635,7 +3635,7 @@ abstract class AppLocalizations {
   /// No description provided for @aiSetupCta.
   ///
   /// In en, this message translates to:
-  /// **'Set up assistant'**
+  /// **'Download Offline Lio'**
   String get aiSetupCta;
 
   /// No description provided for @mascotTip.
@@ -3895,6 +3895,144 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Kindness to yourself counts too.'**
   String get lioInspire12;
+
+  /// No description provided for @brainGreeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi {name}! I’m Lio. Ask me about your plan, money, food or how you’re doing.'**
+  String brainGreeting(String name);
+
+  /// No description provided for @brainGreetingNoName.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi! I’m Lio. Ask me about your plan, money, food or how you’re doing.'**
+  String get brainGreetingNoName;
+
+  /// No description provided for @brainThanks.
+  ///
+  /// In en, this message translates to:
+  /// **'Anytime! I’m right here whenever you need me.'**
+  String get brainThanks;
+
+  /// No description provided for @brainPlanNone.
+  ///
+  /// In en, this message translates to:
+  /// **'Your plan for today is empty. Start by adding the one task that matters most — tap + on the Plan tab.'**
+  String get brainPlanNone;
+
+  /// No description provided for @brainPlanList.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{You have 1 thing on your list today:} other{You have {count} things on your list today:}}'**
+  String brainPlanList(int count);
+
+  /// No description provided for @brainPlanNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Start with “{title}” — once it’s done, the rest feels lighter.'**
+  String brainPlanNext(String title);
+
+  /// No description provided for @brainPlanAllDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything on today’s list is done. Rest, or get a head start on tomorrow.'**
+  String get brainPlanAllDone;
+
+  /// No description provided for @brainMoneyNoBudget.
+  ///
+  /// In en, this message translates to:
+  /// **'You haven’t set a budget yet. Add your monthly income in Money and I’ll work out a safe daily amount.'**
+  String get brainMoneyNoBudget;
+
+  /// No description provided for @brainMoneySafe.
+  ///
+  /// In en, this message translates to:
+  /// **'You can still spend {left} today. Your safe daily amount is {safe}.'**
+  String brainMoneySafe(String left, String safe);
+
+  /// No description provided for @brainMoneyOver.
+  ///
+  /// In en, this message translates to:
+  /// **'You’re {over} over today’s safe amount. Let’s go easy for the rest of the day.'**
+  String brainMoneyOver(String over);
+
+  /// No description provided for @brainMoneyTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Tip: log expenses right away — just type “250 lunch”.'**
+  String get brainMoneyTip;
+
+  /// No description provided for @brainFood.
+  ///
+  /// In en, this message translates to:
+  /// **'How about {meal}? It takes about {minutes} minutes. You’ll find more ideas in Food.'**
+  String brainFood(String meal, int minutes);
+
+  /// No description provided for @brainFoodNone.
+  ///
+  /// In en, this message translates to:
+  /// **'Add what’s in your pantry and I’ll suggest meals that use it.'**
+  String get brainFoodNone;
+
+  /// No description provided for @brainScore.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Life Score today is {score}/100.'**
+  String brainScore(int score);
+
+  /// No description provided for @brainScoreNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No score yet today — log your mood or finish a goal and it will appear.'**
+  String get brainScoreNone;
+
+  /// No description provided for @brainFeelLow.
+  ///
+  /// In en, this message translates to:
+  /// **'I’m sorry today feels heavy. Try one tiny thing: a glass of water, a short walk or three slow breaths. Logging your mood can help too.'**
+  String get brainFeelLow;
+
+  /// No description provided for @brainSleep.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep a steady bedtime and put screens away 30 minutes before. You can log your sleep from Home.'**
+  String get brainSleep;
+
+  /// No description provided for @brainHabit.
+  ///
+  /// In en, this message translates to:
+  /// **'Small habits win. Pick something that takes under two minutes and track it in Habits.'**
+  String get brainHabit;
+
+  /// No description provided for @brainHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'I can tell you about today’s plan, your budget, meal ideas and your Life Score, and cheer you on. For free-form chats, download Offline Lio in Settings.'**
+  String get brainHelp;
+
+  /// No description provided for @brainFallback.
+  ///
+  /// In en, this message translates to:
+  /// **'I’m still learning that one. Try asking about your plan, money, food or how your day is going.'**
+  String get brainFallback;
+
+  /// No description provided for @aiSmarterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Make Lio smarter'**
+  String get aiSmarterTitle;
+
+  /// No description provided for @aiSmarterBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio already answers questions about your day. Download Offline Lio once to chat about anything — even without internet.'**
+  String get aiSmarterBody;
+
+  /// No description provided for @brainAnswerLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio · on your phone'**
+  String get brainAnswerLabel;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

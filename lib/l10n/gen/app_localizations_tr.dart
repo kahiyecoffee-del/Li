@@ -1974,7 +1974,7 @@ class AppLocalizationsTr extends AppLocalizations {
       'Ücretsiz cihaz içi asistanı bir kez indir, istediğin zaman sohbet et — internet olmadan bile. Mesajların telefonundan hiç çıkmaz.';
 
   @override
-  String get aiSetupCta => 'Asistanı kur';
+  String get aiSetupCta => 'Çevrimdışı Lio’yu indir';
 
   @override
   String mascotTip(int count) {
@@ -2124,4 +2124,95 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get lioInspire12 => 'Kendine nazik olmak da sayılır.';
+
+  @override
+  String brainGreeting(String name) {
+    return 'Merhaba $name! Ben Lio. Bana planını, paranı, yemeği ya da nasıl gittiğini sorabilirsin.';
+  }
+
+  @override
+  String get brainGreetingNoName =>
+      'Merhaba! Ben Lio. Bana planını, paranı, yemeği ya da nasıl gittiğini sorabilirsin.';
+
+  @override
+  String get brainThanks => 'Ne demek! İhtiyacın olduğunda hep buradayım.';
+
+  @override
+  String get brainPlanNone =>
+      'Bugünkü planın boş. En önemli tek işini ekleyerek başla — Plan sekmesinde + butonuna dokun.';
+
+  @override
+  String brainPlanList(int count) {
+    return 'Bugün listende $count iş var:';
+  }
+
+  @override
+  String brainPlanNext(String title) {
+    return '“$title” ile başla — o bitince gerisi daha hafif gelir.';
+  }
+
+  @override
+  String get brainPlanAllDone => 'Bugünkü listedeki her şey bitti. Dinlen ya da yarına erkenden başla.';
+
+  @override
+  String get brainMoneyNoBudget =>
+      'Henüz bütçe belirlemedin. Para bölümüne aylık gelirini ekle, sana güvenli günlük tutarı hesaplayayım.';
+
+  @override
+  String brainMoneySafe(String left, String safe) {
+    return 'Bugün hâlâ $left harcayabilirsin. Güvenli günlük tutarın $safe.';
+  }
+
+  @override
+  String brainMoneyOver(String over) {
+    return 'Bugünkü güvenli tutarı $over aştın. Günün kalanında biraz yavaşlayalım.';
+  }
+
+  @override
+  String get brainMoneyTip => 'İpucu: harcamaları hemen kaydet — “250 öğle yemeği” yazman yeterli.';
+
+  @override
+  String brainFood(String meal, int minutes) {
+    return '$meal nasıl olur? Yaklaşık $minutes dakika sürer. Daha fazla fikir Yemek bölümünde.';
+  }
+
+  @override
+  String get brainFoodNone => 'Kilerine evdekileri ekle, onlarla yapılacak yemekler önereyim.';
+
+  @override
+  String brainScore(int score) {
+    return 'Bugünkü Yaşam Skorun $score/100.';
+  }
+
+  @override
+  String get brainScoreNone => 'Bugün henüz skorun yok — ruh halini kaydet ya da bir hedefi bitir, hemen görünür.';
+
+  @override
+  String get brainFeelLow =>
+      'Bugün ağır geldiği için üzgünüm. Küçük bir şey dene: bir bardak su, kısa bir yürüyüş ya da üç yavaş nefes. Ruh halini kaydetmek de iyi gelebilir.';
+
+  @override
+  String get brainSleep =>
+      'Her gün aynı saatte yatmaya çalış, yatmadan 30 dakika önce ekranı bırak. Uykunu Ana sayfadan kaydedebilirsin.';
+
+  @override
+  String get brainHabit =>
+      'Küçük alışkanlıklar kazanır. İki dakikadan kısa süren bir şey seç ve Alışkanlıklar’da takip et.';
+
+  @override
+  String get brainHelp =>
+      'Bugünkü planını, bütçeni, yemek fikirlerini ve Yaşam Skorunu anlatabilir, seni motive edebilirim. Serbest sohbet için Ayarlar’dan Çevrimdışı Lio’yu indir.';
+
+  @override
+  String get brainFallback => 'Bunu henüz öğreniyorum. Bana planını, paranı, yemeği ya da günün nasıl geçtiğini sor.';
+
+  @override
+  String get aiSmarterTitle => 'Lio’yu daha akıllı yap';
+
+  @override
+  String get aiSmarterBody =>
+      'Lio günün hakkındaki soruları zaten cevaplıyor. Her konuda sohbet etmek için Çevrimdışı Lio’yu bir kez indir — internet olmadan bile.';
+
+  @override
+  String get brainAnswerLabel => 'Lio · telefonunda';
 }

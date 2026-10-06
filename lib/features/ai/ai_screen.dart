@@ -85,7 +85,8 @@ class _AiScreenState extends ConsumerState<AiScreen> {
     final l = context.l10n;
     final chat = ref.watch(chatProvider);
     final offlineReady = ref.watch(offlineModelStatusProvider).value?.ready ?? false;
-    final cloud = ref.watch(servicesProvider).aiEnabled || offlineReady;
+    // Lio's built-in brain always answers; cloud/model just make him smarter.
+    final smart = ref.watch(servicesProvider).aiEnabled || offlineReady;
     // Re-evaluated on connectivity/settings changes.
     ref.watch(onlineProvider);
     ref.watch(settingsProvider.select((s) => s.preferOfflineAi));
@@ -118,7 +119,7 @@ class _AiScreenState extends ConsumerState<AiScreen> {
           children: [
             Expanded(
               child: s.conversation.messages.isEmpty
-                  ? _Empty(onPick: _send, enabled: cloud)
+                  ? _Empty(onPick: _send, smart: smart)
                   : ListView.builder(
                       controller: _scroll,
                       padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, Space.lg),
@@ -143,7 +144,7 @@ class _AiScreenState extends ConsumerState<AiScreen> {
                   ),
                 ),
               ),
-            _InputBar(controller: _input, enabled: !s.sending && cloud, onSend: _send),
+            _InputBar(controller: _input, enabled: !s.sending, onSend: _send),
           ],
         ),
       ),
@@ -152,10 +153,12 @@ class _AiScreenState extends ConsumerState<AiScreen> {
 }
 
 class _Empty extends ConsumerWidget {
-  const _Empty({required this.onPick, required this.enabled});
+  const _Empty({required this.onPick, required this.smart});
 
   final ValueChanged<String> onPick;
-  final bool enabled;
+
+  /// Cloud assistant or an on-device model is available.
+  final bool smart;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -166,11 +169,11 @@ class _Empty extends ConsumerWidget {
       padding: const EdgeInsets.all(Space.page),
       children: [
         const SizedBox(height: Space.xl),
-        Center(child: Mascot(mood: enabled ? MascotMood.happy : MascotMood.curious, size: 150)),
+        const Center(child: Mascot(mood: MascotMood.happy, size: 150)),
         const SizedBox(height: Space.md),
         Text(l.aiEmptyTitle, style: context.text.headlineSmall, textAlign: TextAlign.center),
         const SizedBox(height: Space.xl),
-        if (!enabled) ...[
+        if (!smart) ...[
           FadeSlideIn(
             delay: Motion.fast,
             child: HeroBanner(
@@ -178,10 +181,10 @@ class _Empty extends ConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(l.aiSetupTitle, style: context.text.titleLarge?.copyWith(color: Colors.white)),
+                  Text(l.aiSmarterTitle, style: context.text.titleLarge?.copyWith(color: Colors.white)),
                   const SizedBox(height: Space.xs),
                   Text(
-                    l.aiSetupBody,
+                    l.aiSmarterBody,
                     style: context.text.bodyMedium?.copyWith(color: Colors.white.withValues(alpha: 0.92)),
                   ),
                   const SizedBox(height: Space.lg),
@@ -201,9 +204,7 @@ class _Empty extends ConsumerWidget {
           alignment: WrapAlignment.center,
           spacing: Space.sm,
           runSpacing: Space.sm,
-          children: suggestions
-              .map((s) => ActionChip(label: Text(s), onPressed: enabled ? () => onPick(s) : null))
-              .toList(),
+          children: suggestions.map((s) => ActionChip(label: Text(s), onPressed: () => onPick(s))).toList(),
         ),
         const SizedBox(height: Space.xl),
         Text(
@@ -305,11 +306,11 @@ class _Bubble extends ConsumerWidget {
               ),
             ],
           ),
-        if (message.local)
+        if (message.local || message.brain)
           Padding(
             padding: const EdgeInsets.only(bottom: Space.xs),
             child: Text(
-              context.l10n.offlineAnswerLabel,
+              message.brain ? context.l10n.brainAnswerLabel : context.l10n.offlineAnswerLabel,
               style: context.text.labelSmall?.copyWith(color: context.semantic.muted),
             ),
           ),

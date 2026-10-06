@@ -48,9 +48,11 @@ abstract final class LioScript {
     } else if (goalsLeft > 0 && tab == 0) {
       out.add(LioLine(l.lioGoalsLeft(goalsLeft), MascotMood.happy, priority: 2));
     }
+    // Money lives inside Life, so budget lines show on both.
+    final moneyTab = tab == 2 || tab == 3;
     if (overBudgetToday) {
-      out.add(LioLine(l.lioOverBudget, MascotMood.thoughtful, priority: tab == 2 ? 3 : 2));
-    } else if (budgetLeftToday != null && tab == 2) {
+      out.add(LioLine(l.lioOverBudget, MascotMood.thoughtful, priority: moneyTab ? 3 : 2));
+    } else if (budgetLeftToday != null && moneyTab) {
       out.add(LioLine(l.lioUnderBudget(budgetLeftToday), MascotMood.happy, priority: 2));
     }
     if (streak > 1) out.add(LioLine(l.lioStreak(streak), MascotMood.excited, priority: 1));
@@ -60,7 +62,7 @@ abstract final class LioScript {
       0 => [l.lioTipHome1, l.lioTipHome2],
       1 => [l.lioTipPlan1, l.lioTipPlan2, l.lioTipPlan3],
       2 => [l.lioTipMoney1, l.lioTipMoney2, l.lioTipMoney3],
-      3 => [l.lioTipLife1, l.lioTipLife2, l.lioTipLife3],
+      3 => [l.lioTipLife1, l.lioTipLife2, l.lioTipLife3, l.lioTipMoney1, l.lioTipMoney2, l.lioTipMoney3],
       _ => const <String>[],
     };
     out.addAll(tips.map((t) => LioLine(t, MascotMood.curious)));
@@ -92,8 +94,11 @@ class LioCompanion extends ConsumerStatefulWidget {
 
   final int tab;
 
-  /// Tabs where Lio steps aside (the assistant tab already features him).
-  static const hiddenOnTabs = {4};
+  /// Shell tabs where Lio steps aside (the assistant tab already features him).
+  static const hiddenOnTabs = {3};
+
+  /// Shell tab index → [LioScript] tab (0 home, 1 plan, 2 money, 3 life, 4 AI).
+  static const scriptTab = [0, 1, 3, 4];
 
   @override
   ConsumerState<LioCompanion> createState() => _LioCompanionState();
@@ -170,7 +175,7 @@ class _LioCompanionState extends ConsumerState<LioCompanion> with TickerProvider
     final key = Dates.dayKey(ref.read(todayProvider));
     return LioScript.lines(
       l: l,
-      tab: widget.tab,
+      tab: LioCompanion.scriptTab[widget.tab.clamp(0, 3)],
       hour: DateTime.now().hour,
       goalsLeft: goals.where((g) => !g.completed).length,
       allGoalsDone: goals.isNotEmpty && goals.every((g) => g.completed),
