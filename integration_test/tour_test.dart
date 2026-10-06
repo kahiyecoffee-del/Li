@@ -91,8 +91,9 @@ void main() {
       await tester.enterText(find.byType(TextField).last, q);
       await tester.tap(find.byTooltip('Gönder'));
       await pumpUntil(tester, find.text(q));
-      for (var i = 0; i < 10; i++) {
-        await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 50)));
+      // Let Lio finish answering before the next question (slow emulators).
+      for (var i = 0; i < 30; i++) {
+        await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 150)));
         await tester.pump(const Duration(milliseconds: 200));
       }
     }
