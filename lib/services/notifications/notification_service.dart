@@ -18,12 +18,24 @@ abstract class NotificationService {
   Future<void> apply(List<PlannedNotification> plan, NotificationText text);
   Future<void> cancelAll();
   Future<String?> timeZoneName();
+
+  /// Routes from tapped notifications (and the one that launched the app).
+  Stream<String> get taps;
 }
 
 class LocalNotificationService implements NotificationService {
   final _plugin = FlutterLocalNotificationsPlugin();
   bool _ready = false;
   String? _tzName;
+  final _taps = StreamController<String>.broadcast();
+
+  @override
+  Stream<String> get taps => _taps.stream;
+
+  void _onTap(NotificationResponse r) {
+    final route = r.payload;
+    if (route != null && route.startsWith('/')) _taps.add(route);
+  }
 
   static const _channel = AndroidNotificationDetails(
     'lifeos_reminders',
@@ -53,8 +65,15 @@ class LocalNotificationService implements NotificationService {
           requestSoundPermission: false,
         ),
       ),
+      onDidReceiveNotificationResponse: _onTap,
     );
     _ready = true;
+    final launch = await _plugin.getNotificationAppLaunchDetails();
+    final r = launch?.notificationResponse;
+    if ((launch?.didNotificationLaunchApp ?? false) && r != null) {
+      // Let the app finish starting before navigating.
+      Future<void>.delayed(const Duration(milliseconds: 800), () => _onTap(r));
+    }
   }
 
   @override
@@ -82,6 +101,7 @@ class LocalNotificationService implements NotificationService {
           title: t.title,
           body: t.body,
           scheduledDate: tz.TZDateTime.from(n.at, tz.local),
+          payload: n.kind.route,
           notificationDetails: const NotificationDetails(android: _channel, iOS: DarwinNotificationDetails()),
           // Inexact scheduling avoids the SCHEDULE_EXACT_ALARM permission;
           // a few minutes of drift is fine for nudges.
@@ -130,4 +150,7 @@ class NoopNotificationService implements NotificationService {
 
   @override
   Future<String?> timeZoneName() async => null;
+
+  @override
+  Stream<String> get taps => const Stream.empty();
 }

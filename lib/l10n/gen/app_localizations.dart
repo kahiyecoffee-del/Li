@@ -3470,6 +3470,54 @@ abstract class AppLocalizations {
   /// **'How are you feeling today?'**
   String get notifMoodBody;
 
+  /// No description provided for @notifPlanTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Good morning ☀️'**
+  String get notifPlanTitle;
+
+  /// No description provided for @notifPlanBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Two minutes with Lio and your day has a plan.'**
+  String get notifPlanBody;
+
+  /// No description provided for @notifJournalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your journal'**
+  String get notifJournalTitle;
+
+  /// No description provided for @notifJournalBody.
+  ///
+  /// In en, this message translates to:
+  /// **'How was today? A few lines are enough.'**
+  String get notifJournalBody;
+
+  /// No description provided for @journalReminderSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Evening journal reminder'**
+  String get journalReminderSetting;
+
+  /// No description provided for @planReminderSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning plan reminder'**
+  String get planReminderSetting;
+
+  /// No description provided for @lioLearnsSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Let Lio learn from my journal'**
+  String get lioLearnsSetting;
+
+  /// No description provided for @lioLearnsHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio finds patterns in your entries (what lifts or lowers your mood) on this phone only. Nothing leaves your device.'**
+  String get lioLearnsHelp;
+
   /// No description provided for @notifWeeklyTitle.
   ///
   /// In en, this message translates to:

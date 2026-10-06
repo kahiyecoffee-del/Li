@@ -2,7 +2,27 @@ import '../../core/utils/dates.dart';
 import '../../domain/models/enums.dart';
 import '../../domain/models/task_item.dart';
 
-enum NotificationKind { taskReminder, logSpending, budgetTight, streakAtRisk, moodCheckIn, weeklyReview }
+enum NotificationKind {
+  taskReminder,
+  logSpending,
+  budgetTight,
+  streakAtRisk,
+  moodCheckIn,
+  weeklyReview,
+  planDay,
+  journal;
+
+  /// Where tapping the notification takes the user.
+  String get route => switch (this) {
+    taskReminder => '/plan',
+    logSpending || budgetTight => '/money',
+    streakAtRisk => '/home',
+    moodCheckIn => '/mood',
+    weeklyReview => '/reports/weekly',
+    planDay => '/ai?topic=plan',
+    journal => '/journal/new',
+  };
+}
 
 class PlannedNotification {
   const PlannedNotification({required this.id, required this.kind, required this.at, this.title = ''});
@@ -33,6 +53,10 @@ class NotificationState {
     this.activeToday = false,
     this.moodLoggedToday = false,
     this.weeklyReportEnabled = true,
+    this.hasPlanToday = false,
+    this.journaledToday = false,
+    this.journalReminder = true,
+    this.planReminder = true,
     this.quietStart = defaultQuietStart,
     this.quietEnd = defaultQuietEnd,
   });
@@ -48,6 +72,14 @@ class NotificationState {
   final bool activeToday;
   final bool moodLoggedToday;
   final bool weeklyReportEnabled;
+
+  /// Something is already planned for today (no morning nudge then).
+  final bool hasPlanToday;
+  final bool journaledToday;
+
+  /// User settings for the daily journal and morning plan reminders.
+  final bool journalReminder;
+  final bool planReminder;
 
   /// Nothing is scheduled between [quietStart] and [quietEnd] (except
   /// reminders for tasks the user scheduled in that window themselves).
@@ -112,13 +144,23 @@ class NotificationPlanner {
       if (s.currentStreak >= 2 && (!isToday || !s.activeToday)) {
         day.add(PlannedNotification(id: 20 + index, kind: NotificationKind.streakAtRisk, at: _at(d, 21, 0)));
       }
+      if (s.planReminder && (!isToday || !s.hasPlanToday)) {
+        // 45 minutes after the user's wake time.
+        final wake = s.quietEnd.minutes + 45;
+        day.add(PlannedNotification(id: 60 + index, kind: NotificationKind.planDay, at: _at(d, wake ~/ 60, wake % 60)));
+      }
+      if (s.journalReminder && (!isToday || !s.journaledToday)) {
+        day.add(PlannedNotification(id: 70 + index, kind: NotificationKind.journal, at: _at(d, 21, 15)));
+      }
       if (s.hasBudget && (!isToday || !s.loggedSpendingToday)) {
         day.add(PlannedNotification(id: 30 + index, kind: NotificationKind.logSpending, at: _at(d, 20, 30)));
       }
       if (s.budgetTight && !isToday) {
         day.add(PlannedNotification(id: 40 + index, kind: NotificationKind.budgetTight, at: _at(d, 9, 0)));
       }
-      if (!isToday || !s.moodLoggedToday) {
+      // The evening journal also asks how you feel, so it replaces the
+      // separate mood check-in when it is on (one evening nudge, not two).
+      if (!s.journalReminder && (!isToday || !s.moodLoggedToday)) {
         day.add(PlannedNotification(id: 50 + index, kind: NotificationKind.moodCheckIn, at: _at(d, 19, 30)));
       }
       nudges.addAll(day.where((n) => n.at.isAfter(s.now) && !_quiet(n.at, s)).take(s.dailyCap));

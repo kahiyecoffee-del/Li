@@ -21,6 +21,9 @@ class AppSettings {
     this.aiScopes = const {AiDataScope.money, AiDataScope.tasks, AiDataScope.habits, AiDataScope.food},
     this.personalizedAds = true,
     this.showLio = true,
+    this.journalReminder = true,
+    this.planReminder = true,
+    this.lioLearnsJournal = true,
   });
 
   final ThemeMode themeMode;
@@ -38,6 +41,13 @@ class AppSettings {
   /// Lio, the floating companion that offers tips and inspiration.
   final bool showLio;
 
+  /// Evening "write in your journal" and morning "plan your day" nudges.
+  final bool journalReminder;
+  final bool planReminder;
+
+  /// Lio may read journal entries on the device to learn mood patterns.
+  final bool lioLearnsJournal;
+
   AppSettings copyWith({
     ThemeMode? themeMode,
     bool? highContrast,
@@ -50,6 +60,9 @@ class AppSettings {
     Set<AiDataScope>? aiScopes,
     bool? personalizedAds,
     bool? showLio,
+    bool? journalReminder,
+    bool? planReminder,
+    bool? lioLearnsJournal,
   }) => AppSettings(
     themeMode: themeMode ?? this.themeMode,
     highContrast: highContrast ?? this.highContrast,
@@ -61,6 +74,9 @@ class AppSettings {
     aiScopes: aiScopes ?? this.aiScopes,
     personalizedAds: personalizedAds ?? this.personalizedAds,
     showLio: showLio ?? this.showLio,
+    journalReminder: journalReminder ?? this.journalReminder,
+    planReminder: planReminder ?? this.planReminder,
+    lioLearnsJournal: lioLearnsJournal ?? this.lioLearnsJournal,
   );
 }
 
@@ -89,6 +105,9 @@ class SettingsStore {
           : scopes.map((s) => byName(AiDataScope.values, s, AiDataScope.money)).toSet(),
       personalizedAds: _p.getBool('personalizedAds') ?? true,
       showLio: _p.getBool('showLio') ?? true,
+      journalReminder: _p.getBool('journalReminder') ?? true,
+      planReminder: _p.getBool('planReminder') ?? true,
+      lioLearnsJournal: _p.getBool('lioLearnsJournal') ?? true,
     );
   }
 
@@ -107,5 +126,8 @@ class SettingsStore {
     await _p.setStringList('aiScopes', s.aiScopes.map((e) => e.name).toList());
     await _p.setBool('personalizedAds', s.personalizedAds);
     await _p.setBool('showLio', s.showLio);
+    await _p.setBool('journalReminder', s.journalReminder);
+    await _p.setBool('planReminder', s.planReminder);
+    await _p.setBool('lioLearnsJournal', s.lioLearnsJournal);
   }
 }

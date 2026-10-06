@@ -123,6 +123,31 @@ void main() {
 
   group('NotificationPlanner', () {
     const planner = NotificationPlanner();
+    test('morning plan and evening journal reminders, skipped when done', () {
+      final morning = DateTime(2026, 6, 10, 7);
+      final p = planner.plan(NotificationState(now: morning, frequency: NotificationFrequency.normal, dailyCap: 5));
+      final today = p.where((x) => Dates.sameDay(x.at, morning)).map((x) => (x.kind, x.at.hour, x.at.minute));
+      expect(today, containsAll([(NotificationKind.planDay, 8, 45), (NotificationKind.journal, 21, 15)]));
+      expect(NotificationKind.planDay.route, '/ai?topic=plan');
+      final done = planner.plan(
+        NotificationState(
+          now: morning,
+          frequency: NotificationFrequency.normal,
+          dailyCap: 5,
+          hasPlanToday: true,
+          journaledToday: true,
+        ),
+      );
+      expect(
+        done.where((x) => Dates.sameDay(x.at, morning)).map((x) => x.kind),
+        isNot(contains(NotificationKind.planDay)),
+      );
+      expect(
+        done.where((x) => Dates.sameDay(x.at, morning)).map((x) => x.kind),
+        isNot(contains(NotificationKind.journal)),
+      );
+    });
+
     test('off schedules nothing', () {
       expect(planner.plan(NotificationState(now: now, frequency: NotificationFrequency.off, dailyCap: 3)), isEmpty);
     });
@@ -157,7 +182,8 @@ void main() {
       );
       final today = p.where((x) => Dates.sameDay(x.at, now)).toList();
       expect(today.length, 1);
-      expect(today.single.kind, NotificationKind.moodCheckIn);
+      // The evening journal reminder doubles as the mood check-in.
+      expect(today.single.kind, NotificationKind.journal);
       final tomorrow = p.where((x) => Dates.sameDay(x.at, Dates.addDays(now, 1))).toList();
       expect(tomorrow.length, 1);
       expect(tomorrow.single.kind, NotificationKind.streakAtRisk);

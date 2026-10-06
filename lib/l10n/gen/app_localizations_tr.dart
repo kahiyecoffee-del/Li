@@ -1869,6 +1869,31 @@ class AppLocalizationsTr extends AppLocalizations {
   String get notifMoodBody => 'Bugün nasıl hissediyorsun?';
 
   @override
+  String get notifPlanTitle => 'Günaydın ☀️';
+
+  @override
+  String get notifPlanBody => 'Lio ile 2 dakika, günün planlansın.';
+
+  @override
+  String get notifJournalTitle => 'Günlüğün';
+
+  @override
+  String get notifJournalBody => 'Bugün nasıl geçti? Birkaç satır yeter.';
+
+  @override
+  String get journalReminderSetting => 'Akşam günlük hatırlatması';
+
+  @override
+  String get planReminderSetting => 'Sabah plan hatırlatması';
+
+  @override
+  String get lioLearnsSetting => 'Lio günlüğümden öğrensin';
+
+  @override
+  String get lioLearnsHelp =>
+      'Lio yazılarındaki örüntüleri (ruh halini neyin yükselttiği ya da düşürdüğü) sadece bu telefonda bulur. Hiçbir şey cihazından çıkmaz.';
+
+  @override
   String get notifWeeklyTitle => '60 saniyede haftan';
 
   @override

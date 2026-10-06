@@ -1886,6 +1886,31 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notifMoodBody => 'How are you feeling today?';
 
   @override
+  String get notifPlanTitle => 'Good morning ☀️';
+
+  @override
+  String get notifPlanBody => 'Two minutes with Lio and your day has a plan.';
+
+  @override
+  String get notifJournalTitle => 'Your journal';
+
+  @override
+  String get notifJournalBody => 'How was today? A few lines are enough.';
+
+  @override
+  String get journalReminderSetting => 'Evening journal reminder';
+
+  @override
+  String get planReminderSetting => 'Morning plan reminder';
+
+  @override
+  String get lioLearnsSetting => 'Let Lio learn from my journal';
+
+  @override
+  String get lioLearnsHelp =>
+      'Lio finds patterns in your entries (what lifts or lowers your mood) on this phone only. Nothing leaves your device.';
+
+  @override
   String get notifWeeklyTitle => 'Your week in 60 seconds';
 
   @override

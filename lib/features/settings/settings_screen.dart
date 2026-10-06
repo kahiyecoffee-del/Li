@@ -104,6 +104,25 @@ class SettingsScreen extends ConsumerWidget {
             value: settings.showLio,
             onChanged: (v) => ctrl.update((x) => x.copyWith(showLio: v)),
           ),
+          SwitchListTile(
+            secondary: const Icon(Icons.wb_sunny_outlined),
+            title: Text(l.planReminderSetting),
+            value: settings.planReminder,
+            onChanged: (v) => ctrl.update((x) => x.copyWith(planReminder: v)),
+          ),
+          SwitchListTile(
+            secondary: const Icon(Icons.menu_book_outlined),
+            title: Text(l.journalReminderSetting),
+            value: settings.journalReminder,
+            onChanged: (v) => ctrl.update((x) => x.copyWith(journalReminder: v)),
+          ),
+          SwitchListTile(
+            secondary: const Icon(Icons.psychology_alt_outlined),
+            title: Text(l.lioLearnsSetting),
+            subtitle: Text(l.lioLearnsHelp),
+            value: settings.lioLearnsJournal,
+            onChanged: (v) => ctrl.update((x) => x.copyWith(lioLearnsJournal: v)),
+          ),
           ListTile(
             leading: const Icon(Icons.language),
             title: Text(l.language),

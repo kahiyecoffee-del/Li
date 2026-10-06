@@ -14,6 +14,7 @@ import '../services/config/remote_config_service.dart';
 import '../services/notifications/notification_planner.dart';
 import 'derived_providers.dart';
 import 'providers.dart';
+import 'router.dart';
 
 /// App-wide side effects that react to state:
 /// * persist today's Life Score snapshot (history, reports, badges);
@@ -35,6 +36,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
   Timer? _notifDebounce;
   String? _sessionUid;
   bool _adsInitialized = false;
+  StreamSubscription<String>? _taps;
 
   @override
   void initState() {
@@ -43,6 +45,11 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
     final s = ref.read(servicesProvider);
     unawaited(s.analytics.log(AnalyticsEvent.appOpen));
     unawaited(s.notifications.initialize());
+    // Tapping a reminder opens the right screen (plan with Lio, journal…).
+    _taps = s.notifications.taps.listen((route) {
+      final r = route.contains('topic=') ? '$route&n=${DateTime.now().microsecondsSinceEpoch}' : route;
+      ref.read(routerProvider).go(r);
+    });
     ref.listenManual(
       sessionProvider.select((s) => s.value?.user.uid),
       (_, uid) => _onSession(uid),
@@ -62,6 +69,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
     WidgetsBinding.instance.removeObserver(this);
     _scoreDebounce?.cancel();
     _notifDebounce?.cancel();
+    unawaited(_taps?.cancel());
     super.dispose();
   }
 
@@ -160,6 +168,13 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
           activeToday: ref.read(activeDaysProvider).contains(today),
           moodLoggedToday: (ref.read(moodsProvider).list).any((m) => m.day == today),
           weeklyReportEnabled: services.flags.isEnabled(Feature.weeklyReport),
+          hasPlanToday: ref
+              .read(tasksProvider)
+              .list
+              .any((t) => !t.deleted && t.anchorDate != null && Dates.dayKey(t.anchorDate!) == today),
+          journaledToday: ref.read(journalProvider).list.any((e) => Dates.dayKey(e.createdAt) == today),
+          journalReminder: settings.journalReminder,
+          planReminder: settings.planReminder,
           quietEnd: profile?.wakeTime ?? defaultQuietEnd,
           quietStart: profile?.sleepTime ?? defaultQuietStart,
         ),
@@ -203,6 +218,11 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
       ref.listen(moodsProvider, (_, _) => _scheduleNotifications());
       ref.listen(transactionsProvider, (_, _) => _scheduleNotifications());
       ref.listen(settingsProvider.select((s) => s.notificationFrequency), (_, _) => _scheduleNotifications());
+      ref.listen(journalProvider, (_, _) => _scheduleNotifications());
+      ref.listen(
+        settingsProvider.select((s) => (s.journalReminder, s.planReminder)),
+        (_, _) => _scheduleNotifications(),
+      );
     }
     return widget.child;
   }

@@ -264,6 +264,8 @@ extension Labels on AppLocalizations {
     NotificationKind.streakAtRisk => (title: notifStreakTitle, body: notifStreakBody(streak)),
     NotificationKind.moodCheckIn => (title: notifMoodTitle, body: notifMoodBody),
     NotificationKind.weeklyReview => (title: notifWeeklyTitle, body: notifWeeklyBody),
+    NotificationKind.planDay => (title: notifPlanTitle, body: notifPlanBody),
+    NotificationKind.journal => (title: notifJournalTitle, body: notifJournalBody),
   };
 
   /// Friendly message for any error; raw exceptions are never displayed.
