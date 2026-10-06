@@ -30,7 +30,15 @@ jobs:
         run: flutter build apk --release --target-platform android-arm64
       - name: Rename
         run: cp build/app/outputs/flutter-apk/app-release.apk Dayly-test-${{ github.run_number }}.apk
+      # Always keep the APK as a run artifact (Actions → run → Artifacts),
+      # even if publishing the release below is refused.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Dayly-test-${{ github.run_number }}
+          path: Dayly-test-${{ github.run_number }}.apk
+          retention-days: 30
       - uses: softprops/action-gh-release@v2
+        continue-on-error: true
         with:
           tag_name: test-build-${{ github.run_number }}
           name: Dayly test build ${{ github.run_number }}
