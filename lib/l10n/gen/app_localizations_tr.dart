@@ -13,7 +13,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get appName => 'Dayly';
 
   @override
-  String get appTagline => 'Her günün güzel geçsin.';
+  String get appTagline => 'Hayatın zor kısmını bize bırak.';
 
   @override
   String get ok => 'Tamam';
@@ -181,14 +181,23 @@ class AppLocalizationsTr extends AppLocalizations {
   String get navAi => 'YZ';
 
   @override
+  String get navExplore => 'Keşfet';
+
+  @override
+  String get navSaved => 'Kaydedilenler';
+
+  @override
+  String get navProfile => 'Profil';
+
+  @override
   String get profileAndSettings => 'Profil ve ayarlar';
 
   @override
-  String get welcomeTitle => 'Merhaba, ben Lio! Bugünü birlikte güzel geçirelim.';
+  String get welcomeTitle => 'Hayatın zor kısmını bize bırak.';
 
   @override
   String get welcomeBody =>
-      'Planlar, para, yemek, alışkanlıklar ve hepsini birbirine bağlayan bir asistan — tek ve sakin bir yerde.';
+      'Para, karar, yemek, yazı: günlük bir problemini yaz, Dayly saniyeler içinde, telefonunda çözsün.';
 
   @override
   String get getStarted => 'Başla';
@@ -323,7 +332,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get onbReadyBody => 'Ana ekranın artık bugün senin için önemli olanı gösteriyor.';
 
   @override
-  String get onbOpenHome => 'Günümü aç';
+  String get onbOpenHome => 'İlk problemimi çözelim';
 
   @override
   String stepOf(int current, int total) {
@@ -2220,4 +2229,380 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get brainAnswerLabel => 'Lio · telefonunda';
+
+  @override
+  String homeHello(String name) {
+    return 'Merhaba $name 👋';
+  }
+
+  @override
+  String get homeHelloNoName => 'Merhaba 👋';
+
+  @override
+  String get homeQuestion => 'Bugün neyi çözelim?';
+
+  @override
+  String get problemHint => 'Bir problemini yaz…';
+
+  @override
+  String get problemEx1 => '3.000 TL param kaldı, ay sonuna 20 gün var';
+
+  @override
+  String get problemEx2 => '1 L 45 TL mi, 1,5 L 60 TL mi daha ucuz?';
+
+  @override
+  String get problemEx3 => 'Evde yumurta, domates ve peynir var';
+
+  @override
+  String get problemEx4 => 'iPhone mu Samsung mu?';
+
+  @override
+  String get problemEx5 => '1.840 TL hesap, 4 kişiyiz';
+
+  @override
+  String get problemEx6 => '1.299 TL\'ye %30 indirim';
+
+  @override
+  String get problemEx7 => '31 Aralık\'a kaç gün var?';
+
+  @override
+  String get solve => 'Çöz';
+
+  @override
+  String get voiceInput => 'Sesle anlat';
+
+  @override
+  String get photoInput => 'Fotoğraf';
+
+  @override
+  String get listening => 'Dinliyorum…';
+
+  @override
+  String get voiceUnavailable => 'Bu cihazda sesle yazma kullanılamıyor.';
+
+  @override
+  String get photoNoText => 'Bu fotoğrafta okunabilir bir yazı bulamadım.';
+
+  @override
+  String get quickMoney => 'Para';
+
+  @override
+  String get quickDecide => 'Karar ver';
+
+  @override
+  String get quickFood => 'Yemek';
+
+  @override
+  String get quickCalc => 'Hesapla';
+
+  @override
+  String get quickWrite => 'Yaz';
+
+  @override
+  String get quickPlan => 'Planla';
+
+  @override
+  String get recentlySolved => 'Son çözdüklerin';
+
+  @override
+  String get solutionTitle => 'Çözüm';
+
+  @override
+  String get solvedOnDevice => 'Telefonunda hesaplandı';
+
+  @override
+  String get savedToast => 'Kaydedildi';
+
+  @override
+  String get askLioAbout => 'Bunu Lio’ya sor';
+
+  @override
+  String get solveAnother => 'Başka bir şey çöz';
+
+  @override
+  String get rowPerDay => 'Günlük';
+
+  @override
+  String get rowPerWeek => 'Haftalık';
+
+  @override
+  String get rowDays => 'Gün';
+
+  @override
+  String get rowTotal => 'Toplam';
+
+  @override
+  String get rowYouSave => 'Tasarruf';
+
+  @override
+  String get rowTax => 'Vergi';
+
+  @override
+  String get rowIncrease => 'Artış';
+
+  @override
+  String get rowPrice => 'Fiyat';
+
+  @override
+  String get rowPerPerson => 'Kişi başı';
+
+  @override
+  String get rowPeople => 'Kişi';
+
+  @override
+  String get rowTip => 'Bahşiş';
+
+  @override
+  String get rowMonthly => 'Aylık';
+
+  @override
+  String get rowMonths => 'Ay';
+
+  @override
+  String get rowCash => 'Peşin fiyat';
+
+  @override
+  String get rowExtra => 'Fazladan ödeme';
+
+  @override
+  String get rowDistance => 'Mesafe';
+
+  @override
+  String get rowFuel => 'Yakıt';
+
+  @override
+  String get rowYearly => 'Yıllık';
+
+  @override
+  String get rowDate => 'Tarih';
+
+  @override
+  String runwayHeadline(String amount) {
+    return 'Günde $amount harcayabilirsin.';
+  }
+
+  @override
+  String runwayMonthEnd(int days) {
+    return 'Ay sonuna kadar sayıldı ($days gün, bugün dahil).';
+  }
+
+  @override
+  String discountHeadline(String amount) {
+    return '$amount ödersin.';
+  }
+
+  @override
+  String vatHeadline(String amount) {
+    return 'KDV dahil toplam: $amount.';
+  }
+
+  @override
+  String raiseHeadline(String amount) {
+    return 'Yeni tutar: $amount.';
+  }
+
+  @override
+  String percentOfHeadline(String percent, String base, String result) {
+    return '$base sayısının %$percent kadarı $result eder.';
+  }
+
+  @override
+  String splitHeadline(String amount) {
+    return 'Kişi başı $amount düşüyor.';
+  }
+
+  @override
+  String installmentMore(String amount, String percent) {
+    return 'Taksitli almak peşine göre $amount daha pahalı (%$percent).';
+  }
+
+  @override
+  String get installmentNoMore => 'Taksit peşinden pahalı değil; bölmek mantıklı.';
+
+  @override
+  String installmentTotal(String amount) {
+    return 'Toplamda $amount ödersin.';
+  }
+
+  @override
+  String unitPriceHeadline(int n, String price, String unit) {
+    return '$n. seçenek daha ucuz: $unit başına $price.';
+  }
+
+  @override
+  String unitPriceSaving(String percent) {
+    return 'Birim fiyatı yaklaşık %$percent daha düşük.';
+  }
+
+  @override
+  String get unitPriceSame => 'Birim fiyatları aynı; gerçekten kullanacağın boyu seç.';
+
+  @override
+  String get unitPieceLabel => 'adet';
+
+  @override
+  String fuelHeadline(String amount) {
+    return 'Yolculuk yaklaşık $amount yakıt tutar.';
+  }
+
+  @override
+  String yearlyHeadline(String amount) {
+    return 'Bu, yılda $amount eder.';
+  }
+
+  @override
+  String daysUntilHeadline(int days) {
+    String _temp0 = intl.Intl.pluralLogic(days, locale: localeName, other: '$days gün kaldı.', zero: 'Bugün!');
+    return '$_temp0';
+  }
+
+  @override
+  String optionN(int n) {
+    return '$n. seçenek';
+  }
+
+  @override
+  String get decideTitle => 'Karar ver';
+
+  @override
+  String get decideIntro => 'Seçeneklerini ve senin için önemli olanları ekle, ben tartayım.';
+
+  @override
+  String get decideAddOption => 'Seçenek ekle';
+
+  @override
+  String get decidePrice => 'Fiyat (isteğe bağlı)';
+
+  @override
+  String get decideWhatMatters => 'Senin için ne önemli?';
+
+  @override
+  String get critPrice => 'Fiyat';
+
+  @override
+  String get critQuality => 'Kalite';
+
+  @override
+  String get critFit => 'İhtiyacıma uygun';
+
+  @override
+  String get critLongTerm => 'Uzun vadeli değer';
+
+  @override
+  String get critRisk => 'Düşük risk';
+
+  @override
+  String get critCustomHint => 'Önemli olan başka bir şey';
+
+  @override
+  String get weight1 => 'Az önemli';
+
+  @override
+  String get weight2 => 'Önemli';
+
+  @override
+  String get weight3 => 'Çok önemli';
+
+  @override
+  String get decideRate => 'Her seçeneği puanla';
+
+  @override
+  String get decideRateHelp => '1 = kötü, 5 = harika. Fiyat girdiysen fiyat puanı otomatik hesaplanır.';
+
+  @override
+  String get decideShow => 'En iyisini göster';
+
+  @override
+  String get decideRecommended => 'Önerilen seçenek';
+
+  @override
+  String get decideWhy => 'Neden?';
+
+  @override
+  String decideStrength(String criterion) {
+    return '$criterion açısından daha iyi';
+  }
+
+  @override
+  String decideWeakness(String criterion) {
+    return '$criterion açısından daha zayıf';
+  }
+
+  @override
+  String get decideTooClose => 'Çok yakın; ikisi de mantıklı. En çok neye önem verdiğine göre seç.';
+
+  @override
+  String get decideSlight => 'Hafif bir üstünlük var, büyük değil.';
+
+  @override
+  String get decideClear => 'Önceliklerine göre açık ara önde.';
+
+  @override
+  String get decideDisclaimer => 'Senin puanlarına dayanır. Almadan önce güncel fiyat ve detayları kontrol et.';
+
+  @override
+  String get decideNeedTwo => 'En az iki seçenek ekle.';
+
+  @override
+  String decideScore(int score) {
+    return '$score/100';
+  }
+
+  @override
+  String get calcTitle => 'Hesap makinesi';
+
+  @override
+  String get calcError => 'İfadeyi kontrol et';
+
+  @override
+  String get exploreTitle => 'Keşfet';
+
+  @override
+  String get exploreSolve => 'Çöz';
+
+  @override
+  String get exploreLife => 'Takip';
+
+  @override
+  String get exploreMyDay => 'Günüm';
+
+  @override
+  String get exploreMyDayBody => 'Bugünün planı, bütçen ve hedeflerin';
+
+  @override
+  String get savedTitle => 'Kaydedilenler';
+
+  @override
+  String get savedEmptyTitle => 'Henüz kaydedilen yok';
+
+  @override
+  String get savedEmptyBody => 'Bir problem çöz ve burada saklamak için Kaydet’e dokun.';
+
+  @override
+  String get removed => 'Kaldırıldı';
+
+  @override
+  String get recipeHeadline => 'Elindekilerle bunları yapabilirsin';
+
+  @override
+  String recipeMissing(String items) {
+    return 'Eksik: $items';
+  }
+
+  @override
+  String get recipeHaveAll => 'Her şey elinde';
+
+  @override
+  String recipeMinutes(int minutes) {
+    return '$minutes dk';
+  }
+
+  @override
+  String get addMissingToList => 'Eksikleri alışveriş listesine ekle';
+
+  @override
+  String get addedToList => 'Alışveriş listene eklendi';
+
+  @override
+  String get recipeNoMatch => 'Bu malzemelerle eşleşen tarif bulamadım. Fikir için Lio’ya sor.';
 }

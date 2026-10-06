@@ -50,8 +50,7 @@ const Map<String, Object> remoteDefaults = {
   // (Apache-2.0), int4 (block32, ~0.9 GB), converted to LiteRT-LM by .github/workflows/convert-lio.yml
   // and served from this repo's `lio-model` release. Swapped for the
   // fine-tuned Lio build when training finishes.
-  RcKeys.offlineModelUrl:
-      'https://github.com/kahiyecoffee-del/Li/releases/download/lio-model/lio-qwen2.5-1.5b-base_q4_block32_ekv1280.litertlm',
+  RcKeys.offlineModelUrl: 'https://github.com/kahiyecoffee-del/Li/releases/download/lio-model/lio-qwen2.5-1.5b-base_q4_block32_ekv1280.litertlm',
   RcKeys.offlineModelSizeMb: 880,
   // Optional second (larger) variant; empty = single fixed model.
   RcKeys.offlineModelPlusUrl: '',

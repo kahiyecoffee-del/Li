@@ -13,7 +13,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appName => 'Dayly';
 
   @override
-  String get appTagline => 'Make every day a good one.';
+  String get appTagline => 'Leave the hard part of life to us.';
 
   @override
   String get ok => 'OK';
@@ -181,13 +181,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String get navAi => 'AI';
 
   @override
+  String get navExplore => 'Explore';
+
+  @override
+  String get navSaved => 'Saved';
+
+  @override
+  String get navProfile => 'Profile';
+
+  @override
   String get profileAndSettings => 'Profile and settings';
 
   @override
-  String get welcomeTitle => 'Hi, I’m Lio! Let’s make today a good day.';
+  String get welcomeTitle => 'Leave the hard part of life to us.';
 
   @override
-  String get welcomeBody => 'Plans, money, food, habits and an assistant that connects them — in one calm place.';
+  String get welcomeBody =>
+      'Money, decisions, food, writing: type an everyday problem and Dayly solves it in seconds, right on your phone.';
 
   @override
   String get getStarted => 'Get started';
@@ -321,7 +331,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onbReadyBody => 'Your home screen now shows what matters for you today.';
 
   @override
-  String get onbOpenHome => 'Open my day';
+  String get onbOpenHome => 'Solve my first problem';
 
   @override
   String stepOf(int current, int total) {
@@ -2244,4 +2254,386 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get brainAnswerLabel => 'Lio · on your phone';
+
+  @override
+  String homeHello(String name) {
+    return 'Hi $name 👋';
+  }
+
+  @override
+  String get homeHelloNoName => 'Hi there 👋';
+
+  @override
+  String get homeQuestion => 'What should we solve today?';
+
+  @override
+  String get problemHint => 'Type a problem…';
+
+  @override
+  String get problemEx1 => 'I have 3,000 left and 20 days to go';
+
+  @override
+  String get problemEx2 => '1 L for 45 or 1.5 L for 60 — which is cheaper?';
+
+  @override
+  String get problemEx3 => 'I have eggs, tomatoes and cheese at home';
+
+  @override
+  String get problemEx4 => 'iPhone or Samsung?';
+
+  @override
+  String get problemEx5 => 'Split a 1,840 bill between 4 people';
+
+  @override
+  String get problemEx6 => '30% off 1,299 — what do I pay?';
+
+  @override
+  String get problemEx7 => 'How many days until December 31?';
+
+  @override
+  String get solve => 'Solve';
+
+  @override
+  String get voiceInput => 'Speak';
+
+  @override
+  String get photoInput => 'Photo';
+
+  @override
+  String get listening => 'Listening…';
+
+  @override
+  String get voiceUnavailable => 'Voice input isn’t available on this device.';
+
+  @override
+  String get photoNoText => 'I couldn’t read any text in that photo.';
+
+  @override
+  String get quickMoney => 'Money';
+
+  @override
+  String get quickDecide => 'Decide';
+
+  @override
+  String get quickFood => 'Food';
+
+  @override
+  String get quickCalc => 'Calculate';
+
+  @override
+  String get quickWrite => 'Write';
+
+  @override
+  String get quickPlan => 'Plan';
+
+  @override
+  String get recentlySolved => 'Recently solved';
+
+  @override
+  String get solutionTitle => 'Solution';
+
+  @override
+  String get solvedOnDevice => 'Calculated on your phone';
+
+  @override
+  String get savedToast => 'Saved';
+
+  @override
+  String get askLioAbout => 'Ask Lio about this';
+
+  @override
+  String get solveAnother => 'Solve something else';
+
+  @override
+  String get rowPerDay => 'Per day';
+
+  @override
+  String get rowPerWeek => 'Per week';
+
+  @override
+  String get rowDays => 'Days';
+
+  @override
+  String get rowTotal => 'Total';
+
+  @override
+  String get rowYouSave => 'You save';
+
+  @override
+  String get rowTax => 'Tax';
+
+  @override
+  String get rowIncrease => 'Increase';
+
+  @override
+  String get rowPrice => 'Price';
+
+  @override
+  String get rowPerPerson => 'Per person';
+
+  @override
+  String get rowPeople => 'People';
+
+  @override
+  String get rowTip => 'Tip';
+
+  @override
+  String get rowMonthly => 'Monthly';
+
+  @override
+  String get rowMonths => 'Months';
+
+  @override
+  String get rowCash => 'Cash price';
+
+  @override
+  String get rowExtra => 'Extra you pay';
+
+  @override
+  String get rowDistance => 'Distance';
+
+  @override
+  String get rowFuel => 'Fuel';
+
+  @override
+  String get rowYearly => 'Yearly';
+
+  @override
+  String get rowDate => 'Date';
+
+  @override
+  String runwayHeadline(String amount) {
+    return 'You can spend $amount a day.';
+  }
+
+  @override
+  String runwayMonthEnd(int days) {
+    return 'Counted to the end of the month ($days days, today included).';
+  }
+
+  @override
+  String discountHeadline(String amount) {
+    return 'You pay $amount.';
+  }
+
+  @override
+  String vatHeadline(String amount) {
+    return 'Total with VAT: $amount.';
+  }
+
+  @override
+  String raiseHeadline(String amount) {
+    return 'New amount: $amount.';
+  }
+
+  @override
+  String percentOfHeadline(String percent, String base, String result) {
+    return '$percent% of $base is $result.';
+  }
+
+  @override
+  String splitHeadline(String amount) {
+    return 'Each person pays $amount.';
+  }
+
+  @override
+  String installmentMore(String amount, String percent) {
+    return 'Instalments cost $amount more than paying cash ($percent%).';
+  }
+
+  @override
+  String get installmentNoMore => 'Instalments cost no more than cash — spreading it out is fine.';
+
+  @override
+  String installmentTotal(String amount) {
+    return 'You will pay $amount in total.';
+  }
+
+  @override
+  String unitPriceHeadline(int n, String price, String unit) {
+    return 'Option $n is cheaper: $price per $unit.';
+  }
+
+  @override
+  String unitPriceSaving(String percent) {
+    return 'About $percent% cheaper per unit.';
+  }
+
+  @override
+  String get unitPriceSame => 'They cost the same per unit — pick the size you’ll actually use.';
+
+  @override
+  String get unitPieceLabel => 'piece';
+
+  @override
+  String fuelHeadline(String amount) {
+    return 'The trip costs about $amount in fuel.';
+  }
+
+  @override
+  String yearlyHeadline(String amount) {
+    return 'That is $amount a year.';
+  }
+
+  @override
+  String daysUntilHeadline(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days days to go.',
+      one: '1 day to go.',
+      zero: 'It’s today!',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String optionN(int n) {
+    return 'Option $n';
+  }
+
+  @override
+  String get decideTitle => 'Decide';
+
+  @override
+  String get decideIntro => 'Add your options and what matters to you. I’ll weigh them up.';
+
+  @override
+  String get decideAddOption => 'Add option';
+
+  @override
+  String get decidePrice => 'Price (optional)';
+
+  @override
+  String get decideWhatMatters => 'What matters?';
+
+  @override
+  String get critPrice => 'Price';
+
+  @override
+  String get critQuality => 'Quality';
+
+  @override
+  String get critFit => 'Fits my needs';
+
+  @override
+  String get critLongTerm => 'Long-term value';
+
+  @override
+  String get critRisk => 'Low risk';
+
+  @override
+  String get critCustomHint => 'Something else that matters';
+
+  @override
+  String get weight1 => 'Nice to have';
+
+  @override
+  String get weight2 => 'Important';
+
+  @override
+  String get weight3 => 'Must';
+
+  @override
+  String get decideRate => 'Rate each option';
+
+  @override
+  String get decideRateHelp => '1 = poor, 5 = great. Price is scored from the prices you entered.';
+
+  @override
+  String get decideShow => 'Show the best option';
+
+  @override
+  String get decideRecommended => 'Recommended';
+
+  @override
+  String get decideWhy => 'Why?';
+
+  @override
+  String decideStrength(String criterion) {
+    return 'Better on $criterion';
+  }
+
+  @override
+  String decideWeakness(String criterion) {
+    return 'Weaker on $criterion';
+  }
+
+  @override
+  String get decideTooClose => 'It’s very close — both are reasonable. Let what you value most decide.';
+
+  @override
+  String get decideSlight => 'A slight edge, not a big one.';
+
+  @override
+  String get decideClear => 'A clear winner for your priorities.';
+
+  @override
+  String get decideDisclaimer => 'Based on your own ratings. Check current prices and details before you buy.';
+
+  @override
+  String get decideNeedTwo => 'Add at least two options.';
+
+  @override
+  String decideScore(int score) {
+    return '$score/100';
+  }
+
+  @override
+  String get calcTitle => 'Calculator';
+
+  @override
+  String get calcError => 'Check the expression';
+
+  @override
+  String get exploreTitle => 'Explore';
+
+  @override
+  String get exploreSolve => 'Solve';
+
+  @override
+  String get exploreLife => 'Track';
+
+  @override
+  String get exploreMyDay => 'My day';
+
+  @override
+  String get exploreMyDayBody => 'Plan, budget and goals for today';
+
+  @override
+  String get savedTitle => 'Saved';
+
+  @override
+  String get savedEmptyTitle => 'Nothing saved yet';
+
+  @override
+  String get savedEmptyBody => 'Solve a problem and tap Save to keep it here.';
+
+  @override
+  String get removed => 'Removed';
+
+  @override
+  String get recipeHeadline => 'You can make these with what you have';
+
+  @override
+  String recipeMissing(String items) {
+    return 'Missing: $items';
+  }
+
+  @override
+  String get recipeHaveAll => 'You have everything';
+
+  @override
+  String recipeMinutes(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get addMissingToList => 'Add missing to shopping list';
+
+  @override
+  String get addedToList => 'Added to your shopping list';
+
+  @override
+  String get recipeNoMatch => 'I couldn’t match those ingredients to a recipe yet. Ask Lio for ideas.';
 }

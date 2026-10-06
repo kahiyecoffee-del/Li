@@ -3,6 +3,7 @@ import '../../domain/models/food.dart';
 import '../../domain/models/habit.dart';
 import '../../domain/models/money_models.dart';
 import '../../domain/models/progress.dart';
+import '../../domain/models/saved_item.dart';
 import '../../domain/models/task_item.dart';
 import '../../domain/models/user_profile.dart';
 import '../../domain/models/wellbeing.dart';
@@ -33,6 +34,7 @@ class UserRepos {
        scores = Repository(store, DailyScoreRecord.codec, onLocalWrite: onWrite, clock: clock),
        goals = Repository(store, DailyGoalsRecord.codec, onLocalWrite: onWrite, clock: clock),
        achievements = Repository(store, AchievementRecord.codec, onLocalWrite: onWrite, clock: clock),
+       saved = Repository(store, SavedItem.codec, onLocalWrite: onWrite, clock: clock),
        journal = JournalRepository(Repository(store, JournalEntry.codec, clock: clock), journalKeys);
 
   final Repository<UserProfile> profile;
@@ -51,5 +53,6 @@ class UserRepos {
   final Repository<DailyScoreRecord> scores;
   final Repository<DailyGoalsRecord> goals;
   final Repository<AchievementRecord> achievements;
+  final Repository<SavedItem> saved;
   final JournalRepository journal;
 }

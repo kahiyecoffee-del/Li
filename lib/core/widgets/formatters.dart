@@ -15,6 +15,16 @@ class Fmt {
 
   String money(int minor, {bool cents = false}) => _money.format(minor, currency, showCents: cents);
   String compactMoney(int minor) => _money.compact(minor, currency);
+
+  /// Money from a decimal amount; shows cents only when there are any.
+  String amount(double v, {String? currency}) {
+    final minor = (v * 100).round();
+    return _money.format(minor, currency ?? this.currency, showCents: minor % 100 != 0);
+  }
+
+  /// Plain number with up to [decimals] fraction digits ("1.234,5").
+  String number(double v, {int decimals = 2}) =>
+      (NumberFormat.decimalPattern(locale)..maximumFractionDigits = decimals).format(v);
   String time(DateTime d) => DateFormat.Hm(locale).format(d);
   String dayMonth(DateTime d) => DateFormat.MMMd(locale).format(d);
   String weekdayDayMonth(DateTime d) => DateFormat.MMMEd(locale).format(d);

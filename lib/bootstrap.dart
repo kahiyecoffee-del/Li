@@ -30,6 +30,7 @@ import 'services/news/news_service.dart';
 import 'services/notifications/notification_service.dart';
 import 'services/notifications/push_service.dart';
 import 'services/ocr/ocr_service.dart';
+import 'services/voice/voice_input_service.dart';
 import 'services/weather/weather_service.dart';
 
 /// FCM background handler must be a top-level function.
@@ -80,6 +81,7 @@ Future<Services> buildServices() async {
       location: LocationService(),
       news: NewsService(UnavailableNewsProvider(), prefs),
       ocr: MlKitOcrService(),
+      voice: mobile ? DeviceVoiceInput() : const NoVoiceInput(),
       journalKeys: SecureJournalKeyStore(),
       offlineModel: offlineModel,
     );
@@ -125,6 +127,7 @@ Future<Services> buildServices() async {
     location: LocationService(),
     news: NewsService(BackendNewsProvider(functions), prefs),
     ocr: MlKitOcrService(),
+    voice: mobile ? DeviceVoiceInput() : const NoVoiceInput(),
     journalKeys: SecureJournalKeyStore(),
     offlineModel: offlineModel,
     firestore: firestore,

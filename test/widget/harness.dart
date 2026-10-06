@@ -218,6 +218,14 @@ Future<void> pumpUntil(WidgetTester tester, Finder finder, {int maxSteps = 60}) 
   throw TestFailure('Timed out waiting for $finder');
 }
 
+/// Scrolls [finder] well clear of the floating tab bar, then taps it.
+Future<void> scrollAndTap(WidgetTester tester, Finder finder) async {
+  await tester.scrollUntilVisible(finder, 200, scrollable: find.byType(Scrollable).first);
+  await tester.drag(find.byType(Scrollable).first, const Offset(0, -160));
+  await tester.pump(const Duration(milliseconds: 300));
+  await tester.tap(finder);
+}
+
 /// Phone-sized viewport (412×915 logical px).
 void usePhoneViewport(WidgetTester tester) {
   tester.view.physicalSize = const Size(1236, 2745);

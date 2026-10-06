@@ -17,6 +17,7 @@ import '../services/news/news_service.dart';
 import '../services/notifications/notification_service.dart';
 import '../services/notifications/push_service.dart';
 import '../services/ocr/ocr_service.dart';
+import '../services/voice/voice_input_service.dart';
 import '../services/weather/weather_service.dart';
 
 /// App-wide service graph, built once in `bootstrap()` and injected through
@@ -42,6 +43,7 @@ class Services {
     this.firestore,
     this.functions,
     this.push,
+    this.voice = const NoVoiceInput(),
   }) : flags = FeatureFlags(remote);
 
   final SharedPreferences prefs;
@@ -61,6 +63,7 @@ class Services {
   final OcrService ocr;
   final JournalKeyStore journalKeys;
   final OfflineModelService offlineModel;
+  final VoiceInputService voice;
 
   /// Null in local-only mode (Firebase not configured).
   final FirebaseFirestore? firestore;

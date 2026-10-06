@@ -70,6 +70,10 @@
 	<string>$(ADMOB_APP_ID)</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your approximate location is used only to show local weather.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Speak a problem instead of typing it. Audio is only used to turn your words into text.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Turns what you say into text so Dayly can solve it.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Take a photo of a receipt to add an expense. The photo is processed on your device.</string>
 	<key>NSPhotoLibraryUsageDescription</key>

@@ -148,3 +148,59 @@ class MealEngine {
     return out;
   }
 }
+
+const _trNames = <String, String>{
+  'apple': 'elma',
+  'avocado': 'avokado',
+  'banana': 'muz',
+  'bread': 'ekmek',
+  'broccoli': 'brokoli',
+  'bulgur': 'bulgur',
+  'butter': 'tereyağı',
+  'carrot': 'havuç',
+  'cheese': 'peynir',
+  'chicken': 'tavuk',
+  'chickpeas': 'nohut',
+  'cucumber': 'salatalık',
+  'egg': 'yumurta',
+  'garlic': 'sarımsak',
+  'honey': 'bal',
+  'lemon': 'limon',
+  'lentil': 'mercimek',
+  'lettuce': 'marul',
+  'milk': 'süt',
+  'mince': 'kıyma',
+  'mushroom': 'mantar',
+  'nuts': 'kuruyemiş',
+  'oats': 'yulaf',
+  'olive oil': 'zeytinyağı',
+  'onion': 'soğan',
+  'pasta': 'makarna',
+  'pepper': 'biber',
+  'potato': 'patates',
+  'rice': 'pirinç',
+  'salmon': 'somon',
+  'soy sauce': 'soya sosu',
+  'spinach': 'ıspanak',
+  'tomato': 'domates',
+  'tomato paste': 'salça',
+  'tortilla': 'lavaş',
+  'tuna': 'ton balığı',
+  'yogurt': 'yoğurt',
+};
+
+/// Display name of a canonical (English) ingredient in [languageCode].
+String ingredientName(String canonical, String languageCode) =>
+    languageCode == 'tr' ? (_trNames[normalizeIngredient(canonical)] ?? canonical) : canonical;
+
+/// Recipes that use the most of what the user has, then need the least.
+List<PantryMatch> bestForIngredients(List<Recipe> recipes, Iterable<String> have, {int limit = 3}) {
+  final h = have.map(normalizeIngredient).toSet();
+  int used(Recipe r) => r.ingredients.map(normalizeIngredient).where(h.contains).length;
+  final matches = const MealEngine().matchPantry(recipes, h).where((m) => used(m.recipe) > 0).toList()
+    ..sort((a, b) {
+      final u = used(b.recipe).compareTo(used(a.recipe));
+      return u != 0 ? u : a.missing.length.compareTo(b.missing.length);
+    });
+  return matches.take(limit).toList();
+}

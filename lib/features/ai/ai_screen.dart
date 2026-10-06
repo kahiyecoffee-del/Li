@@ -23,10 +23,16 @@ import '../shell/main_shell.dart';
 import 'chat_controller.dart';
 
 class AiScreen extends ConsumerStatefulWidget {
-  const AiScreen({super.key, this.initialPrompt});
+  const AiScreen({super.key, this.initialPrompt, this.autoSend = false, this.nonce});
 
   /// Pre-filled question (e.g. from a Home card).
   final String? initialPrompt;
+
+  /// Send [initialPrompt] right away (a problem typed on Home).
+  final bool autoSend;
+
+  /// Distinguishes two identical questions asked one after another.
+  final String? nonce;
 
   @override
   ConsumerState<AiScreen> createState() => _AiScreenState();
@@ -51,9 +57,16 @@ class _AiScreenState extends ConsumerState<AiScreen> {
 
   void _maybePrefill() {
     final p = widget.initialPrompt;
-    if (p != null && p != _consumedPrompt) {
-      _consumedPrompt = p;
-      _input.text = p;
+    final key = '$p#${widget.nonce}';
+    if (p != null && key != _consumedPrompt) {
+      _consumedPrompt = key;
+      if (widget.autoSend) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) _send(p);
+        });
+      } else {
+        _input.text = p;
+      }
     }
   }
 

@@ -94,11 +94,13 @@ class LioCompanion extends ConsumerStatefulWidget {
 
   final int tab;
 
-  /// Shell tabs where Lio steps aside (the assistant tab already features him).
-  static const hiddenOnTabs = {3};
+  /// Shell tabs where Lio steps aside: Home and the assistant already feature
+  /// him, and Profile is for settings. Keeps him helpful, not everywhere.
+  static const hiddenOnTabs = {0, 3, 4};
 
-  /// Shell tab index → [LioScript] tab (0 home, 1 plan, 2 money, 3 life, 4 AI).
-  static const scriptTab = [0, 1, 3, 4];
+  /// Shell tab index (home, explore, saved, AI, profile) → [LioScript] tab
+  /// (0 home, 1 plan, 2 money, 3 life, 4 AI).
+  static const scriptTab = [0, 3, 0, 4, 4];
 
   @override
   ConsumerState<LioCompanion> createState() => _LioCompanionState();
@@ -175,7 +177,7 @@ class _LioCompanionState extends ConsumerState<LioCompanion> with TickerProvider
     final key = Dates.dayKey(ref.read(todayProvider));
     return LioScript.lines(
       l: l,
-      tab: LioCompanion.scriptTab[widget.tab.clamp(0, 3)],
+      tab: LioCompanion.scriptTab[widget.tab.clamp(0, LioCompanion.scriptTab.length - 1)],
       hour: DateTime.now().hour,
       goalsLeft: goals.where((g) => !g.completed).length,
       allGoalsDone: goals.isNotEmpty && goals.every((g) => g.completed),

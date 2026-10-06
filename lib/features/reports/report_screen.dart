@@ -257,7 +257,7 @@ class _MetricsGrid extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(i.$1.toUpperCase(), style: context.text.labelSmall?.copyWith(color: context.semantic.muted)),
+                    Text(context.upper(i.$1), style: context.text.labelSmall?.copyWith(color: context.semantic.muted)),
                     const SizedBox(height: Space.xs),
                     FittedBox(
                       fit: BoxFit.scaleDown,

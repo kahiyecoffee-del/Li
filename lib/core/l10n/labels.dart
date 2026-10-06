@@ -286,3 +286,12 @@ extension Labels on AppLocalizations {
     };
   }
 }
+
+/// Upper-cases with the right dotted/dotless i for Turkish ("Önerilen" →
+/// "ÖNERİLEN", not "ÖNERILEN").
+extension LocaleUpper on BuildContext {
+  String upper(String s) {
+    if (Localizations.localeOf(this).languageCode != 'tr') return s.toUpperCase();
+    return s.replaceAll('i', 'İ').replaceAll('ı', 'I').toUpperCase();
+  }
+}

@@ -139,7 +139,7 @@ class _Header extends StatelessWidget {
   Widget build(BuildContext context) => Padding(
     padding: const EdgeInsets.fromLTRB(Space.page, Space.lg, Space.page, Space.sm),
     child: Text(
-      text.toUpperCase(),
+      context.upper(text),
       style: context.text.labelSmall?.copyWith(color: context.semantic.muted, letterSpacing: 1),
     ),
   );

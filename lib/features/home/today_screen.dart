@@ -23,14 +23,14 @@ import 'home_cards.dart';
 /// Daily Brief: answers "what should I do today?" in one glance. Cards are
 /// chosen from the user's focus areas and data — unused features stay out
 /// of the way.
-class HomeScreen extends ConsumerStatefulWidget {
-  const HomeScreen({super.key});
+class TodayScreen extends ConsumerStatefulWidget {
+  const TodayScreen({super.key});
 
   @override
-  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+  ConsumerState<TodayScreen> createState() => _TodayScreenState();
 }
 
-class _HomeScreenState extends ConsumerState<HomeScreen> {
+class _TodayScreenState extends ConsumerState<TodayScreen> {
   late final String _layout;
 
   @override
@@ -102,7 +102,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               SliverAppBar(
                 floating: true,
                 title: Text(
-                  fmt.weekdayDayMonth(today).toUpperCase(),
+                  context.upper(fmt.weekdayDayMonth(today)),
                   style: context.text.labelMedium?.copyWith(color: context.semantic.muted, letterSpacing: 1.2),
                 ),
                 actions: const [ProfileButton()],

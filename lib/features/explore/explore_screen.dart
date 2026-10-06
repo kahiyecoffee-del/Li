@@ -9,11 +9,11 @@ import '../../core/theme/tokens.dart';
 import '../../core/widgets/common.dart';
 import '../../services/config/feature_flags.dart';
 import '../premium/banner_slot.dart';
-import '../shell/main_shell.dart';
 
-/// Hub for habits, wellbeing, food and reports.
-class LifeScreen extends ConsumerWidget {
-  const LifeScreen({super.key});
+/// Explore: every tool in one place. Solving tools first, then the
+/// trackers (money, habits, mood, journal, food, reports) as secondary.
+class ExploreScreen extends ConsumerWidget {
+  const ExploreScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,6 +22,13 @@ class LifeScreen extends ConsumerWidget {
     final flags = services.flags;
     final shopping = (ref.watch(shoppingProvider).list).where((s) => !s.checked).length;
     final badges = ref.watch(achievementsProvider).value?.length ?? 0;
+    final solve = <(IconData, String, String, String?, Accent)>[
+      (Icons.balance_rounded, l.quickDecide, '/decide', null, Accent.insight),
+      (Icons.calculate_rounded, l.calcTitle, '/calc', null, Accent.score),
+      (Icons.edit_note_rounded, l.quickWrite, '/ai', null, Accent.ai),
+      (Icons.event_available_rounded, l.quickPlan, '/plan', null, Accent.plan),
+      (Icons.wb_sunny_rounded, l.exploreMyDay, '/today', null, Accent.goals),
+    ];
     final tiles = <(IconData, String, String, String?, Accent)>[
       (Icons.account_balance_wallet_rounded, l.navMoney, '/money', null, Accent.money),
       (Icons.repeat_rounded, l.lifeHabits, '/habits', null, Accent.goals),
@@ -40,9 +47,13 @@ class LifeScreen extends ConsumerWidget {
     ];
     final streak = ref.watch(streakProvider);
     return Scaffold(
-      appBar: AppBar(title: Text(l.navLife), actions: const [ProfileButton()]),
+      appBar: AppBar(title: Text(l.exploreTitle)),
       body: PageList(
         children: [
+          SectionTitle(l.exploreSolve),
+          _grid(context, solve),
+          const SizedBox(height: Space.xl),
+          SectionTitle(l.exploreLife),
           if (streak.current > 0)
             Padding(
               padding: const EdgeInsets.only(bottom: Space.md),
@@ -54,21 +65,7 @@ class LifeScreen extends ConsumerWidget {
                 ],
               ),
             ),
-          GridView.count(
-            crossAxisCount: 2,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            mainAxisSpacing: Space.md,
-            crossAxisSpacing: Space.md,
-            childAspectRatio: 1.25,
-            children: [
-              for (final (i, t) in tiles.indexed)
-                FadeSlideIn(
-                  delay: Duration(milliseconds: 50 * i),
-                  child: _tile(context, t),
-                ),
-            ],
-          ),
+          _grid(context, tiles),
           const SizedBox(height: Space.lg),
           const BannerSlot(),
         ],
@@ -76,21 +73,34 @@ class LifeScreen extends ConsumerWidget {
     );
   }
 
-  Widget _tile(BuildContext context, (IconData, String, String, String?, Accent) t) => AppCard(
-    onTap: () => context.push(t.$3),
-    semanticLabel: t.$2,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            IconBubble(icon: t.$1, accent: t.$5, size: 42),
-            const Spacer(),
-            if (t.$4 != null) Badge(label: Text(t.$4!)),
-          ],
+  Widget _grid(BuildContext context, List<(IconData, String, String, String?, Accent)> tiles) => GridView.count(
+    crossAxisCount: 2,
+    shrinkWrap: true,
+    physics: const NeverScrollableScrollPhysics(),
+    mainAxisSpacing: Space.md,
+    crossAxisSpacing: Space.md,
+    childAspectRatio: 2.3,
+    children: [
+      for (final (i, t) in tiles.indexed)
+        FadeSlideIn(
+          delay: Duration(milliseconds: 40 * i),
+          child: _tile(context, t),
         ),
-        const Spacer(),
-        Text(t.$2, style: context.text.titleMedium, maxLines: 2, overflow: TextOverflow.ellipsis),
+    ],
+  );
+
+  Widget _tile(BuildContext context, (IconData, String, String, String?, Accent) t) => AppCard(
+    onTap: () => t.$3 == '/ai' ? context.go(t.$3) : context.push(t.$3),
+    semanticLabel: t.$2,
+    padding: const EdgeInsets.symmetric(horizontal: Space.md, vertical: Space.sm),
+    child: Row(
+      children: [
+        IconBubble(icon: t.$1, accent: t.$5, size: 38),
+        const SizedBox(width: Space.sm),
+        Expanded(
+          child: Text(t.$2, style: context.text.titleSmall, maxLines: 2, overflow: TextOverflow.ellipsis),
+        ),
+        if (t.$4 != null) Badge(label: Text(t.$4!)),
       ],
     ),
   );

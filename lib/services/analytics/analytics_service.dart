@@ -5,6 +5,15 @@ import 'package:flutter/foundation.dart';
 /// funnels: never rename, only add.
 enum AnalyticsEvent {
   appOpen('app_open'),
+  problemCreated('problem_created'),
+  problemSolved('problem_solved'),
+  decisionStarted('decision_started'),
+  decisionCompleted('decision_completed'),
+  recipeGenerated('recipe_generated'),
+  savingCalculated('saving_calculated'),
+  itemSaved('item_saved'),
+  voiceInputUsed('voice_input_used'),
+  photoInputUsed('photo_input_used'),
   onboardingStarted('onboarding_started'),
   onboardingStepCompleted('onboarding_step_completed'),
   onboardingCompleted('onboarding_completed'),

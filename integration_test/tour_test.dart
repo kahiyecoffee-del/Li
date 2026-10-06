@@ -66,37 +66,54 @@ void main() {
 
     await tester.pumpWidget(app.widget());
     if (Platform.isAndroid) await binding.convertFlutterSurfaceToImage();
-    await pumpUntil(tester, find.text('Gününe hızlı bir bakış.'));
+    await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
     await shot(tester, '01-ana-sayfa');
 
-    await tester.tap(find.text('Plan').last);
-    await pumpUntil(tester, find.text('Annemi ara'));
-    await shot(tester, '02-plan');
+    Future<void> solve(String q) async {
+      await tester.enterText(find.byType(TextField).first, q);
+      await tester.tap(find.text('Çöz'));
+    }
 
-    await tester.tap(find.text('Yaşam').last);
-    await pumpUntil(tester, find.text('Para'));
-    await shot(tester, '03-yasam');
-
-    await tester.tap(find.text('Para').last);
-    await pumpUntil(tester, find.text('Harcama ekle'));
-    await shot(tester, '04-para');
+    await solve('3.000 TL param kaldı, ay sonuna 20 gün var');
+    await pumpUntil(tester, find.text('Telefonunda hesaplandı'));
+    await shot(tester, '02-param-yeter-mi');
     await tester.binding.handlePopRoute();
-    await pumpUntil(tester, find.text('YZ'));
+    await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
+
+    await solve('1 L 45 TL mi yoksa 1,5 L 60 TL mi daha ucuz?');
+    await pumpUntil(tester, find.text('Telefonunda hesaplandı'));
+    await shot(tester, '03-hangisi-ucuz');
+    await tester.binding.handlePopRoute();
+    await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
+
+    await solve('Evde yumurta, domates, peynir ve ekmek var');
+    await pumpUntil(tester, find.text('Elindekilerle bunları yapabilirsin'));
+    await shot(tester, '04-yemek');
+    await tester.binding.handlePopRoute();
+    await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
+
+    await solve('iPhone 15 mi yoksa Galaxy S24 mü?');
+    await pumpUntil(tester, find.text('Karar ver'));
+    await shot(tester, '05-karar-ver');
+    await scrollAndTap(tester, find.text('En iyisini göster'));
+    await tester.pump(const Duration(milliseconds: 600));
+    await tester.scrollUntilVisible(find.text('ÖNERİLEN SEÇENEK'), 300, scrollable: find.byType(Scrollable).first);
+    await shot(tester, '06-karar-sonuc');
+    await tester.binding.handlePopRoute();
+    await pumpUntil(tester, find.text('Keşfet'));
+
+    await tester.tap(find.text('Keşfet').last);
+    await pumpUntil(tester, find.text('Takip'));
+    await shot(tester, '07-kesfet');
 
     await tester.tap(find.text('YZ').last);
     await pumpUntil(tester, find.text('Bugün nasıl yardımcı olabilirim?'));
-    await shot(tester, '05-lio-sohbet');
-
-    for (final q in ['Bugün ne kadar harcayabilirim?']) {
-      await tester.enterText(find.byType(TextField).last, q);
-      await tester.tap(find.byTooltip('Gönder'));
-      await pumpUntil(tester, find.text(q));
-      // Let Lio finish answering before the next question (slow emulators).
-      for (var i = 0; i < 30; i++) {
-        await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 150)));
-        await tester.pump(const Duration(milliseconds: 200));
-      }
+    await tester.enterText(find.byType(TextField).last, 'Bugün ne kadar harcayabilirim?');
+    await tester.tap(find.byTooltip('Gönder'));
+    for (var i = 0; i < 30; i++) {
+      await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 150)));
+      await tester.pump(const Duration(milliseconds: 200));
     }
-    await shot(tester, '06-lio-cevaplar');
+    await shot(tester, '08-lio');
   });
 }

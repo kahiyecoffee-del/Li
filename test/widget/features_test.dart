@@ -9,9 +9,9 @@ void main() {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded()))!;
     await tester.pumpWidget(app.widget());
-    await pumpUntil(tester, find.text('Your day at a glance.'));
+    await pumpUntil(tester, find.text('What should we solve today?'));
 
-    await tester.tap(find.text('Life').last);
+    await tester.tap(find.text('Explore').last);
     await pumpUntil(tester, find.text('Money'));
     await tester.tap(find.text('Money').last);
     await pumpUntil(tester, find.text('Add expense'));
@@ -51,7 +51,7 @@ void main() {
       'credits': {'used': 1, 'limit': 5, 'bonus': 0, 'premium': false, 'rewardedRemaining': 3},
     };
     await tester.pumpWidget(app.widget());
-    await pumpUntil(tester, find.text('Your day at a glance.'));
+    await pumpUntil(tester, find.text('What should we solve today?'));
     await tester.tap(find.text('AI').last);
     await pumpUntil(tester, find.text('How can I help today?'));
 
@@ -67,11 +67,12 @@ void main() {
     expect(app.ai.requests.single.context['currency'], 'TRY');
 
     // Nothing is created before confirmation.
-    await tester.tap(find.text('Plan').last);
-    await pumpUntil(tester, find.byType(FloatingActionButton));
+    await openPlan(tester);
     await tester.tap(find.text('This week'));
     await tester.pump(const Duration(milliseconds: 500));
     expect(find.text('Team meeting'), findsNothing);
+    await tester.binding.handlePopRoute();
+    await pumpUntil(tester, find.text('AI'));
 
     await tester.tap(find.text('AI').last);
     await pumpUntil(tester, find.text('Confirm'));
@@ -79,18 +80,21 @@ void main() {
     await pumpUntil(tester, find.textContaining('Done'));
     expect(app.analytics.logged(AnalyticsEvent.aiActionConfirmed), isTrue);
 
-    await tester.tap(find.text('Plan').last);
+    await openPlan(tester);
+    await tester.tap(find.text('This week'));
     await pumpUntil(tester, find.text('Team meeting'));
     await tearDownApp(tester);
   });
 
-  testWidgets('Turkish + dark mode render the Daily Brief', (tester) async {
+  testWidgets('Turkish + dark mode render Home and My day', (tester) async {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded(prefs: {'locale': 'tr', 'themeMode': 'dark'})))!;
     await tester.pumpWidget(app.widget());
-    await pumpUntil(tester, find.text('Gününe hızlı bir bakış.'));
-    final ctx = tester.element(find.text('Gününe hızlı bir bakış.'));
+    await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
+    final ctx = tester.element(find.text('Bugün neyi çözelim?'));
     expect(Theme.of(ctx).brightness, Brightness.dark);
+    await scrollAndTap(tester, find.text('Günüm'));
+    await pumpUntil(tester, find.text('Gününe hızlı bir bakış.'));
     expect(find.text('Yaşam Skoru'), findsOneWidget);
     await tearDownApp(tester);
   });
@@ -100,8 +104,7 @@ void main() {
     final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
     await tester.pumpWidget(app.widget());
     await pumpUntil(tester, find.text('Offline — changes are saved and will sync later.'));
-    await tester.tap(find.text('Plan').last);
-    await pumpUntil(tester, find.byType(FloatingActionButton));
+    await openPlan(tester);
     await tester.tap(find.byType(FloatingActionButton));
     await pumpUntil(tester, find.text('New task'));
     await tester.enterText(find.byType(TextField).first, 'Gym');
@@ -117,8 +120,8 @@ void main() {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded()))!;
     await tester.pumpWidget(app.widget());
-    await pumpUntil(tester, find.text('Your day at a glance.'));
-    await tester.tap(find.text('Life').last);
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    await tester.tap(find.text('Explore').last);
     await pumpUntil(tester, find.text('Habits'));
     await tester.tap(find.text('Habits'));
     await pumpUntil(tester, find.byType(FloatingActionButton));
@@ -138,7 +141,7 @@ void main() {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded(online: false, offlineModelReady: true)))!;
     await tester.pumpWidget(app.widget());
-    await pumpUntil(tester, find.text('Your day at a glance.'));
+    await pumpUntil(tester, find.text('What should we solve today?'));
     await tester.tap(find.text('AI').last);
     await pumpUntil(tester, find.text('Offline mode'));
     await tester.enterText(find.byType(TextField).last, 'Any tip for today?');
@@ -153,13 +156,15 @@ void main() {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded(prefs: {'showLio': true})))!;
     await tester.pumpWidget(app.widget());
-    await pumpUntil(tester, find.text('Your day at a glance.'));
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    // Home already shows Lio; the walking companion appears on other tabs.
+    await tester.tap(find.text('Explore').last);
     final lio = find.bySemanticsLabel('Lio, your companion');
     await pumpUntil(tester, lio);
     await tester.tap(lio);
     await pumpUntil(tester, find.text('Ask Lio'));
-    expect(find.text('Another one'), findsOneWidget);
-    await tester.tap(find.text('Ask Lio'));
+    expect(find.text('Another one'), findsWidgets);
+    await tester.tap(find.text('Ask Lio').last);
     await pumpUntil(tester, find.text('How can I help today?'));
     await tearDownApp(tester);
   });
@@ -168,8 +173,8 @@ void main() {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded()))!;
     await tester.pumpWidget(app.widget());
-    await pumpUntil(tester, find.text('Your day at a glance.'));
-    await tester.tap(find.byTooltip('Profile and settings').first);
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    await tester.tap(find.text('Profile').last);
     await pumpUntil(tester, find.text('Lio companion'));
     await tester.scrollUntilVisible(find.text('Offline Lio'), 200, scrollable: find.byType(Scrollable).last);
     await tester.tap(find.text('Offline Lio'));
@@ -183,7 +188,7 @@ void main() {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
     await tester.pumpWidget(app.widget());
-    await pumpUntil(tester, find.text('Your day at a glance.'));
+    await pumpUntil(tester, find.text('What should we solve today?'));
     await tester.tap(find.text('AI').last);
     await pumpUntil(tester, find.byType(TextField));
     await tester.enterText(find.byType(TextField).last, 'How much can I spend today?');
@@ -193,4 +198,78 @@ void main() {
     expect(find.textContaining('safe daily amount'), findsOneWidget);
     await tearDownApp(tester);
   });
+
+  testWidgets('Home: a typed problem is solved on the phone and can be saved', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    await tester.enterText(find.byType(TextField).first, 'I have 3,000 TL left for 20 days');
+    await tester.tap(find.text('Solve'));
+    await pumpUntil(tester, find.textContaining('a day.'));
+    expect(find.textContaining('150'), findsWidgets);
+    expect(find.text('Calculated on your phone'), findsOneWidget);
+    await tester.tap(find.text('Save'));
+    await pumpUntil(tester, find.text('Saved'));
+    expect(app.analytics.logged(AnalyticsEvent.problemSolved), isTrue);
+
+    await tester.binding.handlePopRoute();
+    await pumpUntil(tester, find.text('Saved'));
+    await tester.tap(find.text('Saved').last);
+    await pumpUntil(tester, find.text('I have 3,000 TL left for 20 days'));
+    await tearDownApp(tester);
+  });
+
+  testWidgets('Home: "which one" opens Decide with the options filled in', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded()))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    await tester.enterText(find.byType(TextField).first, 'Kindle or Kobo?');
+    await tester.tap(find.text('Solve'));
+    await pumpUntil(tester, find.text('Decide'));
+    expect(find.text('Kindle'), findsWidgets);
+    expect(find.text('Kobo'), findsWidgets);
+    await scrollAndTap(tester, find.text('Show the best option'));
+    await tester.pump(const Duration(milliseconds: 600));
+    await tester.scrollUntilVisible(find.text('RECOMMENDED'), 300, scrollable: find.byType(Scrollable).first);
+    expect(app.analytics.logged(AnalyticsEvent.decisionCompleted), isTrue);
+    await tearDownApp(tester);
+  });
+
+  testWidgets('Home: cooking from what is at home suggests recipes', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(prefs: {'locale': 'tr'})))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
+    await tester.enterText(find.byType(TextField).first, 'Evde yumurta, domates ve peynir var');
+    await tester.tap(find.text('Çöz'));
+    await pumpUntil(tester, find.text('Elindekilerle bunları yapabilirsin'));
+    expect(find.text('Menemen'), findsOneWidget);
+    expect(app.analytics.logged(AnalyticsEvent.recipeGenerated), isTrue);
+    await tearDownApp(tester);
+  });
+
+  testWidgets('Calculator works offline', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    await scrollAndTap(tester, find.text('Calculate'));
+    await pumpUntil(tester, find.text('Calculator'));
+    for (final k in ['1', '2', '×', '1', '5', '=']) {
+      await tester.tap(find.text(k).last);
+      await tester.pump();
+    }
+    expect(find.text('180'), findsWidgets);
+    await tearDownApp(tester);
+  });
+}
+
+/// Plan is a tool inside Explore now.
+Future<void> openPlan(WidgetTester tester) async {
+  await tester.tap(find.text('Explore').last);
+  await pumpUntil(tester, find.text('Plan'));
+  await tester.tap(find.text('Plan').last);
+  await pumpUntil(tester, find.byType(FloatingActionButton));
 }

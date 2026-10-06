@@ -12,7 +12,7 @@ import '../test/widget/harness.dart';
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('first launch to Daily Brief, then log an expense', (tester) async {
+  testWidgets('first launch to Home', (tester) async {
     final app = await TestApp.create();
     await tester.pumpWidget(app.widget());
     await pumpUntil(tester, find.text('Get started'));
@@ -30,9 +30,9 @@ void main() {
       await tester.tap(find.text('Skip'));
       await tester.pump(const Duration(milliseconds: 500));
     }
-    await pumpUntil(tester, find.text('Open my day'));
-    await tester.tap(find.text('Open my day'));
-    await pumpUntil(tester, find.text('Your day at a glance.'));
+    await pumpUntil(tester, find.text('Solve my first problem'));
+    await tester.tap(find.text('Solve my first problem'));
+    await pumpUntil(tester, find.text('What should we solve today?'));
     await tearDownApp(tester);
   });
 }

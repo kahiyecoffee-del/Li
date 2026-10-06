@@ -95,6 +95,8 @@ class ChatController extends AsyncNotifier<ChatState> {
 
   Future<void> send(String text, {required String locale}) async {
     final msg = text.trim();
+    // A question can arrive from Home before the stored chat has loaded.
+    if (!state.hasValue) await future;
     if (msg.isEmpty || _s.sending) return;
     final services = ref.read(servicesProvider);
     final now = DateTime.now();

@@ -23,7 +23,7 @@ service cloud.firestore {
     function isSyncedCollection(c) {
       return c in ['profile', 'tasks', 'transactions', 'budgets', 'habits', 'habit_logs',
                    'mood_logs', 'sleep_logs', 'meal_plans', 'pantry_items', 'shopping_items',
-                   'ai_memories', 'daily_scores', 'daily_goals', 'achievements'];
+                   'ai_memories', 'daily_scores', 'daily_goals', 'achievements', 'saved_items'];
     }
 
     // Every synced write carries sync metadata and a server timestamp used
@@ -48,7 +48,8 @@ service cloud.firestore {
         || (c == 'mood_logs' && d.mood is int && d.mood >= 1 && d.mood <= 5)
         || (c == 'habit_logs' && d.count is int && d.count >= 0 && d.count <= 1000)
         || (c == 'ai_memories' && d.content is string && d.content.size() <= 300)
-        || !(c in ['transactions', 'tasks', 'mood_logs', 'habit_logs', 'ai_memories']);
+        || (c == 'saved_items' && d.title is string && d.title.size() <= 200 && d.kind is string && d.kind.size() <= 40)
+        || !(c in ['transactions', 'tasks', 'mood_logs', 'habit_logs', 'ai_memories', 'saved_items']);
     }
 
     match /users/{uid} {

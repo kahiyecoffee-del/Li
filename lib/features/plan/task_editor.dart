@@ -11,17 +11,21 @@ import '../../core/widgets/formatters.dart';
 import '../../domain/models/enums.dart';
 import '../../domain/models/task_item.dart';
 
-Future<void> showTaskEditor(BuildContext context, {TaskItem? task, DateTime? day}) => showModalBottomSheet<void>(
-  context: context,
-  useRootNavigator: true,
-  isScrollControlled: true,
-  builder: (_) => TaskEditor(task: task, day: day),
-);
+Future<void> showTaskEditor(BuildContext context, {TaskItem? task, DateTime? day, String? title}) =>
+    showModalBottomSheet<void>(
+      context: context,
+      useRootNavigator: true,
+      isScrollControlled: true,
+      builder: (_) => TaskEditor(task: task, day: day, title: title),
+    );
 
 class TaskEditor extends ConsumerStatefulWidget {
-  const TaskEditor({super.key, this.task, this.day});
+  const TaskEditor({super.key, this.task, this.day, this.title});
 
   final TaskItem? task;
+
+  /// Pre-filled title for a new task (e.g. "remind me…" typed on Home).
+  final String? title;
   final DateTime? day;
 
   @override
@@ -29,7 +33,7 @@ class TaskEditor extends ConsumerStatefulWidget {
 }
 
 class _TaskEditorState extends ConsumerState<TaskEditor> {
-  late final _title = TextEditingController(text: widget.task?.title ?? '');
+  late final _title = TextEditingController(text: widget.task?.title ?? widget.title ?? '');
   late TaskPriority _priority = widget.task?.priority ?? TaskPriority.medium;
   late int _minutes = widget.task?.estimatedMinutes ?? 30;
   late TaskCategory _category = widget.task?.category ?? TaskCategory.personal;

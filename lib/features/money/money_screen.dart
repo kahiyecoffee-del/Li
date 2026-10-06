@@ -82,7 +82,7 @@ class _MoneyScreenState extends ConsumerState<MoneyScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          l.moneyDailySafe.toUpperCase(),
+                          context.upper(l.moneyDailySafe),
                           style: context.text.labelSmall?.copyWith(color: context.semantic.muted, letterSpacing: 1),
                         ),
                         const SizedBox(height: Space.xs),
@@ -228,7 +228,7 @@ class _Stat extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            label.toUpperCase(),
+            context.upper(label),
             style: context.text.labelSmall?.copyWith(color: context.semantic.muted),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,

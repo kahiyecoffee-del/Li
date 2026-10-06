@@ -9,7 +9,7 @@ import '../../core/theme/tokens.dart';
 import '../../core/widgets/common.dart';
 import '../lio/lio_companion.dart';
 
-/// Bottom navigation: HOME · PLAN · LIFE · AI (Money lives inside Life).
+/// Bottom navigation: HOME · EXPLORE · SAVED · AI · PROFILE.
 class MainShell extends ConsumerWidget {
   const MainShell({super.key, required this.shell});
 
@@ -38,10 +38,11 @@ class MainShell extends ConsumerWidget {
         index: shell.currentIndex,
         onSelect: (i) => shell.goBranch(i, initialLocation: i == shell.currentIndex),
         items: [
-          (Icons.wb_sunny_outlined, Icons.wb_sunny_rounded, l.navHome),
-          (Icons.event_note_outlined, Icons.event_note_rounded, l.navPlan),
-          (Icons.spa_outlined, Icons.spa_rounded, l.navLife),
+          (Icons.home_outlined, Icons.home_rounded, l.navHome),
+          (Icons.explore_outlined, Icons.explore_rounded, l.navExplore),
+          (Icons.bookmark_border_rounded, Icons.bookmark_rounded, l.navSaved),
           (Icons.auto_awesome_outlined, Icons.auto_awesome, l.navAi),
+          (Icons.person_outline_rounded, Icons.person_rounded, l.navProfile),
         ],
       ),
     );

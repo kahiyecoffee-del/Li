@@ -35,10 +35,13 @@ void main() {
       await tester.pump(const Duration(milliseconds: 400));
     }
     await pumpUntil(tester, find.text('Dayly is ready for you!'));
-    await tester.tap(find.text('Open my day'));
-    await pumpUntil(tester, find.textContaining('Eray'));
+    await tester.tap(find.text('Solve my first problem'));
+    await pumpUntil(tester, find.text('Hi Eray 👋'));
+    expect(find.text('What should we solve today?'), findsOneWidget);
 
-    expect(find.text('Your day at a glance.'), findsOneWidget);
+    // The personalised daily brief now lives under "My day".
+    await scrollAndTap(tester, find.text('My day'));
+    await pumpUntil(tester, find.text('Your day at a glance.'));
     // Money focus + income → safe spending card; Health focus → starter water habit goal.
     await tester.scrollUntilVisible(find.text("Today's safe spending"), 300, scrollable: find.byType(Scrollable).first);
     expect(find.textContaining('Water'), findsWidgets);

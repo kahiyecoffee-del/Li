@@ -5,12 +5,13 @@ import 'package:go_router/go_router.dart';
 import '../features/ai/ai_screen.dart';
 import '../features/auth/auth_screen.dart';
 import '../features/auth/welcome_screen.dart';
-import '../features/home/home_screen.dart';
+import '../features/decide/decide_screen.dart';
+import '../features/explore/explore_screen.dart';
+import '../features/home/today_screen.dart';
 import '../features/life/achievements_screen.dart';
 import '../features/life/food_screen.dart';
 import '../features/life/habits_screen.dart';
 import '../features/life/journal_screen.dart';
-import '../features/life/life_screen.dart';
 import '../features/life/mood_screen.dart';
 import '../features/life/news_screen.dart';
 import '../features/life/pantry_screen.dart';
@@ -19,7 +20,10 @@ import '../features/money/money_screen.dart';
 import '../features/onboarding/onboarding_screen.dart';
 import '../features/plan/plan_screen.dart';
 import '../features/premium/paywall_screen.dart';
+import '../features/problem/problem_home_screen.dart';
+import '../features/problem/solution_screen.dart';
 import '../features/reports/report_screen.dart';
+import '../features/saved/saved_screen.dart';
 import '../features/score/score_screen.dart';
 import '../features/settings/account_screen.dart';
 import '../features/settings/legal_screen.dart';
@@ -29,6 +33,7 @@ import '../features/settings/privacy_screen.dart';
 import '../features/settings/settings_screen.dart';
 import '../features/shell/main_shell.dart';
 import '../features/shell/splash_screen.dart';
+import '../features/tools/calculator_screen.dart';
 import 'providers.dart';
 
 abstract final class Routes {
@@ -40,6 +45,13 @@ abstract final class Routes {
   static const plan = '/plan';
   static const money = '/money';
   static const life = '/life';
+  static const explore = '/explore';
+  static const saved = '/saved';
+  static const profile = '/profile';
+  static const today = '/today';
+  static const solve = '/solve';
+  static const decide = '/decide';
+  static const calc = '/calc';
   static const ai = '/ai';
   static const score = '/score';
   static const settings = '/settings';
@@ -110,21 +122,43 @@ final routerProvider = Provider<GoRouter>((ref) {
             routes: [GoRoute(path: Routes.home, builder: (_, _) => const HomeScreen())],
           ),
           StatefulShellBranch(
-            routes: [GoRoute(path: Routes.plan, builder: (_, _) => const PlanScreen())],
+            routes: [GoRoute(path: Routes.explore, builder: (_, _) => const ExploreScreen())],
           ),
           StatefulShellBranch(
-            routes: [GoRoute(path: Routes.life, builder: (_, _) => const LifeScreen())],
+            routes: [GoRoute(path: Routes.saved, builder: (_, _) => const SavedScreen())],
           ),
           StatefulShellBranch(
             routes: [
               GoRoute(
                 path: Routes.ai,
-                builder: (_, s) => AiScreen(initialPrompt: s.uri.queryParameters['q']),
+                builder: (_, s) => AiScreen(
+                  initialPrompt: s.uri.queryParameters['q'],
+                  autoSend: s.uri.queryParameters['send'] == '1',
+                  nonce: s.uri.queryParameters['n'],
+                ),
               ),
             ],
           ),
+          StatefulShellBranch(
+            routes: [GoRoute(path: Routes.profile, builder: (_, _) => const SettingsScreen(asTab: true))],
+          ),
         ],
       ),
+      // Older links: Life is now Explore.
+      GoRoute(path: Routes.life, redirect: (_, _) => Routes.explore),
+      GoRoute(path: Routes.plan, builder: (_, _) => const PlanScreen()),
+      GoRoute(path: Routes.today, builder: (_, _) => const TodayScreen()),
+      GoRoute(
+        path: Routes.solve,
+        builder: (_, s) => SolutionScreen(query: s.uri.queryParameters['q'] ?? ''),
+      ),
+      GoRoute(
+        path: Routes.decide,
+        builder: (_, s) => DecideScreen(
+          initialOptions: (s.uri.queryParameters['o'] ?? '').split('|').where((e) => e.trim().isNotEmpty).toList(),
+        ),
+      ),
+      GoRoute(path: Routes.calc, builder: (_, _) => const CalculatorScreen()),
       GoRoute(path: Routes.money, builder: (_, _) => const MoneyScreen()),
       GoRoute(path: Routes.score, builder: (_, _) => const ScoreScreen()),
       GoRoute(path: Routes.settings, builder: (_, _) => const SettingsScreen()),

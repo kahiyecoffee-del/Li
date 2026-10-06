@@ -13,7 +13,10 @@ import '../../l10n/gen/app_localizations.dart';
 import 'city_picker.dart';
 
 class SettingsScreen extends ConsumerWidget {
-  const SettingsScreen({super.key});
+  const SettingsScreen({super.key, this.asTab = false});
+
+  /// Shown as the Profile tab (bottom bar) rather than a pushed page.
+  final bool asTab;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -26,7 +29,7 @@ class SettingsScreen extends ConsumerWidget {
     final pending = ref.watch(outboxCountProvider).value ?? 0;
 
     return Scaffold(
-      appBar: AppBar(title: Text(l.settings)),
+      appBar: AppBar(title: Text(asTab ? l.navProfile : l.settings)),
       body: ListView(
         padding: const EdgeInsets.only(bottom: Space.xxl),
         children: [
@@ -295,7 +298,7 @@ class _Header extends StatelessWidget {
     child: Semantics(
       header: true,
       child: Text(
-        text.toUpperCase(),
+        context.upper(text),
         style: context.text.labelSmall?.copyWith(color: context.semantic.muted, letterSpacing: 1),
       ),
     ),

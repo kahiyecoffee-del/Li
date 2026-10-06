@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// No description provided for @appTagline.
   ///
   /// In en, this message translates to:
-  /// **'Make every day a good one.'**
+  /// **'Leave the hard part of life to us.'**
   String get appTagline;
 
   /// No description provided for @ok.
@@ -416,6 +416,24 @@ abstract class AppLocalizations {
   /// **'AI'**
   String get navAi;
 
+  /// No description provided for @navExplore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get navExplore;
+
+  /// No description provided for @navSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get navSaved;
+
+  /// No description provided for @navProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get navProfile;
+
   /// No description provided for @profileAndSettings.
   ///
   /// In en, this message translates to:
@@ -425,13 +443,13 @@ abstract class AppLocalizations {
   /// No description provided for @welcomeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Hi, I’m Lio! Let’s make today a good day.'**
+  /// **'Leave the hard part of life to us.'**
   String get welcomeTitle;
 
   /// No description provided for @welcomeBody.
   ///
   /// In en, this message translates to:
-  /// **'Plans, money, food, habits and an assistant that connects them — in one calm place.'**
+  /// **'Money, decisions, food, writing: type an everyday problem and Dayly solves it in seconds, right on your phone.'**
   String get welcomeBody;
 
   /// No description provided for @getStarted.
@@ -695,7 +713,7 @@ abstract class AppLocalizations {
   /// No description provided for @onbOpenHome.
   ///
   /// In en, this message translates to:
-  /// **'Open my day'**
+  /// **'Solve my first problem'**
   String get onbOpenHome;
 
   /// No description provided for @stepOf.
@@ -4039,6 +4057,672 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Lio · on your phone'**
   String get brainAnswerLabel;
+
+  /// No description provided for @homeHello.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi {name} 👋'**
+  String homeHello(String name);
+
+  /// No description provided for @homeHelloNoName.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi there 👋'**
+  String get homeHelloNoName;
+
+  /// No description provided for @homeQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'What should we solve today?'**
+  String get homeQuestion;
+
+  /// No description provided for @problemHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type a problem…'**
+  String get problemHint;
+
+  /// No description provided for @problemEx1.
+  ///
+  /// In en, this message translates to:
+  /// **'I have 3,000 left and 20 days to go'**
+  String get problemEx1;
+
+  /// No description provided for @problemEx2.
+  ///
+  /// In en, this message translates to:
+  /// **'1 L for 45 or 1.5 L for 60 — which is cheaper?'**
+  String get problemEx2;
+
+  /// No description provided for @problemEx3.
+  ///
+  /// In en, this message translates to:
+  /// **'I have eggs, tomatoes and cheese at home'**
+  String get problemEx3;
+
+  /// No description provided for @problemEx4.
+  ///
+  /// In en, this message translates to:
+  /// **'iPhone or Samsung?'**
+  String get problemEx4;
+
+  /// No description provided for @problemEx5.
+  ///
+  /// In en, this message translates to:
+  /// **'Split a 1,840 bill between 4 people'**
+  String get problemEx5;
+
+  /// No description provided for @problemEx6.
+  ///
+  /// In en, this message translates to:
+  /// **'30% off 1,299 — what do I pay?'**
+  String get problemEx6;
+
+  /// No description provided for @problemEx7.
+  ///
+  /// In en, this message translates to:
+  /// **'How many days until December 31?'**
+  String get problemEx7;
+
+  /// No description provided for @solve.
+  ///
+  /// In en, this message translates to:
+  /// **'Solve'**
+  String get solve;
+
+  /// No description provided for @voiceInput.
+  ///
+  /// In en, this message translates to:
+  /// **'Speak'**
+  String get voiceInput;
+
+  /// No description provided for @photoInput.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo'**
+  String get photoInput;
+
+  /// No description provided for @listening.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening…'**
+  String get listening;
+
+  /// No description provided for @voiceUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Voice input isn’t available on this device.'**
+  String get voiceUnavailable;
+
+  /// No description provided for @photoNoText.
+  ///
+  /// In en, this message translates to:
+  /// **'I couldn’t read any text in that photo.'**
+  String get photoNoText;
+
+  /// No description provided for @quickMoney.
+  ///
+  /// In en, this message translates to:
+  /// **'Money'**
+  String get quickMoney;
+
+  /// No description provided for @quickDecide.
+  ///
+  /// In en, this message translates to:
+  /// **'Decide'**
+  String get quickDecide;
+
+  /// No description provided for @quickFood.
+  ///
+  /// In en, this message translates to:
+  /// **'Food'**
+  String get quickFood;
+
+  /// No description provided for @quickCalc.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculate'**
+  String get quickCalc;
+
+  /// No description provided for @quickWrite.
+  ///
+  /// In en, this message translates to:
+  /// **'Write'**
+  String get quickWrite;
+
+  /// No description provided for @quickPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan'**
+  String get quickPlan;
+
+  /// No description provided for @recentlySolved.
+  ///
+  /// In en, this message translates to:
+  /// **'Recently solved'**
+  String get recentlySolved;
+
+  /// No description provided for @solutionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Solution'**
+  String get solutionTitle;
+
+  /// No description provided for @solvedOnDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculated on your phone'**
+  String get solvedOnDevice;
+
+  /// No description provided for @savedToast.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get savedToast;
+
+  /// No description provided for @askLioAbout.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask Lio about this'**
+  String get askLioAbout;
+
+  /// No description provided for @solveAnother.
+  ///
+  /// In en, this message translates to:
+  /// **'Solve something else'**
+  String get solveAnother;
+
+  /// No description provided for @rowPerDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Per day'**
+  String get rowPerDay;
+
+  /// No description provided for @rowPerWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Per week'**
+  String get rowPerWeek;
+
+  /// No description provided for @rowDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Days'**
+  String get rowDays;
+
+  /// No description provided for @rowTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Total'**
+  String get rowTotal;
+
+  /// No description provided for @rowYouSave.
+  ///
+  /// In en, this message translates to:
+  /// **'You save'**
+  String get rowYouSave;
+
+  /// No description provided for @rowTax.
+  ///
+  /// In en, this message translates to:
+  /// **'Tax'**
+  String get rowTax;
+
+  /// No description provided for @rowIncrease.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase'**
+  String get rowIncrease;
+
+  /// No description provided for @rowPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Price'**
+  String get rowPrice;
+
+  /// No description provided for @rowPerPerson.
+  ///
+  /// In en, this message translates to:
+  /// **'Per person'**
+  String get rowPerPerson;
+
+  /// No description provided for @rowPeople.
+  ///
+  /// In en, this message translates to:
+  /// **'People'**
+  String get rowPeople;
+
+  /// No description provided for @rowTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Tip'**
+  String get rowTip;
+
+  /// No description provided for @rowMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly'**
+  String get rowMonthly;
+
+  /// No description provided for @rowMonths.
+  ///
+  /// In en, this message translates to:
+  /// **'Months'**
+  String get rowMonths;
+
+  /// No description provided for @rowCash.
+  ///
+  /// In en, this message translates to:
+  /// **'Cash price'**
+  String get rowCash;
+
+  /// No description provided for @rowExtra.
+  ///
+  /// In en, this message translates to:
+  /// **'Extra you pay'**
+  String get rowExtra;
+
+  /// No description provided for @rowDistance.
+  ///
+  /// In en, this message translates to:
+  /// **'Distance'**
+  String get rowDistance;
+
+  /// No description provided for @rowFuel.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel'**
+  String get rowFuel;
+
+  /// No description provided for @rowYearly.
+  ///
+  /// In en, this message translates to:
+  /// **'Yearly'**
+  String get rowYearly;
+
+  /// No description provided for @rowDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Date'**
+  String get rowDate;
+
+  /// No description provided for @runwayHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'You can spend {amount} a day.'**
+  String runwayHeadline(String amount);
+
+  /// No description provided for @runwayMonthEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'Counted to the end of the month ({days} days, today included).'**
+  String runwayMonthEnd(int days);
+
+  /// No description provided for @discountHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'You pay {amount}.'**
+  String discountHeadline(String amount);
+
+  /// No description provided for @vatHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Total with VAT: {amount}.'**
+  String vatHeadline(String amount);
+
+  /// No description provided for @raiseHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'New amount: {amount}.'**
+  String raiseHeadline(String amount);
+
+  /// No description provided for @percentOfHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% of {base} is {result}.'**
+  String percentOfHeadline(String percent, String base, String result);
+
+  /// No description provided for @splitHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Each person pays {amount}.'**
+  String splitHeadline(String amount);
+
+  /// No description provided for @installmentMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Instalments cost {amount} more than paying cash ({percent}%).'**
+  String installmentMore(String amount, String percent);
+
+  /// No description provided for @installmentNoMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Instalments cost no more than cash — spreading it out is fine.'**
+  String get installmentNoMore;
+
+  /// No description provided for @installmentTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'You will pay {amount} in total.'**
+  String installmentTotal(String amount);
+
+  /// No description provided for @unitPriceHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'Option {n} is cheaper: {price} per {unit}.'**
+  String unitPriceHeadline(int n, String price, String unit);
+
+  /// No description provided for @unitPriceSaving.
+  ///
+  /// In en, this message translates to:
+  /// **'About {percent}% cheaper per unit.'**
+  String unitPriceSaving(String percent);
+
+  /// No description provided for @unitPriceSame.
+  ///
+  /// In en, this message translates to:
+  /// **'They cost the same per unit — pick the size you’ll actually use.'**
+  String get unitPriceSame;
+
+  /// No description provided for @unitPieceLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'piece'**
+  String get unitPieceLabel;
+
+  /// No description provided for @fuelHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'The trip costs about {amount} in fuel.'**
+  String fuelHeadline(String amount);
+
+  /// No description provided for @yearlyHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'That is {amount} a year.'**
+  String yearlyHeadline(String amount);
+
+  /// No description provided for @daysUntilHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'{days, plural, =0{It’s today!} =1{1 day to go.} other{{days} days to go.}}'**
+  String daysUntilHeadline(int days);
+
+  /// No description provided for @optionN.
+  ///
+  /// In en, this message translates to:
+  /// **'Option {n}'**
+  String optionN(int n);
+
+  /// No description provided for @decideTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Decide'**
+  String get decideTitle;
+
+  /// No description provided for @decideIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your options and what matters to you. I’ll weigh them up.'**
+  String get decideIntro;
+
+  /// No description provided for @decideAddOption.
+  ///
+  /// In en, this message translates to:
+  /// **'Add option'**
+  String get decideAddOption;
+
+  /// No description provided for @decidePrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Price (optional)'**
+  String get decidePrice;
+
+  /// No description provided for @decideWhatMatters.
+  ///
+  /// In en, this message translates to:
+  /// **'What matters?'**
+  String get decideWhatMatters;
+
+  /// No description provided for @critPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Price'**
+  String get critPrice;
+
+  /// No description provided for @critQuality.
+  ///
+  /// In en, this message translates to:
+  /// **'Quality'**
+  String get critQuality;
+
+  /// No description provided for @critFit.
+  ///
+  /// In en, this message translates to:
+  /// **'Fits my needs'**
+  String get critFit;
+
+  /// No description provided for @critLongTerm.
+  ///
+  /// In en, this message translates to:
+  /// **'Long-term value'**
+  String get critLongTerm;
+
+  /// No description provided for @critRisk.
+  ///
+  /// In en, this message translates to:
+  /// **'Low risk'**
+  String get critRisk;
+
+  /// No description provided for @critCustomHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Something else that matters'**
+  String get critCustomHint;
+
+  /// No description provided for @weight1.
+  ///
+  /// In en, this message translates to:
+  /// **'Nice to have'**
+  String get weight1;
+
+  /// No description provided for @weight2.
+  ///
+  /// In en, this message translates to:
+  /// **'Important'**
+  String get weight2;
+
+  /// No description provided for @weight3.
+  ///
+  /// In en, this message translates to:
+  /// **'Must'**
+  String get weight3;
+
+  /// No description provided for @decideRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate each option'**
+  String get decideRate;
+
+  /// No description provided for @decideRateHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'1 = poor, 5 = great. Price is scored from the prices you entered.'**
+  String get decideRateHelp;
+
+  /// No description provided for @decideShow.
+  ///
+  /// In en, this message translates to:
+  /// **'Show the best option'**
+  String get decideShow;
+
+  /// No description provided for @decideRecommended.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommended'**
+  String get decideRecommended;
+
+  /// No description provided for @decideWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'Why?'**
+  String get decideWhy;
+
+  /// No description provided for @decideStrength.
+  ///
+  /// In en, this message translates to:
+  /// **'Better on {criterion}'**
+  String decideStrength(String criterion);
+
+  /// No description provided for @decideWeakness.
+  ///
+  /// In en, this message translates to:
+  /// **'Weaker on {criterion}'**
+  String decideWeakness(String criterion);
+
+  /// No description provided for @decideTooClose.
+  ///
+  /// In en, this message translates to:
+  /// **'It’s very close — both are reasonable. Let what you value most decide.'**
+  String get decideTooClose;
+
+  /// No description provided for @decideSlight.
+  ///
+  /// In en, this message translates to:
+  /// **'A slight edge, not a big one.'**
+  String get decideSlight;
+
+  /// No description provided for @decideClear.
+  ///
+  /// In en, this message translates to:
+  /// **'A clear winner for your priorities.'**
+  String get decideClear;
+
+  /// No description provided for @decideDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Based on your own ratings. Check current prices and details before you buy.'**
+  String get decideDisclaimer;
+
+  /// No description provided for @decideNeedTwo.
+  ///
+  /// In en, this message translates to:
+  /// **'Add at least two options.'**
+  String get decideNeedTwo;
+
+  /// No description provided for @decideScore.
+  ///
+  /// In en, this message translates to:
+  /// **'{score}/100'**
+  String decideScore(int score);
+
+  /// No description provided for @calcTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculator'**
+  String get calcTitle;
+
+  /// No description provided for @calcError.
+  ///
+  /// In en, this message translates to:
+  /// **'Check the expression'**
+  String get calcError;
+
+  /// No description provided for @exploreTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get exploreTitle;
+
+  /// No description provided for @exploreSolve.
+  ///
+  /// In en, this message translates to:
+  /// **'Solve'**
+  String get exploreSolve;
+
+  /// No description provided for @exploreLife.
+  ///
+  /// In en, this message translates to:
+  /// **'Track'**
+  String get exploreLife;
+
+  /// No description provided for @exploreMyDay.
+  ///
+  /// In en, this message translates to:
+  /// **'My day'**
+  String get exploreMyDay;
+
+  /// No description provided for @exploreMyDayBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan, budget and goals for today'**
+  String get exploreMyDayBody;
+
+  /// No description provided for @savedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get savedTitle;
+
+  /// No description provided for @savedEmptyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing saved yet'**
+  String get savedEmptyTitle;
+
+  /// No description provided for @savedEmptyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Solve a problem and tap Save to keep it here.'**
+  String get savedEmptyBody;
+
+  /// No description provided for @removed.
+  ///
+  /// In en, this message translates to:
+  /// **'Removed'**
+  String get removed;
+
+  /// No description provided for @recipeHeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'You can make these with what you have'**
+  String get recipeHeadline;
+
+  /// No description provided for @recipeMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'Missing: {items}'**
+  String recipeMissing(String items);
+
+  /// No description provided for @recipeHaveAll.
+  ///
+  /// In en, this message translates to:
+  /// **'You have everything'**
+  String get recipeHaveAll;
+
+  /// No description provided for @recipeMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} min'**
+  String recipeMinutes(int minutes);
+
+  /// No description provided for @addMissingToList.
+  ///
+  /// In en, this message translates to:
+  /// **'Add missing to shopping list'**
+  String get addMissingToList;
+
+  /// No description provided for @addedToList.
+  ///
+  /// In en, this message translates to:
+  /// **'Added to your shopping list'**
+  String get addedToList;
+
+  /// No description provided for @recipeNoMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'I couldn’t match those ingredients to a recipe yet. Ask Lio for ideas.'**
+  String get recipeNoMatch;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

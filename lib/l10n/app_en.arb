@@ -1,7 +1,7 @@
 {
   "@@locale": "en",
   "appName": "Dayly",
-  "appTagline": "Make every day a good one.",
+  "appTagline": "Leave the hard part of life to us.",
   "ok": "OK",
   "cancel": "Cancel",
   "save": "Save",
@@ -85,9 +85,12 @@
   "navMoney": "Money",
   "navLife": "Life",
   "navAi": "AI",
+  "navExplore": "Explore",
+  "navSaved": "Saved",
+  "navProfile": "Profile",
   "profileAndSettings": "Profile and settings",
-  "welcomeTitle": "Hi, I’m Lio! Let’s make today a good day.",
-  "welcomeBody": "Plans, money, food, habits and an assistant that connects them — in one calm place.",
+  "welcomeTitle": "Leave the hard part of life to us.",
+  "welcomeBody": "Money, decisions, food, writing: type an everyday problem and Dayly solves it in seconds, right on your phone.",
   "getStarted": "Get started",
   "haveAccount": "I already have an account",
   "signIn": "Sign in",
@@ -131,7 +134,7 @@
   "onbPickCity": "Search a city",
   "onbReadyTitle": "Dayly is ready for you!",
   "onbReadyBody": "Your home screen now shows what matters for you today.",
-  "onbOpenHome": "Open my day",
+  "onbOpenHome": "Solve my first problem",
   "stepOf": "Step {current} of {total}",
   "@stepOf": {
     "placeholders": {
@@ -1333,5 +1336,278 @@
   "brainFallback": "I’m still learning that one. Try asking about your plan, money, food or how your day is going.",
   "aiSmarterTitle": "Make Lio smarter",
   "aiSmarterBody": "Lio already answers questions about your day. Download Offline Lio once to chat about anything — even without internet.",
-  "brainAnswerLabel": "Lio · on your phone"
+  "brainAnswerLabel": "Lio · on your phone",
+  "homeHello": "Hi {name} 👋",
+  "@homeHello": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "homeHelloNoName": "Hi there 👋",
+  "homeQuestion": "What should we solve today?",
+  "problemHint": "Type a problem…",
+  "problemEx1": "I have 3,000 left and 20 days to go",
+  "problemEx2": "1 L for 45 or 1.5 L for 60 — which is cheaper?",
+  "problemEx3": "I have eggs, tomatoes and cheese at home",
+  "problemEx4": "iPhone or Samsung?",
+  "problemEx5": "Split a 1,840 bill between 4 people",
+  "problemEx6": "30% off 1,299 — what do I pay?",
+  "problemEx7": "How many days until December 31?",
+  "solve": "Solve",
+  "voiceInput": "Speak",
+  "photoInput": "Photo",
+  "listening": "Listening…",
+  "voiceUnavailable": "Voice input isn’t available on this device.",
+  "photoNoText": "I couldn’t read any text in that photo.",
+  "quickMoney": "Money",
+  "quickDecide": "Decide",
+  "quickFood": "Food",
+  "quickCalc": "Calculate",
+  "quickWrite": "Write",
+  "quickPlan": "Plan",
+  "recentlySolved": "Recently solved",
+  "solutionTitle": "Solution",
+  "solvedOnDevice": "Calculated on your phone",
+  "savedToast": "Saved",
+  "askLioAbout": "Ask Lio about this",
+  "solveAnother": "Solve something else",
+  "rowPerDay": "Per day",
+  "rowPerWeek": "Per week",
+  "rowDays": "Days",
+  "rowTotal": "Total",
+  "rowYouSave": "You save",
+  "rowTax": "Tax",
+  "rowIncrease": "Increase",
+  "rowPrice": "Price",
+  "rowPerPerson": "Per person",
+  "rowPeople": "People",
+  "rowTip": "Tip",
+  "rowMonthly": "Monthly",
+  "rowMonths": "Months",
+  "rowCash": "Cash price",
+  "rowExtra": "Extra you pay",
+  "rowDistance": "Distance",
+  "rowFuel": "Fuel",
+  "rowYearly": "Yearly",
+  "rowDate": "Date",
+  "runwayHeadline": "You can spend {amount} a day.",
+  "@runwayHeadline": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "runwayMonthEnd": "Counted to the end of the month ({days} days, today included).",
+  "@runwayMonthEnd": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "discountHeadline": "You pay {amount}.",
+  "@discountHeadline": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "vatHeadline": "Total with VAT: {amount}.",
+  "@vatHeadline": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "raiseHeadline": "New amount: {amount}.",
+  "@raiseHeadline": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "percentOfHeadline": "{percent}% of {base} is {result}.",
+  "@percentOfHeadline": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      },
+      "base": {
+        "type": "String"
+      },
+      "result": {
+        "type": "String"
+      }
+    }
+  },
+  "splitHeadline": "Each person pays {amount}.",
+  "@splitHeadline": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "installmentMore": "Instalments cost {amount} more than paying cash ({percent}%).",
+  "@installmentMore": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "installmentNoMore": "Instalments cost no more than cash — spreading it out is fine.",
+  "installmentTotal": "You will pay {amount} in total.",
+  "@installmentTotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "unitPriceHeadline": "Option {n} is cheaper: {price} per {unit}.",
+  "@unitPriceHeadline": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "price": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "unitPriceSaving": "About {percent}% cheaper per unit.",
+  "@unitPriceSaving": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "unitPriceSame": "They cost the same per unit — pick the size you’ll actually use.",
+  "unitPieceLabel": "piece",
+  "fuelHeadline": "The trip costs about {amount} in fuel.",
+  "@fuelHeadline": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "yearlyHeadline": "That is {amount} a year.",
+  "@yearlyHeadline": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "daysUntilHeadline": "{days, plural, =0{It’s today!} =1{1 day to go.} other{{days} days to go.}}",
+  "@daysUntilHeadline": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "optionN": "Option {n}",
+  "@optionN": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "decideTitle": "Decide",
+  "decideIntro": "Add your options and what matters to you. I’ll weigh them up.",
+  "decideAddOption": "Add option",
+  "decidePrice": "Price (optional)",
+  "decideWhatMatters": "What matters?",
+  "critPrice": "Price",
+  "critQuality": "Quality",
+  "critFit": "Fits my needs",
+  "critLongTerm": "Long-term value",
+  "critRisk": "Low risk",
+  "critCustomHint": "Something else that matters",
+  "weight1": "Nice to have",
+  "weight2": "Important",
+  "weight3": "Must",
+  "decideRate": "Rate each option",
+  "decideRateHelp": "1 = poor, 5 = great. Price is scored from the prices you entered.",
+  "decideShow": "Show the best option",
+  "decideRecommended": "Recommended",
+  "decideWhy": "Why?",
+  "decideStrength": "Better on {criterion}",
+  "@decideStrength": {
+    "placeholders": {
+      "criterion": {
+        "type": "String"
+      }
+    }
+  },
+  "decideWeakness": "Weaker on {criterion}",
+  "@decideWeakness": {
+    "placeholders": {
+      "criterion": {
+        "type": "String"
+      }
+    }
+  },
+  "decideTooClose": "It’s very close — both are reasonable. Let what you value most decide.",
+  "decideSlight": "A slight edge, not a big one.",
+  "decideClear": "A clear winner for your priorities.",
+  "decideDisclaimer": "Based on your own ratings. Check current prices and details before you buy.",
+  "decideNeedTwo": "Add at least two options.",
+  "decideScore": "{score}/100",
+  "@decideScore": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "calcTitle": "Calculator",
+  "calcError": "Check the expression",
+  "exploreTitle": "Explore",
+  "exploreSolve": "Solve",
+  "exploreLife": "Track",
+  "exploreMyDay": "My day",
+  "exploreMyDayBody": "Plan, budget and goals for today",
+  "savedTitle": "Saved",
+  "savedEmptyTitle": "Nothing saved yet",
+  "savedEmptyBody": "Solve a problem and tap Save to keep it here.",
+  "removed": "Removed",
+  "recipeHeadline": "You can make these with what you have",
+  "recipeMissing": "Missing: {items}",
+  "@recipeMissing": {
+    "placeholders": {
+      "items": {
+        "type": "String"
+      }
+    }
+  },
+  "recipeHaveAll": "You have everything",
+  "recipeMinutes": "{minutes} min",
+  "@recipeMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "addMissingToList": "Add missing to shopping list",
+  "addedToList": "Added to your shopping list",
+  "recipeNoMatch": "I couldn’t match those ingredients to a recipe yet. Ask Lio for ideas."
 }

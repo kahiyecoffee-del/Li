@@ -11,6 +11,7 @@ import '../domain/models/food.dart';
 import '../domain/models/habit.dart';
 import '../domain/models/money_models.dart';
 import '../domain/models/progress.dart';
+import '../domain/models/saved_item.dart';
 import '../domain/models/task_item.dart';
 import '../domain/models/user_profile.dart';
 import '../domain/models/wellbeing.dart';
@@ -118,6 +119,7 @@ final isPremiumProvider = Provider<bool>((ref) {
 final profileProvider = StreamProvider<UserProfile>(
   (ref) => ref.watch(reposProvider).profile.watch(UserProfile.singletonId).map((p) => p ?? UserProfile.empty()),
 );
+final savedProvider = StreamProvider<List<SavedItem>>((ref) => ref.watch(reposProvider).saved.watchAll());
 final tasksProvider = StreamProvider<List<TaskItem>>((ref) => ref.watch(reposProvider).tasks.watchAll());
 final transactionsProvider = StreamProvider<List<MoneyTransaction>>(
   (ref) => ref.watch(reposProvider).transactions.watchAll(),

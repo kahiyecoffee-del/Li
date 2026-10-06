@@ -207,7 +207,7 @@ class RecipeCard extends ConsumerWidget {
           Row(
             children: [
               Text(
-                l.mealType(recipe.mealType).toUpperCase(),
+                context.upper(l.mealType(recipe.mealType)),
                 style: context.text.labelSmall?.copyWith(color: context.semantic.muted, letterSpacing: 1),
               ),
               const Spacer(),
