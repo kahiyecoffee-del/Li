@@ -25,6 +25,7 @@ class AppSettings {
     this.planReminder = true,
     this.lioLearnsJournal = true,
     this.assistantName = 'Lio',
+    this.favoriteRecipes = const {},
   });
 
   final ThemeMode themeMode;
@@ -52,6 +53,9 @@ class AppSettings {
   /// What the user calls the assistant ("Lio" by default).
   final String assistantName;
 
+  /// Ids of recipes the user hearted (kept on the device).
+  final Set<String> favoriteRecipes;
+
   AppSettings copyWith({
     ThemeMode? themeMode,
     bool? highContrast,
@@ -68,6 +72,7 @@ class AppSettings {
     bool? planReminder,
     bool? lioLearnsJournal,
     String? assistantName,
+    Set<String>? favoriteRecipes,
   }) => AppSettings(
     themeMode: themeMode ?? this.themeMode,
     highContrast: highContrast ?? this.highContrast,
@@ -83,6 +88,7 @@ class AppSettings {
     planReminder: planReminder ?? this.planReminder,
     lioLearnsJournal: lioLearnsJournal ?? this.lioLearnsJournal,
     assistantName: assistantName ?? this.assistantName,
+    favoriteRecipes: favoriteRecipes ?? this.favoriteRecipes,
   );
 }
 
@@ -115,6 +121,7 @@ class SettingsStore {
       planReminder: _p.getBool('planReminder') ?? true,
       lioLearnsJournal: _p.getBool('lioLearnsJournal') ?? true,
       assistantName: _p.getString('assistantName') ?? 'Lio',
+      favoriteRecipes: {...?_p.getStringList('favoriteRecipes')},
     );
   }
 
@@ -137,5 +144,6 @@ class SettingsStore {
     await _p.setBool('planReminder', s.planReminder);
     await _p.setBool('lioLearnsJournal', s.lioLearnsJournal);
     await _p.setString('assistantName', s.assistantName);
+    await _p.setStringList('favoriteRecipes', s.favoriteRecipes.toList());
   }
 }

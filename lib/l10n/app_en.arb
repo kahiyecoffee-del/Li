@@ -690,6 +690,72 @@
   "foodPreferences": "Food preferences",
   "foodSkill": "Cooking skill",
   "foodBudget": "Food budget",
+  "foodTabToday": "Today",
+  "foodTabRecipes": "Recipes",
+  "foodTabWeek": "Week",
+  "foodSearchHint": "Search a dish or an ingredient",
+  "foodFilterFavorites": "Favorites",
+  "foodFilterCanMake": "Can make now",
+  "foodFilterQuick": "Quick (≤20 min)",
+  "foodFilterVeg": "Vegetarian",
+  "foodFilterProtein": "High protein",
+  "foodFilterBudget": "Budget",
+  "foodAllMeals": "All",
+  "foodNoRecipes": "No recipe matches. Try removing a filter.",
+  "foodRecipeCount": "{count, plural, =1{1 recipe} other{{count} recipes}}",
+  "@foodRecipeCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "foodMissingCount": "{count} missing",
+  "@foodMissingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "foodHaveAll": "You have it all",
+  "foodServings": "{count, plural, =1{1 serving} other{{count} servings}}",
+  "@foodServings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "foodAddToToday": "Add to today's menu",
+  "foodAddedToToday": "Added to today's menu",
+  "foodFavoriteAdd": "Add to favorites",
+  "foodFavoriteRemove": "Remove from favorites",
+  "foodCopyRecipe": "Copy recipe",
+  "foodStepsHint": "Tap a step when it is done.",
+  "foodCanMakeNow": "{count, plural, =1{You can cook 1 recipe with what you have} other{You can cook {count} recipes with what you have}}",
+  "@foodCanMakeNow": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "foodWeekIntro": "Lio picks varied meals for 7 days, using what you have at home first. Then make one shopping list for the whole week.",
+  "foodWeekPlan": "Plan the week",
+  "foodWeekReplan": "Re-plan the week",
+  "foodWeekPlanned": "Your week is planned.",
+  "foodWeekShopping": "Make the shopping list",
+  "foodWeekNothingMissing": "You already have everything for this week.",
+  "foodNotPlanned": "Not planned yet",
+  "foodWeekCalories": "~{value} kcal a day",
+  "@foodWeekCalories": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
   "skillBeginner": "Beginner",
   "skillIntermediate": "Intermediate",
   "skillAdvanced": "Advanced",

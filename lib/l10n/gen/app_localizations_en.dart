@@ -1164,6 +1164,118 @@ class AppLocalizationsEn extends AppLocalizations {
   String get foodBudget => 'Food budget';
 
   @override
+  String get foodTabToday => 'Today';
+
+  @override
+  String get foodTabRecipes => 'Recipes';
+
+  @override
+  String get foodTabWeek => 'Week';
+
+  @override
+  String get foodSearchHint => 'Search a dish or an ingredient';
+
+  @override
+  String get foodFilterFavorites => 'Favorites';
+
+  @override
+  String get foodFilterCanMake => 'Can make now';
+
+  @override
+  String get foodFilterQuick => 'Quick (≤20 min)';
+
+  @override
+  String get foodFilterVeg => 'Vegetarian';
+
+  @override
+  String get foodFilterProtein => 'High protein';
+
+  @override
+  String get foodFilterBudget => 'Budget';
+
+  @override
+  String get foodAllMeals => 'All';
+
+  @override
+  String get foodNoRecipes => 'No recipe matches. Try removing a filter.';
+
+  @override
+  String foodRecipeCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count recipes', one: '1 recipe');
+    return '$_temp0';
+  }
+
+  @override
+  String foodMissingCount(int count) {
+    return '$count missing';
+  }
+
+  @override
+  String get foodHaveAll => 'You have it all';
+
+  @override
+  String foodServings(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count servings', one: '1 serving');
+    return '$_temp0';
+  }
+
+  @override
+  String get foodAddToToday => 'Add to today\'s menu';
+
+  @override
+  String get foodAddedToToday => 'Added to today\'s menu';
+
+  @override
+  String get foodFavoriteAdd => 'Add to favorites';
+
+  @override
+  String get foodFavoriteRemove => 'Remove from favorites';
+
+  @override
+  String get foodCopyRecipe => 'Copy recipe';
+
+  @override
+  String get foodStepsHint => 'Tap a step when it is done.';
+
+  @override
+  String foodCanMakeNow(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'You can cook $count recipes with what you have',
+      one: 'You can cook 1 recipe with what you have',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get foodWeekIntro =>
+      'Lio picks varied meals for 7 days, using what you have at home first. Then make one shopping list for the whole week.';
+
+  @override
+  String get foodWeekPlan => 'Plan the week';
+
+  @override
+  String get foodWeekReplan => 'Re-plan the week';
+
+  @override
+  String get foodWeekPlanned => 'Your week is planned.';
+
+  @override
+  String get foodWeekShopping => 'Make the shopping list';
+
+  @override
+  String get foodWeekNothingMissing => 'You already have everything for this week.';
+
+  @override
+  String get foodNotPlanned => 'Not planned yet';
+
+  @override
+  String foodWeekCalories(int value) {
+    return '~$value kcal a day';
+  }
+
+  @override
   String get skillBeginner => 'Beginner';
 
   @override

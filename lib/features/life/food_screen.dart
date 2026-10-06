@@ -15,6 +15,9 @@ import '../../core/utils/ids.dart';
 import '../../core/utils/json.dart';
 import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
+
+import 'package:intl/intl.dart';
+
 import '../../domain/engines/meal_engine.dart';
 import '../../domain/engines/recipe_library.dart';
 import '../../domain/models/enums.dart';
@@ -65,31 +68,43 @@ List<Recipe> parseAiRecipes(Map<String, dynamic> result, String currency) {
 }
 
 class FoodScreen extends ConsumerStatefulWidget {
-  const FoodScreen({super.key});
+  const FoodScreen({super.key, this.initialTab = 0});
+
+  /// 0 today, 1 recipes, 2 week.
+  final int initialTab;
 
   @override
   ConsumerState<FoodScreen> createState() => _FoodScreenState();
 }
 
-class _FoodScreenState extends ConsumerState<FoodScreen> {
+class _FoodScreenState extends ConsumerState<FoodScreen> with SingleTickerProviderStateMixin {
+  late final _tabs = TabController(length: 3, vsync: this, initialIndex: widget.initialTab.clamp(0, 2));
   bool _aiBusy = false;
+  final _filters = <RecipeFilter>{};
+  MealType? _type;
+  String _query = '';
 
-  List<Recipe> _localSuggestions(UserProfile p, DateTime day) => const MealEngine().suggestDay(
-    recipes: RecipeLibrary.all(Localizations.localeOf(context).languageCode),
-    prefs: p.food,
-    pantry: (ref.read(pantryProvider).list).map((x) => x.name),
-    day: day,
-  );
+  String get _lang => Localizations.localeOf(context).languageCode;
+  Iterable<String> get _pantry => ref.read(pantryProvider).list.map((x) => x.name);
+
+  @override
+  void dispose() {
+    _tabs.dispose();
+    super.dispose();
+  }
+
+  List<Recipe> _localSuggestions(UserProfile p, DateTime day) =>
+      const MealEngine().suggestDay(recipes: RecipeLibrary.all(_lang), prefs: p.food, pantry: _pantry, day: day);
 
   Future<void> _generateAi(UserProfile p, DateTime day) async {
     setState(() => _aiBusy = true);
     try {
       final r = await ref.read(servicesProvider).ai.task(AiTaskType.mealPlan, {
         'date': Dates.dayKey(day),
-        'locale': Localizations.localeOf(context).languageCode,
+        'locale': _lang,
         'currency': p.currency,
         'preferences': p.food.toJson(),
-        'pantry': (ref.read(pantryProvider).list).map((x) => x.name).take(40).toList(),
+        'pantry': _pantry.take(40).toList(),
         'mealTypes': ['breakfast', 'lunch', 'dinner'],
       });
       ref.read(creditsProvider.notifier).set(r.credits);
@@ -116,10 +131,6 @@ class _FoodScreenState extends ConsumerState<FoodScreen> {
   Widget build(BuildContext context) {
     final l = context.l10n;
     final profile = ref.watch(profileProvider).value ?? UserProfile.empty();
-    final today = ref.watch(todayProvider);
-    final plan = (ref.watch(mealPlansProvider).list).where((m) => m.id == Dates.dayKey(today)).firstOrNull;
-    final meals = plan?.meals ?? _localSuggestions(profile, today);
-    final total = meals.fold(0, (s, m) => s + m.calories);
     return Scaffold(
       appBar: AppBar(
         title: Text(l.foodWhatToEat),
@@ -130,43 +141,276 @@ class _FoodScreenState extends ConsumerState<FoodScreen> {
             onPressed: () => _editPrefs(context, profile),
           ),
         ],
+        bottom: TabBar(
+          controller: _tabs,
+          tabs: [
+            Tab(text: l.foodTabToday),
+            Tab(text: l.foodTabRecipes),
+            Tab(text: l.foodTabWeek),
+          ],
+        ),
       ),
-      body: PageList(
-        children: [
-          Wrap(
-            spacing: Space.sm,
-            runSpacing: Space.sm,
-            children: [
-              FilledButton.tonalIcon(
-                onPressed: () =>
-                    ref.read(actionsProvider).saveMealPlan(today, _localSuggestions(profile, today), ai: false),
-                icon: const Icon(Icons.kitchen_outlined),
-                label: Text(l.foodRefreshLocal),
+      body: TabBarView(controller: _tabs, children: [_today(profile), _recipes(profile), _week(profile)]),
+    );
+  }
+
+  // ------------------------------------------------------------------ today
+
+  Widget _today(UserProfile profile) {
+    final l = context.l10n;
+    final today = ref.watch(todayProvider);
+    final plan = ref.watch(mealPlansProvider).list.where((m) => m.id == Dates.dayKey(today)).firstOrNull;
+    final meals = plan?.meals ?? _localSuggestions(profile, today);
+    final total = meals.fold(0, (s, m) => s + m.calories);
+    final pantry = ref.watch(pantryProvider).list.map((x) => x.name).toList();
+    final canMake = pantry.isEmpty
+        ? 0
+        : const MealEngine()
+              .matchPantry(const MealEngine().eligible(RecipeLibrary.all(_lang), profile.food), pantry)
+              .where((m) => m.makeable)
+              .length;
+    return PageList(
+      children: [
+        Wrap(
+          spacing: Space.sm,
+          runSpacing: Space.sm,
+          children: [
+            FilledButton.tonalIcon(
+              onPressed: () =>
+                  ref.read(actionsProvider).saveMealPlan(today, _localSuggestions(profile, today), ai: false),
+              icon: const Icon(Icons.kitchen_outlined),
+              label: Text(l.foodRefreshLocal),
+            ),
+            if (ref.watch(servicesProvider).cloudEnabled)
+              FilledButton.icon(
+                onPressed: _aiBusy ? null : () => _generateAi(profile, today),
+                icon: _aiBusy
+                    ? const SizedBox.square(dimension: 18, child: CircularProgressIndicator(strokeWidth: 2))
+                    : const Icon(Icons.auto_awesome),
+                label: Text(l.foodGenerateAi),
               ),
-              if (ref.watch(servicesProvider).cloudEnabled)
-                FilledButton.icon(
-                  onPressed: _aiBusy ? null : () => _generateAi(profile, today),
-                  icon: _aiBusy
-                      ? const SizedBox.square(dimension: 18, child: CircularProgressIndicator(strokeWidth: 2))
-                      : const Icon(Icons.auto_awesome),
-                  label: Text(l.foodGenerateAi),
-                ),
-            ],
-          ),
+          ],
+        ),
+        if (canMake > 0) ...[
           const SizedBox(height: Space.md),
-          Text(
-            '${l.foodCalories(total)} · ${l.nutritionDisclaimer}',
-            style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
-          ),
-          const SizedBox(height: Space.sm),
-          ...meals.map(
-            (m) => Padding(
-              padding: const EdgeInsets.only(bottom: Space.sm),
-              child: RecipeCard(recipe: m),
+          AppCard(
+            onTap: () {
+              setState(
+                () => _filters
+                  ..clear()
+                  ..add(RecipeFilter.canMake),
+              );
+              _tabs.animateTo(1);
+            },
+            child: Row(
+              children: [
+                const IconBubble(icon: Icons.kitchen_rounded, accent: Accent.food, size: 36),
+                const SizedBox(width: Space.md),
+                Expanded(child: Text(l.foodCanMakeNow(canMake))),
+                const Icon(Icons.chevron_right_rounded),
+              ],
             ),
           ),
         ],
-      ),
+        const SizedBox(height: Space.md),
+        Text(
+          '${l.foodCalories(total)} · ${l.nutritionDisclaimer}',
+          style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
+        ),
+        const SizedBox(height: Space.sm),
+        ...meals.map(
+          (m) => Padding(
+            padding: const EdgeInsets.only(bottom: Space.sm),
+            child: RecipeCard(recipe: m),
+          ),
+        ),
+      ],
+    );
+  }
+
+  // ---------------------------------------------------------------- recipes
+
+  Widget _recipes(UserProfile profile) {
+    final l = context.l10n;
+    final favorites = ref.watch(settingsProvider.select((s) => s.favoriteRecipes));
+    final pantry = ref.watch(pantryProvider).list.map((x) => x.name).toSet();
+    final all = const MealEngine().eligible(RecipeLibrary.all(_lang), profile.food);
+    final list = all
+        .where((r) => _type == null || r.mealType == _type)
+        .where((r) => recipeSearch(r, _query, _lang))
+        .where((r) => _filters.every((f) => recipeMatches(r, f, favorites: favorites, pantry: pantry)))
+        .toList();
+    final missing = {for (final m in const MealEngine().matchPantry(list, pantry)) m.recipe.id: m.missing.length};
+    list.sort((a, b) {
+      final fa = favorites.contains(a.id) ? 0 : 1, fb = favorites.contains(b.id) ? 0 : 1;
+      if (fa != fb) return fa - fb;
+      return missing[a.id]!.compareTo(missing[b.id]!);
+    });
+    String filterLabel(RecipeFilter f) => switch (f) {
+      RecipeFilter.favorites => l.foodFilterFavorites,
+      RecipeFilter.canMake => l.foodFilterCanMake,
+      RecipeFilter.quick => l.foodFilterQuick,
+      RecipeFilter.vegetarian => l.foodFilterVeg,
+      RecipeFilter.highProtein => l.foodFilterProtein,
+      RecipeFilter.budget => l.foodFilterBudget,
+    };
+    return ListView(
+      padding: const EdgeInsets.fromLTRB(Space.page, Space.md, Space.page, Space.xl),
+      children: [
+        TextField(
+          decoration: InputDecoration(prefixIcon: const Icon(Icons.search_rounded), hintText: l.foodSearchHint),
+          onChanged: (v) => setState(() => _query = v),
+        ),
+        const SizedBox(height: Space.md),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              for (final t in [null, ...MealType.values])
+                Padding(
+                  padding: const EdgeInsets.only(right: Space.sm),
+                  child: ChoiceChip(
+                    label: Text(t == null ? l.foodAllMeals : l.mealType(t)),
+                    selected: _type == t,
+                    onSelected: (_) => setState(() => _type = t),
+                  ),
+                ),
+            ],
+          ),
+        ),
+        const SizedBox(height: Space.sm),
+        Wrap(
+          spacing: Space.sm,
+          runSpacing: Space.sm,
+          children: [
+            for (final f in RecipeFilter.values)
+              FilterChip(
+                label: Text(filterLabel(f)),
+                selected: _filters.contains(f),
+                onSelected: (on) => setState(() => on ? _filters.add(f) : _filters.remove(f)),
+              ),
+          ],
+        ),
+        const SizedBox(height: Space.md),
+        Text(l.foodRecipeCount(list.length), style: context.text.labelMedium?.copyWith(color: context.semantic.muted)),
+        const SizedBox(height: Space.sm),
+        if (list.isEmpty)
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: Space.xl),
+            child: Text(l.foodNoRecipes, textAlign: TextAlign.center),
+          ),
+        for (final r in list)
+          Padding(
+            padding: const EdgeInsets.only(bottom: Space.sm),
+            child: _RecipeTile(recipe: r, missing: missing[r.id]!, favorite: favorites.contains(r.id)),
+          ),
+      ],
+    );
+  }
+
+  // ------------------------------------------------------------------- week
+
+  Widget _week(UserProfile profile) {
+    final l = context.l10n;
+    final today = ref.watch(todayProvider);
+    final days = [for (var i = 0; i < 7; i++) Dates.addDays(today, i)];
+    final plans = {for (final p in ref.watch(mealPlansProvider).list) p.id: p};
+    final week = [for (final d in days) plans[Dates.dayKey(d)]];
+    final planned = week.whereType<MealPlan>().toList();
+    final avgKcal = planned.isEmpty ? 0 : planned.fold(0, (s, p) => s + p.totalCalories) ~/ planned.length;
+    final loc = Localizations.localeOf(context).toString();
+    return PageList(
+      children: [
+        Text(l.foodWeekIntro, style: context.text.bodyMedium),
+        const SizedBox(height: Space.md),
+        Wrap(
+          spacing: Space.sm,
+          runSpacing: Space.sm,
+          children: [
+            FilledButton.icon(
+              onPressed: () async {
+                final plan = suggestWeek(
+                  recipes: RecipeLibrary.all(_lang),
+                  prefs: profile.food,
+                  pantry: _pantry,
+                  start: today,
+                );
+                for (final (i, meals) in plan.indexed) {
+                  await ref.read(actionsProvider).saveMealPlan(days[i], meals, ai: false);
+                }
+                if (mounted) showSnack(context, l.foodWeekPlanned);
+              },
+              icon: const Icon(Icons.calendar_month_rounded),
+              label: Text(planned.length == 7 ? l.foodWeekReplan : l.foodWeekPlan),
+            ),
+            if (planned.isNotEmpty)
+              FilledButton.tonalIcon(
+                onPressed: () async {
+                  final missing = missingForMeals(planned.expand((p) => p.meals), _pantry);
+                  if (missing.isEmpty) {
+                    showSnack(context, l.foodWeekNothingMissing);
+                    return;
+                  }
+                  final n = await ref
+                      .read(actionsProvider)
+                      .addShoppingItems(missing.map((x) => ingredientName(x, _lang)).toList());
+                  if (!mounted) return;
+                  showSnack(
+                    context,
+                    l.foodAddedToList(n),
+                    action: SnackBarAction(label: l.actShopping, onPressed: () => context.push('/shopping')),
+                  );
+                },
+                icon: const Icon(Icons.add_shopping_cart_rounded),
+                label: Text(l.foodWeekShopping),
+              ),
+          ],
+        ),
+        if (avgKcal > 0) ...[
+          const SizedBox(height: Space.sm),
+          Text(l.foodWeekCalories(avgKcal), style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
+        ],
+        const SizedBox(height: Space.md),
+        for (final (i, d) in days.indexed)
+          Padding(
+            padding: const EdgeInsets.only(bottom: Space.sm),
+            child: AppCard(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    i == 0 ? l.today : (i == 1 ? l.tomorrow : DateFormat.EEEE(loc).add_MMMd().format(d)),
+                    style: context.text.titleSmall,
+                  ),
+                  const SizedBox(height: Space.xs),
+                  if (week[i] == null)
+                    Text(l.foodNotPlanned, style: context.text.bodySmall?.copyWith(color: context.semantic.muted))
+                  else
+                    for (final m in week[i]!.meals)
+                      InkWell(
+                        onTap: () => openRecipe(context, m),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 4),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 96,
+                                child: Text(
+                                  l.mealType(m.mealType),
+                                  style: context.text.labelSmall?.copyWith(color: context.semantic.muted),
+                                ),
+                              ),
+                              Expanded(child: Text(m.name, style: context.text.bodyMedium)),
+                              const Icon(Icons.chevron_right_rounded, size: 18),
+                            ],
+                          ),
+                        ),
+                      ),
+                ],
+              ),
+            ),
+          ),
+      ],
     );
   }
 
@@ -177,6 +421,65 @@ class _FoodScreenState extends ConsumerState<FoodScreen> {
     builder: (_) => _FoodPrefsSheet(profile: p),
   );
 }
+
+/// Opens the full recipe page (library recipes by id, others as data).
+void openRecipe(BuildContext context, Recipe r) => context.push('/recipe/${Uri.encodeComponent(r.id)}', extra: r);
+
+class _RecipeTile extends StatelessWidget {
+  const _RecipeTile({required this.recipe, required this.missing, required this.favorite});
+
+  final Recipe recipe;
+  final int missing;
+  final bool favorite;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.l10n;
+    return AppCard(
+      onTap: () => openRecipe(context, recipe),
+      padding: const EdgeInsets.all(Space.md),
+      child: Row(
+        children: [
+          IconBubble(icon: _mealIcon(recipe.mealType), accent: Accent.food, size: 40),
+          const SizedBox(width: Space.md),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(recipe.name, style: context.text.titleSmall),
+                const SizedBox(height: 2),
+                Text(
+                  '${l.minutesShort(recipe.prepMinutes)} · ${l.foodCalories(recipe.calories)}',
+                  style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(width: Space.sm),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              if (favorite) Icon(Icons.favorite_rounded, size: 16, color: context.colors.error),
+              Text(
+                missing == 0 ? l.foodHaveAll : l.foodMissingCount(missing),
+                style: context.text.labelSmall?.copyWith(
+                  color: missing == 0 ? context.colors.primary : context.semantic.muted,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+IconData _mealIcon(MealType t) => switch (t) {
+  MealType.breakfast => Icons.free_breakfast_rounded,
+  MealType.lunch => Icons.lunch_dining_rounded,
+  MealType.dinner => Icons.dinner_dining_rounded,
+  MealType.snack => Icons.cookie_rounded,
+};
 
 class RecipeCard extends ConsumerWidget {
   const RecipeCard({super.key, required this.recipe});
@@ -195,12 +498,7 @@ class RecipeCard extends ConsumerWidget {
         ? l.foodCostHigh
         : l.foodCostMedium;
     return AppCard(
-      onTap: () => showModalBottomSheet<void>(
-        context: context,
-        useRootNavigator: true,
-        isScrollControlled: true,
-        builder: (_) => _RecipeDetail(recipe: recipe),
-      ),
+      onTap: () => openRecipe(context, recipe),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -225,69 +523,6 @@ class RecipeCard extends ConsumerWidget {
             '${l.minutesShort(recipe.prepMinutes)} · ${l.difficulty(recipe.difficulty)} · $cost',
             style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class _RecipeDetail extends ConsumerWidget {
-  const _RecipeDetail({required this.recipe});
-
-  final Recipe recipe;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final l = context.l10n;
-    final pantry = (ref.watch(pantryProvider).list).map((p) => p.name);
-    final missing = const MealEngine().matchPantry([recipe], pantry).first.missing;
-    return DraggableScrollableSheet(
-      expand: false,
-      initialChildSize: 0.7,
-      builder: (_, controller) => ListView(
-        controller: controller,
-        padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.xl),
-        children: [
-          Text(recipe.name, style: context.text.headlineSmall),
-          const SizedBox(height: Space.sm),
-          Text(
-            '${l.foodCalories(recipe.calories)} · ${l.foodMacros(recipe.proteinG, recipe.carbsG, recipe.fatG)} · ${l.minutesShort(recipe.prepMinutes)}',
-          ),
-          SectionTitle(l.foodIngredients),
-          ...recipe.ingredients.map(
-            (i) => ListTile(
-              dense: true,
-              contentPadding: EdgeInsets.zero,
-              leading: Icon(
-                missing.contains(normalizeIngredient(i)) ? Icons.radio_button_unchecked : Icons.check_circle,
-                size: 20,
-              ),
-              title: Text(i),
-            ),
-          ),
-          if (missing.isNotEmpty) ...[
-            const SizedBox(height: Space.sm),
-            Text(l.foodMissing(missing.join(', ')), style: context.text.bodySmall),
-            const SizedBox(height: Space.sm),
-            OutlinedButton.icon(
-              onPressed: () async {
-                final n = await ref.read(actionsProvider).addShoppingItems(missing);
-                if (context.mounted) showSnack(context, l.foodAddedToList(n));
-              },
-              icon: const Icon(Icons.add_shopping_cart),
-              label: Text(l.foodAddMissing),
-            ),
-          ],
-          if (recipe.steps.isNotEmpty) ...[
-            SectionTitle(l.foodSteps),
-            for (final (i, s) in recipe.steps.indexed)
-              Padding(
-                padding: const EdgeInsets.only(bottom: Space.sm),
-                child: Text('${i + 1}. $s'),
-              ),
-          ],
-          const SizedBox(height: Space.md),
-          Text(l.nutritionDisclaimer, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
         ],
       ),
     );

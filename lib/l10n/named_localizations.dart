@@ -13,6 +13,8 @@ class _NamedEn extends AppLocalizationsEn {
   final String assistant;
   String _r(String s) => renameAssistant(s, assistant, turkish: false);
   @override
+  String get foodWeekIntro => _r(super.foodWeekIntro);
+  @override
   String get notifPlanBody => _r(super.notifPlanBody);
   @override
   String get lioLearnsSetting => _r(super.lioLearnsSetting);
@@ -54,6 +56,8 @@ class _NamedTr extends AppLocalizationsTr {
   _NamedTr(this.assistant);
   final String assistant;
   String _r(String s) => renameAssistant(s, assistant, turkish: true);
+  @override
+  String get foodWeekIntro => _r(super.foodWeekIntro);
   @override
   String get notifPlanBody => _r(super.notifPlanBody);
   @override

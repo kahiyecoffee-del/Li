@@ -2192,6 +2192,192 @@ abstract class AppLocalizations {
   /// **'Food budget'**
   String get foodBudget;
 
+  /// No description provided for @foodTabToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get foodTabToday;
+
+  /// No description provided for @foodTabRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipes'**
+  String get foodTabRecipes;
+
+  /// No description provided for @foodTabWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Week'**
+  String get foodTabWeek;
+
+  /// No description provided for @foodSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search a dish or an ingredient'**
+  String get foodSearchHint;
+
+  /// No description provided for @foodFilterFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get foodFilterFavorites;
+
+  /// No description provided for @foodFilterCanMake.
+  ///
+  /// In en, this message translates to:
+  /// **'Can make now'**
+  String get foodFilterCanMake;
+
+  /// No description provided for @foodFilterQuick.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick (≤20 min)'**
+  String get foodFilterQuick;
+
+  /// No description provided for @foodFilterVeg.
+  ///
+  /// In en, this message translates to:
+  /// **'Vegetarian'**
+  String get foodFilterVeg;
+
+  /// No description provided for @foodFilterProtein.
+  ///
+  /// In en, this message translates to:
+  /// **'High protein'**
+  String get foodFilterProtein;
+
+  /// No description provided for @foodFilterBudget.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget'**
+  String get foodFilterBudget;
+
+  /// No description provided for @foodAllMeals.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get foodAllMeals;
+
+  /// No description provided for @foodNoRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'No recipe matches. Try removing a filter.'**
+  String get foodNoRecipes;
+
+  /// No description provided for @foodRecipeCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 recipe} other{{count} recipes}}'**
+  String foodRecipeCount(int count);
+
+  /// No description provided for @foodMissingCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} missing'**
+  String foodMissingCount(int count);
+
+  /// No description provided for @foodHaveAll.
+  ///
+  /// In en, this message translates to:
+  /// **'You have it all'**
+  String get foodHaveAll;
+
+  /// No description provided for @foodServings.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 serving} other{{count} servings}}'**
+  String foodServings(int count);
+
+  /// No description provided for @foodAddToToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to today\'s menu'**
+  String get foodAddToToday;
+
+  /// No description provided for @foodAddedToToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Added to today\'s menu'**
+  String get foodAddedToToday;
+
+  /// No description provided for @foodFavoriteAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to favorites'**
+  String get foodFavoriteAdd;
+
+  /// No description provided for @foodFavoriteRemove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from favorites'**
+  String get foodFavoriteRemove;
+
+  /// No description provided for @foodCopyRecipe.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy recipe'**
+  String get foodCopyRecipe;
+
+  /// No description provided for @foodStepsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a step when it is done.'**
+  String get foodStepsHint;
+
+  /// No description provided for @foodCanMakeNow.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{You can cook 1 recipe with what you have} other{You can cook {count} recipes with what you have}}'**
+  String foodCanMakeNow(int count);
+
+  /// No description provided for @foodWeekIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio picks varied meals for 7 days, using what you have at home first. Then make one shopping list for the whole week.'**
+  String get foodWeekIntro;
+
+  /// No description provided for @foodWeekPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan the week'**
+  String get foodWeekPlan;
+
+  /// No description provided for @foodWeekReplan.
+  ///
+  /// In en, this message translates to:
+  /// **'Re-plan the week'**
+  String get foodWeekReplan;
+
+  /// No description provided for @foodWeekPlanned.
+  ///
+  /// In en, this message translates to:
+  /// **'Your week is planned.'**
+  String get foodWeekPlanned;
+
+  /// No description provided for @foodWeekShopping.
+  ///
+  /// In en, this message translates to:
+  /// **'Make the shopping list'**
+  String get foodWeekShopping;
+
+  /// No description provided for @foodWeekNothingMissing.
+  ///
+  /// In en, this message translates to:
+  /// **'You already have everything for this week.'**
+  String get foodWeekNothingMissing;
+
+  /// No description provided for @foodNotPlanned.
+  ///
+  /// In en, this message translates to:
+  /// **'Not planned yet'**
+  String get foodNotPlanned;
+
+  /// No description provided for @foodWeekCalories.
+  ///
+  /// In en, this message translates to:
+  /// **'~{value} kcal a day'**
+  String foodWeekCalories(int value);
+
   /// No description provided for @skillBeginner.
   ///
   /// In en, this message translates to:

@@ -194,5 +194,59 @@ void main() {
       expect(a.map((r) => r.mealType), [MealType.breakfast, MealType.lunch, MealType.dinner]);
       expect(a.map((r) => r.id), b.map((r) => r.id));
     });
+
+    test('library: every recipe has amounts and steps in both languages', () {
+      final tr = RecipeLibrary.all('tr');
+      expect(recipes.length, greaterThanOrEqualTo(50));
+      expect(recipes.map((r) => r.id).toSet().length, recipes.length);
+      for (final (i, r) in recipes.indexed) {
+        expect(r.hasAmounts, isTrue, reason: r.id);
+        expect(r.steps, isNotEmpty, reason: r.id);
+        expect(tr[i].steps.length, r.steps.length, reason: r.id);
+        // Every ingredient has a Turkish name.
+        for (final ing in r.ingredients) {
+          expect(ingredientName(ing, 'tr') != ing || ing == 'bulgur' || ing == 'sucuk', isTrue, reason: ing);
+        }
+      }
+    });
+
+    test('amounts scale with servings and read naturally', () {
+      expect(formatAmount(4, '', 'en'), '4');
+      expect(formatAmount(4, '', 'tr'), '4 adet');
+      expect(formatAmount(0.5, '', 'en'), '½');
+      expect(formatAmount(1, '', 'en', factor: 1.5), '1½');
+      expect(formatAmount(2, 'tbsp', 'tr'), '2 yemek kaşığı');
+      expect(formatAmount(2, 'clove', 'en'), '2 cloves');
+      expect(formatAmount(200, 'g', 'en', factor: 0.5), '100 g');
+      expect(formatAmount(250, 'ml', 'en', factor: 4), '1 L');
+      expect(formatAmount(150, 'g', 'en', factor: 1 / 3), '50 g');
+    });
+
+    test('week plan: 7 days, 3 meals, no repeated meal within the week', () {
+      final week = suggestWeek(
+        recipes: recipes,
+        prefs: const FoodPreferences(),
+        pantry: const ['egg', 'tomato'],
+        start: DateTime(2026, 6, 10),
+      );
+      expect(week.length, 7);
+      expect(week.every((d) => d.length == 3), isTrue);
+      final dinners = week.map((d) => d[2].id).toList();
+      expect(dinners.toSet().length, 7);
+      final missing = missingForMeals(week.expand((d) => d), const ['egg', 'Domates']);
+      expect(missing, isNot(contains('egg')));
+      expect(missing, isNot(contains('tomato')));
+      expect(missing, isNot(contains('salt')));
+      expect(missing.toSet().length, missing.length);
+    });
+
+    test('search finds Turkish ingredient names and filters work', () {
+      final tr = RecipeLibrary.all('tr');
+      final withEggplant = tr.where((r) => recipeSearch(r, 'patlıcan', 'tr')).map((r) => r.id);
+      expect(withEggplant, containsAll(['karniyarik', 'roast_veg']));
+      expect(recipes.where((r) => recipeMatches(r, RecipeFilter.quick)).every((r) => r.prepMinutes <= 20), isTrue);
+      final canMake = recipes.where((r) => recipeMatches(r, RecipeFilter.canMake, pantry: {'yogurt'}));
+      expect(canMake.map((r) => r.id), contains('ayran'));
+    });
   });
 }

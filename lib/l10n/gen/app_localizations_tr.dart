@@ -1160,6 +1160,110 @@ class AppLocalizationsTr extends AppLocalizations {
   String get foodBudget => 'Yemek bütçesi';
 
   @override
+  String get foodTabToday => 'Bugün';
+
+  @override
+  String get foodTabRecipes => 'Tarifler';
+
+  @override
+  String get foodTabWeek => 'Hafta';
+
+  @override
+  String get foodSearchHint => 'Yemek ya da malzeme ara';
+
+  @override
+  String get foodFilterFavorites => 'Favoriler';
+
+  @override
+  String get foodFilterCanMake => 'Hemen yapılır';
+
+  @override
+  String get foodFilterQuick => 'Hızlı (≤20 dk)';
+
+  @override
+  String get foodFilterVeg => 'Vejetaryen';
+
+  @override
+  String get foodFilterProtein => 'Yüksek protein';
+
+  @override
+  String get foodFilterBudget => 'Ekonomik';
+
+  @override
+  String get foodAllMeals => 'Tümü';
+
+  @override
+  String get foodNoRecipes => 'Uyan tarif yok. Bir filtreyi kaldırmayı dene.';
+
+  @override
+  String foodRecipeCount(int count) {
+    return '$count tarif';
+  }
+
+  @override
+  String foodMissingCount(int count) {
+    return '$count eksik';
+  }
+
+  @override
+  String get foodHaveAll => 'Hepsi evde';
+
+  @override
+  String foodServings(int count) {
+    return '$count kişilik';
+  }
+
+  @override
+  String get foodAddToToday => 'Bugünün menüsüne ekle';
+
+  @override
+  String get foodAddedToToday => 'Bugünün menüsüne eklendi';
+
+  @override
+  String get foodFavoriteAdd => 'Favorilere ekle';
+
+  @override
+  String get foodFavoriteRemove => 'Favorilerden çıkar';
+
+  @override
+  String get foodCopyRecipe => 'Tarifi kopyala';
+
+  @override
+  String get foodStepsHint => 'Bitirdiğin adıma dokun.';
+
+  @override
+  String foodCanMakeNow(int count) {
+    return 'Evdekilerle $count tarif yapabilirsin';
+  }
+
+  @override
+  String get foodWeekIntro =>
+      'Lio önce evdekileri kullanarak 7 gün için çeşitli yemekler seçer. Sonra tüm hafta için tek bir alışveriş listesi çıkarırsın.';
+
+  @override
+  String get foodWeekPlan => 'Haftayı planla';
+
+  @override
+  String get foodWeekReplan => 'Haftayı yeniden planla';
+
+  @override
+  String get foodWeekPlanned => 'Haftan planlandı.';
+
+  @override
+  String get foodWeekShopping => 'Alışveriş listesini çıkar';
+
+  @override
+  String get foodWeekNothingMissing => 'Bu haftanın tüm malzemeleri evde var.';
+
+  @override
+  String get foodNotPlanned => 'Henüz planlanmadı';
+
+  @override
+  String foodWeekCalories(int value) {
+    return 'Günde ~$value kcal';
+  }
+
+  @override
   String get skillBeginner => 'Başlangıç';
 
   @override

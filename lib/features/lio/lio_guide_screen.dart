@@ -550,7 +550,11 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
       _root();
     }),
     _Choice(l.gRecipes, () {
-      context.push('/food');
+      context.push('/food?tab=recipes');
+      _root();
+    }),
+    _Choice(l.foodWeekPlan, () {
+      context.push('/food?tab=week');
       _root();
     }),
   ]);
@@ -580,6 +584,10 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
     final missing = matches.first.missing.map((x) => ingredientName(x, _lang)).toList();
     setState(
       () => _choices = [
+        _Choice(matches.first.recipe.name, () {
+          context.push('/recipe/${matches.first.recipe.id}');
+          _root();
+        }, emoji: '📖'),
         if (missing.isNotEmpty)
           _Choice(l.addMissingToList, () async {
             await ref.read(actionsProvider).addShoppingItems(missing);
@@ -605,8 +613,12 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
     setState(
       () => _choices = [
         _Choice(l.gAnotherIdea, _mealIdea, emoji: '🔁'),
+        _Choice(r.name, () {
+          context.push('/recipe/${r.id}');
+          _root();
+        }, emoji: '📖'),
         _Choice(l.gRecipes, () {
-          context.push('/food');
+          context.push('/food?tab=recipes');
           _root();
         }),
         _Choice(l.gMainMenu, () => _root()),

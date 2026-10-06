@@ -395,6 +395,43 @@ void main() {
     expect(find.text('🙂'), findsOneWidget);
     await tearDownApp(tester);
   });
+
+  testWidgets('Food: filter recipes, scale servings, plan the week and make one shopping list', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    await openExploreTile(tester, 'Food');
+    await pumpUntil(tester, find.text('Recipes'));
+
+    await tester.tap(find.text('Recipes'));
+    await pumpUntil(tester, find.text('Search a dish or an ingredient'));
+    await tester.enterText(find.byType(TextField), 'menemen');
+    await pumpUntil(tester, find.text('1 recipe'));
+    await tester.tap(find.text('Menemen (Turkish Eggs)'));
+    await pumpUntil(tester, find.text('2 servings'));
+    expect(find.text('4'), findsOneWidget); // eggs for two
+    await tester.tap(find.byIcon(Icons.add_rounded));
+    await tester.pump();
+    expect(find.text('3 servings'), findsOneWidget);
+    expect(find.text('6'), findsOneWidget); // eggs for three
+    await tester.tap(find.byTooltip('Add to favorites'));
+    await tester.pump();
+    expect(find.byTooltip('Remove from favorites'), findsOneWidget);
+    await tester.binding.handlePopRoute();
+    await pumpUntil(tester, find.text('Recipes'));
+
+    await tester.tap(find.text('Week'));
+    await pumpUntil(tester, find.text('Plan the week'));
+    await tester.tap(find.text('Plan the week'));
+    await pumpUntil(tester, find.text('Your week is planned.'));
+    expect(find.text('Not planned yet'), findsNothing);
+    await tester.tap(find.text('Make the shopping list'));
+    await pumpUntil(tester, find.textContaining('Added'));
+    final shopping = await tester.runAsync(() => app.seededRepos.shopping.getAll());
+    expect(shopping!.length, greaterThan(3));
+    await tearDownApp(tester);
+  });
 }
 
 /// Opens a tile from Explore.

@@ -14,6 +14,8 @@ import '../features/life/journal_editor_screen.dart';
 import '../features/life/journal_read_screen.dart';
 import '../features/life/achievements_screen.dart';
 import '../features/life/food_screen.dart';
+import '../features/life/recipe_screen.dart';
+import '../domain/models/food.dart';
 import '../features/life/habits_screen.dart';
 import '../features/life/journal_screen.dart';
 import '../features/life/mood_screen.dart';
@@ -200,7 +202,21 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: Routes.habits, builder: (_, _) => const HabitsScreen()),
       GoRoute(path: Routes.mood, builder: (_, _) => const MoodScreen()),
       GoRoute(path: Routes.journal, builder: (_, _) => const JournalScreen()),
-      GoRoute(path: Routes.food, builder: (_, _) => const FoodScreen()),
+      GoRoute(
+        path: Routes.food,
+        builder: (_, s) => FoodScreen(
+          initialTab: switch (s.uri.queryParameters['tab']) {
+            'recipes' => 1,
+            'week' => 2,
+            _ => 0,
+          },
+        ),
+      ),
+      GoRoute(
+        path: '/recipe/:id',
+        builder: (_, s) =>
+            RecipeScreen(id: s.pathParameters['id'], recipe: s.extra is Recipe ? s.extra! as Recipe : null),
+      ),
       GoRoute(path: Routes.pantry, builder: (_, _) => const PantryScreen()),
       GoRoute(path: Routes.shopping, builder: (_, _) => const ShoppingScreen()),
       GoRoute(path: Routes.news, builder: (_, _) => const NewsScreen()),

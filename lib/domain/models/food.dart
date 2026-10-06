@@ -20,6 +20,9 @@ class Recipe {
     this.currency,
     this.tags = const [],
     this.aiGenerated = false,
+    this.servings = 0,
+    this.quantities = const [],
+    this.units = const [],
   });
 
   factory Recipe.fromJson(Map<String, dynamic> j) => Recipe(
@@ -38,6 +41,11 @@ class Recipe {
     currency: J.strOrNull(j, 'currency'),
     tags: J.strList(j, 'tags'),
     aiGenerated: J.boolean(j, 'aiGenerated'),
+    servings: J.integer(j, 'servings'),
+    quantities: (j['quantities'] is List)
+        ? [for (final q in j['quantities'] as List) q is num ? q.toDouble() : 0.0]
+        : const [],
+    units: J.strList(j, 'units'),
   );
 
   final String id;
@@ -60,6 +68,17 @@ class Recipe {
   final List<String> tags;
   final bool aiGenerated;
 
+  /// How many people the [quantities] are for; 0 when unknown (AI recipes).
+  final int servings;
+
+  /// Amount of each ingredient (same order as [ingredients]) and its unit
+  /// (`''` for pieces, `g`, `ml`, `tbsp`, `tsp`, `clove`, `slice`, `pinch`,
+  /// `bunch`, `can`). Empty when unknown.
+  final List<double> quantities;
+  final List<String> units;
+
+  bool get hasAmounts => servings > 0 && quantities.length == ingredients.length && units.length == ingredients.length;
+
   Map<String, dynamic> toJson() => {
     'id': id,
     'name': name,
@@ -76,6 +95,9 @@ class Recipe {
     if (currency != null) 'currency': currency,
     'tags': tags,
     'aiGenerated': aiGenerated,
+    if (servings > 0) 'servings': servings,
+    if (quantities.isNotEmpty) 'quantities': quantities,
+    if (units.isNotEmpty) 'units': units,
   };
 }
 
