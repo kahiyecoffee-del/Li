@@ -57,3 +57,12 @@ Kilit ekranında: kilit ekranına basılı tut → Özelleştir → Kilit Ekran�
 
 ## Sorun olursa
 Actions'taki kırmızı adımın adını söylemen yeterli; logları ben okurum.
+
+## Şirket kurulunca (yapılacak)
+- Hesap şimdilik **bireysel** açıldı. Şirket kurulunca bireysel hesap şirkete
+  taşınacak: şirketin **D-U-N-S numarası** alınır (ücretsiz, birkaç gün–birkaç hafta),
+  sonra developer.apple.com/contact → Membership and Account → "convert individual
+  to organization" talebi açılır. Uygulama, TestFlight ve kullanıcılar aynı hesapta kalır.
+- Taşıma sonrası App Store'da satıcı adı şirket adı olur; sözleşme, banka ve vergi
+  bilgileri (App Store Connect → Business) şirket adına güncellenir.
+- GitHub Secrets değişmez (Team ID aynı kalır); gerekirse yeni API anahtarı eklenir.
