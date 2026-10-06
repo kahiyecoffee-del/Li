@@ -138,13 +138,18 @@ class BudgetEngine {
 
     int? weeklyLimit;
     int? weeklyRemaining;
-    final weekly =
-        budgets
-            .where((b) => !b.deleted && b.period == BudgetPeriod.week && b.category == null && b.covers(now))
-            .toList()
-          ..sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
-    if (weekly.isNotEmpty) {
-      final w = weekly.first;
+    // Limits repeat: the latest weekly total limit set in any earlier week
+    // applies to this week too (same for monthly limits below).
+    final weekly = _latest(budgets.where((b) => b.period == BudgetPeriod.week && b.category == null), now);
+    if (weekly != null) {
+      final w = Budget(
+        id: weekly.id,
+        updatedAt: weekly.updatedAt,
+        period: BudgetPeriod.week,
+        periodStart: Dates.startOfWeek(now),
+        limitMinor: weekly.limitMinor,
+        currency: weekly.currency,
+      );
       weeklyLimit = w.limitMinor;
       var weekBeforeToday = 0;
       var weekTotal = 0;
@@ -158,6 +163,11 @@ class BudgetEngine {
       final weeklyDaily = _divFloor(w.limitMinor - weekBeforeToday, daysLeftInWeek);
       if (weeklyDaily < safeDaily) safeDaily = weeklyDaily;
     }
+    final monthlyTotal = _latest(budgets.where((b) => b.period == BudgetPeriod.month && b.category == null), now);
+    if (monthlyTotal != null) {
+      final capDaily = _divFloor(monthlyTotal.limitMinor - variableBeforeToday, daysLeft);
+      if (capDaily < safeDaily) safeDaily = capDaily;
+    }
     if (safeDaily < 0) safeDaily = 0;
 
     final remaining = income - fixedCost - variableSpent - plan.savingsGoalMinor;
@@ -165,9 +175,9 @@ class BudgetEngine {
     final projectedVariable = daysElapsed == 0 ? variableSpent : (variableSpent * daysInMonth) ~/ daysElapsed;
 
     final limits = <ExpenseCategory, int>{
-      for (final b in budgets)
-        if (!b.deleted && b.category != null && b.period == BudgetPeriod.month && b.covers(now))
-          b.category!: b.limitMinor,
+      for (final c in ExpenseCategory.values)
+        if (_latest(budgets.where((b) => b.period == BudgetPeriod.month && b.category == c), now) case final b?)
+          c: b.limitMinor,
     };
     final categories =
         ExpenseCategory.values
@@ -193,6 +203,20 @@ class BudgetEngine {
       activeWeeklyLimitMinor: weeklyLimit,
       weeklyRemainingMinor: weeklyRemaining,
     );
+  }
+
+  /// The most recently set limit that started on or before [now].
+  static Budget? _latest(Iterable<Budget> budgets, DateTime now) {
+    Budget? best;
+    for (final b in budgets) {
+      if (b.deleted || b.periodStart.isAfter(now)) continue;
+      if (best == null ||
+          b.periodStart.isAfter(best.periodStart) ||
+          (b.periodStart == best.periodStart && b.updatedAt.isAfter(best.updatedAt))) {
+        best = b;
+      }
+    }
+    return best;
   }
 
   /// Floor division that rounds toward negative infinity (Dart's `~/`

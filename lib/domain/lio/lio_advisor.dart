@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import '../../core/utils/dates.dart';
 import '../engines/budget_engine.dart';
 import '../engines/insight_engine.dart';
+import '../engines/money_insights.dart';
 import '../engines/meal_engine.dart';
 import '../models/enums.dart';
 import '../models/food.dart';
@@ -24,6 +25,7 @@ enum AdviceKind {
   weeklySpendDown,
   categorySpike,
   subscriptions,
+  billsDue,
   topCategory,
   overdueTasks,
   noPlanToday,
@@ -85,6 +87,7 @@ class AdvisorInput {
     this.pantry = const [],
     this.recipes = const [],
     this.journalProfile,
+    this.bills = const [],
   });
 
   final DateTime now;
@@ -106,6 +109,9 @@ class AdvisorInput {
 
   /// Patterns learned from the journal (null when the user turned it off).
   final JournalProfile? journalProfile;
+
+  /// Monthly bills the user set up.
+  final List<RecurringBill> bills;
 }
 
 /// Lio's advisor: looks across everything the user has entered and returns
@@ -172,6 +178,21 @@ class LioAdvisor {
     if (cat != null && cat.percent >= 25) {
       out.add(
         Advice(AdviceKind.categorySpike, AdviceArea.money, priority: 65, percent: cat.percent, category: cat.category),
+      );
+    }
+
+    // Bills due within two days (or late) and not paid yet.
+    final due = billsThisMonth(i.bills, i.now).where((s) => s.state != BillState.paid && s.daysLeft <= 2).toList();
+    if (due.isNotEmpty) {
+      out.add(
+        Advice(
+          AdviceKind.billsDue,
+          AdviceArea.money,
+          priority: 95,
+          count: due.length,
+          name: due.first.bill.name,
+          amountMinor: due.fold<int>(0, (s, x) => s + x.bill.amountMinor),
+        ),
       );
     }
 

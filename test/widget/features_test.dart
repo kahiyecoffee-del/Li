@@ -30,6 +30,44 @@ void main() {
     await tearDownApp(tester);
   });
 
+  testWidgets('Money plan: add a bill and pay it, fill a savings jar', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded()))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    await openExploreTile(tester, 'Money');
+    await pumpUntil(tester, find.text('Plan'));
+    await tester.tap(find.text('Plan'));
+    await pumpUntil(tester, find.text('Bills & subscriptions'));
+
+    await tester.tap(find.text('Add bill'));
+    await pumpUntil(tester, find.text('Name (e.g. Electricity, Netflix)'));
+    await tester.enterText(find.byType(TextField).at(0), 'Electricity');
+    await tester.enterText(find.byType(TextField).at(1), '450');
+    await tester.tap(find.text('Save'));
+    await pumpUntil(tester, find.text('Electricity'));
+    await tester.tap(find.textContaining('Mark paid'));
+    await pumpUntil(tester, find.text('Logged as an expense'));
+    final tx = await tester.runAsync(() => app.seededRepos.transactions.getAll());
+    expect(tx!.single.amountMinor, 45000);
+    expect(tx.single.description, 'Electricity');
+    final bills = await tester.runAsync(() => app.seededRepos.bills.getAll());
+    expect(bills!.single.lastPaidMonth, isNotNull);
+
+    await scrollAndTap(tester, find.text('New jar'));
+    await pumpUntil(tester, find.text('What for? (e.g. Holiday)'));
+    await tester.enterText(find.byType(TextField).at(0), 'Holiday');
+    await tester.enterText(find.byType(TextField).at(1), '1000');
+    await tester.tap(find.text('Save'));
+    await pumpUntil(tester, find.text('Holiday'));
+    await scrollAndTap(tester, find.text('Add money'));
+    await pumpUntil(tester, find.byType(AlertDialog));
+    await tester.enterText(find.descendant(of: find.byType(AlertDialog), matching: find.byType(TextField)), '250');
+    await tester.tap(find.text('OK'));
+    await pumpUntil(tester, find.text('25%'));
+    await tearDownApp(tester);
+  });
+
   testWidgets('AI: proposed action needs confirmation, then creates the task', (tester) async {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded()))!;

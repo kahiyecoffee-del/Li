@@ -35,6 +35,8 @@ class UserRepos {
        goals = Repository(store, DailyGoalsRecord.codec, onLocalWrite: onWrite, clock: clock),
        achievements = Repository(store, AchievementRecord.codec, onLocalWrite: onWrite, clock: clock),
        saved = Repository(store, SavedItem.codec, onLocalWrite: onWrite, clock: clock),
+       savingsGoals = Repository(store, SavingsGoal.codec, onLocalWrite: onWrite, clock: clock),
+       bills = Repository(store, RecurringBill.codec, onLocalWrite: onWrite, clock: clock),
        journal = JournalRepository(Repository(store, JournalEntry.codec, clock: clock), journalKeys);
 
   final Repository<UserProfile> profile;
@@ -54,5 +56,7 @@ class UserRepos {
   final Repository<DailyGoalsRecord> goals;
   final Repository<AchievementRecord> achievements;
   final Repository<SavedItem> saved;
+  final Repository<SavingsGoal> savingsGoals;
+  final Repository<RecurringBill> bills;
   final JournalRepository journal;
 }

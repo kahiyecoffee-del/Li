@@ -119,6 +119,10 @@ final profileProvider = StreamProvider<UserProfile>(
   (ref) => ref.watch(reposProvider).profile.watch(UserProfile.singletonId).map((p) => p ?? UserProfile.empty()),
 );
 final savedProvider = StreamProvider<List<SavedItem>>((ref) => ref.watch(reposProvider).saved.watchAll());
+final savingsGoalsProvider = StreamProvider<List<SavingsGoal>>(
+  (ref) => ref.watch(reposProvider).savingsGoals.watchAll(),
+);
+final billsProvider = StreamProvider<List<RecurringBill>>((ref) => ref.watch(reposProvider).bills.watchAll());
 final tasksProvider = StreamProvider<List<TaskItem>>((ref) => ref.watch(reposProvider).tasks.watchAll());
 final transactionsProvider = StreamProvider<List<MoneyTransaction>>(
   (ref) => ref.watch(reposProvider).transactions.watchAll(),

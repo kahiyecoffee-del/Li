@@ -30,6 +30,8 @@ abstract final class Collections {
     DailyGoalsRecord.codec,
     AchievementRecord.codec,
     SavedItem.codec,
+    SavingsGoal.codec,
+    RecurringBill.codec,
   ];
 
   static List<String> get names => all.map((c) => c.collection).toList();

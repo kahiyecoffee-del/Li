@@ -1164,6 +1164,186 @@ class AppLocalizationsEn extends AppLocalizations {
   String get foodBudget => 'Food budget';
 
   @override
+  String get moneyTabOverview => 'Overview';
+
+  @override
+  String get moneyTabActivity => 'Activity';
+
+  @override
+  String get moneyTabPlan => 'Plan';
+
+  @override
+  String moneyMoreThanLast(int p) {
+    return '$p% more than last month';
+  }
+
+  @override
+  String moneyLessThanLast(int p) {
+    return '$p% less than last month';
+  }
+
+  @override
+  String moneyMonthTotal(String amount) {
+    return 'Spent $amount';
+  }
+
+  @override
+  String moneyDailyAvg(String amount) {
+    return 'Daily average $amount';
+  }
+
+  @override
+  String moneyBiggest(String what, String amount) {
+    return 'Biggest: $what · $amount';
+  }
+
+  @override
+  String get moneySearch => 'Search expenses';
+
+  @override
+  String get moneyNoMatch => 'Nothing here for this month.';
+
+  @override
+  String get moneyAddIncome => 'Add income';
+
+  @override
+  String get moneyChartTitle => 'Where the money went';
+
+  @override
+  String get moneyPrevMonth => 'Previous month';
+
+  @override
+  String get moneyNextMonth => 'Next month';
+
+  @override
+  String advBillsDue(int count, String name, String amount) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count bills are due soon, $amount in total. $name is first.',
+      one: '$name is due ($amount). Pay it and mark it here so your budget stays right.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get billsTitle => 'Bills & subscriptions';
+
+  @override
+  String get billsEmpty =>
+      'Add rent, bills and subscriptions once. Dayly reminds you the day before and keeps that money aside in your daily budget.';
+
+  @override
+  String get billAdd => 'Add bill';
+
+  @override
+  String get billName => 'Name (e.g. Electricity, Netflix)';
+
+  @override
+  String get billDay => 'Day of the month';
+
+  @override
+  String get billRemind => 'Remind me the day before';
+
+  @override
+  String get billPay => 'Mark paid';
+
+  @override
+  String get billPaid => 'Paid';
+
+  @override
+  String billOverdue(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count days late', one: '1 day late');
+    return '$_temp0';
+  }
+
+  @override
+  String get billDueToday => 'Due today';
+
+  @override
+  String billDueIn(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: 'In $count days', one: 'Tomorrow');
+    return '$_temp0';
+  }
+
+  @override
+  String billsMonthly(String amount) {
+    return 'Every month: $amount';
+  }
+
+  @override
+  String billsLeft(String amount) {
+    return '$amount still to pay this month';
+  }
+
+  @override
+  String get billPaidSnack => 'Logged as an expense';
+
+  @override
+  String get goalsTitle => 'Savings jars';
+
+  @override
+  String get goalsEmpty => 'Saving for something? Make a jar and watch it fill up.';
+
+  @override
+  String get goalAdd => 'New jar';
+
+  @override
+  String get goalName => 'What for? (e.g. Holiday)';
+
+  @override
+  String get goalTarget => 'Target';
+
+  @override
+  String get goalDeadline => 'By when (optional)';
+
+  @override
+  String get goalNoDeadline => 'No deadline';
+
+  @override
+  String goalProgress(String saved, String target) {
+    return '$saved of $target';
+  }
+
+  @override
+  String goalMonthly(String amount) {
+    return 'Put aside $amount a month to make it';
+  }
+
+  @override
+  String get goalReached => 'Goal reached! 🎉';
+
+  @override
+  String get goalDeposit => 'Add money';
+
+  @override
+  String get goalWithdraw => 'Take out';
+
+  @override
+  String get goalAmount => 'Amount';
+
+  @override
+  String get limitsTitle => 'Spending limits';
+
+  @override
+  String get limitsEmpty =>
+      'Set a weekly limit, a monthly limit or one per category. They repeat every week or month by themselves.';
+
+  @override
+  String get limitWeekly => 'Weekly total';
+
+  @override
+  String get limitMonthlyAll => 'Monthly total';
+
+  @override
+  String get notifBillTitle => 'Bill reminder';
+
+  @override
+  String notifBillBody(String name) {
+    return '$name is due. Tap to mark it paid.';
+  }
+
+  @override
   String get foodTabToday => 'Today';
 
   @override

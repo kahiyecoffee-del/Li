@@ -183,7 +183,16 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/journal/:id',
         builder: (_, s) => JournalReadScreen(id: s.pathParameters['id']!),
       ),
-      GoRoute(path: Routes.money, builder: (_, _) => const MoneyScreen()),
+      GoRoute(
+        path: Routes.money,
+        builder: (_, s) => MoneyScreen(
+          initialTab: switch (s.uri.queryParameters['tab']) {
+            'activity' => 1,
+            'plan' => 2,
+            _ => 0,
+          },
+        ),
+      ),
       GoRoute(path: Routes.score, builder: (_, _) => const ScoreScreen()),
       GoRoute(path: Routes.settings, builder: (_, _) => const SettingsScreen()),
       GoRoute(path: Routes.privacy, builder: (_, _) => const PrivacyScreen()),

@@ -2192,6 +2192,294 @@ abstract class AppLocalizations {
   /// **'Food budget'**
   String get foodBudget;
 
+  /// No description provided for @moneyTabOverview.
+  ///
+  /// In en, this message translates to:
+  /// **'Overview'**
+  String get moneyTabOverview;
+
+  /// No description provided for @moneyTabActivity.
+  ///
+  /// In en, this message translates to:
+  /// **'Activity'**
+  String get moneyTabActivity;
+
+  /// No description provided for @moneyTabPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan'**
+  String get moneyTabPlan;
+
+  /// No description provided for @moneyMoreThanLast.
+  ///
+  /// In en, this message translates to:
+  /// **'{p}% more than last month'**
+  String moneyMoreThanLast(int p);
+
+  /// No description provided for @moneyLessThanLast.
+  ///
+  /// In en, this message translates to:
+  /// **'{p}% less than last month'**
+  String moneyLessThanLast(int p);
+
+  /// No description provided for @moneyMonthTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Spent {amount}'**
+  String moneyMonthTotal(String amount);
+
+  /// No description provided for @moneyDailyAvg.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily average {amount}'**
+  String moneyDailyAvg(String amount);
+
+  /// No description provided for @moneyBiggest.
+  ///
+  /// In en, this message translates to:
+  /// **'Biggest: {what} · {amount}'**
+  String moneyBiggest(String what, String amount);
+
+  /// No description provided for @moneySearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Search expenses'**
+  String get moneySearch;
+
+  /// No description provided for @moneyNoMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing here for this month.'**
+  String get moneyNoMatch;
+
+  /// No description provided for @moneyAddIncome.
+  ///
+  /// In en, this message translates to:
+  /// **'Add income'**
+  String get moneyAddIncome;
+
+  /// No description provided for @moneyChartTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Where the money went'**
+  String get moneyChartTitle;
+
+  /// No description provided for @moneyPrevMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous month'**
+  String get moneyPrevMonth;
+
+  /// No description provided for @moneyNextMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Next month'**
+  String get moneyNextMonth;
+
+  /// No description provided for @advBillsDue.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{{name} is due ({amount}). Pay it and mark it here so your budget stays right.} other{{count} bills are due soon, {amount} in total. {name} is first.}}'**
+  String advBillsDue(int count, String name, String amount);
+
+  /// No description provided for @billsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Bills & subscriptions'**
+  String get billsTitle;
+
+  /// No description provided for @billsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Add rent, bills and subscriptions once. Dayly reminds you the day before and keeps that money aside in your daily budget.'**
+  String get billsEmpty;
+
+  /// No description provided for @billAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Add bill'**
+  String get billAdd;
+
+  /// No description provided for @billName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name (e.g. Electricity, Netflix)'**
+  String get billName;
+
+  /// No description provided for @billDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Day of the month'**
+  String get billDay;
+
+  /// No description provided for @billRemind.
+  ///
+  /// In en, this message translates to:
+  /// **'Remind me the day before'**
+  String get billRemind;
+
+  /// No description provided for @billPay.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark paid'**
+  String get billPay;
+
+  /// No description provided for @billPaid.
+  ///
+  /// In en, this message translates to:
+  /// **'Paid'**
+  String get billPaid;
+
+  /// No description provided for @billOverdue.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 day late} other{{count} days late}}'**
+  String billOverdue(int count);
+
+  /// No description provided for @billDueToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Due today'**
+  String get billDueToday;
+
+  /// No description provided for @billDueIn.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Tomorrow} other{In {count} days}}'**
+  String billDueIn(int count);
+
+  /// No description provided for @billsMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Every month: {amount}'**
+  String billsMonthly(String amount);
+
+  /// No description provided for @billsLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} still to pay this month'**
+  String billsLeft(String amount);
+
+  /// No description provided for @billPaidSnack.
+  ///
+  /// In en, this message translates to:
+  /// **'Logged as an expense'**
+  String get billPaidSnack;
+
+  /// No description provided for @goalsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Savings jars'**
+  String get goalsTitle;
+
+  /// No description provided for @goalsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving for something? Make a jar and watch it fill up.'**
+  String get goalsEmpty;
+
+  /// No description provided for @goalAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'New jar'**
+  String get goalAdd;
+
+  /// No description provided for @goalName.
+  ///
+  /// In en, this message translates to:
+  /// **'What for? (e.g. Holiday)'**
+  String get goalName;
+
+  /// No description provided for @goalTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Target'**
+  String get goalTarget;
+
+  /// No description provided for @goalDeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'By when (optional)'**
+  String get goalDeadline;
+
+  /// No description provided for @goalNoDeadline.
+  ///
+  /// In en, this message translates to:
+  /// **'No deadline'**
+  String get goalNoDeadline;
+
+  /// No description provided for @goalProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{saved} of {target}'**
+  String goalProgress(String saved, String target);
+
+  /// No description provided for @goalMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Put aside {amount} a month to make it'**
+  String goalMonthly(String amount);
+
+  /// No description provided for @goalReached.
+  ///
+  /// In en, this message translates to:
+  /// **'Goal reached! 🎉'**
+  String get goalReached;
+
+  /// No description provided for @goalDeposit.
+  ///
+  /// In en, this message translates to:
+  /// **'Add money'**
+  String get goalDeposit;
+
+  /// No description provided for @goalWithdraw.
+  ///
+  /// In en, this message translates to:
+  /// **'Take out'**
+  String get goalWithdraw;
+
+  /// No description provided for @goalAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount'**
+  String get goalAmount;
+
+  /// No description provided for @limitsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Spending limits'**
+  String get limitsTitle;
+
+  /// No description provided for @limitsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Set a weekly limit, a monthly limit or one per category. They repeat every week or month by themselves.'**
+  String get limitsEmpty;
+
+  /// No description provided for @limitWeekly.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly total'**
+  String get limitWeekly;
+
+  /// No description provided for @limitMonthlyAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly total'**
+  String get limitMonthlyAll;
+
+  /// No description provided for @notifBillTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Bill reminder'**
+  String get notifBillTitle;
+
+  /// No description provided for @notifBillBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} is due. Tap to mark it paid.'**
+  String notifBillBody(String name);
+
   /// No description provided for @foodTabToday.
   ///
   /// In en, this message translates to:

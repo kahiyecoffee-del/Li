@@ -1160,6 +1160,185 @@ class AppLocalizationsTr extends AppLocalizations {
   String get foodBudget => 'Yemek bütçesi';
 
   @override
+  String get moneyTabOverview => 'Özet';
+
+  @override
+  String get moneyTabActivity => 'Hareketler';
+
+  @override
+  String get moneyTabPlan => 'Plan';
+
+  @override
+  String moneyMoreThanLast(int p) {
+    return 'Geçen aya göre %$p fazla';
+  }
+
+  @override
+  String moneyLessThanLast(int p) {
+    return 'Geçen aya göre %$p az';
+  }
+
+  @override
+  String moneyMonthTotal(String amount) {
+    return 'Harcanan $amount';
+  }
+
+  @override
+  String moneyDailyAvg(String amount) {
+    return 'Günlük ortalama $amount';
+  }
+
+  @override
+  String moneyBiggest(String what, String amount) {
+    return 'En büyük: $what · $amount';
+  }
+
+  @override
+  String get moneySearch => 'Harcama ara';
+
+  @override
+  String get moneyNoMatch => 'Bu ay için kayıt yok.';
+
+  @override
+  String get moneyAddIncome => 'Gelir ekle';
+
+  @override
+  String get moneyChartTitle => 'Para nereye gitti';
+
+  @override
+  String get moneyPrevMonth => 'Önceki ay';
+
+  @override
+  String get moneyNextMonth => 'Sonraki ay';
+
+  @override
+  String advBillsDue(int count, String name, String amount) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count faturanın günü geliyor, toplam $amount. İlki $name.',
+      one: '$name ödemesi geldi ($amount). Öde ve burada işaretle, bütçen doğru kalsın.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get billsTitle => 'Faturalar ve abonelikler';
+
+  @override
+  String get billsEmpty =>
+      'Kira, fatura ve abonelikleri bir kez ekle. Dayly bir gün önce hatırlatır ve o parayı günlük bütçende ayrı tutar.';
+
+  @override
+  String get billAdd => 'Fatura ekle';
+
+  @override
+  String get billName => 'Adı (ör. Elektrik, Netflix)';
+
+  @override
+  String get billDay => 'Ayın günü';
+
+  @override
+  String get billRemind => 'Bir gün önce hatırlat';
+
+  @override
+  String get billPay => 'Ödendi say';
+
+  @override
+  String get billPaid => 'Ödendi';
+
+  @override
+  String billOverdue(int count) {
+    return '$count gün gecikti';
+  }
+
+  @override
+  String get billDueToday => 'Bugün';
+
+  @override
+  String billDueIn(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count gün sonra', one: 'Yarın');
+    return '$_temp0';
+  }
+
+  @override
+  String billsMonthly(String amount) {
+    return 'Her ay: $amount';
+  }
+
+  @override
+  String billsLeft(String amount) {
+    return 'Bu ay ödenecek: $amount';
+  }
+
+  @override
+  String get billPaidSnack => 'Gider olarak kaydedildi';
+
+  @override
+  String get goalsTitle => 'Kumbaralar';
+
+  @override
+  String get goalsEmpty => 'Bir şey için mi biriktiriyorsun? Bir kumbara oluştur, dolmasını izle.';
+
+  @override
+  String get goalAdd => 'Yeni kumbara';
+
+  @override
+  String get goalName => 'Ne için? (ör. Tatil)';
+
+  @override
+  String get goalTarget => 'Hedef';
+
+  @override
+  String get goalDeadline => 'Ne zamana kadar (isteğe bağlı)';
+
+  @override
+  String get goalNoDeadline => 'Tarih yok';
+
+  @override
+  String goalProgress(String saved, String target) {
+    return '$saved / $target';
+  }
+
+  @override
+  String goalMonthly(String amount) {
+    return 'Yetişmesi için ayda $amount ayır';
+  }
+
+  @override
+  String get goalReached => 'Hedefe ulaştın! 🎉';
+
+  @override
+  String get goalDeposit => 'Para ekle';
+
+  @override
+  String get goalWithdraw => 'Çek';
+
+  @override
+  String get goalAmount => 'Tutar';
+
+  @override
+  String get limitsTitle => 'Harcama limitleri';
+
+  @override
+  String get limitsEmpty =>
+      'Haftalık, aylık ya da kategori başına limit koy. Her hafta veya ay kendiliğinden yenilenir.';
+
+  @override
+  String get limitWeekly => 'Haftalık toplam';
+
+  @override
+  String get limitMonthlyAll => 'Aylık toplam';
+
+  @override
+  String get notifBillTitle => 'Fatura hatırlatması';
+
+  @override
+  String notifBillBody(String name) {
+    return '$name ödeme günü geldi. Ödendi işaretlemek için dokun.';
+  }
+
+  @override
   String get foodTabToday => 'Bugün';
 
   @override

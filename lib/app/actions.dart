@@ -87,6 +87,28 @@ class AppActions {
 
   Future<void> deleteBudget(String id) => _repos.budgets.delete(id);
 
+  Future<void> saveSavingsGoal(SavingsGoal g) => _repos.savingsGoals.save(g);
+
+  Future<void> deleteSavingsGoal(String id) => _repos.savingsGoals.delete(id);
+
+  /// Puts [amountMinor] into (or, when negative, takes it out of) a jar.
+  Future<SavingsGoal> addToSavingsGoal(SavingsGoal g, int amountMinor) async {
+    final next = g.copyWith(savedMinor: (g.savedMinor + amountMinor).clamp(0, 1 << 40));
+    await _repos.savingsGoals.save(next);
+    unawaited(_analytics.log(AnalyticsEvent.savingsGoalUpdated, {'reached': next.reached}));
+    return next;
+  }
+
+  Future<void> saveBill(RecurringBill b) => _repos.bills.save(b);
+
+  Future<void> deleteBill(String id) => _repos.bills.delete(id);
+
+  /// Logs the bill as this month's expense and marks it paid.
+  Future<void> payBill(RecurringBill b) async {
+    await addTransaction(amountMinor: b.amountMinor, category: b.category, description: b.name);
+    await _repos.bills.save(b.copyWith(lastPaidMonth: Dates.monthKey(_now)));
+  }
+
   // Tasks ------------------------------------------------------------------
   Future<void> saveTask(TaskItem t, {required bool isNew}) async {
     await _repos.tasks.save(t);

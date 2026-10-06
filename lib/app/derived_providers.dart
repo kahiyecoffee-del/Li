@@ -1,8 +1,11 @@
+import 'dart:math' as math;
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/utils/dates.dart';
 import '../domain/engines/badge_engine.dart';
 import '../domain/engines/budget_engine.dart';
+import '../domain/engines/money_insights.dart';
 import '../domain/engines/daily_goals_engine.dart';
 import '../domain/engines/insight_engine.dart';
 import '../domain/engines/life_score_engine.dart';
@@ -26,7 +29,7 @@ final budgetSnapshotProvider = Provider<BudgetSnapshot?>((ref) {
   return const BudgetEngine().compute(
     plan: BudgetPlan(
       monthlyIncomeMinor: profile.monthlyIncomeMinor ?? 0,
-      fixedExpensesMinor: profile.fixedExpensesMinor ?? 0,
+      fixedExpensesMinor: math.max(profile.fixedExpensesMinor ?? 0, billsMonthlyTotal(ref.watch(billsProvider).list)),
       savingsGoalMinor: profile.savingsGoalMinor ?? 0,
     ),
     transactions: ref.watch(transactionsProvider).list,
@@ -277,6 +280,7 @@ final adviceProvider = Provider<List<Advice>>((ref) {
       pantry: [for (final p in ref.watch(pantryProvider).list) p.name],
       recipes: RecipeLibrary.all(lang),
       journalProfile: ref.watch(journalProfileProvider),
+      bills: ref.watch(billsProvider).list,
     ),
   );
 });

@@ -28,6 +28,8 @@ enum AnalyticsEvent {
   aiLimitReached('ai_limit_reached'),
   expenseAdded('expense_added'),
   budgetCreated('budget_created'),
+  savingsGoalUpdated('savings_goal_updated'),
+  billAdded('bill_added'),
   taskCreated('task_created'),
   taskCompleted('task_completed'),
   planOptimized('plan_optimized'),

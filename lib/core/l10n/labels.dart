@@ -266,6 +266,7 @@ extension Labels on AppLocalizations {
     NotificationKind.weeklyReview => (title: notifWeeklyTitle, body: notifWeeklyBody),
     NotificationKind.planDay => (title: notifPlanTitle, body: notifPlanBody),
     NotificationKind.journal => (title: notifJournalTitle, body: notifJournalBody),
+    NotificationKind.billDue => (title: notifBillTitle, body: notifBillBody(n.title)),
   };
 
   /// Friendly message for any error; raw exceptions are never displayed.

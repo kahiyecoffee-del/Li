@@ -85,6 +85,13 @@ AdviceText describeAdvice(Advice a, AppLocalizations l, Fmt fmt) {
       Icons.autorenew_rounded,
       Accent.money,
     ),
+    AdviceKind.billsDue => AdviceText(
+      l.advBillsDue(a.count ?? 0, a.name ?? '', money(a.amountMinor)),
+      l.billPay,
+      (c) => push(c, '/money?tab=plan'),
+      Icons.receipt_long_rounded,
+      Accent.money,
+    ),
     AdviceKind.topCategory => AdviceText(
       l.advTopCategory(l.expenseCategory(a.category!), a.percent ?? 0),
       l.actOpenMoney,

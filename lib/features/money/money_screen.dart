@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -10,31 +11,42 @@ import '../../core/theme/tokens.dart';
 import '../../core/utils/money.dart';
 import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
+import '../../domain/engines/budget_engine.dart';
 import '../../domain/engines/insight_engine.dart';
+import '../../domain/engines/money_insights.dart';
 import '../../domain/models/enums.dart';
 import '../../domain/models/money_models.dart';
 import '../shell/main_shell.dart';
 import 'expense_sheet.dart';
+import 'money_plan.dart';
 
 class MoneyScreen extends ConsumerStatefulWidget {
-  const MoneyScreen({super.key});
+  const MoneyScreen({super.key, this.initialTab = 0});
+
+  /// 0 overview, 1 activity, 2 plan (bills, jars, limits).
+  final int initialTab;
 
   @override
   ConsumerState<MoneyScreen> createState() => _MoneyScreenState();
 }
 
-class _MoneyScreenState extends ConsumerState<MoneyScreen> {
+class _MoneyScreenState extends ConsumerState<MoneyScreen> with SingleTickerProviderStateMixin {
+  late final _tabs = TabController(length: 3, vsync: this, initialIndex: widget.initialTab.clamp(0, 2));
   static const _pageSize = 30;
   int _visible = _pageSize;
+  DateTime? _month;
+  ExpenseCategory? _filter;
+  String _query = '';
+
+  @override
+  void dispose() {
+    _tabs.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final l = context.l10n;
-    final fmt = ref.fmt(context);
-    final b = ref.watch(budgetSnapshotProvider);
-    final tx = [...ref.watch(transactionsProvider).list]..sort((a, b) => b.date.compareTo(a.date));
-    final catInsight = ref.watch(insightsProvider).where((i) => i.kind == InsightKind.categorySpendChange).firstOrNull;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(l.navMoney),
@@ -46,6 +58,14 @@ class _MoneyScreenState extends ConsumerState<MoneyScreen> {
           ),
           const ProfileButton(),
         ],
+        bottom: TabBar(
+          controller: _tabs,
+          tabs: [
+            Tab(text: l.moneyTabOverview),
+            Tab(text: l.moneyTabActivity),
+            Tab(text: l.moneyTabPlan),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         heroTag: 'fab-money',
@@ -53,161 +73,349 @@ class _MoneyScreenState extends ConsumerState<MoneyScreen> {
         icon: const Icon(Icons.add),
         label: Text(l.addExpense),
       ),
-      body: CustomScrollView(
-        slivers: [
-          SliverPadding(
-            padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 0),
-            sliver: SliverList.list(
+      body: TabBarView(controller: _tabs, children: [_overview(), _activity(), _plan()]),
+    );
+  }
+
+  // --------------------------------------------------------------- overview
+
+  Widget _overview() {
+    final l = context.l10n;
+    final fmt = ref.fmt(context);
+    final b = ref.watch(budgetSnapshotProvider);
+    final now = ref.watch(todayProvider);
+    final summary = summarizeMonth(ref.watch(transactionsProvider).list, now, now);
+    final catInsight = ref.watch(insightsProvider).where((i) => i.kind == InsightKind.categorySpendChange).firstOrNull;
+    final change = summary.changePercent;
+    return ListView(
+      padding: const EdgeInsets.fromLTRB(Space.page, Space.md, Space.page, 120),
+      children: [
+        if (b == null)
+          AppCard(
+            onTap: () => showBudgetSettings(context),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                if (b == null)
-                  AppCard(
-                    onTap: () => showBudgetSettings(context),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(l.setUpBudget, style: context.text.titleLarge),
-                        const SizedBox(height: Space.xs),
-                        Text(
-                          l.setUpBudgetBody,
-                          style: context.text.bodyMedium?.copyWith(color: context.semantic.muted),
-                        ),
-                        const SizedBox(height: Space.md),
-                        FilledButton(onPressed: () => showBudgetSettings(context), child: Text(l.setUpBudget)),
-                      ],
-                    ),
-                  )
-                else ...[
-                  AppCard(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          context.upper(l.moneyDailySafe),
-                          style: context.text.labelSmall?.copyWith(color: context.semantic.muted, letterSpacing: 1),
-                        ),
-                        const SizedBox(height: Space.xs),
-                        Text(fmt.money(b.safeDailyMinor), style: context.text.displaySmall),
-                        const SizedBox(height: Space.sm),
-                        Text(
-                          b.overToday
-                              ? l.overToday(fmt.money(-b.remainingTodayMinor))
-                              : l.leftToday(fmt.money(b.remainingTodayMinor)),
-                          style: context.text.bodyMedium?.copyWith(
-                            color: b.overToday ? context.semantic.negative : context.semantic.muted,
-                          ),
-                        ),
-                        if (b.weeklyRemainingMinor != null) ...[
-                          const SizedBox(height: Space.xs),
-                          Text(l.moneyWeeklyLeft(fmt.money(b.weeklyRemainingMinor!)), style: context.text.bodySmall),
-                        ],
-                      ],
-                    ),
+                Text(l.setUpBudget, style: context.text.titleLarge),
+                const SizedBox(height: Space.xs),
+                Text(l.setUpBudgetBody, style: context.text.bodyMedium?.copyWith(color: context.semantic.muted)),
+                const SizedBox(height: Space.md),
+                FilledButton(onPressed: () => showBudgetSettings(context), child: Text(l.setUpBudget)),
+              ],
+            ),
+          )
+        else ...[
+          AppCard(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  context.upper(l.moneyDailySafe),
+                  style: context.text.labelSmall?.copyWith(color: context.semantic.muted, letterSpacing: 1),
+                ),
+                const SizedBox(height: Space.xs),
+                Text(fmt.money(b.safeDailyMinor), style: context.text.displaySmall),
+                const SizedBox(height: Space.sm),
+                Text(
+                  b.overToday
+                      ? l.overToday(fmt.money(-b.remainingTodayMinor))
+                      : l.leftToday(fmt.money(b.remainingTodayMinor)),
+                  style: context.text.bodyMedium?.copyWith(
+                    color: b.overToday ? context.semantic.negative : context.semantic.muted,
                   ),
-                  const SizedBox(height: Space.md),
-                  GridView.count(
-                    crossAxisCount: 2,
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    mainAxisSpacing: Space.md,
-                    crossAxisSpacing: Space.md,
-                    childAspectRatio: 1.7,
-                    children: [
-                      _Stat(label: l.moneyIncome, value: fmt.money(b.incomeMinor)),
-                      _Stat(label: l.moneySpent, value: fmt.money(b.spentMinor)),
-                      _Stat(
-                        label: l.moneySaved,
-                        value: fmt.money(b.savingsGoalMinor),
-                        note: b.savingsGoalMinor == 0 ? null : (b.savingsOnTrack ? l.moneyOnTrack : l.moneyAtRisk),
-                        noteColor: b.savingsOnTrack ? context.semantic.positive : context.semantic.negative,
-                      ),
-                      _Stat(
-                        label: l.moneyRemaining,
-                        value: fmt.money(b.remainingMinor),
-                        valueColor: b.remainingMinor < 0 ? context.semantic.negative : null,
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: Space.sm),
-                  Text(
-                    l.moneyProjected(fmt.money(b.projectedMonthSpendMinor)),
-                    style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
-                  ),
-                  if (catInsight != null) ...[
-                    const SizedBox(height: Space.md),
-                    AppCard(
-                      child: Row(
-                        children: [
-                          Icon(Icons.auto_awesome, color: context.colors.primary),
-                          const SizedBox(width: Space.md),
-                          Expanded(child: Text(l.insightText(catInsight))),
-                        ],
-                      ),
-                    ),
-                  ],
-                  if (b.byCategory.isNotEmpty) ...[
-                    SectionTitle(
-                      l.moneyCategories,
-                      trailing: TextButton(onPressed: () => showAddLimit(context), child: Text(l.moneyAddBudget)),
-                    ),
-                    AppCard(
-                      child: Column(
-                        children: b.byCategory.map((c) {
-                          final limit = c.limitMinor;
-                          final ratio = limit == null || limit == 0
-                              ? (b.spentMinor == 0 ? 0.0 : c.amountMinor / b.spentMinor)
-                              : c.amountMinor / limit;
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(vertical: Space.sm),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Expanded(child: Text(l.expenseCategory(c.category))),
-                                    Text(
-                                      limit == null
-                                          ? fmt.money(c.amountMinor)
-                                          : l.ofLimit(fmt.money(c.amountMinor), fmt.money(limit)),
-                                      style: context.text.titleSmall,
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(height: Space.xs),
-                                ProgressBar(
-                                  value: ratio,
-                                  height: 6,
-                                  color: limit != null && c.amountMinor > limit ? context.semantic.negative : null,
-                                  label: l.expenseCategory(c.category),
-                                ),
-                              ],
-                            ),
-                          );
-                        }).toList(),
-                      ),
-                    ),
-                  ],
+                ),
+                if (b.weeklyRemainingMinor != null) ...[
+                  const SizedBox(height: Space.xs),
+                  Text(l.moneyWeeklyLeft(fmt.money(b.weeklyRemainingMinor!)), style: context.text.bodySmall),
                 ],
-                SectionTitle(l.moneyRecent),
-                if (tx.isEmpty) EmptyState(icon: Icons.receipt_long_outlined, message: l.moneyNoTransactions),
               ],
             ),
           ),
-          SliverPadding(
-            padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, 120),
-            sliver: SliverList.builder(
-              itemCount: tx.length > _visible ? _visible + 1 : tx.length,
-              itemBuilder: (_, i) {
-                if (i == _visible) {
-                  return TextButton(onPressed: () => setState(() => _visible += _pageSize), child: Text(l.seeAll));
-                }
-                return _TransactionTile(t: tx[i]);
-              },
+          const SizedBox(height: Space.md),
+          GridView.count(
+            crossAxisCount: 2,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            mainAxisSpacing: Space.md,
+            crossAxisSpacing: Space.md,
+            childAspectRatio: 1.7,
+            children: [
+              _Stat(label: l.moneyIncome, value: fmt.money(b.incomeMinor)),
+              _Stat(label: l.moneySpent, value: fmt.money(b.spentMinor)),
+              _Stat(
+                label: l.moneySaved,
+                value: fmt.money(b.savingsGoalMinor),
+                note: b.savingsGoalMinor == 0 ? null : (b.savingsOnTrack ? l.moneyOnTrack : l.moneyAtRisk),
+                noteColor: b.savingsOnTrack ? context.semantic.positive : context.semantic.negative,
+              ),
+              _Stat(
+                label: l.moneyRemaining,
+                value: fmt.money(b.remainingMinor),
+                valueColor: b.remainingMinor < 0 ? context.semantic.negative : null,
+              ),
+            ],
+          ),
+          const SizedBox(height: Space.sm),
+          Text(
+            l.moneyProjected(fmt.money(b.projectedMonthSpendMinor)),
+            style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
+          ),
+        ],
+        const SizedBox(height: Space.sm),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: TextButton.icon(
+            onPressed: () => showExpenseSheet(context, type: TransactionType.income),
+            icon: const Icon(Icons.south_west, size: 18),
+            label: Text(l.moneyAddIncome),
+          ),
+        ),
+        if (catInsight != null) ...[
+          const SizedBox(height: Space.sm),
+          AppCard(
+            child: Row(
+              children: [
+                Icon(Icons.auto_awesome, color: context.colors.primary),
+                const SizedBox(width: Space.md),
+                Expanded(child: Text(l.insightText(catInsight))),
+              ],
             ),
           ),
         ],
-      ),
+        if (summary.spentMinor > 0) ...[
+          SectionTitle(l.moneyChartTitle),
+          AppCard(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    SizedBox.square(dimension: 120, child: _Donut(summary)),
+                    const SizedBox(width: Space.lg),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(fmt.money(summary.spentMinor), style: context.text.headlineSmall),
+                          if (change != null && change != 0)
+                            Text(
+                              change > 0 ? l.moneyMoreThanLast(change) : l.moneyLessThanLast(-change),
+                              style: context.text.bodySmall?.copyWith(
+                                color: change > 0 ? context.semantic.negative : context.semantic.positive,
+                              ),
+                            ),
+                          const SizedBox(height: Space.xs),
+                          Text(
+                            l.moneyDailyAvg(fmt.money(summary.dailyAverageMinor)),
+                            style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: Space.md),
+                ..._categoryRows(summary, b),
+              ],
+            ),
+          ),
+        ],
+        if (b != null)
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton(onPressed: () => showAddLimit(context), child: Text(l.moneyAddBudget)),
+          ),
+      ],
     );
   }
+
+  List<Widget> _categoryRows(MonthSummary summary, BudgetSnapshot? b) {
+    final l = context.l10n;
+    final fmt = ref.fmt(context);
+    final limits = {for (final c in b?.byCategory ?? const <CategorySpend>[]) c.category: c.limitMinor};
+    return [
+      for (final e in summary.ranked)
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: Space.xs),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    width: 10,
+                    height: 10,
+                    decoration: BoxDecoration(color: categoryColor(e.key), shape: BoxShape.circle),
+                  ),
+                  const SizedBox(width: Space.sm),
+                  Expanded(child: Text(l.expenseCategory(e.key))),
+                  Text(
+                    limits[e.key] == null
+                        ? fmt.money(e.value)
+                        : l.ofLimit(fmt.money(e.value), fmt.money(limits[e.key]!)),
+                    style: context.text.titleSmall,
+                  ),
+                ],
+              ),
+              if (limits[e.key] case final limit? when limit > 0) ...[
+                const SizedBox(height: Space.xs),
+                ProgressBar(
+                  value: e.value / limit,
+                  height: 6,
+                  color: e.value > limit ? context.semantic.negative : categoryColor(e.key),
+                  label: l.expenseCategory(e.key),
+                ),
+              ],
+            ],
+          ),
+        ),
+    ];
+  }
+
+  // --------------------------------------------------------------- activity
+
+  Widget _activity() {
+    final l = context.l10n;
+    final fmt = ref.fmt(context);
+    final now = ref.watch(todayProvider);
+    final month = _month ?? DateTime(now.year, now.month);
+    final all = ref.watch(transactionsProvider).list;
+    final summary = summarizeMonth(all, month, now);
+    final next = DateTime(month.year, month.month + 1);
+    final q = _query.trim().toLowerCase();
+    final tx =
+        all
+            .where((t) => !t.deleted && !t.date.isBefore(month) && t.date.isBefore(next))
+            .where((t) => _filter == null || (t.isExpense && t.category == _filter))
+            .where(
+              (t) =>
+                  q.isEmpty ||
+                  t.description.toLowerCase().contains(q) ||
+                  (t.merchant ?? '').toLowerCase().contains(q) ||
+                  l.expenseCategory(t.category).toLowerCase().contains(q),
+            )
+            .toList()
+          ..sort((a, b) => b.date.compareTo(a.date));
+    final isCurrent = month.year == now.year && month.month == now.month;
+    final rows = <Widget>[];
+    String? lastDay;
+    for (final t in tx.take(_visible)) {
+      final day = fmt.weekdayDayMonth(t.date);
+      if (day != lastDay) {
+        rows.add(
+          Padding(
+            padding: const EdgeInsets.only(top: Space.md, bottom: Space.xs),
+            child: Text(day, style: context.text.labelMedium?.copyWith(color: context.semantic.muted)),
+          ),
+        );
+        lastDay = day;
+      }
+      rows.add(_TransactionTile(t: t));
+    }
+    return ListView(
+      padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 120),
+      children: [
+        Row(
+          children: [
+            IconButton(
+              tooltip: l.moneyPrevMonth,
+              icon: const Icon(Icons.chevron_left),
+              onPressed: () => setState(() {
+                _month = DateTime(month.year, month.month - 1);
+                _visible = _pageSize;
+              }),
+            ),
+            Expanded(
+              child: Text(fmt.monthYear(month), textAlign: TextAlign.center, style: context.text.titleMedium),
+            ),
+            IconButton(
+              tooltip: l.moneyNextMonth,
+              icon: const Icon(Icons.chevron_right),
+              onPressed: isCurrent
+                  ? null
+                  : () => setState(() {
+                      _month = DateTime(month.year, month.month + 1);
+                      _visible = _pageSize;
+                    }),
+            ),
+          ],
+        ),
+        Text(
+          [
+            l.moneyMonthTotal(fmt.money(summary.spentMinor)),
+            l.moneyDailyAvg(fmt.money(summary.dailyAverageMinor)),
+            if (summary.biggest case final big?)
+              l.moneyBiggest(
+                big.description.isEmpty ? l.expenseCategory(big.category) : big.description,
+                fmt.money(big.amountMinor),
+              ),
+          ].join(' · '),
+          textAlign: TextAlign.center,
+          style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
+        ),
+        const SizedBox(height: Space.md),
+        TextField(
+          decoration: InputDecoration(prefixIcon: const Icon(Icons.search_rounded), hintText: l.moneySearch),
+          onChanged: (v) => setState(() => _query = v),
+        ),
+        const SizedBox(height: Space.sm),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              for (final c in [null, ...summary.ranked.map((e) => e.key)])
+                Padding(
+                  padding: const EdgeInsets.only(right: Space.sm),
+                  child: ChoiceChip(
+                    avatar: c == null ? null : Icon(categoryIcon(c), size: 16),
+                    label: Text(c == null ? l.foodAllMeals : l.expenseCategory(c)),
+                    selected: _filter == c,
+                    onSelected: (_) => setState(() => _filter = c),
+                  ),
+                ),
+            ],
+          ),
+        ),
+        if (tx.isEmpty)
+          Padding(
+            padding: const EdgeInsets.only(top: Space.xl),
+            child: EmptyState(icon: Icons.receipt_long_outlined, message: l.moneyNoMatch),
+          ),
+        ...rows,
+        if (tx.length > _visible)
+          TextButton(onPressed: () => setState(() => _visible += _pageSize), child: Text(l.seeAll)),
+      ],
+    );
+  }
+
+  // ------------------------------------------------------------------- plan
+
+  Widget _plan() => ListView(
+    padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 120),
+    children: [
+      const BillsSection(),
+      const GoalsSection(),
+      LimitsSection(onAdd: () => showAddLimit(context)),
+    ],
+  );
+}
+
+class _Donut extends StatelessWidget {
+  const _Donut(this.summary);
+  final MonthSummary summary;
+
+  @override
+  Widget build(BuildContext context) => PieChart(
+    PieChartData(
+      sectionsSpace: 2,
+      centerSpaceRadius: 34,
+      startDegreeOffset: -90,
+      sections: [
+        for (final e in summary.ranked)
+          PieChartSectionData(value: e.value.toDouble(), color: categoryColor(e.key), radius: 22, showTitle: false),
+      ],
+    ),
+  );
 }
 
 class _Stat extends StatelessWidget {
@@ -250,18 +458,6 @@ class _TransactionTile extends ConsumerWidget {
 
   final MoneyTransaction t;
 
-  static IconData icon(ExpenseCategory c) => switch (c) {
-    ExpenseCategory.housing => Icons.home_outlined,
-    ExpenseCategory.food => Icons.restaurant_outlined,
-    ExpenseCategory.transport => Icons.directions_bus_outlined,
-    ExpenseCategory.shopping => Icons.shopping_bag_outlined,
-    ExpenseCategory.bills => Icons.receipt_outlined,
-    ExpenseCategory.entertainment => Icons.movie_outlined,
-    ExpenseCategory.health => Icons.favorite_outline,
-    ExpenseCategory.subscriptions => Icons.autorenew,
-    ExpenseCategory.other => Icons.more_horiz,
-  };
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l = context.l10n;
@@ -291,7 +487,7 @@ class _TransactionTile extends ConsumerWidget {
         contentPadding: EdgeInsets.zero,
         leading: CircleAvatar(
           backgroundColor: context.semantic.surfaceAlt,
-          child: Icon(income ? Icons.south_west : icon(t.category), size: 20),
+          child: Icon(income ? Icons.south_west : categoryIcon(t.category), size: 20),
         ),
         title: Text(t.description.isEmpty ? (income ? l.incomeLabel : l.expenseCategory(t.category)) : t.description),
         subtitle: Text('${income ? l.incomeLabel : l.expenseCategory(t.category)} · ${fmt.dayMonth(t.date)}'),

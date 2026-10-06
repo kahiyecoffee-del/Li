@@ -1,5 +1,6 @@
 import '../../core/utils/dates.dart';
 import '../../domain/models/enums.dart';
+import '../../domain/models/money_models.dart';
 import '../../domain/models/task_item.dart';
 
 enum NotificationKind {
@@ -10,7 +11,8 @@ enum NotificationKind {
   moodCheckIn,
   weeklyReview,
   planDay,
-  journal;
+  journal,
+  billDue;
 
   /// Where tapping the notification takes the user.
   String get route => switch (this) {
@@ -21,6 +23,7 @@ enum NotificationKind {
     weeklyReview => '/reports/weekly',
     planDay => '/ai?topic=plan',
     journal => '/journal/new',
+    billDue => '/money?tab=plan',
   };
 }
 
@@ -46,6 +49,7 @@ class NotificationState {
     required this.frequency,
     required this.dailyCap,
     this.upcomingTasks = const [],
+    this.bills = const [],
     this.hasBudget = false,
     this.loggedSpendingToday = false,
     this.budgetTight = false,
@@ -65,6 +69,9 @@ class NotificationState {
   final NotificationFrequency frequency;
   final int dailyCap;
   final List<TaskItem> upcomingTasks;
+
+  /// Monthly bills; unpaid ones are reminded the day before and on the day.
+  final List<RecurringBill> bills;
   final bool hasBudget;
   final bool loggedSpendingToday;
   final bool budgetTight;
@@ -122,6 +129,27 @@ class NotificationPlanner {
             title: t.title,
           ),
         );
+      }
+    }
+
+    // Bill reminders (user-created, like task reminders): 10:00 the day
+    // before and on the due day, until marked paid this month.
+    final month = Dates.monthKey(s.now);
+    for (final b in s.bills) {
+      if (b.deleted || !b.remind || b.lastPaidMonth == month) continue;
+      final due = b.dueIn(s.now);
+      for (final (i, d) in [Dates.addDays(due, -1), due].indexed) {
+        final at = _at(d, 10, 0);
+        if (at.isAfter(s.now) && at.isBefore(horizon)) {
+          out.add(
+            PlannedNotification(
+              id: 3000 + ((b.id.hashCode & 0xFFFF) << 1) + i,
+              kind: NotificationKind.billDue,
+              at: at,
+              title: b.name,
+            ),
+          );
+        }
       }
     }
 

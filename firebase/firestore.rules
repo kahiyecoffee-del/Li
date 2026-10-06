@@ -23,7 +23,8 @@ service cloud.firestore {
     function isSyncedCollection(c) {
       return c in ['profile', 'tasks', 'transactions', 'budgets', 'habits', 'habit_logs',
                    'mood_logs', 'sleep_logs', 'meal_plans', 'pantry_items', 'shopping_items',
-                   'ai_memories', 'daily_scores', 'daily_goals', 'achievements', 'saved_items'];
+                   'ai_memories', 'daily_scores', 'daily_goals', 'achievements', 'saved_items',
+                   'savings_goals', 'recurring_bills'];
     }
 
     // Every synced write carries sync metadata and a server timestamp used
@@ -49,7 +50,14 @@ service cloud.firestore {
         || (c == 'habit_logs' && d.count is int && d.count >= 0 && d.count <= 1000)
         || (c == 'ai_memories' && d.content is string && d.content.size() <= 300)
         || (c == 'saved_items' && d.title is string && d.title.size() <= 200 && d.kind is string && d.kind.size() <= 40)
-        || !(c in ['transactions', 'tasks', 'mood_logs', 'habit_logs', 'ai_memories', 'saved_items']);
+        || (c == 'savings_goals' && d.name is string && d.name.size() <= 80
+            && d.targetMinor is int && d.targetMinor >= 0 && d.targetMinor <= 100000000000
+            && d.savedMinor is int && d.savedMinor >= 0 && d.savedMinor <= 100000000000)
+        || (c == 'recurring_bills' && d.name is string && d.name.size() <= 80
+            && d.amountMinor is int && d.amountMinor >= 0 && d.amountMinor <= 100000000000
+            && d.dayOfMonth is int && d.dayOfMonth >= 1 && d.dayOfMonth <= 31)
+        || !(c in ['transactions', 'tasks', 'mood_logs', 'habit_logs', 'ai_memories', 'saved_items',
+                   'savings_goals', 'recurring_bills']);
     }
 
     match /users/{uid} {

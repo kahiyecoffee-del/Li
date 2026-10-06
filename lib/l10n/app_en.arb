@@ -690,6 +690,157 @@
   "foodPreferences": "Food preferences",
   "foodSkill": "Cooking skill",
   "foodBudget": "Food budget",
+  "moneyTabOverview": "Overview",
+  "moneyTabActivity": "Activity",
+  "moneyTabPlan": "Plan",
+  "moneyMoreThanLast": "{p}% more than last month",
+  "@moneyMoreThanLast": {
+    "placeholders": {
+      "p": {
+        "type": "int"
+      }
+    }
+  },
+  "moneyLessThanLast": "{p}% less than last month",
+  "@moneyLessThanLast": {
+    "placeholders": {
+      "p": {
+        "type": "int"
+      }
+    }
+  },
+  "moneyMonthTotal": "Spent {amount}",
+  "@moneyMonthTotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "moneyDailyAvg": "Daily average {amount}",
+  "@moneyDailyAvg": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "moneyBiggest": "Biggest: {what} · {amount}",
+  "@moneyBiggest": {
+    "placeholders": {
+      "what": {
+        "type": "String"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "moneySearch": "Search expenses",
+  "moneyNoMatch": "Nothing here for this month.",
+  "moneyAddIncome": "Add income",
+  "moneyChartTitle": "Where the money went",
+  "moneyPrevMonth": "Previous month",
+  "moneyNextMonth": "Next month",
+  "advBillsDue": "{count, plural, =1{{name} is due ({amount}). Pay it and mark it here so your budget stays right.} other{{count} bills are due soon, {amount} in total. {name} is first.}}",
+  "@advBillsDue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "billsTitle": "Bills & subscriptions",
+  "billsEmpty": "Add rent, bills and subscriptions once. Dayly reminds you the day before and keeps that money aside in your daily budget.",
+  "billAdd": "Add bill",
+  "billName": "Name (e.g. Electricity, Netflix)",
+  "billDay": "Day of the month",
+  "billRemind": "Remind me the day before",
+  "billPay": "Mark paid",
+  "billPaid": "Paid",
+  "billOverdue": "{count, plural, =1{1 day late} other{{count} days late}}",
+  "@billOverdue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "billDueToday": "Due today",
+  "billDueIn": "{count, plural, =1{Tomorrow} other{In {count} days}}",
+  "@billDueIn": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "billsMonthly": "Every month: {amount}",
+  "@billsMonthly": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "billsLeft": "{amount} still to pay this month",
+  "@billsLeft": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "billPaidSnack": "Logged as an expense",
+  "goalsTitle": "Savings jars",
+  "goalsEmpty": "Saving for something? Make a jar and watch it fill up.",
+  "goalAdd": "New jar",
+  "goalName": "What for? (e.g. Holiday)",
+  "goalTarget": "Target",
+  "goalDeadline": "By when (optional)",
+  "goalNoDeadline": "No deadline",
+  "goalProgress": "{saved} of {target}",
+  "@goalProgress": {
+    "placeholders": {
+      "saved": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "goalMonthly": "Put aside {amount} a month to make it",
+  "@goalMonthly": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "goalReached": "Goal reached! 🎉",
+  "goalDeposit": "Add money",
+  "goalWithdraw": "Take out",
+  "goalAmount": "Amount",
+  "limitsTitle": "Spending limits",
+  "limitsEmpty": "Set a weekly limit, a monthly limit or one per category. They repeat every week or month by themselves.",
+  "limitWeekly": "Weekly total",
+  "limitMonthlyAll": "Monthly total",
+  "notifBillTitle": "Bill reminder",
+  "notifBillBody": "{name} is due. Tap to mark it paid.",
+  "@notifBillBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
   "foodTabToday": "Today",
   "widgetToday": "Today · {date}",
   "@widgetToday": {

@@ -209,6 +209,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
           frequency: settings.notificationFrequency,
           dailyCap: services.remote.getInt(RcKeys.notificationDailyCap),
           upcomingTasks: ref.read(tasksProvider).list,
+          bills: ref.read(billsProvider).list,
           hasBudget: budget != null,
           loggedSpendingToday: (ref.read(transactionsProvider).list).any((t) => Dates.dayKey(t.date) == today),
           budgetTight: budget?.isTight ?? false,
@@ -301,6 +302,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
       ref.listen(transactionsProvider, (_, _) => _scheduleNotifications());
       ref.listen(settingsProvider.select((s) => s.notificationFrequency), (_, _) => _scheduleNotifications());
       ref.listen(journalProvider, (_, _) => _scheduleNotifications());
+      ref.listen(billsProvider, (_, _) => _scheduleNotifications());
       ref.listen(
         settingsProvider.select((s) => (s.journalReminder, s.planReminder)),
         (_, _) => _scheduleNotifications(),
