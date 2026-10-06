@@ -4,6 +4,9 @@ name: Device tour
 # app can be checked without a physical phone.
 on:
   workflow_dispatch:
+  push:
+    branches: [claude/lifeos-mvp]
+    paths: [integration_test/**, test_driver/**, .github/workflows/device-tour.yml]
 
 permissions:
   contents: write
