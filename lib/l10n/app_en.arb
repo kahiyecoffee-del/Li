@@ -691,6 +691,25 @@
   "foodSkill": "Cooking skill",
   "foodBudget": "Food budget",
   "foodTabToday": "Today",
+  "widgetToday": "Today · {date}",
+  "@widgetToday": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "widgetLeft": "{count, plural, =1{1 thing left today} other{{count} things left today}}",
+  "@widgetLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "widgetAllDone": "All done for today 🎉",
+  "widgetEmpty": "No plan yet. Tap to plan your day.",
+  "widgetStale": "Open Dayly to see today's plan",
   "foodTabRecipes": "Recipes",
   "foodTabWeek": "Week",
   "foodSearchHint": "Search a dish or an ingredient",

@@ -2198,6 +2198,36 @@ abstract class AppLocalizations {
   /// **'Today'**
   String get foodTabToday;
 
+  /// No description provided for @widgetToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today · {date}'**
+  String widgetToday(String date);
+
+  /// No description provided for @widgetLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 thing left today} other{{count} things left today}}'**
+  String widgetLeft(int count);
+
+  /// No description provided for @widgetAllDone.
+  ///
+  /// In en, this message translates to:
+  /// **'All done for today 🎉'**
+  String get widgetAllDone;
+
+  /// No description provided for @widgetEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No plan yet. Tap to plan your day.'**
+  String get widgetEmpty;
+
+  /// No description provided for @widgetStale.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Dayly to see today\'s plan'**
+  String get widgetStale;
+
   /// No description provided for @foodTabRecipes.
   ///
   /// In en, this message translates to:

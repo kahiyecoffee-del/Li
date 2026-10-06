@@ -3,6 +3,7 @@ import 'dart:ui' show PlatformDispatcher;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 
 import '../core/l10n/labels.dart';
 import '../core/utils/dates.dart';
@@ -13,6 +14,7 @@ import '../services/analytics/analytics_service.dart';
 import '../services/config/feature_flags.dart';
 import '../services/config/remote_config_service.dart';
 import '../services/notifications/notification_planner.dart';
+import '../services/widget/home_widget_service.dart';
 import 'derived_providers.dart';
 import 'providers.dart';
 import 'router.dart';
@@ -35,6 +37,8 @@ class AppEffects extends ConsumerStatefulWidget {
 class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObserver {
   Timer? _scoreDebounce;
   Timer? _notifDebounce;
+  Timer? _widgetDebounce;
+  StreamSubscription<String>? _widgetTaps;
   String? _sessionUid;
   bool _adsInitialized = false;
   StreamSubscription<String>? _taps;
@@ -49,6 +53,11 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
     unawaited(s.notifications.initialize());
     // Tapping a reminder opens the right screen (plan with Lio, journal…).
     _taps = s.notifications.taps.listen((route) {
+      final r = route.contains('topic=') ? '$route&n=${DateTime.now().microsecondsSinceEpoch}' : route;
+      ref.read(routerProvider).go(r);
+    });
+    // Tapping the home-screen widget opens the plan (or Lio to make one).
+    _widgetTaps = s.homeWidget.taps.listen((route) {
       final r = route.contains('topic=') ? '$route&n=${DateTime.now().microsecondsSinceEpoch}' : route;
       ref.read(routerProvider).go(r);
     });
@@ -71,7 +80,9 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
     WidgetsBinding.instance.removeObserver(this);
     _scoreDebounce?.cancel();
     _notifDebounce?.cancel();
+    _widgetDebounce?.cancel();
     unawaited(_taps?.cancel());
+    unawaited(_widgetTaps?.cancel());
     super.dispose();
   }
 
@@ -81,6 +92,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
     if (state == AppLifecycleState.resumed) {
       ref.read(sessionProvider).value?.sync?.scheduleSync(const Duration(seconds: 1));
       _scheduleNotifications();
+      _updateHomeWidget();
       // Coming back after a real break (not a quick app switch).
       final away = _pausedAt == null ? Duration.zero : DateTime.now().difference(_pausedAt!);
       if (away > const Duration(seconds: 30)) unawaited(_maybeAppOpenAd());
@@ -221,6 +233,37 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
     });
   }
 
+  /// Pushes today's program to the home-screen widget.
+  void _updateHomeWidget() {
+    _widgetDebounce?.cancel();
+    _widgetDebounce = Timer(const Duration(seconds: 1), () async {
+      if (!mounted || ref.read(sessionProvider).value == null) return;
+      final now = DateTime.now();
+      final tasks = ref.read(tasksProvider).list;
+      final program = todaysProgram(tasks, now);
+      final doneToday = tasks.any(
+        (t) => !t.deleted && t.completedAt != null && Dates.dayKey(t.completedAt!) == Dates.dayKey(now),
+      );
+      final l = AppLocalizations.of(context);
+      final locale = Localizations.localeOf(context).toString();
+      await ref
+          .read(servicesProvider)
+          .homeWidget
+          .update(
+            TodayWidgetData(
+              day: Dates.dayKey(now),
+              title: l.widgetToday(DateFormat.MMMd(locale).format(now)),
+              lines: programLines(program, now),
+              summary: program.isNotEmpty
+                  ? l.widgetLeft(program.length)
+                  : (doneToday ? l.widgetAllDone : l.widgetEmpty),
+              staleHint: l.widgetStale,
+              route: program.isEmpty && !doneToday ? '/ai?topic=plan' : Routes.plan,
+            ),
+          );
+    });
+  }
+
   void _logRetention() {
     final profile = ref.read(profileProvider).value;
     final installed = profile?.installedAt;
@@ -250,7 +293,10 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
         _scoreDebounce = Timer(const Duration(seconds: 2), () => unawaited(_persistScore(s)));
       });
       ref.listen(earnedBadgesProvider, (_, _) => unawaited(_recordBadges()));
-      ref.listen(tasksProvider, (_, _) => _scheduleNotifications());
+      ref.listen(tasksProvider, (_, _) {
+        _scheduleNotifications();
+        _updateHomeWidget();
+      });
       ref.listen(moodsProvider, (_, _) => _scheduleNotifications());
       ref.listen(transactionsProvider, (_, _) => _scheduleNotifications());
       ref.listen(settingsProvider.select((s) => s.notificationFrequency), (_, _) => _scheduleNotifications());

@@ -1167,6 +1167,31 @@ class AppLocalizationsEn extends AppLocalizations {
   String get foodTabToday => 'Today';
 
   @override
+  String widgetToday(String date) {
+    return 'Today · $date';
+  }
+
+  @override
+  String widgetLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count things left today',
+      one: '1 thing left today',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get widgetAllDone => 'All done for today 🎉';
+
+  @override
+  String get widgetEmpty => 'No plan yet. Tap to plan your day.';
+
+  @override
+  String get widgetStale => 'Open Dayly to see today\'s plan';
+
+  @override
   String get foodTabRecipes => 'Recipes';
 
   @override

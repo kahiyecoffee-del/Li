@@ -1,0 +1,3 @@
+// Build settings for the DaylyWidget extension: Flutter's version numbers
+// only (no CocoaPods, the widget links no Flutter plugins).
+#include "Generated.xcconfig"

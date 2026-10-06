@@ -28,6 +28,8 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
+            <!-- Widget taps are handled by home_widget, not Flutter deep links. -->
+            <meta-data android:name="flutter_deeplinking_enabled" android:value="false" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -43,6 +45,14 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="lifeos_reminders" />
+
+        <!-- Home-screen widget: today's program (home_widget). -->
+        <receiver android:name=".DaylyWidgetProvider" android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/dayly_widget_info" />
+        </receiver>
 
         <!-- flutter_local_notifications scheduled notifications. -->
         <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />

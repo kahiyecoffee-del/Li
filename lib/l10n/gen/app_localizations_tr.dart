@@ -1163,6 +1163,25 @@ class AppLocalizationsTr extends AppLocalizations {
   String get foodTabToday => 'Bugün';
 
   @override
+  String widgetToday(String date) {
+    return 'Bugün · $date';
+  }
+
+  @override
+  String widgetLeft(int count) {
+    return 'Bugün $count iş kaldı';
+  }
+
+  @override
+  String get widgetAllDone => 'Bugün her şey tamam 🎉';
+
+  @override
+  String get widgetEmpty => 'Plan yok. Dokun, günü planlayalım.';
+
+  @override
+  String get widgetStale => 'Bugünün planı için Dayly\'yi aç';
+
+  @override
   String get foodTabRecipes => 'Tarifler';
 
   @override

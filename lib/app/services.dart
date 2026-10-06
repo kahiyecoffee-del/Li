@@ -18,6 +18,7 @@ import '../services/notifications/push_service.dart';
 import '../services/ocr/ocr_service.dart';
 import '../services/voice/voice_input_service.dart';
 import '../services/weather/weather_service.dart';
+import '../services/widget/home_widget_service.dart';
 
 /// App-wide service graph, built once in `bootstrap()` and injected through
 /// Riverpod (`servicesProvider`). Tests build it with fakes.
@@ -42,6 +43,7 @@ class Services {
     this.functions,
     this.push,
     this.voice = const NoVoiceInput(),
+    this.homeWidget = const NoHomeWidget(),
   }) : flags = FeatureFlags(remote);
 
   final SharedPreferences prefs;
@@ -61,6 +63,9 @@ class Services {
   final OcrService ocr;
   final JournalKeyStore journalKeys;
   final VoiceInputService voice;
+
+  /// Today's program on the home screen (iOS/Android only).
+  final HomeWidgetService homeWidget;
 
   /// Null in local-only mode (Firebase not configured).
   final FirebaseFirestore? firestore;

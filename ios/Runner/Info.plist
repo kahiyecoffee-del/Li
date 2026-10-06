@@ -66,6 +66,19 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.dayly.app</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>dayly</string>
+			</array>
+		</dict>
+	</array>
+	<key>FlutterDeepLinkingEnabled</key>
+	<false/>
 	<key>GADApplicationIdentifier</key>
 	<string>$(ADMOB_APP_ID)</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
