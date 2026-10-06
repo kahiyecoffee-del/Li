@@ -43,7 +43,8 @@ Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 /// work locally; sync, AI, news and purchases report "unavailable".
 Future<Services> buildServices() async {
   final prefs = await SharedPreferences.getInstance();
-  final notifications = LocalNotificationService();
+  // Local notifications are mobile-only; the web preview runs without them.
+  final NotificationService notifications = kIsWeb ? NoopNotificationService() : LocalNotificationService();
   final connectivity = PlatformConnectivityService();
   final weather = WeatherService(OpenMeteoProvider(), prefs);
   final mobile = !kIsWeb && (Platform.isAndroid || Platform.isIOS);
@@ -52,11 +53,15 @@ Future<Services> buildServices() async {
   unawaited(offlineModel.refresh());
 
   var firebaseReady = false;
-  try {
-    await Firebase.initializeApp();
-    firebaseReady = true;
-  } catch (e) {
-    debugPrint('Firebase not configured, running on-device only: $e');
+  // The web build is a preview without Firebase web config: skip it so the
+  // page never waits on Firebase scripts.
+  if (!kIsWeb) {
+    try {
+      await Firebase.initializeApp();
+      firebaseReady = true;
+    } catch (e) {
+      debugPrint('Firebase not configured, running on-device only: $e');
+    }
   }
 
   if (!firebaseReady) {
@@ -124,7 +129,13 @@ Future<Services> buildServices() async {
     offlineModel: offlineModel,
     firestore: firestore,
     functions: functions,
-    push: PushService(FirebaseMessaging.instance, firestore, onForegroundMessage: notifications.showRemote),
+    push: PushService(
+      FirebaseMessaging.instance,
+      firestore,
+      onForegroundMessage: (m) async {
+        if (notifications is LocalNotificationService) await notifications.showRemote(m);
+      },
+    ),
   );
 }
 
