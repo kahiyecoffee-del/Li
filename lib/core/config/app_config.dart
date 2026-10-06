@@ -39,11 +39,11 @@ abstract final class AppConfig {
   /// Google Play subscription product ids (created in Play Console).
   static const premiumMonthlyProductId = String.fromEnvironment(
     'PREMIUM_MONTHLY_ID',
-    defaultValue: 'lifeos_premium_monthly',
+    defaultValue: 'dayly_premium_monthly',
   );
   static const premiumYearlyProductId = String.fromEnvironment(
     'PREMIUM_YEARLY_ID',
-    defaultValue: 'lifeos_premium_yearly',
+    defaultValue: 'dayly_premium_yearly',
   );
 
   /// Web client id (OAuth) used by Google Sign-In to mint Firebase ID tokens.
@@ -54,7 +54,7 @@ abstract final class AppConfig {
   static const appVersion = String.fromEnvironment('APP_VERSION', defaultValue: '1.0.0');
 
   /// Android application id (used for the Play subscription management link).
-  static const androidPackage = String.fromEnvironment('ANDROID_PACKAGE', defaultValue: 'com.lifeos.lifeos');
+  static const androidPackage = String.fromEnvironment('ANDROID_PACKAGE', defaultValue: 'com.dayly.app');
 
   /// Public URLs shown in Settings and the Play listing.
   static const privacyPolicyUrl = String.fromEnvironment('PRIVACY_POLICY_URL');

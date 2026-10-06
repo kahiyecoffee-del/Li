@@ -39,7 +39,7 @@ class LifeScoreCard extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CardHeader(icon: Icons.local_fire_department_outlined, title: l.lifeScore),
+                CardHeader(icon: Icons.local_fire_department_rounded, title: l.lifeScore, accent: Accent.score),
                 const SizedBox(height: Space.sm),
                 if (total == null)
                   Text(l.scoreNoData, style: context.text.bodyMedium)
@@ -82,14 +82,20 @@ class DailyGoalsCard extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CardHeader(
-            icon: Icons.flag_outlined,
+            icon: Icons.flag_rounded,
             title: l.dailyGoals,
+            accent: Accent.goals,
             trailing: streak.current > 1
                 ? Text('🔥 ${l.streakDays(streak.current)}', style: context.text.labelMedium)
                 : null,
           ),
           const SizedBox(height: Space.md),
-          ProgressBar(value: progress / 100, label: l.lifeProgress(progress)),
+          TweenAnimationBuilder<double>(
+            tween: Tween(end: progress / 100),
+            duration: Motion.of(context, Motion.slow),
+            curve: Motion.curve,
+            builder: (_, v, _) => ProgressBar(value: v, color: Accent.goals.color, label: l.lifeProgress(progress)),
+          ),
           const SizedBox(height: Space.xs),
           Text(l.lifeProgress(progress), style: context.text.labelSmall?.copyWith(color: context.semantic.muted)),
           const SizedBox(height: Space.sm),
@@ -98,6 +104,16 @@ class DailyGoalsCard extends ConsumerWidget {
               goal: g,
               label: l.goal(g, fmt.money, habitDone: logs[g.habit?.id] ?? 0),
             ),
+          ),
+          AnimatedSize(
+            duration: Motion.of(context, Motion.normal),
+            curve: Motion.bounce,
+            child: goals.isNotEmpty && goals.every((g) => g.completed)
+                ? Padding(
+                    padding: const EdgeInsets.only(top: Space.sm),
+                    child: Text('🎉 ${l.allGoalsDone}', style: context.text.titleSmall),
+                  )
+                : const SizedBox(width: double.infinity),
           ),
           if (streak.atRisk) ...[
             const SizedBox(height: Space.sm),
@@ -138,9 +154,15 @@ class _GoalTile extends ConsumerWidget {
     child: ListTile(
       contentPadding: EdgeInsets.zero,
       minTileHeight: kMinTouchTarget,
-      leading: Icon(
-        goal.completed ? Icons.check_circle_rounded : Icons.radio_button_unchecked,
-        color: goal.completed ? context.semantic.positive : context.semantic.muted,
+      leading: AnimatedSwitcher(
+        duration: Motion.of(context, Motion.normal),
+        switchInCurve: Motion.bounce,
+        transitionBuilder: (child, a) => ScaleTransition(scale: a, child: child),
+        child: Icon(
+          goal.completed ? Icons.check_circle_rounded : Icons.radio_button_unchecked,
+          key: ValueKey(goal.completed),
+          color: goal.completed ? context.semantic.positive : context.semantic.muted,
+        ),
       ),
       title: Text(
         label,
@@ -172,7 +194,7 @@ class TodayPlanCard extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CardHeader(icon: Icons.event_note_outlined, title: l.homeToday),
+          CardHeader(icon: Icons.event_note_rounded, title: l.homeToday, accent: Accent.plan),
           const SizedBox(height: Space.sm),
           if (tasks.isEmpty) ...[
             Text(l.homeNoPlan, style: context.text.bodyMedium),
@@ -232,7 +254,7 @@ class MoneyCard extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CardHeader(icon: Icons.account_balance_wallet_outlined, title: l.homeMoney),
+          CardHeader(icon: Icons.account_balance_wallet_rounded, title: l.homeMoney, accent: Accent.money),
           const SizedBox(height: Space.sm),
           if (b == null) ...[
             Text(l.setUpBudget, style: context.text.titleMedium),
@@ -240,7 +262,7 @@ class MoneyCard extends ConsumerWidget {
             Text(l.setUpBudgetBody, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
           ] else ...[
             Text(l.safeSpendingToday, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
-            Text(fmt.money(b.safeDailyMinor), style: context.text.headlineMedium),
+            AnimatedCount(value: b.safeDailyMinor, format: fmt.money, style: context.text.headlineMedium),
             const SizedBox(height: Space.sm),
             ProgressBar(
               value: b.safeDailyMinor == 0 ? 1 : b.spentTodayMinor / b.safeDailyMinor,
@@ -291,7 +313,7 @@ class FoodCard extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CardHeader(icon: Icons.restaurant_outlined, title: l.homeFood),
+          CardHeader(icon: Icons.restaurant_rounded, title: l.homeFood, accent: Accent.food),
           const SizedBox(height: Space.sm),
           Text(
             l.suggestedMeal(l.mealType(mealType).toLowerCase()),
@@ -322,7 +344,7 @@ class WellbeingCard extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CardHeader(icon: Icons.self_improvement_outlined, title: l.homeWellbeing),
+          CardHeader(icon: Icons.self_improvement_rounded, title: l.homeWellbeing, accent: Accent.wellbeing),
           const SizedBox(height: Space.md),
           if (mood == null) ...[
             Text(l.howAreYou, style: context.text.titleSmall),
@@ -367,7 +389,7 @@ class InsightCard extends ConsumerWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(Icons.auto_awesome, color: context.colors.primary),
+          const IconBubble(icon: Icons.auto_awesome_rounded, accent: Accent.insight),
           const SizedBox(width: Space.md),
           Expanded(
             child: Column(
@@ -439,7 +461,7 @@ class NewsTeaserCard extends ConsumerWidget {
       onTap: () => context.push('/news'),
       child: Row(
         children: [
-          Icon(Icons.newspaper_outlined, color: context.semantic.muted),
+          const IconBubble(icon: Icons.newspaper_rounded, accent: Accent.news),
           const SizedBox(width: Space.md),
           Expanded(
             child: Column(
@@ -468,7 +490,7 @@ class WeeklyReviewCard extends StatelessWidget {
     onTap: () => context.push('/reports/weekly'),
     child: Row(
       children: [
-        Icon(Icons.insights_outlined, color: context.colors.primary),
+        const IconBubble(icon: Icons.insights_rounded, accent: Accent.score),
         const SizedBox(width: Space.md),
         Expanded(
           child: Column(

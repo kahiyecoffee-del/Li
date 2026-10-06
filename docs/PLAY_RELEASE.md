@@ -1,11 +1,11 @@
 # Google Play listing & release checklist
 
 ## Store listing (draft — only describes implemented features)
-**App name:** LifeOS: Daily Planner & Budget
+**App name:** Dayly: Daily Planner & Budget
 **Short description (≤80):** Plan your day, track spending and habits, with an AI assistant that helps.
 
 **Full description:**
-LifeOS brings your day together in one calm place.
+Dayly brings your day together in one calm place.
 
 • Daily Brief — open the app and see what matters today: your plan, safe-to-spend amount, goals, mood and a suggested meal.
 • Life Score — a transparent 0–100 score built from the areas you track (money, productivity, habits, sleep, mood, planning), with a plain-language reason when it changes.
@@ -17,7 +17,7 @@ LifeOS brings your day together in one calm place.
 • Weekly review and monthly report.
 • Private by design — works offline, journal stays encrypted on your device, choose exactly what the assistant may see, export or delete your data anytime.
 
-Free with optional rewarded ads for extra assistant requests. LifeOS Premium: unlimited assistant (fair use), full score breakdown, monthly reports, no ads.
+Free with optional rewarded ads for extra assistant requests. Dayly Premium: unlimited assistant (fair use), full score breakdown, monthly reports, no ads.
 Mood features are for self-reflection only and are not medical advice.
 
 ## Data safety form (based on this codebase)

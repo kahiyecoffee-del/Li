@@ -26,7 +26,7 @@ class SyncResult {
 ///
 /// Trade-off (documented in docs/ARCHITECTURE.md): concurrent edits to
 /// different fields of the same record are not merged — the most recent
-/// whole record wins. Records in LifeOS are small and mostly single-purpose
+/// whole record wins. Records in Dayly are small and mostly single-purpose
 /// (one habit log per habit per day, one mood per day), which keeps this
 /// rare.
 class SyncEngine {

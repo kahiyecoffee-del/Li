@@ -101,8 +101,10 @@ final routerProvider = Provider<GoRouter>((ref) {
             AuthScreen(mode: s.uri.queryParameters['mode'] == 'signup' ? AuthMode.signUp : AuthMode.signIn),
       ),
       GoRoute(path: Routes.onboarding, builder: (_, _) => const OnboardingScreen()),
-      StatefulShellRoute.indexedStack(
+      StatefulShellRoute(
         builder: (_, _, shell) => MainShell(shell: shell),
+        navigatorContainerBuilder: (_, shell, children) =>
+            AnimatedBranchContainer(currentIndex: shell.currentIndex, children: children),
         branches: [
           StatefulShellBranch(
             routes: [GoRoute(path: Routes.home, builder: (_, _) => const HomeScreen())],

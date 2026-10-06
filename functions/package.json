@@ -1,7 +1,7 @@
 {
   "name": "lifeos-functions",
   "private": true,
-  "description": "LifeOS backend: AI proxy, credits, rewards, billing verification, news, account deletion.",
+  "description": "Dayly backend: AI proxy, credits, rewards, billing verification, news, account deletion.",
   "main": "lib/index.js",
   "type": "commonjs",
   "engines": {

@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
 import '../../core/l10n/labels.dart';
+import '../../core/theme/tokens.dart';
 import '../../core/widgets/common.dart';
 
 /// Bottom navigation: HOME · PLAN · MONEY · LIFE · AI.
@@ -79,4 +80,73 @@ class ProfileButton extends ConsumerWidget {
       ),
     );
   }
+}
+
+/// Keeps every tab alive (like an IndexedStack) and plays a short
+/// fade + rise when a tab becomes active.
+class AnimatedBranchContainer extends StatelessWidget {
+  const AnimatedBranchContainer({super.key, required this.currentIndex, required this.children});
+
+  final int currentIndex;
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) => Stack(
+    fit: StackFit.expand,
+    children: [for (var i = 0; i < children.length; i++) _Branch(active: i == currentIndex, child: children[i])],
+  );
+}
+
+class _Branch extends StatefulWidget {
+  const _Branch({required this.active, required this.child});
+
+  final bool active;
+  final Widget child;
+
+  @override
+  State<_Branch> createState() => _BranchState();
+}
+
+class _BranchState extends State<_Branch> with SingleTickerProviderStateMixin {
+  late final AnimationController _c = AnimationController(
+    vsync: this,
+    duration: Motion.normal,
+    value: widget.active ? 1 : 0,
+  );
+  late final Animation<double> _a = CurvedAnimation(parent: _c, curve: Motion.curve);
+
+  @override
+  void didUpdateWidget(_Branch old) {
+    super.didUpdateWidget(old);
+    if (widget.active && !old.active) {
+      if (MediaQuery.maybeDisableAnimationsOf(context) == true) {
+        _c.value = 1;
+      } else {
+        _c.forward(from: 0);
+      }
+    } else if (!widget.active) {
+      _c.value = 0;
+    }
+  }
+
+  @override
+  void dispose() {
+    _c.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => Offstage(
+    offstage: !widget.active,
+    child: TickerMode(
+      enabled: widget.active,
+      child: FadeTransition(
+        opacity: _a,
+        child: SlideTransition(
+          position: Tween(begin: const Offset(0, 0.02), end: Offset.zero).animate(_a),
+          child: widget.child,
+        ),
+      ),
+    ),
+  );
 }

@@ -10,10 +10,10 @@ class AppLocalizationsTr extends AppLocalizations {
   AppLocalizationsTr([String locale = 'tr']) : super(locale);
 
   @override
-  String get appName => 'LifeOS';
+  String get appName => 'Dayly';
 
   @override
-  String get appTagline => 'Günlük hayatın için işletim sistemin.';
+  String get appTagline => 'Her günün güzel geçsin.';
 
   @override
   String get ok => 'Tamam';
@@ -317,7 +317,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get onbPickCity => 'Şehir ara';
 
   @override
-  String get onbReadyTitle => 'LifeOS\'un hazır.';
+  String get onbReadyTitle => 'Dayly senin için hazır!';
 
   @override
   String get onbReadyBody => 'Ana ekranın artık bugün senin için önemli olanı gösteriyor.';
@@ -1627,7 +1627,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get aiDataBody =>
-      'Asistanı kullandığında LifeOS mesajını ve yalnızca aşağıda izin verdiğin verileri sunucumuza gönderir; sunucu da yanıt üretmek için bunları bir YZ sağlayıcısına iletir. LifeOS bu verileri YZ modeli eğitmek için kullanmaz. Açmadıkça günlüğün asla paylaşılmaz.';
+      'Asistanı kullandığında Dayly mesajını ve yalnızca aşağıda izin verdiğin verileri sunucumuza gönderir; sunucu da yanıt üretmek için bunları bir YZ sağlayıcısına iletir. Dayly bu verileri YZ modeli eğitmek için kullanmaz. Açmadıkça günlüğün asla paylaşılmaz.';
 
   @override
   String get scopeMoney => 'Para (bütçe toplamları ve kategoriler)';
@@ -1765,7 +1765,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get newsTopicsSetting => 'Haber konuları';
 
   @override
-  String get premiumTitle => 'LifeOS Premium';
+  String get premiumTitle => 'Dayly Premium';
 
   @override
   String get premiumSubtitle => 'Daha fazla içgörü, reklamsız, sınırsız asistan.';
@@ -1935,6 +1935,19 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get offlineAiUnavailable => 'Çevrimdışı asistan henüz kullanılamıyor.';
+
+  @override
+  String get aiSetupTitle => 'Asistanını aç';
+
+  @override
+  String get aiSetupBody =>
+      'Ücretsiz cihaz içi asistanı bir kez indir, istediğin zaman sohbet et — internet olmadan bile. Mesajların telefonundan hiç çıkmaz.';
+
+  @override
+  String get aiSetupCta => 'Asistanı kur';
+
+  @override
+  String get allGoalsDone => 'Bugünün tüm hedefleri tamam — harikasın!';
 
   @override
   String get offlineAnswerLabel => 'Çevrimdışı cevap · cihazdaki model';

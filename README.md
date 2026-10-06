@@ -1,4 +1,4 @@
-# LifeOS
+# Dayly
 
 **Your operating system for everyday life.** A Flutter (Android-first, iOS-ready) life assistant that
 combines a Daily Brief, an explainable Life Score, planning, budgeting, food, habits, mood, journal and an

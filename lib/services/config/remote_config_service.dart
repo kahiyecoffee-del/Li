@@ -40,11 +40,12 @@ const Map<String, Object> remoteDefaults = {
   RcKeys.notificationDailyCap: 3,
   RcKeys.freeMemoryLimit: 10,
   RcKeys.featureFlags: '{"news":true,"receipt_ocr":true,"weekly_report":true,"monthly_report":true,"pantry":true}',
-  RcKeys.premiumFeatures: '["unlimited_ai","advanced_score","advanced_analytics","no_ads","advanced_planning","advanced_finance","unlimited_meals","ai_memory_unlimited","monthly_report","offline_ai"]',
+  RcKeys.premiumFeatures: '["unlimited_ai","advanced_score","advanced_analytics","no_ads","advanced_planning","advanced_finance","unlimited_meals","ai_memory_unlimited","monthly_report"]',
   RcKeys.experiments: '{}',
-  // Empty = offline assistant hidden. Host the .task file yourself.
-  RcKeys.offlineModelUrl: '',
-  RcKeys.offlineModelSizeMb: 550,
+  // On-device assistant model (MediaPipe .task). Default: Qwen2.5 1.5B
+  // Instruct (Apache-2.0, no login needed). Empty hides the feature.
+  RcKeys.offlineModelUrl: 'https://huggingface.co/litert-community/Qwen2.5-1.5B-Instruct/resolve/main/Qwen2.5-1.5B-Instruct_multi-prefill-seq_q8_ekv1280.task',
+  RcKeys.offlineModelSizeMb: 1600,
 };
 
 /// Read-only view of remote values.

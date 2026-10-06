@@ -52,9 +52,10 @@ class EdgeAiOfflineModelService implements OfflineModelService {
   Future<void>? _init;
   static const _idKey = 'offline_model_id';
 
-  /// Context window (prompt + history + reply) and reply cap.
-  static const maxTokens = 2048;
-  static const maxOutputTokens = 400;
+  /// Context window (prompt + history + reply) and reply cap. The default
+  /// Qwen2.5 .task build has a 1280-token KV cache.
+  static const maxTokens = 1280;
+  static const maxOutputTokens = 320;
 
   @override
   OfflineModelStatus get current => _current;
@@ -68,6 +69,15 @@ class EdgeAiOfflineModelService implements OfflineModelService {
   }
 
   Future<void> _ensureInit() => _init ??= FlutterEdgeAi.initialize(inferenceEngines: const [MediaPipeEngine()]);
+
+  /// Chat template family, inferred from the model file name.
+  static ModelType modelTypeFor(String url) {
+    final u = url.toLowerCase();
+    if (u.contains('qwen')) return ModelType.qwen;
+    if (u.contains('deepseek')) return ModelType.deepSeek;
+    if (u.contains('gemma')) return ModelType.gemmaIt;
+    return ModelType.general;
+  }
 
   static String modelIdFor(String url) =>
       Uri.parse(url).pathSegments.lastWhere((s) => s.isNotEmpty, orElse: () => 'model.task');
@@ -96,7 +106,7 @@ class EdgeAiOfflineModelService implements OfflineModelService {
     _cancel = CancelToken();
     try {
       await _ensureInit();
-      await FlutterEdgeAi.installModel(modelType: ModelType.gemmaIt)
+      await FlutterEdgeAi.installModel(modelType: modelTypeFor(url))
           // Large files use an Android foreground service (no 9-minute limit).
           .fromNetwork(url, foreground: true)
           .withProgress((p) => _set(OfflineModelStatus(OfflineModelState.downloading, progress: p)))
@@ -143,7 +153,7 @@ class EdgeAiOfflineModelService implements OfflineModelService {
       maxOutputTokens: maxOutputTokens,
     );
     // Short history keeps the small context window for the answer.
-    for (final t in history.length > 4 ? history.sublist(history.length - 4) : history) {
+    for (final t in history.length > 2 ? history.sublist(history.length - 2) : history) {
       await chat.addQueryChunk(Message.text(text: t.text, isUser: t.fromUser));
     }
     await chat.addQueryChunk(Message.text(text: message, isUser: true));

@@ -28,14 +28,14 @@ class AccountService {
         .map((e) => {'id': e.id, 'createdAt': e.createdAt.toIso8601String(), 'text': e.text})
         .toList();
     final data = {
-      'format': 'lifeos-export-v1',
+      'format': 'dayly-export-v1',
       'exportedAt': DateTime.now().toIso8601String(),
       'uid': uid,
       'collections': dump,
       'journal_entries': journalEntries,
     };
     final dir = await getApplicationDocumentsDirectory();
-    final file = File('${dir.path}/lifeos-export-${DateTime.now().millisecondsSinceEpoch}.json');
+    final file = File('${dir.path}/dayly-export-${DateTime.now().millisecondsSinceEpoch}.json');
     await file.writeAsString(const JsonEncoder.withIndent('  ').convert(data));
     return file;
   }

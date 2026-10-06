@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'tokens.dart';
+import 'transitions.dart';
 
 /// Builds light, dark and high-contrast themes from the design tokens.
 abstract final class AppTheme {
@@ -46,6 +47,8 @@ abstract final class AppTheme {
     final isDark = brightness == Brightness.dark;
     final scheme = ColorScheme.fromSeed(seedColor: accent, brightness: brightness).copyWith(
       primary: accent,
+      secondary: Palette.secondary,
+      tertiary: Palette.sun,
       onPrimary: isDark ? Palette.darkBg : Colors.white,
       surface: surface,
       onSurface: text,
@@ -76,12 +79,23 @@ abstract final class AppTheme {
           labelMedium: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
           labelSmall: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500, letterSpacing: 0.3),
         )
-        .apply(bodyColor: text, displayColor: text);
+        .apply(bodyColor: text, displayColor: text, fontFamily: 'Nunito');
 
-    final shape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(Radii.md));
+    final shape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(Radii.pill));
 
     return ThemeData(
       useMaterial3: true,
+      fontFamily: 'Nunito',
+      pageTransitionsTheme: const PageTransitionsTheme(
+        builders: {
+          TargetPlatform.android: SoftRisePageTransitionsBuilder(),
+          TargetPlatform.iOS: SoftRisePageTransitionsBuilder(),
+          TargetPlatform.macOS: SoftRisePageTransitionsBuilder(),
+          TargetPlatform.linux: SoftRisePageTransitionsBuilder(),
+          TargetPlatform.windows: SoftRisePageTransitionsBuilder(),
+          TargetPlatform.fuchsia: SoftRisePageTransitionsBuilder(),
+        },
+      ),
       brightness: brightness,
       colorScheme: scheme,
       scaffoldBackgroundColor: bg,
@@ -101,18 +115,20 @@ abstract final class AppTheme {
       ),
       cardTheme: CardThemeData(
         color: surface,
-        elevation: 0,
+        elevation: isDark ? 0 : 3,
+        shadowColor: const Color(0xFFB4532A).withValues(alpha: 0.10),
+        surfaceTintColor: Colors.transparent,
         margin: EdgeInsets.zero,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(Radii.lg),
-          side: BorderSide(color: border, width: isDark ? 1 : 0.6),
+          side: isDark ? BorderSide(color: border) : BorderSide.none,
         ),
       ),
       dividerTheme: DividerThemeData(color: border, thickness: 1, space: 1),
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: surface,
         surfaceTintColor: Colors.transparent,
-        indicatorColor: accent.withValues(alpha: 0.14),
+        indicatorColor: accent.withValues(alpha: 0.18),
         height: 68,
         labelTextStyle: WidgetStatePropertyAll(textTheme.labelSmall),
         iconTheme: WidgetStateProperty.resolveWith(

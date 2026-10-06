@@ -1,5 +1,5 @@
 /**
- * LifeOS Cloud Functions (2nd gen).
+ * Dayly Cloud Functions (2nd gen).
  *
  * Callable functions require Firebase Auth and (by default) App Check.
  * Secrets: ANTHROPIC_API_KEY | OPENAI_API_KEY | GEMINI_API_KEY, NEWS_API_KEY.
@@ -35,8 +35,8 @@ const ENFORCE_APP_CHECK = defineBoolean("ENFORCE_APP_CHECK", { default: true });
 const REWARD_MODE = defineString("REWARD_MODE", { default: "callable" });
 const NEWS_PROVIDER = defineString("NEWS_PROVIDER", { default: "gnews" });
 const NEWS_API_KEY = defineSecret("NEWS_API_KEY");
-const ANDROID_PACKAGE = defineString("ANDROID_PACKAGE", { default: "com.lifeos.lifeos" });
-const PREMIUM_PRODUCT_IDS = defineString("PREMIUM_PRODUCT_IDS", { default: "lifeos_premium_monthly,lifeos_premium_yearly" });
+const ANDROID_PACKAGE = defineString("ANDROID_PACKAGE", { default: "com.dayly.app" });
+const PREMIUM_PRODUCT_IDS = defineString("PREMIUM_PRODUCT_IDS", { default: "dayly_premium_monthly,dayly_premium_yearly" });
 
 setGlobalOptions({ region: "us-central1", maxInstances: 20 });
 

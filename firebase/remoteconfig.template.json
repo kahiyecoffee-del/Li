@@ -89,7 +89,7 @@
     },
     "premium_features": {
       "defaultValue": {
-        "value": "[\"unlimited_ai\",\"advanced_score\",\"advanced_analytics\",\"no_ads\",\"advanced_planning\",\"advanced_finance\",\"unlimited_meals\",\"ai_memory_unlimited\",\"monthly_report\",\"offline_ai\"]"
+        "value": "[\"unlimited_ai\",\"advanced_score\",\"advanced_analytics\",\"no_ads\",\"advanced_planning\",\"advanced_finance\",\"unlimited_meals\",\"ai_memory_unlimited\",\"monthly_report\"]"
       },
       "valueType": "JSON"
     },
@@ -102,14 +102,14 @@
     },
     "offline_model_url": {
       "defaultValue": {
-        "value": ""
+        "value": "https://huggingface.co/litert-community/Qwen2.5-1.5B-Instruct/resolve/main/Qwen2.5-1.5B-Instruct_multi-prefill-seq_q8_ekv1280.task"
       },
       "valueType": "STRING",
-      "description": "HTTPS URL of the on-device model (.task, e.g. Gemma 3 1B int4) you host. Empty hides the offline assistant."
+      "description": "HTTPS URL of the on-device model (.task). Default: Qwen2.5 1.5B Instruct (Apache-2.0). Empty hides the offline assistant."
     },
     "offline_model_size_mb": {
       "defaultValue": {
-        "value": "550"
+        "value": "1600"
       },
       "valueType": "NUMBER",
       "description": "Shown to users before download."

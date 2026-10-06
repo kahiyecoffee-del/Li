@@ -1,4 +1,4 @@
-# LifeOS — Architecture
+# Dayly — Architecture
 
 ## 1. Overview
 

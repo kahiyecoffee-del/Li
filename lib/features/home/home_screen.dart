@@ -8,6 +8,7 @@ import '../../app/derived_providers.dart';
 import '../../app/providers.dart';
 import '../../core/l10n/labels.dart';
 import '../../core/theme/tokens.dart';
+import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
 import '../../domain/models/enums.dart';
 import '../../services/analytics/analytics_service.dart';
@@ -39,6 +40,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       unawaited(s.analytics.log(AnalyticsEvent.experimentExposure, {'experiment': e.key, 'variant': v}));
     }).variant(Experiment.homeLayout);
     unawaited(s.analytics.log(AnalyticsEvent.dailyBriefViewed, {'layout': _layout}));
+  }
+
+  String _emoji() {
+    final h = DateTime.now().hour;
+    return h < 6 ? '🌙' : (h < 12 ? '☀️' : (h < 18 ? '🌤️' : '🌆'));
   }
 
   String _greeting(BuildContext context, String name) {
@@ -101,15 +107,27 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Semantics(
-                        header: true,
-                        child: Text(
-                          '${_greeting(context, profile?.name ?? '')} 👋',
-                          style: context.text.headlineMedium,
+                      FadeSlideIn(
+                        child: HeroBanner(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Semantics(
+                                header: true,
+                                child: Text(
+                                  '${_greeting(context, profile?.name ?? '')} ${_emoji()}',
+                                  style: context.text.headlineMedium?.copyWith(color: Colors.white),
+                                ),
+                              ),
+                              const SizedBox(height: Space.xs),
+                              Text(
+                                l.dayAtAGlance,
+                                style: context.text.bodyLarge?.copyWith(color: Colors.white.withValues(alpha: 0.9)),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                      const SizedBox(height: Space.xs),
-                      Text(l.dayAtAGlance, style: context.text.bodyLarge?.copyWith(color: context.semantic.muted)),
                       const SizedBox(height: Space.md),
                       const WeatherChip(),
                     ],
@@ -120,7 +138,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, 120),
                 sliver: SliverList.separated(
                   itemCount: cards.length,
-                  itemBuilder: (_, i) => cards[i],
+                  itemBuilder: (_, i) => FadeSlideIn(
+                    delay: Duration(milliseconds: 70 * i.clamp(0, 8)),
+                    child: cards[i],
+                  ),
                   separatorBuilder: (_, _) => const SizedBox(height: Space.md),
                 ),
               ),

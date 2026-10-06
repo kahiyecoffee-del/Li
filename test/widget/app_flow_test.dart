@@ -34,7 +34,7 @@ void main() {
       await tester.tap(find.text('Skip'));
       await tester.pump(const Duration(milliseconds: 400));
     }
-    await pumpUntil(tester, find.text('Your LifeOS is ready.'));
+    await pumpUntil(tester, find.text('Dayly is ready for you!'));
     await tester.tap(find.text('Open my day'));
     await pumpUntil(tester, find.textContaining('Eray'));
 

@@ -95,13 +95,13 @@ abstract class AppLocalizations {
   /// No description provided for @appName.
   ///
   /// In en, this message translates to:
-  /// **'LifeOS'**
+  /// **'Dayly'**
   String get appName;
 
   /// No description provided for @appTagline.
   ///
   /// In en, this message translates to:
-  /// **'Your operating system for everyday life.'**
+  /// **'Make every day a good one.'**
   String get appTagline;
 
   /// No description provided for @ok.
@@ -683,7 +683,7 @@ abstract class AppLocalizations {
   /// No description provided for @onbReadyTitle.
   ///
   /// In en, this message translates to:
-  /// **'Your LifeOS is ready.'**
+  /// **'Dayly is ready for you!'**
   String get onbReadyTitle;
 
   /// No description provided for @onbReadyBody.
@@ -3017,7 +3017,7 @@ abstract class AppLocalizations {
   /// No description provided for @aiDataBody.
   ///
   /// In en, this message translates to:
-  /// **'When you use the assistant, LifeOS sends your message and only the data you allow below to our server, which forwards it to an AI provider to generate a reply. It is not used to train AI models by LifeOS. Your journal is never shared unless you turn it on.'**
+  /// **'When you use the assistant, Dayly sends your message and only the data you allow below to our server, which forwards it to an AI provider to generate a reply. It is not used to train AI models by Dayly. Your journal is never shared unless you turn it on.'**
   String get aiDataBody;
 
   /// No description provided for @scopeMoney.
@@ -3275,7 +3275,7 @@ abstract class AppLocalizations {
   /// No description provided for @premiumTitle.
   ///
   /// In en, this message translates to:
-  /// **'LifeOS Premium'**
+  /// **'Dayly Premium'**
   String get premiumTitle;
 
   /// No description provided for @premiumSubtitle.
@@ -3571,6 +3571,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The offline assistant is not available yet.'**
   String get offlineAiUnavailable;
+
+  /// No description provided for @aiSetupTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn on your assistant'**
+  String get aiSetupTitle;
+
+  /// No description provided for @aiSetupBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Download the free on-device assistant once and chat any time — even without internet. Your messages never leave your phone.'**
+  String get aiSetupBody;
+
+  /// No description provided for @aiSetupCta.
+  ///
+  /// In en, this message translates to:
+  /// **'Set up assistant'**
+  String get aiSetupCta;
+
+  /// No description provided for @allGoalsDone.
+  ///
+  /// In en, this message translates to:
+  /// **'All goals done today — amazing!'**
+  String get allGoalsDone;
 
   /// No description provided for @offlineAnswerLabel.
   ///

@@ -22,18 +22,20 @@ class LifeScreen extends ConsumerWidget {
     final flags = services.flags;
     final shopping = (ref.watch(shoppingProvider).list).where((s) => !s.checked).length;
     final badges = ref.watch(achievementsProvider).value?.length ?? 0;
-    final tiles = <(IconData, String, String, String?)>[
-      (Icons.repeat_rounded, l.lifeHabits, '/habits', null),
-      (Icons.mood_outlined, l.lifeMood, '/mood', null),
-      (Icons.book_outlined, l.lifeJournal, '/journal', null),
-      (Icons.restaurant_menu_outlined, l.lifeFood, '/food', null),
-      if (flags.isEnabled(Feature.pantry)) (Icons.kitchen_outlined, l.lifePantry, '/pantry', null),
-      (Icons.shopping_cart_outlined, l.lifeShopping, '/shopping', shopping > 0 ? '$shopping' : null),
-      if (flags.isEnabled(Feature.weeklyReport)) (Icons.insights_outlined, l.weeklyReport, '/reports/weekly', null),
+    final tiles = <(IconData, String, String, String?, Accent)>[
+      (Icons.repeat_rounded, l.lifeHabits, '/habits', null, Accent.goals),
+      (Icons.mood_rounded, l.lifeMood, '/mood', null, Accent.wellbeing),
+      (Icons.menu_book_rounded, l.lifeJournal, '/journal', null, Accent.insight),
+      (Icons.restaurant_menu_rounded, l.lifeFood, '/food', null, Accent.food),
+      if (flags.isEnabled(Feature.pantry)) (Icons.kitchen_rounded, l.lifePantry, '/pantry', null, Accent.money),
+      (Icons.shopping_cart_rounded, l.lifeShopping, '/shopping', shopping > 0 ? '$shopping' : null, Accent.plan),
+      if (flags.isEnabled(Feature.weeklyReport))
+        (Icons.insights_rounded, l.weeklyReport, '/reports/weekly', null, Accent.ai),
       if (flags.isEnabled(Feature.monthlyReport))
-        (Icons.calendar_month_outlined, l.monthlyReport, '/reports/monthly', null),
-      if (services.cloudEnabled && flags.isEnabled(Feature.news)) (Icons.newspaper_outlined, l.lifeNews, '/news', null),
-      (Icons.emoji_events_outlined, l.lifeAchievements, '/achievements', badges > 0 ? '$badges' : null),
+        (Icons.calendar_month_rounded, l.monthlyReport, '/reports/monthly', null, Accent.news),
+      if (services.cloudEnabled && flags.isEnabled(Feature.news))
+        (Icons.newspaper_rounded, l.lifeNews, '/news', null, Accent.news),
+      (Icons.emoji_events_rounded, l.lifeAchievements, '/achievements', badges > 0 ? '$badges' : null, Accent.score),
     ];
     final streak = ref.watch(streakProvider);
     return Scaffold(
@@ -51,29 +53,14 @@ class LifeScreen extends ConsumerWidget {
             physics: const NeverScrollableScrollPhysics(),
             mainAxisSpacing: Space.md,
             crossAxisSpacing: Space.md,
-            childAspectRatio: 1.35,
-            children: tiles
-                .map(
-                  (t) => AppCard(
-                    onTap: () => context.push(t.$3),
-                    semanticLabel: t.$2,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            Icon(t.$1, color: context.colors.primary, size: 28),
-                            const Spacer(),
-                            if (t.$4 != null) Badge(label: Text(t.$4!)),
-                          ],
-                        ),
-                        const Spacer(),
-                        Text(t.$2, style: context.text.titleMedium),
-                      ],
-                    ),
-                  ),
-                )
-                .toList(),
+            childAspectRatio: 1.2,
+            children: [
+              for (final (i, t) in tiles.indexed)
+                FadeSlideIn(
+                  delay: Duration(milliseconds: 50 * i),
+                  child: _tile(context, t),
+                ),
+            ],
           ),
           const SizedBox(height: Space.lg),
           const BannerSlot(),
@@ -81,4 +68,24 @@ class LifeScreen extends ConsumerWidget {
       ),
     );
   }
+
+  Widget _tile(BuildContext context, (IconData, String, String, String?, Accent) t) => AppCard(
+    color: Color.alphaBlend(t.$5.color.withValues(alpha: 0.07), context.colors.surface),
+    onTap: () => context.push(t.$3),
+    semanticLabel: t.$2,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            IconBubble(icon: t.$1, accent: t.$5, size: 38),
+            const Spacer(),
+            if (t.$4 != null) Badge(label: Text(t.$4!)),
+          ],
+        ),
+        const Spacer(),
+        Text(t.$2, style: context.text.titleMedium, maxLines: 2, overflow: TextOverflow.ellipsis),
+      ],
+    ),
+  );
 }

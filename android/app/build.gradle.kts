@@ -21,7 +21,7 @@ val keystoreProperties = Properties().apply {
 }
 
 android {
-    namespace = "com.lifeos.lifeos"
+    namespace = "com.dayly.app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -34,7 +34,7 @@ android {
 
     defaultConfig {
         // Change before the first Play upload; it can never change afterwards.
-        applicationId = "com.lifeos.lifeos"
+        applicationId = "com.dayly.app"
         // Firebase, ML Kit and Play Billing need API 23+.
         minSdk = maxOf(23, flutter.minSdkVersion)
         targetSdk = flutter.targetSdkVersion

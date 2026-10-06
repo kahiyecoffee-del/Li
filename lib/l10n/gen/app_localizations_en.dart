@@ -10,10 +10,10 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appName => 'LifeOS';
+  String get appName => 'Dayly';
 
   @override
-  String get appTagline => 'Your operating system for everyday life.';
+  String get appTagline => 'Make every day a good one.';
 
   @override
   String get ok => 'OK';
@@ -315,7 +315,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onbPickCity => 'Search a city';
 
   @override
-  String get onbReadyTitle => 'Your LifeOS is ready.';
+  String get onbReadyTitle => 'Dayly is ready for you!';
 
   @override
   String get onbReadyBody => 'Your home screen now shows what matters for you today.';
@@ -1637,7 +1637,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aiDataBody =>
-      'When you use the assistant, LifeOS sends your message and only the data you allow below to our server, which forwards it to an AI provider to generate a reply. It is not used to train AI models by LifeOS. Your journal is never shared unless you turn it on.';
+      'When you use the assistant, Dayly sends your message and only the data you allow below to our server, which forwards it to an AI provider to generate a reply. It is not used to train AI models by Dayly. Your journal is never shared unless you turn it on.';
 
   @override
   String get scopeMoney => 'Money (budget totals and categories)';
@@ -1781,7 +1781,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get newsTopicsSetting => 'News topics';
 
   @override
-  String get premiumTitle => 'LifeOS Premium';
+  String get premiumTitle => 'Dayly Premium';
 
   @override
   String get premiumSubtitle => 'More insight, no ads, unlimited assistant.';
@@ -1951,6 +1951,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get offlineAiUnavailable => 'The offline assistant is not available yet.';
+
+  @override
+  String get aiSetupTitle => 'Turn on your assistant';
+
+  @override
+  String get aiSetupBody =>
+      'Download the free on-device assistant once and chat any time — even without internet. Your messages never leave your phone.';
+
+  @override
+  String get aiSetupCta => 'Set up assistant';
+
+  @override
+  String get allGoalsDone => 'All goals done today — amazing!';
 
   @override
   String get offlineAnswerLabel => 'Offline answer · on-device model';

@@ -29,14 +29,14 @@ jobs:
       - name: Build APK (arm64, release mode, signed with the debug key)
         run: flutter build apk --release --target-platform android-arm64
       - name: Rename
-        run: cp build/app/outputs/flutter-apk/app-release.apk LifeOS-test-${{ github.run_number }}.apk
+        run: cp build/app/outputs/flutter-apk/app-release.apk Dayly-test-${{ github.run_number }}.apk
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: test-build-${{ github.run_number }}
-          name: LifeOS test build ${{ github.run_number }}
+          name: Dayly test build ${{ github.run_number }}
           target_commitish: ${{ github.sha }}
           prerelease: true
-          files: LifeOS-test-${{ github.run_number }}.apk
+          files: Dayly-test-${{ github.run_number }}.apk
           body: |
             Test build from commit ${{ github.sha }}.
             Install on an Android phone (arm64): open the APK and allow "install unknown apps".

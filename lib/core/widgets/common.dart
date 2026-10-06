@@ -36,16 +36,20 @@ class AppCard extends StatelessWidget {
 
 /// Small uppercase label + optional trailing action, above a card's content.
 class CardHeader extends StatelessWidget {
-  const CardHeader({super.key, required this.icon, required this.title, this.trailing});
+  const CardHeader({super.key, required this.icon, required this.title, this.trailing, this.accent});
 
   final IconData icon;
   final String title;
   final Widget? trailing;
+  final Accent? accent;
 
   @override
   Widget build(BuildContext context) => Row(
     children: [
-      Icon(icon, size: 18, color: context.semantic.muted),
+      if (accent == null)
+        Icon(icon, size: 18, color: context.semantic.muted)
+      else
+        IconBubble(icon: icon, accent: accent!, size: 30),
       const SizedBox(width: Space.sm),
       Expanded(
         child: Text(
@@ -55,6 +59,114 @@ class CardHeader extends StatelessWidget {
       ),
       ?trailing,
     ],
+  );
+}
+
+/// Pastel rounded square holding a colored icon.
+class IconBubble extends StatelessWidget {
+  const IconBubble({super.key, required this.icon, required this.accent, this.size = 40});
+
+  final IconData icon;
+  final Accent accent;
+  final double size;
+
+  @override
+  Widget build(BuildContext context) => Container(
+    width: size,
+    height: size,
+    decoration: BoxDecoration(
+      color: accent.tint(Theme.of(context).brightness),
+      borderRadius: BorderRadius.circular(size * 0.36),
+    ),
+    child: Icon(icon, size: size * 0.56, color: accent.color),
+  );
+}
+
+/// Fades and slides its child in once, after [delay]. Used for staggered
+/// card entrances; renders immediately when reduce-motion is on.
+class FadeSlideIn extends StatefulWidget {
+  const FadeSlideIn({super.key, required this.child, this.delay = Duration.zero, this.offset = 0.06});
+
+  final Widget child;
+  final Duration delay;
+  final double offset;
+
+  @override
+  State<FadeSlideIn> createState() => _FadeSlideInState();
+}
+
+class _FadeSlideInState extends State<FadeSlideIn> with SingleTickerProviderStateMixin {
+  // The delay is folded into the curve (no timers), so tests settle cleanly.
+  late final AnimationController _c = AnimationController(vsync: this, duration: widget.delay + Motion.slow);
+  late final Animation<double> _a = CurvedAnimation(
+    parent: _c,
+    curve: Interval(widget.delay.inMilliseconds / _c.duration!.inMilliseconds, 1, curve: Motion.curve),
+  );
+  bool _started = false;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_started) return;
+    _started = true;
+    if (MediaQuery.maybeDisableAnimationsOf(context) == true) {
+      _c.value = 1;
+    } else {
+      _c.forward();
+    }
+  }
+
+  @override
+  void dispose() {
+    _c.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => FadeTransition(
+    opacity: _a,
+    child: SlideTransition(
+      position: Tween(begin: Offset(0, widget.offset), end: Offset.zero).animate(_a),
+      child: widget.child,
+    ),
+  );
+}
+
+/// Counts up to [value] when it changes.
+class AnimatedCount extends StatelessWidget {
+  const AnimatedCount({super.key, required this.value, required this.format, this.style});
+
+  final int value;
+  final String Function(int) format;
+  final TextStyle? style;
+
+  @override
+  Widget build(BuildContext context) => TweenAnimationBuilder<double>(
+    tween: Tween(end: value.toDouble()),
+    duration: Motion.of(context, Motion.slow * 2),
+    curve: Motion.curve,
+    builder: (_, v, _) =>
+        Text(format(v.round()), style: style?.copyWith(fontFeatures: const [FontFeature.tabularFigures()])),
+  );
+}
+
+/// Soft gradient banner for screen tops.
+class HeroBanner extends StatelessWidget {
+  const HeroBanner({super.key, required this.child, this.gradient = Gradients.sunrise});
+
+  final Widget child;
+  final Gradient gradient;
+
+  @override
+  Widget build(BuildContext context) => DecoratedBox(
+    decoration: BoxDecoration(
+      gradient: gradient,
+      borderRadius: BorderRadius.circular(Radii.lg),
+      boxShadow: [
+        BoxShadow(color: Palette.accent.withValues(alpha: 0.25), blurRadius: 24, offset: const Offset(0, 10)),
+      ],
+    ),
+    child: Padding(padding: const EdgeInsets.all(Space.xl), child: child),
   );
 }
 
@@ -79,11 +191,12 @@ class SectionTitle extends StatelessWidget {
 }
 
 class EmptyState extends StatelessWidget {
-  const EmptyState({super.key, required this.icon, required this.message, this.action});
+  const EmptyState({super.key, required this.icon, required this.message, this.action, this.emoji});
 
   final IconData icon;
   final String message;
   final Widget? action;
+  final String? emoji;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -91,8 +204,16 @@ class EmptyState extends StatelessWidget {
     child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(icon, size: 40, color: context.semantic.muted),
-        const SizedBox(height: Space.md),
+        Container(
+          width: 84,
+          height: 84,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(color: context.semantic.surfaceAlt, shape: BoxShape.circle),
+          child: emoji != null
+              ? Text(emoji!, style: const TextStyle(fontSize: 38))
+              : Icon(icon, size: 38, color: context.colors.primary),
+        ),
+        const SizedBox(height: Space.lg),
         Text(
           message,
           textAlign: TextAlign.center,

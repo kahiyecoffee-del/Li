@@ -2,7 +2,7 @@ import 'package:intl/intl.dart';
 
 /// Monetary amount stored in integer minor units (e.g. kuruş / cents).
 ///
-/// All financial arithmetic in LifeOS is integer based to avoid floating point
+/// All financial arithmetic in Dayly is integer based to avoid floating point
 /// rounding drift. AI is never used to compute money values.
 class Money implements Comparable<Money> {
   const Money(this.minor, this.currency);

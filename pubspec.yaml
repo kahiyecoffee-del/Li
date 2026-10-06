@@ -88,3 +88,14 @@ flutter:
   uses-material-design: true
   assets:
     - assets/models/
+    - assets/fonts/OFL.txt
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito_400Regular.ttf
+        - asset: assets/fonts/Nunito_600SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Nunito_700Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Nunito_800ExtraBold.ttf
+          weight: 800

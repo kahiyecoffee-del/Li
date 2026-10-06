@@ -1,4 +1,4 @@
-/// Date helpers. LifeOS keys daily data by local calendar day ("yyyy-MM-dd").
+/// Date helpers. Dayly keys daily data by local calendar day ("yyyy-MM-dd").
 abstract final class Dates {
   static DateTime dateOnly(DateTime d) => DateTime(d.year, d.month, d.day);
 

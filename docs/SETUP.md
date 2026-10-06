@@ -1,4 +1,4 @@
-# LifeOS — Setup, build & test
+# Dayly — Setup, build & test
 
 ## 0. Prerequisites
 - Flutter stable (developed with 3.47 / Dart 3.13), Android Studio + Android SDK (API 36), JDK 17–21
@@ -10,7 +10,7 @@ local data, Life Score, budget, plan, habits, food, notifications and offline fe
 
 ## 1. Firebase setup
 1. Create a project in the Firebase console; add an **Android app** with your package name
-   (default `com.lifeos.lifeos` — change `applicationId`/`namespace` in `android/app/build.gradle.kts`
+   (default `com.dayly.app` — change `applicationId`/`namespace` in `android/app/build.gradle.kts`
    **before the first Play upload**, and `ANDROID_PACKAGE` in env/params).
 2. Download `google-services.json` → `android/app/google-services.json` (git-ignored). The Gradle build
    applies the Google Services and Crashlytics plugins only when this file exists.
@@ -37,8 +37,8 @@ Client values are `--dart-define`s (no secrets). Copy `env/example.json` → `en
 | `GOOGLE_SERVER_CLIENT_ID` | Firebase Auth → Google → Web SDK config | none (required for Google Sign-In) |
 | `FUNCTIONS_REGION` | region you deploy Functions to | `us-central1` |
 | `ADMOB_REWARDED_ANDROID`, `ADMOB_INTERSTITIAL_ANDROID`, `ADMOB_BANNER_ANDROID` | AdMob ad units | Google **test** ids |
-| `PREMIUM_MONTHLY_ID`, `PREMIUM_YEARLY_ID` | Play Console subscription product ids | `lifeos_premium_monthly/yearly` |
-| `ANDROID_PACKAGE` | your applicationId | `com.lifeos.lifeos` |
+| `PREMIUM_MONTHLY_ID`, `PREMIUM_YEARLY_ID` | Play Console subscription product ids | `dayly_premium_monthly/yearly` |
+| `ANDROID_PACKAGE` | your applicationId | `com.dayly.app` |
 | `PRIVACY_POLICY_URL`, `TERMS_URL`, `SUPPORT_EMAIL` | your published pages | empty → placeholder screen |
 | `APP_VERSION` | CI | `1.0.0` |
 | `USE_FIREBASE_EMULATORS`, `EMULATOR_HOST` | local dev | `false`, `10.0.2.2` |
@@ -102,7 +102,7 @@ firebase deploy --only functions
 6. Interstitials are disabled until you set `interstitial_frequency` > 0 in Remote Config.
 
 ## 5. Google Play Billing setup
-1. Play Console → Monetize → Subscriptions: create `lifeos_premium_monthly` and `lifeos_premium_yearly`
+1. Play Console → Monetize → Subscriptions: create `dayly_premium_monthly` and `dayly_premium_yearly`
    (each with a base plan; optional free-trial offer).
 2. Grant the Functions runtime service account (`<project>@appspot.gserviceaccount.com` or the compute
    default SA) access in Play Console → Users and permissions with *View financial data* and *Manage orders

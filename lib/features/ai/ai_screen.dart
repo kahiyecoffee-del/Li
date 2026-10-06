@@ -165,16 +165,41 @@ class _Empty extends ConsumerWidget {
       padding: const EdgeInsets.all(Space.page),
       children: [
         const SizedBox(height: Space.xl),
-        Icon(Icons.auto_awesome, size: 40, color: context.colors.primary),
+        const FadeSlideIn(
+          child: Center(
+            child: IconBubble(icon: Icons.auto_awesome_rounded, accent: Accent.ai, size: 72),
+          ),
+        ),
         const SizedBox(height: Space.md),
         Text(l.aiEmptyTitle, style: context.text.headlineSmall, textAlign: TextAlign.center),
         const SizedBox(height: Space.xl),
-        if (!enabled)
-          Text(
-            l.errorAiUnavailable,
-            textAlign: TextAlign.center,
-            style: context.text.bodyMedium?.copyWith(color: context.semantic.muted),
+        if (!enabled) ...[
+          FadeSlideIn(
+            delay: Motion.fast,
+            child: HeroBanner(
+              gradient: Gradients.dusk,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(l.aiSetupTitle, style: context.text.titleLarge?.copyWith(color: Colors.white)),
+                  const SizedBox(height: Space.xs),
+                  Text(
+                    l.aiSetupBody,
+                    style: context.text.bodyMedium?.copyWith(color: Colors.white.withValues(alpha: 0.92)),
+                  ),
+                  const SizedBox(height: Space.lg),
+                  FilledButton.icon(
+                    style: FilledButton.styleFrom(backgroundColor: Colors.white, foregroundColor: Palette.secondary),
+                    onPressed: () => context.push('/settings/offline-ai'),
+                    icon: const Icon(Icons.download_rounded),
+                    label: Text(l.aiSetupCta),
+                  ),
+                ],
+              ),
+            ),
           ),
+          const SizedBox(height: Space.xl),
+        ],
         Wrap(
           alignment: WrapAlignment.center,
           spacing: Space.sm,
@@ -234,7 +259,7 @@ class _Bubble extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final mine = message.role == ChatRole.user;
     final bg = mine ? context.colors.primary : context.semantic.surfaceAlt;
-    final fg = mine ? context.colors.onPrimary : context.colors.onSurface;
+    final fg = mine ? Colors.white : context.colors.onSurface;
     return Column(
       crossAxisAlignment: mine ? CrossAxisAlignment.end : CrossAxisAlignment.start,
       children: [
@@ -242,7 +267,16 @@ class _Bubble extends ConsumerWidget {
           margin: const EdgeInsets.symmetric(vertical: Space.xs),
           padding: const EdgeInsets.symmetric(horizontal: Space.lg, vertical: Space.md),
           constraints: BoxConstraints(maxWidth: MediaQuery.sizeOf(context).width * 0.82),
-          decoration: BoxDecoration(color: bg, borderRadius: BorderRadius.circular(Radii.md)),
+          decoration: BoxDecoration(
+            color: mine ? null : bg,
+            gradient: mine ? Gradients.sunrise : null,
+            borderRadius: BorderRadius.only(
+              topLeft: const Radius.circular(Radii.md),
+              topRight: const Radius.circular(Radii.md),
+              bottomLeft: Radius.circular(mine ? Radii.md : 6),
+              bottomRight: Radius.circular(mine ? 6 : Radii.md),
+            ),
+          ),
           child: SelectableText(message.text, style: context.text.bodyMedium?.copyWith(color: fg)),
         ),
         if (message.local)
