@@ -169,6 +169,20 @@ AdviceText describeAdvice(Advice a, AppLocalizations l, Fmt fmt) {
       Icons.menu_book_rounded,
       Accent.insight,
     ),
+    AdviceKind.journalLift => AdviceText(
+      l.advJournalLift(a.name ?? ''),
+      l.actPlanDay,
+      (c) => lio(c, 'plan'),
+      Icons.wb_sunny_rounded,
+      Accent.insight,
+    ),
+    AdviceKind.journalDrain => AdviceText(
+      l.advJournalDrain(a.name ?? ''),
+      l.actTalk,
+      (c) => lio(c, 'mood'),
+      Icons.cloud_rounded,
+      Accent.insight,
+    ),
     AdviceKind.shoppingPending => AdviceText(
       l.advShopping(a.count ?? 0),
       l.actShopping,

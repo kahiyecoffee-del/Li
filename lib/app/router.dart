@@ -11,6 +11,7 @@ import '../features/home/today_screen.dart';
 import '../features/lio/insights_screen.dart';
 import '../features/lio/lio_guide_screen.dart';
 import '../features/life/journal_editor_screen.dart';
+import '../features/life/journal_read_screen.dart';
 import '../features/life/achievements_screen.dart';
 import '../features/life/food_screen.dart';
 import '../features/life/habits_screen.dart';
@@ -176,6 +177,10 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: Routes.calc, builder: (_, _) => const CalculatorScreen()),
       GoRoute(path: '/insights', builder: (_, _) => const InsightsScreen()),
       GoRoute(path: '/journal/new', builder: (_, _) => const JournalEditorScreen()),
+      GoRoute(
+        path: '/journal/:id',
+        builder: (_, s) => JournalReadScreen(id: s.pathParameters['id']!),
+      ),
       GoRoute(path: Routes.money, builder: (_, _) => const MoneyScreen()),
       GoRoute(path: Routes.score, builder: (_, _) => const ScoreScreen()),
       GoRoute(path: Routes.settings, builder: (_, _) => const SettingsScreen()),

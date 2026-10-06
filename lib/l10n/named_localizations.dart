@@ -46,6 +46,8 @@ class _NamedEn extends AppLocalizationsEn {
   String get lioSuggestions => _r(super.lioSuggestions);
   @override
   String get actTalk => _r(super.actTalk);
+  @override
+  String get journalKnowsTitle => _r(super.journalKnowsTitle);
 }
 
 class _NamedTr extends AppLocalizationsTr {
@@ -86,6 +88,8 @@ class _NamedTr extends AppLocalizationsTr {
   String get lioSuggestions => _r(super.lioSuggestions);
   @override
   String get actTalk => _r(super.actTalk);
+  @override
+  String get journalKnowsTitle => _r(super.journalKnowsTitle);
 }
 
 /// App strings with the user's name for the assistant instead of "Lio".

@@ -3171,6 +3171,34 @@ class AppLocalizationsEn extends AppLocalizations {
   String get quickJournal => 'Journal';
 
   @override
+  String advJournalLift(String word) {
+    return 'On days you write about “$word”, your mood is usually better. Make some room for it today?';
+  }
+
+  @override
+  String advJournalDrain(String word) {
+    return 'Days with “$word” in your journal tend to be harder. Anything you can plan around it?';
+  }
+
+  @override
+  String get journalKnowsTitle => 'What Lio has learned';
+
+  @override
+  String get journalThemes => 'You write most about';
+
+  @override
+  String get journalLifts => 'Lifts your mood';
+
+  @override
+  String get journalDrains => 'Makes days harder';
+
+  @override
+  String get journalLearnHint => 'Keep writing and logging how you feel; I’ll spot patterns after about a week.';
+
+  @override
+  String get journalOnDevice => 'Learned on this phone only.';
+
+  @override
   String journalStreakLabel(int count) {
     return '$count-day streak';
   }

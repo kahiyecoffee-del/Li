@@ -10,6 +10,7 @@ import '../models/habit.dart';
 import '../models/money_models.dart';
 import '../models/task_item.dart';
 import '../models/wellbeing.dart';
+import 'journal_learner.dart';
 
 /// Which part of life a suggestion is about (icon, colour, where it leads).
 enum AdviceArea { money, plan, habits, wellbeing, journal, food }
@@ -35,6 +36,8 @@ enum AdviceKind {
   moodShortSleep,
   journalNudge,
   journalStreak,
+  journalLift,
+  journalDrain,
   shoppingPending,
   cookFromPantry,
 }
@@ -81,6 +84,7 @@ class AdvisorInput {
     this.shopping = const [],
     this.pantry = const [],
     this.recipes = const [],
+    this.journalProfile,
   });
 
   final DateTime now;
@@ -99,6 +103,9 @@ class AdvisorInput {
   final List<ShoppingItem> shopping;
   final List<String> pantry;
   final List<Recipe> recipes;
+
+  /// Patterns learned from the journal (null when the user turned it off).
+  final JournalProfile? journalProfile;
 }
 
 /// Lio's advisor: looks across everything the user has entered and returns
@@ -306,7 +313,20 @@ class LioAdvisor {
 
   // ---------------------------------------------------------------- journal
 
-  List<Advice> _journal(AdvisorInput i) {
+  List<Advice> _journal(AdvisorInput i) => [..._journalHabit(i), ..._journalPatterns(i)];
+
+  List<Advice> _journalPatterns(AdvisorInput i) {
+    final p = i.journalProfile;
+    if (p == null) return const [];
+    return [
+      if (p.drains.isNotEmpty)
+        Advice(AdviceKind.journalDrain, AdviceArea.journal, priority: 38, name: p.drains.first.word),
+      if (p.lifts.isNotEmpty)
+        Advice(AdviceKind.journalLift, AdviceArea.journal, priority: 33, name: p.lifts.first.word),
+    ];
+  }
+
+  List<Advice> _journalHabit(AdvisorInput i) {
     final today = Dates.dateOnly(i.now);
     final days = i.journalDates.map(Dates.dateOnly).toSet();
     var streak = 0;

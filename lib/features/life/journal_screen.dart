@@ -3,12 +3,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/actions.dart';
+import '../../app/derived_providers.dart';
 import '../../app/providers.dart';
 import '../../core/l10n/labels.dart';
 import '../../core/theme/tokens.dart';
 import '../../core/utils/dates.dart';
 import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
+import '../../core/widgets/mascot.dart';
 import '../../domain/models/wellbeing.dart';
 import 'mood_sheet.dart';
 
@@ -23,7 +25,6 @@ class JournalScreen extends ConsumerStatefulWidget {
 
 class _JournalScreenState extends ConsumerState<JournalScreen> {
   final _search = TextEditingController();
-  final _open = <String>{};
 
   @override
   void dispose() {
@@ -99,6 +100,10 @@ class _JournalScreenState extends ConsumerState<JournalScreen> {
                   ),
                 ],
               ),
+              if (ref.watch(settingsProvider.select((x) => x.lioLearnsJournal))) ...[
+                const SizedBox(height: Space.md),
+                const _Learned(),
+              ],
               const SizedBox(height: Space.md),
               TextField(
                 controller: _search,
@@ -122,7 +127,7 @@ class _JournalScreenState extends ConsumerState<JournalScreen> {
                 Padding(
                   padding: const EdgeInsets.only(bottom: Space.sm),
                   child: AppCard(
-                    onTap: () => setState(() => _open.contains(e.id) ? _open.remove(e.id) : _open.add(e.id)),
+                    onTap: () => context.push('/journal/${e.id}'),
                     padding: const EdgeInsets.fromLTRB(Space.lg, Space.sm, Space.xs, Space.md),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -164,8 +169,8 @@ class _JournalScreenState extends ConsumerState<JournalScreen> {
                           child: Text(
                             e.text,
                             style: context.text.bodyLarge,
-                            maxLines: _open.contains(e.id) ? null : 4,
-                            overflow: _open.contains(e.id) ? null : TextOverflow.ellipsis,
+                            maxLines: 4,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                       ],
@@ -203,4 +208,66 @@ class _Stat extends StatelessWidget {
       ],
     ),
   );
+}
+
+/// What Lio learned from the journal on this phone.
+class _Learned extends ConsumerWidget {
+  const _Learned();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l = context.l10n;
+    final p = ref.watch(journalProfileProvider);
+    Widget chips(String title, List<String> words, Color color) => Padding(
+      padding: const EdgeInsets.only(top: Space.sm),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(title, style: context.text.labelMedium?.copyWith(color: context.semantic.muted)),
+          const SizedBox(height: Space.xs),
+          Wrap(
+            spacing: Space.xs,
+            runSpacing: Space.xs,
+            children: [
+              for (final w in words)
+                Chip(
+                  label: Text(w),
+                  visualDensity: VisualDensity.compact,
+                  side: BorderSide(color: color.withValues(alpha: 0.5)),
+                ),
+            ],
+          ),
+        ],
+      ),
+    );
+    return AppCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Mascot(mood: MascotMood.thoughtful, size: 36, float: false),
+              const SizedBox(width: Space.sm),
+              Expanded(child: Text(l.journalKnowsTitle, style: context.text.titleMedium)),
+            ],
+          ),
+          if (p == null || p.isEmpty)
+            Padding(
+              padding: const EdgeInsets.only(top: Space.sm),
+              child: Text(l.journalLearnHint, style: context.text.bodyMedium),
+            )
+          else ...[
+            if (p.themes.isNotEmpty)
+              chips(l.journalThemes, p.themes.take(6).map((t) => t.word).toList(), Accent.insight.color),
+            if (p.lifts.isNotEmpty)
+              chips(l.journalLifts, p.lifts.map((x) => x.word).toList(), context.semantic.positive),
+            if (p.drains.isNotEmpty)
+              chips(l.journalDrains, p.drains.map((x) => x.word).toList(), context.semantic.warning),
+          ],
+          const SizedBox(height: Space.sm),
+          Text(l.journalOnDevice, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
+        ],
+      ),
+    );
+  }
 }

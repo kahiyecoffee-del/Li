@@ -5708,6 +5708,54 @@ abstract class AppLocalizations {
   /// **'Journal'**
   String get quickJournal;
 
+  /// No description provided for @advJournalLift.
+  ///
+  /// In en, this message translates to:
+  /// **'On days you write about “{word}”, your mood is usually better. Make some room for it today?'**
+  String advJournalLift(String word);
+
+  /// No description provided for @advJournalDrain.
+  ///
+  /// In en, this message translates to:
+  /// **'Days with “{word}” in your journal tend to be harder. Anything you can plan around it?'**
+  String advJournalDrain(String word);
+
+  /// No description provided for @journalKnowsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What Lio has learned'**
+  String get journalKnowsTitle;
+
+  /// No description provided for @journalThemes.
+  ///
+  /// In en, this message translates to:
+  /// **'You write most about'**
+  String get journalThemes;
+
+  /// No description provided for @journalLifts.
+  ///
+  /// In en, this message translates to:
+  /// **'Lifts your mood'**
+  String get journalLifts;
+
+  /// No description provided for @journalDrains.
+  ///
+  /// In en, this message translates to:
+  /// **'Makes days harder'**
+  String get journalDrains;
+
+  /// No description provided for @journalLearnHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep writing and logging how you feel; I’ll spot patterns after about a week.'**
+  String get journalLearnHint;
+
+  /// No description provided for @journalOnDevice.
+  ///
+  /// In en, this message translates to:
+  /// **'Learned on this phone only.'**
+  String get journalOnDevice;
+
   /// No description provided for @journalStreakLabel.
   ///
   /// In en, this message translates to:

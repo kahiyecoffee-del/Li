@@ -1907,6 +1907,28 @@
   "actShopping": "Open list",
   "actRecipe": "See recipe",
   "quickJournal": "Journal",
+  "advJournalLift": "On days you write about “{word}”, your mood is usually better. Make some room for it today?",
+  "@advJournalLift": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "advJournalDrain": "Days with “{word}” in your journal tend to be harder. Anything you can plan around it?",
+  "@advJournalDrain": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "journalKnowsTitle": "What Lio has learned",
+  "journalThemes": "You write most about",
+  "journalLifts": "Lifts your mood",
+  "journalDrains": "Makes days harder",
+  "journalLearnHint": "Keep writing and logging how you feel; I’ll spot patterns after about a week.",
+  "journalOnDevice": "Learned on this phone only.",
   "journalStreakLabel": "{count}-day streak",
   "@journalStreakLabel": {
     "placeholders": {

@@ -3136,6 +3136,35 @@ class AppLocalizationsTr extends AppLocalizations {
   String get quickJournal => 'Günlük';
 
   @override
+  String advJournalLift(String word) {
+    return 'Günlüğünde “$word” geçen günlerde ruh halin genelde daha iyi. Bugün ona biraz yer açalım mı?';
+  }
+
+  @override
+  String advJournalDrain(String word) {
+    return '“$word” geçen günler genelde daha zor geçiyor. Buna karşı planlayabileceğin bir şey var mı?';
+  }
+
+  @override
+  String get journalKnowsTitle => 'Lio’nun öğrendikleri';
+
+  @override
+  String get journalThemes => 'En çok yazdıkların';
+
+  @override
+  String get journalLifts => 'Ruh halini yükseltenler';
+
+  @override
+  String get journalDrains => 'Günleri zorlaştıranlar';
+
+  @override
+  String get journalLearnHint =>
+      'Yazmaya ve nasıl hissettiğini işaretlemeye devam et; yaklaşık bir hafta sonra örüntüleri göreceğim.';
+
+  @override
+  String get journalOnDevice => 'Sadece bu telefonda öğrenildi.';
+
+  @override
   String journalStreakLabel(int count) {
     return '$count günlük seri';
   }

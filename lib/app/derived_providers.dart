@@ -9,6 +9,7 @@ import '../domain/engines/life_score_engine.dart';
 import '../domain/engines/recipe_library.dart';
 import '../domain/engines/report_engine.dart';
 import '../domain/engines/streaks.dart';
+import '../domain/lio/journal_learner.dart';
 import '../domain/lio/lio_advisor.dart';
 import '../domain/models/progress.dart';
 import '../services/ai/ai_models.dart';
@@ -275,6 +276,18 @@ final adviceProvider = Provider<List<Advice>>((ref) {
       shopping: ref.watch(shoppingProvider).list,
       pantry: [for (final p in ref.watch(pantryProvider).list) p.name],
       recipes: RecipeLibrary.all(lang),
+      journalProfile: ref.watch(journalProfileProvider),
     ),
+  );
+});
+
+/// What Lio learned from the journal on this phone; null when the user
+/// turned learning off in Settings.
+final journalProfileProvider = Provider<JournalProfile?>((ref) {
+  if (!ref.watch(settingsProvider.select((s) => s.lioLearnsJournal))) return null;
+  return const JournalLearner().learn(
+    [for (final e in ref.watch(journalProvider).list) JournalNote(e.createdAt, e.text)],
+    {for (final m in ref.watch(moodsProvider).list) m.id: m.mood},
+    Dates.dayKey,
   );
 });

@@ -389,7 +389,10 @@ void main() {
     await tester.binding.handlePopRoute();
     await openExploreTile(tester, 'Journal');
     await pumpUntil(tester, find.text('1-day streak'));
-    expect(find.textContaining('A calm walk'), findsOneWidget);
+    expect(find.text('What Lio has learned'), findsOneWidget);
+    await tester.tap(find.textContaining('A calm walk'));
+    await pumpUntil(tester, find.textContaining('words'));
+    expect(find.text('🙂'), findsOneWidget);
     await tearDownApp(tester);
   });
 }
