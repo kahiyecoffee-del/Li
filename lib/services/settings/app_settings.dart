@@ -21,6 +21,7 @@ class AppSettings {
     this.aiScopes = const {AiDataScope.money, AiDataScope.tasks, AiDataScope.habits, AiDataScope.food},
     this.personalizedAds = true,
     this.preferOfflineAi = false,
+    this.showLio = true,
   });
 
   final ThemeMode themeMode;
@@ -38,6 +39,9 @@ class AppSettings {
   /// Use the downloaded on-device model even when online.
   final bool preferOfflineAi;
 
+  /// Lio, the floating companion that offers tips and inspiration.
+  final bool showLio;
+
   AppSettings copyWith({
     ThemeMode? themeMode,
     bool? highContrast,
@@ -50,6 +54,7 @@ class AppSettings {
     Set<AiDataScope>? aiScopes,
     bool? personalizedAds,
     bool? preferOfflineAi,
+    bool? showLio,
   }) => AppSettings(
     themeMode: themeMode ?? this.themeMode,
     highContrast: highContrast ?? this.highContrast,
@@ -61,6 +66,7 @@ class AppSettings {
     aiScopes: aiScopes ?? this.aiScopes,
     personalizedAds: personalizedAds ?? this.personalizedAds,
     preferOfflineAi: preferOfflineAi ?? this.preferOfflineAi,
+    showLio: showLio ?? this.showLio,
   );
 }
 
@@ -89,6 +95,7 @@ class SettingsStore {
           : scopes.map((s) => byName(AiDataScope.values, s, AiDataScope.money)).toSet(),
       personalizedAds: _p.getBool('personalizedAds') ?? true,
       preferOfflineAi: _p.getBool('preferOfflineAi') ?? false,
+      showLio: _p.getBool('showLio') ?? true,
     );
   }
 
@@ -107,5 +114,6 @@ class SettingsStore {
     await _p.setStringList('aiScopes', s.aiScopes.map((e) => e.name).toList());
     await _p.setBool('personalizedAds', s.personalizedAds);
     await _p.setBool('preferOfflineAi', s.preferOfflineAi);
+    await _p.setBool('showLio', s.showLio);
   }
 }

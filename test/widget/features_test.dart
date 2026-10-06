@@ -146,4 +146,19 @@ void main() {
     expect(app.ai.requests, isEmpty, reason: 'no cloud call, no credits used');
     await tearDownApp(tester);
   });
+
+  testWidgets('Lio: tap for a tip, then jump to the assistant', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(prefs: {'showLio': true})))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('Your day at a glance.'));
+    final lio = find.bySemanticsLabel('Lio, your companion');
+    await pumpUntil(tester, lio);
+    await tester.tap(lio);
+    await pumpUntil(tester, find.text('Ask Lio'));
+    expect(find.text('Another one'), findsOneWidget);
+    await tester.tap(find.text('Ask Lio'));
+    await pumpUntil(tester, find.text('How can I help today?'));
+    await tearDownApp(tester);
+  });
 }

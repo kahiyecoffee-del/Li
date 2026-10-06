@@ -1971,4 +1971,127 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get localModelsInfo => 'Harcama ve alışveriş kategorileri cihazında çalışan küçük modellerle tanınır.';
+
+  @override
+  String get lioName => 'Lio, yol arkadaşın';
+
+  @override
+  String get lioAsk => 'Lio’ya sor';
+
+  @override
+  String get lioAnother => 'Bir tane daha';
+
+  @override
+  String get lioHide => 'Lio’yu gizle';
+
+  @override
+  String get lioHidden => 'Lio dinleniyor. Ayarlardan geri getirebilirsin.';
+
+  @override
+  String get lioSetting => 'Lio yol arkadaşı';
+
+  @override
+  String get lioSettingHelp => 'Lio uygulamada seninle gezer; ipuçları ve biraz ilham verir.';
+
+  @override
+  String lioGoalsLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Bugün $count hedefin kaldı. Teker teker gidelim.',
+      one: 'Bugün bir hedefin kaldı. Yaparsın!',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get lioAllDone => 'Bugünün tüm hedefleri tamam. Seninle gurur duyuyorum!';
+
+  @override
+  String get lioOverBudget => 'Bugün bütçeyi biraz aştık. Yarın biraz yavaşlarız, dert etme.';
+
+  @override
+  String lioUnderBudget(String amount) {
+    return 'Bugün için hâlâ $amount alanın var. Güzel dengeliyorsun!';
+  }
+
+  @override
+  String lioStreak(int days) {
+    return '$days günlük seri! Ateşi canlı tutalım.';
+  }
+
+  @override
+  String get lioMoodCheck => 'Nasıl hissediyorsun? Kısa bir ruh hali kaydı sana daha iyi yardım etmemi sağlar.';
+
+  @override
+  String get lioNight => 'Saat ilerledi. İyi bir uyku yarın için en iyi plandır.';
+
+  @override
+  String get lioTipHome1 => 'Her şeyi iki saniyede kaydetmek için + butonuna dokun.';
+
+  @override
+  String get lioTipHome2 => 'Gününü yenilemek için aşağı çek.';
+
+  @override
+  String get lioTipPlan1 => 'En zor işini başa koy; enerjin en çok günün başında.';
+
+  @override
+  String get lioTipPlan2 => '15 dakikadan kısa işler mi var? Hepsini art arda bitir.';
+
+  @override
+  String get lioTipPlan3 => 'Gününü planlamamı iste, her şeyi senin için sıralayayım.';
+
+  @override
+  String get lioTipMoney1 => '“250 öğle yemeği” yazman yeterli, gerisini ben hallederim.';
+
+  @override
+  String get lioTipMoney2 => 'Küçük günlük tasarruflar büyük aylar yapar.';
+
+  @override
+  String get lioTipMoney3 => 'Fişin fotoğrafını çek, toplamı senin için okurum.';
+
+  @override
+  String get lioTipLife1 => 'İki dakikalık günlük, bütün günün gürültüsünü dindirebilir.';
+
+  @override
+  String get lioTipLife2 => 'Buzdolabında ne olduğunu söyle, sana bir yemek önereyim.';
+
+  @override
+  String get lioTipLife3 => 'Alışkanlıklar küçükken kalıcı olur. Bir bardak suyla başla.';
+
+  @override
+  String get lioInspire1 => 'Her gün atılan küçük adımlar, bir gün yapılacak büyük planlardan iyidir.';
+
+  @override
+  String get lioInspire2 => 'Her şeyi yapmak zorunda değilsin. Sadece sıradaki doğru şeyi.';
+
+  @override
+  String get lioInspire3 => 'Dinlenmek planın bir parçası, plandan kaçış değil.';
+
+  @override
+  String get lioInspire4 => 'Mükemmellik değil, ilerleme.';
+
+  @override
+  String get lioInspire5 => 'Sakin bir sabah, güzel bir gün getirir.';
+
+  @override
+  String get lioInspire6 => 'Bugün geldiğin yolla gurur duy.';
+
+  @override
+  String get lioInspire7 => 'Biraz su iç. Gelecekteki sen teşekkür ediyor.';
+
+  @override
+  String get lioInspire8 => 'Küçük bir harcamaya “hayır” demek, büyük bir hayale “evet” demektir.';
+
+  @override
+  String get lioInspire9 => '“Bitti” çok güzel bir kelime.';
+
+  @override
+  String get lioInspire10 => 'Derin bir nefes al. Sandığından daha iyi gidiyorsun.';
+
+  @override
+  String get lioInspire11 => 'Bugün küçük bir şeye başlamak için güzel bir gün.';
+
+  @override
+  String get lioInspire12 => 'Kendine nazik olmak da sayılır.';
 }

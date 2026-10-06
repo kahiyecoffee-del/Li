@@ -1989,4 +1989,127 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get localModelsInfo =>
       'Expense and shopping categories are recognised by small models that run on your device.';
+
+  @override
+  String get lioName => 'Lio, your companion';
+
+  @override
+  String get lioAsk => 'Ask Lio';
+
+  @override
+  String get lioAnother => 'Another one';
+
+  @override
+  String get lioHide => 'Hide Lio';
+
+  @override
+  String get lioHidden => 'Lio is resting. Bring him back in Settings.';
+
+  @override
+  String get lioSetting => 'Lio companion';
+
+  @override
+  String get lioSettingHelp => 'Lio walks around the app with tips and a little inspiration.';
+
+  @override
+  String lioGoalsLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count goals left today. One at a time.',
+      one: 'One goal left today. You’ve got this!',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get lioAllDone => 'Every goal done today. I’m so proud of you!';
+
+  @override
+  String get lioOverBudget => 'We went a bit over today. Tomorrow we take it slow — no stress.';
+
+  @override
+  String lioUnderBudget(String amount) {
+    return 'You still have $amount for today. Nicely balanced!';
+  }
+
+  @override
+  String lioStreak(int days) {
+    return '$days-day streak! Let’s keep the fire going.';
+  }
+
+  @override
+  String get lioMoodCheck => 'How are you feeling? A quick mood check helps me help you.';
+
+  @override
+  String get lioNight => 'It’s getting late. A good night’s sleep is the best plan for tomorrow.';
+
+  @override
+  String get lioTipHome1 => 'Tap the + button to log anything in two seconds.';
+
+  @override
+  String get lioTipHome2 => 'Pull down to refresh your day.';
+
+  @override
+  String get lioTipPlan1 => 'Put your hardest task first — your energy is highest early.';
+
+  @override
+  String get lioTipPlan2 => 'Small tasks under 15 minutes? Batch them together.';
+
+  @override
+  String get lioTipPlan3 => 'Ask me to plan your day and I’ll arrange everything for you.';
+
+  @override
+  String get lioTipMoney1 => 'Just type “250 lunch” — I’ll figure out the rest.';
+
+  @override
+  String get lioTipMoney2 => 'Small daily savings add up to big months.';
+
+  @override
+  String get lioTipMoney3 => 'Snap a receipt and I’ll read the total for you.';
+
+  @override
+  String get lioTipLife1 => 'Two minutes of journaling can clear a whole day’s noise.';
+
+  @override
+  String get lioTipLife2 => 'Tell me what’s in your fridge and I’ll suggest a meal.';
+
+  @override
+  String get lioTipLife3 => 'Habits stick best when they’re tiny. Start with one glass of water.';
+
+  @override
+  String get lioInspire1 => 'Small steps every day beat big plans someday.';
+
+  @override
+  String get lioInspire2 => 'You don’t have to do everything. Just the next right thing.';
+
+  @override
+  String get lioInspire3 => 'Rest is part of the plan, not a break from it.';
+
+  @override
+  String get lioInspire4 => 'Progress, not perfection.';
+
+  @override
+  String get lioInspire5 => 'A calm morning makes a kind day.';
+
+  @override
+  String get lioInspire6 => 'Be proud of how far you’ve come today.';
+
+  @override
+  String get lioInspire7 => 'Drink some water. Future you says thanks.';
+
+  @override
+  String get lioInspire8 => 'Every “no” to a small expense is a “yes” to a bigger dream.';
+
+  @override
+  String get lioInspire9 => 'Done is a beautiful word.';
+
+  @override
+  String get lioInspire10 => 'Take a deep breath. You’re doing better than you think.';
+
+  @override
+  String get lioInspire11 => 'Today is a good day to start something small.';
+
+  @override
+  String get lioInspire12 => 'Kindness to yourself counts too.';
 }

@@ -7,6 +7,7 @@ import '../../app/providers.dart';
 import '../../core/l10n/labels.dart';
 import '../../core/theme/tokens.dart';
 import '../../core/widgets/common.dart';
+import '../lio/lio_companion.dart';
 
 /// Bottom navigation: HOME · PLAN · MONEY · LIFE · AI.
 class MainShell extends ConsumerWidget {
@@ -18,13 +19,19 @@ class MainShell extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l = context.l10n;
     final online = ref.watch(onlineProvider).value ?? true;
+    final showLio = ref.watch(settingsProvider.select((s) => s.showLio));
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: [
-          if (!online) SafeArea(bottom: false, child: const OfflineBanner()),
-          Expanded(
-            child: MediaQuery.removePadding(context: context, removeTop: !online, child: shell),
+          Column(
+            children: [
+              if (!online) SafeArea(bottom: false, child: const OfflineBanner()),
+              Expanded(
+                child: MediaQuery.removePadding(context: context, removeTop: !online, child: shell),
+              ),
+            ],
           ),
+          if (showLio) Positioned.fill(child: LioCompanion(tab: shell.currentIndex)),
         ],
       ),
       bottomNavigationBar: _FloatingNavBar(

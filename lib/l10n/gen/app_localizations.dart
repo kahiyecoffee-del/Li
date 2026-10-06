@@ -3625,6 +3625,228 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Expense and shopping categories are recognised by small models that run on your device.'**
   String get localModelsInfo;
+
+  /// No description provided for @lioName.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio, your companion'**
+  String get lioName;
+
+  /// No description provided for @lioAsk.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask Lio'**
+  String get lioAsk;
+
+  /// No description provided for @lioAnother.
+  ///
+  /// In en, this message translates to:
+  /// **'Another one'**
+  String get lioAnother;
+
+  /// No description provided for @lioHide.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide Lio'**
+  String get lioHide;
+
+  /// No description provided for @lioHidden.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio is resting. Bring him back in Settings.'**
+  String get lioHidden;
+
+  /// No description provided for @lioSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio companion'**
+  String get lioSetting;
+
+  /// No description provided for @lioSettingHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio walks around the app with tips and a little inspiration.'**
+  String get lioSettingHelp;
+
+  /// No description provided for @lioGoalsLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{One goal left today. You’ve got this!} other{{count} goals left today. One at a time.}}'**
+  String lioGoalsLeft(int count);
+
+  /// No description provided for @lioAllDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Every goal done today. I’m so proud of you!'**
+  String get lioAllDone;
+
+  /// No description provided for @lioOverBudget.
+  ///
+  /// In en, this message translates to:
+  /// **'We went a bit over today. Tomorrow we take it slow — no stress.'**
+  String get lioOverBudget;
+
+  /// No description provided for @lioUnderBudget.
+  ///
+  /// In en, this message translates to:
+  /// **'You still have {amount} for today. Nicely balanced!'**
+  String lioUnderBudget(String amount);
+
+  /// No description provided for @lioStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'{days}-day streak! Let’s keep the fire going.'**
+  String lioStreak(int days);
+
+  /// No description provided for @lioMoodCheck.
+  ///
+  /// In en, this message translates to:
+  /// **'How are you feeling? A quick mood check helps me help you.'**
+  String get lioMoodCheck;
+
+  /// No description provided for @lioNight.
+  ///
+  /// In en, this message translates to:
+  /// **'It’s getting late. A good night’s sleep is the best plan for tomorrow.'**
+  String get lioNight;
+
+  /// No description provided for @lioTipHome1.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the + button to log anything in two seconds.'**
+  String get lioTipHome1;
+
+  /// No description provided for @lioTipHome2.
+  ///
+  /// In en, this message translates to:
+  /// **'Pull down to refresh your day.'**
+  String get lioTipHome2;
+
+  /// No description provided for @lioTipPlan1.
+  ///
+  /// In en, this message translates to:
+  /// **'Put your hardest task first — your energy is highest early.'**
+  String get lioTipPlan1;
+
+  /// No description provided for @lioTipPlan2.
+  ///
+  /// In en, this message translates to:
+  /// **'Small tasks under 15 minutes? Batch them together.'**
+  String get lioTipPlan2;
+
+  /// No description provided for @lioTipPlan3.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask me to plan your day and I’ll arrange everything for you.'**
+  String get lioTipPlan3;
+
+  /// No description provided for @lioTipMoney1.
+  ///
+  /// In en, this message translates to:
+  /// **'Just type “250 lunch” — I’ll figure out the rest.'**
+  String get lioTipMoney1;
+
+  /// No description provided for @lioTipMoney2.
+  ///
+  /// In en, this message translates to:
+  /// **'Small daily savings add up to big months.'**
+  String get lioTipMoney2;
+
+  /// No description provided for @lioTipMoney3.
+  ///
+  /// In en, this message translates to:
+  /// **'Snap a receipt and I’ll read the total for you.'**
+  String get lioTipMoney3;
+
+  /// No description provided for @lioTipLife1.
+  ///
+  /// In en, this message translates to:
+  /// **'Two minutes of journaling can clear a whole day’s noise.'**
+  String get lioTipLife1;
+
+  /// No description provided for @lioTipLife2.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell me what’s in your fridge and I’ll suggest a meal.'**
+  String get lioTipLife2;
+
+  /// No description provided for @lioTipLife3.
+  ///
+  /// In en, this message translates to:
+  /// **'Habits stick best when they’re tiny. Start with one glass of water.'**
+  String get lioTipLife3;
+
+  /// No description provided for @lioInspire1.
+  ///
+  /// In en, this message translates to:
+  /// **'Small steps every day beat big plans someday.'**
+  String get lioInspire1;
+
+  /// No description provided for @lioInspire2.
+  ///
+  /// In en, this message translates to:
+  /// **'You don’t have to do everything. Just the next right thing.'**
+  String get lioInspire2;
+
+  /// No description provided for @lioInspire3.
+  ///
+  /// In en, this message translates to:
+  /// **'Rest is part of the plan, not a break from it.'**
+  String get lioInspire3;
+
+  /// No description provided for @lioInspire4.
+  ///
+  /// In en, this message translates to:
+  /// **'Progress, not perfection.'**
+  String get lioInspire4;
+
+  /// No description provided for @lioInspire5.
+  ///
+  /// In en, this message translates to:
+  /// **'A calm morning makes a kind day.'**
+  String get lioInspire5;
+
+  /// No description provided for @lioInspire6.
+  ///
+  /// In en, this message translates to:
+  /// **'Be proud of how far you’ve come today.'**
+  String get lioInspire6;
+
+  /// No description provided for @lioInspire7.
+  ///
+  /// In en, this message translates to:
+  /// **'Drink some water. Future you says thanks.'**
+  String get lioInspire7;
+
+  /// No description provided for @lioInspire8.
+  ///
+  /// In en, this message translates to:
+  /// **'Every “no” to a small expense is a “yes” to a bigger dream.'**
+  String get lioInspire8;
+
+  /// No description provided for @lioInspire9.
+  ///
+  /// In en, this message translates to:
+  /// **'Done is a beautiful word.'**
+  String get lioInspire9;
+
+  /// No description provided for @lioInspire10.
+  ///
+  /// In en, this message translates to:
+  /// **'Take a deep breath. You’re doing better than you think.'**
+  String get lioInspire10;
+
+  /// No description provided for @lioInspire11.
+  ///
+  /// In en, this message translates to:
+  /// **'Today is a good day to start something small.'**
+  String get lioInspire11;
+
+  /// No description provided for @lioInspire12.
+  ///
+  /// In en, this message translates to:
+  /// **'Kindness to yourself counts too.'**
+  String get lioInspire12;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

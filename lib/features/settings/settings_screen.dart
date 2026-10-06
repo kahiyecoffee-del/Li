@@ -94,6 +94,13 @@ class SettingsScreen extends ConsumerWidget {
             value: settings.highContrast,
             onChanged: (v) => ctrl.update((x) => x.copyWith(highContrast: v)),
           ),
+          SwitchListTile(
+            secondary: const Icon(Icons.emoji_nature_outlined),
+            title: Text(l.lioSetting),
+            subtitle: Text(l.lioSettingHelp),
+            value: settings.showLio,
+            onChanged: (v) => ctrl.update((x) => x.copyWith(showLio: v)),
+          ),
           ListTile(
             leading: const Icon(Icons.language),
             title: Text(l.language),

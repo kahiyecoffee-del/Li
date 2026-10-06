@@ -1160,5 +1160,63 @@
   "allGoalsDone": "All goals done today — amazing!",
   "offlineAnswerLabel": "Offline answer · on-device model",
   "offlineModeChip": "Offline mode",
-  "localModelsInfo": "Expense and shopping categories are recognised by small models that run on your device."
+  "localModelsInfo": "Expense and shopping categories are recognised by small models that run on your device.",
+  "lioName": "Lio, your companion",
+  "lioAsk": "Ask Lio",
+  "lioAnother": "Another one",
+  "lioHide": "Hide Lio",
+  "lioHidden": "Lio is resting. Bring him back in Settings.",
+  "lioSetting": "Lio companion",
+  "lioSettingHelp": "Lio walks around the app with tips and a little inspiration.",
+  "lioGoalsLeft": "{count, plural, =1{One goal left today. You’ve got this!} other{{count} goals left today. One at a time.}}",
+  "@lioGoalsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lioAllDone": "Every goal done today. I’m so proud of you!",
+  "lioOverBudget": "We went a bit over today. Tomorrow we take it slow — no stress.",
+  "lioUnderBudget": "You still have {amount} for today. Nicely balanced!",
+  "@lioUnderBudget": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "lioStreak": "{days}-day streak! Let’s keep the fire going.",
+  "@lioStreak": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "lioMoodCheck": "How are you feeling? A quick mood check helps me help you.",
+  "lioNight": "It’s getting late. A good night’s sleep is the best plan for tomorrow.",
+  "lioTipHome1": "Tap the + button to log anything in two seconds.",
+  "lioTipHome2": "Pull down to refresh your day.",
+  "lioTipPlan1": "Put your hardest task first — your energy is highest early.",
+  "lioTipPlan2": "Small tasks under 15 minutes? Batch them together.",
+  "lioTipPlan3": "Ask me to plan your day and I’ll arrange everything for you.",
+  "lioTipMoney1": "Just type “250 lunch” — I’ll figure out the rest.",
+  "lioTipMoney2": "Small daily savings add up to big months.",
+  "lioTipMoney3": "Snap a receipt and I’ll read the total for you.",
+  "lioTipLife1": "Two minutes of journaling can clear a whole day’s noise.",
+  "lioTipLife2": "Tell me what’s in your fridge and I’ll suggest a meal.",
+  "lioTipLife3": "Habits stick best when they’re tiny. Start with one glass of water.",
+  "lioInspire1": "Small steps every day beat big plans someday.",
+  "lioInspire2": "You don’t have to do everything. Just the next right thing.",
+  "lioInspire3": "Rest is part of the plan, not a break from it.",
+  "lioInspire4": "Progress, not perfection.",
+  "lioInspire5": "A calm morning makes a kind day.",
+  "lioInspire6": "Be proud of how far you’ve come today.",
+  "lioInspire7": "Drink some water. Future you says thanks.",
+  "lioInspire8": "Every “no” to a small expense is a “yes” to a bigger dream.",
+  "lioInspire9": "Done is a beautiful word.",
+  "lioInspire10": "Take a deep breath. You’re doing better than you think.",
+  "lioInspire11": "Today is a good day to start something small.",
+  "lioInspire12": "Kindness to yourself counts too."
 }

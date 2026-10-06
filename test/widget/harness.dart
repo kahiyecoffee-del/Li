@@ -162,7 +162,7 @@ class TestApp {
     bool online = true,
     bool offlineModelReady = false,
   }) async {
-    SharedPreferences.setMockInitialValues(prefs);
+    SharedPreferences.setMockInitialValues({'showLio': false, ...prefs});
     final p = await SharedPreferences.getInstance();
     final analytics = MemoryAnalyticsService();
     final ai = FakeAi();
