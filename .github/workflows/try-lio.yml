@@ -1,0 +1,23 @@
+name: Try Lio model
+# Runs a Lio .litertlm on CPU with the LiteRT-LM runtime (same engine as on
+# phones) and prints its answers to fixed TR/EN prompts.
+on:
+  workflow_dispatch:
+    inputs:
+      model_url:
+        description: URL of the .litertlm to test
+        default: https://github.com/kahiyecoffee-del/Li/releases/download/lio-model/lio-qwen2.5-1.5b-base_q4_block32_ekv1280.litertlm
+jobs:
+  try:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet litert-lm-api
+      - name: Download model
+        run: curl -fL --retry 5 -o /tmp/lio.litertlm "${{ inputs.model_url }}" && ls -la /tmp/lio.litertlm
+      - name: Ask Lio
+        run: python3 tool/lio_train/try_model.py /tmp/lio.litertlm
