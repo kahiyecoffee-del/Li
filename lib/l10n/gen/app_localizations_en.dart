@@ -1914,11 +1914,11 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get offlineAiTitle => 'Offline assistant';
+  String get offlineAiTitle => 'Offline Lio';
 
   @override
   String get offlineAiBody =>
-      'Download a small AI model to your phone so the assistant can answer without internet. Answers stay on your device. It is less capable than the online assistant and cannot make changes in the app.';
+      'Download a small AI model so Lio can chat without internet. Answers stay on your device. It is less capable than the online assistant and cannot make changes in the app.';
 
   @override
   String offlineAiSize(int size) {
@@ -1951,6 +1951,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get offlineAiUnavailable => 'The offline assistant is not available yet.';
+
+  @override
+  String get offlineLiteTitle => 'Lio Lite';
+
+  @override
+  String offlineLiteBody(int size) {
+    return 'About $size MB · fast, works on most phones';
+  }
+
+  @override
+  String get offlinePlusTitle => 'Lio Plus';
+
+  @override
+  String offlinePlusBody(int size) {
+    return 'About $size MB · smarter, best on phones with 4 GB+ RAM';
+  }
+
+  @override
+  String get offlineRecommended => 'Recommended';
+
+  @override
+  String get offlineInstalled => 'Installed';
+
+  @override
+  String offlineSwitchTo(String name) {
+    return 'Switch to $name';
+  }
+
+  @override
+  String get offlineOneAtATime =>
+      'Only one version is kept on your phone; switching replaces the old one. Wi-Fi recommended.';
 
   @override
   String get aiSetupTitle => 'Turn on your assistant';

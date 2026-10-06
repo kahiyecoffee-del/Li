@@ -1120,8 +1120,8 @@
       }
     }
   },
-  "offlineAiTitle": "Offline assistant",
-  "offlineAiBody": "Download a small AI model to your phone so the assistant can answer without internet. Answers stay on your device. It is less capable than the online assistant and cannot make changes in the app.",
+  "offlineAiTitle": "Offline Lio",
+  "offlineAiBody": "Download a small AI model so Lio can chat without internet. Answers stay on your device. It is less capable than the online assistant and cannot make changes in the app.",
   "offlineAiSize": "Download size: about {size} MB. Wi-Fi recommended; works best on phones with 4 GB+ RAM.",
   "@offlineAiSize": {
     "placeholders": {
@@ -1145,6 +1145,35 @@
   "offlineAiPrefer": "Use offline assistant even when online",
   "offlineAiPreferHelp": "Private and free, but less accurate. Otherwise it is used automatically when you are offline.",
   "offlineAiUnavailable": "The offline assistant is not available yet.",
+  "offlineLiteTitle": "Lio Lite",
+  "offlineLiteBody": "About {size} MB · fast, works on most phones",
+  "@offlineLiteBody": {
+    "placeholders": {
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "offlinePlusTitle": "Lio Plus",
+  "offlinePlusBody": "About {size} MB · smarter, best on phones with 4 GB+ RAM",
+  "@offlinePlusBody": {
+    "placeholders": {
+      "size": {
+        "type": "int"
+      }
+    }
+  },
+  "offlineRecommended": "Recommended",
+  "offlineInstalled": "Installed",
+  "offlineSwitchTo": "Switch to {name}",
+  "@offlineSwitchTo": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "offlineOneAtATime": "Only one version is kept on your phone; switching replaces the old one. Wi-Fi recommended.",
   "aiSetupTitle": "Turn on your assistant",
   "aiSetupBody": "Download the free on-device assistant once and chat any time — even without internet. Your messages never leave your phone.",
   "aiSetupCta": "Set up assistant",

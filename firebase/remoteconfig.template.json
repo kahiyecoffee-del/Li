@@ -102,17 +102,31 @@
     },
     "offline_model_url": {
       "defaultValue": {
+        "value": "https://huggingface.co/litert-community/Qwen2.5-0.5B-Instruct/resolve/main/Qwen2.5-0.5B-Instruct_multi-prefill-seq_q8_ekv1280.task"
+      },
+      "valueType": "STRING",
+      "description": "Lio Lite: HTTPS URL of the default on-device model (.task). Default: Qwen2.5 0.5B Instruct (Apache-2.0). Empty hides the offline assistant."
+    },
+    "offline_model_size_mb": {
+      "defaultValue": {
+        "value": "520"
+      },
+      "valueType": "NUMBER",
+      "description": "Lio Lite download size shown to users."
+    },
+    "offline_model_plus_url": {
+      "defaultValue": {
         "value": "https://huggingface.co/litert-community/Qwen2.5-1.5B-Instruct/resolve/main/Qwen2.5-1.5B-Instruct_multi-prefill-seq_q8_ekv1280.task"
       },
       "valueType": "STRING",
-      "description": "HTTPS URL of the on-device model (.task). Default: Qwen2.5 1.5B Instruct (Apache-2.0). Empty hides the offline assistant."
+      "description": "Lio Plus: optional larger on-device model. Default: Qwen2.5 1.5B Instruct (Apache-2.0). Empty hides the option."
     },
-    "offline_model_size_mb": {
+    "offline_model_plus_size_mb": {
       "defaultValue": {
         "value": "1600"
       },
       "valueType": "NUMBER",
-      "description": "Shown to users before download."
+      "description": "Lio Plus download size shown to users."
     }
   }
 }

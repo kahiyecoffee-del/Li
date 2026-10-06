@@ -22,14 +22,17 @@ class OfflineModelStatus {
 
 /// On-device language model for offline assistant replies.
 ///
-/// The model file (MediaPipe `.task`, e.g. Gemma 3 1B int4 ≈ 550 MB) is not
-/// bundled with the app: it is downloaded on request from the URL in Remote
-/// Config (`offline_model_url`) — host it yourself (Firebase Storage/CDN)
-/// after accepting the model's license. Replies are plain text only: small
-/// models are not reliable enough to propose app actions.
+/// The model file (MediaPipe `.task`) is not bundled with the app: it is
+/// downloaded on request — Lio Lite (Qwen2.5 0.5B, ~0.5 GB) by default, or
+/// Lio Plus (Qwen2.5 1.5B, ~1.6 GB) — from the URLs in Remote Config. Only
+/// one model is kept on the phone at a time. Replies are plain text only:
+/// small models are not reliable enough to propose app actions.
 abstract class OfflineModelService {
   OfflineModelStatus get current;
   Stream<OfflineModelStatus> get status;
+
+  /// File name of the installed model, if any (tells Lite from Plus).
+  String? get installedId;
 
   /// Checks whether a model is already installed.
   Future<void> refresh();
@@ -62,6 +65,9 @@ class EdgeAiOfflineModelService implements OfflineModelService {
 
   @override
   Stream<OfflineModelStatus> get status => _controller.stream;
+
+  @override
+  String? get installedId => _prefs.getString(_idKey);
 
   void _set(OfflineModelStatus s) {
     _current = s;
@@ -102,6 +108,9 @@ class EdgeAiOfflineModelService implements OfflineModelService {
   @override
   Future<void> install(String url) async {
     if (_current.state == OfflineModelState.downloading) return;
+    // Keep one model only: switching Lite <-> Plus frees the old one first so
+    // the phone never needs room for both.
+    if (installedId != null && installedId != modelIdFor(url)) await remove();
     _set(const OfflineModelStatus(OfflineModelState.downloading));
     _cancel = CancelToken();
     try {
@@ -171,6 +180,9 @@ class UnsupportedOfflineModelService implements OfflineModelService {
 
   @override
   Stream<OfflineModelStatus> get status => const Stream.empty();
+
+  @override
+  String? get installedId => null;
 
   @override
   Future<void> refresh() async {}

@@ -161,4 +161,23 @@ void main() {
     await pumpUntil(tester, find.text('How can I help today?'));
     await tearDownApp(tester);
   });
+
+  testWidgets('Offline Lio: Lite is the recommended default, Plus is optional', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded()))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('Your day at a glance.'));
+    await tester.tap(find.byTooltip('Profile and settings').first);
+    await pumpUntil(tester, find.text('Lio companion'));
+    await tester.scrollUntilVisible(find.text('Offline Lio'), 200, scrollable: find.byType(Scrollable).last);
+    await tester.tap(find.text('Offline Lio'));
+    await pumpUntil(tester, find.text('Lio Plus'));
+    expect(find.text('Lio Lite'), findsOneWidget);
+    expect(find.text('Recommended'), findsOneWidget);
+    expect(find.text('Download model · Lio Lite'), findsOneWidget);
+    await tester.tap(find.text('Lio Plus'));
+    await tester.pump();
+    expect(find.text('Download model · Lio Plus'), findsOneWidget);
+    await tearDownApp(tester);
+  });
 }

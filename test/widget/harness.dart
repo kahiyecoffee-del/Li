@@ -81,6 +81,10 @@ class FakeOfflineModel implements OfflineModelService {
 
   OfflineModelStatus _status;
   final prompts = <String>[];
+  String? _id;
+
+  @override
+  String? get installedId => _status.ready ? (_id ?? 'lite.task') : null;
 
   @override
   OfflineModelStatus get current => _status;
@@ -92,7 +96,10 @@ class FakeOfflineModel implements OfflineModelService {
   Future<void> refresh() async {}
 
   @override
-  Future<void> install(String url) async => _status = const OfflineModelStatus(OfflineModelState.ready);
+  Future<void> install(String url) async {
+    _id = Uri.parse(url).pathSegments.last;
+    _status = const OfflineModelStatus(OfflineModelState.ready);
+  }
 
   @override
   Future<void> cancel() async {}

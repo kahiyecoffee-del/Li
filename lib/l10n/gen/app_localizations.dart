@@ -3509,13 +3509,13 @@ abstract class AppLocalizations {
   /// No description provided for @offlineAiTitle.
   ///
   /// In en, this message translates to:
-  /// **'Offline assistant'**
+  /// **'Offline Lio'**
   String get offlineAiTitle;
 
   /// No description provided for @offlineAiBody.
   ///
   /// In en, this message translates to:
-  /// **'Download a small AI model to your phone so the assistant can answer without internet. Answers stay on your device. It is less capable than the online assistant and cannot make changes in the app.'**
+  /// **'Download a small AI model so Lio can chat without internet. Answers stay on your device. It is less capable than the online assistant and cannot make changes in the app.'**
   String get offlineAiBody;
 
   /// No description provided for @offlineAiSize.
@@ -3571,6 +3571,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The offline assistant is not available yet.'**
   String get offlineAiUnavailable;
+
+  /// No description provided for @offlineLiteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio Lite'**
+  String get offlineLiteTitle;
+
+  /// No description provided for @offlineLiteBody.
+  ///
+  /// In en, this message translates to:
+  /// **'About {size} MB · fast, works on most phones'**
+  String offlineLiteBody(int size);
+
+  /// No description provided for @offlinePlusTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio Plus'**
+  String get offlinePlusTitle;
+
+  /// No description provided for @offlinePlusBody.
+  ///
+  /// In en, this message translates to:
+  /// **'About {size} MB · smarter, best on phones with 4 GB+ RAM'**
+  String offlinePlusBody(int size);
+
+  /// No description provided for @offlineRecommended.
+  ///
+  /// In en, this message translates to:
+  /// **'Recommended'**
+  String get offlineRecommended;
+
+  /// No description provided for @offlineInstalled.
+  ///
+  /// In en, this message translates to:
+  /// **'Installed'**
+  String get offlineInstalled;
+
+  /// No description provided for @offlineSwitchTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch to {name}'**
+  String offlineSwitchTo(String name);
+
+  /// No description provided for @offlineOneAtATime.
+  ///
+  /// In en, this message translates to:
+  /// **'Only one version is kept on your phone; switching replaces the old one. Wi-Fi recommended.'**
+  String get offlineOneAtATime;
 
   /// No description provided for @aiSetupTitle.
   ///

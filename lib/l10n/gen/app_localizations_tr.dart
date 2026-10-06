@@ -1898,11 +1898,11 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get offlineAiTitle => 'Çevrimdışı asistan';
+  String get offlineAiTitle => 'Çevrimdışı Lio';
 
   @override
   String get offlineAiBody =>
-      'Asistanın internet olmadan cevap verebilmesi için telefonuna küçük bir yapay zeka modeli indir. Cevaplar cihazında kalır. Çevrimiçi asistandan daha sınırlıdır ve uygulamada değişiklik yapamaz.';
+      'Lio’nun internet olmadan sohbet edebilmesi için telefonuna küçük bir yapay zeka modeli indir. Cevaplar cihazında kalır. Çevrimiçi asistandan daha sınırlıdır ve uygulamada değişiklik yapamaz.';
 
   @override
   String offlineAiSize(int size) {
@@ -1935,6 +1935,36 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get offlineAiUnavailable => 'Çevrimdışı asistan henüz kullanılamıyor.';
+
+  @override
+  String get offlineLiteTitle => 'Lio Lite';
+
+  @override
+  String offlineLiteBody(int size) {
+    return 'Yaklaşık $size MB · hızlı, çoğu telefonda çalışır';
+  }
+
+  @override
+  String get offlinePlusTitle => 'Lio Plus';
+
+  @override
+  String offlinePlusBody(int size) {
+    return 'Yaklaşık $size MB · daha akıllı, 4 GB+ RAM’li telefonlarda en iyisi';
+  }
+
+  @override
+  String get offlineRecommended => 'Önerilen';
+
+  @override
+  String get offlineInstalled => 'Yüklü';
+
+  @override
+  String offlineSwitchTo(String name) {
+    return '$name sürümüne geç';
+  }
+
+  @override
+  String get offlineOneAtATime => 'Telefonunda tek sürüm tutulur; geçiş yapınca eskisi silinir. Wi-Fi önerilir.';
 
   @override
   String get aiSetupTitle => 'Asistanını aç';

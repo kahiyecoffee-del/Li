@@ -23,6 +23,8 @@ abstract final class RcKeys {
   static const experiments = 'experiments';
   static const offlineModelUrl = 'offline_model_url';
   static const offlineModelSizeMb = 'offline_model_size_mb';
+  static const offlineModelPlusUrl = 'offline_model_plus_url';
+  static const offlineModelPlusSizeMb = 'offline_model_plus_size_mb';
 }
 
 /// Typed defaults (also used offline and when Firebase is not configured).
@@ -44,8 +46,12 @@ const Map<String, Object> remoteDefaults = {
   RcKeys.experiments: '{}',
   // On-device assistant model (MediaPipe .task). Default: Qwen2.5 1.5B
   // Instruct (Apache-2.0, no login needed). Empty hides the feature.
-  RcKeys.offlineModelUrl: 'https://huggingface.co/litert-community/Qwen2.5-1.5B-Instruct/resolve/main/Qwen2.5-1.5B-Instruct_multi-prefill-seq_q8_ekv1280.task',
-  RcKeys.offlineModelSizeMb: 1600,
+  // Lio Lite (default): Qwen2.5 0.5B Instruct, Apache-2.0, no sign-in needed.
+  RcKeys.offlineModelUrl: 'https://huggingface.co/litert-community/Qwen2.5-0.5B-Instruct/resolve/main/Qwen2.5-0.5B-Instruct_multi-prefill-seq_q8_ekv1280.task',
+  RcKeys.offlineModelSizeMb: 520,
+  // Lio Plus (optional): Qwen2.5 1.5B Instruct, smarter but ~3x larger.
+  RcKeys.offlineModelPlusUrl: 'https://huggingface.co/litert-community/Qwen2.5-1.5B-Instruct/resolve/main/Qwen2.5-1.5B-Instruct_multi-prefill-seq_q8_ekv1280.task',
+  RcKeys.offlineModelPlusSizeMb: 1600,
 };
 
 /// Read-only view of remote values.
