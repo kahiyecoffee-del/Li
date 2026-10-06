@@ -33,7 +33,9 @@ unless widget
     widget.frameworks_build_phase.add_file_reference(ref)
   end
 
-  xcconfig = project.main_group.find_subpath('Flutter').new_file('WidgetExtension.xcconfig')
+  # The Flutter group has no folder of its own; its files carry "Flutter/".
+  xcconfig = project.main_group.find_subpath('Flutter').new_file('Flutter/WidgetExtension.xcconfig')
+  xcconfig.name = 'WidgetExtension.xcconfig'
   widget.build_configurations.each do |c|
     c.base_configuration_reference = xcconfig
     s = c.build_settings
