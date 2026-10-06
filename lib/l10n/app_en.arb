@@ -1596,7 +1596,7 @@
   "gConvertFail": "I couldn’t read that. Try “5 kg to lb” or “30 C to F”.",
   "gDateFail": "I couldn’t read that date. Try “31 December”.",
   "gDecidePrompt": "Let’s decide. What are your options?",
-  "qOptions": "Write your options separated by commas (e.g. pizza, sushi)",
+  "qOptions": "Write your options (e.g. pizza sushi)",
   "gDecideCompare": "Compare them properly",
   "gCoin": "Flip a coin",
   "gRandomPick": "Pick one for me",
@@ -1612,7 +1612,7 @@
   },
   "gFoodPrompt": "Food time! What do you need?",
   "gCookWithWhatIHave": "Cook with what I have",
-  "qIngredients": "What do you have? (comma separated)",
+  "qIngredients": "What do you have? (e.g. eggs tomatoes cheese)",
   "gWhatToEat": "What should I eat?",
   "gShoppingList": "My shopping list",
   "gRecipes": "Recipes",
@@ -1682,7 +1682,7 @@
   "gSpendToday": "How much can I spend today?",
   "gMyScore": "My Life Score",
   "gOpenMyDay": "Open My day",
-  "pPrompt": "Let’s plan your day! What do you need to get done today? Separate them with commas.",
+  "pPrompt": "Let’s plan your day! What do you need to get done today? (e.g. write the report, call mom, gym)",
   "pAlready": "You already have these today: {tasks}. Add them to the plan?",
   "@pAlready": {
     "placeholders": {

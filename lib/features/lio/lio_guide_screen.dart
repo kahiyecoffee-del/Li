@@ -21,6 +21,7 @@ import '../../domain/engines/recipe_library.dart';
 import '../../domain/lio/lio_brain.dart';
 import '../../domain/models/enums.dart';
 import '../../domain/models/task_item.dart';
+import '../../domain/problem/list_splitter.dart';
 import '../../domain/problem/problem_solver.dart';
 import '../../domain/problem/quantities.dart';
 import '../../domain/templates/message_templates.dart';
@@ -510,7 +511,7 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
     void handle(String v) {
       var options = ProblemSolver.splitOptions(v);
       if (options.length < 2) {
-        options = v.split(RegExp(r'[,\n]')).map((e) => e.trim()).where((e) => e.isNotEmpty).toList();
+        options = ListSplitter.split(v, ListKind.options);
       }
       if (options.length < 2) {
         _ask(l.decideNeedTwo, handle);
@@ -526,7 +527,10 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
   // ---------------------------------------------------------------- food
 
   void _food() => _menu(l.gFoodPrompt, [
-    _Choice(l.gCookWithWhatIHave, () => _ask(l.qIngredients, (v) => _recipes(_splitList(v)))),
+    _Choice(
+      l.gCookWithWhatIHave,
+      () => _ask(l.qIngredients, (v) => _recipes(ListSplitter.split(v, ListKind.ingredients))),
+    ),
     _Choice(l.gWhatToEat, _mealIdea),
     _Choice(l.gShoppingList, () {
       context.push('/shopping');
@@ -537,9 +541,6 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
       _root();
     }),
   ]);
-
-  List<String> _splitList(String v) =>
-      v.split(RegExp(r'\s*(?:,|\n|\sve\s|\sand\s)\s*')).map((e) => e.trim()).where((e) => e.isNotEmpty).toList();
 
   void _recipes(List<String> have) {
     final matches = bestForIngredients(RecipeLibrary.all(_lang), have);
@@ -681,7 +682,10 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
     final loose = todays.where((t) => t.scheduledAt == null).toList();
 
     void askNew(List<TaskItem> carry) => _ask(l.pPrompt, (v) {
-      final names = [for (final n in _splitList(v)) n.length > 1 ? '${n[0].toUpperCase()}${n.substring(1)}' : n];
+      final names = [
+        for (final n in ListSplitter.split(v, ListKind.tasks))
+          n.length > 1 ? '${n[0].toUpperCase()}${n.substring(1)}' : n,
+      ];
       if (names.isEmpty && carry.isEmpty) {
         _say(l.pNothing);
         _plan();

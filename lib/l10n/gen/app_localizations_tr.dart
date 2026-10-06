@@ -2675,7 +2675,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get gDecidePrompt => 'Hadi karar verelim. Seçeneklerin neler?';
 
   @override
-  String get qOptions => 'Seçeneklerini virgülle yaz (ör. pizza, sushi)';
+  String get qOptions => 'Seçeneklerini yaz (ör. pizza sushi)';
 
   @override
   String get gDecideCompare => 'Detaylı karşılaştır';
@@ -2704,7 +2704,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get gCookWithWhatIHave => 'Evdekilerle ne pişirsem?';
 
   @override
-  String get qIngredients => 'Evde neler var? (virgülle yaz)';
+  String get qIngredients => 'Evde neler var? (ör. yumurta domates peynir)';
 
   @override
   String get gWhatToEat => 'Ne yesem?';
@@ -2892,7 +2892,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get gOpenMyDay => 'Günüm’ü aç';
 
   @override
-  String get pPrompt => 'Hadi gününü planlayalım! Bugün neler yapman gerekiyor? Virgülle ayırarak yaz.';
+  String get pPrompt => 'Hadi gününü planlayalım! Bugün neler yapman gerekiyor? (ör. rapor yaz annemi ara spor)';
 
   @override
   String pAlready(String tasks) {

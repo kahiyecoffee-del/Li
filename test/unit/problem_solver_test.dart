@@ -162,6 +162,7 @@ void main() {
       final r = as<ToolRoute>('Evde yumurta, domates, peynir ve ekmek var');
       expect(r.tool, ProblemTool.recipe);
       expect(r.options, ['yumurta', 'domates', 'peynir', 'ekmek']);
+      expect(as<ToolRoute>('Evde yumurta domates peynir var').options, ['yumurta', 'domates', 'peynir']);
     });
 
     test('writing and reminders', () {

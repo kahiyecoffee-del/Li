@@ -4895,7 +4895,7 @@ abstract class AppLocalizations {
   /// No description provided for @qOptions.
   ///
   /// In en, this message translates to:
-  /// **'Write your options separated by commas (e.g. pizza, sushi)'**
+  /// **'Write your options (e.g. pizza sushi)'**
   String get qOptions;
 
   /// No description provided for @gDecideCompare.
@@ -4949,7 +4949,7 @@ abstract class AppLocalizations {
   /// No description provided for @qIngredients.
   ///
   /// In en, this message translates to:
-  /// **'What do you have? (comma separated)'**
+  /// **'What do you have? (e.g. eggs tomatoes cheese)'**
   String get qIngredients;
 
   /// No description provided for @gWhatToEat.
@@ -5309,7 +5309,7 @@ abstract class AppLocalizations {
   /// No description provided for @pPrompt.
   ///
   /// In en, this message translates to:
-  /// **'Let’s plan your day! What do you need to get done today? Separate them with commas.'**
+  /// **'Let’s plan your day! What do you need to get done today? (e.g. write the report, call mom, gym)'**
   String get pPrompt;
 
   /// No description provided for @pAlready.

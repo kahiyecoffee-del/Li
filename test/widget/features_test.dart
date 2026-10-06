@@ -289,8 +289,8 @@ void main() {
     testWidgets('decide: let Lio pick between options', (tester) async {
       await openLio(tester);
       await chip(tester, 'Decide');
-      await pumpUntil(tester, find.textContaining('separated by commas'));
-      await answer(tester, 'pizza, sushi');
+      await pumpUntil(tester, find.textContaining('pizza sushi'));
+      await answer(tester, 'pizza sushi');
       await chip(tester, 'Pick one for me');
       await pumpUntil(tester, find.textContaining('I pick'));
       await tearDownApp(tester);
@@ -303,7 +303,7 @@ void main() {
       await pumpUntil(tester, find.text('What should we solve today?'));
       await tester.tap(find.text('Plan').first);
       await pumpUntil(tester, find.textContaining('plan your day'));
-      await answer(tester, 'write the report, gym');
+      await answer(tester, 'write the report go to the gym');
       await chip(tester, 'Write the report');
       await chip(tester, '1 h');
       await chip(tester, '09:00');
@@ -312,7 +312,7 @@ void main() {
       await chip(tester, 'Add to my day');
       await pumpUntil(tester, find.textContaining('Your plan is in Plan'));
       final tasks = await tester.runAsync(() => app.seededRepos.tasks.getAll());
-      expect(tasks!.map((t) => t.title), containsAll(['Write the report', 'Gym']));
+      expect(tasks!.map((t) => t.title), containsAll(['Write the report', 'Go to the gym']));
       expect(tasks.firstWhere((t) => t.title == 'Write the report').scheduledAt!.hour, 9);
       await tearDownApp(tester);
     });

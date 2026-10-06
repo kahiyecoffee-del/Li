@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'calculator.dart';
+import 'list_splitter.dart';
 import 'quantities.dart';
 
 /// What the user typed, understood well enough to answer on the phone with
@@ -532,10 +533,12 @@ class ProblemSolver {
       'some',
     };
     final lower = text.replaceAll('I', 'ı').replaceAll('İ', 'i').toLowerCase().replaceAll(RegExp(r'[.?!;:]'), ' ');
-    return lower
-        .split(RegExp(r'\s*(?:,|\sve\s|\sand\s|\sile\s)\s*'))
-        .map((e) => e.split(RegExp(r'\s+')).where((w) => w.isNotEmpty && !filler.contains(w)).join(' '))
-        .where((e) => e.length > 1)
-        .toList();
+    // Keep commas/"ve" so ListSplitter can use them; drop filler words.
+    final cleaned = lower
+        .split(RegExp(r'(?<=,)|(?=,)|\s+'))
+        .where((w) => w.isNotEmpty && !filler.contains(w.trim()))
+        .join(' ')
+        .replaceAll(' ,', ',');
+    return ListSplitter.split(cleaned, ListKind.ingredients).where((e) => e.length > 1).toList();
   }
 }

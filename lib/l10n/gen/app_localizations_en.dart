@@ -2704,7 +2704,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get gDecidePrompt => 'Let’s decide. What are your options?';
 
   @override
-  String get qOptions => 'Write your options separated by commas (e.g. pizza, sushi)';
+  String get qOptions => 'Write your options (e.g. pizza sushi)';
 
   @override
   String get gDecideCompare => 'Compare them properly';
@@ -2733,7 +2733,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get gCookWithWhatIHave => 'Cook with what I have';
 
   @override
-  String get qIngredients => 'What do you have? (comma separated)';
+  String get qIngredients => 'What do you have? (e.g. eggs tomatoes cheese)';
 
   @override
   String get gWhatToEat => 'What should I eat?';
@@ -2921,7 +2921,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get gOpenMyDay => 'Open My day';
 
   @override
-  String get pPrompt => 'Let’s plan your day! What do you need to get done today? Separate them with commas.';
+  String get pPrompt =>
+      'Let’s plan your day! What do you need to get done today? (e.g. write the report, call mom, gym)';
 
   @override
   String pAlready(String tasks) {

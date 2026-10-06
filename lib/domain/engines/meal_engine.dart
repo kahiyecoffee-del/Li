@@ -205,3 +205,14 @@ List<PantryMatch> bestForIngredients(List<Recipe> recipes, Iterable<String> have
     });
   return matches.take(limit).toList();
 }
+
+/// Every ingredient name the app knows (English, Turkish and aliases),
+/// lower-case. Used to read "yumurta domates zeytin yağı" without commas.
+Set<String> get knownIngredientNames => {
+  ..._aliases.keys,
+  ..._aliases.values,
+  ..._trNames.keys,
+  ..._trNames.values,
+  ..._staples,
+  'zeytin yağı',
+};
