@@ -116,6 +116,13 @@ void main() {
     await pumpUntil(tester, find.text('Elindekilerle bunları yapabilirsin'));
     await shot(tester, '07-yemek');
 
+    // Close the keyboard: the tab bar hides while typing.
+    FocusManager.instance.primaryFocus?.unfocus();
+    await tester.testTextInput.receiveAction(TextInputAction.done);
+    for (var i = 0; i < 10; i++) {
+      await tester.pump(const Duration(milliseconds: 150));
+    }
+    await pumpUntil(tester, find.text('Keşfet'));
     await tester.tap(find.text('Keşfet').last);
     await pumpUntil(tester, find.text('Takip'));
     await shot(tester, '08-kesfet');
