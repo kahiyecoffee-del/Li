@@ -1339,6 +1339,26 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String get foodChange => 'Değiştir';
+
+  @override
+  String get foodPick => 'Seç';
+
+  @override
+  String foodPickTitle(String meal) {
+    return '$meal seç';
+  }
+
+  @override
+  String get foodAddMeal => 'Öğün ekle';
+
+  @override
+  String get foodRemoveMeal => 'Kaldır';
+
+  @override
+  String get foodShowAllTypes => 'Tüm tarifleri göster';
+
+  @override
   String get foodTabToday => 'Bugün';
 
   @override

@@ -841,6 +841,19 @@
       }
     }
   },
+  "foodChange": "Change",
+  "foodPick": "Choose",
+  "foodPickTitle": "Choose {meal}",
+  "@foodPickTitle": {
+    "placeholders": {
+      "meal": {
+        "type": "String"
+      }
+    }
+  },
+  "foodAddMeal": "Add a meal",
+  "foodRemoveMeal": "Remove",
+  "foodShowAllTypes": "Show every recipe",
   "foodTabToday": "Today",
   "widgetToday": "Today · {date}",
   "@widgetToday": {

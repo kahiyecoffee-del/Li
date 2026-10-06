@@ -1344,6 +1344,26 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get foodChange => 'Change';
+
+  @override
+  String get foodPick => 'Choose';
+
+  @override
+  String foodPickTitle(String meal) {
+    return 'Choose $meal';
+  }
+
+  @override
+  String get foodAddMeal => 'Add a meal';
+
+  @override
+  String get foodRemoveMeal => 'Remove';
+
+  @override
+  String get foodShowAllTypes => 'Show every recipe';
+
+  @override
   String get foodTabToday => 'Today';
 
   @override

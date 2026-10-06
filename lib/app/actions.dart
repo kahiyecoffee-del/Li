@@ -216,6 +216,24 @@ class AppActions {
     unawaited(_analytics.log(AnalyticsEvent.mealGenerated, {'source': ai ? 'ai' : 'local'}));
   }
 
+  /// Puts [r] in the [slot] meal of [day] (replacing what was there). [base]
+  /// is what the day showed before when nothing was saved yet (suggestions).
+  Future<void> setMeal(DateTime day, MealType slot, Recipe r, {List<Recipe> base = const []}) async {
+    final current = (await _repos.mealPlans.get(Dates.dayKey(day)))?.meals ?? base;
+    final picked = r.mealType == slot ? r : Recipe.fromJson({...r.toJson(), 'mealType': slot.name});
+    final meals = [...current.where((m) => m.mealType != slot), picked]
+      ..sort((a, b) => a.mealType.index.compareTo(b.mealType.index));
+    await _repos.mealPlans.save(MealPlan(id: Dates.dayKey(day), updatedAt: _now, meals: meals));
+    unawaited(_analytics.log(AnalyticsEvent.mealGenerated, {'source': 'manual'}));
+  }
+
+  Future<void> removeMeal(DateTime day, MealType slot, {List<Recipe> base = const []}) async {
+    final current = (await _repos.mealPlans.get(Dates.dayKey(day)))?.meals ?? base;
+    await _repos.mealPlans.save(
+      MealPlan(id: Dates.dayKey(day), updatedAt: _now, meals: current.where((m) => m.mealType != slot).toList()),
+    );
+  }
+
   Future<void> addPantryItems(Iterable<String> names) async {
     final existing = (await _repos.pantry.getAll()).map((p) => p.name.toLowerCase()).toSet();
     for (final n in names.map((e) => e.trim()).where((e) => e.isNotEmpty)) {

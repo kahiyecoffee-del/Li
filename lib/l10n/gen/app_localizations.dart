@@ -2480,6 +2480,42 @@ abstract class AppLocalizations {
   /// **'{name} is due. Tap to mark it paid.'**
   String notifBillBody(String name);
 
+  /// No description provided for @foodChange.
+  ///
+  /// In en, this message translates to:
+  /// **'Change'**
+  String get foodChange;
+
+  /// No description provided for @foodPick.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose'**
+  String get foodPick;
+
+  /// No description provided for @foodPickTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose {meal}'**
+  String foodPickTitle(String meal);
+
+  /// No description provided for @foodAddMeal.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a meal'**
+  String get foodAddMeal;
+
+  /// No description provided for @foodRemoveMeal.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get foodRemoveMeal;
+
+  /// No description provided for @foodShowAllTypes.
+  ///
+  /// In en, this message translates to:
+  /// **'Show every recipe'**
+  String get foodShowAllTypes;
+
   /// No description provided for @foodTabToday.
   ///
   /// In en, this message translates to:

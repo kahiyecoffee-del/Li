@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:lifeos/domain/models/enums.dart';
 import 'package:lifeos/domain/models/task_item.dart';
 import 'package:lifeos/services/analytics/analytics_service.dart';
 
@@ -441,6 +442,17 @@ void main() {
     await pumpUntil(tester, find.text('What should we solve today?'));
     await openExploreTile(tester, 'Food');
     await pumpUntil(tester, find.text('Recipes'));
+
+    // Pick breakfast by hand instead of the suggestion.
+    await tester.tap(find.text('Change').first);
+    await pumpUntil(tester, find.text('Choose Breakfast'));
+    await tester.enterText(find.byType(TextField).last, 'pancake');
+    await pumpUntil(tester, find.text('Fluffy Pancakes'));
+    await tester.tap(find.text('Fluffy Pancakes'));
+    await pumpUntil(tester, find.text('Fluffy Pancakes'));
+    final plans = await tester.runAsync(() => app.seededRepos.mealPlans.getAll());
+    expect(plans!.single.meals.firstWhere((m) => m.mealType == MealType.breakfast).id, 'pancakes');
+    expect(plans.single.meals.length, 3); // the other suggestions were kept
 
     await tester.tap(find.text('Recipes'));
     await pumpUntil(tester, find.text('Search a dish or an ingredient'));

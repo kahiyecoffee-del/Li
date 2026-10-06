@@ -23,6 +23,7 @@ import '../../domain/engines/recipe_library.dart';
 import '../../domain/models/enums.dart';
 import '../../domain/models/food.dart';
 import '../../domain/models/user_profile.dart';
+import 'meal_picker.dart';
 import '../../services/ai/ai_models.dart';
 
 /// Validates AI recipes: clamps numbers, trims text, drops malformed meals.
@@ -221,11 +222,35 @@ class _FoodScreenState extends ConsumerState<FoodScreen> with SingleTickerProvid
         ...meals.map(
           (m) => Padding(
             padding: const EdgeInsets.only(bottom: Space.sm),
-            child: RecipeCard(recipe: m),
+            child: RecipeCard(
+              recipe: m,
+              onChange: () => _choose(today, m.mealType, base: meals),
+              onRemove: () => ref.read(actionsProvider).removeMeal(today, m.mealType, base: meals),
+            ),
           ),
         ),
+        if (MealType.values.any((t) => !meals.any((m) => m.mealType == t)))
+          Wrap(
+            spacing: Space.sm,
+            runSpacing: Space.sm,
+            children: [
+              for (final t in MealType.values.where((t) => !meals.any((m) => m.mealType == t)))
+                OutlinedButton.icon(
+                  onPressed: () => _choose(today, t, base: meals),
+                  icon: const Icon(Icons.add_rounded, size: 18),
+                  label: Text('${l.foodAddMeal}: ${l.mealType(t)}'),
+                ),
+            ],
+          ),
       ],
     );
+  }
+
+  /// Lets the user pick the [slot] meal of [day] by hand.
+  Future<void> _choose(DateTime day, MealType slot, {List<Recipe> base = const []}) async {
+    final r = await pickMeal(context, slot);
+    if (r == null || !mounted) return;
+    await ref.read(actionsProvider).setMeal(day, slot, r, base: base);
   }
 
   // ---------------------------------------------------------------- recipes
@@ -384,28 +409,17 @@ class _FoodScreenState extends ConsumerState<FoodScreen> with SingleTickerProvid
                   ),
                   const SizedBox(height: Space.xs),
                   if (week[i] == null)
-                    Text(l.foodNotPlanned, style: context.text.bodySmall?.copyWith(color: context.semantic.muted))
-                  else
-                    for (final m in week[i]!.meals)
-                      InkWell(
-                        onTap: () => openRecipe(context, m),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 4),
-                          child: Row(
-                            children: [
-                              SizedBox(
-                                width: 96,
-                                child: Text(
-                                  l.mealType(m.mealType),
-                                  style: context.text.labelSmall?.copyWith(color: context.semantic.muted),
-                                ),
-                              ),
-                              Expanded(child: Text(m.name, style: context.text.bodyMedium)),
-                              const Icon(Icons.chevron_right_rounded, size: 18),
-                            ],
-                          ),
-                        ),
-                      ),
+                    Text(l.foodNotPlanned, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
+                  for (final t in MealType.values)
+                    if (week[i]?.meals.where((m) => m.mealType == t).firstOrNull case final m?)
+                      _WeekMealRow(
+                        type: t,
+                        name: m.name,
+                        onOpen: () => openRecipe(context, m),
+                        onChange: () => _choose(d, t),
+                      )
+                    else if (t != MealType.snack)
+                      _WeekMealRow(type: t, onChange: () => _choose(d, t)),
                 ],
               ),
             ),
@@ -424,6 +438,45 @@ class _FoodScreenState extends ConsumerState<FoodScreen> with SingleTickerProvid
 
 /// Opens the full recipe page (library recipes by id, others as data).
 void openRecipe(BuildContext context, Recipe r) => context.push('/recipe/${Uri.encodeComponent(r.id)}', extra: r);
+
+class _WeekMealRow extends StatelessWidget {
+  const _WeekMealRow({required this.type, this.name, this.onOpen, required this.onChange});
+
+  final MealType type;
+  final String? name;
+  final VoidCallback? onOpen;
+  final VoidCallback onChange;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.l10n;
+    return InkWell(
+      onTap: onOpen ?? onChange,
+      child: Row(
+        children: [
+          SizedBox(
+            width: 96,
+            child: Text(l.mealType(type), style: context.text.labelSmall?.copyWith(color: context.semantic.muted)),
+          ),
+          Expanded(
+            child: Text(
+              name ?? l.foodPick,
+              style: name == null
+                  ? context.text.bodyMedium?.copyWith(color: context.colors.primary)
+                  : context.text.bodyMedium,
+            ),
+          ),
+          IconButton(
+            tooltip: name == null ? l.foodPick : l.foodChange,
+            visualDensity: VisualDensity.compact,
+            icon: Icon(name == null ? Icons.add_rounded : Icons.swap_horiz_rounded, size: 20),
+            onPressed: onChange,
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 class _RecipeTile extends StatelessWidget {
   const _RecipeTile({required this.recipe, required this.missing, required this.favorite});
@@ -482,9 +535,13 @@ IconData _mealIcon(MealType t) => switch (t) {
 };
 
 class RecipeCard extends ConsumerWidget {
-  const RecipeCard({super.key, required this.recipe});
+  const RecipeCard({super.key, required this.recipe, this.onChange, this.onRemove});
 
   final Recipe recipe;
+
+  /// Shown as "Change" / "Remove" when set (manual meal choice).
+  final VoidCallback? onChange;
+  final VoidCallback? onRemove;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -523,6 +580,21 @@ class RecipeCard extends ConsumerWidget {
             '${l.minutesShort(recipe.prepMinutes)} · ${l.difficulty(recipe.difficulty)} · $cost',
             style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
           ),
+          if (onChange != null || onRemove != null)
+            Align(
+              alignment: Alignment.centerRight,
+              child: Wrap(
+                children: [
+                  if (onRemove != null) TextButton(onPressed: onRemove, child: Text(l.foodRemoveMeal)),
+                  if (onChange != null)
+                    TextButton.icon(
+                      onPressed: onChange,
+                      icon: const Icon(Icons.swap_horiz_rounded, size: 18),
+                      label: Text(l.foodChange),
+                    ),
+                ],
+              ),
+            ),
         ],
       ),
     );
