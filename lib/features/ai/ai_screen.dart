@@ -11,6 +11,7 @@ import '../../core/l10n/labels.dart';
 import '../../core/theme/tokens.dart';
 import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
+import '../../core/widgets/mascot.dart';
 import '../../domain/ai/ai_action.dart';
 import '../../domain/models/ai_models.dart';
 import '../../l10n/gen/app_localizations.dart';
@@ -165,11 +166,7 @@ class _Empty extends ConsumerWidget {
       padding: const EdgeInsets.all(Space.page),
       children: [
         const SizedBox(height: Space.xl),
-        const FadeSlideIn(
-          child: Center(
-            child: IconBubble(icon: Icons.auto_awesome_rounded, accent: Accent.ai, size: 72),
-          ),
-        ),
+        Center(child: Mascot(mood: enabled ? MascotMood.happy : MascotMood.curious, size: 150)),
         const SizedBox(height: Space.md),
         Text(l.aiEmptyTitle, style: context.text.headlineSmall, textAlign: TextAlign.center),
         const SizedBox(height: Space.xl),
@@ -177,7 +174,7 @@ class _Empty extends ConsumerWidget {
           FadeSlideIn(
             delay: Motion.fast,
             child: HeroBanner(
-              gradient: Gradients.dusk,
+              gradient: Gradients.forest,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -189,7 +186,7 @@ class _Empty extends ConsumerWidget {
                   ),
                   const SizedBox(height: Space.lg),
                   FilledButton.icon(
-                    style: FilledButton.styleFrom(backgroundColor: Colors.white, foregroundColor: Palette.secondary),
+                    style: FilledButton.styleFrom(backgroundColor: Colors.white, foregroundColor: Palette.accent),
                     onPressed: () => context.push('/settings/offline-ai'),
                     icon: const Icon(Icons.download_rounded),
                     label: Text(l.aiSetupCta),
@@ -239,7 +236,7 @@ class _Typing extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const SizedBox.square(dimension: 16, child: CircularProgressIndicator(strokeWidth: 2)),
+            const Mascot(mood: MascotMood.thoughtful, size: 40, float: false),
             const SizedBox(width: Space.sm),
             Text(context.l10n.aiThinking, style: context.text.bodySmall),
           ],
@@ -263,22 +260,51 @@ class _Bubble extends ConsumerWidget {
     return Column(
       crossAxisAlignment: mine ? CrossAxisAlignment.end : CrossAxisAlignment.start,
       children: [
-        Container(
-          margin: const EdgeInsets.symmetric(vertical: Space.xs),
-          padding: const EdgeInsets.symmetric(horizontal: Space.lg, vertical: Space.md),
-          constraints: BoxConstraints(maxWidth: MediaQuery.sizeOf(context).width * 0.82),
-          decoration: BoxDecoration(
-            color: mine ? null : bg,
-            gradient: mine ? Gradients.sunrise : null,
-            borderRadius: BorderRadius.only(
-              topLeft: const Radius.circular(Radii.md),
-              topRight: const Radius.circular(Radii.md),
-              bottomLeft: Radius.circular(mine ? Radii.md : 6),
-              bottomRight: Radius.circular(mine ? 6 : Radii.md),
+        if (mine)
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: Space.xs),
+            padding: const EdgeInsets.symmetric(horizontal: Space.lg, vertical: Space.md),
+            constraints: BoxConstraints(maxWidth: MediaQuery.sizeOf(context).width * 0.82),
+            decoration: BoxDecoration(
+              color: mine ? null : bg,
+              gradient: mine ? Gradients.forest : null,
+              borderRadius: BorderRadius.only(
+                topLeft: const Radius.circular(Radii.md),
+                topRight: const Radius.circular(Radii.md),
+                bottomLeft: Radius.circular(mine ? Radii.md : 6),
+                bottomRight: Radius.circular(mine ? 6 : Radii.md),
+              ),
             ),
+            child: SelectableText(message.text, style: context.text.bodyMedium?.copyWith(color: fg)),
+          )
+        else
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(bottom: Space.xs, right: Space.xs),
+                child: Mascot(mood: MascotMood.happy, size: 30, float: false),
+              ),
+              Flexible(
+                child: Container(
+                  margin: const EdgeInsets.symmetric(vertical: Space.xs),
+                  padding: const EdgeInsets.symmetric(horizontal: Space.lg, vertical: Space.md),
+                  constraints: BoxConstraints(maxWidth: MediaQuery.sizeOf(context).width * 0.82),
+                  decoration: BoxDecoration(
+                    color: mine ? null : bg,
+                    gradient: mine ? Gradients.forest : null,
+                    borderRadius: BorderRadius.only(
+                      topLeft: const Radius.circular(Radii.md),
+                      topRight: const Radius.circular(Radii.md),
+                      bottomLeft: Radius.circular(mine ? Radii.md : 6),
+                      bottomRight: Radius.circular(mine ? 6 : Radii.md),
+                    ),
+                  ),
+                  child: SelectableText(message.text, style: context.text.bodyMedium?.copyWith(color: fg)),
+                ),
+              ),
+            ],
           ),
-          child: SelectableText(message.text, style: context.text.bodyMedium?.copyWith(color: fg)),
-        ),
         if (message.local)
           Padding(
             padding: const EdgeInsets.only(bottom: Space.xs),

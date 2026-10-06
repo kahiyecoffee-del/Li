@@ -425,7 +425,7 @@ abstract class AppLocalizations {
   /// No description provided for @welcomeTitle.
   ///
   /// In en, this message translates to:
-  /// **'Run your day, not your apps.'**
+  /// **'Hi, I’m Lio! Let’s make today a good day.'**
   String get welcomeTitle;
 
   /// No description provided for @welcomeBody.

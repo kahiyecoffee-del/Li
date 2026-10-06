@@ -77,7 +77,7 @@ s('navAi', 'AI', 'YZ')
 s('profileAndSettings', 'Profile and settings', 'Profil ve ayarlar')
 
 # ---------------- Welcome / auth
-s('welcomeTitle', 'Run your day, not your apps.', 'Uygulamaları değil, gününü yönet.')
+s('welcomeTitle', 'Hi, I’m Lio! Let’s make today a good day.', 'Merhaba, ben Lio! Bugünü birlikte güzel geçirelim.')
 s('welcomeBody', 'Plans, money, food, habits and an assistant that connects them — in one calm place.', 'Planlar, para, yemek, alışkanlıklar ve hepsini birbirine bağlayan bir asistan — tek ve sakin bir yerde.')
 s('getStarted', 'Get started', 'Başla')
 s('haveAccount', 'I already have an account', 'Zaten hesabım var')

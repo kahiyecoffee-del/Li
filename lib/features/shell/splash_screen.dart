@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/l10n/labels.dart';
 import '../../core/theme/tokens.dart';
+import '../../core/widgets/mascot.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -12,7 +13,7 @@ class SplashScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.blur_circular_rounded, size: 56, color: context.colors.primary),
+          const Mascot(mood: MascotMood.front, size: 120, float: false),
           const SizedBox(height: Space.md),
           Text(context.l10n.appName, style: context.text.headlineSmall),
         ],

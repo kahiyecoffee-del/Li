@@ -184,7 +184,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get profileAndSettings => 'Profil ve ayarlar';
 
   @override
-  String get welcomeTitle => 'Uygulamaları değil, gününü yönet.';
+  String get welcomeTitle => 'Merhaba, ben Lio! Bugünü birlikte güzel geçirelim.';
 
   @override
   String get welcomeBody =>

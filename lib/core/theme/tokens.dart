@@ -1,30 +1,33 @@
 import 'package:flutter/material.dart';
 
-/// Design tokens — "Dayly" sunrise palette: warm, cheerful, still calm.
-/// One coral accent drives actions; each life area gets a soft pastel tint
+/// Design tokens — Dayly palette, taken from Lio the mascot: leaf green,
+/// mint, cream, peach and sun. One green accent drives actions; each life area gets a soft pastel tint
 /// (see [Accents]) so screens feel friendly without visual noise.
 abstract final class Palette {
-  // Brand accent (sunrise coral) and its dark-mode counterpart.
-  static const accent = Color(0xFFFF6B4A);
-  static const accentDark = Color(0xFFFF8A6E);
-  static const secondary = Color(0xFF7C5CFF);
-  static const sun = Color(0xFFFFB703);
+  // Brand (Lio's leaf green) and its dark-mode counterpart. The darker
+  // shade keeps white button labels readable (WCAG AA for large text).
+  static const accent = Color(0xFF2E8B5E);
+  static const accentDark = Color(0xFF7FD4A5);
+  static const leaf = Color(0xFF4CAF7D);
+  static const mint = Color(0xFFA7DB95);
+  static const secondary = Color(0xFFFF9B8A); // peach
+  static const sun = Color(0xFFFFD166);
 
-  // Light neutrals (warm)
-  static const lightBg = Color(0xFFFFF8F3);
+  // Light neutrals (warm cream)
+  static const lightBg = Color(0xFFF8F5EC);
   static const lightSurface = Color(0xFFFFFFFF);
-  static const lightSurfaceAlt = Color(0xFFFFEFE7);
-  static const lightText = Color(0xFF231C2E);
-  static const lightTextMuted = Color(0xFF6F6680);
-  static const lightBorder = Color(0xFFF3E3DA);
+  static const lightSurfaceAlt = Color(0xFFEEF5E9);
+  static const lightText = Color(0xFF1F2B24);
+  static const lightTextMuted = Color(0xFF66736B);
+  static const lightBorder = Color(0xFFE6E8DC);
 
-  // Dark neutrals (deep plum)
-  static const darkBg = Color(0xFF14111D);
-  static const darkSurface = Color(0xFF1E1A2B);
-  static const darkSurfaceAlt = Color(0xFF29243A);
-  static const darkText = Color(0xFFF7F3FF);
-  static const darkTextMuted = Color(0xFFB7AFCB);
-  static const darkBorder = Color(0xFF332D47);
+  // Dark neutrals (deep forest)
+  static const darkBg = Color(0xFF101814);
+  static const darkSurface = Color(0xFF18231D);
+  static const darkSurfaceAlt = Color(0xFF223028);
+  static const darkText = Color(0xFFF1F7F2);
+  static const darkTextMuted = Color(0xFFA9BCB0);
+  static const darkBorder = Color(0xFF2C3B32);
 
   // Semantic
   static const positive = Color(0xFF10B981);
@@ -37,10 +40,10 @@ abstract final class Palette {
 
 /// Per-area accent colors (icon bubbles, chips, charts).
 enum Accent {
-  score(Color(0xFFFFB703)),
-  goals(Color(0xFFFF6B4A)),
+  score(Color(0xFFF2B53A)),
+  goals(Color(0xFFFF8A7A)),
   plan(Color(0xFF3B82F6)),
-  money(Color(0xFF10B981)),
+  money(Color(0xFF3FAE7A)),
   food(Color(0xFFFF8A4C)),
   wellbeing(Color(0xFF8B5CF6)),
   insight(Color(0xFFEC4899)),
@@ -55,17 +58,23 @@ enum Accent {
   Color tint(Brightness b) => color.withValues(alpha: b == Brightness.dark ? 0.22 : 0.13);
 }
 
-/// Sunrise gradient used for hero headers (kept subtle, never on text-heavy areas).
+/// Brand gradients. [meadow] is light (dark text on top); [forest] is
+/// deep (white text on top).
 abstract final class Gradients {
-  static const sunrise = LinearGradient(
+  static const meadow = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
-    colors: [Color(0xFFFF6B4A), Color(0xFFFF9F45), Color(0xFFFFC857)],
+    colors: [Color(0xFFDDF1D8), Color(0xFFEFF7E2), Color(0xFFFFF1D2)],
   );
-  static const dusk = LinearGradient(
+  static const meadowDark = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
-    colors: [Color(0xFF6D4AFF), Color(0xFFB45CFF), Color(0xFFFF7A9A)],
+    colors: [Color(0xFF1F3A2C), Color(0xFF243A2A), Color(0xFF3A3524)],
+  );
+  static const forest = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [Color(0xFF1F6E4A), Color(0xFF2E8B5E), Color(0xFF4CAF7D)],
   );
 }
 

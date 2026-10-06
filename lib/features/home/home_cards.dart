@@ -10,6 +10,7 @@ import '../../core/theme/tokens.dart';
 import '../../core/utils/dates.dart';
 import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
+import '../../core/widgets/mascot.dart';
 import '../../domain/engines/daily_goals_engine.dart';
 import '../../domain/engines/meal_engine.dart';
 import '../../domain/engines/recipe_library.dart';
@@ -111,7 +112,13 @@ class DailyGoalsCard extends ConsumerWidget {
             child: goals.isNotEmpty && goals.every((g) => g.completed)
                 ? Padding(
                     padding: const EdgeInsets.only(top: Space.sm),
-                    child: Text('🎉 ${l.allGoalsDone}', style: context.text.titleSmall),
+                    child: Row(
+                      children: [
+                        const Mascot(mood: MascotMood.heart, size: 64),
+                        const SizedBox(width: Space.md),
+                        Expanded(child: Text('🎉 ${l.allGoalsDone}', style: context.text.titleSmall)),
+                      ],
+                    ),
                   )
                 : const SizedBox(width: double.infinity),
           ),

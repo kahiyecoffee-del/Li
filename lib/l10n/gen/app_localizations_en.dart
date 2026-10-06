@@ -184,7 +184,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileAndSettings => 'Profile and settings';
 
   @override
-  String get welcomeTitle => 'Run your day, not your apps.';
+  String get welcomeTitle => 'Hi, I’m Lio! Let’s make today a good day.';
 
   @override
   String get welcomeBody => 'Plans, money, food, habits and an assistant that connects them — in one calm place.';

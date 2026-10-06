@@ -8,6 +8,7 @@ import '../../app/actions.dart';
 import '../../app/providers.dart';
 import '../../core/l10n/labels.dart';
 import '../../core/theme/tokens.dart';
+import '../../core/widgets/mascot.dart';
 import '../../core/utils/dates.dart';
 import '../../core/utils/ids.dart';
 import '../../core/utils/money.dart';
@@ -400,7 +401,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
         return _scaffold(
           title: l.onbReadyTitle,
           subtitle: l.onbReadyBody,
-          children: [Icon(Icons.check_circle_rounded, size: 96, color: context.semantic.positive)],
+          children: const [Center(child: Mascot(mood: MascotMood.heart, size: 180))],
         );
     }
   }

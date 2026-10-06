@@ -9,6 +9,7 @@ import '../../app/providers.dart';
 import '../../core/l10n/labels.dart';
 import '../../core/theme/tokens.dart';
 import '../../core/widgets/common.dart';
+import '../../core/widgets/mascot.dart';
 import '../../core/widgets/formatters.dart';
 import '../../domain/models/enums.dart';
 import '../../services/analytics/analytics_service.dart';
@@ -42,6 +43,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     unawaited(s.analytics.log(AnalyticsEvent.dailyBriefViewed, {'layout': _layout}));
   }
 
+  MascotMood _mood(bool allDone) {
+    final h = DateTime.now().hour;
+    if (allDone) return MascotMood.excited;
+    if (h < 6 || h >= 22) return MascotMood.sleepy;
+    return h < 12 ? MascotMood.happy : MascotMood.front;
+  }
+
   String _emoji() {
     final h = DateTime.now().hour;
     return h < 6 ? '🌙' : (h < 12 ? '☀️' : (h < 18 ? '🌤️' : '🌆'));
@@ -65,6 +73,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     final hasBudget = profile?.hasBudget ?? false;
     final compact = _layout == 'compact';
     final today = ref.watch(todayProvider);
+    final goals = ref.watch(dailyGoalsProvider);
+    final allDone = goals.isNotEmpty && goals.every((g) => g.completed);
     final weekend = today.weekday == DateTime.sunday || today.weekday == DateTime.monday;
 
     final cards = <Widget>[
@@ -109,21 +119,30 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     children: [
                       FadeSlideIn(
                         child: HeroBanner(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          padding: const EdgeInsets.fromLTRB(Space.xl, Space.lg, Space.md, Space.lg),
+                          child: Row(
                             children: [
-                              Semantics(
-                                header: true,
-                                child: Text(
-                                  '${_greeting(context, profile?.name ?? '')} ${_emoji()}',
-                                  style: context.text.headlineMedium?.copyWith(color: Colors.white),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Semantics(
+                                      header: true,
+                                      child: Text(
+                                        '${_greeting(context, profile?.name ?? '')} ${_emoji()}',
+                                        style: context.text.headlineSmall,
+                                      ),
+                                    ),
+                                    const SizedBox(height: Space.xs),
+                                    Text(
+                                      allDone ? l.allGoalsDone : l.dayAtAGlance,
+                                      style: context.text.bodyMedium?.copyWith(color: context.semantic.muted),
+                                    ),
+                                  ],
                                 ),
                               ),
-                              const SizedBox(height: Space.xs),
-                              Text(
-                                l.dayAtAGlance,
-                                style: context.text.bodyLarge?.copyWith(color: Colors.white.withValues(alpha: 0.9)),
-                              ),
+                              const SizedBox(width: Space.sm),
+                              Mascot(mood: _mood(allDone), size: 104),
                             ],
                           ),
                         ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../l10n/labels.dart';
 import '../theme/tokens.dart';
+import 'mascot.dart';
 
 /// Rounded surface used for every Home/Money card.
 class AppCard extends StatelessWidget {
@@ -152,21 +153,24 @@ class AnimatedCount extends StatelessWidget {
 
 /// Soft gradient banner for screen tops.
 class HeroBanner extends StatelessWidget {
-  const HeroBanner({super.key, required this.child, this.gradient = Gradients.sunrise});
+  const HeroBanner({super.key, required this.child, this.gradient, this.padding = const EdgeInsets.all(Space.xl)});
 
   final Widget child;
-  final Gradient gradient;
+
+  /// Defaults to the light meadow gradient (dark text on top).
+  final Gradient? gradient;
+  final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) => DecoratedBox(
     decoration: BoxDecoration(
-      gradient: gradient,
+      gradient: gradient ?? (Theme.of(context).brightness == Brightness.dark ? Gradients.meadowDark : Gradients.meadow),
       borderRadius: BorderRadius.circular(Radii.lg),
       boxShadow: [
-        BoxShadow(color: Palette.accent.withValues(alpha: 0.25), blurRadius: 24, offset: const Offset(0, 10)),
+        BoxShadow(color: Palette.accent.withValues(alpha: 0.14), blurRadius: 24, offset: const Offset(0, 10)),
       ],
     ),
-    child: Padding(padding: const EdgeInsets.all(Space.xl), child: child),
+    child: Padding(padding: padding, child: child),
   );
 }
 
@@ -191,12 +195,14 @@ class SectionTitle extends StatelessWidget {
 }
 
 class EmptyState extends StatelessWidget {
-  const EmptyState({super.key, required this.icon, required this.message, this.action, this.emoji});
+  const EmptyState({super.key, required this.icon, required this.message, this.action, this.mood});
 
   final IconData icon;
   final String message;
   final Widget? action;
-  final String? emoji;
+
+  /// Which Lio artwork to show; defaults to the curious pose.
+  final MascotMood? mood;
 
   @override
   Widget build(BuildContext context) => Padding(
@@ -204,15 +210,7 @@ class EmptyState extends StatelessWidget {
     child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Container(
-          width: 84,
-          height: 84,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(color: context.semantic.surfaceAlt, shape: BoxShape.circle),
-          child: emoji != null
-              ? Text(emoji!, style: const TextStyle(fontSize: 38))
-              : Icon(icon, size: 38, color: context.colors.primary),
-        ),
+        Mascot(mood: mood ?? MascotMood.curious, size: 110),
         const SizedBox(height: Space.lg),
         Text(
           message,
@@ -235,6 +233,7 @@ class ErrorView extends StatelessWidget {
   @override
   Widget build(BuildContext context) => EmptyState(
     icon: Icons.cloud_off_outlined,
+    mood: MascotMood.thoughtful,
     message: context.l10n.failure(error),
     action: onRetry == null ? null : OutlinedButton(onPressed: onRetry, child: Text(context.l10n.retry)),
   );

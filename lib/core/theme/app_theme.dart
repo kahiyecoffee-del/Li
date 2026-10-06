@@ -116,7 +116,7 @@ abstract final class AppTheme {
       cardTheme: CardThemeData(
         color: surface,
         elevation: isDark ? 0 : 3,
-        shadowColor: const Color(0xFFB4532A).withValues(alpha: 0.10),
+        shadowColor: const Color(0xFF2E5A40).withValues(alpha: 0.10),
         surfaceTintColor: Colors.transparent,
         margin: EdgeInsets.zero,
         shape: RoundedRectangleBorder(
