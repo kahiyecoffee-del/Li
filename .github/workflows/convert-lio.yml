@@ -11,6 +11,11 @@ on:
       state_artifact:
         description: Training state artifact to use from that run
         default: lio-state-3
+      quantize:
+        description: dynamic_int8 (larger, a bit better) or dynamic_int4_block32 (about half the size)
+        type: choice
+        options: [dynamic_int8, dynamic_int4_block32]
+        default: dynamic_int8
 permissions:
   contents: write
   actions: read
@@ -55,7 +60,7 @@ jobs:
           fi
           ls -la /mnt/lio/merged
       - name: Convert to LiteRT-LM
-        run: python3 tool/lio_train/convert.py --ckpt /mnt/lio/merged --out /mnt/lio/out --name lio-qwen2.5-1.5b-$TAG
+        run: python3 tool/lio_train/convert.py --ckpt /mnt/lio/merged --out /mnt/lio/out --name lio-qwen2.5-1.5b-$TAG --quantize ${{ inputs.quantize }}
       - name: Checksums
         run: cd /mnt/lio/out && ls -la && sha256sum *.litertlm | tee SHA256SUMS
       - uses: actions/upload-artifact@v4

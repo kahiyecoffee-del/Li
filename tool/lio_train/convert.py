@@ -16,6 +16,8 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--name", default="lio-qwen2.5-1.5b")
     ap.add_argument("--kv", type=int, default=1280)
+    ap.add_argument("--quantize", default="dynamic_int8",
+                    help="dynamic_int8 (~1.6 GB for 1.5B) or dynamic_int4_block32 (~half the size)")
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
     tok = AutoTokenizer.from_pretrained(args.ckpt)
@@ -26,7 +28,7 @@ def main():
         output_name_prefix=args.name,
         prefill_seq_len=[32, 128, 512],
         kv_cache_max_len=args.kv,
-        quantize="dynamic_int8",
+        quantize=args.quantize,
         export_config=export_config_lib.ExportConfig(),
         output_format="litertlm",
         hf_tokenizer_model_path=os.path.join(args.ckpt, "tokenizer.json"),
