@@ -28,6 +28,9 @@ abstract class AdsService {
   /// verification (SSV) so the backend can trust the reward.
   Future<RewardOutcome> showRewarded(RewardPlacement placement, {required String userId});
   Future<bool> showInterstitial();
+
+  /// App-open ad (shown on launch/return, see [AdPolicy.canShowAppOpen]).
+  Future<bool> showAppOpen();
 }
 
 /// AdMob implementation, with Google UMP consent (GDPR/CCPA) collected before
@@ -35,6 +38,8 @@ abstract class AdsService {
 class AdMobAdsService implements AdsService {
   RewardedAd? _rewarded;
   InterstitialAd? _interstitial;
+  AppOpenAd? _appOpen;
+  DateTime? _appOpenLoadedAt;
   bool _canRequest = false;
   bool _personalized = true;
   bool _loadingRewarded = false;
@@ -42,6 +47,7 @@ class AdMobAdsService implements AdsService {
   static String get _rewardedId => Platform.isIOS ? AppConfig.admobRewardedIos : AppConfig.admobRewardedAndroid;
   static String get _interstitialId =>
       Platform.isIOS ? AppConfig.admobInterstitialIos : AppConfig.admobInterstitialAndroid;
+  static String get _appOpenId => Platform.isIOS ? AppConfig.admobAppOpenIos : AppConfig.admobAppOpenAndroid;
   static String get bannerId => Platform.isIOS ? AppConfig.admobBannerIos : AppConfig.admobBannerAndroid;
 
   AdRequest get _request => AdRequest(nonPersonalizedAds: !_personalized);
@@ -54,6 +60,8 @@ class AdMobAdsService implements AdsService {
     if (!_canRequest) return;
     await MobileAds.instance.initialize();
     unawaited(preloadRewarded());
+    unawaited(_loadInterstitial());
+    unawaited(_loadAppOpen());
   }
 
   Future<void> _gatherConsent() {
@@ -141,6 +149,45 @@ class AdMobAdsService implements AdsService {
     return true;
   }
 
+  Future<void> _loadAppOpen() => AppOpenAd.load(
+    adUnitId: _appOpenId,
+    request: _request,
+    adLoadCallback: AppOpenAdLoadCallback(
+      onAdLoaded: (ad) {
+        _appOpen = ad;
+        _appOpenLoadedAt = DateTime.now();
+      },
+      onAdFailedToLoad: (_) {},
+    ),
+  );
+
+  @override
+  Future<bool> showAppOpen() async {
+    if (!_canRequest) return false;
+    final ad = _appOpen;
+    // App-open ads expire after 4 hours.
+    final fresh = _appOpenLoadedAt != null && DateTime.now().difference(_appOpenLoadedAt!) < const Duration(hours: 4);
+    if (ad == null || !fresh) {
+      if (ad != null) unawaited(ad.dispose());
+      _appOpen = null;
+      unawaited(_loadAppOpen());
+      return false;
+    }
+    _appOpen = null;
+    ad.fullScreenContentCallback = FullScreenContentCallback(
+      onAdDismissedFullScreenContent: (a) {
+        a.dispose();
+        unawaited(_loadAppOpen());
+      },
+      onAdFailedToShowFullScreenContent: (a, _) {
+        a.dispose();
+        unawaited(_loadAppOpen());
+      },
+    );
+    await ad.show();
+    return true;
+  }
+
   Future<void> _loadInterstitial() => InterstitialAd.load(
     adUnitId: _interstitialId,
     request: _request,
@@ -167,4 +214,7 @@ class NoAdsService implements AdsService {
 
   @override
   Future<bool> showInterstitial() async => false;
+
+  @override
+  Future<bool> showAppOpen() async => false;
 }

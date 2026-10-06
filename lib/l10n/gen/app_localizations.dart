@@ -5510,6 +5510,18 @@ abstract class AppLocalizations {
   /// **'I looked at your money, plans, habits, mood and journal. Here’s what stood out.'**
   String get insightsIntro;
 
+  /// No description provided for @insightsMore.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 more suggestion} other{{count} more suggestions}}'**
+  String insightsMore(int count);
+
+  /// No description provided for @insightsUnlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch an ad to see them all today'**
+  String get insightsUnlock;
+
   /// No description provided for @gMySuggestions.
   ///
   /// In en, this message translates to:

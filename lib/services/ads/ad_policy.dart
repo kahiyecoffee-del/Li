@@ -38,6 +38,22 @@ class AdPolicy {
     return true;
   }
 
+  /// App-open ads: never for Premium or in the first 2 days, never before
+  /// onboarding is done, and at most once every [minHours].
+  bool canShowAppOpen({
+    required bool remoteEnabled,
+    required DateTime now,
+    required DateTime? lastShownAt,
+    required DateTime? installedAt,
+    required bool onboarded,
+    int minHours = 4,
+  }) {
+    if (isPremium || !remoteEnabled || !onboarded) return false;
+    if (installedAt == null || now.difference(installedAt) < const Duration(days: 2)) return false;
+    if (lastShownAt != null && now.difference(lastShownAt) < Duration(hours: minHours)) return false;
+    return true;
+  }
+
   bool canShowBanner({required bool remoteEnabled, required AdMoment moment}) =>
       !isPremium && remoteEnabled && moment == AdMoment.naturalBreak;
 }

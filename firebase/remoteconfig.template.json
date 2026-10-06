@@ -37,20 +37,20 @@
     },
     "interstitial_frequency": {
       "defaultValue": {
-        "value": "0"
+        "value": "10"
       },
       "valueType": "NUMBER",
       "description": "Minimum minutes between interstitials; 0 disables them."
     },
     "interstitial_max_per_day": {
       "defaultValue": {
-        "value": "2"
+        "value": "3"
       },
       "valueType": "NUMBER"
     },
     "banner_enabled": {
       "defaultValue": {
-        "value": "false"
+        "value": "true"
       },
       "valueType": "BOOLEAN",
       "description": "Banners on browsing screens (Life hub, reports)."
@@ -99,6 +99,20 @@
       },
       "valueType": "JSON",
       "description": "Variant per experiment key, set by Firebase A/B Testing: onboarding, home_layout, rewarded_placement, paywall, notifications."
+    },
+    "app_open_enabled": {
+      "defaultValue": {
+        "value": "true"
+      },
+      "description": "Show an app-open ad on launch/return (policy: not Premium, after day 2, every app_open_min_hours).",
+      "valueType": "BOOLEAN"
+    },
+    "app_open_min_hours": {
+      "defaultValue": {
+        "value": "4"
+      },
+      "description": "Minimum hours between app-open ads.",
+      "valueType": "NUMBER"
     }
   }
 }

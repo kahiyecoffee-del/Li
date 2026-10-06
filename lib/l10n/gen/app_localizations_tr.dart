@@ -3002,6 +3002,14 @@ class AppLocalizationsTr extends AppLocalizations {
       'Paranı, planlarını, alışkanlıklarını, ruh halini ve günlüğünü inceledim. Göze çarpanlar bunlar.';
 
   @override
+  String insightsMore(int count) {
+    return '$count öneri daha';
+  }
+
+  @override
+  String get insightsUnlock => 'Reklam izle, bugün hepsini gör';
+
+  @override
   String get gMySuggestions => 'Önerilerim';
 
   @override

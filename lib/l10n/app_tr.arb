@@ -903,6 +903,8 @@
   "lioAllGood": "Bugün her şey yolunda görünüyor. Dikkat gereken bir şey olursa söylerim.",
   "insightsTitle": "Öneriler",
   "insightsIntro": "Paranı, planlarını, alışkanlıklarını, ruh halini ve günlüğünü inceledim. Göze çarpanlar bunlar.",
+  "insightsMore": "{count} öneri daha",
+  "insightsUnlock": "Reklam izle, bugün hepsini gör",
   "gMySuggestions": "Önerilerim",
   "advOverBudget": "Bugünkü bütçeni {amount} aştın. Yarını biraz hafif tutalım.",
   "advBudgetTight": "Bugün için sadece {amount} kaldı. Harcamasız bir akşam iyi gelir.",

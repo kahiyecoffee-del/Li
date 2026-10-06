@@ -3031,6 +3031,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get insightsIntro => 'I looked at your money, plans, habits, mood and journal. Here’s what stood out.';
 
   @override
+  String insightsMore(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count more suggestions',
+      one: '1 more suggestion',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get insightsUnlock => 'Watch an ad to see them all today';
+
+  @override
   String get gMySuggestions => 'My suggestions';
 
   @override

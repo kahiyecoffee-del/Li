@@ -1737,6 +1737,15 @@
   "lioAllGood": "All looks good today. I’ll tell you when something needs attention.",
   "insightsTitle": "Suggestions",
   "insightsIntro": "I looked at your money, plans, habits, mood and journal. Here’s what stood out.",
+  "insightsMore": "{count, plural, =1{1 more suggestion} other{{count} more suggestions}}",
+  "@insightsMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "insightsUnlock": "Watch an ad to see them all today",
   "gMySuggestions": "My suggestions",
   "advOverBudget": "You’re {amount} over today’s budget. Let’s keep tomorrow light.",
   "@advOverBudget": {

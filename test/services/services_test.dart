@@ -205,6 +205,26 @@ void main() {
 
   group('AdPolicy', () {
     const policy = AdPolicy(isPremium: false, minMinutesBetween: 30, maxPerDay: 2);
+
+    test('app-open: measured — not for premium, new users, before onboarding or too often', () {
+      final now = DateTime(2026, 5, 10, 12);
+      final old = now.subtract(const Duration(days: 5));
+      bool can(AdPolicy p, {DateTime? last, DateTime? installed, bool onboarded = true, bool rc = true}) =>
+          p.canShowAppOpen(
+            remoteEnabled: rc,
+            now: now,
+            lastShownAt: last,
+            installedAt: installed ?? old,
+            onboarded: onboarded,
+          );
+      expect(can(policy), isTrue);
+      expect(can(const AdPolicy(isPremium: true, minMinutesBetween: 30, maxPerDay: 2)), isFalse);
+      expect(can(policy, rc: false), isFalse);
+      expect(can(policy, onboarded: false), isFalse);
+      expect(can(policy, installed: now.subtract(const Duration(days: 1))), isFalse);
+      expect(can(policy, last: now.subtract(const Duration(hours: 2))), isFalse);
+      expect(can(policy, last: now.subtract(const Duration(hours: 5))), isTrue);
+    });
     final installed = now.subtract(const Duration(days: 10));
     test('never during critical flows, AI, onboarding; never for premium', () {
       for (final m in [AdMoment.criticalFlow, AdMoment.aiConversation, AdMoment.onboarding]) {

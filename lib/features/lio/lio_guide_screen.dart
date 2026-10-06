@@ -30,6 +30,7 @@ import '../../domain/templates/message_templates.dart';
 import '../../l10n/gen/app_localizations.dart';
 import '../../services/analytics/analytics_service.dart';
 import '../plan/task_editor.dart';
+import '../premium/interstitial.dart';
 import '../problem/problem_flow.dart';
 import '../problem/solution_view.dart';
 import 'advice_view.dart';
@@ -314,6 +315,7 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
             },
           );
           setState(() => _choices = _after(again));
+          unawaited(maybeShowInterstitial(ref));
         }, emoji: '🔖'),
         ..._after(again),
       ];
@@ -771,6 +773,7 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
             }
             if (!mounted) return;
             _say(l.pAdded);
+            unawaited(maybeShowInterstitial(ref));
             setState(
               () => _choices = [
                 _Choice(l.pOpenPlan, () {

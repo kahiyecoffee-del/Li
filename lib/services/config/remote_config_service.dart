@@ -14,6 +14,8 @@ abstract final class RcKeys {
   static const interstitialFrequency = 'interstitial_frequency';
   static const interstitialMaxPerDay = 'interstitial_max_per_day';
   static const bannerEnabled = 'banner_enabled';
+  static const appOpenEnabled = 'app_open_enabled';
+  static const appOpenMinHours = 'app_open_min_hours';
   static const premiumPrice = 'premium_price';
   static const notificationFrequency = 'notification_frequency';
   static const notificationDailyCap = 'notification_daily_cap';
@@ -29,9 +31,14 @@ const Map<String, Object> remoteDefaults = {
   RcKeys.rewardedAiLimit: 3,
   RcKeys.rewardedCreditsPerAd: 2,
   // Minimum minutes between interstitials; 0 disables interstitials.
-  RcKeys.interstitialFrequency: 0,
-  RcKeys.interstitialMaxPerDay: 2,
-  RcKeys.bannerEnabled: false,
+  // Ad strategy: light banner on Home/Explore, interstitials only at natural
+  // breaks (≥10 min apart, ≤3 a day, not in the first 3 days), app-open at
+  // most every 4 hours after day 2, rewarded only when the user asks.
+  RcKeys.interstitialFrequency: 10,
+  RcKeys.interstitialMaxPerDay: 3,
+  RcKeys.bannerEnabled: true,
+  RcKeys.appOpenEnabled: true,
+  RcKeys.appOpenMinHours: 4,
   // Which paywall price point / product set to show: "default" | "discount".
   RcKeys.premiumPrice: 'default',
   RcKeys.notificationFrequency: 'normal',

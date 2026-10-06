@@ -8,6 +8,7 @@ import '../core/l10n/labels.dart';
 import '../core/utils/dates.dart';
 import '../domain/models/progress.dart';
 import '../l10n/gen/app_localizations.dart';
+import '../services/ads/ad_policy.dart';
 import '../services/analytics/analytics_service.dart';
 import '../services/config/feature_flags.dart';
 import '../services/config/remote_config_service.dart';
@@ -37,6 +38,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
   String? _sessionUid;
   bool _adsInitialized = false;
   StreamSubscription<String>? _taps;
+  DateTime? _pausedAt;
 
   @override
   void initState() {
@@ -75,9 +77,13 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.paused) _pausedAt = DateTime.now();
     if (state == AppLifecycleState.resumed) {
       ref.read(sessionProvider).value?.sync?.scheduleSync(const Duration(seconds: 1));
       _scheduleNotifications();
+      // Coming back after a real break (not a quick app switch).
+      final away = _pausedAt == null ? Duration.zero : DateTime.now().difference(_pausedAt!);
+      if (away > const Duration(seconds: 30)) unawaited(_maybeAppOpenAd());
     }
   }
 
@@ -101,7 +107,37 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
   void _initAds(bool premium) {
     if (_adsInitialized || premium) return;
     _adsInitialized = true;
-    unawaited(ref.read(servicesProvider).ads.initialize(personalized: ref.read(settingsProvider).personalizedAds));
+    unawaited(() async {
+      await ref.read(servicesProvider).ads.initialize(personalized: ref.read(settingsProvider).personalizedAds);
+      // Give the first app-open ad a moment to load on a cold start.
+      await Future<void>.delayed(const Duration(seconds: 3));
+      if (mounted) await _maybeAppOpenAd();
+    }());
+  }
+
+  /// App-open ad, measured: see [AdPolicy.canShowAppOpen].
+  Future<void> _maybeAppOpenAd() async {
+    final s = ref.read(servicesProvider);
+    final profile = ref.read(profileProvider).value;
+    final last = s.prefs.getInt('ad_ao_last');
+    final ok =
+        AdPolicy(
+          isPremium: ref.read(isPremiumProvider),
+          minMinutesBetween: s.remote.getInt(RcKeys.interstitialFrequency),
+          maxPerDay: s.remote.getInt(RcKeys.interstitialMaxPerDay),
+        ).canShowAppOpen(
+          remoteEnabled: s.remote.getBool(RcKeys.appOpenEnabled),
+          now: DateTime.now(),
+          lastShownAt: last == null ? null : DateTime.fromMillisecondsSinceEpoch(last),
+          installedAt: profile?.installedAt,
+          onboarded: profile?.onboardingCompleted ?? false,
+          minHours: s.remote.getInt(RcKeys.appOpenMinHours),
+        );
+    if (!ok) return;
+    if (await s.ads.showAppOpen()) {
+      await s.prefs.setInt('ad_ao_last', DateTime.now().millisecondsSinceEpoch);
+      unawaited(s.analytics.log(AnalyticsEvent.interstitialShown, {'format': 'app_open'}));
+    }
   }
 
   Future<void> _persistScore(TodayScore s) async {

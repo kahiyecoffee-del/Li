@@ -36,6 +36,15 @@ abstract final class AppConfig {
     defaultValue: 'ca-app-pub-3940256099942544/2435281174',
   );
 
+  static const admobAppOpenAndroid = String.fromEnvironment(
+    'ADMOB_APP_OPEN_ANDROID',
+    defaultValue: 'ca-app-pub-3940256099942544/9257395921',
+  );
+  static const admobAppOpenIos = String.fromEnvironment(
+    'ADMOB_APP_OPEN_IOS',
+    defaultValue: 'ca-app-pub-3940256099942544/5575463023',
+  );
+
   /// Google Play subscription product ids (created in Play Console).
   static const premiumMonthlyProductId = String.fromEnvironment(
     'PREMIUM_MONTHLY_ID',

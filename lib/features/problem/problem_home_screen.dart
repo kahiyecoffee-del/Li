@@ -11,6 +11,7 @@ import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
 import '../../core/widgets/mascot.dart';
 import '../lio/advice_view.dart';
+import '../premium/banner_slot.dart';
 import 'problem_flow.dart';
 
 /// Home: Lio greets you with what he noticed in your data, then three big
@@ -111,6 +112,9 @@ class HomeScreen extends ConsumerWidget {
             ],
             const SizedBox(height: Space.xl),
             const _QuickTools(),
+            // Light banner (hidden for Premium; Remote Config can switch it off).
+            const SizedBox(height: Space.md),
+            const Center(child: BannerSlot()),
             if (recent.isNotEmpty) ...[
               const SizedBox(height: Space.xl),
               SectionTitle(

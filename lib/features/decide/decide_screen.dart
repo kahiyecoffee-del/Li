@@ -12,6 +12,7 @@ import '../../domain/problem/decision_engine.dart';
 import '../../domain/problem/quantities.dart';
 import '../../l10n/gen/app_localizations.dart';
 import '../../services/analytics/analytics_service.dart';
+import '../premium/interstitial.dart';
 import '../problem/problem_flow.dart';
 
 /// "Decide": options × what matters → a recommendation with reasons. The
@@ -116,194 +117,200 @@ class _DecideScreenState extends ConsumerState<DecideScreen> {
   Widget build(BuildContext context) {
     final l = context.l10n;
     final named = _named;
-    return Scaffold(
-      appBar: AppBar(title: Text(l.decideTitle)),
-      body: PageList(
-        children: [
-          Row(
-            children: [
-              const Mascot(mood: MascotMood.thoughtful, size: 48, float: false),
-              const SizedBox(width: Space.md),
-              Expanded(child: Text(l.decideIntro, style: context.text.bodyLarge)),
-            ],
-          ),
-          const SizedBox(height: Space.lg),
-          for (var i = 0; i < _options.length; i++)
-            Padding(
-              padding: const EdgeInsets.only(bottom: Space.sm),
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 3,
-                    child: TextField(
-                      controller: _options[i].name,
-                      textCapitalization: TextCapitalization.sentences,
-                      decoration: InputDecoration(labelText: l.optionN(i + 1)),
-                      onChanged: (_) => setState(() => _outcome = null),
-                    ),
-                  ),
-                  const SizedBox(width: Space.sm),
-                  Expanded(
-                    flex: 2,
-                    child: TextField(
-                      controller: _options[i].price,
-                      keyboardType: const TextInputType.numberWithOptions(decimal: true),
-                      decoration: InputDecoration(labelText: l.decidePrice),
-                      onChanged: (_) => setState(() => _outcome = null),
-                    ),
-                  ),
-                  if (_options.length > 2)
-                    IconButton(
-                      tooltip: l.delete,
-                      onPressed: () => setState(() {
-                        _options.removeAt(i).dispose();
-                        _outcome = null;
-                      }),
-                      icon: const Icon(Icons.close_rounded),
-                    ),
-                ],
-              ),
+    return PopScope(
+      // A finished decision is a natural break for an (rare, capped) ad.
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop && _outcome != null) unawaited(maybeShowInterstitial(ref));
+      },
+      child: Scaffold(
+        appBar: AppBar(title: Text(l.decideTitle)),
+        body: PageList(
+          children: [
+            Row(
+              children: [
+                const Mascot(mood: MascotMood.thoughtful, size: 48, float: false),
+                const SizedBox(width: Space.md),
+                Expanded(child: Text(l.decideIntro, style: context.text.bodyLarge)),
+              ],
             ),
-          if (_options.length < 4)
-            Align(
-              alignment: Alignment.centerLeft,
-              child: TextButton.icon(
-                onPressed: () => setState(() => _options.add(_Option(''))),
-                icon: const Icon(Icons.add_rounded),
-                label: Text(l.decideAddOption),
-              ),
-            ),
-          const SizedBox(height: Space.lg),
-          SectionTitle(l.decideWhatMatters),
-          Wrap(
-            spacing: Space.sm,
-            runSpacing: Space.sm,
-            children: [
-              for (final k in CriterionKind.values.where((k) => k != CriterionKind.custom))
-                FilterChip(
-                  label: Text(_critLabel(l, Criterion(kind: k))),
-                  selected: _criteria.any((c) => c.kind == k),
-                  onSelected: (on) => setState(() {
-                    _outcome = null;
-                    if (on) {
-                      _criteria.add(Criterion(kind: k));
-                    } else if (_criteria.length > 1) {
-                      final i = _criteria.indexWhere((c) => c.kind == k);
-                      _criteria.removeAt(i);
-                      for (final o in _options) {
-                        _shiftRatings(o, i);
-                      }
-                    }
-                  }),
-                ),
-              for (final c in _criteria.where((c) => c.kind == CriterionKind.custom))
-                InputChip(
-                  label: Text(c.label),
-                  onDeleted: _criteria.length > 1
-                      ? () => setState(() {
-                          final i = _criteria.indexOf(c);
-                          _criteria.removeAt(i);
-                          for (final o in _options) {
-                            _shiftRatings(o, i);
-                          }
-                          _outcome = null;
-                        })
-                      : null,
-                ),
-            ],
-          ),
-          const SizedBox(height: Space.sm),
-          TextField(
-            controller: _custom,
-            textCapitalization: TextCapitalization.sentences,
-            decoration: InputDecoration(
-              hintText: l.critCustomHint,
-              suffixIcon: IconButton(tooltip: l.add, icon: const Icon(Icons.add_rounded), onPressed: _addCustom),
-            ),
-            onSubmitted: (_) => _addCustom(),
-          ),
-          const SizedBox(height: Space.lg),
-          if (named.length >= 2) ...[
-            SectionTitle(l.decideRate),
-            Text(l.decideRateHelp, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
-            const SizedBox(height: Space.md),
-            for (var c = 0; c < _criteria.length; c++)
+            const SizedBox(height: Space.lg),
+            for (var i = 0; i < _options.length; i++)
               Padding(
-                padding: const EdgeInsets.only(bottom: Space.md),
-                child: AppCard(
-                  padding: const EdgeInsets.all(Space.lg),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(_critLabel(l, _criteria[c]), style: context.text.titleSmall),
-                      const SizedBox(height: Space.sm),
-                      SizedBox(
-                        width: double.infinity,
-                        child: SegmentedButton<int>(
-                          showSelectedIcon: false,
-                          style: const ButtonStyle(visualDensity: VisualDensity.compact),
-                          segments: [
-                            ButtonSegment(
-                              value: 1,
-                              label: Text(l.weight1, maxLines: 1, overflow: TextOverflow.ellipsis),
-                            ),
-                            ButtonSegment(
-                              value: 2,
-                              label: Text(l.weight2, maxLines: 1, overflow: TextOverflow.ellipsis),
-                            ),
-                            ButtonSegment(
-                              value: 3,
-                              label: Text(l.weight3, maxLines: 1, overflow: TextOverflow.ellipsis),
-                            ),
-                          ],
-                          selected: {_criteria[c].weight},
-                          onSelectionChanged: (v) => setState(() {
-                            _criteria[c] = _criteria[c].copyWith(weight: v.first);
-                            _outcome = null;
-                          }),
-                        ),
+                padding: const EdgeInsets.only(bottom: Space.sm),
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 3,
+                      child: TextField(
+                        controller: _options[i].name,
+                        textCapitalization: TextCapitalization.sentences,
+                        decoration: InputDecoration(labelText: l.optionN(i + 1)),
+                        onChanged: (_) => setState(() => _outcome = null),
                       ),
-                      const SizedBox(height: Space.xs),
-                      for (final o in named)
-                        if (!(_criteria[c].kind == CriterionKind.price && o.price.text.trim().isNotEmpty))
-                          Row(
-                            children: [
-                              Expanded(child: Text(o.name.text.trim(), maxLines: 1, overflow: TextOverflow.ellipsis)),
-                              Expanded(
-                                flex: 2,
-                                child: Slider(
-                                  value: o.ratings[c] ?? 3,
-                                  min: 1,
-                                  max: 5,
-                                  divisions: 4,
-                                  label: '${(o.ratings[c] ?? 3).round()}',
-                                  semanticFormatterCallback: (v) => '${o.name.text.trim()}: ${v.round()} / 5',
-                                  onChanged: (v) => setState(() {
-                                    o.ratings[c] = v;
-                                    _outcome = null;
-                                  }),
-                                ),
+                    ),
+                    const SizedBox(width: Space.sm),
+                    Expanded(
+                      flex: 2,
+                      child: TextField(
+                        controller: _options[i].price,
+                        keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                        decoration: InputDecoration(labelText: l.decidePrice),
+                        onChanged: (_) => setState(() => _outcome = null),
+                      ),
+                    ),
+                    if (_options.length > 2)
+                      IconButton(
+                        tooltip: l.delete,
+                        onPressed: () => setState(() {
+                          _options.removeAt(i).dispose();
+                          _outcome = null;
+                        }),
+                        icon: const Icon(Icons.close_rounded),
+                      ),
+                  ],
+                ),
+              ),
+            if (_options.length < 4)
+              Align(
+                alignment: Alignment.centerLeft,
+                child: TextButton.icon(
+                  onPressed: () => setState(() => _options.add(_Option(''))),
+                  icon: const Icon(Icons.add_rounded),
+                  label: Text(l.decideAddOption),
+                ),
+              ),
+            const SizedBox(height: Space.lg),
+            SectionTitle(l.decideWhatMatters),
+            Wrap(
+              spacing: Space.sm,
+              runSpacing: Space.sm,
+              children: [
+                for (final k in CriterionKind.values.where((k) => k != CriterionKind.custom))
+                  FilterChip(
+                    label: Text(_critLabel(l, Criterion(kind: k))),
+                    selected: _criteria.any((c) => c.kind == k),
+                    onSelected: (on) => setState(() {
+                      _outcome = null;
+                      if (on) {
+                        _criteria.add(Criterion(kind: k));
+                      } else if (_criteria.length > 1) {
+                        final i = _criteria.indexWhere((c) => c.kind == k);
+                        _criteria.removeAt(i);
+                        for (final o in _options) {
+                          _shiftRatings(o, i);
+                        }
+                      }
+                    }),
+                  ),
+                for (final c in _criteria.where((c) => c.kind == CriterionKind.custom))
+                  InputChip(
+                    label: Text(c.label),
+                    onDeleted: _criteria.length > 1
+                        ? () => setState(() {
+                            final i = _criteria.indexOf(c);
+                            _criteria.removeAt(i);
+                            for (final o in _options) {
+                              _shiftRatings(o, i);
+                            }
+                            _outcome = null;
+                          })
+                        : null,
+                  ),
+              ],
+            ),
+            const SizedBox(height: Space.sm),
+            TextField(
+              controller: _custom,
+              textCapitalization: TextCapitalization.sentences,
+              decoration: InputDecoration(
+                hintText: l.critCustomHint,
+                suffixIcon: IconButton(tooltip: l.add, icon: const Icon(Icons.add_rounded), onPressed: _addCustom),
+              ),
+              onSubmitted: (_) => _addCustom(),
+            ),
+            const SizedBox(height: Space.lg),
+            if (named.length >= 2) ...[
+              SectionTitle(l.decideRate),
+              Text(l.decideRateHelp, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
+              const SizedBox(height: Space.md),
+              for (var c = 0; c < _criteria.length; c++)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: Space.md),
+                  child: AppCard(
+                    padding: const EdgeInsets.all(Space.lg),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(_critLabel(l, _criteria[c]), style: context.text.titleSmall),
+                        const SizedBox(height: Space.sm),
+                        SizedBox(
+                          width: double.infinity,
+                          child: SegmentedButton<int>(
+                            showSelectedIcon: false,
+                            style: const ButtonStyle(visualDensity: VisualDensity.compact),
+                            segments: [
+                              ButtonSegment(
+                                value: 1,
+                                label: Text(l.weight1, maxLines: 1, overflow: TextOverflow.ellipsis),
+                              ),
+                              ButtonSegment(
+                                value: 2,
+                                label: Text(l.weight2, maxLines: 1, overflow: TextOverflow.ellipsis),
+                              ),
+                              ButtonSegment(
+                                value: 3,
+                                label: Text(l.weight3, maxLines: 1, overflow: TextOverflow.ellipsis),
                               ),
                             ],
+                            selected: {_criteria[c].weight},
+                            onSelectionChanged: (v) => setState(() {
+                              _criteria[c] = _criteria[c].copyWith(weight: v.first);
+                              _outcome = null;
+                            }),
                           ),
-                    ],
+                        ),
+                        const SizedBox(height: Space.xs),
+                        for (final o in named)
+                          if (!(_criteria[c].kind == CriterionKind.price && o.price.text.trim().isNotEmpty))
+                            Row(
+                              children: [
+                                Expanded(child: Text(o.name.text.trim(), maxLines: 1, overflow: TextOverflow.ellipsis)),
+                                Expanded(
+                                  flex: 2,
+                                  child: Slider(
+                                    value: o.ratings[c] ?? 3,
+                                    min: 1,
+                                    max: 5,
+                                    divisions: 4,
+                                    label: '${(o.ratings[c] ?? 3).round()}',
+                                    semanticFormatterCallback: (v) => '${o.name.text.trim()}: ${v.round()} / 5',
+                                    onChanged: (v) => setState(() {
+                                      o.ratings[c] = v;
+                                      _outcome = null;
+                                    }),
+                                  ),
+                                ),
+                              ],
+                            ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-          ],
-          FilledButton.icon(
-            onPressed: _decide,
-            icon: const Icon(Icons.emoji_events_outlined),
-            label: Text(l.decideShow),
-          ),
-          if (_outcome != null) ...[
-            const SizedBox(height: Space.xl),
-            KeyedSubtree(
-              key: _resultKey,
-              child: _Result(outcome: _outcome!, names: named, label: (c) => _critLabel(l, c)),
+            ],
+            FilledButton.icon(
+              onPressed: _decide,
+              icon: const Icon(Icons.emoji_events_outlined),
+              label: Text(l.decideShow),
             ),
+            if (_outcome != null) ...[
+              const SizedBox(height: Space.xl),
+              KeyedSubtree(
+                key: _resultKey,
+                child: _Result(outcome: _outcome!, names: named, label: (c) => _critLabel(l, c)),
+              ),
+            ],
           ],
-        ],
+        ),
       ),
     );
   }
