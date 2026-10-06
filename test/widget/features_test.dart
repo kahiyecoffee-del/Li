@@ -317,6 +317,16 @@ void main() {
       await tearDownApp(tester);
     });
 
+    testWidgets('keyboard open: the chat still fits', (tester) async {
+      await openLio(tester);
+      await chip(tester, 'Money');
+      tester.view.viewInsets = const FakeViewPadding(bottom: 1000);
+      await tester.pump(const Duration(milliseconds: 300));
+      expect(tester.takeException(), isNull);
+      tester.view.resetViewInsets();
+      await tearDownApp(tester);
+    });
+
     testWidgets('mood: feeling really bad shows where to get help', (tester) async {
       await openLio(tester);
       await chip(tester, 'Mood boost');

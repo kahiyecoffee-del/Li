@@ -891,7 +891,14 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
   @override
   Widget build(BuildContext context) {
     final asking = _question != null;
+    // With the keyboard up the tab bar is hidden and space is tight.
+    final view = View.of(context);
+    final inset = view.viewInsets.bottom / view.devicePixelRatio;
+    final keyboard = inset > 0;
+    final height = MediaQuery.sizeOf(context).height - inset;
     return Scaffold(
+      // The app shell already makes room for the keyboard.
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Row(
           children: [
@@ -933,29 +940,31 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
               ),
             ),
             if (_choices.isNotEmpty)
-              ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * 0.32),
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.fromLTRB(Space.page, Space.xs, Space.page, Space.sm),
-                  child: Wrap(
-                    spacing: Space.sm,
-                    runSpacing: Space.sm,
-                    children: [
-                      for (final c in _choices)
-                        ConstrainedBox(
-                          constraints: BoxConstraints(maxWidth: MediaQuery.sizeOf(context).width - 2 * Space.page),
-                          child: ActionChip(
-                            avatar: c.emoji == null ? null : Text(c.emoji!),
-                            label: Text(c.label, maxLines: 2, overflow: TextOverflow.ellipsis),
-                            onPressed: () => _tap(c),
+              Flexible(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(maxHeight: height * (keyboard ? 0.2 : 0.32)),
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.fromLTRB(Space.page, Space.xs, Space.page, Space.sm),
+                    child: Wrap(
+                      spacing: Space.sm,
+                      runSpacing: Space.sm,
+                      children: [
+                        for (final c in _choices)
+                          ConstrainedBox(
+                            constraints: BoxConstraints(maxWidth: MediaQuery.sizeOf(context).width - 2 * Space.page),
+                            child: ActionChip(
+                              avatar: c.emoji == null ? null : Text(c.emoji!),
+                              label: Text(c.label, maxLines: 2, overflow: TextOverflow.ellipsis),
+                              onPressed: () => _tap(c),
+                            ),
                           ),
-                        ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(Space.page, Space.xs, Space.sm, 96),
+              padding: EdgeInsets.fromLTRB(Space.page, Space.xs, Space.sm, keyboard ? Space.sm : 96),
               child: Row(
                 children: [
                   Expanded(

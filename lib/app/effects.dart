@@ -97,16 +97,23 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
   }
 
   Future<void> _persistScore(TodayScore s) async {
-    final total = s.score.total;
-    if (total == null || ref.read(sessionProvider).value == null) return;
-    final repos = ref.read(reposProvider);
-    final key = Dates.dayKey(ref.read(todayProvider));
-    final components = {for (final e in s.score.components.entries) e.key.name: e.value};
-    final existing = await repos.scores.get(key);
-    if (existing != null && existing.total == total && _sameMap(existing.components, components)) return;
-    await repos.scores.save(DailyScoreRecord(id: key, updatedAt: DateTime.now(), total: total, components: components));
-    if (existing == null) {
-      unawaited(ref.read(servicesProvider).analytics.log(AnalyticsEvent.lifeScoreCompleted, {'score': total}));
+    try {
+      final total = s.score.total;
+      if (total == null || ref.read(sessionProvider).value == null) return;
+      final repos = ref.read(reposProvider);
+      final key = Dates.dayKey(ref.read(todayProvider));
+      final components = {for (final e in s.score.components.entries) e.key.name: e.value};
+      final existing = await repos.scores.get(key);
+      if (existing != null && existing.total == total && _sameMap(existing.components, components)) return;
+      await repos.scores.save(
+        DailyScoreRecord(id: key, updatedAt: DateTime.now(), total: total, components: components),
+      );
+      if (existing == null) {
+        unawaited(ref.read(servicesProvider).analytics.log(AnalyticsEvent.lifeScoreCompleted, {'score': total}));
+      }
+    } catch (_) {
+      // Signed out (store closed) while saving: nothing left to update.
+      if (mounted) rethrow;
     }
   }
 
