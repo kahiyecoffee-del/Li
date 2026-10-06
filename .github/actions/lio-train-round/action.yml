@@ -1,0 +1,42 @@
+name: Lio training round
+description: Resume Lio's LoRA training from the previous round's state for a time budget, then save the state.
+inputs:
+  round:
+    description: Round number (1, 2, 3…)
+    required: true
+  prev:
+    description: Previous round number ("" for the first round)
+    default: ""
+  budget:
+    description: Training seconds for this round
+    default: "18000"
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+    - name: Install training deps (CPU)
+      shell: bash
+      run: |
+        pip install --quiet "torch<2.14" --index-url https://download.pytorch.org/whl/cpu
+        pip install --quiet "transformers>=4.45" "peft>=0.13" accelerate safetensors
+    - name: Fetch previous state
+      if: inputs.prev != ''
+      uses: actions/download-artifact@v4
+      with:
+        name: lio-state-${{ inputs.prev }}
+        path: /mnt/lio/state
+    - name: Train
+      shell: bash
+      env:
+        HF_HOME: /mnt/hf
+      run: |
+        sudo mkdir -p /mnt/lio /mnt/hf && sudo chown -R "$USER" /mnt/lio /mnt/hf
+        python3 tool/lio_train/make_dataset.py --out /mnt/lio/data.jsonl --n 3000
+        python3 tool/lio_train/train_lora.py --data /mnt/lio/data.jsonl --state /mnt/lio/state --time-budget ${{ inputs.budget }}
+    - uses: actions/upload-artifact@v4
+      with:
+        name: lio-state-${{ inputs.round }}
+        path: /mnt/lio/state
+        retention-days: 14

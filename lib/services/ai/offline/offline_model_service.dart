@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_edge_ai/flutter_edge_ai.dart';
+import 'package:flutter_edge_ai_litertlm/flutter_edge_ai_litertlm.dart';
 import 'package:flutter_edge_ai_mediapipe/flutter_edge_ai_mediapipe.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -74,16 +75,22 @@ class EdgeAiOfflineModelService implements OfflineModelService {
     _controller.add(s);
   }
 
-  Future<void> _ensureInit() => _init ??= FlutterEdgeAi.initialize(inferenceEngines: const [MediaPipeEngine()]);
+  Future<void> _ensureInit() =>
+      _init ??= FlutterEdgeAi.initialize(inferenceEngines: const [MediaPipeEngine(), LiteRtLmEngine()]);
 
   /// Chat template family, inferred from the model file name.
   static ModelType modelTypeFor(String url) {
     final u = url.toLowerCase();
-    if (u.contains('qwen')) return ModelType.qwen;
+    if (u.contains('qwen3')) return ModelType.qwen3;
+    if (u.contains('qwen') || u.contains('lio')) return ModelType.qwen;
     if (u.contains('deepseek')) return ModelType.deepSeek;
     if (u.contains('gemma')) return ModelType.gemmaIt;
     return ModelType.general;
   }
+
+  /// MediaPipe `.task` or LiteRT-LM `.litertlm` (e.g. Lio's fine-tuned model).
+  static ModelFileType fileTypeFor(String url) =>
+      Uri.parse(url).path.toLowerCase().endsWith('.litertlm') ? ModelFileType.litertlm : ModelFileType.task;
 
   static String modelIdFor(String url) =>
       Uri.parse(url).pathSegments.lastWhere((s) => s.isNotEmpty, orElse: () => 'model.task');
@@ -115,7 +122,7 @@ class EdgeAiOfflineModelService implements OfflineModelService {
     _cancel = CancelToken();
     try {
       await _ensureInit();
-      await FlutterEdgeAi.installModel(modelType: modelTypeFor(url))
+      await FlutterEdgeAi.installModel(modelType: modelTypeFor(url), fileType: fileTypeFor(url))
           // Large files use an Android foreground service (no 9-minute limit).
           .fromNetwork(url, foreground: true)
           .withProgress((p) => _set(OfflineModelStatus(OfflineModelState.downloading, progress: p)))

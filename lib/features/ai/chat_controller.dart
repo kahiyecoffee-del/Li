@@ -194,7 +194,7 @@ class ChatController extends AsyncNotifier<ChatState> {
           .map((m) => AiTurn(m.role == ChatRole.user, m.text))
           .toList();
       final text = await services.offlineModel.reply(
-        system: OfflinePrompt.system(locale: locale, context: await _context(locale)),
+        system: OfflinePrompt.system(locale: locale, facts: _facts(_supported(locale)), now: DateTime.now()),
         history: history,
         message: msg,
       );
