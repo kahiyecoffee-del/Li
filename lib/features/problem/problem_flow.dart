@@ -37,8 +37,9 @@ Future<void> openProblem(BuildContext context, WidgetRef ref, String text) async
     case ToolRoute(tool: ProblemTool.reminder):
       await showTaskEditor(context, title: _reminderTitle(q), day: DateTime.now());
     case ToolRoute(tool: ProblemTool.write):
+      context.go('/ai?topic=write&n=${DateTime.now().microsecondsSinceEpoch}');
     case AskLio():
-      context.go('/ai?q=$enc&send=1&n=${DateTime.now().microsecondsSinceEpoch}');
+      context.go('/ai?q=$enc&n=${DateTime.now().microsecondsSinceEpoch}');
   }
 }
 

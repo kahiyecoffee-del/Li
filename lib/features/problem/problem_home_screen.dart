@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -292,17 +293,20 @@ class _ProblemInput extends StatelessWidget {
           ),
           Row(
             children: [
-              IconButton(
-                tooltip: l.voiceInput,
-                onPressed: () {
-                  HapticFeedback.selectionClick();
-                  onVoice();
-                },
-                isSelected: listening,
-                icon: const Icon(Icons.mic_none_rounded),
-                selectedIcon: Icon(Icons.mic_rounded, color: context.colors.primary),
-              ),
-              IconButton(tooltip: l.photoInput, onPressed: onPhoto, icon: const Icon(Icons.photo_camera_outlined)),
+              // Speech and on-device text recognition are phone features.
+              if (!kIsWeb) ...[
+                IconButton(
+                  tooltip: l.voiceInput,
+                  onPressed: () {
+                    HapticFeedback.selectionClick();
+                    onVoice();
+                  },
+                  isSelected: listening,
+                  icon: const Icon(Icons.mic_none_rounded),
+                  selectedIcon: Icon(Icons.mic_rounded, color: context.colors.primary),
+                ),
+                IconButton(tooltip: l.photoInput, onPressed: onPhoto, icon: const Icon(Icons.photo_camera_outlined)),
+              ],
               const Spacer(),
               FilledButton.icon(
                 onPressed: () => onSolve(),
@@ -329,7 +333,12 @@ class _QuickTools extends StatelessWidget {
       (Icons.balance_rounded, l.quickDecide, Accent.insight, () => context.push('/decide')),
       (Icons.restaurant_menu_rounded, l.quickFood, Accent.food, () => context.push('/food')),
       (Icons.calculate_rounded, l.quickCalc, Accent.score, () => context.push('/calc')),
-      (Icons.edit_note_rounded, l.quickWrite, Accent.ai, () => context.go('/ai')),
+      (
+        Icons.edit_note_rounded,
+        l.quickWrite,
+        Accent.ai,
+        () => context.go('/ai?topic=write&n=${DateTime.now().microsecondsSinceEpoch}'),
+      ),
       (Icons.event_available_rounded, l.quickPlan, Accent.plan, () => context.push('/plan')),
     ];
     return GridView.count(

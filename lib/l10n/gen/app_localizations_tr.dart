@@ -2505,4 +2505,389 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get recipeNoMatch => 'Bu malzemelerle eşleşen tarif bulamadım. Fikir için Lio’ya sor.';
+
+  @override
+  String get gTypeHint => 'Ya da sorununu yaz…';
+
+  @override
+  String get gAnswerHint => 'Cevabını yaz…';
+
+  @override
+  String get gRestart => 'Baştan başla';
+
+  @override
+  String get gMainMenu => 'Ana menü';
+
+  @override
+  String get gSomethingElse => 'Başka bir şey';
+
+  @override
+  String get gNotUnderstood => 'Bunu henüz yapamıyorum. Bir konu seç, adım adım yardımcı olayım.';
+
+  @override
+  String get gInvalidNumber => 'Bu bir sayı gibi görünmüyor, tekrar dener misin?';
+
+  @override
+  String get gMood => 'Moral';
+
+  @override
+  String get gRemind => 'Hatırlat';
+
+  @override
+  String get gRemindPrompt => 'Neyi hatırlatayım?';
+
+  @override
+  String get gMoneyPrompt => 'Neyi hesaplayalım?';
+
+  @override
+  String get gRunway => 'Param ay sonuna yeter mi?';
+
+  @override
+  String get gDiscount => 'İndirim hesapla';
+
+  @override
+  String get gSplit => 'Hesabı böl';
+
+  @override
+  String get gInstallment => 'Taksit mi peşin mi?';
+
+  @override
+  String get gUnitPrice => 'Hangisi daha ucuz?';
+
+  @override
+  String get gVat => 'KDV ekle';
+
+  @override
+  String get gRaise => 'Maaş zammı';
+
+  @override
+  String get gYearly => 'Aboneliklerin yıllık maliyeti';
+
+  @override
+  String get gCalcPrompt => 'Ne hesaplayalım?';
+
+  @override
+  String get gPercentOf => 'Bir sayının yüzdesi';
+
+  @override
+  String get gConvert => 'Birim çevir';
+
+  @override
+  String get gDaysUntil => 'Bir tarihe kaç gün var?';
+
+  @override
+  String get gFuel => 'Yol yakıt masrafı';
+
+  @override
+  String get gOpenCalculator => 'Hesap makinesini aç';
+
+  @override
+  String get qAmountLeft => 'Ne kadar paran kaldı?';
+
+  @override
+  String get qDaysLeft => 'Kaç gün yetmesi lazım?';
+
+  @override
+  String get qMonthEnd => 'Ay sonuna kadar';
+
+  @override
+  String get qPrice => 'Fiyatı ne kadar?';
+
+  @override
+  String get qDiscountPct => 'Yüzde kaç indirim?';
+
+  @override
+  String get qTotal => 'Hesap toplam ne kadar?';
+
+  @override
+  String get qPeople => 'Kaç kişisiniz?';
+
+  @override
+  String get qTip => 'Bahşiş bırakacak mısınız?';
+
+  @override
+  String get qNoTip => 'Bahşiş yok';
+
+  @override
+  String get qMonthly => 'Aylık taksit ne kadar?';
+
+  @override
+  String get qMonths => 'Kaç ay?';
+
+  @override
+  String get qCash => 'Peşin fiyatı ne? (bilmiyorsan atla)';
+
+  @override
+  String get qSize1 => '1. ürün: miktarı ne? (ör. 1 L, 500 g, 6 adet)';
+
+  @override
+  String get qPrice1 => 'Fiyatı ne kadar?';
+
+  @override
+  String get qSize2 => '2. ürün: miktarı ne?';
+
+  @override
+  String get qPrice2 => 'Onun fiyatı ne kadar?';
+
+  @override
+  String get qNeedUnit => 'Bir birim ekle: 1 L, 500 g ya da 6 adet gibi.';
+
+  @override
+  String get qVatRate => 'KDV oranı kaç?';
+
+  @override
+  String get qSalary => 'Şu anki tutar ne kadar?';
+
+  @override
+  String get qRaisePct => 'Yüzde kaç zam?';
+
+  @override
+  String get qSubs => 'Aylık tutarları virgülle yaz (ör. 99, 149)';
+
+  @override
+  String get qNumber => 'Hangi sayı?';
+
+  @override
+  String get qPercent => 'Yüzde kaç?';
+
+  @override
+  String get qConvert => 'Neyi çevireyim? (ör. 5 kg kaç lb)';
+
+  @override
+  String get qDate => 'Hangi tarih? (ör. 31 Aralık)';
+
+  @override
+  String get qKm => 'Yol kaç km?';
+
+  @override
+  String get qConsumption => 'Araç 100 km’de kaç litre yakıyor?';
+
+  @override
+  String get qFuelPrice => 'Yakıtın litresi kaç?';
+
+  @override
+  String get gConvertFail => 'Anlayamadım. “5 kg kaç lb” ya da “30 C kaç F” gibi yazabilir misin?';
+
+  @override
+  String get gDateFail => 'Tarihi anlayamadım. “31 Aralık” gibi yazabilir misin?';
+
+  @override
+  String get gDecidePrompt => 'Hadi karar verelim. Seçeneklerin neler?';
+
+  @override
+  String get qOptions => 'Seçeneklerini virgülle yaz (ör. pizza, sushi)';
+
+  @override
+  String get gDecideCompare => 'Detaylı karşılaştır';
+
+  @override
+  String get gCoin => 'Yazı tura at';
+
+  @override
+  String get gRandomPick => 'Benim yerime seç';
+
+  @override
+  String get coinHeads => 'Yazı! 🪙';
+
+  @override
+  String get coinTails => 'Tura! 🪙';
+
+  @override
+  String randomPicked(String option) {
+    return 'Seçimim: $option! 🎲';
+  }
+
+  @override
+  String get gFoodPrompt => 'Yemek zamanı! Ne lazım?';
+
+  @override
+  String get gCookWithWhatIHave => 'Evdekilerle ne pişirsem?';
+
+  @override
+  String get qIngredients => 'Evde neler var? (virgülle yaz)';
+
+  @override
+  String get gWhatToEat => 'Ne yesem?';
+
+  @override
+  String get gShoppingList => 'Alışveriş listem';
+
+  @override
+  String get gRecipes => 'Tarifler';
+
+  @override
+  String mealIdea(String meal, int minutes) {
+    return '$meal nasıl olur? Yaklaşık $minutes dakikada hazır.';
+  }
+
+  @override
+  String get gAnotherIdea => 'Başka öneri';
+
+  @override
+  String get gWritePrompt => 'Ne tür bir mesaj yazalım?';
+
+  @override
+  String get tplBirthday => 'Doğum günü kutlama';
+
+  @override
+  String get tplThanks => 'Teşekkür';
+
+  @override
+  String get tplApology => 'Özür';
+
+  @override
+  String get tplLate => 'Geç kalıyorum';
+
+  @override
+  String get tplLeave => 'İzin isteme';
+
+  @override
+  String get tplDecline => 'Kibarca hayır deme';
+
+  @override
+  String get tplCongrats => 'Tebrik';
+
+  @override
+  String get tplCondolence => 'Başsağlığı';
+
+  @override
+  String get tplPayment => 'Ödeme hatırlatma';
+
+  @override
+  String get tplComplaint => 'Şikâyet';
+
+  @override
+  String get tplJob => 'İş başvurusu';
+
+  @override
+  String get tplLandlord => 'Ev sahibine mesaj';
+
+  @override
+  String get qTone => 'Hangi tonda olsun?';
+
+  @override
+  String get toneWarm => 'Samimi';
+
+  @override
+  String get toneFormal => 'Resmi';
+
+  @override
+  String get toneShort => 'Kısa';
+
+  @override
+  String get fName => 'Kime yazıyoruz? (isim yaz ya da atla)';
+
+  @override
+  String get fCompany => 'Hangi firma?';
+
+  @override
+  String get fWhatThanks => 'Ne için teşekkür ediyorsun?';
+
+  @override
+  String get fWhatApology => 'Ne için özür diliyorsun?';
+
+  @override
+  String get fWhatLeave => 'İzin sebebin ne?';
+
+  @override
+  String get fWhatDecline => 'Neye hayır diyorsun?';
+
+  @override
+  String get fWhatCongrats => 'Neyi tebrik ediyorsun?';
+
+  @override
+  String get fWhatPayment => 'Hangi ödeme? (ör. 500 TL kira)';
+
+  @override
+  String get fWhatComplaint => 'Sorun ne?';
+
+  @override
+  String get fWhatJob => 'Hangi pozisyon?';
+
+  @override
+  String get fWhatLandlord => 'Sorun ne? (ör. kombi arızası)';
+
+  @override
+  String get fWhenLate => 'Ne zaman orada olursun? (ör. 15 dakika sonra)';
+
+  @override
+  String get fWhenLeave => 'Hangi gün(ler)? (ör. Cuma günü)';
+
+  @override
+  String get writeResult => 'İşte birkaç versiyon. Beğendiğini kopyala.';
+
+  @override
+  String get copy => 'Kopyala';
+
+  @override
+  String get copied => 'Kopyalandı';
+
+  @override
+  String get gOtherTone => 'Başka ton';
+
+  @override
+  String get gOtherMessage => 'Başka mesaj';
+
+  @override
+  String get gMoodPrompt => 'Şu an nasıl hissediyorsun?';
+
+  @override
+  String get mTired => 'Yorgunum';
+
+  @override
+  String get mStressed => 'Stresliyim';
+
+  @override
+  String get mUnmotivated => 'Motivasyonum yok';
+
+  @override
+  String get mCantSleep => 'Uyuyamıyorum';
+
+  @override
+  String get mLonely => 'Yalnız hissediyorum';
+
+  @override
+  String get mVeryBad => 'Çok kötüyüm';
+
+  @override
+  String get mTiredReply =>
+      'Olur böyle günler. Şunları dene:\n• bir bardak su ve 10 dakikalık yürüyüş\n• tek bir küçük iş, sonra gerçek bir mola\n• bu akşam erken yat';
+
+  @override
+  String get mStressedReply =>
+      'Bir dakika yavaşlayalım:\n• 4 saniye nefes al, 4 tut, 6’da ver; beş kez\n• bugün en önemli tek şeyi yaz\n• geri kalanı biraz bekleyebilir';
+
+  @override
+  String get mUnmotivatedReply =>
+      'Motivasyon çoğu zaman başladıktan sonra gelir:\n• işin 2 dakikalık bir versiyonunu seç\n• 10 dakikalık sayaç kur ve sadece başla\n• sayaç çalınca kendini ödüllendir';
+
+  @override
+  String get mCantSleepReply =>
+      'Bu gece için:\n• ekranı bırak, ışıkları kıs\n• odayı serin tut\n• 20 dakika uyuyamazsan kalk, sakin bir şey oku, sonra tekrar dene';
+
+  @override
+  String get mLonelyReply =>
+      'Yalnızlık zor bir his ve bunu yaşayan tek kişi sen değilsin. Küçük bir adım iyi gelebilir: özlediğin birine mesaj at ya da biraz insanların olduğu bir yere git; bir kafe, park ya da kurs.';
+
+  @override
+  String get mVeryBadReply =>
+      'Böyle hissettiğin için çok üzgünüm. Bunu tek başına taşımak zorunda değilsin; lütfen bugün güvendiğin biriyle konuş. Kendine zarar vermeyi düşünüyorsan ya da tehlikedeysen hemen 112’yi ara.';
+
+  @override
+  String get gInspire => 'İlham ver';
+
+  @override
+  String get gMyDayPrompt => 'Bugünle ilgili ne öğrenmek istersin?';
+
+  @override
+  String get gTodayPlan => 'Bugünkü planım';
+
+  @override
+  String get gSpendToday => 'Bugün ne kadar harcayabilirim?';
+
+  @override
+  String get gMyScore => 'Yaşam puanım';
+
+  @override
+  String get gOpenMyDay => 'Günüm’ü aç';
 }

@@ -164,8 +164,7 @@ void main() {
     await tester.enterText(find.byType(TextField).last, 'How much can I spend today?');
     await tester.testTextInput.receiveAction(TextInputAction.send);
     await tester.pump();
-    await pumpUntil(tester, find.text('Lio · on your phone'));
-    expect(find.textContaining('safe daily amount'), findsOneWidget);
+    await pumpUntil(tester, find.textContaining('safe daily amount'));
     await tearDownApp(tester);
   });
 
@@ -233,6 +232,74 @@ void main() {
     }
     expect(find.text('180'), findsWidgets);
     await tearDownApp(tester);
+  });
+
+  group('Lio guide (no AI model)', () {
+    Future<TestApp> openLio(WidgetTester tester) async {
+      usePhoneViewport(tester);
+      final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+      await tester.pumpWidget(app.widget());
+      await pumpUntil(tester, find.text('What should we solve today?'));
+      await tester.tap(find.text('AI').last);
+      await pumpUntil(tester, find.text('How can I help today?'));
+      return app;
+    }
+
+    Future<void> chip(WidgetTester tester, String label) async {
+      await pumpUntil(tester, find.widgetWithText(ActionChip, label));
+      await tester.tap(find.widgetWithText(ActionChip, label).last);
+      await tester.pump(const Duration(milliseconds: 300));
+    }
+
+    Future<void> answer(WidgetTester tester, String text) async {
+      await tester.enterText(find.byType(TextField).last, text);
+      await tester.tap(find.byTooltip('Send').last);
+      await tester.pump(const Duration(milliseconds: 300));
+    }
+
+    testWidgets('money: will my money last, by tapping and typing', (tester) async {
+      final app = await openLio(tester);
+      await chip(tester, 'Money');
+      await chip(tester, 'Will my money last?');
+      await pumpUntil(tester, find.text('How much money do you have left?'));
+      await answer(tester, '3000');
+      await pumpUntil(tester, find.text('How many days does it need to last?'));
+      await answer(tester, '20');
+      await pumpUntil(tester, find.textContaining('a day.'));
+      expect(find.textContaining('150'), findsWidgets);
+      expect(app.analytics.logged(AnalyticsEvent.problemSolved), isTrue);
+      await tearDownApp(tester);
+    });
+
+    testWidgets('write: a birthday message from a template, ready to copy', (tester) async {
+      await openLio(tester);
+      await chip(tester, 'Write');
+      await chip(tester, 'Birthday wishes');
+      await chip(tester, 'Warm');
+      await pumpUntil(tester, find.text('Who is it for? (a name, or skip)'));
+      await answer(tester, 'Ayşe');
+      await pumpUntil(tester, find.textContaining('Happy birthday Ayşe!'));
+      expect(find.text('Copy'), findsWidgets);
+      await tearDownApp(tester);
+    });
+
+    testWidgets('decide: let Lio pick between options', (tester) async {
+      await openLio(tester);
+      await chip(tester, 'Decide');
+      await pumpUntil(tester, find.textContaining('separated by commas'));
+      await answer(tester, 'pizza, sushi');
+      await chip(tester, 'Pick one for me');
+      await pumpUntil(tester, find.textContaining('I pick'));
+      await tearDownApp(tester);
+    });
+
+    testWidgets('mood: feeling really bad shows where to get help', (tester) async {
+      await openLio(tester);
+      await chip(tester, 'Mood boost');
+      await chip(tester, 'Really bad');
+      await pumpUntil(tester, find.textContaining('112'));
+      await tearDownApp(tester);
+    });
   });
 }
 

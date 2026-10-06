@@ -4555,6 +4555,756 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'I couldn’t match those ingredients to a recipe yet. Ask Lio for ideas.'**
   String get recipeNoMatch;
+
+  /// No description provided for @gTypeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Or type your problem…'**
+  String get gTypeHint;
+
+  /// No description provided for @gAnswerHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type your answer…'**
+  String get gAnswerHint;
+
+  /// No description provided for @gRestart.
+  ///
+  /// In en, this message translates to:
+  /// **'Start over'**
+  String get gRestart;
+
+  /// No description provided for @gMainMenu.
+  ///
+  /// In en, this message translates to:
+  /// **'Main menu'**
+  String get gMainMenu;
+
+  /// No description provided for @gSomethingElse.
+  ///
+  /// In en, this message translates to:
+  /// **'Something else'**
+  String get gSomethingElse;
+
+  /// No description provided for @gNotUnderstood.
+  ///
+  /// In en, this message translates to:
+  /// **'I can’t do that one yet. Pick a topic and I’ll help step by step.'**
+  String get gNotUnderstood;
+
+  /// No description provided for @gInvalidNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'That doesn’t look like a number. Try again?'**
+  String get gInvalidNumber;
+
+  /// No description provided for @gMood.
+  ///
+  /// In en, this message translates to:
+  /// **'Mood boost'**
+  String get gMood;
+
+  /// No description provided for @gRemind.
+  ///
+  /// In en, this message translates to:
+  /// **'Remind me'**
+  String get gRemind;
+
+  /// No description provided for @gRemindPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'What should I remind you about?'**
+  String get gRemindPrompt;
+
+  /// No description provided for @gMoneyPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'What should we figure out?'**
+  String get gMoneyPrompt;
+
+  /// No description provided for @gRunway.
+  ///
+  /// In en, this message translates to:
+  /// **'Will my money last?'**
+  String get gRunway;
+
+  /// No description provided for @gDiscount.
+  ///
+  /// In en, this message translates to:
+  /// **'Discount'**
+  String get gDiscount;
+
+  /// No description provided for @gSplit.
+  ///
+  /// In en, this message translates to:
+  /// **'Split the bill'**
+  String get gSplit;
+
+  /// No description provided for @gInstallment.
+  ///
+  /// In en, this message translates to:
+  /// **'Instalments or cash?'**
+  String get gInstallment;
+
+  /// No description provided for @gUnitPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Which is cheaper?'**
+  String get gUnitPrice;
+
+  /// No description provided for @gVat.
+  ///
+  /// In en, this message translates to:
+  /// **'Add VAT'**
+  String get gVat;
+
+  /// No description provided for @gRaise.
+  ///
+  /// In en, this message translates to:
+  /// **'Salary raise'**
+  String get gRaise;
+
+  /// No description provided for @gYearly.
+  ///
+  /// In en, this message translates to:
+  /// **'Yearly cost of subscriptions'**
+  String get gYearly;
+
+  /// No description provided for @gCalcPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'What should we calculate?'**
+  String get gCalcPrompt;
+
+  /// No description provided for @gPercentOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Percent of a number'**
+  String get gPercentOf;
+
+  /// No description provided for @gConvert.
+  ///
+  /// In en, this message translates to:
+  /// **'Convert units'**
+  String get gConvert;
+
+  /// No description provided for @gDaysUntil.
+  ///
+  /// In en, this message translates to:
+  /// **'Days until a date'**
+  String get gDaysUntil;
+
+  /// No description provided for @gFuel.
+  ///
+  /// In en, this message translates to:
+  /// **'Trip fuel cost'**
+  String get gFuel;
+
+  /// No description provided for @gOpenCalculator.
+  ///
+  /// In en, this message translates to:
+  /// **'Open the calculator'**
+  String get gOpenCalculator;
+
+  /// No description provided for @qAmountLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'How much money do you have left?'**
+  String get qAmountLeft;
+
+  /// No description provided for @qDaysLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'How many days does it need to last?'**
+  String get qDaysLeft;
+
+  /// No description provided for @qMonthEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'Until month end'**
+  String get qMonthEnd;
+
+  /// No description provided for @qPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'What’s the price?'**
+  String get qPrice;
+
+  /// No description provided for @qDiscountPct.
+  ///
+  /// In en, this message translates to:
+  /// **'How many percent off?'**
+  String get qDiscountPct;
+
+  /// No description provided for @qTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'What’s the total bill?'**
+  String get qTotal;
+
+  /// No description provided for @qPeople.
+  ///
+  /// In en, this message translates to:
+  /// **'How many people?'**
+  String get qPeople;
+
+  /// No description provided for @qTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Any tip?'**
+  String get qTip;
+
+  /// No description provided for @qNoTip.
+  ///
+  /// In en, this message translates to:
+  /// **'No tip'**
+  String get qNoTip;
+
+  /// No description provided for @qMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'How much is each instalment?'**
+  String get qMonthly;
+
+  /// No description provided for @qMonths.
+  ///
+  /// In en, this message translates to:
+  /// **'How many months?'**
+  String get qMonths;
+
+  /// No description provided for @qCash.
+  ///
+  /// In en, this message translates to:
+  /// **'What’s the cash price? (skip if you don’t know)'**
+  String get qCash;
+
+  /// No description provided for @qSize1.
+  ///
+  /// In en, this message translates to:
+  /// **'First option: how much is in it? (e.g. 1 L, 500 g, 6 pcs)'**
+  String get qSize1;
+
+  /// No description provided for @qPrice1.
+  ///
+  /// In en, this message translates to:
+  /// **'And its price?'**
+  String get qPrice1;
+
+  /// No description provided for @qSize2.
+  ///
+  /// In en, this message translates to:
+  /// **'Second option: how much is in it?'**
+  String get qSize2;
+
+  /// No description provided for @qPrice2.
+  ///
+  /// In en, this message translates to:
+  /// **'And its price?'**
+  String get qPrice2;
+
+  /// No description provided for @qNeedUnit.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a unit, like 1 L, 500 g or 6 pcs.'**
+  String get qNeedUnit;
+
+  /// No description provided for @qVatRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Which VAT rate?'**
+  String get qVatRate;
+
+  /// No description provided for @qSalary.
+  ///
+  /// In en, this message translates to:
+  /// **'What’s the current amount?'**
+  String get qSalary;
+
+  /// No description provided for @qRaisePct.
+  ///
+  /// In en, this message translates to:
+  /// **'How many percent is the raise?'**
+  String get qRaisePct;
+
+  /// No description provided for @qSubs.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly amounts, separated by commas (e.g. 99, 149)'**
+  String get qSubs;
+
+  /// No description provided for @qNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Which number?'**
+  String get qNumber;
+
+  /// No description provided for @qPercent.
+  ///
+  /// In en, this message translates to:
+  /// **'What percent?'**
+  String get qPercent;
+
+  /// No description provided for @qConvert.
+  ///
+  /// In en, this message translates to:
+  /// **'What should I convert? (e.g. 5 kg to lb)'**
+  String get qConvert;
+
+  /// No description provided for @qDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Which date? (e.g. 31 December)'**
+  String get qDate;
+
+  /// No description provided for @qKm.
+  ///
+  /// In en, this message translates to:
+  /// **'How many km is the trip?'**
+  String get qKm;
+
+  /// No description provided for @qConsumption.
+  ///
+  /// In en, this message translates to:
+  /// **'How many litres per 100 km?'**
+  String get qConsumption;
+
+  /// No description provided for @qFuelPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel price per litre?'**
+  String get qFuelPrice;
+
+  /// No description provided for @gConvertFail.
+  ///
+  /// In en, this message translates to:
+  /// **'I couldn’t read that. Try “5 kg to lb” or “30 C to F”.'**
+  String get gConvertFail;
+
+  /// No description provided for @gDateFail.
+  ///
+  /// In en, this message translates to:
+  /// **'I couldn’t read that date. Try “31 December”.'**
+  String get gDateFail;
+
+  /// No description provided for @gDecidePrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Let’s decide. What are your options?'**
+  String get gDecidePrompt;
+
+  /// No description provided for @qOptions.
+  ///
+  /// In en, this message translates to:
+  /// **'Write your options separated by commas (e.g. pizza, sushi)'**
+  String get qOptions;
+
+  /// No description provided for @gDecideCompare.
+  ///
+  /// In en, this message translates to:
+  /// **'Compare them properly'**
+  String get gDecideCompare;
+
+  /// No description provided for @gCoin.
+  ///
+  /// In en, this message translates to:
+  /// **'Flip a coin'**
+  String get gCoin;
+
+  /// No description provided for @gRandomPick.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick one for me'**
+  String get gRandomPick;
+
+  /// No description provided for @coinHeads.
+  ///
+  /// In en, this message translates to:
+  /// **'Heads! 🪙'**
+  String get coinHeads;
+
+  /// No description provided for @coinTails.
+  ///
+  /// In en, this message translates to:
+  /// **'Tails! 🪙'**
+  String get coinTails;
+
+  /// No description provided for @randomPicked.
+  ///
+  /// In en, this message translates to:
+  /// **'I pick {option}! 🎲'**
+  String randomPicked(String option);
+
+  /// No description provided for @gFoodPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Food time! What do you need?'**
+  String get gFoodPrompt;
+
+  /// No description provided for @gCookWithWhatIHave.
+  ///
+  /// In en, this message translates to:
+  /// **'Cook with what I have'**
+  String get gCookWithWhatIHave;
+
+  /// No description provided for @qIngredients.
+  ///
+  /// In en, this message translates to:
+  /// **'What do you have? (comma separated)'**
+  String get qIngredients;
+
+  /// No description provided for @gWhatToEat.
+  ///
+  /// In en, this message translates to:
+  /// **'What should I eat?'**
+  String get gWhatToEat;
+
+  /// No description provided for @gShoppingList.
+  ///
+  /// In en, this message translates to:
+  /// **'My shopping list'**
+  String get gShoppingList;
+
+  /// No description provided for @gRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipes'**
+  String get gRecipes;
+
+  /// No description provided for @mealIdea.
+  ///
+  /// In en, this message translates to:
+  /// **'How about {meal}? Ready in about {minutes} min.'**
+  String mealIdea(String meal, int minutes);
+
+  /// No description provided for @gAnotherIdea.
+  ///
+  /// In en, this message translates to:
+  /// **'Another idea'**
+  String get gAnotherIdea;
+
+  /// No description provided for @gWritePrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'What kind of message should we write?'**
+  String get gWritePrompt;
+
+  /// No description provided for @tplBirthday.
+  ///
+  /// In en, this message translates to:
+  /// **'Birthday wishes'**
+  String get tplBirthday;
+
+  /// No description provided for @tplThanks.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you'**
+  String get tplThanks;
+
+  /// No description provided for @tplApology.
+  ///
+  /// In en, this message translates to:
+  /// **'Apology'**
+  String get tplApology;
+
+  /// No description provided for @tplLate.
+  ///
+  /// In en, this message translates to:
+  /// **'Running late'**
+  String get tplLate;
+
+  /// No description provided for @tplLeave.
+  ///
+  /// In en, this message translates to:
+  /// **'Asking for time off'**
+  String get tplLeave;
+
+  /// No description provided for @tplDecline.
+  ///
+  /// In en, this message translates to:
+  /// **'Saying no politely'**
+  String get tplDecline;
+
+  /// No description provided for @tplCongrats.
+  ///
+  /// In en, this message translates to:
+  /// **'Congratulations'**
+  String get tplCongrats;
+
+  /// No description provided for @tplCondolence.
+  ///
+  /// In en, this message translates to:
+  /// **'Condolences'**
+  String get tplCondolence;
+
+  /// No description provided for @tplPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment reminder'**
+  String get tplPayment;
+
+  /// No description provided for @tplComplaint.
+  ///
+  /// In en, this message translates to:
+  /// **'Complaint to a company'**
+  String get tplComplaint;
+
+  /// No description provided for @tplJob.
+  ///
+  /// In en, this message translates to:
+  /// **'Job application'**
+  String get tplJob;
+
+  /// No description provided for @tplLandlord.
+  ///
+  /// In en, this message translates to:
+  /// **'Message to the landlord'**
+  String get tplLandlord;
+
+  /// No description provided for @qTone.
+  ///
+  /// In en, this message translates to:
+  /// **'Which tone?'**
+  String get qTone;
+
+  /// No description provided for @toneWarm.
+  ///
+  /// In en, this message translates to:
+  /// **'Warm'**
+  String get toneWarm;
+
+  /// No description provided for @toneFormal.
+  ///
+  /// In en, this message translates to:
+  /// **'Formal'**
+  String get toneFormal;
+
+  /// No description provided for @toneShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Short'**
+  String get toneShort;
+
+  /// No description provided for @fName.
+  ///
+  /// In en, this message translates to:
+  /// **'Who is it for? (a name, or skip)'**
+  String get fName;
+
+  /// No description provided for @fCompany.
+  ///
+  /// In en, this message translates to:
+  /// **'Which company?'**
+  String get fCompany;
+
+  /// No description provided for @fWhatThanks.
+  ///
+  /// In en, this message translates to:
+  /// **'What are you thanking them for?'**
+  String get fWhatThanks;
+
+  /// No description provided for @fWhatApology.
+  ///
+  /// In en, this message translates to:
+  /// **'What are you apologising for?'**
+  String get fWhatApology;
+
+  /// No description provided for @fWhatLeave.
+  ///
+  /// In en, this message translates to:
+  /// **'What’s the reason?'**
+  String get fWhatLeave;
+
+  /// No description provided for @fWhatDecline.
+  ///
+  /// In en, this message translates to:
+  /// **'What are you saying no to?'**
+  String get fWhatDecline;
+
+  /// No description provided for @fWhatCongrats.
+  ///
+  /// In en, this message translates to:
+  /// **'What are you congratulating them on?'**
+  String get fWhatCongrats;
+
+  /// No description provided for @fWhatPayment.
+  ///
+  /// In en, this message translates to:
+  /// **'Which payment? (e.g. the 500 rent)'**
+  String get fWhatPayment;
+
+  /// No description provided for @fWhatComplaint.
+  ///
+  /// In en, this message translates to:
+  /// **'What’s the problem?'**
+  String get fWhatComplaint;
+
+  /// No description provided for @fWhatJob.
+  ///
+  /// In en, this message translates to:
+  /// **'Which position?'**
+  String get fWhatJob;
+
+  /// No description provided for @fWhatLandlord.
+  ///
+  /// In en, this message translates to:
+  /// **'What needs fixing? (e.g. the boiler)'**
+  String get fWhatLandlord;
+
+  /// No description provided for @fWhenLate.
+  ///
+  /// In en, this message translates to:
+  /// **'When will you get there? (e.g. in 15 minutes)'**
+  String get fWhenLate;
+
+  /// No description provided for @fWhenLeave.
+  ///
+  /// In en, this message translates to:
+  /// **'Which day(s)? (e.g. on Friday)'**
+  String get fWhenLeave;
+
+  /// No description provided for @writeResult.
+  ///
+  /// In en, this message translates to:
+  /// **'Here are a few versions. Copy the one you like.'**
+  String get writeResult;
+
+  /// No description provided for @copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy'**
+  String get copy;
+
+  /// No description provided for @copied.
+  ///
+  /// In en, this message translates to:
+  /// **'Copied'**
+  String get copied;
+
+  /// No description provided for @gOtherTone.
+  ///
+  /// In en, this message translates to:
+  /// **'Another tone'**
+  String get gOtherTone;
+
+  /// No description provided for @gOtherMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Another message'**
+  String get gOtherMessage;
+
+  /// No description provided for @gMoodPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'How are you feeling right now?'**
+  String get gMoodPrompt;
+
+  /// No description provided for @mTired.
+  ///
+  /// In en, this message translates to:
+  /// **'Tired'**
+  String get mTired;
+
+  /// No description provided for @mStressed.
+  ///
+  /// In en, this message translates to:
+  /// **'Stressed'**
+  String get mStressed;
+
+  /// No description provided for @mUnmotivated.
+  ///
+  /// In en, this message translates to:
+  /// **'No motivation'**
+  String get mUnmotivated;
+
+  /// No description provided for @mCantSleep.
+  ///
+  /// In en, this message translates to:
+  /// **'Can’t sleep'**
+  String get mCantSleep;
+
+  /// No description provided for @mLonely.
+  ///
+  /// In en, this message translates to:
+  /// **'Lonely'**
+  String get mLonely;
+
+  /// No description provided for @mVeryBad.
+  ///
+  /// In en, this message translates to:
+  /// **'Really bad'**
+  String get mVeryBad;
+
+  /// No description provided for @mTiredReply.
+  ///
+  /// In en, this message translates to:
+  /// **'That happens. Try this:\n• a glass of water and a 10-minute walk\n• one small task, then a real break\n• an early night tonight'**
+  String get mTiredReply;
+
+  /// No description provided for @mStressedReply.
+  ///
+  /// In en, this message translates to:
+  /// **'Let’s slow down for a minute:\n• breathe in for 4, hold for 4, out for 6 — five times\n• write down the one thing that matters most today\n• everything else can wait a little'**
+  String get mStressedReply;
+
+  /// No description provided for @mUnmotivatedReply.
+  ///
+  /// In en, this message translates to:
+  /// **'Motivation often comes after starting, not before:\n• pick a 2-minute version of the task\n• set a 10-minute timer and just begin\n• reward yourself when it rings'**
+  String get mUnmotivatedReply;
+
+  /// No description provided for @mCantSleepReply.
+  ///
+  /// In en, this message translates to:
+  /// **'For tonight:\n• put the screen away and dim the lights\n• keep the room cool\n• if you’re still awake after 20 minutes, get up, read something calm, then try again'**
+  String get mCantSleepReply;
+
+  /// No description provided for @mLonelyReply.
+  ///
+  /// In en, this message translates to:
+  /// **'Feeling lonely is hard, and you’re not the only one. A small step can help: message one person you miss, or go somewhere with people around for a bit — a café, a park, a class.'**
+  String get mLonelyReply;
+
+  /// No description provided for @mVeryBadReply.
+  ///
+  /// In en, this message translates to:
+  /// **'I’m really sorry you’re feeling this way. You don’t have to carry it alone — please talk to someone you trust today. If you are in danger or thinking about hurting yourself, call your local emergency number now (112 in Türkiye and Europe, 911 in the US).'**
+  String get mVeryBadReply;
+
+  /// No description provided for @gInspire.
+  ///
+  /// In en, this message translates to:
+  /// **'Inspire me'**
+  String get gInspire;
+
+  /// No description provided for @gMyDayPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'What would you like to know about today?'**
+  String get gMyDayPrompt;
+
+  /// No description provided for @gTodayPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Today’s plan'**
+  String get gTodayPlan;
+
+  /// No description provided for @gSpendToday.
+  ///
+  /// In en, this message translates to:
+  /// **'How much can I spend today?'**
+  String get gSpendToday;
+
+  /// No description provided for @gMyScore.
+  ///
+  /// In en, this message translates to:
+  /// **'My Life Score'**
+  String get gMyScore;
+
+  /// No description provided for @gOpenMyDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Open My day'**
+  String get gOpenMyDay;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

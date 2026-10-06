@@ -329,8 +329,8 @@ class ProblemSolver {
     final choice =
         RegExp(r'(^|\s)(mı|mi|mu|mü)\s.*(mı|mi|mu|mü)(\s|\?|$)').hasMatch(lower) ||
         (RegExp(r'\s(or|veya|ya da)\s').hasMatch(lower) && lower.trim().endsWith('?'));
-    if (choice && _options(text).length >= 2) {
-      return ToolRoute(ProblemTool.decide, options: _options(text), text: text);
+    if (choice && splitOptions(text).length >= 2) {
+      return ToolRoute(ProblemTool.decide, options: splitOptions(text), text: text);
     }
     if (kw([
       'hangisi',
@@ -349,7 +349,7 @@ class ProblemSolver {
       'should i',
       'better',
     ])) {
-      return ToolRoute(ProblemTool.decide, options: _options(text), text: text);
+      return ToolRoute(ProblemTool.decide, options: splitOptions(text), text: text);
     }
     if (kw(['evde', 'elimde', 'dolapta', 'buzdolab', 'i have', 'at home', 'fridge']) &&
             kw(['var', 'have', 'yemek', 'pisir', 'cook', 'yapabilir', 'make']) ||
@@ -473,7 +473,7 @@ class ProblemSolver {
   }
 
   /// "iPhone 15 mi yoksa Galaxy S24 mü?" → ["iPhone 15", "Galaxy S24"].
-  static List<String> _options(String text) {
+  static List<String> splitOptions(String text) {
     var t = text.replaceAll(RegExp(r'[?!]'), ' ');
     t = t.replaceAll(
       RegExp(

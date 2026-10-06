@@ -2534,4 +2534,389 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get recipeNoMatch => 'I couldn’t match those ingredients to a recipe yet. Ask Lio for ideas.';
+
+  @override
+  String get gTypeHint => 'Or type your problem…';
+
+  @override
+  String get gAnswerHint => 'Type your answer…';
+
+  @override
+  String get gRestart => 'Start over';
+
+  @override
+  String get gMainMenu => 'Main menu';
+
+  @override
+  String get gSomethingElse => 'Something else';
+
+  @override
+  String get gNotUnderstood => 'I can’t do that one yet. Pick a topic and I’ll help step by step.';
+
+  @override
+  String get gInvalidNumber => 'That doesn’t look like a number. Try again?';
+
+  @override
+  String get gMood => 'Mood boost';
+
+  @override
+  String get gRemind => 'Remind me';
+
+  @override
+  String get gRemindPrompt => 'What should I remind you about?';
+
+  @override
+  String get gMoneyPrompt => 'What should we figure out?';
+
+  @override
+  String get gRunway => 'Will my money last?';
+
+  @override
+  String get gDiscount => 'Discount';
+
+  @override
+  String get gSplit => 'Split the bill';
+
+  @override
+  String get gInstallment => 'Instalments or cash?';
+
+  @override
+  String get gUnitPrice => 'Which is cheaper?';
+
+  @override
+  String get gVat => 'Add VAT';
+
+  @override
+  String get gRaise => 'Salary raise';
+
+  @override
+  String get gYearly => 'Yearly cost of subscriptions';
+
+  @override
+  String get gCalcPrompt => 'What should we calculate?';
+
+  @override
+  String get gPercentOf => 'Percent of a number';
+
+  @override
+  String get gConvert => 'Convert units';
+
+  @override
+  String get gDaysUntil => 'Days until a date';
+
+  @override
+  String get gFuel => 'Trip fuel cost';
+
+  @override
+  String get gOpenCalculator => 'Open the calculator';
+
+  @override
+  String get qAmountLeft => 'How much money do you have left?';
+
+  @override
+  String get qDaysLeft => 'How many days does it need to last?';
+
+  @override
+  String get qMonthEnd => 'Until month end';
+
+  @override
+  String get qPrice => 'What’s the price?';
+
+  @override
+  String get qDiscountPct => 'How many percent off?';
+
+  @override
+  String get qTotal => 'What’s the total bill?';
+
+  @override
+  String get qPeople => 'How many people?';
+
+  @override
+  String get qTip => 'Any tip?';
+
+  @override
+  String get qNoTip => 'No tip';
+
+  @override
+  String get qMonthly => 'How much is each instalment?';
+
+  @override
+  String get qMonths => 'How many months?';
+
+  @override
+  String get qCash => 'What’s the cash price? (skip if you don’t know)';
+
+  @override
+  String get qSize1 => 'First option: how much is in it? (e.g. 1 L, 500 g, 6 pcs)';
+
+  @override
+  String get qPrice1 => 'And its price?';
+
+  @override
+  String get qSize2 => 'Second option: how much is in it?';
+
+  @override
+  String get qPrice2 => 'And its price?';
+
+  @override
+  String get qNeedUnit => 'Add a unit, like 1 L, 500 g or 6 pcs.';
+
+  @override
+  String get qVatRate => 'Which VAT rate?';
+
+  @override
+  String get qSalary => 'What’s the current amount?';
+
+  @override
+  String get qRaisePct => 'How many percent is the raise?';
+
+  @override
+  String get qSubs => 'Monthly amounts, separated by commas (e.g. 99, 149)';
+
+  @override
+  String get qNumber => 'Which number?';
+
+  @override
+  String get qPercent => 'What percent?';
+
+  @override
+  String get qConvert => 'What should I convert? (e.g. 5 kg to lb)';
+
+  @override
+  String get qDate => 'Which date? (e.g. 31 December)';
+
+  @override
+  String get qKm => 'How many km is the trip?';
+
+  @override
+  String get qConsumption => 'How many litres per 100 km?';
+
+  @override
+  String get qFuelPrice => 'Fuel price per litre?';
+
+  @override
+  String get gConvertFail => 'I couldn’t read that. Try “5 kg to lb” or “30 C to F”.';
+
+  @override
+  String get gDateFail => 'I couldn’t read that date. Try “31 December”.';
+
+  @override
+  String get gDecidePrompt => 'Let’s decide. What are your options?';
+
+  @override
+  String get qOptions => 'Write your options separated by commas (e.g. pizza, sushi)';
+
+  @override
+  String get gDecideCompare => 'Compare them properly';
+
+  @override
+  String get gCoin => 'Flip a coin';
+
+  @override
+  String get gRandomPick => 'Pick one for me';
+
+  @override
+  String get coinHeads => 'Heads! 🪙';
+
+  @override
+  String get coinTails => 'Tails! 🪙';
+
+  @override
+  String randomPicked(String option) {
+    return 'I pick $option! 🎲';
+  }
+
+  @override
+  String get gFoodPrompt => 'Food time! What do you need?';
+
+  @override
+  String get gCookWithWhatIHave => 'Cook with what I have';
+
+  @override
+  String get qIngredients => 'What do you have? (comma separated)';
+
+  @override
+  String get gWhatToEat => 'What should I eat?';
+
+  @override
+  String get gShoppingList => 'My shopping list';
+
+  @override
+  String get gRecipes => 'Recipes';
+
+  @override
+  String mealIdea(String meal, int minutes) {
+    return 'How about $meal? Ready in about $minutes min.';
+  }
+
+  @override
+  String get gAnotherIdea => 'Another idea';
+
+  @override
+  String get gWritePrompt => 'What kind of message should we write?';
+
+  @override
+  String get tplBirthday => 'Birthday wishes';
+
+  @override
+  String get tplThanks => 'Thank you';
+
+  @override
+  String get tplApology => 'Apology';
+
+  @override
+  String get tplLate => 'Running late';
+
+  @override
+  String get tplLeave => 'Asking for time off';
+
+  @override
+  String get tplDecline => 'Saying no politely';
+
+  @override
+  String get tplCongrats => 'Congratulations';
+
+  @override
+  String get tplCondolence => 'Condolences';
+
+  @override
+  String get tplPayment => 'Payment reminder';
+
+  @override
+  String get tplComplaint => 'Complaint to a company';
+
+  @override
+  String get tplJob => 'Job application';
+
+  @override
+  String get tplLandlord => 'Message to the landlord';
+
+  @override
+  String get qTone => 'Which tone?';
+
+  @override
+  String get toneWarm => 'Warm';
+
+  @override
+  String get toneFormal => 'Formal';
+
+  @override
+  String get toneShort => 'Short';
+
+  @override
+  String get fName => 'Who is it for? (a name, or skip)';
+
+  @override
+  String get fCompany => 'Which company?';
+
+  @override
+  String get fWhatThanks => 'What are you thanking them for?';
+
+  @override
+  String get fWhatApology => 'What are you apologising for?';
+
+  @override
+  String get fWhatLeave => 'What’s the reason?';
+
+  @override
+  String get fWhatDecline => 'What are you saying no to?';
+
+  @override
+  String get fWhatCongrats => 'What are you congratulating them on?';
+
+  @override
+  String get fWhatPayment => 'Which payment? (e.g. the 500 rent)';
+
+  @override
+  String get fWhatComplaint => 'What’s the problem?';
+
+  @override
+  String get fWhatJob => 'Which position?';
+
+  @override
+  String get fWhatLandlord => 'What needs fixing? (e.g. the boiler)';
+
+  @override
+  String get fWhenLate => 'When will you get there? (e.g. in 15 minutes)';
+
+  @override
+  String get fWhenLeave => 'Which day(s)? (e.g. on Friday)';
+
+  @override
+  String get writeResult => 'Here are a few versions. Copy the one you like.';
+
+  @override
+  String get copy => 'Copy';
+
+  @override
+  String get copied => 'Copied';
+
+  @override
+  String get gOtherTone => 'Another tone';
+
+  @override
+  String get gOtherMessage => 'Another message';
+
+  @override
+  String get gMoodPrompt => 'How are you feeling right now?';
+
+  @override
+  String get mTired => 'Tired';
+
+  @override
+  String get mStressed => 'Stressed';
+
+  @override
+  String get mUnmotivated => 'No motivation';
+
+  @override
+  String get mCantSleep => 'Can’t sleep';
+
+  @override
+  String get mLonely => 'Lonely';
+
+  @override
+  String get mVeryBad => 'Really bad';
+
+  @override
+  String get mTiredReply =>
+      'That happens. Try this:\n• a glass of water and a 10-minute walk\n• one small task, then a real break\n• an early night tonight';
+
+  @override
+  String get mStressedReply =>
+      'Let’s slow down for a minute:\n• breathe in for 4, hold for 4, out for 6 — five times\n• write down the one thing that matters most today\n• everything else can wait a little';
+
+  @override
+  String get mUnmotivatedReply =>
+      'Motivation often comes after starting, not before:\n• pick a 2-minute version of the task\n• set a 10-minute timer and just begin\n• reward yourself when it rings';
+
+  @override
+  String get mCantSleepReply =>
+      'For tonight:\n• put the screen away and dim the lights\n• keep the room cool\n• if you’re still awake after 20 minutes, get up, read something calm, then try again';
+
+  @override
+  String get mLonelyReply =>
+      'Feeling lonely is hard, and you’re not the only one. A small step can help: message one person you miss, or go somewhere with people around for a bit — a café, a park, a class.';
+
+  @override
+  String get mVeryBadReply =>
+      'I’m really sorry you’re feeling this way. You don’t have to carry it alone — please talk to someone you trust today. If you are in danger or thinking about hurting yourself, call your local emergency number now (112 in Türkiye and Europe, 911 in the US).';
+
+  @override
+  String get gInspire => 'Inspire me';
+
+  @override
+  String get gMyDayPrompt => 'What would you like to know about today?';
+
+  @override
+  String get gTodayPlan => 'Today’s plan';
+
+  @override
+  String get gSpendToday => 'How much can I spend today?';
+
+  @override
+  String get gMyScore => 'My Life Score';
+
+  @override
+  String get gOpenMyDay => 'Open My day';
 }

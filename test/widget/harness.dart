@@ -94,14 +94,8 @@ class TestApp {
   LocalStore? seeded;
 
   /// A signed-in (local) user who already finished onboarding.
-  static Future<TestApp> onboarded({
-    Map<String, Object> prefs = const {},
-    bool online = true,
-  }) async {
-    final app = await create(
-      prefs: {'local_uid': 'local-test', ...prefs},
-      online: online,
-    );
+  static Future<TestApp> onboarded({Map<String, Object> prefs = const {}, bool online = true}) async {
+    final app = await create(prefs: {'local_uid': 'local-test', ...prefs}, online: online);
     final store = await DatabaseOpener.inMemory('seed${DateTime.now().microsecondsSinceEpoch}');
     final repos = UserRepos(store, journalKeys: MemoryJournalKeyStore());
     await repos.profile.save(
@@ -121,10 +115,7 @@ class TestApp {
     return app;
   }
 
-  static Future<TestApp> create({
-    Map<String, Object> prefs = const {},
-    bool online = true,
-  }) async {
+  static Future<TestApp> create({Map<String, Object> prefs = const {}, bool online = true}) async {
     SharedPreferences.setMockInitialValues({'showLio': false, ...prefs});
     final p = await SharedPreferences.getInstance();
     final analytics = MemoryAnalyticsService();

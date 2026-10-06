@@ -42,6 +42,7 @@ class _AiScreenState extends ConsumerState<AiScreen> {
   final _input = TextEditingController();
   final _scroll = ScrollController();
   String? _consumedPrompt;
+  static final _handled = <String>{};
 
   @override
   void didUpdateWidget(covariant AiScreen oldWidget) {
@@ -58,7 +59,9 @@ class _AiScreenState extends ConsumerState<AiScreen> {
   void _maybePrefill() {
     final p = widget.initialPrompt;
     final key = '$p#${widget.nonce}';
-    if (p != null && key != _consumedPrompt) {
+    // The route can rebuild this screen with a fresh State; a hand-off is
+    // still handled only once.
+    if (p != null && key != _consumedPrompt && (widget.nonce == null || _handled.add(key))) {
       _consumedPrompt = key;
       if (widget.autoSend) {
         WidgetsBinding.instance.addPostFrameCallback((_) {

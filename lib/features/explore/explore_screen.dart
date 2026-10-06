@@ -25,7 +25,7 @@ class ExploreScreen extends ConsumerWidget {
     final solve = <(IconData, String, String, String?, Accent)>[
       (Icons.balance_rounded, l.quickDecide, '/decide', null, Accent.insight),
       (Icons.calculate_rounded, l.calcTitle, '/calc', null, Accent.score),
-      (Icons.edit_note_rounded, l.quickWrite, '/ai', null, Accent.ai),
+      (Icons.edit_note_rounded, l.quickWrite, '/ai?topic=write', null, Accent.ai),
       (Icons.event_available_rounded, l.quickPlan, '/plan', null, Accent.plan),
       (Icons.wb_sunny_rounded, l.exploreMyDay, '/today', null, Accent.goals),
     ];
@@ -90,7 +90,7 @@ class ExploreScreen extends ConsumerWidget {
   );
 
   Widget _tile(BuildContext context, (IconData, String, String, String?, Accent) t) => AppCard(
-    onTap: () => t.$3 == '/ai' ? context.go(t.$3) : context.push(t.$3),
+    onTap: () => t.$3.startsWith('/ai') ? context.go(t.$3) : context.push(t.$3),
     semanticLabel: t.$2,
     padding: const EdgeInsets.symmetric(horizontal: Space.md, vertical: Space.sm),
     child: Row(

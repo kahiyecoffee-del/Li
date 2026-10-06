@@ -8,6 +8,7 @@ import '../features/auth/welcome_screen.dart';
 import '../features/decide/decide_screen.dart';
 import '../features/explore/explore_screen.dart';
 import '../features/home/today_screen.dart';
+import '../features/lio/lio_guide_screen.dart';
 import '../features/life/achievements_screen.dart';
 import '../features/life/food_screen.dart';
 import '../features/life/habits_screen.dart';
@@ -129,11 +130,25 @@ final routerProvider = Provider<GoRouter>((ref) {
             routes: [
               GoRoute(
                 path: Routes.ai,
-                builder: (_, s) => AiScreen(
-                  initialPrompt: s.uri.queryParameters['q'],
-                  autoSend: s.uri.queryParameters['send'] == '1',
-                  nonce: s.uri.queryParameters['n'],
-                ),
+                // Query parameters belong to /ai itself, not to /ai/chat below it.
+                builder: (_, s) => s.uri.path == Routes.ai
+                    ? LioGuideScreen(
+                        initialText: s.uri.queryParameters['q'],
+                        topic: s.uri.queryParameters['topic'],
+                        nonce: s.uri.queryParameters['n'],
+                      )
+                    : const LioGuideScreen(),
+                routes: [
+                  // Free-form chat with the cloud assistant (only when configured).
+                  GoRoute(
+                    path: 'chat',
+                    builder: (_, s) => AiScreen(
+                      initialPrompt: s.uri.queryParameters['q'],
+                      autoSend: s.uri.queryParameters['send'] == '1',
+                      nonce: s.uri.queryParameters['n'],
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
