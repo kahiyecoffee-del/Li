@@ -193,14 +193,15 @@ const _trNames = <String, String>{
 String ingredientName(String canonical, String languageCode) =>
     languageCode == 'tr' ? (_trNames[normalizeIngredient(canonical)] ?? canonical) : canonical;
 
-/// Recipes that use the most of what the user has, then need the least.
+/// Recipes that use what the user has and need the fewest extra items.
 List<PantryMatch> bestForIngredients(List<Recipe> recipes, Iterable<String> have, {int limit = 3}) {
   final h = have.map(normalizeIngredient).toSet();
   int used(Recipe r) => r.ingredients.map(normalizeIngredient).where(h.contains).length;
   final matches = const MealEngine().matchPantry(recipes, h).where((m) => used(m.recipe) > 0).toList()
+    // Fewest things to buy first, then the ones that use more of what you have.
     ..sort((a, b) {
-      final u = used(b.recipe).compareTo(used(a.recipe));
-      return u != 0 ? u : a.missing.length.compareTo(b.missing.length);
+      final m = a.missing.length.compareTo(b.missing.length);
+      return m != 0 ? m : used(b.recipe).compareTo(used(a.recipe));
     });
   return matches.take(limit).toList();
 }
