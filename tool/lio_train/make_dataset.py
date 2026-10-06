@@ -20,6 +20,7 @@ SYSTEM_HEAD = (
     "Reply in {lang}. Be warm, brief (under 80 words) and practical.\n"
     "Use the user data below when it helps; never invent data that is not there.\n"
     "You cannot change anything in the app; if asked to add or change something, say where to do it in the app.\n"
+    "For general questions, answer briefly from what you know and say so if you are not sure; you have no internet for news, prices or scores.\n"
     "Never give medical, legal or investment diagnoses.\n"
     "User data:\n"
 )
@@ -414,22 +415,123 @@ def greet(rnd, f: Facts):
     return q, a
 
 
+# General knowledge: short, correct answers; hedge where facts can change.
+GENERAL = {
+    "tr": [
+        ("Dünyanın en uzun nehri hangisi?", "Genellikle Nil kabul edilir (yaklaşık 6.650 km); bazı ölçümlere göre Amazon daha uzun çıkar."),
+        ("Türkiye'nin başkenti neresi?", "Ankara."),
+        ("Fransa'nın başkenti neresi?", "Paris."),
+        ("Japonya'nın başkenti neresi?", "Tokyo."),
+        ("Dünyanın en yüksek dağı hangisi?", "Everest, yaklaşık 8.849 metre."),
+        ("Türkiye'nin en yüksek dağı hangisi?", "Ağrı Dağı, yaklaşık 5.137 metre."),
+        ("Güneş sistemindeki en büyük gezegen hangisi?", "Jüpiter."),
+        ("Ay Dünya'ya ne kadar uzak?", "Ortalama yaklaşık 384.000 km."),
+        ("Su kaç derecede kaynar?", "Deniz seviyesinde 100 °C'de; yükseklerde biraz daha düşük sıcaklıkta kaynar."),
+        ("Bir yılda kaç gün var?", "365 gün; artık yıllarda 366."),
+        ("Işık hızı ne kadar?", "Saniyede yaklaşık 300.000 km."),
+        ("Fotosentez nedir?", "Bitkilerin güneş ışığı, su ve karbondioksitten şeker üretip oksijen açığa çıkarmasıdır."),
+        ("DNA nedir?", "Canlıların genetik bilgisini taşıyan moleküldür; kalıtsal özellikler onunla aktarılır."),
+        ("Cumhuriyet ne zaman ilan edildi?", "29 Ekim 1923'te."),
+        ("İstanbul ne zaman fethedildi?", "1453'te, Fatih Sultan Mehmet tarafından."),
+        ("Mona Lisa'yı kim yaptı?", "Leonardo da Vinci."),
+        ("Suç ve Ceza'yı kim yazdı?", "Fyodor Dostoyevski."),
+        ("İnsan vücudunda kaç kemik var?", "Yetişkinlerde 206."),
+        ("Günde kaç litre su içmeliyim?", "Genel bir öneri günde yaklaşık 2–2,5 litre; ihtiyaç kilo, hava ve hareketliliğe göre değişir."),
+        ("Bir kilometre kaç mil?", "Yaklaşık 0,62 mil."),
+        ("1 ons kaç gram?", "Yaklaşık 28,35 gram."),
+        ("Pi sayısı kaç?", "Yaklaşık 3,14159."),
+        ("Bir haftada kaç saat var?", "168 saat."),
+        ("Yapay zeka nedir?", "Bilgisayarların öğrenme, anlama ve karar verme gibi insan zekâsı isteyen işleri yapabilmesidir."),
+        ("Enflasyon nedir?", "Fiyatların genel düzeyinin zamanla artması, yani paranın alım gücünün düşmesidir."),
+        ("Faiz nedir?", "Borç verilen ya da biriktirilen paranın kullanım bedelidir; genelde yüzde olarak ifade edilir."),
+        ("Bugün dolar kaç lira?", "İnternetim olmadığı için güncel kurları bilemem; bankanın ya da güvendiğin bir uygulamanın kurlarına bak."),
+        ("Dün maçı kim kazandı?", "Telefonunda internetsiz çalıştığım için güncel sonuçları bilemem; bir spor uygulamasına bakmanı öneririm."),
+        ("Yarın hava nasıl olacak?", "Ben hava tahmini göremem ama Ana sayfadaki hava durumu kartı şehrine göre gösteriyor."),
+        ("Bana bir şiir yazar mısın?", "Sabah ışığı pencerede,\nKahve kokusu, sessiz bir an.\nKüçük adımlar, büyük yollar,\nBugün de seninle başlıyor zaman."),
+        ("Bana bir fıkra anlat", "Temel'e sormuşlar: “Saat kaç?” Temel: “Bilmem, ben saati tamire verdim, şimdi zamanım boş!”"),
+        ("Bana bir bilmece sor", "Ağzı var dili yok, konuşur sesi yok. Nedir? Cevap: Mektup."),
+        ("Kod yazabilir misin?", "Küçük örneklerde yardımcı olabilirim ama telefonda çalışan küçük bir model olduğum için uzun kodlarda hata yapabilirim. Ne yazmak istiyorsun?"),
+        ("Python'da liste nasıl sıralanır?", "Yeni liste için sorted(liste), aynı listeyi sıralamak için liste.sort() kullanabilirsin."),
+        ("'Merhaba' İngilizcede ne demek?", "“Hello”."),
+        ("'Thank you' Türkçesi ne?", "“Teşekkür ederim”."),
+        ("Kahvenin faydaları neler?", "Ölçülü içildiğinde uyanıklığı ve odaklanmayı artırabilir; fazlası uykuyu ve kalp ritmini etkileyebilir."),
+        ("Nasıl daha hızlı okurum?", "Gözünü satır boyunca bir kalemle yönlendir, içinden seslendirmeyi azalt ve kısa, düzenli okuma seansları yap."),
+        ("Mülakata nasıl hazırlanırım?", "Şirketi araştır, kendini 1 dakikada anlatmayı çalış, geçmişinden somut örnekler hazırla ve sorman için 2-3 soru not et."),
+        ("İyi bir sabah rutini nasıl olur?", "Aynı saatte kalk, bir bardak su iç, 5 dakika hareket et ve günün en önemli işini belirle; telefona sonra bak."),
+    ],
+    "en": [
+        ("What's the longest river in the world?", "Usually the Nile (about 6,650 km), though some measurements put the Amazon slightly ahead."),
+        ("What's the capital of France?", "Paris."),
+        ("What's the capital of Japan?", "Tokyo."),
+        ("What's the capital of Australia?", "Canberra."),
+        ("What's the tallest mountain on Earth?", "Mount Everest, about 8,849 meters."),
+        ("What's the largest planet in the solar system?", "Jupiter."),
+        ("How far is the Moon?", "About 384,000 km on average."),
+        ("At what temperature does water boil?", "100 °C (212 °F) at sea level; a bit lower at high altitude."),
+        ("How fast is light?", "About 300,000 km per second."),
+        ("What is photosynthesis?", "It's how plants use sunlight, water and carbon dioxide to make sugar, releasing oxygen."),
+        ("What is DNA?", "The molecule that carries genetic information in living things."),
+        ("Who painted the Mona Lisa?", "Leonardo da Vinci."),
+        ("Who wrote Romeo and Juliet?", "William Shakespeare."),
+        ("How many bones are in the human body?", "206 in adults."),
+        ("How much water should I drink a day?", "A common guideline is about 2–2.5 liters; it depends on your size, the weather and how active you are."),
+        ("How many miles is a kilometer?", "About 0.62 miles."),
+        ("How many hours are in a week?", "168 hours."),
+        ("What is pi?", "About 3.14159 — the ratio of a circle's circumference to its diameter."),
+        ("What is artificial intelligence?", "Computers doing tasks that usually need human intelligence, like learning, understanding language and making decisions."),
+        ("What is inflation?", "A general rise in prices over time, which means money buys less."),
+        ("What is compound interest?", "Interest earned on both your money and the interest it already earned, so savings grow faster over time."),
+        ("What's the dollar rate today?", "I run offline, so I can't see live rates — check your bank or a finance app."),
+        ("Who won the game last night?", "I work offline on your phone, so I don't know live results; a sports app will have them."),
+        ("What's the weather tomorrow?", "I can't see forecasts, but the weather card on Home shows it for your city."),
+        ("Can you write me a poem?", "Morning light on the windowsill,\nCoffee warm, the world is still.\nSmall steps add to miles ahead —\nToday begins with what you said."),
+        ("Tell me a joke", "Why don't scientists trust atoms? Because they make up everything!"),
+        ("Give me a riddle", "What has keys but can't open locks? A piano."),
+        ("Can you write code?", "I can help with small snippets, but I'm a small on-phone model, so longer code may have mistakes. What do you want to write?"),
+        ("How do I sort a list in Python?", "Use sorted(my_list) for a new sorted list, or my_list.sort() to sort it in place."),
+        ("How do you say 'thank you' in Spanish?", "“Gracias”."),
+        ("Is coffee good for you?", "In moderation it can boost alertness and focus; too much can hurt sleep and raise your heart rate."),
+        ("How can I read faster?", "Guide your eyes with a finger or pen, reduce saying words in your head, and practice in short, regular sessions."),
+        ("How do I prepare for a job interview?", "Research the company, practice a one-minute intro, prepare concrete examples from your past, and note 2–3 questions to ask."),
+        ("What's a good morning routine?", "Wake at the same time, drink a glass of water, move for 5 minutes and pick your most important task before checking your phone."),
+    ],
+}
+
+
+def general(rnd, f: Facts):
+    tr = f.lang == "tr"
+    kind = rnd.random()
+    if kind < 0.3:
+        # Arithmetic and everyday money math, computed so it is always right.
+        a, b = rnd.randint(2, 99), rnd.randint(2, 99)
+        op = rnd.choice(["+", "x", "%"])
+        if op == "+":
+            q = f"{a} artı {b} kaç?" if tr else f"What is {a} plus {b}?"
+            ans = f"{a + b}."
+        elif op == "x":
+            q = f"{a} çarpı {b} kaç?" if tr else f"What is {a} times {b}?"
+            ans = f"{a * b}."
+        else:
+            pct = rnd.choice([5, 10, 15, 20, 25, 50])
+            base = rnd.choice([80, 120, 200, 250, 400, 1000, 1500])
+            v = base * pct / 100
+            vs = (f"{v:g}".replace(".", ",") if tr else f"{v:g}")
+            gen = {80: "'in", 120: "'nin", 200: "'ün", 250: "'nin", 400: "'ün", 1000: "'in", 1500: "'ün"}
+            acc = {5: "'i", 10: "'u", 15: "'i", 20: "'si", 25: "'i", 50: "'si"}
+            q = f"{base}{gen[base]} yüzde {pct}{acc[pct]} kaç?" if tr else f"What is {pct}% of {base}?"
+            ans = vs + "."
+        return q, ans
+    q, a = rnd.choice(GENERAL[f.lang])
+    return q, a
+
+
 def offtopic(rnd, f: Facts):
     tr = f.lang == "tr"
-    q = pick(rnd, ["Bana bir şiir yazar mısın?", "Dünyanın en uzun nehri hangisi?", "Kod yazar mısın?", "Futbol maçını kim kazandı?",
-                   "Bitcoin alayım mı?"] if tr else
-             ["Can you write me a poem?", "What's the longest river in the world?", "Can you write code?", "Who won the match?",
-              "Should I buy bitcoin?"])
-    if "itcoin" in q:
-        a = ("Yatırım tavsiyesi veremem. Genel bir ilke olarak, önce birkaç aylık acil durum fonu oluşturmak ve kaybetmeyi göze alamayacağın parayı riske atmamak iyi olur."
-             if tr else
-             "I can't give investment advice. As a general rule, build a few months of emergency savings first and never risk money you can't afford to lose.")
-    else:
-        a = ("Ben gündelik hayatına odaklanan küçük bir yardımcıyım, o yüzden bu konuda güvenilir olamam. "
-             "Ama planın, bütçen, yemek ya da motivasyon için her zaman buradayım!"
-             if tr else
-             "I'm a small helper focused on your daily life, so I'm not reliable on that one. "
-             "But I'm always here for your plan, budget, meals or motivation!")
+    q = pick(rnd, ["Bitcoin alayım mı?", "Hangi hisseyi alayım?", "Altın mı dolar mı?"] if tr else
+             ["Should I buy bitcoin?", "Which stock should I buy?", "Gold or dollars?"])
+    a = ("Yatırım tavsiyesi veremem. Genel bir ilke olarak, önce birkaç aylık acil durum fonu oluşturmak ve kaybetmeyi göze alamayacağın parayı riske atmamak iyi olur."
+         if tr else
+         "I can't give investment advice. As a general rule, build a few months of emergency savings first and never risk money you can't afford to lose.")
     return q, a
 
 
@@ -452,7 +554,7 @@ def medical(rnd, f: Facts):
 
 INTENTS = [
     (plan, 16), (money_q, 12), (buy_q, 5), (food, 9), (score, 7), (mood, 8), (crisis, 1), (sleep, 4), (habit, 5),
-    (motivation, 5), (productivity, 5), (howto, 10), (greet, 8), (offtopic, 4), (medical, 3),
+    (motivation, 5), (productivity, 5), (howto, 10), (greet, 8), (general, 14), (offtopic, 2), (medical, 3),
 ]
 
 FOLLOW = {

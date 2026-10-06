@@ -33,7 +33,7 @@ runs:
         HF_HOME: /mnt/hf
       run: |
         sudo mkdir -p /mnt/lio /mnt/hf && sudo chown -R "$USER" /mnt/lio /mnt/hf
-        python3 tool/lio_train/make_dataset.py --out /mnt/lio/data.jsonl --n 3000
+        python3 tool/lio_train/make_dataset.py --out /mnt/lio/data.jsonl --n 3600
         python3 tool/lio_train/train_lora.py --data /mnt/lio/data.jsonl --state /mnt/lio/state --time-budget ${{ inputs.budget }}
     - uses: actions/upload-artifact@v4
       with:
