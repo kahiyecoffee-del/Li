@@ -164,7 +164,7 @@ void main() {
     await tearDownApp(tester);
   });
 
-  testWidgets('Offline Lio: one fixed model (Gemma 3 1B) for everyone', (tester) async {
+  testWidgets('Offline Lio: one fixed model for everyone', (tester) async {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded()))!;
     await tester.pumpWidget(app.widget());
@@ -173,10 +173,9 @@ void main() {
     await pumpUntil(tester, find.text('Lio companion'));
     await tester.scrollUntilVisible(find.text('Offline Lio'), 200, scrollable: find.byType(Scrollable).last);
     await tester.tap(find.text('Offline Lio'));
-    await pumpUntil(tester, find.textContaining('Gemma 3 1B'));
+    await pumpUntil(tester, find.textContaining('the same model for everyone'));
     expect(find.text('Lio Plus'), findsNothing);
     expect(find.text('Download model · Offline Lio'), findsOneWidget);
-    expect(find.textContaining('Gemma Terms of Use'), findsOneWidget);
     await tearDownApp(tester);
   });
 

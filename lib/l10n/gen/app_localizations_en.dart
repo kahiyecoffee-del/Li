@@ -1954,11 +1954,8 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String offlineSingleInfo(int size) {
-    return 'Lio uses Gemma 3 1B by Google · about $size MB · the same model for everyone. Wi-Fi recommended; works best on phones with 4 GB+ RAM.';
+    return 'About $size MB · the same model for everyone. Wi-Fi recommended.';
   }
-
-  @override
-  String get gemmaNotice => 'Gemma is provided under and subject to the Gemma Terms of Use.';
 
   @override
   String get offlineLiteTitle => 'Lio Lite';

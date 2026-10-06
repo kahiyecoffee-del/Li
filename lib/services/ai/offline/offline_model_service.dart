@@ -23,8 +23,9 @@ class OfflineModelStatus {
 /// On-device language model for offline assistant replies.
 ///
 /// The model file (MediaPipe `.task`) is not bundled with the app: it is
-/// downloaded on request — Gemma 3 1B IT (~720 MB) by default — from the URL
-/// in Remote Config. Only one model is kept on the phone at a time. Replies are plain text only:
+/// downloaded on request — Lio Lite (Qwen2.5 0.5B, ~0.5 GB) by default, or
+/// Lio Plus (Qwen2.5 1.5B, ~1.6 GB) — from the URLs in Remote Config. Only
+/// one model is kept on the phone at a time. Replies are plain text only:
 /// small models are not reliable enough to propose app actions.
 abstract class OfflineModelService {
   OfflineModelStatus get current;
@@ -55,7 +56,7 @@ class EdgeAiOfflineModelService implements OfflineModelService {
   static const _idKey = 'offline_model_id';
 
   /// Context window (prompt + history + reply) and reply cap. The default
-  /// Gemma 3 1B .task build has a 1280-token KV cache.
+  /// Qwen2.5 .task build has a 1280-token KV cache.
   static const maxTokens = 1280;
   static const maxOutputTokens = 320;
 

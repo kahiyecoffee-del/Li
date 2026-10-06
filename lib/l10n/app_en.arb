@@ -1145,7 +1145,7 @@
   "offlineAiPrefer": "Use offline assistant even when online",
   "offlineAiPreferHelp": "Private and free, but less accurate. Otherwise it is used automatically when you are offline.",
   "offlineAiUnavailable": "The offline assistant is not available yet.",
-  "offlineSingleInfo": "Lio uses Gemma 3 1B by Google · about {size} MB · the same model for everyone. Wi-Fi recommended; works best on phones with 4 GB+ RAM.",
+  "offlineSingleInfo": "About {size} MB · the same model for everyone. Wi-Fi recommended.",
   "@offlineSingleInfo": {
     "placeholders": {
       "size": {
@@ -1153,7 +1153,6 @@
       }
     }
   },
-  "gemmaNotice": "Gemma is provided under and subject to the Gemma Terms of Use.",
   "offlineLiteTitle": "Lio Lite",
   "offlineLiteBody": "About {size} MB · fast, works on most phones",
   "@offlineLiteBody": {

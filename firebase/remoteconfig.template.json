@@ -102,24 +102,24 @@
     },
     "offline_model_url": {
       "defaultValue": {
-        "value": "https://github.com/kahiyecoffee-del/Li/releases/download/lio-model-v1/gemma3-1b-it-q4-block32-ekv1280.task"
+        "value": "https://huggingface.co/litert-community/Qwen2.5-0.5B-Instruct/resolve/main/Qwen2.5-0.5B-Instruct_multi-prefill-seq_q8_ekv1280.task"
       },
       "valueType": "STRING",
-      "description": "Lio's on-device model (.task), same for everyone. Default: Gemma 3 1B IT int4 mirrored to a public GitHub release (Gemma Terms of Use apply). Empty hides the offline model."
+      "description": "Lio's on-device model (.task), same for everyone. Default: Qwen2.5 0.5B Instruct (Apache-2.0). Empty hides the offline model."
     },
     "offline_model_size_mb": {
       "defaultValue": {
-        "value": "720"
+        "value": "550"
       },
       "valueType": "NUMBER",
-      "description": "Download size shown to users."
+      "description": "Lio Lite download size shown to users."
     },
     "offline_model_plus_url": {
       "defaultValue": {
         "value": ""
       },
       "valueType": "STRING",
-      "description": "Optional second (larger) on-device model; empty = single fixed model."
+      "description": "Optional second (larger) on-device model, e.g. Qwen2.5 1.5B; empty = single fixed model."
     },
     "offline_model_plus_size_mb": {
       "defaultValue": {

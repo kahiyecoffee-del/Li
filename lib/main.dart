@@ -14,13 +14,6 @@ Future<void> main() async {
     for (final f in ['Fraunces', 'PlusJakartaSans']) {
       yield LicenseEntryWithLineBreaks([f], await rootBundle.loadString('assets/fonts/OFL-$f.txt'));
     }
-    // On-device model (downloaded on request).
-    yield const LicenseEntryWithLineBreaks(
-      ['Gemma 3 1B (Lio offline model)'],
-      '''
-Gemma is provided under and subject to the Gemma Terms of Use found at https://ai.google.dev/gemma/terms
-Use is restricted by the Gemma Prohibited Use Policy: https://ai.google.dev/gemma/prohibited_use_policy''',
-    );
   });
   final services = await buildServices();
   installErrorHandlers(services.crash);

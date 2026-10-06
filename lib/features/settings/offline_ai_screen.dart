@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../app/providers.dart';
 import '../../core/l10n/labels.dart';
@@ -130,18 +129,6 @@ class _OfflineAiScreenState extends ConsumerState<OfflineAiScreen> {
           const SizedBox(height: Space.md),
           if (plus == null) ...[
             Text(l.offlineSingleInfo(lite.sizeMb), style: context.text.bodyMedium),
-            const SizedBox(height: Space.xs),
-            InkWell(
-              onTap: () =>
-                  launchUrl(Uri.parse('https://ai.google.dev/gemma/terms'), mode: LaunchMode.externalApplication),
-              child: Text(
-                l.gemmaNotice,
-                style: context.text.bodySmall?.copyWith(
-                  color: context.semantic.muted,
-                  decoration: TextDecoration.underline,
-                ),
-              ),
-            ),
           ] else
             for (final v in [lite, plus])
               Padding(
