@@ -69,51 +69,55 @@ void main() {
     await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
     await shot(tester, '01-ana-sayfa');
 
-    Future<void> solve(String q) async {
-      await tester.enterText(find.byType(TextField).first, q);
-      await tester.tap(find.text('Çöz'));
+    await tester.tap(find.text('Çöz'));
+    await pumpUntil(tester, find.text('Bugün nasıl yardımcı olabilirim?'));
+    await shot(tester, '02-lio-menu');
+
+    Future<void> ask(String q) async {
+      await tester.enterText(find.byType(TextField).last, q);
+      await tester.tap(find.byTooltip('Gönder').last);
+      for (var i = 0; i < 6; i++) {
+        await tester.pump(const Duration(milliseconds: 150));
+      }
     }
 
-    await solve('3.000 TL param kaldı, ay sonuna 20 gün var');
-    await pumpUntil(tester, find.text('Telefonunda hesaplandı'));
-    await shot(tester, '02-param-yeter-mi');
-    await tester.binding.handlePopRoute();
-    await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
+    Future<void> chip(String label) async {
+      await pumpUntil(tester, find.widgetWithText(ActionChip, label));
+      await tester.tap(find.widgetWithText(ActionChip, label).last);
+      await tester.pump(const Duration(milliseconds: 300));
+    }
 
-    await solve('1 L 45 TL mi yoksa 1,5 L 60 TL mi daha ucuz?');
-    await pumpUntil(tester, find.text('Telefonunda hesaplandı'));
-    await shot(tester, '03-hangisi-ucuz');
-    await tester.binding.handlePopRoute();
-    await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
+    await ask('3.000 TL param kaldı, ay sonuna 20 gün var');
+    await pumpUntil(tester, find.textContaining('harcayabilirsin'));
+    await shot(tester, '03-param-yeter-mi');
 
-    await solve('Evde yumurta, domates, peynir ve ekmek var');
+    await ask('1 L 45 TL mi yoksa 1,5 L 60 TL mi daha ucuz?');
+    await pumpUntil(tester, find.textContaining('daha ucuz'));
+    await shot(tester, '04-hangisi-ucuz');
+
+    await chip('Ana menü');
+    await chip('Yaz');
+    await chip('İzin isteme');
+    await chip('Resmi');
+    await ask('Ahmet Bey');
+    await ask('Cuma günü');
+    await ask('ailevi bir durum');
+    await pumpUntil(tester, find.textContaining('izin talep ediyorum'));
+    await shot(tester, '05-mesaj-sablonu');
+
+    await chip('Ana menü');
+    await chip('Karar ver');
+    await ask('pizza, sushi');
+    await chip('Benim yerime seç');
+    await pumpUntil(tester, find.textContaining('Seçimim'));
+    await shot(tester, '06-karar');
+
+    await ask('Evde yumurta, domates, peynir ve ekmek var');
     await pumpUntil(tester, find.text('Elindekilerle bunları yapabilirsin'));
-    await shot(tester, '04-yemek');
-    await tester.binding.handlePopRoute();
-    await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
-
-    await solve('iPhone 15 mi yoksa Galaxy S24 mü?');
-    await pumpUntil(tester, find.text('Karar ver'));
-    await shot(tester, '05-karar-ver');
-    await scrollAndTap(tester, find.text('En iyisini göster'));
-    await tester.pump(const Duration(milliseconds: 600));
-    await tester.scrollUntilVisible(find.text('ÖNERİLEN SEÇENEK'), 300, scrollable: find.byType(Scrollable).first);
-    await shot(tester, '06-karar-sonuc');
-    await tester.binding.handlePopRoute();
-    await pumpUntil(tester, find.text('Keşfet'));
+    await shot(tester, '07-yemek');
 
     await tester.tap(find.text('Keşfet').last);
     await pumpUntil(tester, find.text('Takip'));
-    await shot(tester, '07-kesfet');
-
-    await tester.tap(find.text('YZ').last);
-    await pumpUntil(tester, find.text('Bugün nasıl yardımcı olabilirim?'));
-    await tester.enterText(find.byType(TextField).last, 'Bugün ne kadar harcayabilirim?');
-    await tester.tap(find.byTooltip('Gönder'));
-    for (var i = 0; i < 30; i++) {
-      await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 150)));
-      await tester.pump(const Duration(milliseconds: 200));
-    }
-    await shot(tester, '08-lio');
+    await shot(tester, '08-kesfet');
   });
 }

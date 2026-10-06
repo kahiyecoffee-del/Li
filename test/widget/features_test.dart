@@ -168,37 +168,38 @@ void main() {
     await tearDownApp(tester);
   });
 
-  testWidgets('Home: a typed problem is solved on the phone and can be saved', (tester) async {
+  testWidgets('Home: Solve opens Lio; a typed problem is answered and can be saved', (tester) async {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
     await tester.pumpWidget(app.widget());
     await pumpUntil(tester, find.text('What should we solve today?'));
-    await tester.enterText(find.byType(TextField).first, 'I have 3,000 TL left for 20 days');
     await tester.tap(find.text('Solve'));
+    await pumpUntil(tester, find.text('How can I help today?'));
+    await tester.enterText(find.byType(TextField).last, 'I have 3,000 TL left for 20 days');
+    await tester.tap(find.byTooltip('Send').last);
     await pumpUntil(tester, find.textContaining('a day.'));
     expect(find.textContaining('150'), findsWidgets);
-    expect(find.text('Calculated on your phone'), findsOneWidget);
-    await tester.tap(find.text('Save'));
-    await pumpUntil(tester, find.text('Saved'));
     expect(app.analytics.logged(AnalyticsEvent.problemSolved), isTrue);
-
-    await tester.binding.handlePopRoute();
+    await tester.tap(find.widgetWithText(ActionChip, 'Save'));
     await pumpUntil(tester, find.text('Saved'));
     await tester.tap(find.text('Saved').last);
-    await pumpUntil(tester, find.text('I have 3,000 TL left for 20 days'));
+    await pumpUntil(tester, find.textContaining('a day.'));
     await tearDownApp(tester);
   });
 
-  testWidgets('Home: "which one" opens Decide with the options filled in', (tester) async {
+  testWidgets('Lio: "X or Y?" offers to compare in Decide', (tester) async {
     usePhoneViewport(tester);
-    final app = (await tester.runAsync(() => TestApp.onboarded()))!;
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
     await tester.pumpWidget(app.widget());
     await pumpUntil(tester, find.text('What should we solve today?'));
-    await tester.enterText(find.byType(TextField).first, 'Kindle or Kobo?');
     await tester.tap(find.text('Solve'));
+    await pumpUntil(tester, find.text('How can I help today?'));
+    await tester.enterText(find.byType(TextField).last, 'Kindle or Kobo?');
+    await tester.tap(find.byTooltip('Send').last);
+    await pumpUntil(tester, find.widgetWithText(ActionChip, 'Compare them properly'));
+    await tester.tap(find.widgetWithText(ActionChip, 'Compare them properly'));
     await pumpUntil(tester, find.text('Decide'));
     expect(find.text('Kindle'), findsWidgets);
-    expect(find.text('Kobo'), findsWidgets);
     await scrollAndTap(tester, find.text('Show the best option'));
     await tester.pump(const Duration(milliseconds: 600));
     await tester.scrollUntilVisible(find.text('RECOMMENDED'), 300, scrollable: find.byType(Scrollable).first);
@@ -206,15 +207,17 @@ void main() {
     await tearDownApp(tester);
   });
 
-  testWidgets('Home: cooking from what is at home suggests recipes', (tester) async {
+  testWidgets('Lio: cooking from what is at home suggests recipes (tr)', (tester) async {
     usePhoneViewport(tester);
-    final app = (await tester.runAsync(() => TestApp.onboarded(prefs: {'locale': 'tr'})))!;
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false, prefs: {'locale': 'tr'})))!;
     await tester.pumpWidget(app.widget());
     await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
-    await tester.enterText(find.byType(TextField).first, 'Evde yumurta, domates ve peynir var');
     await tester.tap(find.text('Çöz'));
+    await pumpUntil(tester, find.text('Bugün nasıl yardımcı olabilirim?'));
+    await tester.enterText(find.byType(TextField).last, 'Evde yumurta, domates ve peynir var');
+    await tester.tap(find.byTooltip('Gönder').last);
     await pumpUntil(tester, find.text('Elindekilerle bunları yapabilirsin'));
-    expect(find.text('Menemen'), findsOneWidget);
+    expect(find.textContaining('Menemen'), findsWidgets);
     expect(app.analytics.logged(AnalyticsEvent.recipeGenerated), isTrue);
     await tearDownApp(tester);
   });

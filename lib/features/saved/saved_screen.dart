@@ -8,7 +8,6 @@ import '../../core/theme/tokens.dart';
 import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
 import '../../core/widgets/mascot.dart';
-import '../../domain/models/saved_item.dart';
 import '../problem/problem_flow.dart';
 
 /// Saved answers, decisions, recipes and texts. Tap to reopen; swipe to
@@ -43,15 +42,6 @@ class SavedScreen extends ConsumerWidget {
     'fuel_cost' => Accent.money,
     _ => Accent.score,
   };
-
-  void _open(BuildContext context, WidgetRef ref, SavedItem item) {
-    if (item.kind == 'decision') {
-      final o = (item.payload['options'] as List?)?.whereType<String>().map(Uri.encodeQueryComponent).join('|') ?? '';
-      context.push('/decide${o.isEmpty ? '' : '?o=$o'}');
-      return;
-    }
-    openProblem(context, ref, item.payload['q'] as String? ?? item.title);
-  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -105,7 +95,7 @@ class SavedScreen extends ConsumerWidget {
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l.removed)));
                   },
                   child: AppCard(
-                    onTap: () => _open(context, ref, item),
+                    onTap: () => openSavedItem(context, ref, item),
                     padding: const EdgeInsets.all(Space.lg),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,11 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
 import '../../core/l10n/labels.dart';
+import '../../core/theme/tokens.dart';
 import '../../core/utils/ids.dart';
 import '../../domain/models/saved_item.dart';
 import '../../domain/problem/problem_solver.dart';
@@ -86,4 +88,47 @@ Future<void> saveProblem(
   if (context.mounted) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(context.l10n.savedToast)));
   }
+}
+
+/// Reopens something from Saved: a decision opens Decide again, a typed
+/// problem is re-solved, and an answer from Lio is shown with a copy button.
+Future<void> openSavedItem(BuildContext context, WidgetRef ref, SavedItem item) async {
+  if (item.kind == 'decision') {
+    final o = (item.payload['options'] as List?)?.whereType<String>().map(Uri.encodeQueryComponent).join('|') ?? '';
+    await context.push('/decide${o.isEmpty ? '' : '?o=$o'}');
+    return;
+  }
+  final q = item.payload['q'] as String?;
+  if (q != null) return openProblem(context, ref, q);
+  final lines = (item.payload['details'] as List?)?.whereType<String>().toList() ?? [item.title, item.summary];
+  final text = lines.join('\n');
+  await showModalBottomSheet<void>(
+    context: context,
+    useRootNavigator: true,
+    builder: (c) => SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.lg),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SelectableText(text, style: Theme.of(c).textTheme.bodyLarge),
+            const SizedBox(height: Space.md),
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton.icon(
+                onPressed: () {
+                  Clipboard.setData(ClipboardData(text: text));
+                  Navigator.pop(c);
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(context.l10n.copied)));
+                },
+                icon: const Icon(Icons.copy_rounded, size: 18),
+                label: Text(context.l10n.copy),
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }
