@@ -48,6 +48,7 @@ class _MoneyScreenState extends ConsumerState<MoneyScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
+        heroTag: 'fab-money',
         onPressed: () => showExpenseSheet(context),
         icon: const Icon(Icons.add),
         label: Text(l.addExpense),

@@ -36,6 +36,7 @@ class PlanScreen extends ConsumerWidget {
         ),
         body: const TabBarView(children: [_TodayView(), _RangeView(days: 7), _RangeView(days: 31)]),
         floatingActionButton: FloatingActionButton(
+          heroTag: 'fab-plan',
           tooltip: l.newTask,
           onPressed: () => showTaskEditor(context),
           child: const Icon(Icons.add),

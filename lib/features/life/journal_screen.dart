@@ -30,6 +30,7 @@ class JournalScreen extends ConsumerWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
+        heroTag: 'fab-journal',
         onPressed: () => _write(context, ref),
         icon: const Icon(Icons.edit_outlined),
         label: Text(l.journalNew),

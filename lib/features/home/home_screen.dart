@@ -185,6 +185,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: 'fab-home',
         tooltip: l.quickAdd,
         onPressed: () => _quickAdd(context),
         child: const Icon(Icons.add_rounded, size: 28),
