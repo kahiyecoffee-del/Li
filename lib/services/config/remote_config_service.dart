@@ -46,10 +46,13 @@ const Map<String, Object> remoteDefaults = {
   RcKeys.experiments: '{}',
   // On-device assistant model (MediaPipe .task). Default: Qwen2.5 1.5B
   // Instruct (Apache-2.0, no login needed). Empty hides the feature.
-  // Lio's on-device model, the same for everyone: Qwen2.5 0.5B Instruct
-  // (~550 MB, Apache-2.0, multilingual, no sign-in needed).
-  RcKeys.offlineModelUrl: 'https://huggingface.co/litert-community/Qwen2.5-0.5B-Instruct/resolve/main/Qwen2.5-0.5B-Instruct_multi-prefill-seq_q8_ekv1280.task',
-  RcKeys.offlineModelSizeMb: 550,
+  // Lio's on-device model, the same for everyone: Qwen2.5-1.5B-Instruct
+  // (Apache-2.0) converted to LiteRT-LM by .github/workflows/convert-lio.yml
+  // and served from this repo's `lio-model` release. Swapped for the
+  // fine-tuned Lio build when training finishes.
+  RcKeys.offlineModelUrl:
+      'https://github.com/kahiyecoffee-del/Li/releases/download/lio-model/lio-qwen2.5-1.5b-base_q8_ekv1280.litertlm',
+  RcKeys.offlineModelSizeMb: 1600,
   // Optional second (larger) variant; empty = single fixed model.
   RcKeys.offlineModelPlusUrl: '',
   RcKeys.offlineModelPlusSizeMb: 0,

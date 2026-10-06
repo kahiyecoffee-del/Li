@@ -37,15 +37,12 @@ jobs:
           name: Dayly-test-${{ github.run_number }}
           path: Dayly-test-${{ github.run_number }}.apk
           retention-days: 30
-      - uses: softprops/action-gh-release@v2
+      - name: Publish as a pre-release
         continue-on-error: true
-        with:
-          tag_name: test-build-${{ github.run_number }}
-          name: Dayly test build ${{ github.run_number }}
-          target_commitish: ${{ github.sha }}
-          prerelease: true
-          files: Dayly-test-${{ github.run_number }}.apk
-          body: |
-            Test build from commit ${{ github.sha }}.
-            Install on an Android phone (arm64): open the APK and allow "install unknown apps".
-            Runs in on-device mode: cloud sync, online AI, news and purchases are disabled until Firebase is configured.
+        env:
+          GH_TOKEN: ${{ github.token }}
+          N: ${{ github.run_number }}
+        run: |
+          gh release create "test-build-$N" "Dayly-test-$N.apk" -R "$GITHUB_REPOSITORY" --prerelease \
+            --target "$GITHUB_SHA" --title "Dayly test build $N" \
+            --notes "Test build from commit $GITHUB_SHA. Install on an Android phone (arm64): open the APK and allow \"install unknown apps\". Runs in on-device mode until Firebase is configured."
