@@ -83,6 +83,10 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
+  # All iOS plugins through CocoaPods: ML Kit has no Swift package, and mixing
+  # SwiftPM with CocoaPods left Pods_Runner unlinked.
+  config:
+    enable-swift-package-manager: false
   generate: true
   uses-material-design: true
   assets:

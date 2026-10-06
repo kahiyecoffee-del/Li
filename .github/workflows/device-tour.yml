@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
   push:
     branches: [claude/lifeos-mvp]
-    paths: [integration_test/**, test_driver/**, ios/**, .github/workflows/device-tour.yml]
+    paths: [integration_test/**, test_driver/**, ios/**, pubspec.yaml, .github/workflows/device-tour.yml]
 
 permissions:
   contents: write
