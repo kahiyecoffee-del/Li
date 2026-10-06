@@ -1,9 +1,13 @@
+import '../ml/text_classifier.dart';
 import '../models/enums.dart';
 
 /// Keyword-based shopping categorizer (en + tr). AI categorization is only
 /// used as a fallback for unknown items.
 class ShoppingCategorizer {
-  const ShoppingCategorizer();
+  const ShoppingCategorizer({this.model});
+
+  /// Optional on-device classifier used when no keyword matches.
+  final TextClassifier? model;
 
   static const Map<ShoppingCategory, List<String>> _words = {
     ShoppingCategory.produce: [
@@ -176,6 +180,8 @@ class ShoppingCategorizer {
         }
       }
     });
-    return best;
+    if (best != null) return best;
+    final p = model?.confident(name);
+    return p == null ? null : ShoppingCategory.values.where((c) => c.name == p.label).firstOrNull;
   }
 }

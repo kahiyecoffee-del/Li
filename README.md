@@ -38,6 +38,7 @@ With Firebase + backend configured (see SETUP): `flutter run --dart-define-from-
 | Dark mode, high contrast, dynamic type, semantics, 48dp targets | ✅ |
 | Localization: architecture for 11 languages; English + Turkish populated (569 strings) | ✅ |
 | Privacy: AI data scopes, analytics/crash/ads opt-outs, export, per-type deletion, account deletion | ✅ |
+| On-device ML: bundled expense/shopping classifiers (~50 KB, typo-robust) + optional downloadable offline assistant (MediaPipe LLM) | ✅ |
 
 ## Where you must provide credentials
 | What | Where |
@@ -52,7 +53,7 @@ With Firebase + backend configured (see SETUP): `flutter run --dart-define-from-
 | Privacy policy / terms URLs | `PRIVACY_POLICY_URL`, `TERMS_URL` |
 
 ## Verification done in development
-- `flutter analyze`: no issues. `flutter test`: 85 tests (engines, sync, encryption, services, widget
+- `flutter analyze`: no issues. `flutter test`: 91 tests (engines, sync, encryption, services, widget
   flows incl. onboarding→Home, smart expense entry, AI action confirmation, Turkish + dark mode,
   offline, habits, and a compile check of the production entry point).
 - `functions`: TypeScript build + 24 vitest tests (validator, routing, credits, handlers, providers, SSV
@@ -73,6 +74,12 @@ With Firebase + backend configured (see SETUP): `flutter run --dart-define-from-
 - Step counts are not read from Health Connect; the Health sub-score uses health habits.
 - Built-in recipes are a small curated set (20); larger variety comes from AI meal plans.
 - Legal screens are placeholders until URLs are configured.
+- The on-device classifiers are trained on synthetic data (seed vocabulary + templates); they handle
+  typos/variants well but know only words similar to their vocabulary. Retrain with real, user-confirmed
+  corrections once available.
+- The offline assistant is text-only (no app actions), slower and less accurate than the cloud assistant,
+  and was not run on a real device here (no Android SDK in the dev environment); the model file must be
+  hosted by you.
 
 ## Next recommended features
 1. Health Connect integration (steps, sleep) to replace manual sleep logging.

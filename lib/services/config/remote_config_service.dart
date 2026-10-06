@@ -21,6 +21,8 @@ abstract final class RcKeys {
   static const featureFlags = 'feature_flags';
   static const premiumFeatures = 'premium_features';
   static const experiments = 'experiments';
+  static const offlineModelUrl = 'offline_model_url';
+  static const offlineModelSizeMb = 'offline_model_size_mb';
 }
 
 /// Typed defaults (also used offline and when Firebase is not configured).
@@ -38,8 +40,11 @@ const Map<String, Object> remoteDefaults = {
   RcKeys.notificationDailyCap: 3,
   RcKeys.freeMemoryLimit: 10,
   RcKeys.featureFlags: '{"news":true,"receipt_ocr":true,"weekly_report":true,"monthly_report":true,"pantry":true}',
-  RcKeys.premiumFeatures: '["unlimited_ai","advanced_score","advanced_analytics","no_ads","advanced_planning","advanced_finance","unlimited_meals","ai_memory_unlimited","monthly_report"]',
+  RcKeys.premiumFeatures: '["unlimited_ai","advanced_score","advanced_analytics","no_ads","advanced_planning","advanced_finance","unlimited_meals","ai_memory_unlimited","monthly_report","offline_ai"]',
   RcKeys.experiments: '{}',
+  // Empty = offline assistant hidden. Host the .task file yourself.
+  RcKeys.offlineModelUrl: '',
+  RcKeys.offlineModelSizeMb: 550,
 };
 
 /// Read-only view of remote values.

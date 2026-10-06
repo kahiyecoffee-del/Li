@@ -568,5 +568,19 @@
   "focusFood": "Yemek",
   "focusHabits": "Alışkanlıklar",
   "focusPlanning": "Planlama",
-  "weekdayShort": "{day, select, 1{Pzt} 2{Sal} 3{Çar} 4{Per} 5{Cum} 6{Cmt} other{Paz}}"
+  "weekdayShort": "{day, select, 1{Pzt} 2{Sal} 3{Çar} 4{Per} 5{Cum} 6{Cmt} other{Paz}}",
+  "offlineAiTitle": "Çevrimdışı asistan",
+  "offlineAiBody": "Asistanın internet olmadan cevap verebilmesi için telefonuna küçük bir yapay zeka modeli indir. Cevaplar cihazında kalır. Çevrimiçi asistandan daha sınırlıdır ve uygulamada değişiklik yapamaz.",
+  "offlineAiSize": "İndirme boyutu: yaklaşık {size} MB. Wi-Fi önerilir; 4 GB ve üzeri RAM olan telefonlarda en iyi çalışır.",
+  "offlineAiDownload": "Modeli indir",
+  "offlineAiDownloading": "İndiriliyor… %{progress}",
+  "offlineAiReady": "Hazır — internetsiz çalışır",
+  "offlineAiError": "İndirme başarısız oldu. Bağlantını kontrol edip tekrar dene.",
+  "offlineAiDelete": "Modeli sil",
+  "offlineAiPrefer": "İnternet varken de çevrimdışı asistanı kullan",
+  "offlineAiPreferHelp": "Gizli ve ücretsiz ama daha az isabetli. Kapalıysa yalnızca internet yokken otomatik kullanılır.",
+  "offlineAiUnavailable": "Çevrimdışı asistan henüz kullanılamıyor.",
+  "offlineAnswerLabel": "Çevrimdışı cevap · cihazdaki model",
+  "offlineModeChip": "Çevrimdışı mod",
+  "localModelsInfo": "Harcama ve alışveriş kategorileri cihazında çalışan küçük modellerle tanınır."
 }

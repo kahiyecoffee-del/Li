@@ -639,6 +639,23 @@ s('focusPlanning', 'Planning', 'Planlama')
 s('weekdayShort', '{day, select, 1{Mon} 2{Tue} 3{Wed} 4{Thu} 5{Fri} 6{Sat} other{Sun}}', '{day, select, 1{Pzt} 2{Sal} 3{Çar} 4{Per} 5{Cum} 6{Cmt} other{Paz}}', day='String')
 
 
+# ---------------- Offline assistant (on-device model)
+s('offlineAiTitle', 'Offline assistant', 'Çevrimdışı asistan')
+s('offlineAiBody', 'Download a small AI model to your phone so the assistant can answer without internet. Answers stay on your device. It is less capable than the online assistant and cannot make changes in the app.', 'Asistanın internet olmadan cevap verebilmesi için telefonuna küçük bir yapay zeka modeli indir. Cevaplar cihazında kalır. Çevrimiçi asistandan daha sınırlıdır ve uygulamada değişiklik yapamaz.')
+s('offlineAiSize', 'Download size: about {size} MB. Wi-Fi recommended; works best on phones with 4 GB+ RAM.', 'İndirme boyutu: yaklaşık {size} MB. Wi-Fi önerilir; 4 GB ve üzeri RAM olan telefonlarda en iyi çalışır.', size='int')
+s('offlineAiDownload', 'Download model', 'Modeli indir')
+s('offlineAiDownloading', 'Downloading… {progress}%', 'İndiriliyor… %{progress}', progress='int')
+s('offlineAiReady', 'Ready — works without internet', 'Hazır — internetsiz çalışır')
+s('offlineAiError', 'Download failed. Check your connection and try again.', 'İndirme başarısız oldu. Bağlantını kontrol edip tekrar dene.')
+s('offlineAiDelete', 'Delete model', 'Modeli sil')
+s('offlineAiPrefer', 'Use offline assistant even when online', 'İnternet varken de çevrimdışı asistanı kullan')
+s('offlineAiPreferHelp', 'Private and free, but less accurate. Otherwise it is used automatically when you are offline.', 'Gizli ve ücretsiz ama daha az isabetli. Kapalıysa yalnızca internet yokken otomatik kullanılır.')
+s('offlineAiUnavailable', 'The offline assistant is not available yet.', 'Çevrimdışı asistan henüz kullanılamıyor.')
+s('offlineAnswerLabel', 'Offline answer · on-device model', 'Çevrimdışı cevap · cihazdaki model')
+s('offlineModeChip', 'Offline mode', 'Çevrimdışı mod')
+s('localModelsInfo', 'Expense and shopping categories are recognised by small models that run on your device.', 'Harcama ve alışveriş kategorileri cihazında çalışan küçük modellerle tanınır.')
+
+
 def build(lang_index, locale):
     arb = {'@@locale': locale}
     for key, (en, tr, ph) in S.items():

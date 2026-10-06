@@ -1912,4 +1912,53 @@ class AppLocalizationsEn extends AppLocalizations {
     });
     return '$_temp0';
   }
+
+  @override
+  String get offlineAiTitle => 'Offline assistant';
+
+  @override
+  String get offlineAiBody =>
+      'Download a small AI model to your phone so the assistant can answer without internet. Answers stay on your device. It is less capable than the online assistant and cannot make changes in the app.';
+
+  @override
+  String offlineAiSize(int size) {
+    return 'Download size: about $size MB. Wi-Fi recommended; works best on phones with 4 GB+ RAM.';
+  }
+
+  @override
+  String get offlineAiDownload => 'Download model';
+
+  @override
+  String offlineAiDownloading(int progress) {
+    return 'Downloading… $progress%';
+  }
+
+  @override
+  String get offlineAiReady => 'Ready — works without internet';
+
+  @override
+  String get offlineAiError => 'Download failed. Check your connection and try again.';
+
+  @override
+  String get offlineAiDelete => 'Delete model';
+
+  @override
+  String get offlineAiPrefer => 'Use offline assistant even when online';
+
+  @override
+  String get offlineAiPreferHelp =>
+      'Private and free, but less accurate. Otherwise it is used automatically when you are offline.';
+
+  @override
+  String get offlineAiUnavailable => 'The offline assistant is not available yet.';
+
+  @override
+  String get offlineAnswerLabel => 'Offline answer · on-device model';
+
+  @override
+  String get offlineModeChip => 'Offline mode';
+
+  @override
+  String get localModelsInfo =>
+      'Expense and shopping categories are recognised by small models that run on your device.';
 }

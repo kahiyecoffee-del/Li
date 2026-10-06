@@ -1896,4 +1896,52 @@ class AppLocalizationsTr extends AppLocalizations {
     });
     return '$_temp0';
   }
+
+  @override
+  String get offlineAiTitle => 'Çevrimdışı asistan';
+
+  @override
+  String get offlineAiBody =>
+      'Asistanın internet olmadan cevap verebilmesi için telefonuna küçük bir yapay zeka modeli indir. Cevaplar cihazında kalır. Çevrimiçi asistandan daha sınırlıdır ve uygulamada değişiklik yapamaz.';
+
+  @override
+  String offlineAiSize(int size) {
+    return 'İndirme boyutu: yaklaşık $size MB. Wi-Fi önerilir; 4 GB ve üzeri RAM olan telefonlarda en iyi çalışır.';
+  }
+
+  @override
+  String get offlineAiDownload => 'Modeli indir';
+
+  @override
+  String offlineAiDownloading(int progress) {
+    return 'İndiriliyor… %$progress';
+  }
+
+  @override
+  String get offlineAiReady => 'Hazır — internetsiz çalışır';
+
+  @override
+  String get offlineAiError => 'İndirme başarısız oldu. Bağlantını kontrol edip tekrar dene.';
+
+  @override
+  String get offlineAiDelete => 'Modeli sil';
+
+  @override
+  String get offlineAiPrefer => 'İnternet varken de çevrimdışı asistanı kullan';
+
+  @override
+  String get offlineAiPreferHelp =>
+      'Gizli ve ücretsiz ama daha az isabetli. Kapalıysa yalnızca internet yokken otomatik kullanılır.';
+
+  @override
+  String get offlineAiUnavailable => 'Çevrimdışı asistan henüz kullanılamıyor.';
+
+  @override
+  String get offlineAnswerLabel => 'Çevrimdışı cevap · cihazdaki model';
+
+  @override
+  String get offlineModeChip => 'Çevrimdışı mod';
+
+  @override
+  String get localModelsInfo => 'Harcama ve alışveriş kategorileri cihazında çalışan küçük modellerle tanınır.';
 }

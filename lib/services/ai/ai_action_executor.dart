@@ -36,8 +36,11 @@ class AiActionExecutor {
     required this.profile,
     required this.memory,
     required this.languageCode,
+    this.shoppingCategorizer = const ShoppingCategorizer(),
     DateTime Function()? clock,
   }) : _clock = clock ?? DateTime.now;
+
+  final ShoppingCategorizer shoppingCategorizer;
 
   final UserRepos repos;
   final UserProfile profile;
@@ -114,7 +117,7 @@ class AiActionExecutor {
         return ActionOutcome(true, count: meals.length);
 
       case final AddShoppingItemsAction a:
-        final n = await addShoppingItems(repos, a.items, now);
+        final n = await addShoppingItems(repos, a.items, now, cat: shoppingCategorizer);
         return ActionOutcome(true, count: n);
 
       case final CreateHabitAction a:
@@ -134,9 +137,13 @@ class AiActionExecutor {
   }
 
   /// Adds items to the shopping list, skipping ones already unchecked on it.
-  static Future<int> addShoppingItems(UserRepos repos, List<String> names, DateTime now) async {
+  static Future<int> addShoppingItems(
+    UserRepos repos,
+    List<String> names,
+    DateTime now, {
+    ShoppingCategorizer cat = const ShoppingCategorizer(),
+  }) async {
     final existing = (await repos.shopping.getAll()).where((s) => !s.checked).map((s) => s.name.toLowerCase()).toSet();
-    const cat = ShoppingCategorizer();
     var n = 0;
     for (final name in names) {
       if (existing.contains(name.toLowerCase())) continue;

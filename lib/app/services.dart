@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../data/repositories/journal_repository.dart';
 import '../services/ads/ads_service.dart';
 import '../services/ai/ai_service.dart';
+import '../services/ai/offline/offline_model_service.dart';
 import '../services/analytics/analytics_service.dart';
 import '../services/auth/auth_service.dart';
 import '../services/billing/billing_service.dart';
@@ -37,6 +38,7 @@ class Services {
     required this.news,
     required this.ocr,
     required this.journalKeys,
+    required this.offlineModel,
     this.firestore,
     this.functions,
     this.push,
@@ -58,6 +60,7 @@ class Services {
   final NewsService news;
   final OcrService ocr;
   final JournalKeyStore journalKeys;
+  final OfflineModelService offlineModel;
 
   /// Null in local-only mode (Firebase not configured).
   final FirebaseFirestore? firestore;

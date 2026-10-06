@@ -129,4 +129,19 @@ void main() {
     expect(app.analytics.logged(AnalyticsEvent.habitCreated), isTrue);
     await tearDownApp(tester);
   });
+
+  testWidgets('Offline: with the on-device model installed the assistant answers locally', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false, offlineModelReady: true)))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('Your day at a glance.'));
+    await tester.tap(find.text('AI').last);
+    await pumpUntil(tester, find.text('Offline mode'));
+    await tester.enterText(find.byType(TextField).last, 'Any tip for today?');
+    await tester.tap(find.byTooltip('Send'));
+    await pumpUntil(tester, find.text('Offline tip: drink water.'));
+    expect(find.text('Offline answer · on-device model'), findsOneWidget);
+    expect(app.ai.requests, isEmpty, reason: 'no cloud call, no credits used');
+    await tearDownApp(tester);
+  });
 }

@@ -1,0 +1,82 @@
+{
+ "expense": {
+  "250 lunch": {
+   "label": "food",
+   "p": 0.963281962500542
+  },
+  "taksi 85": {
+   "label": "transport",
+   "p": 0.9627176539128116
+  },
+  "netflix": {
+   "label": "subscriptions",
+   "p": 0.9910955997786565
+  },
+  "elektrik faturası 640": {
+   "label": "bills",
+   "p": 0.9989435763429202
+  },
+  "kira": {
+   "label": "housing",
+   "p": 0.9948093319567987
+  },
+  "ecznae": {
+   "label": "health",
+   "p": 0.6790383314732059
+  },
+  "starbucks latte": {
+   "label": "food",
+   "p": 0.9516298112533667
+  },
+  "sinema bileti": {
+   "label": "entertainment",
+   "p": 0.9931066394907455
+  },
+  "random words here": {
+   "label": "shopping",
+   "p": 0.3227998087222955
+  },
+  "migros alışveriş": {
+   "label": "food",
+   "p": 0.6274998305214764
+  }
+ },
+ "shopping": {
+  "Milk": {
+   "label": "dairy",
+   "p": 0.9172860039066646
+  },
+  "yumurta": {
+   "label": "dairy",
+   "p": 0.9325095149650562
+  },
+  "chicken breast": {
+   "label": "meat",
+   "p": 0.951110130999961
+  },
+  "deterjan": {
+   "label": "household",
+   "p": 0.9364403482274766
+  },
+  "şampuan": {
+   "label": "personalCare",
+   "p": 0.8988712381781344
+  },
+  "2 kg domates": {
+   "label": "produce",
+   "p": 0.8792838635498479
+  },
+  "frozen pizza": {
+   "label": "frozen",
+   "p": 0.998043175265602
+  },
+  "zeytinyağı": {
+   "label": "pantry",
+   "p": 0.933152179242625
+  },
+  "unknownthing": {
+   "label": "pantry",
+   "p": 0.2644498998004434
+  }
+ }
+}

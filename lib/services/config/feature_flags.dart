@@ -24,7 +24,8 @@ enum PremiumFeature {
   advancedFinance('advanced_finance'),
   unlimitedMeals('unlimited_meals'),
   aiMemoryUnlimited('ai_memory_unlimited'),
-  monthlyReport('monthly_report');
+  monthlyReport('monthly_report'),
+  offlineAi('offline_ai');
 
   const PremiumFeature(this.key);
 

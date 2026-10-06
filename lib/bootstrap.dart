@@ -19,6 +19,7 @@ import 'core/config/app_config.dart';
 import 'data/repositories/journal_repository.dart';
 import 'services/ads/ads_service.dart';
 import 'services/ai/ai_service.dart';
+import 'services/ai/offline/offline_model_service.dart';
 import 'services/analytics/analytics_service.dart';
 import 'services/auth/auth_service.dart';
 import 'services/billing/billing_service.dart';
@@ -47,6 +48,8 @@ Future<Services> buildServices() async {
   final weather = WeatherService(OpenMeteoProvider(), prefs);
   final mobile = !kIsWeb && (Platform.isAndroid || Platform.isIOS);
   final ads = mobile ? AdMobAdsService() : const NoAdsService();
+  final OfflineModelService offlineModel = mobile ? EdgeAiOfflineModelService(prefs) : UnsupportedOfflineModelService();
+  unawaited(offlineModel.refresh());
 
   var firebaseReady = false;
   try {
@@ -73,6 +76,7 @@ Future<Services> buildServices() async {
       news: NewsService(UnavailableNewsProvider(), prefs),
       ocr: MlKitOcrService(),
       journalKeys: SecureJournalKeyStore(),
+      offlineModel: offlineModel,
     );
   }
 
@@ -117,6 +121,7 @@ Future<Services> buildServices() async {
     news: NewsService(BackendNewsProvider(functions), prefs),
     ocr: MlKitOcrService(),
     journalKeys: SecureJournalKeyStore(),
+    offlineModel: offlineModel,
     firestore: firestore,
     functions: functions,
     push: PushService(FirebaseMessaging.instance, firestore, onForegroundMessage: notifications.showRemote),

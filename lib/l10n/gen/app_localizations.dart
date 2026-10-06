@@ -3505,6 +3505,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{day, select, 1{Mon} 2{Tue} 3{Wed} 4{Thu} 5{Fri} 6{Sat} other{Sun}}'**
   String weekdayShort(String day);
+
+  /// No description provided for @offlineAiTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline assistant'**
+  String get offlineAiTitle;
+
+  /// No description provided for @offlineAiBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Download a small AI model to your phone so the assistant can answer without internet. Answers stay on your device. It is less capable than the online assistant and cannot make changes in the app.'**
+  String get offlineAiBody;
+
+  /// No description provided for @offlineAiSize.
+  ///
+  /// In en, this message translates to:
+  /// **'Download size: about {size} MB. Wi-Fi recommended; works best on phones with 4 GB+ RAM.'**
+  String offlineAiSize(int size);
+
+  /// No description provided for @offlineAiDownload.
+  ///
+  /// In en, this message translates to:
+  /// **'Download model'**
+  String get offlineAiDownload;
+
+  /// No description provided for @offlineAiDownloading.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloading… {progress}%'**
+  String offlineAiDownloading(int progress);
+
+  /// No description provided for @offlineAiReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready — works without internet'**
+  String get offlineAiReady;
+
+  /// No description provided for @offlineAiError.
+  ///
+  /// In en, this message translates to:
+  /// **'Download failed. Check your connection and try again.'**
+  String get offlineAiError;
+
+  /// No description provided for @offlineAiDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete model'**
+  String get offlineAiDelete;
+
+  /// No description provided for @offlineAiPrefer.
+  ///
+  /// In en, this message translates to:
+  /// **'Use offline assistant even when online'**
+  String get offlineAiPrefer;
+
+  /// No description provided for @offlineAiPreferHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Private and free, but less accurate. Otherwise it is used automatically when you are offline.'**
+  String get offlineAiPreferHelp;
+
+  /// No description provided for @offlineAiUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'The offline assistant is not available yet.'**
+  String get offlineAiUnavailable;
+
+  /// No description provided for @offlineAnswerLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline answer · on-device model'**
+  String get offlineAnswerLabel;
+
+  /// No description provided for @offlineModeChip.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline mode'**
+  String get offlineModeChip;
+
+  /// No description provided for @localModelsInfo.
+  ///
+  /// In en, this message translates to:
+  /// **'Expense and shopping categories are recognised by small models that run on your device.'**
+  String get localModelsInfo;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

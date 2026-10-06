@@ -15,6 +15,7 @@ import '../domain/models/user_profile.dart';
 import '../domain/models/wellbeing.dart';
 import '../services/ai/ai_action_executor.dart';
 import '../services/analytics/analytics_service.dart';
+import 'ml_providers.dart';
 import 'providers.dart';
 
 /// Write use-cases shared by all screens. Each one persists locally (so it
@@ -205,7 +206,12 @@ class AppActions {
   Future<void> deletePantryItem(String id) => _repos.pantry.delete(id);
 
   Future<int> addShoppingItems(List<String> names) async {
-    final n = await AiActionExecutor.addShoppingItems(_repos, names, _now);
+    final n = await AiActionExecutor.addShoppingItems(
+      _repos,
+      names,
+      _now,
+      cat: _ref.read(localModelsNowProvider).shoppingCategorizer,
+    );
     if (n > 0) unawaited(_analytics.log(AnalyticsEvent.shoppingItemAdded, {'count': n}));
     return n;
   }

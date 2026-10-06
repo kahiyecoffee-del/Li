@@ -66,7 +66,8 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   url_launcher: ^6.3.3
-
+  flutter_edge_ai: ^2.0.0
+  flutter_edge_ai_mediapipe: ^1.0.9
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -84,3 +85,5 @@ dev_dependencies:
 flutter:
   generate: true
   uses-material-design: true
+  assets:
+    - assets/models/

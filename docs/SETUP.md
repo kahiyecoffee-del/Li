@@ -82,6 +82,15 @@ cd functions && npm ci && npm run build && cd ..
 firebase deploy --only functions
 ```
 
+## 3b. On-device models
+- **Classifiers** are bundled; retrain after editing `tool/ml/vocab.py` with
+  `python3 tool/ml/train_classifiers.py` (writes `assets/models/` and the parity fixture), then `flutter test`.
+- **Offline assistant**: download a MediaPipe `.task` model you are licensed to redistribute (e.g. Gemma 3
+  1B IT int4 from Hugging Face after accepting the Gemma terms; include the Gemma terms notice in your
+  app's licenses), upload it to Firebase Storage or a CDN with a public HTTPS URL, then set Remote Config
+  `offline_model_url` (and `offline_model_size_mb`). Empty URL hides the feature. Never ship a Hugging Face
+  token in the app.
+
 ## 4. AdMob setup
 1. Create an AdMob app (Android) → note the **App ID** → build with `-PADMOB_APP_ID=…`.
 2. Create ad units: **Rewarded** (required), Interstitial and Banner (optional) → dart-defines.

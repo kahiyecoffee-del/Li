@@ -14,6 +14,7 @@ import '../domain/models/progress.dart';
 import '../domain/models/task_item.dart';
 import '../domain/models/user_profile.dart';
 import '../domain/models/wellbeing.dart';
+import '../services/ai/offline/offline_model_service.dart';
 import '../services/auth/auth_service.dart';
 import '../services/billing/entitlement.dart';
 import '../services/settings/app_settings.dart';
@@ -153,4 +154,11 @@ final onlineProvider = StreamProvider<bool>((ref) async* {
 final localeProvider = Provider<Locale?>((ref) {
   final code = ref.watch(settingsProvider).localeCode;
   return code == null ? null : Locale(code);
+});
+
+/// Download/install state of the on-device assistant model.
+final offlineModelStatusProvider = StreamProvider<OfflineModelStatus>((ref) async* {
+  final s = ref.watch(servicesProvider).offlineModel;
+  yield s.current;
+  yield* s.status;
 });

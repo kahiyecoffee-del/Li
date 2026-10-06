@@ -1,4 +1,5 @@
 import '../../core/utils/money.dart';
+import '../ml/text_classifier.dart';
 import '../models/enums.dart';
 
 class ParsedExpense {
@@ -23,7 +24,11 @@ class ParsedExpense {
 /// Offline parser for quick entries such as "250 lunch", "lunch 250",
 /// "₺1.250,50 market" or "taxi 85 tl". English and Turkish keywords.
 class ExpenseParser {
-  const ExpenseParser();
+  const ExpenseParser({this.model});
+
+  /// Optional on-device classifier used when no keyword matches (typos,
+  /// missing Turkish letters, merchant names).
+  final TextClassifier? model;
 
   static const Map<ExpenseCategory, List<String>> keywords = {
     ExpenseCategory.food: [
@@ -193,7 +198,7 @@ class ExpenseParser {
     final lower = desc.toLowerCase();
 
     final isIncome = _incomeWords.any(lower.contains) || amountMatch.group(0)!.startsWith('+');
-    final category = categorize(lower);
+    final category = categorize(lower) ?? _modelCategory(desc);
     if (desc.isNotEmpty) desc = desc[0].toUpperCase() + desc.substring(1);
     return ParsedExpense(
       amountMinor: minor,
@@ -202,6 +207,15 @@ class ExpenseParser {
       confident: category != null || isIncome || desc.isEmpty,
       type: isIncome ? TransactionType.income : TransactionType.expense,
     );
+  }
+
+  /// Keyword match first, then the on-device model (if confident).
+  ExpenseCategory? categorizeText(String text) => categorize(text.toLowerCase()) ?? _modelCategory(text);
+
+  ExpenseCategory? _modelCategory(String text) {
+    final p = model?.confident(text);
+    if (p == null) return null;
+    return ExpenseCategory.values.where((c) => c.name == p.label).firstOrNull;
   }
 
   /// Exact category name or keyword match; longest keyword wins.

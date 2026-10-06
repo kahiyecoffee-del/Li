@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../app/actions.dart';
+import '../../app/ml_providers.dart';
 import '../../app/providers.dart';
 import '../../core/l10n/labels.dart';
 import '../../core/theme/tokens.dart';
@@ -13,7 +14,6 @@ import '../../core/utils/json.dart';
 import '../../core/utils/money.dart';
 import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
-import '../../domain/engines/expense_parser.dart';
 import '../../domain/engines/receipt_parser.dart';
 import '../../domain/models/enums.dart';
 import '../../services/ai/ai_models.dart';
@@ -60,7 +60,8 @@ class _ExpenseSheetState extends ConsumerState<ExpenseSheet> {
       _merchant = r.merchant;
       _desc.text = r.merchant ?? '';
       _date = r.date ?? DateTime.now();
-      _category = ExpenseParser.categorize((r.merchant ?? '').toLowerCase()) ?? ExpenseCategory.food;
+      _category =
+          ref.read(localModelsNowProvider).expenseParser.categorizeText(r.merchant ?? '') ?? ExpenseCategory.food;
     }
   }
 
@@ -74,7 +75,7 @@ class _ExpenseSheetState extends ConsumerState<ExpenseSheet> {
   }
 
   void _onSmart(String text) {
-    final p = const ExpenseParser().parse(text);
+    final p = ref.read(localModelsNowProvider).expenseParser.parse(text);
     _aiDebounce?.cancel();
     if (p == null) return;
     setState(() {

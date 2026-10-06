@@ -83,7 +83,12 @@ class _AiScreenState extends ConsumerState<AiScreen> {
   Widget build(BuildContext context) {
     final l = context.l10n;
     final chat = ref.watch(chatProvider);
-    final cloud = ref.watch(servicesProvider).aiEnabled;
+    final offlineReady = ref.watch(offlineModelStatusProvider).value?.ready ?? false;
+    final cloud = ref.watch(servicesProvider).aiEnabled || offlineReady;
+    // Re-evaluated on connectivity/settings changes.
+    ref.watch(onlineProvider);
+    ref.watch(settingsProvider.select((s) => s.preferOfflineAi));
+    final offlineNext = offlineReady && ref.read(chatProvider.notifier).shouldUseOffline();
     ref.listen(chatProvider.select((s) => s.value?.savedMemory), (_, m) {
       if (m != null) {
         showSnack(
@@ -125,6 +130,18 @@ class _AiScreenState extends ConsumerState<AiScreen> {
             ),
             if (s.lastError != null) _ErrorBar(error: s.lastError!),
             const _CreditsLine(),
+            if (offlineNext)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: Space.page),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Chip(
+                    avatar: const Icon(Icons.offline_bolt_outlined, size: 18),
+                    label: Text(context.l10n.offlineModeChip),
+                    visualDensity: VisualDensity.compact,
+                  ),
+                ),
+              ),
             _InputBar(controller: _input, enabled: !s.sending && cloud, onSend: _send),
           ],
         ),
@@ -228,6 +245,14 @@ class _Bubble extends ConsumerWidget {
           decoration: BoxDecoration(color: bg, borderRadius: BorderRadius.circular(Radii.md)),
           child: SelectableText(message.text, style: context.text.bodyMedium?.copyWith(color: fg)),
         ),
+        if (message.local)
+          Padding(
+            padding: const EdgeInsets.only(bottom: Space.xs),
+            child: Text(
+              context.l10n.offlineAnswerLabel,
+              style: context.text.labelSmall?.copyWith(color: context.semantic.muted),
+            ),
+          ),
         if (message.failed)
           TextButton.icon(
             onPressed: () => ref.read(chatProvider.notifier).retry(message, locale: locale),

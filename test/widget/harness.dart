@@ -14,6 +14,7 @@ import 'package:lifeos/domain/models/user_profile.dart';
 import 'package:lifeos/services/ads/ads_service.dart';
 import 'package:lifeos/services/ai/ai_models.dart';
 import 'package:lifeos/services/ai/ai_service.dart';
+import 'package:lifeos/services/ai/offline/offline_model_service.dart';
 import 'package:lifeos/services/analytics/analytics_service.dart';
 import 'package:lifeos/services/auth/auth_service.dart';
 import 'package:lifeos/services/billing/billing_service.dart';
@@ -73,6 +74,39 @@ class FakeAi implements AiService {
   Future<AiCredits> grantAdReward(String placement) async => AiCredits.fromJson(_credits);
 }
 
+/// Scripted on-device model.
+class FakeOfflineModel implements OfflineModelService {
+  FakeOfflineModel({bool ready = false})
+    : _status = OfflineModelStatus(ready ? OfflineModelState.ready : OfflineModelState.notInstalled);
+
+  OfflineModelStatus _status;
+  final prompts = <String>[];
+
+  @override
+  OfflineModelStatus get current => _status;
+
+  @override
+  Stream<OfflineModelStatus> get status => const Stream.empty();
+
+  @override
+  Future<void> refresh() async {}
+
+  @override
+  Future<void> install(String url) async => _status = const OfflineModelStatus(OfflineModelState.ready);
+
+  @override
+  Future<void> cancel() async {}
+
+  @override
+  Future<void> remove() async => _status = const OfflineModelStatus(OfflineModelState.notInstalled);
+
+  @override
+  Future<String> reply({required String system, required List<AiTurn> history, required String message}) async {
+    prompts.add(system);
+    return 'Offline tip: drink water.';
+  }
+}
+
 class FakeConnectivity implements ConnectivityService {
   FakeConnectivity(this.online);
 
@@ -94,8 +128,16 @@ class TestApp {
   LocalStore? seeded;
 
   /// A signed-in (local) user who already finished onboarding.
-  static Future<TestApp> onboarded({Map<String, Object> prefs = const {}, bool online = true}) async {
-    final app = await create(prefs: {'local_uid': 'local-test', ...prefs}, online: online);
+  static Future<TestApp> onboarded({
+    Map<String, Object> prefs = const {},
+    bool online = true,
+    bool offlineModelReady = false,
+  }) async {
+    final app = await create(
+      prefs: {'local_uid': 'local-test', ...prefs},
+      online: online,
+      offlineModelReady: offlineModelReady,
+    );
     final store = await DatabaseOpener.inMemory('seed${DateTime.now().microsecondsSinceEpoch}');
     final repos = UserRepos(store, journalKeys: MemoryJournalKeyStore());
     await repos.profile.save(
@@ -115,7 +157,11 @@ class TestApp {
     return app;
   }
 
-  static Future<TestApp> create({Map<String, Object> prefs = const {}, bool online = true}) async {
+  static Future<TestApp> create({
+    Map<String, Object> prefs = const {},
+    bool online = true,
+    bool offlineModelReady = false,
+  }) async {
     SharedPreferences.setMockInitialValues(prefs);
     final p = await SharedPreferences.getInstance();
     final analytics = MemoryAnalyticsService();
@@ -136,6 +182,7 @@ class TestApp {
       news: NewsService(UnavailableNewsProvider(), p),
       ocr: FakeOcr(),
       journalKeys: MemoryJournalKeyStore(),
+      offlineModel: FakeOfflineModel(ready: offlineModelReady),
     );
     return TestApp._(services, analytics, ai);
   }

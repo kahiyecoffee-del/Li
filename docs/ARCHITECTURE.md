@@ -139,6 +139,35 @@ Cost controls: cheap model for simple chat and all tasks; capable model only for
 requests; output token caps; provider prompt caching (stable system prompt); 24h task cache; history
 window of 8 turns + summary; per-user daily credits, rate limit (8/min) and premium fair-use cap.
 
+## 6b. On-device AI
+Two layers run without any server:
+
+1. **Text classifiers** (`assets/models/*_classifier.json`, ~50 KB each) — multinomial logistic
+   regression over hashed word + character 3/4-grams, int8 weights, pure-Dart inference
+   (`lib/domain/ml/text_classifier.dart`). Used for expense categories (smart input, receipt merchant)
+   and shopping aisles, **after** the keyword dictionary and only when the probability is ≥ 0.7;
+   otherwise the cloud AI or the user decides. Trained by `tool/ml/train_classifiers.py` (pure Python,
+   seeded, synthetic en/tr data from `tool/ml/vocab.py`); `test/unit/text_classifier_test.dart` checks
+   Dart/Python parity to 1e-9. Measured on held-out data (see `metrics` in each model file):
+
+   | | expense | shopping |
+   |---|---|---|
+   | fresh typos of known terms (model) | 77% | 81% |
+   | same typos, previous keyword matcher | 8% | 3% |
+   | never-seen terms, precision when confident (≥0.7) | 87% | 90% |
+   | never-seen terms, share answered confidently | 18% | 23% |
+
+   i.e. the model fixes typos/variants well and abstains on words it cannot know.
+
+2. **Offline assistant** (`lib/services/ai/offline/`) — an optional, downloadable small LLM (MediaPipe
+   `.task`, e.g. Gemma 3 1B int4 ≈ 550 MB) run with `flutter_edge_ai` + `flutter_edge_ai_mediapipe`.
+   Used when the model is installed and the device is offline, the backend is unavailable, or the user
+   prefers it; also as automatic fallback when a cloud call fails with a network error. Replies are
+   **text only** (no actions — small models are not reliable at structured output), use a trimmed copy
+   of the consented context, consume no credits, and are labelled "Offline answer". Download URL and
+   size come from Remote Config (`offline_model_url`, `offline_model_size_mb`); gated by the
+   `offline_ai` premium feature by default.
+
 ## 7. Monetization
 - **Rewarded ads** (primary): user-initiated only — extra AI credits, today's detailed score, monthly
   report preview. AI-credit rewards are granted **by the server** (callable, capped per day) or via AdMob

@@ -127,6 +127,12 @@ class SettingsScreen extends ConsumerWidget {
             trailing: const Icon(Icons.chevron_right),
             onTap: () => context.push('/settings/memory'),
           ),
+          ListTile(
+            leading: const Icon(Icons.offline_bolt_outlined),
+            title: Text(l.offlineAiTitle),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () => context.push('/settings/offline-ai'),
+          ),
           _Header(l.settingsAccount),
           ListTile(
             leading: const Icon(Icons.manage_accounts_outlined),
