@@ -2986,4 +2986,213 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get pNothing => 'Nothing to plan yet. Tell me at least one thing to do.';
+
+  @override
+  String get lioSuggestions => 'Lio’s suggestions';
+
+  @override
+  String get lioAllGood => 'All looks good today. I’ll tell you when something needs attention.';
+
+  @override
+  String get insightsTitle => 'Suggestions';
+
+  @override
+  String get insightsIntro => 'I looked at your money, plans, habits, mood and journal. Here’s what stood out.';
+
+  @override
+  String get gMySuggestions => 'My suggestions';
+
+  @override
+  String advOverBudget(String amount) {
+    return 'You’re $amount over today’s budget. Let’s keep tomorrow light.';
+  }
+
+  @override
+  String advBudgetTight(String amount) {
+    return 'Only $amount left for today. A no-spend evening would help.';
+  }
+
+  @override
+  String advSavingsOff(String amount) {
+    return 'At this pace you’ll miss your savings goal by about $amount this month.';
+  }
+
+  @override
+  String get advSetUpBudget =>
+      'You’ve logged several expenses. Add your monthly income and I’ll work out a safe daily limit.';
+
+  @override
+  String advWeeklyUp(int percent) {
+    return 'You spent $percent% more this week than usual.';
+  }
+
+  @override
+  String advWeeklyDown(int percent) {
+    return 'Nice! You spent $percent% less this week than usual.';
+  }
+
+  @override
+  String advCategorySpike(String category, int percent) {
+    return '$category spending is up $percent% compared with last month.';
+  }
+
+  @override
+  String advSubscriptions(int count, String names, String amount) {
+    return 'Looks like $count subscriptions ($names), about $amount a year. Still using them all?';
+  }
+
+  @override
+  String advTopCategory(String category, int percent) {
+    return '$category is $percent% of your spending this month.';
+  }
+
+  @override
+  String advOverdue(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count tasks are overdue.',
+      one: '1 task is overdue.',
+    );
+    return '$_temp0 Shall we fit them into today?';
+  }
+
+  @override
+  String get advNoPlan => 'Nothing planned for today yet. Two minutes with me and your day has a shape.';
+
+  @override
+  String advUnscheduled(int count) {
+    return '$count tasks today have no time yet. Want me to schedule them?';
+  }
+
+  @override
+  String advTasksGood(int count) {
+    return '$count tasks done this week. Great rhythm!';
+  }
+
+  @override
+  String advHabitRisk(int count, String name) {
+    return 'Your $count-day $name streak is waiting for today.';
+  }
+
+  @override
+  String advHabitDown(int percent) {
+    return 'Habits slipped $percent points this week. Pick one small win for today.';
+  }
+
+  @override
+  String advHabitUp(int percent) {
+    return 'Habits are up $percent points this week. Keep going!';
+  }
+
+  @override
+  String get advMoodDown => 'Your mood has been lower this week. Want to talk it through or write a few lines?';
+
+  @override
+  String get advMoodSleep => 'On short-sleep days your mood tends to be lower. An earlier night might help.';
+
+  @override
+  String get advJournalNudge => 'How was today? Two lines in your journal is enough.';
+
+  @override
+  String advJournalStreak(int count) {
+    return '$count days of journaling in a row. Lovely habit.';
+  }
+
+  @override
+  String advShopping(int count) {
+    return '$count items are waiting on your shopping list.';
+  }
+
+  @override
+  String advCook(String name, int minutes) {
+    return 'You have everything for $name ($minutes min).';
+  }
+
+  @override
+  String get actOpenMoney => 'Open Money';
+
+  @override
+  String get actPlanDay => 'Plan my day';
+
+  @override
+  String get actOpenPlan => 'Open Plan';
+
+  @override
+  String get actOpenHabits => 'Open Habits';
+
+  @override
+  String get actTalk => 'Talk to Lio';
+
+  @override
+  String get actLogMood => 'Log sleep & mood';
+
+  @override
+  String get actWrite => 'Write';
+
+  @override
+  String get actShopping => 'Open list';
+
+  @override
+  String get actRecipe => 'See recipe';
+
+  @override
+  String get quickJournal => 'Journal';
+
+  @override
+  String journalStreakLabel(int count) {
+    return '$count-day streak';
+  }
+
+  @override
+  String journalThisMonth(int count) {
+    return '$count this month';
+  }
+
+  @override
+  String get journalMoodWeek => 'Mood this week';
+
+  @override
+  String get journalSearch => 'Search your journal';
+
+  @override
+  String get journalTodayPrompt => 'Today’s question';
+
+  @override
+  String get journalHowFeel => 'How do you feel?';
+
+  @override
+  String journalWords(int count) {
+    return '$count words';
+  }
+
+  @override
+  String get journalNoResults => 'No entries match.';
+
+  @override
+  String get journalWriteToday => 'Write today’s entry';
+
+  @override
+  String get journalSaved => 'Saved to your journal';
+
+  @override
+  String get jp1 => 'What made you smile today?';
+
+  @override
+  String get jp2 => 'What are you grateful for?';
+
+  @override
+  String get jp3 => 'What drained your energy today?';
+
+  @override
+  String get jp4 => 'What will you do differently tomorrow?';
+
+  @override
+  String get jp5 => 'One thing you learned today';
+
+  @override
+  String get jp6 => 'Who made your day better?';
+
+  @override
+  String get jp7 => 'What are you looking forward to?';
 }

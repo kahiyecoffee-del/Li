@@ -2956,4 +2956,208 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get pNothing => 'Planlanacak bir şey yok. En az bir iş yaz.';
+
+  @override
+  String get lioSuggestions => 'Lio’nun önerileri';
+
+  @override
+  String get lioAllGood => 'Bugün her şey yolunda görünüyor. Dikkat gereken bir şey olursa söylerim.';
+
+  @override
+  String get insightsTitle => 'Öneriler';
+
+  @override
+  String get insightsIntro =>
+      'Paranı, planlarını, alışkanlıklarını, ruh halini ve günlüğünü inceledim. Göze çarpanlar bunlar.';
+
+  @override
+  String get gMySuggestions => 'Önerilerim';
+
+  @override
+  String advOverBudget(String amount) {
+    return 'Bugünkü bütçeni $amount aştın. Yarını biraz hafif tutalım.';
+  }
+
+  @override
+  String advBudgetTight(String amount) {
+    return 'Bugün için sadece $amount kaldı. Harcamasız bir akşam iyi gelir.';
+  }
+
+  @override
+  String advSavingsOff(String amount) {
+    return 'Bu hızla bu ay birikim hedefini yaklaşık $amount kaçıracaksın.';
+  }
+
+  @override
+  String get advSetUpBudget =>
+      'Birkaç harcama girdin. Aylık gelirini eklersen sana güvenli bir günlük limit hesaplarım.';
+
+  @override
+  String advWeeklyUp(int percent) {
+    return 'Bu hafta her zamankinden %$percent fazla harcadın.';
+  }
+
+  @override
+  String advWeeklyDown(int percent) {
+    return 'Harika! Bu hafta her zamankinden %$percent az harcadın.';
+  }
+
+  @override
+  String advCategorySpike(String category, int percent) {
+    return '$category harcaman geçen aya göre %$percent arttı.';
+  }
+
+  @override
+  String advSubscriptions(int count, String names, String amount) {
+    return '$count abonelik görünüyor ($names): yılda yaklaşık $amount. Hepsini kullanıyor musun?';
+  }
+
+  @override
+  String advTopCategory(String category, int percent) {
+    return 'Bu ay harcamalarının %$percent kadarı $category.';
+  }
+
+  @override
+  String advOverdue(int count) {
+    return '$count gecikmiş işin var. Bugüne yerleştirelim mi?';
+  }
+
+  @override
+  String get advNoPlan => 'Bugün için henüz plan yok. Benimle 2 dakika, günün şekillensin.';
+
+  @override
+  String advUnscheduled(int count) {
+    return 'Bugünkü $count işin henüz saati yok. Saatlerini ayarlayalım mı?';
+  }
+
+  @override
+  String advTasksGood(int count) {
+    return 'Bu hafta $count iş bitirdin, harika gidiyorsun!';
+  }
+
+  @override
+  String advHabitRisk(int count, String name) {
+    return '$count günlük $name serin bugün seni bekliyor.';
+  }
+
+  @override
+  String advHabitDown(int percent) {
+    return 'Alışkanlıkların bu hafta $percent puan düştü. Bugün için küçük bir hedef seç.';
+  }
+
+  @override
+  String advHabitUp(int percent) {
+    return 'Alışkanlıkların bu hafta $percent puan arttı. Böyle devam!';
+  }
+
+  @override
+  String get advMoodDown => 'Bu hafta ruh halin biraz düşük. Konuşmak ya da birkaç satır yazmak ister misin?';
+
+  @override
+  String get advMoodSleep => 'Az uyuduğun günlerde ruh halin daha düşük oluyor. Erken yatmak iyi gelebilir.';
+
+  @override
+  String get advJournalNudge => 'Bugün nasıl geçti? Günlüğüne iki satır yeter.';
+
+  @override
+  String advJournalStreak(int count) {
+    return '$count gündür günlük yazıyorsun. Çok güzel bir alışkanlık.';
+  }
+
+  @override
+  String advShopping(int count) {
+    return 'Alışveriş listende $count ürün bekliyor.';
+  }
+
+  @override
+  String advCook(String name, int minutes) {
+    return '$name için her şey elinde ($minutes dk).';
+  }
+
+  @override
+  String get actOpenMoney => 'Para’yı aç';
+
+  @override
+  String get actPlanDay => 'Günümü planla';
+
+  @override
+  String get actOpenPlan => 'Plan’ı aç';
+
+  @override
+  String get actOpenHabits => 'Alışkanlıklar';
+
+  @override
+  String get actTalk => 'Lio ile konuş';
+
+  @override
+  String get actLogMood => 'Uyku ve ruh hali';
+
+  @override
+  String get actWrite => 'Yaz';
+
+  @override
+  String get actShopping => 'Listeyi aç';
+
+  @override
+  String get actRecipe => 'Tarife bak';
+
+  @override
+  String get quickJournal => 'Günlük';
+
+  @override
+  String journalStreakLabel(int count) {
+    return '$count günlük seri';
+  }
+
+  @override
+  String journalThisMonth(int count) {
+    return 'Bu ay $count';
+  }
+
+  @override
+  String get journalMoodWeek => 'Bu haftaki ruh hali';
+
+  @override
+  String get journalSearch => 'Günlüğünde ara';
+
+  @override
+  String get journalTodayPrompt => 'Bugünün sorusu';
+
+  @override
+  String get journalHowFeel => 'Nasıl hissediyorsun?';
+
+  @override
+  String journalWords(int count) {
+    return '$count kelime';
+  }
+
+  @override
+  String get journalNoResults => 'Eşleşen yazı yok.';
+
+  @override
+  String get journalWriteToday => 'Bugünü yaz';
+
+  @override
+  String get journalSaved => 'Günlüğüne kaydedildi';
+
+  @override
+  String get jp1 => 'Bugün seni ne gülümsetti?';
+
+  @override
+  String get jp2 => 'Neye minnettarsın?';
+
+  @override
+  String get jp3 => 'Bugün enerjini ne düşürdü?';
+
+  @override
+  String get jp4 => 'Yarın neyi farklı yapacaksın?';
+
+  @override
+  String get jp5 => 'Bugün öğrendiğin bir şey';
+
+  @override
+  String get jp6 => 'Gününü kim güzelleştirdi?';
+
+  @override
+  String get jp7 => 'Neyi dört gözle bekliyorsun?';
 }

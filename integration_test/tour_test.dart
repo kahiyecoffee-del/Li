@@ -119,5 +119,13 @@ void main() {
     await tester.tap(find.text('Keşfet').last);
     await pumpUntil(tester, find.text('Takip'));
     await shot(tester, '08-kesfet');
+
+    await tester.tap(find.text('Ana sayfa').last);
+    await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
+    await tester.tap(find.text('Günlük').first);
+    await pumpUntil(tester, find.text('Nasıl hissediyorsun?'));
+    await tester.tap(find.text('🙂'));
+    await tester.tap(find.byTooltip('Ekle'));
+    await shot(tester, '09-gunluk');
   });
 }

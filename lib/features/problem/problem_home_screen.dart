@@ -3,15 +3,18 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../app/derived_providers.dart';
 import '../../app/providers.dart';
 import '../../core/l10n/labels.dart';
 import '../../core/theme/tokens.dart';
 import '../../core/widgets/common.dart';
+import '../../core/widgets/formatters.dart';
 import '../../core/widgets/mascot.dart';
+import '../lio/advice_view.dart';
 import 'problem_flow.dart';
 
-/// Home: "What should we solve today?" and one big Solve button that opens
-/// the conversation with Lio, plus quick tools and recent answers.
+/// Home: Lio greets you with what he noticed in your data, then three big
+/// actions — Solve, Plan, Journal — his suggestions, and quick tools.
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
@@ -19,8 +22,11 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l = context.l10n;
     final name = ref.watch(profileProvider.select((p) => p.value?.name ?? ''));
+    final advice = ref.watch(adviceProvider);
     final recent = [...?ref.watch(savedProvider).value]..sort((a, b) => b.createdAt.compareTo(a.createdAt));
     final dark = Theme.of(context).brightness == Brightness.dark;
+    final top = advice.isEmpty ? null : describeAdvice(advice.first, l, ref.fmt(context));
+    String nonce() => '${DateTime.now().microsecondsSinceEpoch}';
 
     return Scaffold(
       body: SafeArea(
@@ -30,52 +36,57 @@ class HomeScreen extends ConsumerWidget {
             FadeSlideIn(
               child: HeroBanner(
                 gradient: dark ? Gradients.meadowDark : Gradients.meadow,
+                padding: const EdgeInsets.all(Space.lg),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Text(
+                      name.isEmpty ? l.homeHelloNoName : l.homeHello(name),
+                      style: context.text.titleMedium?.copyWith(color: context.semantic.muted),
+                    ),
+                    const SizedBox(height: Space.xs),
+                    Semantics(header: true, child: Text(l.homeQuestion, style: context.text.headlineMedium)),
+                    const SizedBox(height: Space.md),
+                    // Lio speaks: the most useful thing he noticed today.
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
+                        const Mascot(mood: MascotMood.happy, size: 64),
+                        const SizedBox(width: Space.sm),
                         Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                name.isEmpty ? l.homeHelloNoName : l.homeHello(name),
-                                style: context.text.titleMedium?.copyWith(color: context.semantic.muted),
-                              ),
-                              const SizedBox(height: Space.xs),
-                              Semantics(header: true, child: Text(l.homeQuestion, style: context.text.headlineMedium)),
-                            ],
+                          child: _SpeechBubble(
+                            text: top?.text ?? l.lioAllGood,
+                            action: top?.action,
+                            onAction: top == null ? null : () => top.go(context),
                           ),
                         ),
-                        const Mascot(mood: MascotMood.happy, size: 72),
                       ],
                     ),
                     const SizedBox(height: Space.lg),
                     Row(
                       children: [
                         Expanded(
-                          child: FilledButton.icon(
-                            onPressed: () {
-                              HapticFeedback.selectionClick();
-                              context.go('/ai');
-                            },
-                            icon: const Icon(Icons.auto_awesome_rounded),
-                            label: Text(l.solve),
-                            style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(58)),
+                          child: _HeroAction(
+                            icon: Icons.auto_awesome_rounded,
+                            label: l.solve,
+                            primary: true,
+                            onTap: () => context.go('/ai'),
                           ),
                         ),
-                        const SizedBox(width: Space.md),
+                        const SizedBox(width: Space.sm),
                         Expanded(
-                          child: FilledButton.tonalIcon(
-                            onPressed: () {
-                              HapticFeedback.selectionClick();
-                              context.go('/ai?topic=plan&n=${DateTime.now().microsecondsSinceEpoch}');
-                            },
-                            icon: const Icon(Icons.event_available_rounded),
-                            label: Text(l.quickPlan),
-                            style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(58)),
+                          child: _HeroAction(
+                            icon: Icons.event_available_rounded,
+                            label: l.quickPlan,
+                            onTap: () => context.go('/ai?topic=plan&n=${nonce()}'),
+                          ),
+                        ),
+                        const SizedBox(width: Space.sm),
+                        Expanded(
+                          child: _HeroAction(
+                            icon: Icons.menu_book_rounded,
+                            label: l.quickJournal,
+                            onTap: () => context.push('/journal/new'),
                           ),
                         ),
                       ],
@@ -84,6 +95,20 @@ class HomeScreen extends ConsumerWidget {
                 ),
               ),
             ),
+            if (advice.length > 1) ...[
+              const SizedBox(height: Space.xl),
+              SectionTitle(
+                l.lioSuggestions,
+                trailing: advice.length > 4
+                    ? TextButton(onPressed: () => context.push('/insights'), child: Text(l.seeAll))
+                    : null,
+              ),
+              for (final a in advice.skip(1).take(3))
+                Padding(
+                  padding: const EdgeInsets.only(bottom: Space.sm),
+                  child: FadeSlideIn(child: AdviceCard(a)),
+                ),
+            ],
             const SizedBox(height: Space.xl),
             const _QuickTools(),
             if (recent.isNotEmpty) ...[
@@ -125,6 +150,86 @@ class HomeScreen extends ConsumerWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SpeechBubble extends StatelessWidget {
+  const _SpeechBubble({required this.text, this.action, this.onAction});
+  final String text;
+  final String? action;
+  final VoidCallback? onAction;
+
+  @override
+  Widget build(BuildContext context) => Container(
+    padding: const EdgeInsets.fromLTRB(Space.md, Space.md, Space.md, Space.xs),
+    decoration: BoxDecoration(
+      color: context.colors.surface.withValues(alpha: 0.9),
+      borderRadius: const BorderRadius.only(
+        topLeft: Radius.circular(Radii.lg),
+        topRight: Radius.circular(Radii.lg),
+        bottomRight: Radius.circular(Radii.lg),
+        bottomLeft: Radius.circular(4),
+      ),
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Semantics(liveRegion: true, child: Text(text, style: context.text.bodyMedium)),
+        if (action != null)
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton(onPressed: onAction, child: Text(action!)),
+          )
+        else
+          const SizedBox(height: Space.sm),
+      ],
+    ),
+  );
+}
+
+class _HeroAction extends StatelessWidget {
+  const _HeroAction({required this.icon, required this.label, required this.onTap, this.primary = false});
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+  final bool primary;
+
+  @override
+  Widget build(BuildContext context) {
+    final bg = primary ? context.colors.primary : context.colors.surface;
+    final fg = primary ? context.colors.onPrimary : context.colors.primary;
+    return Semantics(
+      button: true,
+      label: label,
+      excludeSemantics: true,
+      child: Material(
+        color: bg,
+        borderRadius: BorderRadius.circular(Radii.md),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(Radii.md),
+          onTap: () {
+            HapticFeedback.selectionClick();
+            onTap();
+          },
+          child: SizedBox(
+            height: 68,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(icon, color: fg),
+                const SizedBox(height: 4),
+                Text(
+                  label,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: context.text.labelLarge?.copyWith(color: fg),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );

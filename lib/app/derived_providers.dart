@@ -6,8 +6,10 @@ import '../domain/engines/budget_engine.dart';
 import '../domain/engines/daily_goals_engine.dart';
 import '../domain/engines/insight_engine.dart';
 import '../domain/engines/life_score_engine.dart';
+import '../domain/engines/recipe_library.dart';
 import '../domain/engines/report_engine.dart';
 import '../domain/engines/streaks.dart';
+import '../domain/lio/lio_advisor.dart';
 import '../domain/models/progress.dart';
 import '../services/ai/ai_models.dart';
 import '../services/news/news_service.dart';
@@ -251,3 +253,28 @@ class CreditsController extends AsyncNotifier<AiCredits> {
 }
 
 final creditsProvider = AsyncNotifierProvider<CreditsController, AiCredits>(CreditsController.new);
+
+/// Lio's suggestions from everything the user has entered (money, plans,
+/// habits, mood, sleep, journal dates, shopping and pantry).
+final adviceProvider = Provider<List<Advice>>((ref) {
+  final profile = ref.watch(profileProvider).value;
+  final lang = ref.watch(localeProvider)?.languageCode ?? 'en';
+  return const LioAdvisor().advise(
+    AdvisorInput(
+      now: currentNow(ref),
+      budget: ref.watch(budgetSnapshotProvider),
+      hasIncome: (profile?.monthlyIncomeMinor ?? 0) > 0,
+      transactions: ref.watch(transactionsProvider).list,
+      tasks: ref.watch(tasksProvider).list,
+      habits: ref.watch(habitsProvider).list,
+      habitLogs: ref.watch(habitLogsProvider).list,
+      moods: ref.watch(moodsProvider).list,
+      sleeps: ref.watch(sleepsProvider).list,
+      sleepTargetMinutes: profile?.sleepTargetMinutes ?? 480,
+      journalDates: [for (final e in ref.watch(journalProvider).list) e.createdAt],
+      shopping: ref.watch(shoppingProvider).list,
+      pantry: [for (final p in ref.watch(pantryProvider).list) p.name],
+      recipes: RecipeLibrary.all(lang),
+    ),
+  );
+});

@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/actions.dart';
+import '../../app/derived_providers.dart';
 import '../../app/providers.dart';
 import '../../core/l10n/labels.dart';
 import '../../core/theme/tokens.dart';
@@ -18,6 +19,7 @@ import '../../core/utils/ids.dart';
 import '../../domain/engines/meal_engine.dart';
 import '../../domain/engines/plan_optimizer.dart';
 import '../../domain/engines/recipe_library.dart';
+import '../../domain/lio/lio_advisor.dart';
 import '../../domain/lio/lio_brain.dart';
 import '../../domain/models/enums.dart';
 import '../../domain/models/task_item.dart';
@@ -30,6 +32,7 @@ import '../../services/analytics/analytics_service.dart';
 import '../plan/task_editor.dart';
 import '../problem/problem_flow.dart';
 import '../problem/solution_view.dart';
+import 'advice_view.dart';
 import 'lio_companion.dart';
 import 'lio_facts.dart';
 
@@ -124,6 +127,9 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
     } else if (widget.topic == 'plan') {
       _user(l.quickPlan);
       _plan();
+    } else if (widget.topic == 'mood') {
+      _user(l.gMood);
+      _mood();
     } else if (widget.initialText != null && widget.initialText!.trim().isNotEmpty) {
       _free(widget.initialText!);
     }
@@ -249,6 +255,7 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
     final name = ref.read(profileProvider).value?.name ?? '';
     if (greet) _say(name.isEmpty ? l.homeHelloNoName : l.homeHello(name));
     _menu(l.aiEmptyTitle, [
+      _Choice(l.gMySuggestions, _suggestions, emoji: '💡'),
       _Choice(l.quickMoney, _money, emoji: '💰'),
       _Choice(l.quickDecide, _decide, emoji: '🧠'),
       _Choice(l.quickFood, _food, emoji: '🍳'),
@@ -257,6 +264,10 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
       _Choice(l.quickPlan, _plan, emoji: '📅'),
       _Choice(l.gRemind, _remind, emoji: '⏰'),
       _Choice(l.gMood, _mood, emoji: '💛'),
+      _Choice(l.quickJournal, () {
+        context.push('/journal/new');
+        _root();
+      }, emoji: '📓'),
       _Choice(l.exploreMyDay, _myDay, emoji: '☀️'),
     ]);
   }
@@ -800,6 +811,43 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
         for (final h in [9, 10, 13, 18]) _Choice.answer('${h.toString().padLeft(2, '0')}:00', '$h:00'),
       ],
     );
+  }
+
+  // ---------------------------------------------------------------- suggestions
+
+  void _suggestions() {
+    final advice = ref.read(adviceProvider).take(3).toList();
+    if (advice.isEmpty) {
+      _say(l.lioAllGood);
+      setState(() => _choices = [_Choice(l.gMainMenu, () => _root())]);
+      return;
+    }
+    _say(l.insightsIntro);
+    final fmt = ref.read(fmtProvider(Localizations.localeOf(context).toLanguageTag()));
+    final seen = <String>{};
+    final choices = <_Choice>[];
+    for (final a in advice) {
+      final t = describeAdvice(a, l, fmt);
+      _say(t.text);
+      if (!seen.add(t.action)) continue;
+      // Planning and mood continue right here in the chat.
+      final here = switch (a.kind) {
+        AdviceKind.overdueTasks || AdviceKind.noPlanToday || AdviceKind.unscheduledToday => _plan,
+        AdviceKind.moodDown => _mood,
+        _ => null,
+      };
+      choices.add(
+        _Choice(
+          t.action,
+          here ??
+              () {
+                t.go(context);
+                _root();
+              },
+        ),
+      );
+    }
+    setState(() => _choices = [...choices, _Choice(l.gMainMenu, () => _root())]);
   }
 
   // ---------------------------------------------------------------- remind, mood, my day

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:lifeos/domain/models/task_item.dart';
 import 'package:lifeos/services/analytics/analytics_service.dart';
 
 import 'harness.dart';
@@ -335,6 +336,59 @@ void main() {
       await tearDownApp(tester);
     });
   });
+
+  testWidgets('Home: Lio speaks first about what he noticed (overdue task)', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+    await tester.runAsync(() async {
+      final now = DateTime.now();
+      await app.seededRepos.tasks.save(
+        TaskItem(
+          id: 'late',
+          updatedAt: now,
+          createdAt: now,
+          title: 'Pay rent',
+          deadline: now.subtract(const Duration(days: 2)),
+        ),
+      );
+    });
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.textContaining('1 task is overdue'));
+    await tester.tap(find.text('Plan my day').first);
+    await pumpUntil(tester, find.textContaining('plan your day'));
+    await tearDownApp(tester);
+  });
+
+  testWidgets('Journal: write with a mood and a question, then see the streak', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    await tester.tap(find.text('Journal').first);
+    await pumpUntil(tester, find.text('How do you feel?'));
+    await tester.tap(find.text('🙂'));
+    await tester.tap(find.byTooltip('Add'));
+    await tester.pump();
+    await tester.enterText(find.byType(TextField), 'A calm walk and good coffee.');
+    await tester.tap(find.text('Save').first);
+    await pumpUntil(tester, find.text('Saved to your journal'));
+    expect(app.analytics.logged(AnalyticsEvent.journalEntryAdded), isTrue);
+    expect(app.analytics.logged(AnalyticsEvent.moodLogged), isTrue);
+
+    await tester.binding.handlePopRoute();
+    await openExploreTile(tester, 'Journal');
+    await pumpUntil(tester, find.text('1-day streak'));
+    expect(find.textContaining('A calm walk'), findsOneWidget);
+    await tearDownApp(tester);
+  });
+}
+
+/// Opens a tile from Explore.
+Future<void> openExploreTile(WidgetTester tester, String label) async {
+  await tester.tap(find.text('Explore').last);
+  await pumpUntil(tester, find.text(label));
+  await tester.scrollUntilVisible(find.text(label).last, 200, scrollable: find.byType(Scrollable).first);
+  await tester.tap(find.text(label).last);
 }
 
 /// Plan is a tool inside Explore now.

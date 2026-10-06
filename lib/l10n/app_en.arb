@@ -1722,5 +1722,217 @@
   "pAdded": "Done! Your plan is in Plan, with reminders.",
   "pRedo": "Plan again",
   "pOpenPlan": "Open Plan",
-  "pNothing": "Nothing to plan yet. Tell me at least one thing to do."
+  "pNothing": "Nothing to plan yet. Tell me at least one thing to do.",
+  "lioSuggestions": "Lio’s suggestions",
+  "lioAllGood": "All looks good today. I’ll tell you when something needs attention.",
+  "insightsTitle": "Suggestions",
+  "insightsIntro": "I looked at your money, plans, habits, mood and journal. Here’s what stood out.",
+  "gMySuggestions": "My suggestions",
+  "advOverBudget": "You’re {amount} over today’s budget. Let’s keep tomorrow light.",
+  "@advOverBudget": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "advBudgetTight": "Only {amount} left for today. A no-spend evening would help.",
+  "@advBudgetTight": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "advSavingsOff": "At this pace you’ll miss your savings goal by about {amount} this month.",
+  "@advSavingsOff": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "advSetUpBudget": "You’ve logged several expenses. Add your monthly income and I’ll work out a safe daily limit.",
+  "advWeeklyUp": "You spent {percent}% more this week than usual.",
+  "@advWeeklyUp": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "advWeeklyDown": "Nice! You spent {percent}% less this week than usual.",
+  "@advWeeklyDown": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "advCategorySpike": "{category} spending is up {percent}% compared with last month.",
+  "@advCategorySpike": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "advSubscriptions": "Looks like {count} subscriptions ({names}), about {amount} a year. Still using them all?",
+  "@advSubscriptions": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "names": {
+        "type": "String"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "advTopCategory": "{category} is {percent}% of your spending this month.",
+  "@advTopCategory": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "advOverdue": "{count, plural, =1{1 task is overdue.} other{{count} tasks are overdue.}} Shall we fit them into today?",
+  "@advOverdue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "advNoPlan": "Nothing planned for today yet. Two minutes with me and your day has a shape.",
+  "advUnscheduled": "{count} tasks today have no time yet. Want me to schedule them?",
+  "@advUnscheduled": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "advTasksGood": "{count} tasks done this week. Great rhythm!",
+  "@advTasksGood": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "advHabitRisk": "Your {count}-day {name} streak is waiting for today.",
+  "@advHabitRisk": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "advHabitDown": "Habits slipped {percent} points this week. Pick one small win for today.",
+  "@advHabitDown": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "advHabitUp": "Habits are up {percent} points this week. Keep going!",
+  "@advHabitUp": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "advMoodDown": "Your mood has been lower this week. Want to talk it through or write a few lines?",
+  "advMoodSleep": "On short-sleep days your mood tends to be lower. An earlier night might help.",
+  "advJournalNudge": "How was today? Two lines in your journal is enough.",
+  "advJournalStreak": "{count} days of journaling in a row. Lovely habit.",
+  "@advJournalStreak": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "advShopping": "{count} items are waiting on your shopping list.",
+  "@advShopping": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "advCook": "You have everything for {name} ({minutes} min).",
+  "@advCook": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "actOpenMoney": "Open Money",
+  "actPlanDay": "Plan my day",
+  "actOpenPlan": "Open Plan",
+  "actOpenHabits": "Open Habits",
+  "actTalk": "Talk to Lio",
+  "actLogMood": "Log sleep & mood",
+  "actWrite": "Write",
+  "actShopping": "Open list",
+  "actRecipe": "See recipe",
+  "quickJournal": "Journal",
+  "journalStreakLabel": "{count}-day streak",
+  "@journalStreakLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "journalThisMonth": "{count} this month",
+  "@journalThisMonth": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "journalMoodWeek": "Mood this week",
+  "journalSearch": "Search your journal",
+  "journalTodayPrompt": "Today’s question",
+  "journalHowFeel": "How do you feel?",
+  "journalWords": "{count} words",
+  "@journalWords": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "journalNoResults": "No entries match.",
+  "journalWriteToday": "Write today’s entry",
+  "journalSaved": "Saved to your journal",
+  "jp1": "What made you smile today?",
+  "jp2": "What are you grateful for?",
+  "jp3": "What drained your energy today?",
+  "jp4": "What will you do differently tomorrow?",
+  "jp5": "One thing you learned today",
+  "jp6": "Who made your day better?",
+  "jp7": "What are you looking forward to?"
 }

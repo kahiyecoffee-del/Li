@@ -156,5 +156,3 @@ final localeProvider = Provider<Locale?>((ref) {
   final code = ref.watch(settingsProvider).localeCode;
   return code == null ? null : Locale(code);
 });
-
-/// Download/install state of the on-device assistant model.

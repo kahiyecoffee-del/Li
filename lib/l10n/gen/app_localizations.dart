@@ -5425,6 +5425,330 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Nothing to plan yet. Tell me at least one thing to do.'**
   String get pNothing;
+
+  /// No description provided for @lioSuggestions.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio’s suggestions'**
+  String get lioSuggestions;
+
+  /// No description provided for @lioAllGood.
+  ///
+  /// In en, this message translates to:
+  /// **'All looks good today. I’ll tell you when something needs attention.'**
+  String get lioAllGood;
+
+  /// No description provided for @insightsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggestions'**
+  String get insightsTitle;
+
+  /// No description provided for @insightsIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'I looked at your money, plans, habits, mood and journal. Here’s what stood out.'**
+  String get insightsIntro;
+
+  /// No description provided for @gMySuggestions.
+  ///
+  /// In en, this message translates to:
+  /// **'My suggestions'**
+  String get gMySuggestions;
+
+  /// No description provided for @advOverBudget.
+  ///
+  /// In en, this message translates to:
+  /// **'You’re {amount} over today’s budget. Let’s keep tomorrow light.'**
+  String advOverBudget(String amount);
+
+  /// No description provided for @advBudgetTight.
+  ///
+  /// In en, this message translates to:
+  /// **'Only {amount} left for today. A no-spend evening would help.'**
+  String advBudgetTight(String amount);
+
+  /// No description provided for @advSavingsOff.
+  ///
+  /// In en, this message translates to:
+  /// **'At this pace you’ll miss your savings goal by about {amount} this month.'**
+  String advSavingsOff(String amount);
+
+  /// No description provided for @advSetUpBudget.
+  ///
+  /// In en, this message translates to:
+  /// **'You’ve logged several expenses. Add your monthly income and I’ll work out a safe daily limit.'**
+  String get advSetUpBudget;
+
+  /// No description provided for @advWeeklyUp.
+  ///
+  /// In en, this message translates to:
+  /// **'You spent {percent}% more this week than usual.'**
+  String advWeeklyUp(int percent);
+
+  /// No description provided for @advWeeklyDown.
+  ///
+  /// In en, this message translates to:
+  /// **'Nice! You spent {percent}% less this week than usual.'**
+  String advWeeklyDown(int percent);
+
+  /// No description provided for @advCategorySpike.
+  ///
+  /// In en, this message translates to:
+  /// **'{category} spending is up {percent}% compared with last month.'**
+  String advCategorySpike(String category, int percent);
+
+  /// No description provided for @advSubscriptions.
+  ///
+  /// In en, this message translates to:
+  /// **'Looks like {count} subscriptions ({names}), about {amount} a year. Still using them all?'**
+  String advSubscriptions(int count, String names, String amount);
+
+  /// No description provided for @advTopCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'{category} is {percent}% of your spending this month.'**
+  String advTopCategory(String category, int percent);
+
+  /// No description provided for @advOverdue.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 task is overdue.} other{{count} tasks are overdue.}} Shall we fit them into today?'**
+  String advOverdue(int count);
+
+  /// No description provided for @advNoPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing planned for today yet. Two minutes with me and your day has a shape.'**
+  String get advNoPlan;
+
+  /// No description provided for @advUnscheduled.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} tasks today have no time yet. Want me to schedule them?'**
+  String advUnscheduled(int count);
+
+  /// No description provided for @advTasksGood.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} tasks done this week. Great rhythm!'**
+  String advTasksGood(int count);
+
+  /// No description provided for @advHabitRisk.
+  ///
+  /// In en, this message translates to:
+  /// **'Your {count}-day {name} streak is waiting for today.'**
+  String advHabitRisk(int count, String name);
+
+  /// No description provided for @advHabitDown.
+  ///
+  /// In en, this message translates to:
+  /// **'Habits slipped {percent} points this week. Pick one small win for today.'**
+  String advHabitDown(int percent);
+
+  /// No description provided for @advHabitUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Habits are up {percent} points this week. Keep going!'**
+  String advHabitUp(int percent);
+
+  /// No description provided for @advMoodDown.
+  ///
+  /// In en, this message translates to:
+  /// **'Your mood has been lower this week. Want to talk it through or write a few lines?'**
+  String get advMoodDown;
+
+  /// No description provided for @advMoodSleep.
+  ///
+  /// In en, this message translates to:
+  /// **'On short-sleep days your mood tends to be lower. An earlier night might help.'**
+  String get advMoodSleep;
+
+  /// No description provided for @advJournalNudge.
+  ///
+  /// In en, this message translates to:
+  /// **'How was today? Two lines in your journal is enough.'**
+  String get advJournalNudge;
+
+  /// No description provided for @advJournalStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} days of journaling in a row. Lovely habit.'**
+  String advJournalStreak(int count);
+
+  /// No description provided for @advShopping.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} items are waiting on your shopping list.'**
+  String advShopping(int count);
+
+  /// No description provided for @advCook.
+  ///
+  /// In en, this message translates to:
+  /// **'You have everything for {name} ({minutes} min).'**
+  String advCook(String name, int minutes);
+
+  /// No description provided for @actOpenMoney.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Money'**
+  String get actOpenMoney;
+
+  /// No description provided for @actPlanDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan my day'**
+  String get actPlanDay;
+
+  /// No description provided for @actOpenPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Plan'**
+  String get actOpenPlan;
+
+  /// No description provided for @actOpenHabits.
+  ///
+  /// In en, this message translates to:
+  /// **'Open Habits'**
+  String get actOpenHabits;
+
+  /// No description provided for @actTalk.
+  ///
+  /// In en, this message translates to:
+  /// **'Talk to Lio'**
+  String get actTalk;
+
+  /// No description provided for @actLogMood.
+  ///
+  /// In en, this message translates to:
+  /// **'Log sleep & mood'**
+  String get actLogMood;
+
+  /// No description provided for @actWrite.
+  ///
+  /// In en, this message translates to:
+  /// **'Write'**
+  String get actWrite;
+
+  /// No description provided for @actShopping.
+  ///
+  /// In en, this message translates to:
+  /// **'Open list'**
+  String get actShopping;
+
+  /// No description provided for @actRecipe.
+  ///
+  /// In en, this message translates to:
+  /// **'See recipe'**
+  String get actRecipe;
+
+  /// No description provided for @quickJournal.
+  ///
+  /// In en, this message translates to:
+  /// **'Journal'**
+  String get quickJournal;
+
+  /// No description provided for @journalStreakLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{count}-day streak'**
+  String journalStreakLabel(int count);
+
+  /// No description provided for @journalThisMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} this month'**
+  String journalThisMonth(int count);
+
+  /// No description provided for @journalMoodWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Mood this week'**
+  String get journalMoodWeek;
+
+  /// No description provided for @journalSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Search your journal'**
+  String get journalSearch;
+
+  /// No description provided for @journalTodayPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Today’s question'**
+  String get journalTodayPrompt;
+
+  /// No description provided for @journalHowFeel.
+  ///
+  /// In en, this message translates to:
+  /// **'How do you feel?'**
+  String get journalHowFeel;
+
+  /// No description provided for @journalWords.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} words'**
+  String journalWords(int count);
+
+  /// No description provided for @journalNoResults.
+  ///
+  /// In en, this message translates to:
+  /// **'No entries match.'**
+  String get journalNoResults;
+
+  /// No description provided for @journalWriteToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Write today’s entry'**
+  String get journalWriteToday;
+
+  /// No description provided for @journalSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved to your journal'**
+  String get journalSaved;
+
+  /// No description provided for @jp1.
+  ///
+  /// In en, this message translates to:
+  /// **'What made you smile today?'**
+  String get jp1;
+
+  /// No description provided for @jp2.
+  ///
+  /// In en, this message translates to:
+  /// **'What are you grateful for?'**
+  String get jp2;
+
+  /// No description provided for @jp3.
+  ///
+  /// In en, this message translates to:
+  /// **'What drained your energy today?'**
+  String get jp3;
+
+  /// No description provided for @jp4.
+  ///
+  /// In en, this message translates to:
+  /// **'What will you do differently tomorrow?'**
+  String get jp4;
+
+  /// No description provided for @jp5.
+  ///
+  /// In en, this message translates to:
+  /// **'One thing you learned today'**
+  String get jp5;
+
+  /// No description provided for @jp6.
+  ///
+  /// In en, this message translates to:
+  /// **'Who made your day better?'**
+  String get jp6;
+
+  /// No description provided for @jp7.
+  ///
+  /// In en, this message translates to:
+  /// **'What are you looking forward to?'**
+  String get jp7;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
