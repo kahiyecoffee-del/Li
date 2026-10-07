@@ -83,6 +83,9 @@ void main() {
 
     Future<void> chip(String label) async {
       await pumpUntil(tester, find.widgetWithText(ActionChip, label));
+      // Screen sizes differ (iPhone vs Pixel): bring the chip on screen first.
+      await tester.ensureVisible(find.widgetWithText(ActionChip, label).last);
+      await tester.pump(const Duration(milliseconds: 200));
       await tester.tap(find.widgetWithText(ActionChip, label).last);
       await tester.pump(const Duration(milliseconds: 300));
     }
