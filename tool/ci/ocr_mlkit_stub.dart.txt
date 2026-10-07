@@ -1,0 +1,6 @@
+import 'ocr_service.dart';
+
+/// Used only by the iOS simulator job: Google ML Kit ships no arm64
+/// simulator build, and iOS 26 simulators are arm64-only. Real builds keep
+/// lib/services/ocr/ocr_mlkit.dart.
+class MlKitOcrService extends NoOcrService {}

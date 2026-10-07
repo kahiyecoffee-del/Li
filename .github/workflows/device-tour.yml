@@ -70,6 +70,10 @@ jobs:
           channel: stable
           flutter-version: 3.47.6
           cache: true
+      - name: Simulator only - drop ML Kit (no arm64 simulator build; iOS 26 simulators are arm64-only)
+        run: |
+          sed -i '' '/google_mlkit_text_recognition:/d' pubspec.yaml
+          cp tool/ci/ocr_mlkit_stub.dart.txt lib/services/ocr/ocr_mlkit.dart
       - run: flutter pub get
       - name: Build for the simulator (with log)
         timeout-minutes: 50
@@ -81,7 +85,7 @@ jobs:
       - name: Keep the important build lines
         if: always()
         run: |
-          grep -nE "error:|Cycle in dependencies|CodeSign|DaylyWidget|Command .* failed|Xcode build done|\*\* BUILD" ios-build-full.log | tail -n 200 > ios-build-errors.log || true
+          grep -nE "error:|Cycle in dependencies|Pods_Runner|Pods-Runner|ld: |\[!\]|DaylyWidget.appex|Command .* failed|Xcode build done|\*\* BUILD" ios-build-full.log | tail -n 200 > ios-build-errors.log || true
           tail -n 120 ios-build-full.log > ios-build-tail.log || true
           rm -f ios-build-full.log
       - name: Boot an iPhone simulator

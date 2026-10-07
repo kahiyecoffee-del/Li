@@ -28,7 +28,7 @@ import 'services/crash/crash_reporter.dart';
 import 'services/news/news_service.dart';
 import 'services/notifications/notification_service.dart';
 import 'services/notifications/push_service.dart';
-import 'services/ocr/ocr_service.dart';
+import 'services/ocr/ocr_mlkit.dart';
 import 'services/voice/voice_input_service.dart';
 import 'services/widget/home_widget_service.dart';
 import 'services/weather/weather_service.dart';
