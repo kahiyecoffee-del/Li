@@ -1358,6 +1358,48 @@ abstract class AppLocalizations {
   /// **'Now'**
   String get planNow;
 
+  /// No description provided for @timeSheetTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'When, and for how long?'**
+  String get timeSheetTitle;
+
+  /// No description provided for @timeStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Start'**
+  String get timeStart;
+
+  /// No description provided for @timeNoTime.
+  ///
+  /// In en, this message translates to:
+  /// **'No set time'**
+  String get timeNoTime;
+
+  /// No description provided for @timeCustom.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom'**
+  String get timeCustom;
+
+  /// No description provided for @timeChip.
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get timeChip;
+
+  /// No description provided for @timeWhenDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Day'**
+  String get timeWhenDay;
+
+  /// No description provided for @timeAnytime.
+  ///
+  /// In en, this message translates to:
+  /// **'Any time · {duration}'**
+  String timeAnytime(String duration);
+
   /// No description provided for @planEmptyShort.
   ///
   /// In en, this message translates to:

@@ -465,6 +465,20 @@
     }
   },
   "planNow": "Now",
+  "timeSheetTitle": "When, and for how long?",
+  "timeStart": "Start",
+  "timeNoTime": "No set time",
+  "timeCustom": "Custom",
+  "timeChip": "Time",
+  "timeWhenDay": "Day",
+  "timeAnytime": "Any time · {duration}",
+  "@timeAnytime": {
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
   "planEmptyShort": "A free day",
   "planQuickHint": "Add a task… e.g. 15:00 dentist 30 min",
   "planQuickAdded": "Added: {title}",

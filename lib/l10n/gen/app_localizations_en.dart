@@ -721,6 +721,29 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planNow => 'Now';
 
   @override
+  String get timeSheetTitle => 'When, and for how long?';
+
+  @override
+  String get timeStart => 'Start';
+
+  @override
+  String get timeNoTime => 'No set time';
+
+  @override
+  String get timeCustom => 'Custom';
+
+  @override
+  String get timeChip => 'Time';
+
+  @override
+  String get timeWhenDay => 'Day';
+
+  @override
+  String timeAnytime(String duration) {
+    return 'Any time · $duration';
+  }
+
+  @override
   String get planEmptyShort => 'A free day';
 
   @override

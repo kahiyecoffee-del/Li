@@ -86,22 +86,35 @@ void main() {
     // Late at night there is no free slot left today.
     await pumpUntil(
       tester,
-      find.byWidgetPredicate(
-        (w) => w is Text && (w.data ?? '').contains(RegExp('Scheduled for|No free slot')),
-      ),
+      find.byWidgetPredicate((w) => w is Text && (w.data ?? '').contains(RegExp('Scheduled for|No free slot'))),
     );
     var tasks = await tester.runAsync(() => app.seededRepos.tasks.getAll());
     final read = tasks!.single;
     expect(read.estimatedMinutes, 20);
 
+    // Pick the time and length with the chip, then just type what.
+    await tester.tap(find.byKey(const Key('composer-time')));
+    await pumpUntil(tester, find.text('When, and for how long?'));
+    await tester.tap(find.text('45 min').last);
+    await tester.pump();
+    await tester.tap(find.text('OK').last);
+    await pumpUntil(tester, find.textContaining('· 45 min'));
+    await tester.enterText(find.byType(TextField).last, 'gym');
+    await tester.tap(find.byTooltip('Add').last);
+    await pumpUntil(tester, find.text('Gym'));
+    final gym = (await tester.runAsync(() => app.seededRepos.tasks.getAll()))!.firstWhere((t) => t.title == 'Gym');
+    expect(gym.estimatedMinutes, 45);
+    expect(gym.scheduledAt, isNotNull);
+
     // Swipe left: moves to tomorrow.
+    tasks = await tester.runAsync(() => app.seededRepos.tasks.getAll());
     final card = find.ancestor(of: find.text('Read'), matching: find.byType(Dismissible));
     final hasSlot = read.scheduledAt != null;
     if (hasSlot) {
       await tester.drag(card.first, const Offset(-600, 0));
       await pumpUntil(tester, find.text('Moved to tomorrow'));
       tasks = await tester.runAsync(() => app.seededRepos.tasks.getAll());
-      expect(tasks!.single.scheduledAt!.difference(read.scheduledAt!).inHours, 24);
+      expect(tasks!.firstWhere((t) => t.title == 'Read').scheduledAt!.difference(read.scheduledAt!).inHours, 24);
     }
     await tearDownApp(tester);
   });
@@ -536,7 +549,9 @@ Future<void> openPlan(WidgetTester tester) async {
 
 /// Taps a day on the planner's date strip.
 Future<void> pickPlanDay(WidgetTester tester, DateTime d) async {
-  final key = ValueKey('day-${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}');
+  final key = ValueKey(
+    'day-${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}',
+  );
   await tester.ensureVisible(find.byKey(key));
   await tester.tap(find.byKey(key));
   await tester.pump(const Duration(milliseconds: 500));

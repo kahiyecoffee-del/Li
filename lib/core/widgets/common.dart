@@ -606,18 +606,25 @@ class PremiumPill extends StatelessWidget {
 }
 
 /// Page scaffold padding helper for scrollable screens.
+/// The standard scrolling page: soft ambient light at the top and sections
+/// that arrive one after another (the Dayly look on every screen).
 class PageList extends StatelessWidget {
-  const PageList({super.key, required this.children, this.padding, this.controller});
+  const PageList({super.key, required this.children, this.padding, this.controller, this.animate = true});
 
   final List<Widget> children;
   final EdgeInsets? padding;
   final ScrollController? controller;
 
+  /// Staggered entrance for the children (off for long, data-heavy lists).
+  final bool animate;
+
   @override
-  Widget build(BuildContext context) => ListView(
-    controller: controller,
-    padding: padding ?? const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 120),
-    children: children,
+  Widget build(BuildContext context) => AmbientBackdrop(
+    child: ListView(
+      controller: controller,
+      padding: padding ?? const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 120),
+      children: animate && children.length <= 40 ? staggered(children) : children,
+    ),
   );
 }
 

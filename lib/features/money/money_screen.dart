@@ -73,7 +73,9 @@ class _MoneyScreenState extends ConsumerState<MoneyScreen> with SingleTickerProv
         icon: const Icon(Icons.add),
         label: Text(l.addExpense),
       ),
-      body: TabBarView(controller: _tabs, children: [_overview(), _activity(), _plan()]),
+      body: AmbientBackdrop(
+        child: TabBarView(controller: _tabs, children: [_overview(), _activity(), _plan()]),
+      ),
     );
   }
 

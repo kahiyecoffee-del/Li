@@ -719,6 +719,29 @@ class AppLocalizationsTr extends AppLocalizations {
   String get planNow => 'Şimdi';
 
   @override
+  String get timeSheetTitle => 'Ne zaman, ne kadar süre?';
+
+  @override
+  String get timeStart => 'Başlangıç';
+
+  @override
+  String get timeNoTime => 'Saat belirtme';
+
+  @override
+  String get timeCustom => 'Özel';
+
+  @override
+  String get timeChip => 'Saat';
+
+  @override
+  String get timeWhenDay => 'Gün';
+
+  @override
+  String timeAnytime(String duration) {
+    return 'Saatsiz · $duration';
+  }
+
+  @override
   String get planEmptyShort => 'Boş bir gün';
 
   @override

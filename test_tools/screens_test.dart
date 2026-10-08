@@ -90,6 +90,18 @@ void main() {
       await tester.tap(find.text('Planla').last);
       await pumpUntil(tester, find.byKey(const Key('plan-composer')));
       await _shot(tester, '$mode-plan');
+      await tester.tap(find.byKey(const Key('composer-time')));
+      await pumpUntil(tester, find.text('Ne zaman, ne kadar süre?'));
+      await tester.tap(find.text('45 dk').last);
+      await _shot(tester, '$mode-time-sheet');
+      await tester.tap(find.text('Tamam').last);
+      await pumpUntil(tester, find.textContaining('· 45 dk'));
+      await _shot(tester, '$mode-plan-chosen');
+      await tester.tap(find.text('Ekip toplantısı'));
+      await pumpUntil(tester, find.byKey(const Key('editor-time')));
+      await _shot(tester, '$mode-editor');
+      await tester.binding.handlePopRoute(); // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
+      await tester.pump(const Duration(milliseconds: 600));
       await tester.drag(find.byType(ListView).last, const Offset(0, -600));
       await _shot(tester, '$mode-plan-2');
       await tester.binding
@@ -98,6 +110,12 @@ void main() {
       await tester.tap(find.text('Para').last);
       await pumpUntil(tester, find.text('Özet'));
       await _shot(tester, '$mode-money');
+      await tester.binding.handlePopRoute(); // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
+      await pumpUntil(tester, find.text('Yemek'));
+      await _shot(tester, '$mode-explore');
+      await tester.tap(find.text('Yemek').last);
+      await pumpUntil(tester, find.text('Tarifler'));
+      await _shot(tester, '$mode-food');
       await tearDownApp(tester);
     });
   }

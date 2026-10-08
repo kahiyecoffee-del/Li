@@ -10,6 +10,7 @@ import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
 import '../../domain/models/enums.dart';
 import '../../domain/models/task_item.dart';
+import 'time_picker_sheet.dart';
 
 Future<void> showTaskEditor(BuildContext context, {TaskItem? task, DateTime? day, String? title, TimeOfDay? time}) =>
     showModalBottomSheet<void>(
@@ -88,7 +89,7 @@ class _TaskEditorState extends ConsumerState<TaskEditor> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(widget.task == null ? l.newTask : l.editTask, style: context.text.titleLarge),
+            Text(widget.task == null ? l.newTask : l.editTask, style: context.text.headlineSmall),
             const SizedBox(height: Space.lg),
             TextField(
               controller: _title,
@@ -98,35 +99,78 @@ class _TaskEditorState extends ConsumerState<TaskEditor> {
               onSubmitted: (_) => _save(),
             ),
             const SizedBox(height: Space.lg),
-            Row(
+            // Day: today, tomorrow or any date.
+            Text(l.timeWhenDay, style: context.text.titleSmall?.copyWith(color: context.semantic.muted)),
+            const SizedBox(height: Space.sm),
+            Wrap(
+              spacing: Space.sm,
+              runSpacing: Space.sm,
               children: [
-                Expanded(
-                  child: OutlinedButton.icon(
-                    icon: const Icon(Icons.calendar_today_outlined, size: 18),
-                    label: Text(_date == null ? l.taskNoTime : fmt.weekdayDayMonth(_date!)),
-                    onPressed: () async {
-                      final d = await showDatePicker(
-                        context: context,
-                        initialDate: _date ?? DateTime.now(),
-                        firstDate: DateTime.now().subtract(const Duration(days: 365)),
-                        lastDate: DateTime.now().add(const Duration(days: 730)),
-                      );
-                      if (d != null) setState(() => _date = d);
-                    },
+                for (final (label, offset) in [(l.today, 0), (l.tomorrow, 1)])
+                  ChoiceChip(
+                    label: Text(label),
+                    selected:
+                        _date != null && Dates.sameDay(_date!, Dates.addDays(Dates.dateOnly(DateTime.now()), offset)),
+                    onSelected: (_) => setState(() => _date = Dates.addDays(Dates.dateOnly(DateTime.now()), offset)),
                   ),
-                ),
-                const SizedBox(width: Space.sm),
-                Expanded(
-                  child: OutlinedButton.icon(
-                    icon: const Icon(Icons.schedule, size: 18),
-                    label: Text(_time == null ? l.taskNoTime : _time!.format(context)),
-                    onPressed: () async {
-                      final t = await showTimePicker(context: context, initialTime: _time ?? TimeOfDay.now());
-                      setState(() => _time = t);
-                    },
+                ActionChip(
+                  avatar: const Icon(Icons.calendar_today_outlined, size: 16),
+                  label: Text(
+                    _date == null ||
+                            Dates.daysBetween(Dates.dateOnly(DateTime.now()), _date!) < 0 ||
+                            Dates.daysBetween(Dates.dateOnly(DateTime.now()), _date!) > 1
+                        ? (_date == null ? l.planPickDate : fmt.weekdayDayMonth(_date!))
+                        : l.planPickDate,
                   ),
+                  onPressed: () async {
+                    final d = await showDatePicker(
+                      context: context,
+                      initialDate: _date ?? DateTime.now(),
+                      firstDate: DateTime.now().subtract(const Duration(days: 365)),
+                      lastDate: DateTime.now().add(const Duration(days: 730)),
+                    );
+                    if (d != null) setState(() => _date = d);
+                  },
                 ),
               ],
+            ),
+            const SizedBox(height: Space.lg),
+            // Time and length: one card, one wheel.
+            Text(l.timeSheetTitle, style: context.text.titleSmall?.copyWith(color: context.semantic.muted)),
+            const SizedBox(height: Space.sm),
+            AppCard(
+              key: const Key('editor-time'),
+              onTap: () async {
+                final c = await pickTimeAndDuration(context, time: _time, minutes: _minutes);
+                if (c != null) {
+                  setState(() {
+                    _time = c.time;
+                    _minutes = c.minutes;
+                  });
+                }
+              },
+              child: Row(
+                children: [
+                  Icon(Icons.schedule_rounded, color: context.colors.primary),
+                  const SizedBox(width: Space.md),
+                  Expanded(
+                    child: Text(
+                      _time == null ? l.timeAnytime(durationLabel(l, _minutes)) : rangeLabel(_time!, _minutes),
+                      style: context.text.headlineSmall?.copyWith(
+                        fontSize: 20,
+                        fontFeatures: const [FontFeature.tabularFigures()],
+                      ),
+                    ),
+                  ),
+                  if (_time != null)
+                    Text(
+                      durationLabel(l, _minutes),
+                      style: context.text.labelLarge?.copyWith(color: context.semantic.muted),
+                    ),
+                  const SizedBox(width: Space.xs),
+                  Icon(Icons.chevron_right_rounded, color: context.semantic.muted),
+                ],
+              ),
             ),
             const SizedBox(height: Space.lg),
             Text(l.taskPriority, style: context.text.titleSmall),
@@ -139,15 +183,6 @@ class _TaskEditorState extends ConsumerState<TaskEditor> {
               onSelectionChanged: (s) => setState(() => _priority = s.first),
             ),
             const SizedBox(height: Space.lg),
-            Text('${l.taskDuration}: ${l.minutesShort(_minutes)}', style: context.text.titleSmall),
-            Slider(
-              value: _minutes.toDouble(),
-              min: 5,
-              max: 240,
-              divisions: 47,
-              label: l.minutesShort(_minutes),
-              onChanged: (v) => setState(() => _minutes = v.round()),
-            ),
             Text(l.taskCategory, style: context.text.titleSmall),
             const SizedBox(height: Space.sm),
             Wrap(

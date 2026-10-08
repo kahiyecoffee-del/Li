@@ -30,175 +30,179 @@ class SettingsScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text(asTab ? l.navProfile : l.settings)),
-      body: ListView(
-        padding: const EdgeInsets.only(bottom: Space.xxl),
-        children: [
-          if (!premium)
-            Padding(
-              padding: const EdgeInsets.all(Space.page),
-              child: AppCard(
-                onTap: () => context.push('/premium?from=settings'),
-                child: Row(
-                  children: [
-                    Icon(Icons.workspace_premium_outlined, color: context.colors.primary),
-                    const SizedBox(width: Space.md),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(l.premiumTitle, style: context.text.titleMedium),
-                          Text(l.premiumSubtitle, style: context.text.bodySmall),
-                        ],
+      body: AmbientBackdrop(
+        child: ListView(
+          padding: const EdgeInsets.only(bottom: Space.xxl),
+          children: [
+            if (!premium)
+              Padding(
+                padding: const EdgeInsets.all(Space.page),
+                child: AppCard(
+                  onTap: () => context.push('/premium?from=settings'),
+                  child: Row(
+                    children: [
+                      Icon(Icons.workspace_premium_outlined, color: context.colors.primary),
+                      const SizedBox(width: Space.md),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(l.premiumTitle, style: context.text.titleMedium),
+                            Text(l.premiumSubtitle, style: context.text.bodySmall),
+                          ],
+                        ),
                       ),
-                    ),
-                    const Icon(Icons.chevron_right),
-                  ],
+                      const Icon(Icons.chevron_right),
+                    ],
+                  ),
                 ),
               ),
+            _Header(l.settingsProfile),
+            ListTile(
+              leading: const Icon(Icons.person_outline),
+              title: Text(profile?.name.isNotEmpty == true ? profile!.name : l.onbNameHint),
+              trailing: const Icon(Icons.edit_outlined, size: 20),
+              onTap: () => _editName(context, ref),
             ),
-          _Header(l.settingsProfile),
-          ListTile(
-            leading: const Icon(Icons.person_outline),
-            title: Text(profile?.name.isNotEmpty == true ? profile!.name : l.onbNameHint),
-            trailing: const Icon(Icons.edit_outlined, size: 20),
-            onTap: () => _editName(context, ref),
-          ),
-          ListTile(
-            leading: const Icon(Icons.location_city_outlined),
-            title: Text(l.city),
-            subtitle: Text(profile?.place?.name ?? l.setCityForWeather),
-            onTap: () async {
-              final p = await pickCity(context);
-              if (p != null && profile != null) await ref.read(actionsProvider).saveProfile(profile.copyWith(place: p));
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.track_changes_outlined),
-            title: Text(l.onbFocusTitle),
-            subtitle: Text(profile?.focusAreas.map(l.focusArea).join(', ') ?? ''),
-            onTap: () => _editFocus(context, ref),
-          ),
-          _Header(l.settingsAppearance),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: Space.page, vertical: Space.sm),
-            child: SegmentedButton<ThemeMode>(
-              segments: [
-                ButtonSegment(value: ThemeMode.system, label: Text(l.themeSystem)),
-                ButtonSegment(value: ThemeMode.light, label: Text(l.themeLight)),
-                ButtonSegment(value: ThemeMode.dark, label: Text(l.themeDark)),
-              ],
-              selected: {settings.themeMode},
-              onSelectionChanged: (s) => ctrl.update((x) => x.copyWith(themeMode: s.first)),
+            ListTile(
+              leading: const Icon(Icons.location_city_outlined),
+              title: Text(l.city),
+              subtitle: Text(profile?.place?.name ?? l.setCityForWeather),
+              onTap: () async {
+                final p = await pickCity(context);
+                if (p != null && profile != null) {
+                  await ref.read(actionsProvider).saveProfile(profile.copyWith(place: p));
+                }
+              },
             ),
-          ),
-          SwitchListTile(
-            secondary: const Icon(Icons.contrast),
-            title: Text(l.highContrast),
-            value: settings.highContrast,
-            onChanged: (v) => ctrl.update((x) => x.copyWith(highContrast: v)),
-          ),
-          SwitchListTile(
-            secondary: const Icon(Icons.emoji_nature_outlined),
-            title: Text(l.lioSetting),
-            subtitle: Text(l.lioSettingHelp),
-            value: settings.showLio,
-            onChanged: (v) => ctrl.update((x) => x.copyWith(showLio: v)),
-          ),
-          ListTile(
-            leading: const Icon(Icons.badge_outlined),
-            title: Text(l.assistantNameSetting),
-            subtitle: Text(settings.assistantName),
-            trailing: const Icon(Icons.edit_outlined),
-            onTap: () async {
-              final name = await _askName(context, settings.assistantName);
-              if (name != null) await ctrl.update((x) => x.copyWith(assistantName: name));
-            },
-          ),
-          SwitchListTile(
-            secondary: const Icon(Icons.wb_sunny_outlined),
-            title: Text(l.planReminderSetting),
-            value: settings.planReminder,
-            onChanged: (v) => ctrl.update((x) => x.copyWith(planReminder: v)),
-          ),
-          SwitchListTile(
-            secondary: const Icon(Icons.menu_book_outlined),
-            title: Text(l.journalReminderSetting),
-            value: settings.journalReminder,
-            onChanged: (v) => ctrl.update((x) => x.copyWith(journalReminder: v)),
-          ),
-          SwitchListTile(
-            secondary: const Icon(Icons.psychology_alt_outlined),
-            title: Text(l.lioLearnsSetting),
-            subtitle: Text(l.lioLearnsHelp),
-            value: settings.lioLearnsJournal,
-            onChanged: (v) => ctrl.update((x) => x.copyWith(lioLearnsJournal: v)),
-          ),
-          ListTile(
-            leading: const Icon(Icons.language),
-            title: Text(l.language),
-            subtitle: Text(settings.localeCode == null ? l.languageSystem : _languageName(settings.localeCode!)),
-            onTap: () => _pickLanguage(context, ref),
-          ),
-          _Header(l.settingsNotifications),
-          RadioGroup<NotificationFrequency>(
-            groupValue: settings.notificationFrequency,
-            onChanged: (v) => ctrl.update((x) => x.copyWith(notificationFrequency: v)),
-            child: Column(
-              children: NotificationFrequency.values
-                  .map((f) => RadioListTile<NotificationFrequency>(value: f, title: Text(l.notificationFrequency(f))))
-                  .toList(),
+            ListTile(
+              leading: const Icon(Icons.track_changes_outlined),
+              title: Text(l.onbFocusTitle),
+              subtitle: Text(profile?.focusAreas.map(l.focusArea).join(', ') ?? ''),
+              onTap: () => _editFocus(context, ref),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: Space.page),
-            child: Text(l.notifExplain, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
-          ),
-          _Header(l.settingsPrivacy),
-          ListTile(
-            leading: const Icon(Icons.shield_outlined),
-            title: Text(l.settingsPrivacy),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () => context.push('/settings/privacy'),
-          ),
-          ListTile(
-            leading: const Icon(Icons.psychology_outlined),
-            title: Text(l.settingsAiMemory),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () => context.push('/settings/memory'),
-          ),
-          _Header(l.settingsAccount),
-          ListTile(
-            leading: const Icon(Icons.manage_accounts_outlined),
-            title: Text(l.settingsAccount),
-            subtitle: Text(session?.user.email ?? l.guestAccount),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () => context.push('/settings/account'),
-          ),
-          ListTile(
-            leading: const Icon(Icons.sync),
-            title: Text(l.syncStatus),
-            subtitle: Text(
-              session?.sync == null ? l.syncLocalOnly : (pending == 0 ? l.syncUpToDate : l.syncPending(pending)),
+            _Header(l.settingsAppearance),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: Space.page, vertical: Space.sm),
+              child: SegmentedButton<ThemeMode>(
+                segments: [
+                  ButtonSegment(value: ThemeMode.system, label: Text(l.themeSystem)),
+                  ButtonSegment(value: ThemeMode.light, label: Text(l.themeLight)),
+                  ButtonSegment(value: ThemeMode.dark, label: Text(l.themeDark)),
+                ],
+                selected: {settings.themeMode},
+                onSelectionChanged: (s) => ctrl.update((x) => x.copyWith(themeMode: s.first)),
+              ),
             ),
-            onTap: session?.sync == null ? null : () => session!.sync!.sync().ignore(),
-          ),
-          _Header(l.settingsAbout),
-          ListTile(
-            leading: const Icon(Icons.policy_outlined),
-            title: Text(l.privacyPolicy),
-            onTap: () => context.push('/legal/privacy'),
-          ),
-          ListTile(
-            leading: const Icon(Icons.description_outlined),
-            title: Text(l.termsOfService),
-            onTap: () => context.push('/legal/terms'),
-          ),
-          ListTile(
-            leading: const Icon(Icons.info_outline),
-            title: Text(l.appName),
-            subtitle: Text(l.version(AppConfig.appVersion)),
-          ),
-        ],
+            SwitchListTile(
+              secondary: const Icon(Icons.contrast),
+              title: Text(l.highContrast),
+              value: settings.highContrast,
+              onChanged: (v) => ctrl.update((x) => x.copyWith(highContrast: v)),
+            ),
+            SwitchListTile(
+              secondary: const Icon(Icons.emoji_nature_outlined),
+              title: Text(l.lioSetting),
+              subtitle: Text(l.lioSettingHelp),
+              value: settings.showLio,
+              onChanged: (v) => ctrl.update((x) => x.copyWith(showLio: v)),
+            ),
+            ListTile(
+              leading: const Icon(Icons.badge_outlined),
+              title: Text(l.assistantNameSetting),
+              subtitle: Text(settings.assistantName),
+              trailing: const Icon(Icons.edit_outlined),
+              onTap: () async {
+                final name = await _askName(context, settings.assistantName);
+                if (name != null) await ctrl.update((x) => x.copyWith(assistantName: name));
+              },
+            ),
+            SwitchListTile(
+              secondary: const Icon(Icons.wb_sunny_outlined),
+              title: Text(l.planReminderSetting),
+              value: settings.planReminder,
+              onChanged: (v) => ctrl.update((x) => x.copyWith(planReminder: v)),
+            ),
+            SwitchListTile(
+              secondary: const Icon(Icons.menu_book_outlined),
+              title: Text(l.journalReminderSetting),
+              value: settings.journalReminder,
+              onChanged: (v) => ctrl.update((x) => x.copyWith(journalReminder: v)),
+            ),
+            SwitchListTile(
+              secondary: const Icon(Icons.psychology_alt_outlined),
+              title: Text(l.lioLearnsSetting),
+              subtitle: Text(l.lioLearnsHelp),
+              value: settings.lioLearnsJournal,
+              onChanged: (v) => ctrl.update((x) => x.copyWith(lioLearnsJournal: v)),
+            ),
+            ListTile(
+              leading: const Icon(Icons.language),
+              title: Text(l.language),
+              subtitle: Text(settings.localeCode == null ? l.languageSystem : _languageName(settings.localeCode!)),
+              onTap: () => _pickLanguage(context, ref),
+            ),
+            _Header(l.settingsNotifications),
+            RadioGroup<NotificationFrequency>(
+              groupValue: settings.notificationFrequency,
+              onChanged: (v) => ctrl.update((x) => x.copyWith(notificationFrequency: v)),
+              child: Column(
+                children: NotificationFrequency.values
+                    .map((f) => RadioListTile<NotificationFrequency>(value: f, title: Text(l.notificationFrequency(f))))
+                    .toList(),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: Space.page),
+              child: Text(l.notifExplain, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
+            ),
+            _Header(l.settingsPrivacy),
+            ListTile(
+              leading: const Icon(Icons.shield_outlined),
+              title: Text(l.settingsPrivacy),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => context.push('/settings/privacy'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.psychology_outlined),
+              title: Text(l.settingsAiMemory),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => context.push('/settings/memory'),
+            ),
+            _Header(l.settingsAccount),
+            ListTile(
+              leading: const Icon(Icons.manage_accounts_outlined),
+              title: Text(l.settingsAccount),
+              subtitle: Text(session?.user.email ?? l.guestAccount),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () => context.push('/settings/account'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.sync),
+              title: Text(l.syncStatus),
+              subtitle: Text(
+                session?.sync == null ? l.syncLocalOnly : (pending == 0 ? l.syncUpToDate : l.syncPending(pending)),
+              ),
+              onTap: session?.sync == null ? null : () => session!.sync!.sync().ignore(),
+            ),
+            _Header(l.settingsAbout),
+            ListTile(
+              leading: const Icon(Icons.policy_outlined),
+              title: Text(l.privacyPolicy),
+              onTap: () => context.push('/legal/privacy'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.description_outlined),
+              title: Text(l.termsOfService),
+              onTap: () => context.push('/legal/terms'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.info_outline),
+              title: Text(l.appName),
+              subtitle: Text(l.version(AppConfig.appVersion)),
+            ),
+          ],
+        ),
       ),
     );
   }

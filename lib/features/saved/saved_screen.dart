@@ -50,91 +50,93 @@ class SavedScreen extends ConsumerWidget {
     final items = [...?ref.watch(savedProvider).value]..sort((a, b) => b.createdAt.compareTo(a.createdAt));
     return Scaffold(
       appBar: AppBar(title: Text(l.savedTitle)),
-      body: items.isEmpty
-          ? Center(
-              child: Padding(
-                padding: const EdgeInsets.all(Space.xl),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    const Mascot(mood: MascotMood.curious, size: 110),
-                    const SizedBox(height: Space.lg),
-                    Text(l.savedEmptyTitle, style: context.text.titleLarge, textAlign: TextAlign.center),
-                    const SizedBox(height: Space.sm),
-                    Text(
-                      l.savedEmptyBody,
-                      style: context.text.bodyMedium?.copyWith(color: context.semantic.muted),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: Space.lg),
-                    FilledButton(onPressed: () => context.go('/home'), child: Text(l.solve)),
-                  ],
-                ),
-              ),
-            )
-          : ListView.separated(
-              padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 120),
-              itemCount: items.length,
-              separatorBuilder: (_, _) => const SizedBox(height: Space.sm),
-              itemBuilder: (context, i) {
-                final item = items[i];
-                return Dismissible(
-                  key: ValueKey(item.id),
-                  direction: DismissDirection.endToStart,
-                  background: Container(
-                    alignment: Alignment.centerRight,
-                    padding: const EdgeInsets.only(right: Space.xl),
-                    decoration: BoxDecoration(
-                      color: context.semantic.negative.withValues(alpha: 0.15),
-                      borderRadius: BorderRadius.circular(Radii.lg),
-                    ),
-                    child: Icon(Icons.delete_outline, color: context.semantic.negative),
+      body: AmbientBackdrop(
+        child: items.isEmpty
+            ? Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(Space.xl),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Mascot(mood: MascotMood.curious, size: 110),
+                      const SizedBox(height: Space.lg),
+                      Text(l.savedEmptyTitle, style: context.text.titleLarge, textAlign: TextAlign.center),
+                      const SizedBox(height: Space.sm),
+                      Text(
+                        l.savedEmptyBody,
+                        style: context.text.bodyMedium?.copyWith(color: context.semantic.muted),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: Space.lg),
+                      FilledButton(onPressed: () => context.go('/home'), child: Text(l.solve)),
+                    ],
                   ),
-                  onDismissed: (_) {
-                    ref.read(reposProvider).saved.delete(item.id);
-                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l.removed)));
-                  },
-                  child: AppCard(
-                    onTap: () => openSavedItem(context, ref, item),
-                    padding: const EdgeInsets.all(Space.lg),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        IconBubble(icon: _icon(item.kind), accent: _accent(item.kind), size: 40),
-                        const SizedBox(width: Space.md),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                item.title,
-                                style: context.text.titleSmall,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              if (item.summary.isNotEmpty) ...[
-                                const SizedBox(height: 2),
+                ),
+              )
+            : ListView.separated(
+                padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 120),
+                itemCount: items.length,
+                separatorBuilder: (_, _) => const SizedBox(height: Space.sm),
+                itemBuilder: (context, i) {
+                  final item = items[i];
+                  return Dismissible(
+                    key: ValueKey(item.id),
+                    direction: DismissDirection.endToStart,
+                    background: Container(
+                      alignment: Alignment.centerRight,
+                      padding: const EdgeInsets.only(right: Space.xl),
+                      decoration: BoxDecoration(
+                        color: context.semantic.negative.withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(Radii.lg),
+                      ),
+                      child: Icon(Icons.delete_outline, color: context.semantic.negative),
+                    ),
+                    onDismissed: (_) {
+                      ref.read(reposProvider).saved.delete(item.id);
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l.removed)));
+                    },
+                    child: AppCard(
+                      onTap: () => openSavedItem(context, ref, item),
+                      padding: const EdgeInsets.all(Space.lg),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          IconBubble(icon: _icon(item.kind), accent: _accent(item.kind), size: 40),
+                          const SizedBox(width: Space.md),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
                                 Text(
-                                  item.summary,
-                                  style: context.text.bodyMedium,
-                                  maxLines: 3,
+                                  item.title,
+                                  style: context.text.titleSmall,
+                                  maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                 ),
+                                if (item.summary.isNotEmpty) ...[
+                                  const SizedBox(height: 2),
+                                  Text(
+                                    item.summary,
+                                    style: context.text.bodyMedium,
+                                    maxLines: 3,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ],
+                                const SizedBox(height: Space.xs),
+                                Text(
+                                  fmt.dayMonth(item.createdAt),
+                                  style: context.text.labelSmall?.copyWith(color: context.semantic.muted),
+                                ),
                               ],
-                              const SizedBox(height: Space.xs),
-                              Text(
-                                fmt.dayMonth(item.createdAt),
-                                style: context.text.labelSmall?.copyWith(color: context.semantic.muted),
-                              ),
-                            ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                );
-              },
-            ),
+                  );
+                },
+              ),
+      ),
     );
   }
 }

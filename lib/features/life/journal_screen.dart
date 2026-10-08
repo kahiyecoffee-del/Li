@@ -57,130 +57,132 @@ class _JournalScreenState extends ConsumerState<JournalScreen> {
         icon: const Icon(Icons.edit_outlined),
         label: Text(l.journalWriteToday),
       ),
-      body: entries.when(
-        loading: () => const LoadingView(),
-        error: (e, _) => ErrorView(error: e),
-        data: (all) {
-          final list = [...all]..sort((a, b) => b.createdAt.compareTo(a.createdAt));
-          if (list.isEmpty) return EmptyState(icon: Icons.lock_outline, message: l.journalEmpty);
-          final q = _search.text.trim().toLowerCase();
-          final shown = q.isEmpty ? list : list.where((e) => e.text.toLowerCase().contains(q)).toList();
-          final month = list.where((e) => e.createdAt.year == now.year && e.createdAt.month == now.month).length;
-          final weekMoods = [for (var d = 0; d < 7; d++) moods[Dates.dayKey(Dates.addDays(now, -d))]]
-              .whereType<int>()
-              .toList();
-          final avgMood = weekMoods.isEmpty ? null : (weekMoods.reduce((a, b) => a + b) / weekMoods.length).round();
-          return ListView(
-            padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 120),
-            children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: _Stat(
-                      icon: Icons.local_fire_department_rounded,
-                      accent: Accent.goals,
-                      text: l.journalStreakLabel(streak(list, now)),
+      body: AmbientBackdrop(
+        child: entries.when(
+          loading: () => const LoadingView(),
+          error: (e, _) => ErrorView(error: e),
+          data: (all) {
+            final list = [...all]..sort((a, b) => b.createdAt.compareTo(a.createdAt));
+            if (list.isEmpty) return EmptyState(icon: Icons.lock_outline, message: l.journalEmpty);
+            final q = _search.text.trim().toLowerCase();
+            final shown = q.isEmpty ? list : list.where((e) => e.text.toLowerCase().contains(q)).toList();
+            final month = list.where((e) => e.createdAt.year == now.year && e.createdAt.month == now.month).length;
+            final weekMoods = [for (var d = 0; d < 7; d++) moods[Dates.dayKey(Dates.addDays(now, -d))]]
+                .whereType<int>()
+                .toList();
+            final avgMood = weekMoods.isEmpty ? null : (weekMoods.reduce((a, b) => a + b) / weekMoods.length).round();
+            return ListView(
+              padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 120),
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: _Stat(
+                        icon: Icons.local_fire_department_rounded,
+                        accent: Accent.goals,
+                        text: l.journalStreakLabel(streak(list, now)),
+                      ),
                     ),
-                  ),
-                  const SizedBox(width: Space.sm),
-                  Expanded(
-                    child: _Stat(
-                      icon: Icons.menu_book_rounded,
-                      accent: Accent.insight,
-                      text: l.journalThisMonth(month),
+                    const SizedBox(width: Space.sm),
+                    Expanded(
+                      child: _Stat(
+                        icon: Icons.menu_book_rounded,
+                        accent: Accent.insight,
+                        text: l.journalThisMonth(month),
+                      ),
                     ),
+                    const SizedBox(width: Space.sm),
+                    Expanded(
+                      child: _Stat(
+                        emoji: avgMood == null ? '—' : moodEmojis[avgMood.clamp(1, 5)],
+                        accent: Accent.wellbeing,
+                        text: l.journalMoodWeek,
+                      ),
+                    ),
+                  ],
+                ),
+                if (ref.watch(settingsProvider.select((x) => x.lioLearnsJournal))) ...[
+                  const SizedBox(height: Space.md),
+                  const _Learned(),
+                ],
+                const SizedBox(height: Space.md),
+                TextField(
+                  controller: _search,
+                  onChanged: (_) => setState(() {}),
+                  decoration: InputDecoration(prefixIcon: const Icon(Icons.search_rounded), hintText: l.journalSearch),
+                ),
+                const SizedBox(height: Space.sm),
+                Text(l.journalPrivacy, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
+                if (shown.isEmpty)
+                  Padding(
+                    padding: const EdgeInsets.all(Space.xl),
+                    child: Center(child: Text(l.journalNoResults)),
                   ),
-                  const SizedBox(width: Space.sm),
-                  Expanded(
-                    child: _Stat(
-                      emoji: avgMood == null ? '—' : moodEmojis[avgMood.clamp(1, 5)],
-                      accent: Accent.wellbeing,
-                      text: l.journalMoodWeek,
+                for (final e in shown) ...[
+                  if (shown.indexOf(e) == 0 ||
+                      fmt.monthYear(shown[shown.indexOf(e) - 1].createdAt) != fmt.monthYear(e.createdAt))
+                    Padding(
+                      padding: const EdgeInsets.only(top: Space.lg, bottom: Space.sm),
+                      child: Text(fmt.monthYear(e.createdAt), style: context.text.titleMedium),
+                    ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: Space.sm),
+                    child: AppCard(
+                      onTap: () => context.push('/journal/${e.id}'),
+                      padding: const EdgeInsets.fromLTRB(Space.lg, Space.sm, Space.xs, Space.md),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              if (moods[Dates.dayKey(e.createdAt)] != null)
+                                Padding(
+                                  padding: const EdgeInsets.only(right: Space.sm),
+                                  child: Text(
+                                    moodEmojis[moods[Dates.dayKey(e.createdAt)]!]!,
+                                    style: const TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                              Expanded(
+                                child: Text(
+                                  fmt.dateTime(e.createdAt),
+                                  style: context.text.labelMedium?.copyWith(color: context.semantic.muted),
+                                ),
+                              ),
+                              IconButton(
+                                tooltip: l.delete,
+                                icon: const Icon(Icons.delete_outline, size: 20),
+                                onPressed: () async {
+                                  if (await confirmDialog(
+                                    context,
+                                    title: l.deleteConfirmTitle,
+                                    body: l.deleteConfirmBody,
+                                    destructive: true,
+                                  )) {
+                                    await ref.read(actionsProvider).deleteJournal(e.id);
+                                  }
+                                },
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: Space.md),
+                            child: Text(
+                              e.text,
+                              style: context.text.bodyLarge,
+                              maxLines: 4,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
-              ),
-              if (ref.watch(settingsProvider.select((x) => x.lioLearnsJournal))) ...[
-                const SizedBox(height: Space.md),
-                const _Learned(),
               ],
-              const SizedBox(height: Space.md),
-              TextField(
-                controller: _search,
-                onChanged: (_) => setState(() {}),
-                decoration: InputDecoration(prefixIcon: const Icon(Icons.search_rounded), hintText: l.journalSearch),
-              ),
-              const SizedBox(height: Space.sm),
-              Text(l.journalPrivacy, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
-              if (shown.isEmpty)
-                Padding(
-                  padding: const EdgeInsets.all(Space.xl),
-                  child: Center(child: Text(l.journalNoResults)),
-                ),
-              for (final e in shown) ...[
-                if (shown.indexOf(e) == 0 ||
-                    fmt.monthYear(shown[shown.indexOf(e) - 1].createdAt) != fmt.monthYear(e.createdAt))
-                  Padding(
-                    padding: const EdgeInsets.only(top: Space.lg, bottom: Space.sm),
-                    child: Text(fmt.monthYear(e.createdAt), style: context.text.titleMedium),
-                  ),
-                Padding(
-                  padding: const EdgeInsets.only(bottom: Space.sm),
-                  child: AppCard(
-                    onTap: () => context.push('/journal/${e.id}'),
-                    padding: const EdgeInsets.fromLTRB(Space.lg, Space.sm, Space.xs, Space.md),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          children: [
-                            if (moods[Dates.dayKey(e.createdAt)] != null)
-                              Padding(
-                                padding: const EdgeInsets.only(right: Space.sm),
-                                child: Text(
-                                  moodEmojis[moods[Dates.dayKey(e.createdAt)]!]!,
-                                  style: const TextStyle(fontSize: 20),
-                                ),
-                              ),
-                            Expanded(
-                              child: Text(
-                                fmt.dateTime(e.createdAt),
-                                style: context.text.labelMedium?.copyWith(color: context.semantic.muted),
-                              ),
-                            ),
-                            IconButton(
-                              tooltip: l.delete,
-                              icon: const Icon(Icons.delete_outline, size: 20),
-                              onPressed: () async {
-                                if (await confirmDialog(
-                                  context,
-                                  title: l.deleteConfirmTitle,
-                                  body: l.deleteConfirmBody,
-                                  destructive: true,
-                                )) {
-                                  await ref.read(actionsProvider).deleteJournal(e.id);
-                                }
-                              },
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: Space.md),
-                          child: Text(
-                            e.text,
-                            style: context.text.bodyLarge,
-                            maxLines: 4,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ],
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }

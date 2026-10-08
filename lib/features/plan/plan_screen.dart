@@ -22,13 +22,9 @@ import '../../domain/plan/day_timeline.dart';
 import '../../l10n/gen/app_localizations.dart';
 import '../shell/main_shell.dart';
 import 'task_editor.dart';
+import 'time_picker_sheet.dart';
 
-/// "1 sa 30 dk", "45 dk", "2 sa".
-String formatDuration(AppLocalizations l, int minutes) {
-  final h = minutes ~/ 60, m = minutes % 60;
-  if (h == 0) return l.minutesShort(m);
-  return m == 0 ? l.durH(h) : l.durHM(h, m);
-}
+String formatDuration(AppLocalizations l, int minutes) => durationLabel(l, minutes);
 
 Accent categoryAccent(TaskCategory c) => switch (c) {
   TaskCategory.work => Accent.plan,
@@ -54,6 +50,9 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
   final _input = TextEditingController();
   final _focus = FocusNode();
 
+  /// Time and length picked with the chip (wins over what the text says).
+  TimeChoice? _choice;
+
   @override
   void dispose() {
     _input.dispose();
@@ -73,11 +72,21 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
   Future<void> _quickAdd(DateTime day) async {
     final text = _input.text.trim();
     if (text.isEmpty) return;
-    final q = parseQuickTask(text);
-    if (q.title.isEmpty) return;
+    final parsed = parseQuickTask(text);
+    if (parsed.title.isEmpty) return;
+    final c = _choice;
+    final q = c == null
+        ? parsed
+        : QuickTask(
+            parsed.title,
+            hour: c.time?.hour ?? parsed.hour,
+            minute: c.time?.minute ?? parsed.minute,
+            minutes: c.minutes,
+          );
     unawaited(HapticFeedback.lightImpact());
     await ref.read(actionsProvider).addQuickTask(q, day);
     _input.clear();
+    setState(() => _choice = null);
     if (mounted) showSnack(context, context.l10n.planQuickAdded(q.title));
   }
 
@@ -159,6 +168,12 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
       bottomNavigationBar: _Composer(
         controller: _input,
         focus: _focus,
+        choice: _choice,
+        onPickTime: () async {
+          final c = await pickTimeAndDuration(context, time: _choice?.time, minutes: _choice?.minutes ?? 30);
+          if (c != null) setState(() => _choice = c);
+        },
+        onClearTime: () => setState(() => _choice = null),
         onSubmit: () => _quickAdd(day),
         onDetails: () =>
             showTaskEditor(context, day: day, title: _input.text.trim().isEmpty ? null : _input.text.trim()),
@@ -871,9 +886,20 @@ class _SwipeBg extends StatelessWidget {
 // ------------------------------------------------------------------ composer
 
 class _Composer extends StatelessWidget {
-  const _Composer({required this.controller, required this.focus, required this.onSubmit, required this.onDetails});
+  const _Composer({
+    required this.controller,
+    required this.focus,
+    required this.choice,
+    required this.onPickTime,
+    required this.onClearTime,
+    required this.onSubmit,
+    required this.onDetails,
+  });
   final TextEditingController controller;
   final FocusNode focus;
+  final TimeChoice? choice;
+  final VoidCallback onPickTime;
+  final VoidCallback onClearTime;
   final VoidCallback onSubmit;
   final VoidCallback onDetails;
 
@@ -881,6 +907,12 @@ class _Composer extends StatelessWidget {
   Widget build(BuildContext context) {
     final l = context.l10n;
     final b = Theme.of(context).brightness;
+    final c = choice;
+    final timeText = c == null
+        ? l.timeChip
+        : (c.time == null
+              ? l.timeAnytime(durationLabel(l, c.minutes))
+              : '${hhmm(c.time!)} · ${durationLabel(l, c.minutes)}');
     return Padding(
       padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
       child: SafeArea(
@@ -895,40 +927,76 @@ class _Composer extends StatelessWidget {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
               child: Container(
-                padding: const EdgeInsets.fromLTRB(Space.xs, Space.xs, Space.xs, Space.xs),
+                padding: const EdgeInsets.fromLTRB(Space.md, Space.xs, Space.xs, Space.sm),
                 decoration: BoxDecoration(
                   color: context.colors.surface.withValues(alpha: b == Brightness.dark ? 0.8 : 0.88),
                   borderRadius: BorderRadius.circular(Radii.xl),
                   border: Border.all(color: context.semantic.border, width: 0.8),
                 ),
-                child: Row(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    IconButton(
-                      tooltip: l.planDetails,
-                      icon: Icon(Icons.tune_rounded, color: context.semantic.muted),
-                      onPressed: onDetails,
-                    ),
-                    Expanded(
-                      child: TextField(
-                        controller: controller,
-                        focusNode: focus,
-                        textInputAction: TextInputAction.done,
-                        textCapitalization: TextCapitalization.sentences,
-                        onSubmitted: (_) => onSubmit(),
-                        decoration: InputDecoration(
-                          hintText: l.planQuickHint,
-                          filled: false,
-                          border: InputBorder.none,
-                          enabledBorder: InputBorder.none,
-                          focusedBorder: InputBorder.none,
-                          contentPadding: const EdgeInsets.symmetric(vertical: 14),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            controller: controller,
+                            focusNode: focus,
+                            textInputAction: TextInputAction.done,
+                            textCapitalization: TextCapitalization.sentences,
+                            onSubmitted: (_) => onSubmit(),
+                            decoration: InputDecoration(
+                              hintText: l.planQuickHint,
+                              filled: false,
+                              border: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              contentPadding: const EdgeInsets.symmetric(horizontal: Space.xs, vertical: 12),
+                            ),
+                          ),
                         ),
-                      ),
+                        IconButton.filled(
+                          tooltip: l.add,
+                          onPressed: onSubmit,
+                          icon: const Icon(Icons.arrow_upward_rounded),
+                        ),
+                      ],
                     ),
-                    IconButton.filled(
-                      tooltip: l.add,
-                      onPressed: onSubmit,
-                      icon: const Icon(Icons.arrow_upward_rounded),
+                    Wrap(
+                      spacing: Space.sm,
+                      runSpacing: Space.xs,
+                      children: [
+                        // When and for how long: a tap opens the time wheel.
+                        InputChip(
+                          key: const Key('composer-time'),
+                          avatar: Icon(
+                            Icons.schedule_rounded,
+                            size: 18,
+                            color: c == null ? context.semantic.muted : context.colors.primary,
+                          ),
+                          label: Text(
+                            timeText,
+                            style: context.text.labelMedium?.copyWith(
+                              color: c == null ? context.semantic.muted : context.colors.primary,
+                              fontFeatures: const [FontFeature.tabularFigures()],
+                            ),
+                          ),
+                          selected: c != null,
+                          showCheckmark: false,
+                          onPressed: onPickTime,
+                          onDeleted: c == null ? null : onClearTime,
+                          deleteIconColor: context.semantic.muted,
+                        ),
+                        ActionChip(
+                          avatar: Icon(Icons.tune_rounded, size: 18, color: context.semantic.muted),
+                          label: Text(
+                            l.planDetails,
+                            style: context.text.labelMedium?.copyWith(color: context.semantic.muted),
+                          ),
+                          onPressed: onDetails,
+                        ),
+                      ],
                     ),
                   ],
                 ),
