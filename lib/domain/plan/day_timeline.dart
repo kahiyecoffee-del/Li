@@ -200,6 +200,12 @@ String _capitalize(String s) {
   return '$upper${s.substring(1)}';
 }
 
+/// Calendar events ride along as read-only, high-priority "tasks" with this
+/// id prefix: they count as busy time and are never moved.
+const calendarIdPrefix = 'cal:';
+
+bool isCalendarBlock(TaskItem t) => t.id.startsWith(calendarIdPrefix);
+
 sealed class TimelineEntry {
   const TimelineEntry(this.start, this.end);
   final DateTime start;
@@ -333,17 +339,28 @@ int countClashes(List<TaskItem> tasks, DateTime day) {
 
 /// Untangles [day]: keeps the order people chose and slides each task that
 /// overlaps the one before it to right after it, leaving [gap] minutes to
-/// breathe. Returns task id → new start (only the ones that move).
+/// breathe. Calendar events stay put and tasks step around them. Returns
+/// task id → new start (only the ones that move).
 Map<String, DateTime> resolveClashes(List<TaskItem> tasks, DateTime day, {int gap = 0}) {
+  final timed = _timedOn(tasks, day);
+  final fixed = [for (final t in timed.where(isCalendarBlock)) (t.scheduledAt!, _end(t))];
   final out = <String, DateTime>{};
   DateTime? cursor;
-  for (final t in _timedOn(tasks, day)) {
+  for (final t in timed.where((t) => !isCalendarBlock(t))) {
+    final length = Duration(minutes: t.estimatedMinutes);
     var start = t.scheduledAt!;
-    if (cursor != null && start.isBefore(cursor)) {
-      start = cursor;
-      out[t.id] = start;
+    if (cursor != null && start.isBefore(cursor)) start = cursor;
+    for (var moved = true; moved;) {
+      moved = false;
+      for (final (fs, fe) in fixed) {
+        if (start.isBefore(fe) && start.add(length).isAfter(fs)) {
+          start = fe.add(Duration(minutes: gap));
+          moved = true;
+        }
+      }
     }
-    final e = start.add(Duration(minutes: t.estimatedMinutes + gap));
+    if (start != t.scheduledAt) out[t.id] = start;
+    final e = start.add(length + Duration(minutes: gap));
     if (cursor == null || e.isAfter(cursor)) cursor = e;
   }
   return out;
@@ -377,6 +394,7 @@ List<TaskItem> lightenPlan(List<TaskItem> dayTasks, int availableMinutes, DateTi
             (t) =>
                 !t.deleted &&
                 !t.isCompleted &&
+                !isCalendarBlock(t) &&
                 t.priority != TaskPriority.high &&
                 (t.scheduledAt == null || t.scheduledAt!.isAfter(now)),
           )

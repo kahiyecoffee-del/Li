@@ -12,6 +12,7 @@ import '../../domain/models/enums.dart';
 import '../../domain/models/task_item.dart';
 import '../../domain/plan/day_timeline.dart';
 import '../../app/providers.dart';
+import 'calendar_busy.dart';
 import 'time_picker_sheet.dart';
 
 Future<void> showTaskEditor(BuildContext context, {TaskItem? task, DateTime? day, String? title, TimeOfDay? time}) =>
@@ -88,7 +89,10 @@ class _TaskEditorState extends ConsumerState<TaskEditor> {
     final l = context.l10n;
     final fmt = ref.fmt(context);
     final start = DateTime(_date!.year, _date!.month, _date!.day, _time!.hour, _time!.minute);
-    final all = ref.watch(tasksProvider).list;
+    final all = [
+      ...ref.watch(tasksProvider).list,
+      ...calendarBusy(ref.watch(calendarDayProvider(_date!)).value ?? const []),
+    ];
     final clash = clashFor(all, start, _minutes, exceptId: widget.task?.id);
     if (clash == null) return null;
     final free = nextFreeStart(

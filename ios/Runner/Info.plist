@@ -100,5 +100,9 @@
 			<string>cstr6suwn9.skadnetwork</string>
 		</dict>
 	</array>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Dayly shows your calendar events on the planner so tasks don't overlap them. Nothing is changed or uploaded.</string>
+	<key>NSCalendarsFullAccessUsageDescription</key>
+	<string>Dayly shows your calendar events on the planner so tasks don't overlap them. Nothing is changed or uploaded.</string>
 </dict>
 </plist>

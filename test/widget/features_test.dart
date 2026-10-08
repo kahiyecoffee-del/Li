@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lifeos/core/utils/dates.dart';
+import 'package:lifeos/services/calendar/calendar_service.dart';
 import 'package:lifeos/domain/models/enums.dart';
 import 'package:lifeos/domain/models/task_item.dart';
 import 'package:lifeos/services/analytics/analytics_service.dart';
@@ -348,6 +349,44 @@ void main() {
     expect(Dates.sameDay(tasks.firstWhere((t) => t.id == 'Deep work').anchorDate!, tomorrow), isTrue);
     await tester.pump(const Duration(milliseconds: 400));
     expect(find.byKey(const Key('plan-overload')), findsNothing);
+    await tearDownApp(tester);
+  });
+
+  testWidgets('Planner: the phone calendar shows as busy time and tasks step around it', (tester) async {
+    usePhoneViewport(tester);
+    final tomorrow = Dates.addDays(Dates.dateOnly(DateTime.now()), 1);
+    final app = (await tester.runAsync(
+      () => TestApp.onboarded(
+        online: false,
+        calendar: [
+          CalendarEvent(
+            id: 'e1',
+            title: 'Dentist',
+            start: tomorrow.add(const Duration(hours: 10)),
+            end: tomorrow.add(const Duration(hours: 11)),
+          ),
+          CalendarEvent(id: 'e2', title: 'Holiday', start: tomorrow, end: Dates.addDays(tomorrow, 1), allDay: true),
+        ],
+      ),
+    ))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    await openPlan(tester);
+    await pickPlanDay(tester, tomorrow);
+    await tester.tap(find.byKey(const Key('plan-calendar-connect')));
+    await pumpUntil(tester, find.byKey(const Key('plan-event')));
+    expect(find.text('Dentist'), findsOneWidget);
+    expect(find.text('Holiday'), findsOneWidget);
+
+    final field = find.descendant(of: find.byKey(const Key('plan-composer')), matching: find.byType(TextField));
+    await tester.enterText(field, 'Call bank 10:30 30 min');
+    await tester.testTextInput.receiveAction(TextInputAction.done);
+    await pumpUntil(tester, find.textContaining('Overlaps “Dentist”'));
+    await pumpUntil(tester, find.byKey(const Key('plan-clashes')));
+    await tester.tap(find.text('Fix overlaps'));
+    await pumpUntil(tester, find.textContaining('nothing overlaps now'));
+    final tasks = (await tester.runAsync(() => app.seededRepos.tasks.getAll()))!;
+    expect(tasks.firstWhere((t) => t.title == 'Call bank').scheduledAt, tomorrow.add(const Duration(hours: 11)));
     await tearDownApp(tester);
   });
 

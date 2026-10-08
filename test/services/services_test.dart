@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lifeos/core/utils/dates.dart';
 import 'package:lifeos/data/local/database_opener.dart';
@@ -15,6 +17,7 @@ import 'package:lifeos/services/ai/ai_context_builder.dart';
 import 'package:lifeos/services/ai/ai_service.dart';
 import 'package:lifeos/services/ai/memory_manager.dart';
 import 'package:lifeos/services/notifications/notification_planner.dart';
+import 'package:lifeos/services/notifications/notification_service.dart';
 import 'package:lifeos/services/settings/app_settings.dart';
 
 void main() {
@@ -165,6 +168,11 @@ void main() {
       final p = planner.plan(s);
       expect(p.single.kind, NotificationKind.taskReminder);
       expect(p.single.at, DateTime(2026, 6, 10, 10, 30));
+      // The reminder knows its task (for the Done button) and carries what a
+      // background snooze needs.
+      expect(p.single.taskId, 'm');
+      final payload = jsonDecode(taskPayload(route: '/plan', taskId: 'm', title: 'Standup', body: 'in 30 min'));
+      expect(payload, {'r': '/plan', 'k': 'm', 't': 'Standup', 'b': 'in 30 min'});
     });
 
     test('nudges are capped per day and skipped when satisfied', () {

@@ -261,9 +261,9 @@ class AppActions {
   }
 
   /// Slides overlapping tasks on [day] apart. Returns how many moved.
-  Future<int> fixClashes(DateTime day) async {
+  Future<int> fixClashes(DateTime day, {List<TaskItem> fixed = const []}) async {
     final all = await _repos.tasks.getAll();
-    final moves = resolveClashes(all, day, gap: _ref.read(settingsProvider).planBreak);
+    final moves = resolveClashes([...all, ...fixed], day, gap: _ref.read(settingsProvider).planBreak);
     for (final t in all.where((t) => moves.containsKey(t.id))) {
       await _repos.tasks.save(t.copyWith(scheduledAt: moves[t.id]));
     }

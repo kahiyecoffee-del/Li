@@ -16,6 +16,7 @@ import 'package:lifeos/services/ai/ai_models.dart';
 import 'package:lifeos/services/ai/ai_service.dart';
 import 'package:lifeos/services/analytics/analytics_service.dart';
 import 'package:lifeos/services/auth/auth_service.dart';
+import 'package:lifeos/services/calendar/calendar_service.dart';
 import 'package:lifeos/services/billing/billing_service.dart';
 import 'package:lifeos/services/config/remote_config_service.dart';
 import 'package:lifeos/services/connectivity/connectivity_service.dart';
@@ -97,8 +98,12 @@ class TestApp {
   UserRepos get seededRepos => UserRepos(seeded!, journalKeys: MemoryJournalKeyStore());
 
   /// A signed-in (local) user who already finished onboarding.
-  static Future<TestApp> onboarded({Map<String, Object> prefs = const {}, bool online = true}) async {
-    final app = await create(prefs: {'local_uid': 'local-test', ...prefs}, online: online);
+  static Future<TestApp> onboarded({
+    Map<String, Object> prefs = const {},
+    bool online = true,
+    List<CalendarEvent> calendar = const [],
+  }) async {
+    final app = await create(prefs: {'local_uid': 'local-test', ...prefs}, online: online, calendar: calendar);
     final store = await DatabaseOpener.inMemory('seed${DateTime.now().microsecondsSinceEpoch}');
     final repos = UserRepos(store, journalKeys: MemoryJournalKeyStore());
     await repos.profile.save(
@@ -118,7 +123,11 @@ class TestApp {
     return app;
   }
 
-  static Future<TestApp> create({Map<String, Object> prefs = const {}, bool online = true}) async {
+  static Future<TestApp> create({
+    Map<String, Object> prefs = const {},
+    bool online = true,
+    List<CalendarEvent> calendar = const [],
+  }) async {
     SharedPreferences.setMockInitialValues({'showLio': false, ...prefs});
     final p = await SharedPreferences.getInstance();
     final analytics = MemoryAnalyticsService();
@@ -139,6 +148,7 @@ class TestApp {
       news: NewsService(UnavailableNewsProvider(), p),
       ocr: FakeOcr(),
       journalKeys: MemoryJournalKeyStore(),
+      calendar: NoCalendarService(fake: calendar, granted: calendar.isNotEmpty),
     );
     return TestApp._(services, analytics, ai);
   }

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -21,6 +22,96 @@ abstract class NotificationService {
 
   /// Routes from tapped notifications (and the one that launched the app).
   Stream<String> get taps;
+
+  /// Task ids the user marked done from a reminder's "Done" button.
+  Stream<String> get doneTasks;
+}
+
+/// Reminder buttons. Ids are shared with the background handler.
+const snoozeActionId = 'snooze10';
+const doneActionId = 'done';
+const taskCategoryId = 'task_reminder';
+const snoozeMinutes = 10;
+
+bool get _turkish => PlatformDispatcher.instance.locale.languageCode == 'tr';
+String get _snoozeLabel => _turkish ? '$snoozeMinutes dk ertele' : 'Snooze $snoozeMinutes min';
+String get _doneLabel => _turkish ? 'Bitti' : 'Done';
+
+/// What a task reminder carries so it can be snoozed without the app.
+String taskPayload({required String route, required String taskId, required String title, required String body}) =>
+    jsonEncode({'r': route, 'k': taskId, 't': title, 'b': body});
+
+Map<String, dynamic>? _decode(String? payload) {
+  if (payload == null || !payload.startsWith('{')) return null;
+  try {
+    return jsonDecode(payload) as Map<String, dynamic>;
+  } catch (_) {
+    return null;
+  }
+}
+
+AndroidNotificationDetails _androidDetails({required bool task}) => AndroidNotificationDetails(
+  'lifeos_reminders',
+  'Reminders',
+  channelDescription: 'Task reminders and gentle daily check-ins',
+  importance: Importance.defaultImportance,
+  priority: Priority.defaultPriority,
+  actions: task
+      ? [
+          AndroidNotificationAction(snoozeActionId, _snoozeLabel, cancelNotification: true),
+          AndroidNotificationAction(doneActionId, _doneLabel, showsUserInterface: true, cancelNotification: true),
+        ]
+      : null,
+);
+
+NotificationDetails _details({required bool task}) => NotificationDetails(
+  android: _androidDetails(task: task),
+  iOS: DarwinNotificationDetails(categoryIdentifier: task ? taskCategoryId : null),
+);
+
+/// Schedules the same reminder again [snoozeMinutes] from now.
+Future<void> _snooze(FlutterLocalNotificationsPlugin plugin, NotificationResponse r) async {
+  final p = _decode(r.payload);
+  if (p == null) return;
+  final at = tz.TZDateTime.now(tz.local).add(const Duration(minutes: snoozeMinutes));
+  await plugin.zonedSchedule(
+    id: r.id ?? (p['k'].hashCode & 0xFFFFF),
+    title: p['t'] as String?,
+    body: p['b'] as String?,
+    scheduledDate: at,
+    payload: r.payload,
+    notificationDetails: _details(task: true),
+    androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+  );
+}
+
+Future<void> _initZone() async {
+  tzdata.initializeTimeZones();
+  try {
+    final info = await FlutterTimezone.getLocalTimezone();
+    tz.setLocalLocation(tz.getLocation(info.identifier));
+  } catch (_) {
+    tz.setLocalLocation(tz.UTC);
+  }
+}
+
+/// Runs in the background when "Snooze" is pressed (the app stays closed).
+@pragma('vm:entry-point')
+Future<void> onBackgroundNotificationAction(NotificationResponse r) async {
+  if (r.actionId != snoozeActionId) return;
+  await _initZone();
+  final plugin = FlutterLocalNotificationsPlugin();
+  await plugin.initialize(
+    settings: const InitializationSettings(
+      android: AndroidInitializationSettings('@mipmap/ic_launcher'),
+      iOS: DarwinInitializationSettings(
+        requestAlertPermission: false,
+        requestBadgePermission: false,
+        requestSoundPermission: false,
+      ),
+    ),
+  );
+  await _snooze(plugin, r);
 }
 
 class LocalNotificationService implements NotificationService {
@@ -28,44 +119,57 @@ class LocalNotificationService implements NotificationService {
   bool _ready = false;
   String? _tzName;
   final _taps = StreamController<String>.broadcast();
+  final _done = StreamController<String>.broadcast();
 
   @override
   Stream<String> get taps => _taps.stream;
 
+  @override
+  Stream<String> get doneTasks => _done.stream;
+
   void _onTap(NotificationResponse r) {
-    final route = r.payload;
+    final task = _decode(r.payload);
+    if (r.actionId == snoozeActionId) {
+      unawaited(_snooze(_plugin, r));
+      return;
+    }
+    if (r.actionId == doneActionId && task != null) {
+      _done.add(task['k'] as String);
+      return;
+    }
+    final route = task?['r'] as String? ?? r.payload;
     if (route != null && route.startsWith('/')) _taps.add(route);
   }
-
-  static const _channel = AndroidNotificationDetails(
-    'lifeos_reminders',
-    'Reminders',
-    channelDescription: 'Task reminders and gentle daily check-ins',
-    importance: Importance.defaultImportance,
-    priority: Priority.defaultPriority,
-  );
 
   @override
   Future<void> initialize() async {
     if (_ready) return;
-    tzdata.initializeTimeZones();
-    try {
-      final info = await FlutterTimezone.getLocalTimezone();
-      _tzName = info.identifier;
-      tz.setLocalLocation(tz.getLocation(info.identifier));
-    } catch (_) {
-      tz.setLocalLocation(tz.UTC);
-    }
+    await _initZone();
+    _tzName = tz.local.name;
     await _plugin.initialize(
-      settings: const InitializationSettings(
-        android: AndroidInitializationSettings('@mipmap/ic_launcher'),
+      settings: InitializationSettings(
+        android: const AndroidInitializationSettings('@mipmap/ic_launcher'),
         iOS: DarwinInitializationSettings(
           requestAlertPermission: false,
           requestBadgePermission: false,
           requestSoundPermission: false,
+          notificationCategories: [
+            DarwinNotificationCategory(
+              taskCategoryId,
+              actions: [
+                DarwinNotificationAction.plain(snoozeActionId, _snoozeLabel),
+                DarwinNotificationAction.plain(
+                  doneActionId,
+                  _doneLabel,
+                  options: {DarwinNotificationActionOption.foreground},
+                ),
+              ],
+            ),
+          ],
         ),
       ),
       onDidReceiveNotificationResponse: _onTap,
+      onDidReceiveBackgroundNotificationResponse: onBackgroundNotificationAction,
     );
     _ready = true;
     final launch = await _plugin.getNotificationAppLaunchDetails();
@@ -95,14 +199,17 @@ class LocalNotificationService implements NotificationService {
     await _plugin.cancelAll();
     for (final n in plan) {
       final t = text(n);
+      final task = n.kind == NotificationKind.taskReminder && n.taskId != null;
       try {
         await _plugin.zonedSchedule(
           id: n.id,
           title: t.title,
           body: t.body,
           scheduledDate: tz.TZDateTime.from(n.at, tz.local),
-          payload: n.kind.route,
-          notificationDetails: const NotificationDetails(android: _channel, iOS: DarwinNotificationDetails()),
+          payload: task
+              ? taskPayload(route: n.kind.route, taskId: n.taskId!, title: t.title, body: t.body)
+              : n.kind.route,
+          notificationDetails: _details(task: task),
           // Inexact scheduling avoids the SCHEDULE_EXACT_ALARM permission;
           // a few minutes of drift is fine for nudges.
           androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
@@ -124,7 +231,7 @@ class LocalNotificationService implements NotificationService {
       id: m.messageId.hashCode & 0x7FFFFFFF,
       title: n.title,
       body: n.body,
-      notificationDetails: const NotificationDetails(android: _channel, iOS: DarwinNotificationDetails()),
+      notificationDetails: _details(task: false),
     );
   }
 }
@@ -153,4 +260,7 @@ class NoopNotificationService implements NotificationService {
 
   @override
   Stream<String> get taps => const Stream.empty();
+
+  @override
+  Stream<String> get doneTasks => const Stream.empty();
 }

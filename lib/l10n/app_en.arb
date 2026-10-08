@@ -774,6 +774,12 @@
   "planDayEnd": "Ends",
   "planHowTo": "Tap a task to change anything · swipe right: done · left: tomorrow",
   "taskMore": "More",
+  "planCalendarConnect": "Show my calendar",
+  "planCalendarDenied": "Calendar access was not allowed. You can allow it in Settings.",
+  "planCalendarShown": "Your calendar events now show on the plan.",
+  "planCalendarEvent": "From your calendar",
+  "planCalendarToggle": "Show phone calendar",
+  "planCalendarToggleHint": "Read-only. Tasks will not overlap your events.",
   "planOverloaded": "{work} of work, {left} left today",
   "@planOverloaded": {
     "placeholders": {

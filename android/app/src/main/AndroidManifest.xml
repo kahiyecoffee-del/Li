@@ -9,6 +9,9 @@
     <!-- Speak a problem instead of typing it (speech_to_text); asked on first use. -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
+    <!-- Read-only: the phone's calendar events show on the planner as busy time. -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+
     <application
         android:label="Dayly"
         android:name="${applicationName}"
@@ -64,6 +67,9 @@
                 <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
             </intent-filter>
         </receiver>
+
+        <!-- Reminder buttons (Snooze, Done). -->
+        <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ActionBroadcastReceiver" />
 
         <meta-data
             android:name="flutterEmbedding"

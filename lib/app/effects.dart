@@ -15,6 +15,7 @@ import '../services/config/feature_flags.dart';
 import '../services/config/remote_config_service.dart';
 import '../services/notifications/notification_planner.dart';
 import '../services/widget/home_widget_service.dart';
+import 'actions.dart';
 import 'derived_providers.dart';
 import 'providers.dart';
 import 'router.dart';
@@ -39,6 +40,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
   Timer? _notifDebounce;
   Timer? _widgetDebounce;
   StreamSubscription<String>? _widgetTaps;
+  StreamSubscription<String>? _doneTasks;
   String? _sessionUid;
   bool _adsInitialized = false;
   StreamSubscription<String>? _taps;
@@ -55,6 +57,11 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
     _taps = s.notifications.taps.listen((route) {
       final r = route.contains('topic=') ? '$route&n=${DateTime.now().microsecondsSinceEpoch}' : route;
       ref.read(routerProvider).go(r);
+    });
+    // "Done" on a task reminder ticks the task off.
+    _doneTasks = s.notifications.doneTasks.listen((id) async {
+      final t = ref.read(tasksProvider).list.where((t) => t.id == id && !t.isCompleted).firstOrNull;
+      if (t != null) await ref.read(actionsProvider).toggleTask(t);
     });
     // Tapping the home-screen widget opens the plan (or Lio to make one).
     _widgetTaps = s.homeWidget.taps.listen((route) {
@@ -83,6 +90,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
     _widgetDebounce?.cancel();
     unawaited(_taps?.cancel());
     unawaited(_widgetTaps?.cancel());
+    unawaited(_doneTasks?.cancel());
     super.dispose();
   }
 

@@ -8,6 +8,7 @@ import '../services/ai/ai_service.dart';
 import '../services/analytics/analytics_service.dart';
 import '../services/auth/auth_service.dart';
 import '../services/billing/billing_service.dart';
+import '../services/calendar/calendar_service.dart';
 import '../services/config/feature_flags.dart';
 import '../services/config/remote_config_service.dart';
 import '../services/connectivity/connectivity_service.dart';
@@ -44,7 +45,9 @@ class Services {
     this.push,
     this.voice = const NoVoiceInput(),
     this.homeWidget = const NoHomeWidget(),
-  }) : flags = FeatureFlags(remote);
+    CalendarService? calendar,
+  }) : flags = FeatureFlags(remote),
+       calendar = calendar ?? NoCalendarService();
 
   final SharedPreferences prefs;
   final AuthService auth;
@@ -66,6 +69,9 @@ class Services {
 
   /// Today's program on the home screen (iOS/Android only).
   final HomeWidgetService homeWidget;
+
+  /// The phone's calendar, read-only (iOS/Android only).
+  final CalendarService calendar;
 
   /// Null in local-only mode (Firebase not configured).
   final FirebaseFirestore? firestore;

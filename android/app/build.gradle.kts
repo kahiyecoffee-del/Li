@@ -36,7 +36,7 @@ android {
         // Change before the first Play upload; it can never change afterwards.
         applicationId = "com.dayly.app"
         // Firebase, ML Kit and Play Billing need API 23+.
-        minSdk = maxOf(23, flutter.minSdkVersion)
+        minSdk = maxOf(24, flutter.minSdkVersion)
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName

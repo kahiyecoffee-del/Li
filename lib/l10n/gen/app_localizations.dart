@@ -1952,6 +1952,42 @@ abstract class AppLocalizations {
   /// **'More'**
   String get taskMore;
 
+  /// No description provided for @planCalendarConnect.
+  ///
+  /// In en, this message translates to:
+  /// **'Show my calendar'**
+  String get planCalendarConnect;
+
+  /// No description provided for @planCalendarDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Calendar access was not allowed. You can allow it in Settings.'**
+  String get planCalendarDenied;
+
+  /// No description provided for @planCalendarShown.
+  ///
+  /// In en, this message translates to:
+  /// **'Your calendar events now show on the plan.'**
+  String get planCalendarShown;
+
+  /// No description provided for @planCalendarEvent.
+  ///
+  /// In en, this message translates to:
+  /// **'From your calendar'**
+  String get planCalendarEvent;
+
+  /// No description provided for @planCalendarToggle.
+  ///
+  /// In en, this message translates to:
+  /// **'Show phone calendar'**
+  String get planCalendarToggle;
+
+  /// No description provided for @planCalendarToggleHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Read-only. Tasks will not overlap your events.'**
+  String get planCalendarToggleHint;
+
   /// No description provided for @planOverloaded.
   ///
   /// In en, this message translates to:

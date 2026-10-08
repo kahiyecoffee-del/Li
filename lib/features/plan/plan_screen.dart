@@ -23,6 +23,8 @@ import '../../domain/models/task_item.dart';
 import '../../domain/plan/day_timeline.dart';
 import '../../l10n/gen/app_localizations.dart';
 import '../shell/main_shell.dart';
+import '../../services/calendar/calendar_service.dart';
+import 'calendar_busy.dart';
 import 'routines_screen.dart';
 import 'task_editor.dart';
 import 'time_picker_sheet.dart';
@@ -99,7 +101,7 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
             minutes: c.minutes,
           );
     unawaited(HapticFeedback.lightImpact());
-    final others = ref.read(tasksProvider).list;
+    final others = [...ref.read(tasksProvider).list, ...busyOn(ref, day)];
     final t = await ref.read(actionsProvider).addQuickTask(q, day);
     _input.clear();
     setState(() => _choice = null);
@@ -151,18 +153,21 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
     final done = dayTasks.where((t) => t.isCompleted).toList();
     final (start, end) = _bounds(day);
     final now = DateTime.now();
+    final events = ref.watch(calendarDayProvider(Dates.dateOnly(day))).value ?? const [];
+    final busy = calendarBusy(events);
+    final withBusy = [...dayTasks, ...busy];
     final timeline = buildTimeline(
-      tasks: dayTasks.where((t) => !t.isCompleted).toList(),
+      tasks: [...dayTasks.where((t) => !t.isCompleted), ...busy],
       day: day,
       dayStart: start,
       dayEnd: end,
       now: now,
     );
     final stats = dayStats(dayTasks, timeline);
-    final clashes = countClashes(dayTasks, day);
+    final clashes = countClashes(withBusy, day);
     final fmt = ref.fmt(context);
     final isPast = Dates.dateOnly(day).isBefore(today);
-    final work = isPast ? 0 : remainingWorkMinutes(dayTasks, now);
+    final work = isPast ? 0 : remainingWorkMinutes(withBusy, now);
     final left = isPast ? 0 : minutesLeft(start, end, isToday ? now : start);
     final overloaded = isOverloaded(work, left);
     final open = dayTasks.where((t) => !t.isCompleted).toList();
@@ -242,7 +247,7 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
                       overload: overloaded ? (formatDuration(l, work), formatDuration(l, left)) : null,
                       onLighten: () async {
                         unawaited(HapticFeedback.mediumImpact());
-                        final move = lightenPlan(dayTasks, left, now);
+                        final move = lightenPlan(withBusy, left, now);
                         final n = await ref.read(actionsProvider).moveAllToTomorrow(move, day);
                         if (context.mounted) showSnack(context, l.planLightened(n));
                       },
@@ -250,7 +255,7 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
                       onEditHours: _editDayHours,
                       onFixClashes: () async {
                         unawaited(HapticFeedback.mediumImpact());
-                        final n = await ref.read(actionsProvider).fixClashes(day);
+                        final n = await ref.read(actionsProvider).fixClashes(day, fixed: busy);
                         if (context.mounted) showSnack(context, l.planClashesFixed(n));
                       },
                       onOptimize: () async {
@@ -412,6 +417,10 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
         ),
       );
     }
+    for (final e in ref.watch(calendarDayProvider(Dates.dateOnly(day))).value ?? const <CalendarEvent>[]) {
+      if (!e.allDay) continue;
+      out.add(Chip(avatar: const Icon(Icons.event_rounded, size: 16), label: Text(e.title)));
+    }
     final habits = ref.watch(habitsProvider).list.where((h) => !h.deleted && h.isScheduledOn(day)).length;
     if (habits > 0) {
       out.add(
@@ -419,6 +428,16 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
           avatar: const Icon(Icons.repeat_rounded, size: 16),
           label: Text(l.planHabitsCount(habits)),
           onPressed: () => context.push('/habits'),
+        ),
+      );
+    }
+    if (ref.watch(servicesProvider).calendar.supported && !ref.watch(settingsProvider.select((s) => s.showCalendar))) {
+      out.add(
+        ActionChip(
+          key: const Key('plan-calendar-connect'),
+          avatar: const Icon(Icons.calendar_month_rounded, size: 16),
+          label: Text(l.planCalendarConnect),
+          onPressed: () => connectCalendar(context, ref),
         ),
       );
     }
@@ -452,6 +471,15 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
     for (final e in entries) {
       maybeNow(e.start);
       switch (e) {
+        case TaskBlock(:final task) when isCalendarBlock(task):
+          rows.add(
+            _TimelineRow(
+              time: fmt.time(e.start),
+              dot: _Dot.task,
+              color: context.semantic.muted,
+              child: _EventCard(title: task.title, range: '${fmt.time(e.start)} – ${fmt.time(e.end)}'),
+            ),
+          );
         case TaskBlock(:final task, :final clash):
           rows.add(
             _TimelineRow(
@@ -1356,7 +1384,7 @@ Future<void> changeTaskTime(BuildContext context, WidgetRef ref, TaskItem task) 
     return;
   }
   final at = DateTime(day.year, day.month, day.day, c.time!.hour, c.time!.minute);
-  final others = ref.read(tasksProvider).list;
+  final others = [...ref.read(tasksProvider).list, ...busyOn(ref, day)];
   final updated = task.copyWith(estimatedMinutes: c.minutes, scheduledAt: at, clearDeadline: true);
   await actions.saveTask(updated, isNew: false);
   final clash = clashFor(others, at, c.minutes, exceptId: task.id);
@@ -1381,7 +1409,7 @@ Future<void> moveAfterClash(BuildContext context, WidgetRef ref, TaskItem task, 
   final from = clash.scheduledAt!.add(Duration(minutes: clash.estimatedMinutes + gap));
   final dayEnd = Dates.addDays(Dates.dateOnly(from), 1).subtract(const Duration(minutes: 1));
   final at = nextFreeStart(
-    ref.read(tasksProvider).list,
+    [...ref.read(tasksProvider).list, ...busyOn(ref, from)],
     from,
     task.estimatedMinutes,
     dayEnd: dayEnd,
@@ -1537,6 +1565,18 @@ class _DayHoursSheetState extends ConsumerState<_DayHoursSheet> {
                   ),
               ],
             ),
+            if (ref.watch(servicesProvider).calendar.supported) ...[
+              const SizedBox(height: Space.md),
+              SwitchListTile(
+                contentPadding: EdgeInsets.zero,
+                title: Text(l.planCalendarToggle),
+                subtitle: Text(l.planCalendarToggleHint),
+                value: ref.watch(settingsProvider.select((s) => s.showCalendar)),
+                onChanged: (on) => on
+                    ? connectCalendar(context, ref)
+                    : ref.read(settingsProvider.notifier).update((s) => s.copyWith(showCalendar: false)),
+              ),
+            ],
             const SizedBox(height: Space.lg),
             FilledButton(onPressed: () => Navigator.pop(context, (_wake, _sleep)), child: Text(l.save)),
           ],
@@ -1563,7 +1603,7 @@ class _NowCard extends ConsumerWidget {
     final gold = Theme.of(context).brightness == Brightness.dark ? Palette.goldDark : Palette.gold;
     return AppCard(
       key: const Key('plan-now'),
-      onTap: () => showTaskEditor(context, task: block.task),
+      onTap: isCalendarBlock(block.task) ? null : () => showTaskEditor(context, task: block.task),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -1731,6 +1771,59 @@ class _ShutdownSheet extends ConsumerWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+/// Asks for calendar access and, when allowed, shows events on the plan.
+Future<void> connectCalendar(BuildContext context, WidgetRef ref) async {
+  final l = context.l10n;
+  final ok = await ref.read(servicesProvider).calendar.requestAccess();
+  if (!context.mounted) return;
+  if (!ok) {
+    showSnack(context, l.planCalendarDenied);
+    return;
+  }
+  await ref.read(settingsProvider.notifier).update((s) => s.copyWith(showCalendar: true));
+  if (!context.mounted) return;
+  showSnack(context, l.planCalendarShown);
+}
+
+/// An event from the phone's calendar: busy time, not editable here.
+class _EventCard extends StatelessWidget {
+  const _EventCard({required this.title, required this.range});
+  final String title;
+  final String range;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.l10n;
+    return Container(
+      key: const Key('plan-event'),
+      padding: const EdgeInsets.fromLTRB(Space.lg, Space.md, Space.md, Space.md),
+      decoration: BoxDecoration(
+        color: context.colors.surfaceContainerHighest.withValues(alpha: 0.6),
+        borderRadius: BorderRadius.circular(Radii.lg),
+        border: Border.all(color: context.semantic.border),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title, style: context.text.titleMedium),
+                const SizedBox(height: 2),
+                Text(
+                  '$range · ${l.planCalendarEvent}',
+                  style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
+                ),
+              ],
+            ),
+          ),
+          Icon(Icons.event_rounded, size: 20, color: context.semantic.muted),
+        ],
       ),
     );
   }

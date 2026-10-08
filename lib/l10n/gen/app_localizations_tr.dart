@@ -1077,6 +1077,24 @@ class AppLocalizationsTr extends AppLocalizations {
   String get taskMore => 'Daha fazla';
 
   @override
+  String get planCalendarConnect => 'Takvimimi göster';
+
+  @override
+  String get planCalendarDenied => 'Takvim izni verilmedi. Telefonun Ayarlar bölümünden açabilirsin.';
+
+  @override
+  String get planCalendarShown => 'Takvim etkinliklerin artık planında görünüyor.';
+
+  @override
+  String get planCalendarEvent => 'Takviminden';
+
+  @override
+  String get planCalendarToggle => 'Telefon takvimini göster';
+
+  @override
+  String get planCalendarToggleHint => 'Sadece okunur. Görevler etkinliklerinle çakışmaz.';
+
+  @override
   String planOverloaded(String work, String left) {
     return 'Bugün $work iş var, $left zaman kaldı';
   }

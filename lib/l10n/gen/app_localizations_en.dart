@@ -1105,6 +1105,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get taskMore => 'More';
 
   @override
+  String get planCalendarConnect => 'Show my calendar';
+
+  @override
+  String get planCalendarDenied => 'Calendar access was not allowed. You can allow it in Settings.';
+
+  @override
+  String get planCalendarShown => 'Your calendar events now show on the plan.';
+
+  @override
+  String get planCalendarEvent => 'From your calendar';
+
+  @override
+  String get planCalendarToggle => 'Show phone calendar';
+
+  @override
+  String get planCalendarToggleHint => 'Read-only. Tasks will not overlap your events.';
+
+  @override
   String planOverloaded(String work, String left) {
     return '$work of work, $left left today';
   }

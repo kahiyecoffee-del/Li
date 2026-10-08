@@ -34,6 +34,7 @@ class PlannedNotification {
     required this.at,
     this.title = '',
     this.leadMinutes = 30,
+    this.taskId,
   });
 
   /// Stable id so re-planning replaces instead of duplicating.
@@ -46,6 +47,9 @@ class PlannedNotification {
 
   /// How long before the start a task reminder fires.
   final int leadMinutes;
+
+  /// The task a reminder is about (for its "Done" action).
+  final String? taskId;
 }
 
 /// Default quiet hours when the user has not set a routine.
@@ -138,6 +142,7 @@ class NotificationPlanner {
             at: fire,
             title: t.title,
             leadMinutes: lead.inMinutes,
+            taskId: t.id,
           ),
         );
       }

@@ -21,6 +21,7 @@ import 'services/ads/ads_service.dart';
 import 'services/ai/ai_service.dart';
 import 'services/analytics/analytics_service.dart';
 import 'services/auth/auth_service.dart';
+import 'services/calendar/calendar_service.dart';
 import 'services/billing/billing_service.dart';
 import 'services/config/remote_config_service.dart';
 import 'services/connectivity/connectivity_service.dart';
@@ -81,6 +82,7 @@ Future<Services> buildServices() async {
       ocr: MlKitOcrService(),
       voice: mobile ? DeviceVoiceInput() : const NoVoiceInput(),
       homeWidget: mobile ? DeviceHomeWidget() : const NoHomeWidget(),
+      calendar: mobile ? DeviceCalendarService() : NoCalendarService(),
       journalKeys: SecureJournalKeyStore(),
     );
   }
@@ -127,6 +129,7 @@ Future<Services> buildServices() async {
     ocr: MlKitOcrService(),
     voice: mobile ? DeviceVoiceInput() : const NoVoiceInput(),
     homeWidget: mobile ? DeviceHomeWidget() : const NoHomeWidget(),
+    calendar: mobile ? DeviceCalendarService() : NoCalendarService(),
     journalKeys: SecureJournalKeyStore(),
     firestore: firestore,
     functions: functions,

@@ -178,4 +178,19 @@ void main() {
       expect(TaskItem.fromJson({...x.toJson(), 'id': 'a', 'updatedAt': 0}).rolledOver, 3);
     });
   });
+
+  test('calendar events stay put; tasks step around them', () {
+    final day = DateTime(2026, 6, 10);
+    TaskItem t(String id, int h, int m, int mins) => TaskItem(
+      id: id,
+      updatedAt: day,
+      title: id,
+      scheduledAt: DateTime(2026, 6, 10, h, m),
+      estimatedMinutes: mins,
+      createdAt: day,
+    );
+    final tasks = [t('a', 9, 30, 60), t('${calendarIdPrefix}x', 10, 0, 60), t('b', 10, 30, 30)];
+    // a (9:30–10:30) overlaps the 10:00 event: it moves after it, b follows.
+    expect(resolveClashes(tasks, day), {'a': DateTime(2026, 6, 10, 11), 'b': DateTime(2026, 6, 10, 12)});
+  });
 }
