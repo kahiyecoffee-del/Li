@@ -119,6 +119,41 @@ void main() {
     await tearDownApp(tester);
   });
 
+  testWidgets('Quick capture: one line becomes an expense, a task, shopping or a journal note', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded()))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    final field = find.byKey(const Key('capture-field'));
+    Future<void> capture(String text, String preview) async {
+      await tester.ensureVisible(field);
+      await tester.enterText(field, text);
+      await tester.pump();
+      expect(find.textContaining(preview), findsWidgets, reason: text);
+      await tester.testTextInput.receiveAction(TextInputAction.done);
+      await tester.pump(const Duration(milliseconds: 400));
+    }
+
+    await capture('250 TL market', 'Food');
+    await pumpUntil(tester, find.textContaining('Saved: '));
+    await capture('tomorrow 15:00 dentist 30 min', 'Tomorrow');
+    await pumpUntil(tester, find.textContaining('Planned: Dentist'));
+    await capture('buy milk, eggs', 'milk, eggs');
+    await capture('I feel calm after the walk', 'A note for your journal');
+    await pumpUntil(tester, find.text('Saved to your journal'));
+
+    final repos = app.seededRepos;
+    final tx = (await tester.runAsync(() => repos.transactions.getAll()))!;
+    expect(tx.single.amountMinor, 25000);
+    final task = (await tester.runAsync(() => repos.tasks.getAll()))!.single;
+    final tomorrow = DateTime.now().add(const Duration(days: 1));
+    expect(task.scheduledAt, DateTime(tomorrow.year, tomorrow.month, tomorrow.day, 15));
+    expect(task.estimatedMinutes, 30);
+    final shop = (await tester.runAsync(() => repos.shopping.getAll()))!;
+    expect(shop.map((x) => x.name), containsAll(['milk', 'eggs']));
+    await tearDownApp(tester);
+  });
+
   testWidgets('AI: proposed action needs confirmation, then creates the task', (tester) async {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded()))!;

@@ -28,7 +28,13 @@ enum NotificationKind {
 }
 
 class PlannedNotification {
-  const PlannedNotification({required this.id, required this.kind, required this.at, this.title = ''});
+  const PlannedNotification({
+    required this.id,
+    required this.kind,
+    required this.at,
+    this.title = '',
+    this.leadMinutes = 30,
+  });
 
   /// Stable id so re-planning replaces instead of duplicating.
   final int id;
@@ -37,6 +43,9 @@ class PlannedNotification {
 
   /// Task title for reminders.
   final String title;
+
+  /// How long before the start a task reminder fires.
+  final int leadMinutes;
 }
 
 /// Default quiet hours when the user has not set a routine.
@@ -118,8 +127,9 @@ class NotificationPlanner {
     // 1. Task reminders (user-created, always allowed unless off).
     for (final t in s.upcomingTasks) {
       final at = t.scheduledAt;
-      if (t.deleted || t.isCompleted || at == null) continue;
-      final fire = at.subtract(reminderLead);
+      final lead = t.reminderLead;
+      if (t.deleted || t.isCompleted || at == null || lead == null) continue;
+      final fire = at.subtract(lead);
       if (fire.isAfter(s.now) && fire.isBefore(horizon)) {
         out.add(
           PlannedNotification(
@@ -127,6 +137,7 @@ class NotificationPlanner {
             kind: NotificationKind.taskReminder,
             at: fire,
             title: t.title,
+            leadMinutes: lead.inMinutes,
           ),
         );
       }

@@ -12,6 +12,7 @@ import '../../core/widgets/formatters.dart';
 import '../../core/widgets/mascot.dart';
 import '../lio/advice_view.dart';
 import '../premium/banner_slot.dart';
+import 'home_today.dart';
 import 'problem_flow.dart';
 
 /// Home: Lio greets you with what he noticed in your data, then three big
@@ -97,6 +98,10 @@ class HomeScreen extends ConsumerWidget {
                   ),
                 ),
               ),
+              const SizedBox(height: Space.lg),
+              const QuickCaptureCard(),
+              const SizedBox(height: Space.md),
+              const TodayFlowCard(),
               if (advice.length > 1) ...[
                 const SizedBox(height: Space.xl),
                 SectionTitle(

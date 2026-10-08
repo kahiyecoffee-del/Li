@@ -1358,6 +1358,102 @@ abstract class AppLocalizations {
   /// **'Now'**
   String get planNow;
 
+  /// No description provided for @planAlso.
+  ///
+  /// In en, this message translates to:
+  /// **'Also on this day'**
+  String get planAlso;
+
+  /// No description provided for @planHabitsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 habit} other{{count} habits}}'**
+  String planHabitsCount(int count);
+
+  /// No description provided for @captureHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Write anything… “250 TL market”, “tomorrow 15:00 dentist”'**
+  String get captureHint;
+
+  /// No description provided for @captureTask.
+  ///
+  /// In en, this message translates to:
+  /// **'Task'**
+  String get captureTask;
+
+  /// No description provided for @captureExpense.
+  ///
+  /// In en, this message translates to:
+  /// **'Expense'**
+  String get captureExpense;
+
+  /// No description provided for @captureShopping.
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping'**
+  String get captureShopping;
+
+  /// No description provided for @captureJournal.
+  ///
+  /// In en, this message translates to:
+  /// **'Journal'**
+  String get captureJournal;
+
+  /// No description provided for @captureSavedTask.
+  ///
+  /// In en, this message translates to:
+  /// **'Planned: {title} · {when}'**
+  String captureSavedTask(String title, String when);
+
+  /// No description provided for @captureSavedExpense.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved: {amount} · {category}'**
+  String captureSavedExpense(String amount, String category);
+
+  /// No description provided for @captureNeedAmount.
+  ///
+  /// In en, this message translates to:
+  /// **'Add an amount, e.g. 250'**
+  String get captureNeedAmount;
+
+  /// No description provided for @captureJournalNote.
+  ///
+  /// In en, this message translates to:
+  /// **'A note for your journal'**
+  String get captureJournalNote;
+
+  /// No description provided for @todayFlow.
+  ///
+  /// In en, this message translates to:
+  /// **'Today’s flow'**
+  String get todayFlow;
+
+  /// No description provided for @nextUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Next up'**
+  String get nextUp;
+
+  /// No description provided for @startsIn.
+  ///
+  /// In en, this message translates to:
+  /// **'in {time}'**
+  String startsIn(String time);
+
+  /// No description provided for @noNextTask.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing scheduled next. Add it in one line above.'**
+  String get noNextTask;
+
+  /// No description provided for @openPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Open plan'**
+  String get openPlan;
+
   /// No description provided for @timeSheetTitle.
   ///
   /// In en, this message translates to:
@@ -4127,8 +4223,38 @@ abstract class AppLocalizations {
   /// No description provided for @notifTaskBody.
   ///
   /// In en, this message translates to:
-  /// **'“{title}” starts in 30 minutes.'**
-  String notifTaskBody(String title);
+  /// **'{minutes, plural, =1{“{title}” starts in 1 minute.} other{“{title}” starts in {minutes} minutes.}}'**
+  String notifTaskBody(String title, int minutes);
+
+  /// No description provided for @notifTaskNow.
+  ///
+  /// In en, this message translates to:
+  /// **'“{title}” starts now.'**
+  String notifTaskNow(String title);
+
+  /// No description provided for @remindLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder'**
+  String get remindLabel;
+
+  /// No description provided for @remindOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Off'**
+  String get remindOff;
+
+  /// No description provided for @remindAtStart.
+  ///
+  /// In en, this message translates to:
+  /// **'At start'**
+  String get remindAtStart;
+
+  /// No description provided for @remindBefore.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} min before'**
+  String remindBefore(int minutes);
 
   /// No description provided for @notifSpendingTitle.
   ///

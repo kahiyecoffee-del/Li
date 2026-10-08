@@ -465,6 +465,56 @@
     }
   },
   "planNow": "Now",
+  "planAlso": "Also on this day",
+  "planHabitsCount": "{count, plural, =1{1 habit} other{{count} habits}}",
+  "@planHabitsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "captureHint": "Write anything… “250 TL market”, “tomorrow 15:00 dentist”",
+  "captureTask": "Task",
+  "captureExpense": "Expense",
+  "captureShopping": "Shopping",
+  "captureJournal": "Journal",
+  "captureSavedTask": "Planned: {title} · {when}",
+  "@captureSavedTask": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "captureSavedExpense": "Saved: {amount} · {category}",
+  "@captureSavedExpense": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "captureNeedAmount": "Add an amount, e.g. 250",
+  "captureJournalNote": "A note for your journal",
+  "todayFlow": "Today’s flow",
+  "nextUp": "Next up",
+  "startsIn": "in {time}",
+  "@startsIn": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "noNextTask": "Nothing scheduled next. Add it in one line above.",
+  "openPlan": "Open plan",
   "timeSheetTitle": "When, and for how long?",
   "timeStart": "Start",
   "timeNoTime": "No set time",
@@ -1430,11 +1480,33 @@
   "premiumLocked": "Premium feature",
   "tryWithAd": "Try once with a short ad",
   "notifTaskTitle": "Coming up",
-  "notifTaskBody": "“{title}” starts in 30 minutes.",
+  "notifTaskBody": "{minutes, plural, =1{“{title}” starts in 1 minute.} other{“{title}” starts in {minutes} minutes.}}",
   "@notifTaskBody": {
     "placeholders": {
       "title": {
         "type": "String"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "notifTaskNow": "“{title}” starts now.",
+  "@notifTaskNow": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "remindLabel": "Reminder",
+  "remindOff": "Off",
+  "remindAtStart": "At start",
+  "remindBefore": "{minutes} min before",
+  "@remindBefore": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
       }
     }
   },

@@ -15,8 +15,10 @@ import '../../core/theme/tokens.dart';
 import '../../core/utils/dates.dart';
 import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
+import '../../domain/engines/money_insights.dart';
 import '../../domain/engines/plan_optimizer.dart';
 import '../../domain/models/enums.dart';
+import '../../domain/models/food.dart';
 import '../../domain/models/task_item.dart';
 import '../../domain/plan/day_timeline.dart';
 import '../../l10n/gen/app_localizations.dart';
@@ -207,6 +209,20 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
                       },
                     ),
                   ),
+                  if (_alsoChips(context, day).isNotEmpty)
+                    enter(
+                      Padding(
+                        padding: const EdgeInsets.only(top: Space.lg),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Eyebrow(l.planAlso),
+                            const SizedBox(height: Space.sm),
+                            Wrap(spacing: Space.xs, runSpacing: Space.xs, children: _alsoChips(context, day)),
+                          ],
+                        ),
+                      ),
+                    ),
                   if (dayTasks.isEmpty && overdue.isEmpty && anytime.isEmpty)
                     enter(
                       Padding(
@@ -258,6 +274,44 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
         ),
       ),
     );
+  }
+
+  /// Bills due, planned meals and habits for [day]: the rest of the day.
+  List<Widget> _alsoChips(BuildContext context, DateTime day) {
+    final l = context.l10n;
+    final fmt = ref.fmt(context);
+    final out = <Widget>[];
+    for (final b in billsThisMonth(ref.watch(billsProvider).list, day)) {
+      if (b.state == BillState.paid || !Dates.sameDay(b.due, day)) continue;
+      out.add(
+        ActionChip(
+          avatar: const Icon(Icons.receipt_long_rounded, size: 16),
+          label: Text('${b.bill.name} · ${fmt.money(b.bill.amountMinor)}'),
+          onPressed: () => context.push('/money?tab=plan'),
+        ),
+      );
+    }
+    final meals = ref.watch(mealPlansProvider).list.where((m) => m.id == Dates.dayKey(day)).firstOrNull;
+    for (final m in meals?.meals ?? const <Recipe>[]) {
+      out.add(
+        ActionChip(
+          avatar: const Icon(Icons.restaurant_rounded, size: 16),
+          label: Text('${l.mealType(m.mealType)}: ${m.name}'),
+          onPressed: () => context.push('/food?tab=week'),
+        ),
+      );
+    }
+    final habits = ref.watch(habitsProvider).list.where((h) => !h.deleted && h.isScheduledOn(day)).length;
+    if (habits > 0) {
+      out.add(
+        ActionChip(
+          avatar: const Icon(Icons.repeat_rounded, size: 16),
+          label: Text(l.planHabitsCount(habits)),
+          onPressed: () => context.push('/habits'),
+        ),
+      );
+    }
+    return out;
   }
 
   List<Widget> _timelineRows(

@@ -16,6 +16,7 @@ class TaskItem extends Entity {
     this.recurrence = Recurrence.none,
     this.completedAt,
     required this.createdAt,
+    this.remindBefore,
   });
 
   factory TaskItem.fromJson(Map<String, dynamic> j) => TaskItem(
@@ -31,6 +32,7 @@ class TaskItem extends Entity {
     recurrence: J.enumByName(Recurrence.values, j['recurrence'], Recurrence.none),
     completedAt: J.date(j, 'completedAt'),
     createdAt: J.date(j, 'createdAt') ?? Meta.updated(j),
+    remindBefore: J.intOrNull(j, 'remindBefore'),
   );
 
   static const codec = EntityCodec<TaskItem>(collection: 'tasks', fromJson: TaskItem.fromJson);
@@ -46,6 +48,17 @@ class TaskItem extends Entity {
   final Recurrence recurrence;
   final DateTime? completedAt;
   final DateTime createdAt;
+
+  /// Minutes before [scheduledAt] to remind: null = the default (30),
+  /// 0 = at the start, negative = no reminder.
+  final int? remindBefore;
+
+  /// The reminder lead to use, or null when reminders are off for this task.
+  Duration? get reminderLead => switch (remindBefore) {
+    null => const Duration(minutes: 30),
+    final m when m < 0 => null,
+    final m => Duration(minutes: m),
+  };
 
   bool get isCompleted => completedAt != null;
 
@@ -63,6 +76,7 @@ class TaskItem extends Entity {
     'recurrence': recurrence.name,
     if (completedAt != null) 'completedAt': completedAt!.millisecondsSinceEpoch,
     'createdAt': createdAt.millisecondsSinceEpoch,
+    if (remindBefore != null) 'remindBefore': remindBefore,
   };
 
   TaskItem copyWith({
@@ -78,6 +92,7 @@ class TaskItem extends Entity {
     bool clearSchedule = false,
     bool clearDeadline = false,
     bool? deleted,
+    int? remindBefore,
   }) => TaskItem(
     id: id,
     updatedAt: DateTime.now(),
@@ -91,5 +106,6 @@ class TaskItem extends Entity {
     recurrence: recurrence ?? this.recurrence,
     completedAt: clearCompleted ? null : (completedAt ?? this.completedAt),
     createdAt: createdAt,
+    remindBefore: remindBefore ?? this.remindBefore,
   );
 }

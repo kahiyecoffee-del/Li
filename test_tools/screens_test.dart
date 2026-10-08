@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lifeos/domain/models/enums.dart';
+import 'package:lifeos/domain/models/habit.dart';
+import 'package:lifeos/domain/models/money_models.dart';
 import 'package:lifeos/domain/models/task_item.dart';
 
 import '../test/widget/harness.dart';
@@ -81,10 +83,32 @@ void main() {
         ]) {
           await repos.tasks.save(x);
         }
+        await repos.habits.save(
+          Habit(id: 'h1', updatedAt: now, name: 'Su iç', type: HabitType.water, targetPerDay: 8, createdAt: now),
+        );
+        await repos.habits.save(
+          Habit(id: 'h2', updatedAt: now, name: 'Kitap', type: HabitType.reading, createdAt: now),
+        );
+        await repos.bills.save(
+          RecurringBill(
+            id: 'b1',
+            updatedAt: now,
+            name: 'Elektrik',
+            amountMinor: 45000,
+            category: ExpenseCategory.bills,
+            dayOfMonth: now.day,
+          ),
+        );
       });
       await tester.pumpWidget(app.widget());
       await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
       await _shot(tester, '$mode-home');
+      await tester.enterText(find.byKey(const Key('capture-field')), 'yarın 15:00 dişçi 30 dk');
+      await tester.pump();
+      await tester.drag(find.byType(ListView).first, const Offset(0, -300));
+      await _shot(tester, '$mode-home-capture');
+      await tester.testTextInput.receiveAction(TextInputAction.done);
+      await tester.pump(const Duration(milliseconds: 500));
       await tester.tap(find.text('Keşfet').last);
       await pumpUntil(tester, find.text('Planla'));
       await tester.tap(find.text('Planla').last);
@@ -100,7 +124,8 @@ void main() {
       await tester.tap(find.text('Ekip toplantısı'));
       await pumpUntil(tester, find.byKey(const Key('editor-time')));
       await _shot(tester, '$mode-editor');
-      await tester.binding.handlePopRoute(); // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
+      await tester.binding
+          .handlePopRoute(); // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
       await tester.pump(const Duration(milliseconds: 600));
       await tester.drag(find.byType(ListView).last, const Offset(0, -600));
       await _shot(tester, '$mode-plan-2');
@@ -110,7 +135,8 @@ void main() {
       await tester.tap(find.text('Para').last);
       await pumpUntil(tester, find.text('Özet'));
       await _shot(tester, '$mode-money');
-      await tester.binding.handlePopRoute(); // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
+      await tester.binding
+          .handlePopRoute(); // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
       await pumpUntil(tester, find.text('Yemek'));
       await _shot(tester, '$mode-explore');
       await tester.tap(find.text('Yemek').last);

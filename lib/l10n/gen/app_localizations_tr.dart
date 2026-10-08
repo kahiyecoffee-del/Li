@@ -719,6 +719,62 @@ class AppLocalizationsTr extends AppLocalizations {
   String get planNow => 'Şimdi';
 
   @override
+  String get planAlso => 'Bu gün ayrıca';
+
+  @override
+  String planHabitsCount(int count) {
+    return '$count alışkanlık';
+  }
+
+  @override
+  String get captureHint => 'Aklındakini yaz… “250 TL market”, “yarın 15:00 dişçi”';
+
+  @override
+  String get captureTask => 'Görev';
+
+  @override
+  String get captureExpense => 'Harcama';
+
+  @override
+  String get captureShopping => 'Alışveriş';
+
+  @override
+  String get captureJournal => 'Günlük';
+
+  @override
+  String captureSavedTask(String title, String when) {
+    return 'Planlandı: $title · $when';
+  }
+
+  @override
+  String captureSavedExpense(String amount, String category) {
+    return 'Kaydedildi: $amount · $category';
+  }
+
+  @override
+  String get captureNeedAmount => 'Bir tutar ekle, ör. 250';
+
+  @override
+  String get captureJournalNote => 'Günlüğüne bir not';
+
+  @override
+  String get todayFlow => 'Bugünün akışı';
+
+  @override
+  String get nextUp => 'Sıradaki';
+
+  @override
+  String startsIn(String time) {
+    return '$time sonra';
+  }
+
+  @override
+  String get noNextTask => 'Sırada planlı iş yok. Yukarıdan tek satırla ekleyebilirsin.';
+
+  @override
+  String get openPlan => 'Planı aç';
+
+  @override
   String get timeSheetTitle => 'Ne zaman, ne kadar süre?';
 
   @override
@@ -2262,8 +2318,27 @@ class AppLocalizationsTr extends AppLocalizations {
   String get notifTaskTitle => 'Yaklaşıyor';
 
   @override
-  String notifTaskBody(String title) {
-    return '“$title” 30 dakika sonra başlıyor.';
+  String notifTaskBody(String title, int minutes) {
+    return '“$title” $minutes dakika sonra başlıyor.';
+  }
+
+  @override
+  String notifTaskNow(String title) {
+    return '“$title” şimdi başlıyor.';
+  }
+
+  @override
+  String get remindLabel => 'Hatırlatma';
+
+  @override
+  String get remindOff => 'Kapalı';
+
+  @override
+  String get remindAtStart => 'Başlarken';
+
+  @override
+  String remindBefore(int minutes) {
+    return '$minutes dk önce';
   }
 
   @override

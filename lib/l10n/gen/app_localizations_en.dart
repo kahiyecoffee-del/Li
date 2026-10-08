@@ -721,6 +721,63 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planNow => 'Now';
 
   @override
+  String get planAlso => 'Also on this day';
+
+  @override
+  String planHabitsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count habits', one: '1 habit');
+    return '$_temp0';
+  }
+
+  @override
+  String get captureHint => 'Write anything… “250 TL market”, “tomorrow 15:00 dentist”';
+
+  @override
+  String get captureTask => 'Task';
+
+  @override
+  String get captureExpense => 'Expense';
+
+  @override
+  String get captureShopping => 'Shopping';
+
+  @override
+  String get captureJournal => 'Journal';
+
+  @override
+  String captureSavedTask(String title, String when) {
+    return 'Planned: $title · $when';
+  }
+
+  @override
+  String captureSavedExpense(String amount, String category) {
+    return 'Saved: $amount · $category';
+  }
+
+  @override
+  String get captureNeedAmount => 'Add an amount, e.g. 250';
+
+  @override
+  String get captureJournalNote => 'A note for your journal';
+
+  @override
+  String get todayFlow => 'Today’s flow';
+
+  @override
+  String get nextUp => 'Next up';
+
+  @override
+  String startsIn(String time) {
+    return 'in $time';
+  }
+
+  @override
+  String get noNextTask => 'Nothing scheduled next. Add it in one line above.';
+
+  @override
+  String get openPlan => 'Open plan';
+
+  @override
   String get timeSheetTitle => 'When, and for how long?';
 
   @override
@@ -2294,8 +2351,33 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notifTaskTitle => 'Coming up';
 
   @override
-  String notifTaskBody(String title) {
-    return '“$title” starts in 30 minutes.';
+  String notifTaskBody(String title, int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '“$title” starts in $minutes minutes.',
+      one: '“$title” starts in 1 minute.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String notifTaskNow(String title) {
+    return '“$title” starts now.';
+  }
+
+  @override
+  String get remindLabel => 'Reminder';
+
+  @override
+  String get remindOff => 'Off';
+
+  @override
+  String get remindAtStart => 'At start';
+
+  @override
+  String remindBefore(int minutes) {
+    return '$minutes min before';
   }
 
   @override

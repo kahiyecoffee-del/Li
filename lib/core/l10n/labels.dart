@@ -258,7 +258,10 @@ extension Labels on AppLocalizations {
   };
 
   ({String title, String body}) notification(PlannedNotification n, {int streak = 0}) => switch (n.kind) {
-    NotificationKind.taskReminder => (title: notifTaskTitle, body: notifTaskBody(n.title)),
+    NotificationKind.taskReminder => (
+      title: notifTaskTitle,
+      body: n.leadMinutes <= 0 ? notifTaskNow(n.title) : notifTaskBody(n.title, n.leadMinutes),
+    ),
     NotificationKind.logSpending => (title: notifSpendingTitle, body: notifSpendingBody),
     NotificationKind.budgetTight => (title: notifBudgetTitle, body: notifBudgetBody),
     NotificationKind.streakAtRisk => (title: notifStreakTitle, body: notifStreakBody(streak)),

@@ -42,6 +42,7 @@ class _TaskEditorState extends ConsumerState<TaskEditor> {
   late int _minutes = widget.task?.estimatedMinutes ?? 30;
   late TaskCategory _category = widget.task?.category ?? TaskCategory.personal;
   late Recurrence _repeat = widget.task?.recurrence ?? Recurrence.none;
+  late int _remind = widget.task?.remindBefore ?? 30;
   late DateTime? _date = Dates.dateOnly(widget.task?.anchorDate ?? widget.day ?? DateTime.now());
   late TimeOfDay? _time = widget.task?.scheduledAt == null
       ? widget.time
@@ -73,6 +74,7 @@ class _TaskEditorState extends ConsumerState<TaskEditor> {
       recurrence: _repeat,
       completedAt: existing?.completedAt,
       createdAt: existing?.createdAt ?? now,
+      remindBefore: _remind,
     );
     await ref.read(actionsProvider).saveTask(t, isNew: existing == null);
     if (mounted) Navigator.pop(context);
@@ -172,6 +174,24 @@ class _TaskEditorState extends ConsumerState<TaskEditor> {
                 ],
               ),
             ),
+            if (_time != null) ...[
+              const SizedBox(height: Space.md),
+              Text(l.remindLabel, style: context.text.titleSmall?.copyWith(color: context.semantic.muted)),
+              const SizedBox(height: Space.sm),
+              Wrap(
+                spacing: Space.sm,
+                runSpacing: Space.sm,
+                children: [
+                  for (final m in const [-1, 0, 5, 15, 30, 60])
+                    ChoiceChip(
+                      avatar: m < 0 ? const Icon(Icons.notifications_off_outlined, size: 16) : null,
+                      label: Text(m < 0 ? l.remindOff : (m == 0 ? l.remindAtStart : l.remindBefore(m))),
+                      selected: _remind == m,
+                      onSelected: (_) => setState(() => _remind = m),
+                    ),
+                ],
+              ),
+            ],
             const SizedBox(height: Space.lg),
             Text(l.taskPriority, style: context.text.titleSmall),
             const SizedBox(height: Space.sm),

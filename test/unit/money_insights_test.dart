@@ -3,6 +3,7 @@ import 'package:lifeos/domain/engines/budget_engine.dart';
 import 'package:lifeos/domain/engines/money_insights.dart';
 import 'package:lifeos/domain/models/enums.dart';
 import 'package:lifeos/domain/models/money_models.dart';
+import 'package:lifeos/domain/models/task_item.dart';
 import 'package:lifeos/services/notifications/notification_planner.dart';
 
 import 'fixtures.dart';
@@ -137,5 +138,30 @@ void main() {
     final bills = plan.where((n) => n.kind == NotificationKind.billDue).toList();
     expect(bills.map((n) => n.at), [DateTime(2026, 6, 9, 10), DateTime(2026, 6, 10, 10)]);
     expect(bills.every((n) => n.title == 'Rent'), isTrue);
+  });
+
+  test('task reminders follow the chosen lead (or none)', () {
+    final now = DateTime(2026, 6, 10, 8);
+    TaskItem t(String id, int? lead) => TaskItem(
+      id: id,
+      updatedAt: now,
+      title: id,
+      scheduledAt: DateTime(2026, 6, 10, 12),
+      createdAt: now,
+      remindBefore: lead,
+    );
+    final plan = const NotificationPlanner().plan(
+      NotificationState(
+        now: now,
+        frequency: NotificationFrequency.low,
+        dailyCap: 2,
+        upcomingTasks: [t('default', null), t('ten', 10), t('start', 0), t('off', -1)],
+      ),
+    );
+    final at = {for (final n in plan.where((n) => n.kind == NotificationKind.taskReminder)) n.title: n.at};
+    expect(at['default'], DateTime(2026, 6, 10, 11, 30));
+    expect(at['ten'], DateTime(2026, 6, 10, 11, 50));
+    expect(at['start'], DateTime(2026, 6, 10, 12));
+    expect(at.containsKey('off'), isFalse);
   });
 }
