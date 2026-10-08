@@ -23,6 +23,7 @@ import '../../domain/engines/recipe_library.dart';
 import '../../domain/models/enums.dart';
 import '../../domain/models/food.dart';
 import '../../domain/models/user_profile.dart';
+import '../premium/native_slot.dart';
 import 'meal_picker.dart';
 import '../../services/ai/ai_models.dart';
 
@@ -324,11 +325,13 @@ class _FoodScreenState extends ConsumerState<FoodScreen> with SingleTickerProvid
             padding: const EdgeInsets.symmetric(vertical: Space.xl),
             child: Text(l.foodNoRecipes, textAlign: TextAlign.center),
           ),
-        for (final r in list)
+        for (final (i, r) in list.indexed) ...[
           Padding(
             padding: const EdgeInsets.only(bottom: Space.sm),
             child: _RecipeTile(recipe: r, missing: missing[r.id]!, favorite: favorites.contains(r.id)),
           ),
+          if (NativeSlot.after(ref, i)) const NativeSlot(),
+        ],
       ],
     );
   }

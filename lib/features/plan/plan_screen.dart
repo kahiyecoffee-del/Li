@@ -45,10 +45,13 @@ Accent categoryAccent(TaskCategory c) => switch (c) {
 /// The day planner: pick a day on the strip, see it as a timeline with the
 /// free time between tasks, and add tasks in one line at the bottom.
 class PlanScreen extends ConsumerStatefulWidget {
-  const PlanScreen({super.key, this.closeDay = false});
+  const PlanScreen({super.key, this.closeDay = false, this.doneId});
 
   /// Opened from the evening "Close the day" reminder: start the review.
   final bool closeDay;
+
+  /// Opened from the widget's "Done" button: tick this task off.
+  final String? doneId;
 
   @override
   ConsumerState<PlanScreen> createState() => _PlanScreenState();
@@ -71,6 +74,24 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
   void initState() {
     super.initState();
     _tick;
+    if (widget.doneId case final id?) {
+      WidgetsBinding.instance.addPostFrameCallback((_) async {
+        // On a cold start the tasks may still be loading.
+        TaskItem? t;
+        for (var i = 0; i < 20 && mounted; i++) {
+          final all = ref.read(tasksProvider).list;
+          if (all.any((x) => x.id == id)) {
+            t = all.where((x) => x.id == id && !x.isCompleted).firstOrNull;
+            break;
+          }
+          await Future<void>.delayed(const Duration(milliseconds: 250));
+        }
+        if (t == null || !mounted) return;
+        await ref.read(actionsProvider).toggleTask(t);
+        unawaited(HapticFeedback.mediumImpact());
+        if (mounted) showSnack(context, context.l10n.taskDoneFromWidget(t.title));
+      });
+    }
     if (widget.closeDay) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (!mounted) return;
@@ -1450,7 +1471,7 @@ Future<void> moveAfterClash(BuildContext context, WidgetRef ref, TaskItem task, 
   if (context.mounted) showSnack(context, l.planScheduledAt(fmt.time(at)));
 }
 
-enum _TaskAction { edit, time, tomorrow, otherDay, clearTime, duplicate, delete }
+enum _TaskAction { edit, focus, time, tomorrow, otherDay, clearTime, duplicate, delete }
 
 /// Everything about a task, one tap away.
 class _TaskMenu extends ConsumerWidget {
@@ -1481,6 +1502,7 @@ class _TaskMenu extends ConsumerWidget {
       itemBuilder: (_) => [
         item(_TaskAction.edit, Icons.edit_outlined, l.edit),
         if (!task.isCompleted) ...[
+          item(_TaskAction.focus, Icons.center_focus_strong_outlined, l.taskFocus),
           item(_TaskAction.time, Icons.schedule_rounded, l.taskChangeTime),
           item(_TaskAction.tomorrow, Icons.east_rounded, l.planPostpone),
           item(_TaskAction.otherDay, Icons.calendar_month_outlined, l.taskOtherDay),
@@ -1494,6 +1516,8 @@ class _TaskMenu extends ConsumerWidget {
         switch (a) {
           case _TaskAction.edit:
             await showTaskEditor(context, task: task);
+          case _TaskAction.focus:
+            await context.push('/focus?task=${task.id}');
           case _TaskAction.time:
             await changeTaskTime(context, ref, task);
           case _TaskAction.tomorrow:
@@ -1648,7 +1672,18 @@ class _NowCard extends ConsumerWidget {
             ],
           ),
           const SizedBox(height: Space.xs),
-          Text(block.task.title, style: context.text.titleLarge),
+          Row(
+            children: [
+              Expanded(child: Text(block.task.title, style: context.text.titleLarge)),
+              if (!isCalendarBlock(block.task))
+                TextButton.icon(
+                  key: const Key('now-focus'),
+                  onPressed: () => context.push('/focus?task=${block.task.id}'),
+                  icon: const Icon(Icons.center_focus_strong_outlined, size: 18),
+                  label: Text(l.taskFocus),
+                ),
+            ],
+          ),
           if (running) ...[
             const SizedBox(height: Space.sm),
             ClipRRect(

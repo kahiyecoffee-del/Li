@@ -774,6 +774,101 @@
   "planDayEnd": "Ends",
   "planHowTo": "Tap a task to change anything · swipe right: done · left: tomorrow",
   "taskMore": "More",
+  "widgetDone": "✓ Done: {title}",
+  "@widgetDone": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "taskDoneFromWidget": "Done: {title}",
+  "@taskDoneFromWidget": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "taskFocus": "Focus on it",
+  "lioHelpFocus": "Focus",
+  "focusTitle": "Focus",
+  "focusStart": "Start",
+  "focusPause": "Pause",
+  "focusResume": "Resume",
+  "focusStop": "Stop",
+  "focusOn": "Focusing on",
+  "focusFree": "Free focus",
+  "focusHowLong": "How long?",
+  "focusPhoneDown": "Put the phone down. Dayly will tell you when time is up.",
+  "focusDoneTitle": "Nice! {minutes} minutes of focus",
+  "@focusDoneTitle": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "focusDoneTask": "Mark the task done",
+  "focusBreak": "Take 5",
+  "focusToday": "{count, plural, =1{1 focus session today · {minutes} min} other{{count} focus sessions today · {minutes} min}}",
+  "@focusToday": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "focusNotifDone": "Time is up. Take a short break.",
+  "gardenTitle": "Lio’s day",
+  "gardenCharging": "{count, plural, =1{1 more and Lio goes exploring} other{{count} more and Lio goes exploring}}",
+  "@gardenCharging": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "gardenChargingHint": "Finish a task, log a habit or your mood, or focus for a while.",
+  "gardenExploring": "Lio is exploring. Back around {time}.",
+  "@gardenExploring": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "gardenGift": "Lio is back with a postcard!",
+  "gardenOpen": "Open it",
+  "gardenOpened": "Today’s postcard is in your collection. See you tomorrow!",
+  "gardenFrom": "A postcard from {place}",
+  "@gardenFrom": {
+    "placeholders": {
+      "place": {
+        "type": "String"
+      }
+    }
+  },
+  "gardenCollected": "{count} of {total} collected",
+  "@gardenCollected": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "gardenAnother": "One more (watch an ad)",
+  "gardenCollection": "Postcards",
+  "gardenLocked": "Not found yet",
+  "notifGardenTitle": "Lio is back",
+  "notifGardenBody": "He brought you a postcard from his trip.",
+  "adLabel": "Ad",
   "planCalendarConnect": "Show my calendar",
   "planCalendarDenied": "Calendar access was not allowed. You can allow it in Settings.",
   "planCalendarShown": "Your calendar events now show on the plan.",

@@ -1105,6 +1105,133 @@ class AppLocalizationsEn extends AppLocalizations {
   String get taskMore => 'More';
 
   @override
+  String widgetDone(String title) {
+    return '✓ Done: $title';
+  }
+
+  @override
+  String taskDoneFromWidget(String title) {
+    return 'Done: $title';
+  }
+
+  @override
+  String get taskFocus => 'Focus on it';
+
+  @override
+  String get lioHelpFocus => 'Focus';
+
+  @override
+  String get focusTitle => 'Focus';
+
+  @override
+  String get focusStart => 'Start';
+
+  @override
+  String get focusPause => 'Pause';
+
+  @override
+  String get focusResume => 'Resume';
+
+  @override
+  String get focusStop => 'Stop';
+
+  @override
+  String get focusOn => 'Focusing on';
+
+  @override
+  String get focusFree => 'Free focus';
+
+  @override
+  String get focusHowLong => 'How long?';
+
+  @override
+  String get focusPhoneDown => 'Put the phone down. Dayly will tell you when time is up.';
+
+  @override
+  String focusDoneTitle(int minutes) {
+    return 'Nice! $minutes minutes of focus';
+  }
+
+  @override
+  String get focusDoneTask => 'Mark the task done';
+
+  @override
+  String get focusBreak => 'Take 5';
+
+  @override
+  String focusToday(int count, int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count focus sessions today · $minutes min',
+      one: '1 focus session today · $minutes min',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get focusNotifDone => 'Time is up. Take a short break.';
+
+  @override
+  String get gardenTitle => 'Lio’s day';
+
+  @override
+  String gardenCharging(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count more and Lio goes exploring',
+      one: '1 more and Lio goes exploring',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get gardenChargingHint => 'Finish a task, log a habit or your mood, or focus for a while.';
+
+  @override
+  String gardenExploring(String time) {
+    return 'Lio is exploring. Back around $time.';
+  }
+
+  @override
+  String get gardenGift => 'Lio is back with a postcard!';
+
+  @override
+  String get gardenOpen => 'Open it';
+
+  @override
+  String get gardenOpened => 'Today’s postcard is in your collection. See you tomorrow!';
+
+  @override
+  String gardenFrom(String place) {
+    return 'A postcard from $place';
+  }
+
+  @override
+  String gardenCollected(int count, int total) {
+    return '$count of $total collected';
+  }
+
+  @override
+  String get gardenAnother => 'One more (watch an ad)';
+
+  @override
+  String get gardenCollection => 'Postcards';
+
+  @override
+  String get gardenLocked => 'Not found yet';
+
+  @override
+  String get notifGardenTitle => 'Lio is back';
+
+  @override
+  String get notifGardenBody => 'He brought you a postcard from his trip.';
+
+  @override
+  String get adLabel => 'Ad';
+
+  @override
   String get planCalendarConnect => 'Show my calendar';
 
   @override

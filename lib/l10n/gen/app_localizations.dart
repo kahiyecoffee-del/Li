@@ -1952,6 +1952,204 @@ abstract class AppLocalizations {
   /// **'More'**
   String get taskMore;
 
+  /// No description provided for @widgetDone.
+  ///
+  /// In en, this message translates to:
+  /// **'✓ Done: {title}'**
+  String widgetDone(String title);
+
+  /// No description provided for @taskDoneFromWidget.
+  ///
+  /// In en, this message translates to:
+  /// **'Done: {title}'**
+  String taskDoneFromWidget(String title);
+
+  /// No description provided for @taskFocus.
+  ///
+  /// In en, this message translates to:
+  /// **'Focus on it'**
+  String get taskFocus;
+
+  /// No description provided for @lioHelpFocus.
+  ///
+  /// In en, this message translates to:
+  /// **'Focus'**
+  String get lioHelpFocus;
+
+  /// No description provided for @focusTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Focus'**
+  String get focusTitle;
+
+  /// No description provided for @focusStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Start'**
+  String get focusStart;
+
+  /// No description provided for @focusPause.
+  ///
+  /// In en, this message translates to:
+  /// **'Pause'**
+  String get focusPause;
+
+  /// No description provided for @focusResume.
+  ///
+  /// In en, this message translates to:
+  /// **'Resume'**
+  String get focusResume;
+
+  /// No description provided for @focusStop.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop'**
+  String get focusStop;
+
+  /// No description provided for @focusOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Focusing on'**
+  String get focusOn;
+
+  /// No description provided for @focusFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Free focus'**
+  String get focusFree;
+
+  /// No description provided for @focusHowLong.
+  ///
+  /// In en, this message translates to:
+  /// **'How long?'**
+  String get focusHowLong;
+
+  /// No description provided for @focusPhoneDown.
+  ///
+  /// In en, this message translates to:
+  /// **'Put the phone down. Dayly will tell you when time is up.'**
+  String get focusPhoneDown;
+
+  /// No description provided for @focusDoneTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Nice! {minutes} minutes of focus'**
+  String focusDoneTitle(int minutes);
+
+  /// No description provided for @focusDoneTask.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark the task done'**
+  String get focusDoneTask;
+
+  /// No description provided for @focusBreak.
+  ///
+  /// In en, this message translates to:
+  /// **'Take 5'**
+  String get focusBreak;
+
+  /// No description provided for @focusToday.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 focus session today · {minutes} min} other{{count} focus sessions today · {minutes} min}}'**
+  String focusToday(int count, int minutes);
+
+  /// No description provided for @focusNotifDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Time is up. Take a short break.'**
+  String get focusNotifDone;
+
+  /// No description provided for @gardenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio’s day'**
+  String get gardenTitle;
+
+  /// No description provided for @gardenCharging.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 more and Lio goes exploring} other{{count} more and Lio goes exploring}}'**
+  String gardenCharging(int count);
+
+  /// No description provided for @gardenChargingHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish a task, log a habit or your mood, or focus for a while.'**
+  String get gardenChargingHint;
+
+  /// No description provided for @gardenExploring.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio is exploring. Back around {time}.'**
+  String gardenExploring(String time);
+
+  /// No description provided for @gardenGift.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio is back with a postcard!'**
+  String get gardenGift;
+
+  /// No description provided for @gardenOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Open it'**
+  String get gardenOpen;
+
+  /// No description provided for @gardenOpened.
+  ///
+  /// In en, this message translates to:
+  /// **'Today’s postcard is in your collection. See you tomorrow!'**
+  String get gardenOpened;
+
+  /// No description provided for @gardenFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'A postcard from {place}'**
+  String gardenFrom(String place);
+
+  /// No description provided for @gardenCollected.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} of {total} collected'**
+  String gardenCollected(int count, int total);
+
+  /// No description provided for @gardenAnother.
+  ///
+  /// In en, this message translates to:
+  /// **'One more (watch an ad)'**
+  String get gardenAnother;
+
+  /// No description provided for @gardenCollection.
+  ///
+  /// In en, this message translates to:
+  /// **'Postcards'**
+  String get gardenCollection;
+
+  /// No description provided for @gardenLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Not found yet'**
+  String get gardenLocked;
+
+  /// No description provided for @notifGardenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Lio is back'**
+  String get notifGardenTitle;
+
+  /// No description provided for @notifGardenBody.
+  ///
+  /// In en, this message translates to:
+  /// **'He brought you a postcard from his trip.'**
+  String get notifGardenBody;
+
+  /// No description provided for @adLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Ad'**
+  String get adLabel;
+
   /// No description provided for @planCalendarConnect.
   ///
   /// In en, this message translates to:

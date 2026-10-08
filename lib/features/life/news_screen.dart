@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../premium/native_slot.dart';
 import '../../app/actions.dart';
 import '../../app/derived_providers.dart';
 import '../../app/providers.dart';
@@ -54,7 +55,12 @@ class NewsScreen extends ConsumerWidget {
               error: (e, _) => [ErrorView(error: e, onRetry: () => ref.invalidate(newsProvider(lang)))],
               data: (list) => list.isEmpty
                   ? [EmptyState(icon: Icons.newspaper_outlined, message: l.newsUnavailable)]
-                  : list.map((a) => _ArticleCard(article: a)).toList(),
+                  : [
+                      for (final (i, a) in list.indexed) ...[
+                        _ArticleCard(article: a),
+                        if (NativeSlot.after(ref, i)) const NativeSlot(),
+                      ],
+                    ],
             ),
           ],
         ),

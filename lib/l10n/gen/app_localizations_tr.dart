@@ -1077,6 +1077,121 @@ class AppLocalizationsTr extends AppLocalizations {
   String get taskMore => 'Daha fazla';
 
   @override
+  String widgetDone(String title) {
+    return '✓ Bitti: $title';
+  }
+
+  @override
+  String taskDoneFromWidget(String title) {
+    return 'Bitti: $title';
+  }
+
+  @override
+  String get taskFocus => 'Odaklan';
+
+  @override
+  String get lioHelpFocus => 'Odaklan';
+
+  @override
+  String get focusTitle => 'Odak';
+
+  @override
+  String get focusStart => 'Başla';
+
+  @override
+  String get focusPause => 'Duraklat';
+
+  @override
+  String get focusResume => 'Devam et';
+
+  @override
+  String get focusStop => 'Bitir';
+
+  @override
+  String get focusOn => 'Odaklandığın iş';
+
+  @override
+  String get focusFree => 'Serbest odak';
+
+  @override
+  String get focusHowLong => 'Ne kadar?';
+
+  @override
+  String get focusPhoneDown => 'Telefonu bırak. Süre dolunca Dayly haber verecek.';
+
+  @override
+  String focusDoneTitle(int minutes) {
+    return 'Harika! $minutes dakika odaklandın';
+  }
+
+  @override
+  String get focusDoneTask => 'Görevi bitti işaretle';
+
+  @override
+  String get focusBreak => '5 dk mola';
+
+  @override
+  String focusToday(int count, int minutes) {
+    return 'Bugün $count odak · $minutes dk';
+  }
+
+  @override
+  String get focusNotifDone => 'Süre doldu. Kısa bir mola ver.';
+
+  @override
+  String get gardenTitle => 'Lio’nun günü';
+
+  @override
+  String gardenCharging(int count) {
+    return '$count iş daha, Lio keşfe çıksın';
+  }
+
+  @override
+  String get gardenChargingHint => 'Bir iş bitir, alışkanlık ya da ruh hâli ekle veya biraz odaklan.';
+
+  @override
+  String gardenExploring(String time) {
+    return 'Lio keşifte. $time gibi dönecek.';
+  }
+
+  @override
+  String get gardenGift => 'Lio döndü, sana bir kartpostal getirdi!';
+
+  @override
+  String get gardenOpen => 'Aç';
+
+  @override
+  String get gardenOpened => 'Bugünün kartpostalı koleksiyonunda. Yarın görüşürüz!';
+
+  @override
+  String gardenFrom(String place) {
+    return '$place kartpostalı';
+  }
+
+  @override
+  String gardenCollected(int count, int total) {
+    return '$total kartpostaldan $count tanesi toplandı';
+  }
+
+  @override
+  String get gardenAnother => 'Bir tane daha (reklam izle)';
+
+  @override
+  String get gardenCollection => 'Kartpostallar';
+
+  @override
+  String get gardenLocked => 'Henüz bulunmadı';
+
+  @override
+  String get notifGardenTitle => 'Lio döndü';
+
+  @override
+  String get notifGardenBody => 'Gezisinden sana bir kartpostal getirdi.';
+
+  @override
+  String get adLabel => 'Reklam';
+
+  @override
   String get planCalendarConnect => 'Takvimimi göster';
 
   @override

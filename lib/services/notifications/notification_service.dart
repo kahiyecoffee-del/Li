@@ -25,7 +25,14 @@ abstract class NotificationService {
 
   /// Task ids the user marked done from a reminder's "Done" button.
   Stream<String> get doneTasks;
+
+  /// A running focus session: a live countdown in the notification shade
+  /// (Android) and a "time is up" alert at [endsAt] (both platforms).
+  Future<void> startFocus({required DateTime endsAt, required String title, required String doneBody});
+  Future<void> stopFocus();
 }
+
+const _focusOngoingId = 9000, _focusDoneId = 9001;
 
 /// Reminder buttons. Ids are shared with the background handler.
 const snoozeActionId = 'snooze10';
@@ -120,6 +127,7 @@ class LocalNotificationService implements NotificationService {
   String? _tzName;
   final _taps = StreamController<String>.broadcast();
   final _done = StreamController<String>.broadcast();
+  ({DateTime endsAt, String title, String doneBody})? _focus;
 
   @override
   Stream<String> get taps => _taps.stream;
@@ -218,6 +226,74 @@ class LocalNotificationService implements NotificationService {
         debugPrint('schedule failed: $e');
       }
     }
+    // cancelAll() above also removed a running focus session: put it back.
+    final f = _focus;
+    if (f != null && f.endsAt.isAfter(DateTime.now())) {
+      await startFocus(endsAt: f.endsAt, title: f.title, doneBody: f.doneBody);
+    }
+  }
+
+  @override
+  Future<void> startFocus({required DateTime endsAt, required String title, required String doneBody}) async {
+    await initialize();
+    _focus = (endsAt: endsAt, title: title, doneBody: doneBody);
+    try {
+      // Android: a quiet, ongoing countdown in the shade and on the lock screen.
+      await _plugin.show(
+        id: _focusOngoingId,
+        title: title,
+        body: null,
+        payload: '/focus',
+        notificationDetails: NotificationDetails(
+          android: AndroidNotificationDetails(
+            'dayly_focus',
+            'Focus',
+            channelDescription: 'The running focus timer',
+            importance: Importance.low,
+            priority: Priority.low,
+            ongoing: true,
+            autoCancel: false,
+            onlyAlertOnce: true,
+            showWhen: true,
+            when: endsAt.millisecondsSinceEpoch,
+            usesChronometer: true,
+            chronometerCountDown: true,
+            timeoutAfter: endsAt.difference(DateTime.now()).inMilliseconds.clamp(1000, 1 << 31),
+          ),
+        ),
+      );
+    } catch (e) {
+      debugPrint('focus ongoing failed: $e');
+    }
+    try {
+      await _plugin.zonedSchedule(
+        id: _focusDoneId,
+        title: title,
+        body: doneBody,
+        scheduledDate: tz.TZDateTime.from(endsAt, tz.local),
+        payload: '/focus',
+        notificationDetails: NotificationDetails(
+          android: const AndroidNotificationDetails(
+            'dayly_focus_done',
+            'Focus finished',
+            channelDescription: 'When a focus session ends',
+            importance: Importance.high,
+            priority: Priority.high,
+          ),
+          iOS: const DarwinNotificationDetails(interruptionLevel: InterruptionLevel.timeSensitive),
+        ),
+        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+      );
+    } catch (e) {
+      debugPrint('focus done failed: $e');
+    }
+  }
+
+  @override
+  Future<void> stopFocus() async {
+    _focus = null;
+    await _plugin.cancel(id: _focusOngoingId);
+    await _plugin.cancel(id: _focusDoneId);
   }
 
   @override
@@ -263,4 +339,13 @@ class NoopNotificationService implements NotificationService {
 
   @override
   Stream<String> get doneTasks => const Stream.empty();
+
+  DateTime? focusEndsAt;
+
+  @override
+  Future<void> startFocus({required DateTime endsAt, required String title, required String doneBody}) async =>
+      focusEndsAt = endsAt;
+
+  @override
+  Future<void> stopFocus() async => focusEndsAt = null;
 }

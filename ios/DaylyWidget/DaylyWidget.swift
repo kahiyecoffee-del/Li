@@ -17,6 +17,9 @@ struct DaylyEntry: TimelineEntry {
   let lines: [String]
   let summary: String
   let route: String
+  /// The next task and the label of its "Done" button (medium widget).
+  var nextId: String = ""
+  var doneLabel: String = ""
   /// Lio's pose ("happy", "curious", …); alternates now and then so Lio moves.
   var pose: String = "happy"
   /// A small tilt that changes with the pose, for a lively feel.
@@ -79,6 +82,8 @@ struct DaylyProvider: TimelineProvider {
         lines: base.lines,
         summary: base.summary,
         route: base.route,
+        nextId: base.nextId,
+        doneLabel: base.doneLabel,
         pose: i % 2 == 0 ? mood : partnerPose(mood),
         tilt: mood == "sleepy" ? 0 : tilts[i]
       )
@@ -108,6 +113,8 @@ struct DaylyProvider: TimelineProvider {
       lines: lines,
       summary: d?.string(forKey: "summary") ?? "",
       route: d?.string(forKey: "route") ?? "/plan",
+      nextId: d?.string(forKey: "nextId") ?? "",
+      doneLabel: d?.string(forKey: "doneLabel") ?? "",
       pose: d?.string(forKey: "mood") ?? "happy"
     )
   }
@@ -122,6 +129,15 @@ struct DaylyWidgetView: View {
     c.scheme = "dayly"
     c.host = "open"
     c.queryItems = [URLQueryItem(name: "homeWidget", value: nil), URLQueryItem(name: "r", value: entry.route)]
+    return c.url
+  }
+
+  /// Opens the app, which ticks the next task off.
+  private var doneURL: URL? {
+    var c = URLComponents()
+    c.scheme = "dayly"
+    c.host = "open"
+    c.queryItems = [URLQueryItem(name: "homeWidget", value: nil), URLQueryItem(name: "r", value: "/plan?done=\(entry.nextId)")]
     return c.url
   }
 
@@ -176,7 +192,19 @@ struct DaylyWidgetView: View {
         Text(line).font(.subheadline).foregroundColor(ink).lineLimit(1)
       }
       Spacer(minLength: 0)
-      Text(entry.summary).font(.caption).foregroundColor(muted).lineLimit(2)
+      if !entry.nextId.isEmpty, !entry.doneLabel.isEmpty, let done = doneURL {
+        Link(destination: done) {
+          Text(entry.doneLabel)
+            .font(.caption.weight(.semibold))
+            .foregroundColor(.white)
+            .lineLimit(1)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 4)
+            .background(Capsule().fill(accent))
+        }
+      } else {
+        Text(entry.summary).font(.caption).foregroundColor(muted).lineLimit(2)
+      }
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
   }

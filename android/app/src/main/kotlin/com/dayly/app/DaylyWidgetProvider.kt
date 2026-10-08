@@ -31,6 +31,8 @@ class DaylyWidgetProvider : HomeWidgetProvider() {
         val title = widgetData.getString("title", null) ?: "Dayly"
         val mood = if (fresh) widgetData.getString("mood", "happy") ?: "happy" else "curious"
         val (poseA, poseB) = poses(mood)
+        val nextId = if (fresh) widgetData.getString("nextId", "") ?: "" else ""
+        val doneLabel = widgetData.getString("doneLabel", "") ?: ""
 
         appWidgetIds.forEach { id ->
             val views = RemoteViews(context.packageName, R.layout.dayly_widget).apply {
@@ -45,6 +47,17 @@ class DaylyWidgetProvider : HomeWidgetProvider() {
                     R.id.widget_root,
                     HomeWidgetLaunchIntent.getActivity(context, MainActivity::class.java, uri),
                 )
+                // Tick off the next task: opens the app, which marks it done.
+                val showDone = nextId.isNotEmpty() && doneLabel.isNotEmpty()
+                setViewVisibility(R.id.widget_done, if (showDone) View.VISIBLE else View.GONE)
+                if (showDone) {
+                    setTextViewText(R.id.widget_done, doneLabel)
+                    val doneUri = Uri.parse("dayly://open?homeWidget&r=" + Uri.encode("/plan?done=" + nextId))
+                    setOnClickPendingIntent(
+                        R.id.widget_done,
+                        HomeWidgetLaunchIntent.getActivity(context, MainActivity::class.java, doneUri),
+                    )
+                }
             }
             appWidgetManager.updateAppWidget(id, views)
         }

@@ -9,6 +9,8 @@ import '../features/decide/decide_screen.dart';
 import '../features/explore/explore_screen.dart';
 import '../features/home/today_screen.dart';
 import '../features/lio/insights_screen.dart';
+import '../features/focus/focus_screen.dart';
+import '../features/lio/garden.dart';
 import '../features/lio/lio_guide_screen.dart';
 import '../features/life/journal_editor_screen.dart';
 import '../features/life/journal_read_screen.dart';
@@ -166,9 +168,15 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: Routes.plan,
-        builder: (_, s) => PlanScreen(closeDay: s.uri.queryParameters['close'] == '1'),
+        builder: (_, s) =>
+            PlanScreen(closeDay: s.uri.queryParameters['close'] == '1', doneId: s.uri.queryParameters['done']),
       ),
       GoRoute(path: Routes.today, builder: (_, _) => const TodayScreen()),
+      GoRoute(
+        path: '/focus',
+        builder: (_, s) => FocusScreen(taskId: s.uri.queryParameters['task']),
+      ),
+      GoRoute(path: '/postcards', builder: (_, _) => const PostcardsScreen()),
       GoRoute(
         path: Routes.solve,
         builder: (_, s) => SolutionScreen(query: s.uri.queryParameters['q'] ?? ''),

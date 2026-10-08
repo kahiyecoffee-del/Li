@@ -16,6 +16,7 @@ import '../services/config/feature_flags.dart';
 import '../services/config/remote_config_service.dart';
 import '../services/notifications/notification_planner.dart';
 import '../services/widget/home_widget_service.dart';
+import '../features/lio/garden.dart';
 import 'actions.dart';
 import 'derived_providers.dart';
 import 'providers.dart';
@@ -233,6 +234,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
           journaledToday: ref.read(journalProvider).list.any((e) => Dates.dayKey(e.createdAt) == today),
           journalReminder: settings.journalReminder,
           planReminder: settings.planReminder,
+          gardenBackAt: ref.read(gardenProvider.notifier).backAt,
           spendToday: budget == null || budget.overToday
               ? null
               : ref
@@ -275,6 +277,8 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
               staleHint: l.widgetStale,
               route: program.isEmpty && !doneToday ? '/ai?topic=plan' : Routes.plan,
               mood: widgetMood(left: program.length, doneToday: doneToday, now: now),
+              nextId: program.isEmpty ? null : program.first.id,
+              doneLabel: program.isEmpty ? null : l.widgetDone(program.first.title),
             ),
           );
     });

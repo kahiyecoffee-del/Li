@@ -275,6 +275,7 @@ extension Labels on AppLocalizations {
       body: [notifBriefFirst(n.title), if (n.extra != null) notifBriefSpend(n.extra!)].join(' · '),
     ),
     NotificationKind.closeDay => (title: notifCloseTitle, body: notifCloseBody(n.count)),
+    NotificationKind.gardenGift => (title: notifGardenTitle, body: notifGardenBody),
   };
 
   /// Friendly message for any error; raw exceptions are never displayed.

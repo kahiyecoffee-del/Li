@@ -36,6 +36,15 @@ abstract final class AppConfig {
     defaultValue: 'ca-app-pub-3940256099942544/2435281174',
   );
 
+  static const admobNativeAndroid = String.fromEnvironment(
+    'ADMOB_NATIVE_ANDROID',
+    defaultValue: 'ca-app-pub-3940256099942544/2247696110',
+  );
+  static const admobNativeIos = String.fromEnvironment(
+    'ADMOB_NATIVE_IOS',
+    defaultValue: 'ca-app-pub-3940256099942544/3986624511',
+  );
+
   static const admobAppOpenAndroid = String.fromEnvironment(
     'ADMOB_APP_OPEN_ANDROID',
     defaultValue: 'ca-app-pub-3940256099942544/9257395921',

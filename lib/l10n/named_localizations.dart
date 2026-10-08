@@ -17,6 +17,16 @@ class _NamedEn extends AppLocalizationsEn {
   @override
   String get planWithLio => _r(super.planWithLio);
   @override
+  String get gardenTitle => _r(super.gardenTitle);
+  @override
+  String gardenCharging(int count) => _r(super.gardenCharging(count));
+  @override
+  String gardenExploring(String time) => _r(super.gardenExploring(time));
+  @override
+  String get gardenGift => _r(super.gardenGift);
+  @override
+  String get notifGardenTitle => _r(super.notifGardenTitle);
+  @override
   String get lioHelpHide => _r(super.lioHelpHide);
   @override
   String get foodWeekIntro => _r(super.foodWeekIntro);
@@ -70,6 +80,16 @@ class _NamedTr extends AppLocalizationsTr {
   String get planDayEmpty => _r(super.planDayEmpty);
   @override
   String get planWithLio => _r(super.planWithLio);
+  @override
+  String get gardenTitle => _r(super.gardenTitle);
+  @override
+  String gardenCharging(int count) => _r(super.gardenCharging(count));
+  @override
+  String gardenExploring(String time) => _r(super.gardenExploring(time));
+  @override
+  String get gardenGift => _r(super.gardenGift);
+  @override
+  String get notifGardenTitle => _r(super.notifGardenTitle);
   @override
   String get lioHelpHide => _r(super.lioHelpHide);
   @override

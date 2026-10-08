@@ -14,7 +14,8 @@ enum NotificationKind {
   journal,
   billDue,
   morningBrief,
-  closeDay;
+  closeDay,
+  gardenGift;
 
   /// Where tapping the notification takes the user.
   String get route => switch (this) {
@@ -28,6 +29,7 @@ enum NotificationKind {
     billDue => '/money?tab=plan',
     morningBrief => '/plan',
     closeDay => '/plan?close=1',
+    gardenGift => '/home',
   };
 }
 
@@ -87,6 +89,7 @@ class NotificationState {
     this.journalReminder = true,
     this.planReminder = true,
     this.spendToday,
+    this.gardenBackAt,
     this.quietStart = defaultQuietStart,
     this.quietEnd = defaultQuietEnd,
   });
@@ -116,6 +119,9 @@ class NotificationState {
 
   /// Today's safe-to-spend, formatted, for the morning brief.
   final String? spendToday;
+
+  /// When Lio comes back from today's trip (his postcard waits).
+  final DateTime? gardenBackAt;
 
   /// Nothing is scheduled between [quietStart] and [quietEnd] (except
   /// reminders for tasks the user scheduled in that window themselves).
@@ -183,6 +189,13 @@ class NotificationPlanner {
           );
         }
       }
+    }
+
+    // Lio's postcard: the moment he is back (asked for by the user's own
+    // progress, so not a nudge), unless that falls in quiet hours.
+    final back = s.gardenBackAt;
+    if (back != null && back.isAfter(s.now) && !_quiet(back, s)) {
+      out.add(PlannedNotification(id: 90, kind: NotificationKind.gardenGift, at: back));
     }
 
     // 2. Weekly review: Sunday 18:00.

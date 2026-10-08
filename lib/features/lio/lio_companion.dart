@@ -404,7 +404,7 @@ class _LioHelpSheet extends ConsumerWidget {
         () => showTaskEditor(context, day: ref.read(todayProvider)),
       ),
       (Icons.account_balance_wallet_outlined, l.lioHelpMoney, Accent.money, () => context.push('/money')),
-      (Icons.favorite_outline_rounded, l.lioHelpMood, Accent.wellbeing, () => context.push('/ai?topic=mood&n=${n()}')),
+      (Icons.center_focus_strong_outlined, l.lioHelpFocus, Accent.wellbeing, () => context.push('/focus')),
       (Icons.menu_book_rounded, l.lioHelpWrite, Accent.news, () => context.push('/journal/new')),
       (Icons.chat_bubble_outline_rounded, l.lioHelpAsk, Accent.ai, () => context.push('/ai')),
     ];

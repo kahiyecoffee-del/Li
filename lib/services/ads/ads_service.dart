@@ -49,6 +49,7 @@ class AdMobAdsService implements AdsService {
       Platform.isIOS ? AppConfig.admobInterstitialIos : AppConfig.admobInterstitialAndroid;
   static String get _appOpenId => Platform.isIOS ? AppConfig.admobAppOpenIos : AppConfig.admobAppOpenAndroid;
   static String get bannerId => Platform.isIOS ? AppConfig.admobBannerIos : AppConfig.admobBannerAndroid;
+  static String get nativeId => Platform.isIOS ? AppConfig.admobNativeIos : AppConfig.admobNativeAndroid;
 
   AdRequest get _request => AdRequest(nonPersonalizedAds: !_personalized);
 

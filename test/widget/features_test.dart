@@ -1,5 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:lifeos/services/notifications/notification_service.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lifeos/core/utils/dates.dart';
 import 'package:lifeos/services/calendar/calendar_service.dart';
 import 'package:lifeos/domain/models/enums.dart';
@@ -114,6 +118,8 @@ void main() {
     final card = find.ancestor(of: find.text('Read'), matching: find.byType(Dismissible));
     final hasSlot = read.scheduledAt != null;
     if (hasSlot) {
+      await tester.runAsync(() => Scrollable.ensureVisible(tester.element(card.first), alignment: 0.3));
+      await tester.pump(const Duration(milliseconds: 300));
       await tester.drag(card.first, const Offset(-600, 0));
       await pumpUntil(tester, find.text('Moved to tomorrow'));
       tasks = await tester.runAsync(() => app.seededRepos.tasks.getAll());
@@ -415,6 +421,77 @@ void main() {
     await pumpUntil(tester, find.byKey(const Key('streak-saver')));
     expect(find.text('Save your 4-day streak'), findsOneWidget);
     expect(find.text('Watch and save'), findsOneWidget);
+    await tearDownApp(tester);
+  });
+
+  testWidgets('Focus: a session runs, counts toward Lio and can be stopped', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    unawaited(GoRouter.of(tester.element(find.text('What should we solve today?'))).push('/focus'));
+    await pumpUntil(tester, find.byKey(const Key('focus-start')));
+    await tester.tap(find.text('5 min'));
+    await tester.tap(find.byKey(const Key('focus-start')));
+    await pumpUntil(tester, find.byKey(const Key('focus-stop')));
+    final notifications = app.services.notifications as NoopNotificationService;
+    expect(notifications.focusEndsAt, isNotNull);
+    expect(find.text('Pause'), findsOneWidget);
+    await tester.tap(find.byKey(const Key('focus-stop')));
+    await tester.pump(const Duration(milliseconds: 300));
+    expect(notifications.focusEndsAt, isNull);
+    await pumpUntil(tester, find.byKey(const Key('focus-start')));
+    await tearDownApp(tester);
+  });
+
+  testWidgets('Lio goes exploring after three things and brings a postcard', (tester) async {
+    usePhoneViewport(tester);
+    final now = DateTime.now();
+    if (now.hour < 3) return; // the trip would start yesterday
+    final app = (await tester.runAsync(
+      () => TestApp.onboarded(
+        online: false,
+        prefs: {'garden_trip': now.subtract(const Duration(hours: 2, minutes: 5)).millisecondsSinceEpoch},
+      ),
+    ))!;
+    await tester.runAsync(() async {
+      for (final id in ['a', 'b', 'c']) {
+        await app.seededRepos.tasks.save(
+          TaskItem(id: id, updatedAt: now, title: id, deadline: now, completedAt: now, createdAt: now),
+        );
+      }
+    });
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    await tester.scrollUntilVisible(
+      find.byKey(const Key('garden-open')),
+      300,
+      scrollable: find.byType(Scrollable).first,
+    );
+    await pumpUntil(tester, find.byKey(const Key('garden-open')));
+    expect(find.text('Lio is back with a postcard!'), findsOneWidget);
+    await tester.ensureVisible(find.byKey(const Key('garden-open')));
+    await tester.tap(find.byKey(const Key('garden-open')));
+    await pumpUntil(tester, find.text('1 of 24 collected'));
+    expect(find.textContaining('POSTCARD FROM'), findsOneWidget);
+    await tearDownApp(tester);
+  });
+
+  testWidgets('The widget\'s Done button ticks the next task off', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+    final now = DateTime.now();
+    await tester.runAsync(
+      () => app.seededRepos.tasks.save(
+        TaskItem(id: 'w1', updatedAt: now, title: 'Water plants', deadline: now, createdAt: now),
+      ),
+    );
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    GoRouter.of(tester.element(find.text('What should we solve today?'))).go('/plan?done=w1');
+    await pumpUntil(tester, find.text('Done: Water plants'));
+    final t = (await tester.runAsync(() => app.seededRepos.tasks.getAll()))!.firstWhere((t) => t.id == 'w1');
+    expect(t.isCompleted, isTrue);
     await tearDownApp(tester);
   });
 

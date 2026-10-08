@@ -14,6 +14,8 @@ abstract final class RcKeys {
   static const interstitialFrequency = 'interstitial_frequency';
   static const interstitialMaxPerDay = 'interstitial_max_per_day';
   static const bannerEnabled = 'banner_enabled';
+  static const nativeEnabled = 'native_enabled';
+  static const nativeEvery = 'native_every';
   static const appOpenEnabled = 'app_open_enabled';
   static const appOpenMinHours = 'app_open_min_hours';
   static const premiumPrice = 'premium_price';
@@ -37,6 +39,9 @@ const Map<String, Object> remoteDefaults = {
   RcKeys.interstitialFrequency: 10,
   RcKeys.interstitialMaxPerDay: 3,
   RcKeys.bannerEnabled: true,
+  // Native ads inside browse lists (recipes, news), one per this many items.
+  RcKeys.nativeEnabled: true,
+  RcKeys.nativeEvery: 8,
   RcKeys.appOpenEnabled: true,
   RcKeys.appOpenMinHours: 4,
   // Which paywall price point / product set to show: "default" | "discount".
