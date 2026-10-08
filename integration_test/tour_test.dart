@@ -75,12 +75,15 @@ void main() {
     await shot(tester, '02-lio-menu');
 
     Future<void> ask(String q) async {
-      // The chat's own field (Home has a text field too) and the keyboard's
-      // send action: sturdier than tapping on every screen size.
-      final field = find.descendant(of: find.byType(LioGuideScreen), matching: find.byType(TextField));
+      // The chat's own field, then its send button pressed directly: no hit
+      // testing (keyboards and screen sizes differ) and no IME round trip.
+      final lio = find.byType(LioGuideScreen);
+      final field = find.descendant(of: lio, matching: find.byType(TextField));
       await tester.showKeyboard(field);
       await tester.enterText(field, q);
-      await tester.testTextInput.receiveAction(TextInputAction.send);
+      await tester.pump();
+      final send = find.descendant(of: lio, matching: find.widgetWithIcon(IconButton, Icons.send_rounded));
+      tester.widget<IconButton>(send).onPressed!();
       for (var i = 0; i < 6; i++) {
         await tester.pump(const Duration(milliseconds: 150));
       }
