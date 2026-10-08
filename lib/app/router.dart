@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../features/care/meds_screen.dart';
+import '../features/news/morning_brief.dart';
 import '../features/money/debts_screen.dart';
 import '../features/money/subscriptions_screen.dart';
 import '../features/ai/ai_screen.dart';
@@ -185,6 +186,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/subscriptions', builder: (_, _) => const SubscriptionsScreen()),
       GoRoute(path: '/debts', builder: (_, _) => const DebtsScreen()),
       GoRoute(path: '/meds', builder: (_, _) => const MedsScreen()),
+      GoRoute(path: '/brief', builder: (_, _) => const MorningBriefScreen()),
       GoRoute(path: '/today-info', builder: (_, _) => const TodayInfoScreen()),
       GoRoute(path: '/search', builder: (_, _) => const SearchScreen()),
       GoRoute(

@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../care/meds_screen.dart';
+import '../news/morning_brief.dart';
 import '../quiz/daily_quiz.dart';
 import '../../app/derived_providers.dart';
 import '../../app/providers.dart';
@@ -112,6 +113,7 @@ class HomeScreen extends ConsumerWidget {
               const QuickCaptureCard(),
               const SizedBox(height: Space.md),
               const TodayFlowCard(),
+              const MorningBriefCard(),
               const SizedBox(height: Space.md),
               const _GlanceRow(),
               const SizedBox(height: Space.md),

@@ -29,7 +29,7 @@ enum NotificationKind {
     planDay => '/ai?topic=plan',
     journal => '/journal/new',
     billDue => '/money?tab=plan',
-    morningBrief => '/plan',
+    morningBrief => '/brief',
     closeDay => '/plan?close=1',
     gardenGift => '/home',
     medication => '/meds',
@@ -49,6 +49,7 @@ class PlannedNotification {
     this.taskId,
     this.count = 0,
     this.extra,
+    this.news = false,
   });
 
   /// Stable id so re-planning replaces instead of duplicating.
@@ -70,6 +71,9 @@ class PlannedNotification {
 
   /// Morning brief: what is left to spend today, already formatted.
   final String? extra;
+
+  /// Morning brief: mention the news brief.
+  final bool news;
 }
 
 /// Default quiet hours when the user has not set a routine.
@@ -97,6 +101,7 @@ class NotificationState {
     this.spendToday,
     this.gardenBackAt,
     this.openHours = const {},
+    this.newsReady = false,
     this.meds = const [],
     this.takenDoses = const {},
     this.quietStart = defaultQuietStart,
@@ -135,6 +140,9 @@ class NotificationState {
   /// How often the app was opened at each hour (last two weeks), so nudges
   /// land when the person usually looks at their phone.
   final Map<int, int> openHours;
+
+  /// Headlines are available for the morning brief.
+  final bool newsReady;
 
   /// Medicines with daily times, and the dose ids already taken.
   final List<Medication> meds;
@@ -280,6 +288,7 @@ class NotificationPlanner {
                   ? first.title
                   : '${when.hour.toString().padLeft(2, '0')}:${when.minute.toString().padLeft(2, '0')} ${first.title}',
               extra: isToday ? s.spendToday : null,
+              news: s.newsReady,
             ),
           );
         } else if (!isToday || !s.hasPlanToday) {

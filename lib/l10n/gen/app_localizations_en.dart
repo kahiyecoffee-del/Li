@@ -1105,6 +1105,65 @@ class AppLocalizationsEn extends AppLocalizations {
   String get taskMore => 'More';
 
   @override
+  String get newsTopicNation => 'Top stories';
+
+  @override
+  String get newsTopicHealth => 'Health';
+
+  @override
+  String get briefMorning => 'Morning brief';
+
+  @override
+  String get briefDay => 'Today’s brief';
+
+  @override
+  String briefSubtitle(int count, int seconds) {
+    return '$count headlines · about $seconds sec';
+  }
+
+  @override
+  String get briefRead => 'Read';
+
+  @override
+  String get briefDone => 'You’re up to date ✓';
+
+  @override
+  String briefHello(String name) {
+    return 'Good morning, $name';
+  }
+
+  @override
+  String briefHelloDay(String name) {
+    return 'Hi $name';
+  }
+
+  @override
+  String briefDayLine(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count things on today',
+      one: '1 thing on today',
+      zero: 'Nothing planned yet',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String briefFirst(String what) {
+    return 'First: $what';
+  }
+
+  @override
+  String get briefTopics => 'Your topics';
+
+  @override
+  String get briefNoNews => 'News isn’t available right now.';
+
+  @override
+  String get notifBriefNews => '📰 30-sec news brief';
+
+  @override
   String get subsTitle => 'Subscriptions';
 
   @override

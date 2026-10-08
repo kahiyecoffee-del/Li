@@ -1077,6 +1077,64 @@ class AppLocalizationsTr extends AppLocalizations {
   String get taskMore => 'Daha fazla';
 
   @override
+  String get newsTopicNation => 'Gündem';
+
+  @override
+  String get newsTopicHealth => 'Sağlık';
+
+  @override
+  String get briefMorning => 'Sabah özeti';
+
+  @override
+  String get briefDay => 'Günün özeti';
+
+  @override
+  String briefSubtitle(int count, int seconds) {
+    return '$count başlık · yaklaşık $seconds sn';
+  }
+
+  @override
+  String get briefRead => 'Oku';
+
+  @override
+  String get briefDone => 'Gündemi yakaladın ✓';
+
+  @override
+  String briefHello(String name) {
+    return 'Günaydın $name';
+  }
+
+  @override
+  String briefHelloDay(String name) {
+    return 'Merhaba $name';
+  }
+
+  @override
+  String briefDayLine(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Bugün $count işin var',
+      zero: 'Bugün için plan yok',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String briefFirst(String what) {
+    return 'İlk: $what';
+  }
+
+  @override
+  String get briefTopics => 'İlgi alanların';
+
+  @override
+  String get briefNoNews => 'Haberler şu an alınamıyor.';
+
+  @override
+  String get notifBriefNews => '📰 30 sn haber özeti';
+
+  @override
   String get subsTitle => 'Abonelikler';
 
   @override

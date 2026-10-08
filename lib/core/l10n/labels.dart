@@ -189,6 +189,8 @@ extension Labels on AppLocalizations {
   };
 
   String newsTopic(String t) => switch (t) {
+    'nation' => newsTopicNation,
+    'health' => newsTopicHealth,
     'technology' => newsTopicTechnology,
     'finance' => newsTopicFinance,
     'sports' => newsTopicSports,
@@ -272,7 +274,11 @@ extension Labels on AppLocalizations {
     NotificationKind.billDue => (title: notifBillTitle, body: notifBillBody(n.title)),
     NotificationKind.morningBrief => (
       title: notifBriefTitle(n.count),
-      body: [notifBriefFirst(n.title), if (n.extra != null) notifBriefSpend(n.extra!)].join(' · '),
+      body: [
+        notifBriefFirst(n.title),
+        if (n.extra != null) notifBriefSpend(n.extra!),
+        if (n.news) notifBriefNews,
+      ].join(' · '),
     ),
     NotificationKind.closeDay => (title: notifCloseTitle, body: notifCloseBody(n.count)),
     NotificationKind.gardenGift => (title: notifGardenTitle, body: notifGardenBody),

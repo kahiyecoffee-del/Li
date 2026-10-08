@@ -347,6 +347,22 @@ s('planDayEnd', 'Ends', 'Biter')
 s('planHowTo', 'Tap a task to change anything · swipe right: done · left: tomorrow', 'Göreve dokun, her şeyini değiştir · sağa kaydır: bitti · sola: yarına')
 s('taskMore', 'More', 'Daha fazla')
 
+# ---------------- Morning brief
+s('newsTopicNation', 'Top stories', 'Gündem')
+s('newsTopicHealth', 'Health', 'Sağlık')
+s('briefMorning', 'Morning brief', 'Sabah özeti')
+s('briefDay', 'Today’s brief', 'Günün özeti')
+s('briefSubtitle', '{count} headlines · about {seconds} sec', '{count} başlık · yaklaşık {seconds} sn', count='int', seconds='int')
+s('briefRead', 'Read', 'Oku')
+s('briefDone', 'You’re up to date ✓', 'Gündemi yakaladın ✓')
+s('briefHello', 'Good morning, {name}', 'Günaydın {name}', name='String')
+s('briefHelloDay', 'Hi {name}', 'Merhaba {name}', name='String')
+s('briefDayLine', '{count, plural, =0{Nothing planned yet} =1{1 thing on today} other{{count} things on today}}', '{count, plural, =0{Bugün için plan yok} other{Bugün {count} işin var}}', count='int')
+s('briefFirst', 'First: {what}', 'İlk: {what}', what='String')
+s('briefTopics', 'Your topics', 'İlgi alanların')
+s('briefNoNews', 'News isn’t available right now.', 'Haberler şu an alınamıyor.')
+s('notifBriefNews', '📰 30-sec news brief', '📰 30 sn haber özeti')
+
 # ---------------- Subscriptions
 s('subsTitle', 'Subscriptions', 'Abonelikler')
 s('subsMonthly', '{amount} a month', 'Ayda {amount}', amount='String')

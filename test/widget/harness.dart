@@ -107,8 +107,10 @@ class TestApp {
     List<CalendarEvent> calendar = const [],
     VoiceInputService voice = const NoVoiceInput(),
     AssistantService assistant = const NoAssistant(),
+    List<NewsArticle> news = const [],
   }) async {
     final app = await create(
+      news: news,
       prefs: {'local_uid': 'local-test', ...prefs},
       online: online,
       calendar: calendar,
@@ -140,6 +142,7 @@ class TestApp {
     List<CalendarEvent> calendar = const [],
     VoiceInputService voice = const NoVoiceInput(),
     AssistantService assistant = const NoAssistant(),
+    List<NewsArticle> news = const [],
   }) async {
     SharedPreferences.setMockInitialValues({'showLio': false, ...prefs});
     final p = await SharedPreferences.getInstance();
@@ -158,7 +161,7 @@ class TestApp {
       notifications: NoopNotificationService(),
       weather: WeatherService(FakeWeather(), p),
       location: LocationService(),
-      news: NewsService(UnavailableNewsProvider(), p),
+      news: NewsService(news.isEmpty ? UnavailableNewsProvider() : FakeNewsProvider(news), p),
       ocr: FakeOcr(),
       journalKeys: MemoryJournalKeyStore(),
       voice: voice,

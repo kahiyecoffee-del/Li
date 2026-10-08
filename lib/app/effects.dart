@@ -53,6 +53,12 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
   StreamSubscription<AssistantCommand>? _assistant;
   DateTime? _pausedAt;
 
+  /// The app's language (as screens see it), for language-keyed caches.
+  String get _lang {
+    final code = ref.read(settingsProvider).localeCode ?? PlatformDispatcher.instance.locale.languageCode;
+    return AppLocalizations.supportedLocales.any((l) => l.languageCode == code) ? code : 'en';
+  }
+
   @override
   void initState() {
     super.initState();
@@ -264,6 +270,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
           journalReminder: settings.journalReminder,
           planReminder: settings.planReminder,
           gardenBackAt: ref.read(gardenProvider.notifier).backAt,
+          newsReady: ref.read(newsProvider(_lang)).value?.isNotEmpty ?? false,
           meds: ref.read(medicationsProvider).list,
           takenDoses: ref.read(takenDoseIdsProvider),
           openHours: OpenHours(services.prefs).counts(),
@@ -356,6 +363,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
       ref.listen(billsProvider, (_, _) => _scheduleNotifications());
       ref.listen(medicationsProvider, (_, _) => _scheduleNotifications());
       ref.listen(medDosesProvider, (_, _) => _scheduleNotifications());
+      ref.listen(newsProvider(_lang), (_, _) => _scheduleNotifications());
       ref.listen(
         settingsProvider.select((s) => (s.journalReminder, s.planReminder)),
         (_, _) => _scheduleNotifications(),

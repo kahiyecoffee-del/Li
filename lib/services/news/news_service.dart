@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../core/errors/app_failure.dart';
 import '../../core/utils/json.dart';
 
-const newsTopics = ['technology', 'finance', 'sports', 'world', 'science', 'entertainment'];
+const newsTopics = ['nation', 'world', 'finance', 'technology', 'sports', 'science', 'health', 'entertainment'];
 
 class NewsArticle {
   const NewsArticle({
@@ -122,4 +122,17 @@ class NewsService {
       rethrow;
     }
   }
+}
+
+/// Scripted headlines for tests and previews.
+class FakeNewsProvider implements NewsProvider {
+  const FakeNewsProvider(this.articles);
+  final List<NewsArticle> articles;
+
+  @override
+  Future<List<NewsArticle>> headlines({
+    required List<String> topics,
+    required String language,
+    String? country,
+  }) async => articles.where((a) => topics.contains(a.topic)).toList();
 }

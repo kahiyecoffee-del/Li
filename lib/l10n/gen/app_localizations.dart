@@ -1952,6 +1952,90 @@ abstract class AppLocalizations {
   /// **'More'**
   String get taskMore;
 
+  /// No description provided for @newsTopicNation.
+  ///
+  /// In en, this message translates to:
+  /// **'Top stories'**
+  String get newsTopicNation;
+
+  /// No description provided for @newsTopicHealth.
+  ///
+  /// In en, this message translates to:
+  /// **'Health'**
+  String get newsTopicHealth;
+
+  /// No description provided for @briefMorning.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning brief'**
+  String get briefMorning;
+
+  /// No description provided for @briefDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Today’s brief'**
+  String get briefDay;
+
+  /// No description provided for @briefSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} headlines · about {seconds} sec'**
+  String briefSubtitle(int count, int seconds);
+
+  /// No description provided for @briefRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Read'**
+  String get briefRead;
+
+  /// No description provided for @briefDone.
+  ///
+  /// In en, this message translates to:
+  /// **'You’re up to date ✓'**
+  String get briefDone;
+
+  /// No description provided for @briefHello.
+  ///
+  /// In en, this message translates to:
+  /// **'Good morning, {name}'**
+  String briefHello(String name);
+
+  /// No description provided for @briefHelloDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi {name}'**
+  String briefHelloDay(String name);
+
+  /// No description provided for @briefDayLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Nothing planned yet} =1{1 thing on today} other{{count} things on today}}'**
+  String briefDayLine(int count);
+
+  /// No description provided for @briefFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'First: {what}'**
+  String briefFirst(String what);
+
+  /// No description provided for @briefTopics.
+  ///
+  /// In en, this message translates to:
+  /// **'Your topics'**
+  String get briefTopics;
+
+  /// No description provided for @briefNoNews.
+  ///
+  /// In en, this message translates to:
+  /// **'News isn’t available right now.'**
+  String get briefNoNews;
+
+  /// No description provided for @notifBriefNews.
+  ///
+  /// In en, this message translates to:
+  /// **'📰 30-sec news brief'**
+  String get notifBriefNews;
+
   /// No description provided for @subsTitle.
   ///
   /// In en, this message translates to:

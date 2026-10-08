@@ -11,7 +11,16 @@ export interface Article {
   imageUrl?: string;
 }
 
-export const TOPICS = ["technology", "finance", "sports", "world", "science", "entertainment"] as const;
+export const TOPICS = [
+  "nation",
+  "world",
+  "finance",
+  "technology",
+  "sports",
+  "science",
+  "health",
+  "entertainment",
+] as const;
 
 /** News provider abstraction: switch with the NEWS_PROVIDER param. */
 export interface NewsProvider {
@@ -60,7 +69,7 @@ export class NewsApiProvider implements NewsProvider {
   constructor(private readonly apiKey: string, private readonly fetchImpl: typeof fetch = fetch) {}
 
   async headlines(topic: string, language: string): Promise<Article[]> {
-    const category = topic === "finance" ? "business" : topic === "world" ? "general" : topic;
+    const category = topic === "finance" ? "business" : topic === "world" || topic === "nation" ? "general" : topic;
     const country = { en: "us", tr: "tr", de: "de", fr: "fr", it: "it", pt: "br", es: "mx", ar: "sa", ja: "jp", ko: "kr", hi: "in" }[language] ?? "us";
     const url = new URL("https://newsapi.org/v2/top-headlines");
     url.search = new URLSearchParams({ category, country, pageSize: "6" }).toString();
@@ -93,7 +102,7 @@ export async function getHeadlines(
   now = Date.now(),
 ): Promise<Article[]> {
   const lang = /^[a-z]{2}$/.test(language) ? language : "en";
-  const wanted = topics.filter((t): t is (typeof TOPICS)[number] => (TOPICS as readonly string[]).includes(t)).slice(0, 6);
+  const wanted = topics.filter((t): t is (typeof TOPICS)[number] => (TOPICS as readonly string[]).includes(t)).slice(0, 8);
   const lists = await Promise.all(
     (wanted.length ? wanted : ["world"]).map(async (topic) => {
       const ref = db.collection("news_cache").doc(`${provider.name}_${lang}_${topic}`);
@@ -112,5 +121,5 @@ export async function getHeadlines(
   // Interleave topics so the feed is varied.
   const out: Article[] = [];
   for (let i = 0; i < 6; i++) for (const l of lists) if (l[i]) out.push(l[i]);
-  return out.slice(0, 20);
+  return out.slice(0, 24);
 }
