@@ -16,8 +16,7 @@ import flutter_local_notifications
 
   // A cold start from a home-screen quick action carries the item here.
   // Same configuration as Info.plist ("flutter"); only the item is read.
-  @objc(application:configurationForConnectingSceneSession:options:)
-  func application(
+  override func application(
     _ application: UIApplication,
     configurationForConnecting connectingSceneSession: UISceneSession,
     options: UIScene.ConnectionOptions
