@@ -21,11 +21,33 @@ void main() {
       check('market alışverişi', 'Market alışverişi');
     });
 
+    test('forgiving: how people really type times', () {
+      check('dişçi 15 30', 'Dişçi', hour: 15, minute: 30);
+      check('dişçi 1530', 'Dişçi', hour: 15, minute: 30);
+      check("toplantı 15:30'da", 'Toplantı', hour: 15, minute: 30);
+      check('kahve 3 buçuk', 'Kahve', hour: 15, minute: 30);
+      check('akşam 7 yemek', 'Yemek', hour: 19);
+      check('akşam 7 buçuk sinema', 'Sinema', hour: 19, minute: 30);
+      check('sabah 9:30 koşu', 'Koşu', hour: 9, minute: 30);
+      check("saat 3'te annem", 'Annem', hour: 15);
+      check('öğlen 1 yemek', 'Yemek', hour: 13);
+      check('gece 11 kitap', 'Kitap', hour: 23);
+      check('bu akşam sinema', 'Sinema', hour: 19);
+      check('spor yarım saat', 'Spor', minutes: 30);
+      check('ders 1 saat 30 dk', 'Ders', minutes: 90);
+      check('ders 1 buçuk saat', 'Ders', minutes: 90);
+      check('10 30 ders 45 dk', 'Ders', hour: 10, minute: 30, minutes: 45);
+      check('sabah koşusu', 'Sabah koşusu'); // no hour: stays a title
+    });
+
     test('English', () {
       check('dentist 3pm 45 min', 'Dentist', hour: 15, minutes: 45);
       check('call mom at 9', 'Call mom', hour: 9);
       check('gym 2h', 'Gym', minutes: 120);
       check('Team sync 10:15', 'Team sync', hour: 10, minute: 15);
+      check('dinner 7:30 pm', 'Dinner', hour: 19, minute: 30);
+      check('read half an hour', 'Read', minutes: 30);
+      check('call evening 7', 'Call', hour: 19);
     });
   });
 

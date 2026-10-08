@@ -60,6 +60,22 @@ class _TimeSheetState extends State<_TimeSheet> {
   late int _minutes = widget.minutes;
   late bool _custom = !_presets.contains(widget.minutes);
 
+  /// Bumped to rebuild the wheel at a preset time.
+  int _wheel = 0;
+
+  void _setTime(TimeOfDay t) {
+    unawaited(HapticFeedback.selectionClick());
+    setState(() {
+      _time = t;
+      _wheel++;
+    });
+  }
+
+  static TimeOfDay _inAnHour() {
+    final n = DateTime.now().add(const Duration(hours: 1));
+    return TimeOfDay(hour: n.hour, minute: (n.minute ~/ 5) * 5);
+  }
+
   static TimeOfDay _nextQuarter() {
     final n = DateTime.now().add(const Duration(minutes: 15));
     final m = (n.minute ~/ 15) * 15;
@@ -112,6 +128,26 @@ class _TimeSheetState extends State<_TimeSheet> {
             ),
             const SizedBox(height: Space.lg),
             Text(l.timeStart, style: context.text.titleSmall?.copyWith(color: context.semantic.muted)),
+            const SizedBox(height: Space.sm),
+            // One tap for the usual times; the wheel is for the exact minute.
+            Wrap(
+              spacing: Space.xs,
+              runSpacing: Space.xs,
+              children: [
+                for (final (label, t) in [
+                  (l.presetMorning, const TimeOfDay(hour: 9, minute: 0)),
+                  (l.presetNoon, const TimeOfDay(hour: 12, minute: 30)),
+                  (l.presetAfternoon, const TimeOfDay(hour: 15, minute: 0)),
+                  (l.presetEvening, const TimeOfDay(hour: 19, minute: 0)),
+                  (l.presetInHour, _inAnHour()),
+                ])
+                  ActionChip(
+                    label: Text('$label · ${hhmm(t)}'),
+                    onPressed: () => _setTime(t),
+                    visualDensity: VisualDensity.compact,
+                  ),
+              ],
+            ),
             SizedBox(
               height: 168,
               child: CupertinoTheme(
@@ -122,7 +158,7 @@ class _TimeSheetState extends State<_TimeSheet> {
                   ),
                 ),
                 child: CupertinoDatePicker(
-                  key: const Key('time-wheel'),
+                  key: ValueKey('time-wheel-$_wheel'),
                   mode: CupertinoDatePickerMode.time,
                   use24hFormat:
                       MediaQuery.alwaysUse24HourFormatOf(context) ||

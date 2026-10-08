@@ -24,6 +24,9 @@ void main() {
     expect(c.task!.hour, 15);
     expect(c.task!.minutes, 30);
     expect(classifyCapture('annemi ara', now).kind, CaptureKind.task);
+    expect(classifyCapture('dişçi 15 30', now).task!.hour, 15);
+    expect(classifyCapture('1530 tl market', now).kind, CaptureKind.expense);
+    expect(classifyCapture('bu akşam sinema', now).task!.hour, 19);
     expect(classifyCapture('annemi ara', now).day, DateTime(2026, 6, 10));
   });
 

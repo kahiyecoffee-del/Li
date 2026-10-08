@@ -13,57 +13,180 @@ class QuickTask {
   bool get hasTime => hour != null;
 }
 
-/// Parses a one-line task in Turkish or English. Understands times
-/// ("15:00", "9.30", "saat 15", "15'te", "3pm", "at 9") and durations
-/// ("30 dk", "45 dakika", "1 saat", "1,5 saat", "2h", "90 min").
+/// Parses a one-line task in Turkish or English, forgiving about how times
+/// are typed: "15:00", "15.30", "15 30", "1530", "saat 3", "3'te",
+/// "3 buçuk", "akşam 7", "sabah 9:30", "bu akşam", "3pm", "at 9".
+/// Durations: "30 dk", "1 saat", "1,5 saat", "1 saat 30 dk", "yarım saat",
+/// "çeyrek saat", "2h", "90 min", "half an hour".
 QuickTask parseQuickTask(String input) {
   var s = ' ${input.trim()} ';
   int? hour, minutes;
   var minute = 0;
 
-  // Durations first so "1 saat" is not read as a time.
-  final dur = RegExp(
-    r'(?<![\d:.])(\d+(?:[.,]\d+)?)\s*(dk|dakika|dakikalık|min|mins|minute|minutes|m|saat|saatlik|sa|h|hr|hrs|hour|hours)(?=[\s,.!?]|$)',
-    caseSensitive: false,
-  );
-  final dm = dur.firstMatch(s);
-  // "saat 15" (time) has the number after "saat"; "1 saat" (duration) before.
-  if (dm != null) {
-    final n = double.parse(dm.group(1)!.replaceAll(',', '.'));
-    final unit = dm.group(2)!.toLowerCase();
-    final isHours = const {'saat', 'saatlik', 'sa', 'h', 'hr', 'hrs', 'hour', 'hours'}.contains(unit);
-    final value = (isHours ? n * 60 : n).round();
-    if (value > 0 && value <= 16 * 60) {
-      minutes = value;
-      s = s.replaceRange(dm.start, dm.end, ' ');
+  // Matching runs on a lower-case copy of the same length.
+  String low() => s.replaceAll('I', 'ı').replaceAll('İ', 'i').toLowerCase();
+  void cut(RegExpMatch m) => s = s.replaceRange(m.start, m.end, ' ' * (m.end - m.start));
+  const l = r'a-zçğıöşü';
+
+  // ---- durations (first, so "1 saat" is not read as a time)
+  final words = <(String, int)>[
+    ('bir buçuk saat', 90),
+    ('yarım saat', 30),
+    ('çeyrek saat', 15),
+    ('bir saat', 60),
+    ('iki saat', 120),
+    ('half an hour', 30),
+    ('an hour', 60),
+    ('one hour', 60),
+  ];
+  for (final (w, v) in words) {
+    final m = RegExp('(?<![$l])$w(?![$l])').firstMatch(low());
+    if (m != null) {
+      minutes = v;
+      cut(m);
+      break;
     }
   }
-
-  RegExpMatch? m;
-  // 15:00 / 9.30
-  m = RegExp(r'(?<![\d,])([01]?\d|2[0-3])[:.]([0-5]\d)(?!\d)').firstMatch(s);
-  if (m != null) {
-    hour = int.parse(m.group(1)!);
-    minute = int.parse(m.group(2)!);
-  } else {
-    // 3pm / 11 am
-    m = RegExp(r'(?<!\d)(1[0-2]|0?[1-9])\s*(am|pm)\b', caseSensitive: false).firstMatch(s);
-    if (m != null) {
-      final h = int.parse(m.group(1)!) % 12;
-      hour = m.group(2)!.toLowerCase() == 'pm' ? h + 12 : h;
-    } else {
-      // saat 15 / at 9
-      m = RegExp(r'\b(saat|at)\s+([01]?\d|2[0-3])(?!\d)', caseSensitive: false).firstMatch(s);
-      if (m != null) {
-        hour = int.parse(m.group(2)!);
-      } else {
-        // 15'te, 9'da, 15te
-        m = RegExp(r"(?<!\d)([01]?\d|2[0-3])['’]?(te|ta|de|da)\b", caseSensitive: false).firstMatch(s);
-        if (m != null) hour = int.parse(m.group(1)!);
+  if (minutes == null) {
+    final hm = RegExp(
+      r'(?<![\d:.])(\d+)\s*(saat|sa|h|hr|hour|hours)\s*(\d+)\s*(dk|dakika|min|mins|minutes|m)(?![a-zçğıöşü])',
+    ).firstMatch(low());
+    if (hm != null) {
+      minutes = int.parse(hm.group(1)!) * 60 + int.parse(hm.group(3)!);
+      cut(hm);
+    }
+  }
+  if (minutes == null) {
+    final dm = RegExp(
+      r'(?<![\d:.])(\d+(?:[.,]\d+)?|\d+ buçuk)\s*(dk|dakika|dakikalık|min|mins|minute|minutes|m|saat|saatlik|sa|h|hr|hrs|hour|hours)(?![a-zçğıöşü])',
+    ).firstMatch(low());
+    if (dm != null) {
+      final raw = dm.group(1)!;
+      final n = raw.contains('buçuk') ? int.parse(raw.split(' ').first) + 0.5 : double.parse(raw.replaceAll(',', '.'));
+      final unit = dm.group(2)!;
+      final isHours = const {'saat', 'saatlik', 'sa', 'h', 'hr', 'hrs', 'hour', 'hours'}.contains(unit);
+      final value = (isHours ? n * 60 : n).round();
+      if (value > 0 && value <= 16 * 60) {
+        minutes = value;
+        cut(dm);
       }
     }
   }
-  if (m != null && hour != null) s = s.replaceRange(m.start, m.end, ' ');
+
+  // ---- times
+  // Part of the day, which moves 1–11 into the afternoon or evening.
+  const parts = <String, int>{
+    'öğleden sonra': 12,
+    'ögleden sonra': 12,
+    'sabah': 0,
+    'öğlen': 12,
+    'öğle': 12,
+    'akşam': 12,
+    'aksam': 12,
+    'gece': 12,
+    'morning': 0,
+    'afternoon': 12,
+    'evening': 12,
+    'tonight': 12,
+    'night': 12,
+  };
+  int adjust(int h, String? part, {bool colloquial = false}) {
+    if (part != null) {
+      final add = parts[part]!;
+      if (part.startsWith('gece') || part == 'night') return h <= 5 ? h : (h < 12 ? h + 12 : h);
+      if (part.startsWith('öğle') && h == 12) return 12;
+      return h < 12 ? h + add : h;
+    }
+    // "saat 3", "3'te", "3 buçuk": people mean the afternoon.
+    return colloquial && h >= 1 && h <= 6 ? h + 12 : h;
+  }
+
+  final partRe = '(?:(${parts.keys.join('|')})\\s+(?:saat\\s+)?)?';
+  const sfx = r"(?:['’]?(?:te|ta|de|da|e|a|ye|ya))?";
+  final patterns = <(RegExp, void Function(RegExpMatch))>[
+    // [akşam] 7:30 / 19.30 / 15:30'da
+    (
+      RegExp('$partRe(?<![\\d,])([01]?\\d|2[0-3])[:.]([0-5]\\d)(?!\\d)(?:\\s*(am|pm)(?![a-z]))?$sfx'),
+      (m) {
+        final h = int.parse(m.group(2)!);
+        final ampm = m.group(4);
+        hour = ampm == null ? adjust(h, m.group(1)) : (h % 12) + (ampm == 'pm' ? 12 : 0);
+        minute = int.parse(m.group(3)!);
+      },
+    ),
+    // 3:30 pm / 3pm / 11 am
+    (
+      RegExp(r'(?<![\d:])(1[0-2]|0?[1-9])(?::([0-5]\d))?\s*(am|pm)(?![a-z])'),
+      (m) {
+        final h = int.parse(m.group(1)!) % 12;
+        hour = m.group(3) == 'pm' ? h + 12 : h;
+        minute = int.tryParse(m.group(2) ?? '') ?? 0;
+      },
+    ),
+    // [akşam] [saat] 7 buçuk
+    (
+      RegExp('$partRe(?:saat\\s+)?(?<![\\d,])([01]?\\d|2[0-3])\\s*buçuk$sfx'),
+      (m) {
+        hour = adjust(int.parse(m.group(2)!), m.group(1), colloquial: true);
+        minute = 30;
+      },
+    ),
+    // 15 30 (a space instead of ":"), not "15 30 tl"
+    (
+      RegExp(
+        r'(?<![\d.,])([01]?\d|2[0-3])\s([0-5]\d)(?!\d)(?!\s*(?:tl|₺|lira|try|usd|eur|dk|dakika|min|saat|sa)\b)' + sfx,
+      ),
+      (m) {
+        hour = int.parse(m.group(1)!);
+        minute = int.parse(m.group(2)!);
+      },
+    ),
+    // 1530 / 0930, not "1530 tl"
+    (
+      RegExp(r'(?<![\d.,₺$€£])([01]\d|2[0-3])([0-5]\d)(?!\d)(?!\s*(?:tl|₺|lira|try|usd|eur|dk|min)\b)' + sfx),
+      (m) {
+        hour = int.parse(m.group(1)!);
+        minute = int.parse(m.group(2)!);
+      },
+    ),
+    // akşam 7 / sabah 9 / evening 7
+    (
+      RegExp('(${parts.keys.join('|')})\\s+(?:saat\\s+)?([01]?\\d|2[0-3])(?!\\d)$sfx'),
+      (m) => hour = adjust(int.parse(m.group(2)!), m.group(1)),
+    ),
+    // saat 15 / at 9
+    (
+      RegExp(r'(?<![a-zçğıöşü])(saat|at)\s+([01]?\d|2[0-3])(?!\d)' + sfx),
+      (m) => hour = adjust(int.parse(m.group(2)!), null, colloquial: m.group(1) == 'saat'),
+    ),
+    // 15'te, 9'da, 15te
+    (
+      RegExp(r"(?<![\d])([01]?\d|2[0-3])['’]?(te|ta|de|da)(?![a-zçğıöşü])"),
+      (m) => hour = adjust(int.parse(m.group(1)!), null, colloquial: true),
+    ),
+    // bu sabah / bu akşam / bu gece / this evening / tonight → a sensible hour
+    (
+      RegExp(
+        r'(?<![a-zçğıöşü])(bu sabah|bu öğlen|bu akşam|bu gece|this morning|this afternoon|this evening|tonight)(?![a-zçğıöşü])',
+      ),
+      (m) => hour = switch (m.group(1)!) {
+        'bu sabah' || 'this morning' => 9,
+        'bu öğlen' => 12,
+        'this afternoon' => 15,
+        'bu gece' => 22,
+        'tonight' => 20,
+        _ => 19,
+      },
+    ),
+  ];
+  for (final (re, apply) in patterns) {
+    final m = re.firstMatch(low());
+    if (m != null) {
+      apply(m);
+      cut(m);
+      break;
+    }
+  }
 
   var title = s.replaceAll(RegExp(r'\s+'), ' ').trim().replaceAll(RegExp(r'^[,.\-–:]+|[,.\-–:]+$'), '').trim();
   if (title.isNotEmpty) title = _capitalize(title);

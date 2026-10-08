@@ -784,6 +784,21 @@ class AppLocalizationsEn extends AppLocalizations {
   String get timeStart => 'Start';
 
   @override
+  String get presetMorning => 'Morning';
+
+  @override
+  String get presetNoon => 'Noon';
+
+  @override
+  String get presetAfternoon => 'Afternoon';
+
+  @override
+  String get presetEvening => 'Evening';
+
+  @override
+  String get presetInHour => 'In 1 hour';
+
+  @override
   String get timeNoTime => 'No set time';
 
   @override

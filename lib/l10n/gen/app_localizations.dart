@@ -1466,6 +1466,36 @@ abstract class AppLocalizations {
   /// **'Start'**
   String get timeStart;
 
+  /// No description provided for @presetMorning.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning'**
+  String get presetMorning;
+
+  /// No description provided for @presetNoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Noon'**
+  String get presetNoon;
+
+  /// No description provided for @presetAfternoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Afternoon'**
+  String get presetAfternoon;
+
+  /// No description provided for @presetEvening.
+  ///
+  /// In en, this message translates to:
+  /// **'Evening'**
+  String get presetEvening;
+
+  /// No description provided for @presetInHour.
+  ///
+  /// In en, this message translates to:
+  /// **'In 1 hour'**
+  String get presetInHour;
+
   /// No description provided for @timeNoTime.
   ///
   /// In en, this message translates to:

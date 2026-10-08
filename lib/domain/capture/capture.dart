@@ -57,13 +57,10 @@ DayMatch? parseDay(String text, DateTime now) {
     ('tomorrow', 1),
     ('bugün', 0),
     ('today', 0),
-    ('tonight', 0),
-    ('bu akşam', 0),
   ];
   for (final (w, add) in words) {
     final i = _wordIndex(lower, w);
     if (i >= 0) {
-      // Keep "bu akşam" in the title context out; drop the day word only.
       return DayMatch(Dates.addDays(today, add), _cut(text, i, w.length));
     }
   }
@@ -111,7 +108,7 @@ final _feel = RegExp(
 Capture classifyCapture(String input, DateTime now, {ExpenseParser expenses = const ExpenseParser()}) {
   final text = input.trim();
   final lower = _fold(text);
-  final hasTime = _time.hasMatch(text);
+  final hasTime = _time.hasMatch(text) || parseQuickTask(text).hasTime;
   // "bugün çok yorgunum" is a feeling, not a task for today.
   if (!hasTime && _feel.hasMatch(lower)) return Capture.journal(text);
   final day = parseDay(text, now);

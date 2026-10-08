@@ -781,6 +781,21 @@ class AppLocalizationsTr extends AppLocalizations {
   String get timeStart => 'Başlangıç';
 
   @override
+  String get presetMorning => 'Sabah';
+
+  @override
+  String get presetNoon => 'Öğle';
+
+  @override
+  String get presetAfternoon => 'Öğleden sonra';
+
+  @override
+  String get presetEvening => 'Akşam';
+
+  @override
+  String get presetInHour => '1 saat sonra';
+
+  @override
   String get timeNoTime => 'Saat belirtme';
 
   @override
