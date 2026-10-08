@@ -5,6 +5,7 @@ import 'dart:io' show Platform;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:lifeos/features/lio/lio_guide_screen.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:lifeos/data/repositories/journal_repository.dart';
 import 'package:lifeos/data/repositories/user_repos.dart';
@@ -74,8 +75,12 @@ void main() {
     await shot(tester, '02-lio-menu');
 
     Future<void> ask(String q) async {
-      await tester.enterText(find.byType(TextField).last, q);
-      await tester.tap(find.byTooltip('Gönder').last);
+      // The chat's own field (Home has a text field too) and the keyboard's
+      // send action: sturdier than tapping on every screen size.
+      final field = find.descendant(of: find.byType(LioGuideScreen), matching: find.byType(TextField));
+      await tester.showKeyboard(field);
+      await tester.enterText(field, q);
+      await tester.testTextInput.receiveAction(TextInputAction.send);
       for (var i = 0; i < 6; i++) {
         await tester.pump(const Duration(milliseconds: 150));
       }
