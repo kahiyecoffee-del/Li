@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-/// Design tokens — Dayly "earth" palette: moss, terracotta, sand, ochre and
-/// espresso on warm linen. One moss accent drives actions; each life area
-/// has a muted earthy tint (see [Accent]) so screens stay calm and premium.
+/// Design tokens — Dayly "quiet luxury": deep moss and a touch of champagne
+/// gold on ivory, ink-dark text, hairline borders and soft, layered light.
+/// One moss accent drives actions; gold is only for small highlights
+/// (eyebrows, rings, the current moment); each life area keeps a muted
+/// earthy tint (see [Accent]).
 abstract final class Palette {
   // Brand: moss (light) / sage (dark). White on moss passes WCAG AA.
   static const accent = Color(0xFF4A6B52);
@@ -13,21 +15,25 @@ abstract final class Palette {
   static const secondary = terracotta;
   static const sun = ochre;
 
-  // Light neutrals (linen)
-  static const lightBg = Color(0xFFF5F0E8);
-  static const lightSurface = Color(0xFFFFFDFA);
-  static const lightSurfaceAlt = Color(0xFFEDE5D8);
-  static const lightText = Color(0xFF2A231E);
-  static const lightTextMuted = Color(0xFF7B6F64);
-  static const lightBorder = Color(0xFFE5DACA);
+  /// Champagne gold for small highlights only (never body text on ivory).
+  static const gold = Color(0xFFB08D4F);
+  static const goldDark = Color(0xFFD9BC82);
 
-  // Dark neutrals (espresso)
-  static const darkBg = Color(0xFF14110F);
-  static const darkSurface = Color(0xFF1E1A17);
-  static const darkSurfaceAlt = Color(0xFF29231F);
-  static const darkText = Color(0xFFF2EBE2);
-  static const darkTextMuted = Color(0xFFB2A699);
-  static const darkBorder = Color(0xFF342D27);
+  // Light neutrals (ivory and ink)
+  static const lightBg = Color(0xFFF7F3EC);
+  static const lightSurface = Color(0xFFFFFEFB);
+  static const lightSurfaceAlt = Color(0xFFF0EAE0);
+  static const lightText = Color(0xFF1E1915);
+  static const lightTextMuted = Color(0xFF7D7268);
+  static const lightBorder = Color(0xFFE8DFD1);
+
+  // Dark neutrals (espresso night)
+  static const darkBg = Color(0xFF0F0D0B);
+  static const darkSurface = Color(0xFF1A1714);
+  static const darkSurfaceAlt = Color(0xFF25201C);
+  static const darkText = Color(0xFFF4EDE4);
+  static const darkTextMuted = Color(0xFFB0A497);
+  static const darkBorder = Color(0xFF2F2924);
 
   // Semantic (earth-tuned)
   static const positive = Color(0xFF5B8A5A);
@@ -78,6 +84,11 @@ abstract final class Gradients {
     colors: [Color(0xFF34503D), Color(0xFF4A6B52), Color(0xFF6E8A68)],
   );
 
+  /// Soft light blobs painted behind screen tops (see AmbientBackdrop).
+  static List<Color> ambient(Brightness b) => b == Brightness.dark
+      ? const [Color(0x334A6B52), Color(0x26B08D4F), Color(0x1FC0673F)]
+      : const [Color(0x40A8C4A2), Color(0x33E8D3A6), Color(0x26E7B9A0)];
+
   /// Sweep used by progress rings.
   static const ring = SweepGradient(
     startAngle: -1.5708,
@@ -91,13 +102,28 @@ abstract final class Shadows {
   static List<BoxShadow> soft(Brightness b) => b == Brightness.dark
       ? const []
       : [
-          BoxShadow(color: const Color(0xFF3B2A1E).withValues(alpha: 0.05), blurRadius: 2, offset: const Offset(0, 1)),
+          BoxShadow(color: const Color(0xFF2B1E14).withValues(alpha: 0.04), blurRadius: 1, offset: const Offset(0, 1)),
+          BoxShadow(color: const Color(0xFF2B1E14).withValues(alpha: 0.04), blurRadius: 8, offset: const Offset(0, 3)),
           BoxShadow(
-            color: const Color(0xFF3B2A1E).withValues(alpha: 0.07),
-            blurRadius: 28,
-            offset: const Offset(0, 12),
+            color: const Color(0xFF2B1E14).withValues(alpha: 0.06),
+            blurRadius: 32,
+            offset: const Offset(0, 16),
           ),
         ];
+
+  /// For floating elements (navigation bar, composer).
+  static List<BoxShadow> lift(Brightness b) => [
+    BoxShadow(
+      color: const Color(0xFF1A120C).withValues(alpha: b == Brightness.dark ? 0.5 : 0.10),
+      blurRadius: 40,
+      offset: const Offset(0, 18),
+    ),
+    BoxShadow(
+      color: const Color(0xFF1A120C).withValues(alpha: b == Brightness.dark ? 0.3 : 0.05),
+      blurRadius: 6,
+      offset: const Offset(0, 2),
+    ),
+  ];
 }
 
 abstract final class Space {
@@ -114,8 +140,9 @@ abstract final class Space {
 
 abstract final class Radii {
   static const sm = 12.0;
-  static const md = 16.0;
-  static const lg = 24.0;
+  static const md = 18.0;
+  static const lg = 26.0;
+  static const xl = 32.0;
   static const pill = 999.0;
 }
 
@@ -125,6 +152,12 @@ abstract final class Motion {
   static const slow = Duration(milliseconds: 520);
   static const curve = Curves.easeOutCubic;
   static const bounce = Curves.easeOutBack;
+
+  /// Material "emphasized decelerate": quick start, long graceful settle.
+  static const emphasized = Cubic(0.05, 0.7, 0.1, 1.0);
+
+  /// Delay for the [i]-th item of a staggered entrance (capped).
+  static Duration stagger(int i) => Duration(milliseconds: 55 * (i > 8 ? 8 : i));
 
   /// Honors the OS "reduce motion" setting.
   static Duration of(BuildContext context, Duration d) =>

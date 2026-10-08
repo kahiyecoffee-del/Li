@@ -69,6 +69,43 @@ void main() {
     await tearDownApp(tester);
   });
 
+  testWidgets('Planner: one-line add, auto-schedule, swipe to tomorrow', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded()))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    await openPlan(tester);
+    expect(find.textContaining('Nothing planned for this day yet'), findsOneWidget);
+
+    // No time given: lands in "Anytime" and can be scheduled into a free slot.
+    await tester.enterText(find.byType(TextField).last, 'read 20 min');
+    await tester.tap(find.byTooltip('Add').last);
+    await pumpUntil(tester, find.text('Read'));
+    expect(find.text('Anytime'), findsOneWidget);
+    await scrollAndTap(tester, find.text('Schedule'));
+    // Late at night there is no free slot left today.
+    await pumpUntil(
+      tester,
+      find.byWidgetPredicate(
+        (w) => w is Text && (w.data ?? '').contains(RegExp('Scheduled for|No free slot')),
+      ),
+    );
+    var tasks = await tester.runAsync(() => app.seededRepos.tasks.getAll());
+    final read = tasks!.single;
+    expect(read.estimatedMinutes, 20);
+
+    // Swipe left: moves to tomorrow.
+    final card = find.ancestor(of: find.text('Read'), matching: find.byType(Dismissible));
+    final hasSlot = read.scheduledAt != null;
+    if (hasSlot) {
+      await tester.drag(card.first, const Offset(-600, 0));
+      await pumpUntil(tester, find.text('Moved to tomorrow'));
+      tasks = await tester.runAsync(() => app.seededRepos.tasks.getAll());
+      expect(tasks!.single.scheduledAt!.difference(read.scheduledAt!).inHours, 24);
+    }
+    await tearDownApp(tester);
+  });
+
   testWidgets('AI: proposed action needs confirmation, then creates the task', (tester) async {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded()))!;
@@ -108,8 +145,7 @@ void main() {
 
     // Nothing is created before confirmation.
     await openPlan(tester);
-    await tester.tap(find.text('This week'));
-    await tester.pump(const Duration(milliseconds: 500));
+    await pickPlanDay(tester, tomorrow);
     expect(find.text('Team meeting'), findsNothing);
     await tester.binding.handlePopRoute();
     await pumpUntil(tester, find.text('AI'));
@@ -121,7 +157,7 @@ void main() {
     expect(app.analytics.logged(AnalyticsEvent.aiActionConfirmed), isTrue);
 
     await openPlan(tester);
-    await tester.tap(find.text('This week'));
+    await pickPlanDay(tester, tomorrow);
     await pumpUntil(tester, find.text('Team meeting'));
     await tearDownApp(tester);
   });
@@ -145,13 +181,11 @@ void main() {
     await tester.pumpWidget(app.widget());
     await pumpUntil(tester, find.text('Offline — changes are saved and will sync later.'));
     await openPlan(tester);
-    await tester.tap(find.byType(FloatingActionButton));
-    await pumpUntil(tester, find.text('New task'));
-    await tester.enterText(find.byType(TextField).first, 'Gym');
-    await tester.ensureVisible(find.text('Save'));
-    await tester.pump();
-    await tester.tap(find.text('Save'));
+    // One line: title, time and length.
+    await tester.enterText(find.byType(TextField).last, 'gym 18:30 45 min');
+    await tester.tap(find.byTooltip('Add').last);
     await pumpUntil(tester, find.text('Gym'));
+    expect(find.textContaining('18:30'), findsWidgets);
     expect(app.analytics.logged(AnalyticsEvent.taskCreated), isTrue);
     await tearDownApp(tester);
   });
@@ -497,5 +531,13 @@ Future<void> openPlan(WidgetTester tester) async {
   await tester.tap(find.text('Explore').last);
   await pumpUntil(tester, find.text('Plan'));
   await tester.tap(find.text('Plan').last);
-  await pumpUntil(tester, find.byType(FloatingActionButton));
+  await pumpUntil(tester, find.byKey(const Key('plan-composer')));
+}
+
+/// Taps a day on the planner's date strip.
+Future<void> pickPlanDay(WidgetTester tester, DateTime d) async {
+  final key = ValueKey('day-${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}');
+  await tester.ensureVisible(find.byKey(key));
+  await tester.tap(find.byKey(key));
+  await tester.pump(const Duration(milliseconds: 500));
 }

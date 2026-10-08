@@ -13,6 +13,7 @@ import '../domain/models/progress.dart';
 import '../domain/models/task_item.dart';
 import '../domain/models/user_profile.dart';
 import '../domain/models/wellbeing.dart';
+import '../domain/plan/day_timeline.dart';
 import '../services/ai/ai_action_executor.dart';
 import '../services/analytics/analytics_service.dart';
 import 'ml_providers.dart';
@@ -154,6 +155,46 @@ class AppActions {
   }
 
   Future<void> deleteTask(String id) => _repos.tasks.delete(id);
+
+  /// Creates a task from the quick-add line on [day].
+  Future<TaskItem> addQuickTask(QuickTask q, DateTime day) async {
+    final at = q.hasTime ? DateTime(day.year, day.month, day.day, q.hour!, q.minute) : null;
+    final t = TaskItem(
+      id: newId(),
+      updatedAt: _now,
+      title: q.title,
+      estimatedMinutes: q.minutes ?? 30,
+      scheduledAt: at,
+      deadline: at == null ? Dates.dateOnly(day) : null,
+      createdAt: _now,
+    );
+    await saveTask(t, isNew: true);
+    return t;
+  }
+
+  /// Puts [t] at [start] (keeps its length).
+  Future<void> scheduleTask(TaskItem t, DateTime start) =>
+      _repos.tasks.save(t.copyWith(scheduledAt: start, clearDeadline: true));
+
+  /// Moves [t] one day later (same time when it had one).
+  Future<void> postponeTask(TaskItem t, DateTime from) {
+    final s = t.scheduledAt;
+    return _repos.tasks.save(
+      s != null
+          ? t.copyWith(scheduledAt: Dates.addDays(s, 1))
+          : t.copyWith(deadline: Dates.addDays(Dates.dateOnly(from), 1)),
+    );
+  }
+
+  /// Brings an overdue task to [day] (keeps the time of day if it had one).
+  Future<void> moveTaskTo(TaskItem t, DateTime day) {
+    final s = t.scheduledAt;
+    return _repos.tasks.save(
+      s != null
+          ? t.copyWith(scheduledAt: DateTime(day.year, day.month, day.day, s.hour, s.minute))
+          : t.copyWith(deadline: Dates.dateOnly(day)),
+    );
+  }
 
   Future<int> optimizePlan() async {
     final n = await AiActionExecutor.optimizeToday(_repos, _profile, _now);

@@ -30,130 +30,132 @@ class HomeScreen extends ConsumerWidget {
     String nonce() => '${DateTime.now().microsecondsSinceEpoch}';
 
     return Scaffold(
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.fromLTRB(Space.page, Space.lg, Space.page, 120),
-          children: [
-            FadeSlideIn(
-              child: HeroBanner(
-                gradient: dark ? Gradients.meadowDark : Gradients.meadow,
-                padding: const EdgeInsets.all(Space.lg),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+      body: AmbientBackdrop(
+        child: SafeArea(
+          child: ListView(
+            padding: const EdgeInsets.fromLTRB(Space.page, Space.lg, Space.page, 120),
+            children: staggered([
+              FadeSlideIn(
+                child: HeroBanner(
+                  gradient: dark ? Gradients.meadowDark : Gradients.meadow,
+                  padding: const EdgeInsets.all(Space.lg),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        name.isEmpty ? l.homeHelloNoName : l.homeHello(name),
+                        style: context.text.titleMedium?.copyWith(color: context.semantic.muted),
+                      ),
+                      const SizedBox(height: Space.xs),
+                      Semantics(header: true, child: Text(l.homeQuestion, style: context.text.headlineMedium)),
+                      const SizedBox(height: Space.md),
+                      // Lio speaks: the most useful thing he noticed today.
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          const Mascot(mood: MascotMood.happy, size: 64),
+                          const SizedBox(width: Space.sm),
+                          Expanded(
+                            child: _SpeechBubble(
+                              text: top?.text ?? l.lioAllGood,
+                              action: top?.action,
+                              onAction: top == null ? null : () => top.go(context),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: Space.lg),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: _HeroAction(
+                              icon: Icons.auto_awesome_rounded,
+                              label: l.solve,
+                              primary: true,
+                              onTap: () => context.go('/ai'),
+                            ),
+                          ),
+                          const SizedBox(width: Space.sm),
+                          Expanded(
+                            child: _HeroAction(
+                              icon: Icons.event_available_rounded,
+                              label: l.quickPlan,
+                              onTap: () => context.go('/ai?topic=plan&n=${nonce()}'),
+                            ),
+                          ),
+                          const SizedBox(width: Space.sm),
+                          Expanded(
+                            child: _HeroAction(
+                              icon: Icons.menu_book_rounded,
+                              label: l.quickJournal,
+                              onTap: () => context.push('/journal/new'),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              if (advice.length > 1) ...[
+                const SizedBox(height: Space.xl),
+                SectionTitle(
+                  l.lioSuggestions,
+                  trailing: advice.length > 4
+                      ? TextButton(onPressed: () => context.push('/insights'), child: Text(l.seeAll))
+                      : null,
+                ),
+                for (final a in advice.skip(1).take(3))
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: Space.sm),
+                    child: FadeSlideIn(child: AdviceCard(a)),
+                  ),
+              ],
+              const SizedBox(height: Space.xl),
+              const _QuickTools(),
+              // Light banner (hidden for Premium; Remote Config can switch it off).
+              const SizedBox(height: Space.md),
+              const Center(child: BannerSlot()),
+              if (recent.isNotEmpty) ...[
+                const SizedBox(height: Space.xl),
+                SectionTitle(
+                  l.recentlySolved,
+                  trailing: TextButton(onPressed: () => context.go('/saved'), child: Text(l.seeAll)),
+                ),
+                for (final item in recent.take(3))
+                  ListTile(
+                    contentPadding: EdgeInsets.zero,
+                    leading: const Icon(Icons.bookmark_rounded),
+                    title: Text(item.title, maxLines: 1, overflow: TextOverflow.ellipsis),
+                    subtitle: Text(item.summary, maxLines: 2, overflow: TextOverflow.ellipsis),
+                    onTap: () => openSavedItem(context, ref, item),
+                  ),
+              ],
+              const SizedBox(height: Space.lg),
+              AppCard(
+                onTap: () => context.push('/today'),
+                child: Row(
                   children: [
-                    Text(
-                      name.isEmpty ? l.homeHelloNoName : l.homeHello(name),
-                      style: context.text.titleMedium?.copyWith(color: context.semantic.muted),
+                    IconBubble(icon: Icons.wb_sunny_rounded, accent: Accent.plan),
+                    const SizedBox(width: Space.md),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(l.exploreMyDay, style: context.text.titleMedium),
+                          Text(
+                            l.exploreMyDayBody,
+                            style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
+                          ),
+                        ],
+                      ),
                     ),
-                    const SizedBox(height: Space.xs),
-                    Semantics(header: true, child: Text(l.homeQuestion, style: context.text.headlineMedium)),
-                    const SizedBox(height: Space.md),
-                    // Lio speaks: the most useful thing he noticed today.
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        const Mascot(mood: MascotMood.happy, size: 64),
-                        const SizedBox(width: Space.sm),
-                        Expanded(
-                          child: _SpeechBubble(
-                            text: top?.text ?? l.lioAllGood,
-                            action: top?.action,
-                            onAction: top == null ? null : () => top.go(context),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: Space.lg),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: _HeroAction(
-                            icon: Icons.auto_awesome_rounded,
-                            label: l.solve,
-                            primary: true,
-                            onTap: () => context.go('/ai'),
-                          ),
-                        ),
-                        const SizedBox(width: Space.sm),
-                        Expanded(
-                          child: _HeroAction(
-                            icon: Icons.event_available_rounded,
-                            label: l.quickPlan,
-                            onTap: () => context.go('/ai?topic=plan&n=${nonce()}'),
-                          ),
-                        ),
-                        const SizedBox(width: Space.sm),
-                        Expanded(
-                          child: _HeroAction(
-                            icon: Icons.menu_book_rounded,
-                            label: l.quickJournal,
-                            onTap: () => context.push('/journal/new'),
-                          ),
-                        ),
-                      ],
-                    ),
+                    const Icon(Icons.chevron_right_rounded),
                   ],
                 ),
               ),
-            ),
-            if (advice.length > 1) ...[
-              const SizedBox(height: Space.xl),
-              SectionTitle(
-                l.lioSuggestions,
-                trailing: advice.length > 4
-                    ? TextButton(onPressed: () => context.push('/insights'), child: Text(l.seeAll))
-                    : null,
-              ),
-              for (final a in advice.skip(1).take(3))
-                Padding(
-                  padding: const EdgeInsets.only(bottom: Space.sm),
-                  child: FadeSlideIn(child: AdviceCard(a)),
-                ),
-            ],
-            const SizedBox(height: Space.xl),
-            const _QuickTools(),
-            // Light banner (hidden for Premium; Remote Config can switch it off).
-            const SizedBox(height: Space.md),
-            const Center(child: BannerSlot()),
-            if (recent.isNotEmpty) ...[
-              const SizedBox(height: Space.xl),
-              SectionTitle(
-                l.recentlySolved,
-                trailing: TextButton(onPressed: () => context.go('/saved'), child: Text(l.seeAll)),
-              ),
-              for (final item in recent.take(3))
-                ListTile(
-                  contentPadding: EdgeInsets.zero,
-                  leading: const Icon(Icons.bookmark_rounded),
-                  title: Text(item.title, maxLines: 1, overflow: TextOverflow.ellipsis),
-                  subtitle: Text(item.summary, maxLines: 2, overflow: TextOverflow.ellipsis),
-                  onTap: () => openSavedItem(context, ref, item),
-                ),
-            ],
-            const SizedBox(height: Space.lg),
-            AppCard(
-              onTap: () => context.push('/today'),
-              child: Row(
-                children: [
-                  IconBubble(icon: Icons.wb_sunny_rounded, accent: Accent.plan),
-                  const SizedBox(width: Space.md),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(l.exploreMyDay, style: context.text.titleMedium),
-                        Text(
-                          l.exploreMyDayBody,
-                          style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const Icon(Icons.chevron_right_rounded),
-                ],
-              ),
-            ),
-          ],
+            ]),
+          ),
         ),
       ),
     );

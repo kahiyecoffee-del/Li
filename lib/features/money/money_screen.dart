@@ -89,7 +89,7 @@ class _MoneyScreenState extends ConsumerState<MoneyScreen> with SingleTickerProv
     final change = summary.changePercent;
     return ListView(
       padding: const EdgeInsets.fromLTRB(Space.page, Space.md, Space.page, 120),
-      children: [
+      children: staggered([
         if (b == null)
           AppCard(
             onTap: () => showBudgetSettings(context),
@@ -162,13 +162,21 @@ class _MoneyScreenState extends ConsumerState<MoneyScreen> with SingleTickerProv
           ),
         ],
         const SizedBox(height: Space.sm),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: TextButton.icon(
-            onPressed: () => showExpenseSheet(context, type: TransactionType.income),
-            icon: const Icon(Icons.south_west, size: 18),
-            label: Text(l.moneyAddIncome),
-          ),
+        Wrap(
+          alignment: WrapAlignment.spaceBetween,
+          children: [
+            TextButton.icon(
+              onPressed: () => showExpenseSheet(context, type: TransactionType.income),
+              icon: const Icon(Icons.south_west, size: 18),
+              label: Text(l.moneyAddIncome),
+            ),
+            if (b != null)
+              TextButton.icon(
+                onPressed: () => showAddLimit(context),
+                icon: const Icon(Icons.speed_rounded, size: 18),
+                label: Text(l.moneyAddBudget),
+              ),
+          ],
         ),
         if (catInsight != null) ...[
           const SizedBox(height: Space.sm),
@@ -220,12 +228,7 @@ class _MoneyScreenState extends ConsumerState<MoneyScreen> with SingleTickerProv
             ),
           ),
         ],
-        if (b != null)
-          Align(
-            alignment: Alignment.centerRight,
-            child: TextButton(onPressed: () => showAddLimit(context), child: Text(l.moneyAddBudget)),
-          ),
-      ],
+      ]),
     );
   }
 
@@ -444,7 +447,7 @@ class _Stat extends StatelessWidget {
           const SizedBox(height: Space.xs),
           FittedBox(
             fit: BoxFit.scaleDown,
-            child: Text(value, style: context.text.titleLarge?.copyWith(color: valueColor)),
+            child: Text(value, style: context.text.headlineSmall?.copyWith(fontSize: 24, color: valueColor)),
           ),
           if (note != null) Text(note!, style: context.text.labelSmall?.copyWith(color: noteColor)),
         ],

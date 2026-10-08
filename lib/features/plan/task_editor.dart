@@ -11,22 +11,25 @@ import '../../core/widgets/formatters.dart';
 import '../../domain/models/enums.dart';
 import '../../domain/models/task_item.dart';
 
-Future<void> showTaskEditor(BuildContext context, {TaskItem? task, DateTime? day, String? title}) =>
+Future<void> showTaskEditor(BuildContext context, {TaskItem? task, DateTime? day, String? title, TimeOfDay? time}) =>
     showModalBottomSheet<void>(
       context: context,
       useRootNavigator: true,
       isScrollControlled: true,
-      builder: (_) => TaskEditor(task: task, day: day, title: title),
+      builder: (_) => TaskEditor(task: task, day: day, title: title, time: time),
     );
 
 class TaskEditor extends ConsumerStatefulWidget {
-  const TaskEditor({super.key, this.task, this.day, this.title});
+  const TaskEditor({super.key, this.task, this.day, this.title, this.time});
 
   final TaskItem? task;
 
   /// Pre-filled title for a new task (e.g. "remind me…" typed on Home).
   final String? title;
   final DateTime? day;
+
+  /// Pre-filled start time for a new task (tapping a free slot).
+  final TimeOfDay? time;
 
   @override
   ConsumerState<TaskEditor> createState() => _TaskEditorState();
@@ -40,7 +43,7 @@ class _TaskEditorState extends ConsumerState<TaskEditor> {
   late Recurrence _repeat = widget.task?.recurrence ?? Recurrence.none;
   late DateTime? _date = Dates.dateOnly(widget.task?.anchorDate ?? widget.day ?? DateTime.now());
   late TimeOfDay? _time = widget.task?.scheduledAt == null
-      ? null
+      ? widget.time
       : TimeOfDay(hour: widget.task!.scheduledAt!.hour, minute: widget.task!.scheduledAt!.minute);
 
   @override

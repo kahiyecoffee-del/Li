@@ -137,5 +137,21 @@ void main() {
     await tester.tap(find.text('🙂'));
     await tester.tap(find.byTooltip('Ekle'));
     await shot(tester, '09-gunluk');
+
+    // Day planner: one-line add.
+    await tester.binding.handlePopRoute();
+    await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
+    await tester.tap(find.text('Keşfet').last);
+    await pumpUntil(tester, find.text('Planla'));
+    await tester.tap(find.text('Planla').last);
+    await pumpUntil(tester, find.byKey(const Key('plan-composer')));
+    await tester.enterText(find.byType(TextField).last, '18:30 spor 45 dk');
+    await tester.tap(find.byTooltip('Ekle').last);
+    await pumpUntil(tester, find.text('Spor'));
+    FocusManager.instance.primaryFocus?.unfocus();
+    for (var i = 0; i < 10; i++) {
+      await tester.pump(const Duration(milliseconds: 150));
+    }
+    await shot(tester, '10-plan');
   });
 }

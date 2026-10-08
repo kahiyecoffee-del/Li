@@ -713,6 +713,85 @@ class AppLocalizationsEn extends AppLocalizations {
   String get newTask => 'New task';
 
   @override
+  String planFree(String time) {
+    return 'Free · $time';
+  }
+
+  @override
+  String get planNow => 'Now';
+
+  @override
+  String get planEmptyShort => 'A free day';
+
+  @override
+  String get planQuickHint => 'Add a task… e.g. 15:00 dentist 30 min';
+
+  @override
+  String planQuickAdded(String title) {
+    return 'Added: $title';
+  }
+
+  @override
+  String get planDetails => 'More options';
+
+  @override
+  String get planScheduleIt => 'Schedule';
+
+  @override
+  String planScheduledAt(String time) {
+    return 'Scheduled for $time';
+  }
+
+  @override
+  String get planNoSlot => 'No free slot left on this day';
+
+  @override
+  String get planPostpone => 'Tomorrow';
+
+  @override
+  String get planPostponed => 'Moved to tomorrow';
+
+  @override
+  String get planToToday => 'Do today';
+
+  @override
+  String planProgress(int done, int total) {
+    return '$done of $total done';
+  }
+
+  @override
+  String planPlannedTime(String time) {
+    return '$time planned';
+  }
+
+  @override
+  String planFreeTime(String time) {
+    return '$time free';
+  }
+
+  @override
+  String get planDayEmpty => 'Nothing planned for this day yet. Write a task below or let Lio plan it with you.';
+
+  @override
+  String get planWithLio => 'Plan with Lio';
+
+  @override
+  String get planTimeline => 'Timeline';
+
+  @override
+  String get planPickDate => 'Pick a date';
+
+  @override
+  String durHM(int h, int m) {
+    return '$h h $m min';
+  }
+
+  @override
+  String durH(int h) {
+    return '$h h';
+  }
+
+  @override
   String get editTask => 'Edit task';
 
   @override

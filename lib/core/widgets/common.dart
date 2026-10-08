@@ -49,8 +49,12 @@ class _AppCardState extends State<AppCard> {
           color: widget.gradient == null ? (widget.color ?? context.colors.surface) : null,
           gradient: widget.gradient,
           borderRadius: radius,
-          boxShadow: Shadows.soft(b),
-          border: b == Brightness.dark ? Border.all(color: context.semantic.border) : null,
+          boxShadow: widget.gradient == null ? Shadows.soft(b) : null,
+          // A hairline edge instead of a heavy outline: crisp on ivory and night.
+          border: Border.all(
+            color: context.semantic.border.withValues(alpha: b == Brightness.dark ? 1 : 0.7),
+            width: 0.8,
+          ),
         ),
         child: Material(
           type: MaterialType.transparency,
@@ -201,9 +205,13 @@ class HeroBanner extends StatelessWidget {
   Widget build(BuildContext context) => DecoratedBox(
     decoration: BoxDecoration(
       gradient: gradient ?? (Theme.of(context).brightness == Brightness.dark ? Gradients.meadowDark : Gradients.meadow),
-      borderRadius: BorderRadius.circular(Radii.lg),
+      borderRadius: BorderRadius.circular(Radii.xl),
+      border: Border.all(
+        color: Colors.white.withValues(alpha: Theme.of(context).brightness == Brightness.dark ? 0.06 : 0.6),
+        width: 0.8,
+      ),
       boxShadow: [
-        BoxShadow(color: Palette.accent.withValues(alpha: 0.14), blurRadius: 24, offset: const Offset(0, 10)),
+        BoxShadow(color: Palette.accent.withValues(alpha: 0.10), blurRadius: 40, offset: const Offset(0, 18)),
       ],
     ),
     child: Padding(padding: padding, child: child),
@@ -211,23 +219,175 @@ class HeroBanner extends StatelessWidget {
 }
 
 class SectionTitle extends StatelessWidget {
-  const SectionTitle(this.text, {super.key, this.trailing});
+  const SectionTitle(this.text, {super.key, this.trailing, this.eyebrow});
 
   final String text;
   final Widget? trailing;
 
+  /// Small uppercase line above the title (e.g. a count or a date).
+  final String? eyebrow;
+
   @override
   Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.fromLTRB(Space.xs, Space.xl, Space.xs, Space.sm),
+    padding: const EdgeInsets.fromLTRB(Space.xs, Space.xl + 4, Space.xs, Space.md),
     child: Row(
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Expanded(
-          child: Semantics(header: true, child: Text(text, style: context.text.titleMedium)),
+          child: Semantics(
+            header: true,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                if (eyebrow != null) ...[Eyebrow(eyebrow!), const SizedBox(height: 4)],
+                Text(text, style: context.text.headlineSmall?.copyWith(fontSize: 20, letterSpacing: -0.3)),
+              ],
+            ),
+          ),
         ),
         ?trailing,
       ],
     ),
   );
+}
+
+/// Small, tracked uppercase label (Turkish-aware) used above titles.
+class Eyebrow extends StatelessWidget {
+  const Eyebrow(this.text, {super.key, this.color});
+  final String text;
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context) => Text(
+    context.upper(text),
+    style: context.text.labelSmall?.copyWith(
+      color: color ?? context.semantic.muted,
+      letterSpacing: 1.4,
+      fontWeight: FontWeight.w600,
+      fontSize: 11,
+    ),
+  );
+}
+
+/// Soft, static pools of light behind the top of a screen: the "premium
+/// paper" feel without images or motion cost.
+class AmbientBackdrop extends StatelessWidget {
+  const AmbientBackdrop({super.key, required this.child, this.height = 420});
+  final Widget child;
+  final double height;
+
+  @override
+  Widget build(BuildContext context) => Stack(
+    children: [
+      Positioned(
+        top: 0,
+        left: 0,
+        right: 0,
+        height: height,
+        child: IgnorePointer(
+          child: CustomPaint(painter: _AmbientPainter(Gradients.ambient(Theme.of(context).brightness))),
+        ),
+      ),
+      child,
+    ],
+  );
+}
+
+class _AmbientPainter extends CustomPainter {
+  _AmbientPainter(this.colors);
+  final List<Color> colors;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    void blob(Offset c, double r, Color color) {
+      final rect = Rect.fromCircle(center: c, radius: r);
+      canvas.drawCircle(
+        c,
+        r,
+        Paint()..shader = RadialGradient(colors: [color, color.withValues(alpha: 0)]).createShader(rect),
+      );
+    }
+
+    blob(Offset(size.width * 0.15, size.height * 0.12), size.width * 0.75, colors[0]);
+    blob(Offset(size.width * 0.95, size.height * 0.05), size.width * 0.6, colors[1]);
+    blob(Offset(size.width * 0.7, size.height * 0.75), size.width * 0.55, colors[2]);
+  }
+
+  @override
+  bool shouldRepaint(_AmbientPainter old) => old.colors != colors;
+}
+
+/// Thin progress ring that sweeps to [value] (0–1) with [child] inside.
+class ProgressRing extends StatelessWidget {
+  const ProgressRing({super.key, required this.value, this.size = 72, this.stroke = 6, this.child, this.color});
+  final double value;
+  final double size;
+  final double stroke;
+  final Widget? child;
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context) => SizedBox.square(
+    dimension: size,
+    child: TweenAnimationBuilder<double>(
+      tween: Tween(end: value.clamp(0.0, 1.0)),
+      duration: Motion.of(context, const Duration(milliseconds: 900)),
+      curve: Motion.emphasized,
+      builder: (_, v, c) => CustomPaint(
+        painter: _SweepRingPainter(
+          v,
+          stroke,
+          track: context.semantic.border,
+          color: color ?? context.colors.primary,
+          tip: Theme.of(context).brightness == Brightness.dark ? Palette.goldDark : Palette.gold,
+        ),
+        child: Center(child: c),
+      ),
+      child: child,
+    ),
+  );
+}
+
+class _SweepRingPainter extends CustomPainter {
+  _SweepRingPainter(this.value, this.stroke, {required this.track, required this.color, required this.tip});
+  final double value, stroke;
+  final Color track, color, tip;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final rect = Offset.zero & size;
+    final r = rect.deflate(stroke / 2);
+    canvas.drawArc(
+      r,
+      0,
+      6.2832,
+      false,
+      Paint()
+        ..color = track
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = stroke,
+    );
+    if (value <= 0) return;
+    canvas.drawArc(
+      r,
+      -1.5708,
+      6.2832 * value,
+      false,
+      Paint()
+        ..shader = SweepGradient(
+          startAngle: -1.5708,
+          endAngle: -1.5708 + 6.2832 * value,
+          colors: [color, Color.lerp(color, tip, 0.6)!],
+          transform: const GradientRotation(-1.5708),
+        ).createShader(rect)
+        ..style = PaintingStyle.stroke
+        ..strokeCap = StrokeCap.round
+        ..strokeWidth = stroke,
+    );
+  }
+
+  @override
+  bool shouldRepaint(_SweepRingPainter old) => old.value != value || old.color != color || old.track != track;
 }
 
 class EmptyState extends StatelessWidget {
@@ -492,3 +652,9 @@ Future<bool> confirmDialog(
   );
   return r ?? false;
 }
+
+/// Wraps each child in a [FadeSlideIn] with a short, growing delay so a
+/// screen's sections arrive one after another (respects reduce-motion).
+List<Widget> staggered(List<Widget> children) => [
+  for (final (i, c) in children.indexed) FadeSlideIn(delay: Motion.stagger(i), offset: 0.04, child: c),
+];

@@ -456,6 +456,89 @@
   "planOverdue": "Overdue",
   "planCompleted": "Completed",
   "newTask": "New task",
+  "planFree": "Free · {time}",
+  "@planFree": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "planNow": "Now",
+  "planEmptyShort": "A free day",
+  "planQuickHint": "Add a task… e.g. 15:00 dentist 30 min",
+  "planQuickAdded": "Added: {title}",
+  "@planQuickAdded": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "planDetails": "More options",
+  "planScheduleIt": "Schedule",
+  "planScheduledAt": "Scheduled for {time}",
+  "@planScheduledAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "planNoSlot": "No free slot left on this day",
+  "planPostpone": "Tomorrow",
+  "planPostponed": "Moved to tomorrow",
+  "planToToday": "Do today",
+  "planProgress": "{done} of {total} done",
+  "@planProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "planPlannedTime": "{time} planned",
+  "@planPlannedTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "planFreeTime": "{time} free",
+  "@planFreeTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "planDayEmpty": "Nothing planned for this day yet. Write a task below or let Lio plan it with you.",
+  "planWithLio": "Plan with Lio",
+  "planTimeline": "Timeline",
+  "planPickDate": "Pick a date",
+  "durHM": "{h} h {m} min",
+  "@durHM": {
+    "placeholders": {
+      "h": {
+        "type": "int"
+      },
+      "m": {
+        "type": "int"
+      }
+    }
+  },
+  "durH": "{h} h",
+  "@durH": {
+    "placeholders": {
+      "h": {
+        "type": "int"
+      }
+    }
+  },
   "editTask": "Edit task",
   "taskTitle": "Title",
   "taskTitleHint": "e.g. Gym, Call mom",

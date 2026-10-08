@@ -74,36 +74,38 @@ abstract final class AppTheme {
     final base = Typography.material2021(platform: TargetPlatform.android).black;
     final textTheme = (isDark ? Typography.material2021().white : base)
         .copyWith(
+          // Display and headlines: Fraunces at medium weight with tight
+          // tracking reads as editorial and calm rather than loud.
           displaySmall: const TextStyle(
             fontFamily: serif,
             fontSize: 38,
-            fontWeight: FontWeight.w600,
-            letterSpacing: -0.8,
-            height: 1.1,
+            fontWeight: FontWeight.w500,
+            letterSpacing: -1.0,
+            height: 1.08,
           ),
           headlineMedium: const TextStyle(
             fontFamily: serif,
             fontSize: 30,
-            fontWeight: FontWeight.w600,
-            letterSpacing: -0.6,
-            height: 1.15,
+            fontWeight: FontWeight.w500,
+            letterSpacing: -0.7,
+            height: 1.14,
           ),
           headlineSmall: const TextStyle(
             fontFamily: serif,
             fontSize: 24,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w500,
             letterSpacing: -0.4,
             height: 1.2,
           ),
-          titleLarge: const TextStyle(fontSize: 19, fontWeight: FontWeight.w700, letterSpacing: -0.3),
-          titleMedium: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600, letterSpacing: -0.1),
-          titleSmall: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-          bodyLarge: const TextStyle(fontSize: 16, height: 1.5),
-          bodyMedium: const TextStyle(fontSize: 15, height: 1.5),
+          titleLarge: const TextStyle(fontSize: 19, fontWeight: FontWeight.w600, letterSpacing: -0.35, height: 1.3),
+          titleMedium: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600, letterSpacing: -0.15, height: 1.35),
+          titleSmall: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600, letterSpacing: -0.05),
+          bodyLarge: const TextStyle(fontSize: 16, height: 1.55, letterSpacing: -0.05),
+          bodyMedium: const TextStyle(fontSize: 15, height: 1.55, letterSpacing: -0.05),
           bodySmall: const TextStyle(fontSize: 13, height: 1.45),
-          labelLarge: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600, letterSpacing: 0),
+          labelLarge: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600, letterSpacing: -0.05),
           labelMedium: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
-          labelSmall: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500, letterSpacing: 0.1),
+          labelSmall: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500, letterSpacing: 0.15),
         )
         .apply(bodyColor: text, displayColor: text, fontFamily: 'Jakarta');
     // apply() overrides fontFamily everywhere; restore the serif headings.
@@ -113,7 +115,8 @@ abstract final class AppTheme {
       headlineSmall: textTheme.headlineSmall?.copyWith(fontFamily: serif),
     );
 
-    final shape = RoundedRectangleBorder(borderRadius: BorderRadius.circular(Radii.md));
+    final shape = const StadiumBorder();
+    final hairline = BorderSide(color: border.withValues(alpha: isDark ? 1 : 0.8), width: 0.8);
 
     return ThemeData(
       useMaterial3: true,
@@ -143,7 +146,7 @@ abstract final class AppTheme {
         scrolledUnderElevation: 0,
         toolbarHeight: 60,
         centerTitle: false,
-        titleTextStyle: tt.headlineSmall?.copyWith(fontSize: 22),
+        titleTextStyle: tt.headlineSmall?.copyWith(fontSize: 24),
         foregroundColor: text,
       ),
       cardTheme: CardThemeData(
@@ -151,10 +154,7 @@ abstract final class AppTheme {
         elevation: 0,
         surfaceTintColor: Colors.transparent,
         margin: EdgeInsets.zero,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(Radii.lg),
-          side: isDark ? BorderSide(color: border) : BorderSide.none,
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Radii.lg), side: hairline),
       ),
       dividerTheme: DividerThemeData(color: border, thickness: 1, space: 1),
       navigationBarTheme: NavigationBarThemeData(
@@ -174,7 +174,7 @@ abstract final class AppTheme {
         style: OutlinedButton.styleFrom(
           minimumSize: const Size(64, 54),
           shape: shape,
-          side: BorderSide(color: border),
+          side: hairline.copyWith(color: border),
           foregroundColor: text,
           textStyle: tt.labelLarge,
         ),
@@ -196,8 +196,8 @@ abstract final class AppTheme {
       ),
       chipTheme: ChipThemeData(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Radii.pill)),
-        side: BorderSide.none,
-        backgroundColor: surfaceAlt,
+        side: hairline,
+        backgroundColor: surface,
         selectedColor: accent.withValues(alpha: 0.18),
         labelStyle: tt.labelMedium,
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -206,7 +206,9 @@ abstract final class AppTheme {
         backgroundColor: surface,
         surfaceTintColor: Colors.transparent,
         showDragHandle: true,
-        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(Radii.lg))),
+        dragHandleColor: border,
+        dragHandleSize: const Size(36, 4),
+        shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(Radii.xl))),
       ),
       dialogTheme: DialogThemeData(
         backgroundColor: surface,
@@ -215,7 +217,18 @@ abstract final class AppTheme {
       ),
       snackBarTheme: SnackBarThemeData(
         behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Radii.sm)),
+        backgroundColor: isDark ? Palette.darkSurfaceAlt : Palette.lightText,
+        contentTextStyle: tt.bodyMedium?.copyWith(color: isDark ? text : Palette.lightBg),
+        actionTextColor: Palette.goldDark,
+        elevation: 0,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Radii.md)),
+      ),
+      tooltipTheme: TooltipThemeData(
+        decoration: BoxDecoration(
+          color: isDark ? Palette.darkSurfaceAlt : Palette.lightText,
+          borderRadius: BorderRadius.circular(Radii.sm),
+        ),
+        textStyle: tt.labelMedium?.copyWith(color: isDark ? text : Palette.lightBg),
       ),
       listTileTheme: ListTileThemeData(
         minVerticalPadding: 12,
@@ -233,7 +246,7 @@ abstract final class AppTheme {
         foregroundColor: isDark ? Palette.darkBg : Colors.white,
         elevation: 2,
         highlightElevation: 4,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Radii.md + 2)),
+        shape: const StadiumBorder(),
         extendedTextStyle: tt.labelLarge,
       ),
       switchTheme: SwitchThemeData(

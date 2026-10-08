@@ -1,3 +1,5 @@
+import 'dart:ui' show ImageFilter;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -69,36 +71,40 @@ class _FloatingNavBar extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.fromLTRB(Space.lg, Space.xs, Space.lg, Space.xs),
         height: 68,
-        decoration: BoxDecoration(
-          color: context.colors.surface,
-          borderRadius: BorderRadius.circular(Radii.lg),
-          boxShadow: [
-            if (b == Brightness.light) ...Shadows.soft(b),
-            if (b == Brightness.light)
-              BoxShadow(
-                color: const Color(0xFF3B2A1E).withValues(alpha: 0.06),
-                blurRadius: 40,
-                offset: const Offset(0, 18),
-              ),
-          ],
-          border: b == Brightness.dark ? Border.all(color: context.semantic.border) : null,
-        ),
-        child: Row(
-          children: [
-            for (var i = 0; i < items.length; i++)
-              Expanded(
-                child: _NavItem(
-                  icon: items[i].$1,
-                  selectedIcon: items[i].$2,
-                  label: items[i].$3,
-                  selected: i == index,
-                  onTap: () {
-                    HapticFeedback.selectionClick();
-                    onSelect(i);
-                  },
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(Radii.xl), boxShadow: Shadows.lift(b)),
+        // Frosted glass: the page shows softly through the bar.
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(Radii.xl),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 24, sigmaY: 24),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: context.colors.surface.withValues(alpha: b == Brightness.dark ? 0.78 : 0.84),
+                borderRadius: BorderRadius.circular(Radii.xl),
+                border: Border.all(
+                  color: b == Brightness.dark ? context.semantic.border : Colors.white.withValues(alpha: 0.9),
+                  width: 0.8,
                 ),
               ),
-          ],
+              child: Row(
+                children: [
+                  for (var i = 0; i < items.length; i++)
+                    Expanded(
+                      child: _NavItem(
+                        icon: items[i].$1,
+                        selectedIcon: items[i].$2,
+                        label: items[i].$3,
+                        selected: i == index,
+                        onTap: () {
+                          HapticFeedback.selectionClick();
+                          onSelect(i);
+                        },
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          ),
         ),
       ),
     );

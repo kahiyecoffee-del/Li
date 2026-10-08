@@ -711,6 +711,85 @@ class AppLocalizationsTr extends AppLocalizations {
   String get newTask => 'Yeni görev';
 
   @override
+  String planFree(String time) {
+    return 'Boş · $time';
+  }
+
+  @override
+  String get planNow => 'Şimdi';
+
+  @override
+  String get planEmptyShort => 'Boş bir gün';
+
+  @override
+  String get planQuickHint => 'Görev ekle… ör. 15:00 dişçi 30 dk';
+
+  @override
+  String planQuickAdded(String title) {
+    return 'Eklendi: $title';
+  }
+
+  @override
+  String get planDetails => 'Ayrıntılar';
+
+  @override
+  String get planScheduleIt => 'Zamanla';
+
+  @override
+  String planScheduledAt(String time) {
+    return '$time için planlandı';
+  }
+
+  @override
+  String get planNoSlot => 'Bu günde boş yer kalmadı';
+
+  @override
+  String get planPostpone => 'Yarına';
+
+  @override
+  String get planPostponed => 'Yarına taşındı';
+
+  @override
+  String get planToToday => 'Bugüne al';
+
+  @override
+  String planProgress(int done, int total) {
+    return '$total işten $done tamam';
+  }
+
+  @override
+  String planPlannedTime(String time) {
+    return '$time planlı';
+  }
+
+  @override
+  String planFreeTime(String time) {
+    return '$time boş';
+  }
+
+  @override
+  String get planDayEmpty => 'Bu güne henüz bir şey planlanmadı. Aşağıya bir görev yaz ya da Lio seninle planlasın.';
+
+  @override
+  String get planWithLio => 'Lio ile planla';
+
+  @override
+  String get planTimeline => 'Zaman çizelgesi';
+
+  @override
+  String get planPickDate => 'Tarih seç';
+
+  @override
+  String durHM(int h, int m) {
+    return '$h sa $m dk';
+  }
+
+  @override
+  String durH(int h) {
+    return '$h sa';
+  }
+
+  @override
   String get editTask => 'Görevi düzenle';
 
   @override

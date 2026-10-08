@@ -1346,6 +1346,132 @@ abstract class AppLocalizations {
   /// **'New task'**
   String get newTask;
 
+  /// No description provided for @planFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Free · {time}'**
+  String planFree(String time);
+
+  /// No description provided for @planNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Now'**
+  String get planNow;
+
+  /// No description provided for @planEmptyShort.
+  ///
+  /// In en, this message translates to:
+  /// **'A free day'**
+  String get planEmptyShort;
+
+  /// No description provided for @planQuickHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a task… e.g. 15:00 dentist 30 min'**
+  String get planQuickHint;
+
+  /// No description provided for @planQuickAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Added: {title}'**
+  String planQuickAdded(String title);
+
+  /// No description provided for @planDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'More options'**
+  String get planDetails;
+
+  /// No description provided for @planScheduleIt.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedule'**
+  String get planScheduleIt;
+
+  /// No description provided for @planScheduledAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Scheduled for {time}'**
+  String planScheduledAt(String time);
+
+  /// No description provided for @planNoSlot.
+  ///
+  /// In en, this message translates to:
+  /// **'No free slot left on this day'**
+  String get planNoSlot;
+
+  /// No description provided for @planPostpone.
+  ///
+  /// In en, this message translates to:
+  /// **'Tomorrow'**
+  String get planPostpone;
+
+  /// No description provided for @planPostponed.
+  ///
+  /// In en, this message translates to:
+  /// **'Moved to tomorrow'**
+  String get planPostponed;
+
+  /// No description provided for @planToToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Do today'**
+  String get planToToday;
+
+  /// No description provided for @planProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {total} done'**
+  String planProgress(int done, int total);
+
+  /// No description provided for @planPlannedTime.
+  ///
+  /// In en, this message translates to:
+  /// **'{time} planned'**
+  String planPlannedTime(String time);
+
+  /// No description provided for @planFreeTime.
+  ///
+  /// In en, this message translates to:
+  /// **'{time} free'**
+  String planFreeTime(String time);
+
+  /// No description provided for @planDayEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing planned for this day yet. Write a task below or let Lio plan it with you.'**
+  String get planDayEmpty;
+
+  /// No description provided for @planWithLio.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan with Lio'**
+  String get planWithLio;
+
+  /// No description provided for @planTimeline.
+  ///
+  /// In en, this message translates to:
+  /// **'Timeline'**
+  String get planTimeline;
+
+  /// No description provided for @planPickDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a date'**
+  String get planPickDate;
+
+  /// No description provided for @durHM.
+  ///
+  /// In en, this message translates to:
+  /// **'{h} h {m} min'**
+  String durHM(int h, int m);
+
+  /// No description provided for @durH.
+  ///
+  /// In en, this message translates to:
+  /// **'{h} h'**
+  String durH(int h);
+
   /// No description provided for @editTask.
   ///
   /// In en, this message translates to:
