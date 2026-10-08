@@ -130,10 +130,10 @@ void main() {
       await pumpUntil(tester, find.textContaining('· 45 dk'));
       await _shot(tester, '$mode-plan-chosen');
       await tester.runAsync(
-        () => Scrollable.ensureVisible(tester.element(find.text('Ekip toplantısı')), alignment: 0.3),
+        () => Scrollable.ensureVisible(tester.element(find.text('Ekip toplantısı').last), alignment: 0.3),
       );
       await tester.pump(const Duration(milliseconds: 400));
-      await tester.tap(find.text('Ekip toplantısı'));
+      await tester.tap(find.text('Ekip toplantısı').last);
       await pumpUntil(tester, find.byKey(const Key('editor-time')));
       await _shot(tester, '$mode-editor');
       await tester.binding

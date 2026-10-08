@@ -311,6 +311,46 @@ void main() {
     await tearDownApp(tester);
   });
 
+  testWidgets('Planner: an overloaded day offers to lighten it', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+    final tomorrow = Dates.addDays(Dates.dateOnly(DateTime.now()), 1);
+    await tester.runAsync(() async {
+      for (final (id, mins, p) in [
+        ('Deep work', 420, TaskPriority.high),
+        ('Paperwork', 300, TaskPriority.medium),
+        ('Tidy up', 180, TaskPriority.low),
+      ]) {
+        await app.seededRepos.tasks.save(
+          TaskItem(
+            id: id,
+            updatedAt: DateTime.now(),
+            title: id,
+            priority: p,
+            estimatedMinutes: mins,
+            deadline: tomorrow,
+            createdAt: DateTime.now(),
+          ),
+        );
+      }
+    });
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    await openPlan(tester);
+    await pickPlanDay(tester, tomorrow);
+    await pumpUntil(tester, find.byKey(const Key('plan-overload')));
+    await tester.tap(find.text('Lighten my day'));
+    await pumpUntil(tester, find.textContaining('to tomorrow'));
+    final tasks = (await tester.runAsync(() => app.seededRepos.tasks.getAll()))!;
+    final tidy = tasks.firstWhere((t) => t.id == 'Tidy up');
+    expect(Dates.sameDay(tidy.anchorDate!, Dates.addDays(tomorrow, 1)), isTrue);
+    expect(tidy.rolledOver, 1);
+    expect(Dates.sameDay(tasks.firstWhere((t) => t.id == 'Deep work').anchorDate!, tomorrow), isTrue);
+    await tester.pump(const Duration(milliseconds: 400));
+    expect(find.byKey(const Key('plan-overload')), findsNothing);
+    await tearDownApp(tester);
+  });
+
   testWidgets('Turkish + dark mode render Home and My day', (tester) async {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded(prefs: {'locale': 'tr', 'themeMode': 'dark'})))!;

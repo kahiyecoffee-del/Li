@@ -26,6 +26,7 @@ class AppSettings {
     this.lioLearnsJournal = true,
     this.assistantName = 'Lio',
     this.favoriteRecipes = const {},
+    this.planBreak = 0,
   });
 
   final ThemeMode themeMode;
@@ -56,6 +57,9 @@ class AppSettings {
   /// Ids of recipes the user hearted (kept on the device).
   final Set<String> favoriteRecipes;
 
+  /// Minutes the planner leaves between tasks when it moves them.
+  final int planBreak;
+
   AppSettings copyWith({
     ThemeMode? themeMode,
     bool? highContrast,
@@ -73,6 +77,7 @@ class AppSettings {
     bool? lioLearnsJournal,
     String? assistantName,
     Set<String>? favoriteRecipes,
+    int? planBreak,
   }) => AppSettings(
     themeMode: themeMode ?? this.themeMode,
     highContrast: highContrast ?? this.highContrast,
@@ -89,6 +94,7 @@ class AppSettings {
     lioLearnsJournal: lioLearnsJournal ?? this.lioLearnsJournal,
     assistantName: assistantName ?? this.assistantName,
     favoriteRecipes: favoriteRecipes ?? this.favoriteRecipes,
+    planBreak: planBreak ?? this.planBreak,
   );
 }
 
@@ -122,6 +128,7 @@ class SettingsStore {
       lioLearnsJournal: _p.getBool('lioLearnsJournal') ?? true,
       assistantName: _p.getString('assistantName') ?? 'Lio',
       favoriteRecipes: {...?_p.getStringList('favoriteRecipes')},
+      planBreak: _p.getInt('planBreak') ?? 0,
     );
   }
 
@@ -140,6 +147,7 @@ class SettingsStore {
     await _p.setStringList('aiScopes', s.aiScopes.map((e) => e.name).toList());
     await _p.setBool('personalizedAds', s.personalizedAds);
     await _p.setBool('showLio', s.showLio);
+    await _p.setInt('planBreak', s.planBreak);
     await _p.setBool('journalReminder', s.journalReminder);
     await _p.setBool('planReminder', s.planReminder);
     await _p.setBool('lioLearnsJournal', s.lioLearnsJournal);

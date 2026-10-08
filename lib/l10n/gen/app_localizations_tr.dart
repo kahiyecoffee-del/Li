@@ -1077,6 +1077,81 @@ class AppLocalizationsTr extends AppLocalizations {
   String get taskMore => 'Daha fazla';
 
   @override
+  String planOverloaded(String work, String left) {
+    return 'Bugün $work iş var, $left zaman kaldı';
+  }
+
+  @override
+  String get planOverloadedHint => 'İşler genelde planlanandan uzun sürer. Biraz boşluk bırak.';
+
+  @override
+  String get planLighten => 'Günümü hafiflet';
+
+  @override
+  String planLightened(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count görev yarına taşındı.',
+      zero: 'Taşınacak bir şey yok: kalanlar önemli.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get planUpNext => 'Sıradaki';
+
+  @override
+  String planTimeLeft(String time) {
+    return '$time kaldı';
+  }
+
+  @override
+  String planStartsIn(String time) {
+    return '$time sonra';
+  }
+
+  @override
+  String get planShutdown => 'Günü kapat';
+
+  @override
+  String planShutdownBody(int done, int left) {
+    return 'Bugün $done iş bitti. Açık kalan $left işin yerine karar ver.';
+  }
+
+  @override
+  String get planShutdownReview => 'Gözden geçir';
+
+  @override
+  String get planShutdownGood => 'Hepsi bitti. Güzel bir gündü!';
+
+  @override
+  String get planAllTomorrow => 'Hepsini yarına';
+
+  @override
+  String get planAllToday => 'Hepsini bugüne';
+
+  @override
+  String get planDrop => 'Bırak';
+
+  @override
+  String get planShrink => 'Yarıya indir';
+
+  @override
+  String planRolled(int count) {
+    return '$count kez ertelendi';
+  }
+
+  @override
+  String get planRolledHint => 'Sürekli kayıyor mu? Küçült ya da bırak.';
+
+  @override
+  String get planBreakLabel => 'Görevler arası mola';
+
+  @override
+  String get planBreakNone => 'Yok';
+
+  @override
   String get taskChangeTime => 'Saati değiştir';
 
   @override

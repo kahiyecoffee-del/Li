@@ -17,6 +17,7 @@ class TaskItem extends Entity {
     this.completedAt,
     required this.createdAt,
     this.remindBefore,
+    this.rolledOver = 0,
   });
 
   factory TaskItem.fromJson(Map<String, dynamic> j) => TaskItem(
@@ -33,6 +34,7 @@ class TaskItem extends Entity {
     completedAt: J.date(j, 'completedAt'),
     createdAt: J.date(j, 'createdAt') ?? Meta.updated(j),
     remindBefore: J.intOrNull(j, 'remindBefore'),
+    rolledOver: J.integer(j, 'rolledOver', 0),
   );
 
   static const codec = EntityCodec<TaskItem>(collection: 'tasks', fromJson: TaskItem.fromJson);
@@ -60,6 +62,10 @@ class TaskItem extends Entity {
     final m => Duration(minutes: m),
   };
 
+  /// How many times it was pushed to a later day. A task that keeps moving
+  /// is too big, mis-estimated or not really wanted.
+  final int rolledOver;
+
   bool get isCompleted => completedAt != null;
 
   /// The day this task belongs to on the timeline.
@@ -77,6 +83,7 @@ class TaskItem extends Entity {
     if (completedAt != null) 'completedAt': completedAt!.millisecondsSinceEpoch,
     'createdAt': createdAt.millisecondsSinceEpoch,
     if (remindBefore != null) 'remindBefore': remindBefore,
+    if (rolledOver > 0) 'rolledOver': rolledOver,
   };
 
   TaskItem copyWith({
@@ -93,6 +100,7 @@ class TaskItem extends Entity {
     bool clearDeadline = false,
     bool? deleted,
     int? remindBefore,
+    int? rolledOver,
   }) => TaskItem(
     id: id,
     updatedAt: DateTime.now(),
@@ -107,5 +115,6 @@ class TaskItem extends Entity {
     completedAt: clearCompleted ? null : (completedAt ?? this.completedAt),
     createdAt: createdAt,
     remindBefore: remindBefore ?? this.remindBefore,
+    rolledOver: rolledOver ?? this.rolledOver,
   );
 }

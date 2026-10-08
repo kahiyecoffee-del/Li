@@ -1,3 +1,4 @@
+import 'package:lifeos/domain/models/enums.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lifeos/domain/models/task_item.dart';
 import 'package:lifeos/domain/plan/day_timeline.dart';
@@ -130,6 +131,51 @@ void main() {
       expect(nextFreeStart(tasks, DateTime(2026, 6, 10, 22, 50), 30, dayEnd: DateTime(2026, 6, 10, 23)), isNull);
       // b slides after a, then c after b; d is untouched.
       expect(resolveClashes(tasks, day), {'b': DateTime(2026, 6, 10, 11), 'c': DateTime(2026, 6, 10, 11, 30)});
+    });
+  });
+
+  group('overload', () {
+    final day = DateTime(2026, 6, 10);
+    TaskItem t(String id, int mins, {TaskPriority p = TaskPriority.medium, int? h}) => TaskItem(
+      id: id,
+      updatedAt: day,
+      title: id,
+      priority: p,
+      scheduledAt: h == null ? null : DateTime(2026, 6, 10, h),
+      deadline: h == null ? day : null,
+      estimatedMinutes: mins,
+      createdAt: day,
+    );
+
+    test('a day with more work than time (with a margin) is overloaded', () {
+      expect(isOverloaded(0, 100), isFalse);
+      expect(isOverloaded(85, 100), isFalse);
+      expect(isOverloaded(86, 100), isTrue);
+      expect(minutesLeft(DateTime(2026, 6, 10, 8), DateTime(2026, 6, 10, 23), DateTime(2026, 6, 10, 21)), 120);
+    });
+
+    test('lightening moves low before medium, flexible before timed, and keeps high', () {
+      final now = DateTime(2026, 6, 10, 8);
+      final tasks = [
+        t('high', 300, p: TaskPriority.high),
+        t('medTimed', 120, h: 15),
+        t('medFlex', 120),
+        t('low', 60, p: TaskPriority.low),
+      ];
+      expect(remainingWorkMinutes(tasks, now), 600);
+      final move = lightenPlan(tasks, 500, now); // budget 425
+      expect(move.map((x) => x.id), ['low', 'medFlex']);
+      expect(lightenPlan(tasks, 1000, now), isEmpty);
+    });
+
+    test('a gap keeps tasks apart when untangling', () {
+      final tasks = [t('a', 60, h: 10), t('b', 30, h: 10)];
+      expect(resolveClashes(tasks, day, gap: 10), {'b': DateTime(2026, 6, 10, 11, 10)});
+    });
+
+    test('roll-overs survive a save', () {
+      final x = t('a', 30).copyWith(rolledOver: 3);
+      expect(TaskItem.fromJson({...x.toJson(), 'id': 'a', 'updatedAt': 0}).rolledOver, 3);
     });
   });
 }

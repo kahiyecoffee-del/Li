@@ -210,19 +210,31 @@ class AppActions {
     final s = t.scheduledAt;
     return _repos.tasks.save(
       s != null
-          ? t.copyWith(scheduledAt: Dates.addDays(s, 1))
-          : t.copyWith(deadline: Dates.addDays(Dates.dateOnly(from), 1)),
+          ? t.copyWith(scheduledAt: Dates.addDays(s, 1), rolledOver: t.rolledOver + 1)
+          : t.copyWith(deadline: Dates.addDays(Dates.dateOnly(from), 1), rolledOver: t.rolledOver + 1),
     );
   }
 
-  /// Brings an overdue task to [day] (keeps the time of day if it had one).
+  /// Puts [t] on [day] (keeps the time of day if it had one). Moving it
+  /// later than it was counts as a roll-over.
   Future<void> moveTaskTo(TaskItem t, DateTime day) {
     final s = t.scheduledAt;
+    final was = t.anchorDate;
+    final later = was != null && Dates.dateOnly(day).isAfter(Dates.dateOnly(was));
+    final rolled = later ? t.rolledOver + 1 : null;
     return _repos.tasks.save(
       s != null
-          ? t.copyWith(scheduledAt: DateTime(day.year, day.month, day.day, s.hour, s.minute))
-          : t.copyWith(deadline: Dates.dateOnly(day)),
+          ? t.copyWith(scheduledAt: DateTime(day.year, day.month, day.day, s.hour, s.minute), rolledOver: rolled)
+          : t.copyWith(deadline: Dates.dateOnly(day), rolledOver: rolled),
     );
+  }
+
+  /// Moves [tasks] to the day after [day]; returns how many moved.
+  Future<int> moveAllToTomorrow(List<TaskItem> tasks, DateTime day) async {
+    for (final t in tasks) {
+      await postponeTask(t, day);
+    }
+    return tasks.length;
   }
 
   /// Takes the time off [t]: it stays on its day, "any time".
@@ -251,7 +263,7 @@ class AppActions {
   /// Slides overlapping tasks on [day] apart. Returns how many moved.
   Future<int> fixClashes(DateTime day) async {
     final all = await _repos.tasks.getAll();
-    final moves = resolveClashes(all, day);
+    final moves = resolveClashes(all, day, gap: _ref.read(settingsProvider).planBreak);
     for (final t in all.where((t) => moves.containsKey(t.id))) {
       await _repos.tasks.save(t.copyWith(scheduledAt: moves[t.id]));
     }

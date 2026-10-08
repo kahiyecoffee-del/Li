@@ -774,6 +774,73 @@
   "planDayEnd": "Ends",
   "planHowTo": "Tap a task to change anything · swipe right: done · left: tomorrow",
   "taskMore": "More",
+  "planOverloaded": "{work} of work, {left} left today",
+  "@planOverloaded": {
+    "placeholders": {
+      "work": {
+        "type": "String"
+      },
+      "left": {
+        "type": "String"
+      }
+    }
+  },
+  "planOverloadedHint": "Things usually take longer than planned. Keep some room.",
+  "planLighten": "Lighten my day",
+  "planLightened": "{count, plural, =0{Nothing to move: what is left is important.} =1{Moved 1 task to tomorrow.} other{Moved {count} tasks to tomorrow.}}",
+  "@planLightened": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "planUpNext": "Up next",
+  "planTimeLeft": "{time} left",
+  "@planTimeLeft": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "planStartsIn": "in {time}",
+  "@planStartsIn": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "planShutdown": "Close the day",
+  "planShutdownBody": "{done} done today. {left} still open: decide where each one goes.",
+  "@planShutdownBody": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "left": {
+        "type": "int"
+      }
+    }
+  },
+  "planShutdownReview": "Review",
+  "planShutdownGood": "Everything is done. Good day!",
+  "planAllTomorrow": "All to tomorrow",
+  "planAllToday": "All to today",
+  "planDrop": "Let it go",
+  "planShrink": "Halve it",
+  "planRolled": "{count, plural, =1{moved once} other{moved {count} times}}",
+  "@planRolled": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "planRolledHint": "Keeps moving? Make it smaller or let it go.",
+  "planBreakLabel": "Break between tasks",
+  "planBreakNone": "None",
   "taskChangeTime": "Change time",
   "taskOtherDay": "Move to another day",
   "taskDuplicate": "Duplicate",

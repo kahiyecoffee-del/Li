@@ -1952,6 +1952,120 @@ abstract class AppLocalizations {
   /// **'More'**
   String get taskMore;
 
+  /// No description provided for @planOverloaded.
+  ///
+  /// In en, this message translates to:
+  /// **'{work} of work, {left} left today'**
+  String planOverloaded(String work, String left);
+
+  /// No description provided for @planOverloadedHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Things usually take longer than planned. Keep some room.'**
+  String get planOverloadedHint;
+
+  /// No description provided for @planLighten.
+  ///
+  /// In en, this message translates to:
+  /// **'Lighten my day'**
+  String get planLighten;
+
+  /// No description provided for @planLightened.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Nothing to move: what is left is important.} =1{Moved 1 task to tomorrow.} other{Moved {count} tasks to tomorrow.}}'**
+  String planLightened(int count);
+
+  /// No description provided for @planUpNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Up next'**
+  String get planUpNext;
+
+  /// No description provided for @planTimeLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{time} left'**
+  String planTimeLeft(String time);
+
+  /// No description provided for @planStartsIn.
+  ///
+  /// In en, this message translates to:
+  /// **'in {time}'**
+  String planStartsIn(String time);
+
+  /// No description provided for @planShutdown.
+  ///
+  /// In en, this message translates to:
+  /// **'Close the day'**
+  String get planShutdown;
+
+  /// No description provided for @planShutdownBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} done today. {left} still open: decide where each one goes.'**
+  String planShutdownBody(int done, int left);
+
+  /// No description provided for @planShutdownReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Review'**
+  String get planShutdownReview;
+
+  /// No description provided for @planShutdownGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything is done. Good day!'**
+  String get planShutdownGood;
+
+  /// No description provided for @planAllTomorrow.
+  ///
+  /// In en, this message translates to:
+  /// **'All to tomorrow'**
+  String get planAllTomorrow;
+
+  /// No description provided for @planAllToday.
+  ///
+  /// In en, this message translates to:
+  /// **'All to today'**
+  String get planAllToday;
+
+  /// No description provided for @planDrop.
+  ///
+  /// In en, this message translates to:
+  /// **'Let it go'**
+  String get planDrop;
+
+  /// No description provided for @planShrink.
+  ///
+  /// In en, this message translates to:
+  /// **'Halve it'**
+  String get planShrink;
+
+  /// No description provided for @planRolled.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{moved once} other{moved {count} times}}'**
+  String planRolled(int count);
+
+  /// No description provided for @planRolledHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Keeps moving? Make it smaller or let it go.'**
+  String get planRolledHint;
+
+  /// No description provided for @planBreakLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Break between tasks'**
+  String get planBreakLabel;
+
+  /// No description provided for @planBreakNone.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get planBreakNone;
+
   /// No description provided for @taskChangeTime.
   ///
   /// In en, this message translates to:

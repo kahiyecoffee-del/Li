@@ -1105,6 +1105,83 @@ class AppLocalizationsEn extends AppLocalizations {
   String get taskMore => 'More';
 
   @override
+  String planOverloaded(String work, String left) {
+    return '$work of work, $left left today';
+  }
+
+  @override
+  String get planOverloadedHint => 'Things usually take longer than planned. Keep some room.';
+
+  @override
+  String get planLighten => 'Lighten my day';
+
+  @override
+  String planLightened(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Moved $count tasks to tomorrow.',
+      one: 'Moved 1 task to tomorrow.',
+      zero: 'Nothing to move: what is left is important.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get planUpNext => 'Up next';
+
+  @override
+  String planTimeLeft(String time) {
+    return '$time left';
+  }
+
+  @override
+  String planStartsIn(String time) {
+    return 'in $time';
+  }
+
+  @override
+  String get planShutdown => 'Close the day';
+
+  @override
+  String planShutdownBody(int done, int left) {
+    return '$done done today. $left still open: decide where each one goes.';
+  }
+
+  @override
+  String get planShutdownReview => 'Review';
+
+  @override
+  String get planShutdownGood => 'Everything is done. Good day!';
+
+  @override
+  String get planAllTomorrow => 'All to tomorrow';
+
+  @override
+  String get planAllToday => 'All to today';
+
+  @override
+  String get planDrop => 'Let it go';
+
+  @override
+  String get planShrink => 'Halve it';
+
+  @override
+  String planRolled(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: 'moved $count times', one: 'moved once');
+    return '$_temp0';
+  }
+
+  @override
+  String get planRolledHint => 'Keeps moving? Make it smaller or let it go.';
+
+  @override
+  String get planBreakLabel => 'Break between tasks';
+
+  @override
+  String get planBreakNone => 'None';
+
+  @override
   String get taskChangeTime => 'Change time';
 
   @override

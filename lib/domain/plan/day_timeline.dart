@@ -1,4 +1,5 @@
 import '../../core/utils/dates.dart';
+import '../models/enums.dart';
 import '../models/task_item.dart';
 
 /// What the quick-add line understood: "15:00 dişçi 30 dk" → title
@@ -307,12 +308,13 @@ DateTime? nextFreeStart(
   int minutes, {
   required DateTime dayEnd,
   String? exceptId,
+  int gap = 0,
 }) {
   var at = from;
   for (final t in _timedOn(tasks, from, exceptId: exceptId)) {
-    if (!_end(t).isAfter(at)) continue;
-    if (!t.scheduledAt!.isBefore(at.add(Duration(minutes: minutes)))) break;
-    at = _end(t);
+    if (!_end(t).add(Duration(minutes: gap)).isAfter(at)) continue;
+    if (!t.scheduledAt!.subtract(Duration(minutes: gap)).isBefore(at.add(Duration(minutes: minutes)))) break;
+    at = _end(t).add(Duration(minutes: gap));
   }
   return at.add(Duration(minutes: minutes)).isAfter(dayEnd) ? null : at;
 }
@@ -330,9 +332,9 @@ int countClashes(List<TaskItem> tasks, DateTime day) {
 }
 
 /// Untangles [day]: keeps the order people chose and slides each task that
-/// overlaps the one before it to right after it. Returns task id → new start
-/// (only the ones that move).
-Map<String, DateTime> resolveClashes(List<TaskItem> tasks, DateTime day) {
+/// overlaps the one before it to right after it, leaving [gap] minutes to
+/// breathe. Returns task id → new start (only the ones that move).
+Map<String, DateTime> resolveClashes(List<TaskItem> tasks, DateTime day, {int gap = 0}) {
   final out = <String, DateTime>{};
   DateTime? cursor;
   for (final t in _timedOn(tasks, day)) {
@@ -341,8 +343,55 @@ Map<String, DateTime> resolveClashes(List<TaskItem> tasks, DateTime day) {
       start = cursor;
       out[t.id] = start;
     }
-    final e = start.add(Duration(minutes: t.estimatedMinutes));
+    final e = start.add(Duration(minutes: t.estimatedMinutes + gap));
     if (cursor == null || e.isAfter(cursor)) cursor = e;
+  }
+  return out;
+}
+
+/// Open work on [day] that still lies ahead (from [now] on today).
+int remainingWorkMinutes(List<TaskItem> dayTasks, DateTime now) => dayTasks
+    .where((t) => !t.deleted && !t.isCompleted && (t.scheduledAt == null || _end(t).isAfter(now)))
+    .fold(0, (s, t) => s + t.estimatedMinutes);
+
+/// Minutes left in the planning day.
+int minutesLeft(DateTime dayStart, DateTime dayEnd, DateTime now) {
+  final from = now.isAfter(dayStart) ? now : dayStart;
+  return dayEnd.isAfter(from) ? dayEnd.difference(from).inMinutes : 0;
+}
+
+/// A day packed fuller than the time it has. People underestimate how long
+/// things take (the planning fallacy), so the day keeps a 15% margin.
+bool isOverloaded(int workMinutes, int availableMinutes) =>
+    workMinutes > 0 && workMinutes > (availableMinutes * 0.85).floor();
+
+/// Which open tasks to move to tomorrow so the day fits: lowest priority
+/// first, flexible ones before timed ones, later ones before earlier ones.
+/// High-priority tasks always stay.
+List<TaskItem> lightenPlan(List<TaskItem> dayTasks, int availableMinutes, DateTime now) {
+  final budget = (availableMinutes * 0.85).floor();
+  var load = remainingWorkMinutes(dayTasks, now);
+  final candidates =
+      dayTasks
+          .where(
+            (t) =>
+                !t.deleted &&
+                !t.isCompleted &&
+                t.priority != TaskPriority.high &&
+                (t.scheduledAt == null || t.scheduledAt!.isAfter(now)),
+          )
+          .toList()
+        ..sort((a, b) {
+          final p = a.priority.index.compareTo(b.priority.index);
+          if (p != 0) return p;
+          if ((a.scheduledAt == null) != (b.scheduledAt == null)) return a.scheduledAt == null ? -1 : 1;
+          return (b.scheduledAt ?? now).compareTo(a.scheduledAt ?? now);
+        });
+  final out = <TaskItem>[];
+  for (final t in candidates) {
+    if (load <= budget) break;
+    out.add(t);
+    load -= t.estimatedMinutes;
   }
   return out;
 }
