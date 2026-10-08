@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../data/local/database_opener.dart';
 import '../data/local/local_store.dart';
 import '../data/repositories/user_repos.dart';
+import '../domain/models/routine_goal.dart';
 import '../domain/models/ai_models.dart';
 import '../domain/models/food.dart';
 import '../domain/models/habit.dart';
@@ -123,6 +124,8 @@ final savingsGoalsProvider = StreamProvider<List<SavingsGoal>>(
   (ref) => ref.watch(reposProvider).savingsGoals.watchAll(),
 );
 final billsProvider = StreamProvider<List<RecurringBill>>((ref) => ref.watch(reposProvider).bills.watchAll());
+final routinesProvider = StreamProvider<List<Routine>>((ref) => ref.watch(reposProvider).routines.watchAll());
+final lifeGoalsProvider = StreamProvider<List<LifeGoal>>((ref) => ref.watch(reposProvider).lifeGoals.watchAll());
 final tasksProvider = StreamProvider<List<TaskItem>>((ref) => ref.watch(reposProvider).tasks.watchAll());
 final transactionsProvider = StreamProvider<List<MoneyTransaction>>(
   (ref) => ref.watch(reposProvider).transactions.watchAll(),

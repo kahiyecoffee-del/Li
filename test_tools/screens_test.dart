@@ -142,6 +142,20 @@ void main() {
       await tester.tap(find.text('Yemek').last);
       await pumpUntil(tester, find.text('Tarifler'));
       await _shot(tester, '$mode-food');
+      await tester.binding
+          .handlePopRoute(); // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
+      await pumpUntil(tester, find.text('Rutinler'));
+      await tester.ensureVisible(find.text('Rutinler'));
+      await tester.tap(find.text('Rutinler'));
+      await pumpUntil(tester, find.text('Hazır rutinler'));
+      await _shot(tester, '$mode-routines');
+      await tester.binding
+          .handlePopRoute(); // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
+      await pumpUntil(tester, find.text('Haftalık değerlendirme'));
+      await tester.ensureVisible(find.text('Haftalık değerlendirme'));
+      await tester.tap(find.text('Haftalık değerlendirme'));
+      await pumpUntil(tester, find.text('Gelecek hafta için üç odak'));
+      await _shot(tester, '$mode-review');
       await tearDownApp(tester);
     });
   }

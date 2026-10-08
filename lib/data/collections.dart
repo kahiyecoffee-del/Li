@@ -4,6 +4,7 @@ import '../domain/models/food.dart';
 import '../domain/models/habit.dart';
 import '../domain/models/money_models.dart';
 import '../domain/models/progress.dart';
+import '../domain/models/routine_goal.dart';
 import '../domain/models/saved_item.dart';
 import '../domain/models/task_item.dart';
 import '../domain/models/user_profile.dart';
@@ -32,6 +33,8 @@ abstract final class Collections {
     SavedItem.codec,
     SavingsGoal.codec,
     RecurringBill.codec,
+    Routine.codec,
+    LifeGoal.codec,
   ];
 
   static List<String> get names => all.map((c) => c.collection).toList();

@@ -465,6 +465,141 @@
     }
   },
   "planNow": "Now",
+  "routinesTitle": "Routines",
+  "routinesIntro": "Save the things you do the same way, then add them to a day in one tap.",
+  "routinesMine": "Your routines",
+  "routinesReady": "Ready-made",
+  "routineAddToDay": "Add to a day",
+  "routineAdded": "{count, plural, =1{1 step added to your plan} other{{count} steps added to your plan}}",
+  "@routineAdded": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "routineUse": "Use",
+  "routineNew": "New routine",
+  "routineName": "Routine name",
+  "routineAddStep": "Add a step",
+  "routineStepHint": "e.g. Stretch 10 min",
+  "routineSummary": "{count} steps · {duration}",
+  "@routineSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "routineStartsAt": "Starts {time}",
+  "@routineStartsAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "planAddRoutine": "Routine",
+  "goalsLife": "Goals",
+  "goalsLifeIntro": "A big goal gets easier in small steps. Plan one step at a time.",
+  "goalNew": "New goal",
+  "goalTitleHint": "What do you want to achieve? e.g. English B1",
+  "goalWhy": "Why it matters to you",
+  "goalStepsHint": "Steps, one per line",
+  "goalStepsCount": "{done}/{total} steps",
+  "@goalStepsCount": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "goalPlanStep": "Plan",
+  "goalStepPlanned": "Added to today’s plan",
+  "goalDaysLeft": "{count, plural, =1{1 day left} other{{count} days left}}",
+  "@goalDaysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "goalNextStep": "Next step",
+  "goalArchive": "Archive",
+  "goalAllDone": "Every step done. Well done! 🎉",
+  "reviewTitle": "Weekly review",
+  "reviewIntro": "A calm look back, then three focuses for next week.",
+  "reviewTasks": "{done} of {total} tasks done",
+  "@reviewTasks": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewHabits": "Habits kept {p}%",
+  "@reviewHabits": {
+    "placeholders": {
+      "p": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewSpent": "Spent {amount}",
+  "@reviewSpent": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "reviewMood": "Average mood",
+  "reviewMoreThanLast": "{p}% more than the week before",
+  "@reviewMoreThanLast": {
+    "placeholders": {
+      "p": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewLessThanLast": "{p}% less than the week before",
+  "@reviewLessThanLast": {
+    "placeholders": {
+      "p": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewJournal": "{count, plural, =1{1 journal entry} other{{count} journal entries}}",
+  "@reviewJournal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reviewWins": "Wins of the week",
+  "reviewNoWins": "Small steps count too. Next week starts fresh.",
+  "reviewFocus": "Three focuses for next week",
+  "reviewFocusHint": "e.g. Finish the report",
+  "reviewPlanWeek": "Plan next week",
+  "reviewPlanned": "{count, plural, =1{1 focus planned} other{{count} focuses planned}}",
+  "@reviewPlanned": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "planAlso": "Also on this day",
   "planHabitsCount": "{count, plural, =1{1 habit} other{{count} habits}}",
   "@planHabitsCount": {

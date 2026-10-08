@@ -13,7 +13,9 @@ import '../domain/models/progress.dart';
 import '../domain/models/task_item.dart';
 import '../domain/models/user_profile.dart';
 import '../domain/models/wellbeing.dart';
+import '../domain/models/routine_goal.dart';
 import '../domain/plan/day_timeline.dart';
+import '../domain/plan/routines.dart';
 import '../services/ai/ai_action_executor.dart';
 import '../services/analytics/analytics_service.dart';
 import 'ml_providers.dart';
@@ -170,6 +172,33 @@ class AppActions {
     );
     await saveTask(t, isNew: true);
     return t;
+  }
+
+  // Routines & goals -----------------------------------------------------
+  Future<void> saveRoutine(Routine r) => _repos.routines.save(r);
+
+  Future<void> deleteRoutine(String id) => _repos.routines.delete(id);
+
+  /// Adds the routine's steps to [day] as back-to-back tasks.
+  Future<int> applyRoutine(Routine r, DateTime day, int startMinutes) async {
+    final tasks = routineTasks(r, day, startMinutes, now: _now, newId: newId);
+    for (final t in tasks) {
+      await _repos.tasks.save(t);
+    }
+    unawaited(_analytics.log(AnalyticsEvent.taskCreated, {'source': 'routine', 'count': tasks.length}));
+    return tasks.length;
+  }
+
+  Future<void> saveLifeGoal(LifeGoal g) => _repos.lifeGoals.save(g);
+
+  Future<void> deleteLifeGoal(String id) => _repos.lifeGoals.delete(id);
+
+  /// Turns a goal step into a task on [day] and links it.
+  Future<void> planGoalStep(LifeGoal g, GoalStep step, DateTime day) async {
+    final t = await addQuickTask(QuickTask(step.title), day);
+    await _repos.lifeGoals.save(
+      g.copyWith(steps: [for (final s in g.steps) s.id == step.id ? s.copyWith(taskId: t.id) : s]),
+    );
   }
 
   /// Puts [t] at [start] (keeps its length).

@@ -3,6 +3,7 @@ import '../../domain/models/food.dart';
 import '../../domain/models/habit.dart';
 import '../../domain/models/money_models.dart';
 import '../../domain/models/progress.dart';
+import '../../domain/models/routine_goal.dart';
 import '../../domain/models/saved_item.dart';
 import '../../domain/models/task_item.dart';
 import '../../domain/models/user_profile.dart';
@@ -37,6 +38,8 @@ class UserRepos {
        saved = Repository(store, SavedItem.codec, onLocalWrite: onWrite, clock: clock),
        savingsGoals = Repository(store, SavingsGoal.codec, onLocalWrite: onWrite, clock: clock),
        bills = Repository(store, RecurringBill.codec, onLocalWrite: onWrite, clock: clock),
+       routines = Repository(store, Routine.codec, onLocalWrite: onWrite, clock: clock),
+       lifeGoals = Repository(store, LifeGoal.codec, onLocalWrite: onWrite, clock: clock),
        journal = JournalRepository(Repository(store, JournalEntry.codec, clock: clock), journalKeys);
 
   final Repository<UserProfile> profile;
@@ -58,5 +61,7 @@ class UserRepos {
   final Repository<SavedItem> saved;
   final Repository<SavingsGoal> savingsGoals;
   final Repository<RecurringBill> bills;
+  final Repository<Routine> routines;
+  final Repository<LifeGoal> lifeGoals;
   final JournalRepository journal;
 }

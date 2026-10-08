@@ -20,7 +20,7 @@ enum NotificationKind {
     logSpending || budgetTight => '/money',
     streakAtRisk => '/home',
     moodCheckIn => '/mood',
-    weeklyReview => '/reports/weekly',
+    weeklyReview => '/review',
     planDay => '/ai?topic=plan',
     journal => '/journal/new',
     billDue => '/money?tab=plan',

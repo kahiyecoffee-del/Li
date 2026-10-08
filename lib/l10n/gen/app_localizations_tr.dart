@@ -719,6 +719,156 @@ class AppLocalizationsTr extends AppLocalizations {
   String get planNow => 'Şimdi';
 
   @override
+  String get routinesTitle => 'Rutinler';
+
+  @override
+  String get routinesIntro => 'Hep aynı şekilde yaptığın şeyleri kaydet, sonra bir güne tek dokunuşla ekle.';
+
+  @override
+  String get routinesMine => 'Rutinlerin';
+
+  @override
+  String get routinesReady => 'Hazır rutinler';
+
+  @override
+  String get routineAddToDay => 'Güne ekle';
+
+  @override
+  String routineAdded(int count) {
+    return 'Plana $count adım eklendi';
+  }
+
+  @override
+  String get routineUse => 'Kullan';
+
+  @override
+  String get routineNew => 'Yeni rutin';
+
+  @override
+  String get routineName => 'Rutin adı';
+
+  @override
+  String get routineAddStep => 'Adım ekle';
+
+  @override
+  String get routineStepHint => 'ör. Esneme 10 dk';
+
+  @override
+  String routineSummary(int count, String duration) {
+    return '$count adım · $duration';
+  }
+
+  @override
+  String routineStartsAt(String time) {
+    return '$time başlar';
+  }
+
+  @override
+  String get planAddRoutine => 'Rutin';
+
+  @override
+  String get goalsLife => 'Hedefler';
+
+  @override
+  String get goalsLifeIntro => 'Büyük bir hedef küçük adımlarla kolaylaşır. Her seferinde bir adımı planla.';
+
+  @override
+  String get goalNew => 'Yeni hedef';
+
+  @override
+  String get goalTitleHint => 'Neyi başarmak istiyorsun? ör. İngilizce B1';
+
+  @override
+  String get goalWhy => 'Senin için neden önemli';
+
+  @override
+  String get goalStepsHint => 'Adımlar, her satıra bir tane';
+
+  @override
+  String goalStepsCount(int done, int total) {
+    return '$done/$total adım';
+  }
+
+  @override
+  String get goalPlanStep => 'Planla';
+
+  @override
+  String get goalStepPlanned => 'Bugünün planına eklendi';
+
+  @override
+  String goalDaysLeft(int count) {
+    return '$count gün kaldı';
+  }
+
+  @override
+  String get goalNextStep => 'Sıradaki adım';
+
+  @override
+  String get goalArchive => 'Arşivle';
+
+  @override
+  String get goalAllDone => 'Tüm adımlar tamam. Harikasın! 🎉';
+
+  @override
+  String get reviewTitle => 'Haftalık değerlendirme';
+
+  @override
+  String get reviewIntro => 'Geçen haftaya sakin bir bakış, sonra gelecek hafta için üç odak.';
+
+  @override
+  String reviewTasks(int done, int total) {
+    return '$total görevden $done tamam';
+  }
+
+  @override
+  String reviewHabits(int p) {
+    return 'Alışkanlıklar %$p';
+  }
+
+  @override
+  String reviewSpent(String amount) {
+    return 'Harcama $amount';
+  }
+
+  @override
+  String get reviewMood => 'Ortalama ruh hali';
+
+  @override
+  String reviewMoreThanLast(int p) {
+    return 'Önceki haftaya göre %$p fazla';
+  }
+
+  @override
+  String reviewLessThanLast(int p) {
+    return 'Önceki haftaya göre %$p az';
+  }
+
+  @override
+  String reviewJournal(int count) {
+    return '$count günlük yazısı';
+  }
+
+  @override
+  String get reviewWins => 'Haftanın kazanımları';
+
+  @override
+  String get reviewNoWins => 'Küçük adımlar da sayılır. Yeni hafta yepyeni başlıyor.';
+
+  @override
+  String get reviewFocus => 'Gelecek hafta için üç odak';
+
+  @override
+  String get reviewFocusHint => 'ör. Raporu bitir';
+
+  @override
+  String get reviewPlanWeek => 'Gelecek haftayı planla';
+
+  @override
+  String reviewPlanned(int count) {
+    return '$count odak planlandı';
+  }
+
+  @override
   String get planAlso => 'Bu gün ayrıca';
 
   @override

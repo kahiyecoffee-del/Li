@@ -15,6 +15,9 @@ import '../features/life/journal_read_screen.dart';
 import '../features/life/achievements_screen.dart';
 import '../features/life/food_screen.dart';
 import '../features/life/recipe_screen.dart';
+import '../features/goals/goals_screen.dart';
+import '../features/plan/routines_screen.dart';
+import '../features/review/weekly_review_screen.dart';
 import '../domain/models/food.dart';
 import '../features/life/habits_screen.dart';
 import '../features/life/journal_screen.dart';
@@ -209,6 +212,13 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: Routes.weekly, builder: (_, _) => const ReportScreen(monthly: false)),
       GoRoute(path: Routes.monthly, builder: (_, _) => const ReportScreen(monthly: true)),
       GoRoute(path: Routes.habits, builder: (_, _) => const HabitsScreen()),
+      GoRoute(path: '/routines', builder: (_, _) => const RoutinesScreen()),
+      GoRoute(path: '/goals', builder: (_, _) => const GoalsScreen()),
+      GoRoute(
+        path: '/goals/:id',
+        builder: (_, s) => GoalDetailScreen(id: s.pathParameters['id']!),
+      ),
+      GoRoute(path: '/review', builder: (_, _) => const WeeklyReviewScreen()),
       GoRoute(path: Routes.mood, builder: (_, _) => const MoodScreen()),
       GoRoute(path: Routes.journal, builder: (_, _) => const JournalScreen()),
       GoRoute(

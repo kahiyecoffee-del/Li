@@ -154,6 +154,64 @@ void main() {
     await tearDownApp(tester);
   });
 
+  testWidgets('Routines, goals and the weekly review all feed the plan', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded()))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    final repos = app.seededRepos;
+
+    // Routine: use a ready-made one, add it to today at its usual time.
+    await openExploreTile(tester, 'Routines');
+    await pumpUntil(tester, find.text('Morning routine'));
+    await tester.tap(find.text('Use').first);
+    await pumpUntil(tester, find.text('Add to a day'));
+    await tester.tap(find.text('Add to a day').first);
+    await pumpUntil(tester, find.text('When, and for how long?'));
+    await tester.tap(find.text('OK').last);
+    await pumpUntil(tester, find.textContaining('steps added to your plan'));
+    var tasks = (await tester.runAsync(() => repos.tasks.getAll()))!;
+    expect(tasks.map((t) => t.title), contains('Drink a glass of water'));
+    expect(tasks.length, 5);
+    await tester.binding.handlePopRoute();
+    await pumpUntil(tester, find.text('Explore'));
+
+    // Goal: steps from lines, then plan one step.
+    await openExploreTile(tester, 'Goals');
+    await pumpUntil(tester, find.text('New goal'));
+    await tester.tap(find.text('New goal').last);
+    await pumpUntil(tester, find.text('Why it matters to you'));
+    await tester.enterText(find.byType(TextField).at(0), 'English B1');
+    await tester.enterText(find.byType(TextField).at(2), 'Placement test\nBook a course');
+    await tester.ensureVisible(find.text('Save'));
+    await tester.tap(find.text('Save'));
+    await pumpUntil(tester, find.text('English B1'));
+    await tester.tap(find.text('English B1'));
+    await pumpUntil(tester, find.text('Placement test'));
+    await tester.tap(find.text('Plan').first);
+    await pumpUntil(tester, find.text('Added to today’s plan'));
+    tasks = (await tester.runAsync(() => repos.tasks.getAll()))!;
+    expect(tasks.map((t) => t.title), contains('Placement test'));
+    final goal = (await tester.runAsync(() => repos.lifeGoals.getAll()))!.single;
+    expect(goal.steps.first.taskId, isNotNull);
+    await tester.binding.handlePopRoute();
+    await tester.pump(const Duration(milliseconds: 500));
+    await tester.binding.handlePopRoute();
+    await pumpUntil(tester, find.text('Explore'));
+
+    // Weekly review: one focus, placed on a day of next week.
+    await openExploreTile(tester, 'Weekly review');
+    await pumpUntil(tester, find.text('Three focuses for next week'));
+    await tester.enterText(find.byKey(const Key('focus-0')), 'finish the report');
+    await scrollAndTap(tester, find.text('Plan next week'));
+    await pumpUntil(tester, find.text('1 focus planned'));
+    tasks = (await tester.runAsync(() => repos.tasks.getAll()))!;
+    final report = tasks.firstWhere((t) => t.title == 'Finish the report');
+    final tomorrow = DateTime.now().add(const Duration(days: 1));
+    expect(report.deadline, DateTime(tomorrow.year, tomorrow.month, tomorrow.day));
+    await tearDownApp(tester);
+  });
+
   testWidgets('AI: proposed action needs confirmation, then creates the task', (tester) async {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded()))!;
@@ -571,6 +629,9 @@ Future<void> openExploreTile(WidgetTester tester, String label) async {
   await tester.tap(find.text('Explore').last);
   await pumpUntil(tester, find.text(label));
   await tester.scrollUntilVisible(find.text(label).last, 200, scrollable: find.byType(Scrollable).first);
+  // Bring it to the top: the floating tab bar covers the bottom edge.
+  await tester.ensureVisible(find.text(label).last);
+  await tester.pump(const Duration(milliseconds: 300));
   await tester.tap(find.text(label).last);
 }
 

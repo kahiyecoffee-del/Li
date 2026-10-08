@@ -721,6 +721,175 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planNow => 'Now';
 
   @override
+  String get routinesTitle => 'Routines';
+
+  @override
+  String get routinesIntro => 'Save the things you do the same way, then add them to a day in one tap.';
+
+  @override
+  String get routinesMine => 'Your routines';
+
+  @override
+  String get routinesReady => 'Ready-made';
+
+  @override
+  String get routineAddToDay => 'Add to a day';
+
+  @override
+  String routineAdded(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count steps added to your plan',
+      one: '1 step added to your plan',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get routineUse => 'Use';
+
+  @override
+  String get routineNew => 'New routine';
+
+  @override
+  String get routineName => 'Routine name';
+
+  @override
+  String get routineAddStep => 'Add a step';
+
+  @override
+  String get routineStepHint => 'e.g. Stretch 10 min';
+
+  @override
+  String routineSummary(int count, String duration) {
+    return '$count steps · $duration';
+  }
+
+  @override
+  String routineStartsAt(String time) {
+    return 'Starts $time';
+  }
+
+  @override
+  String get planAddRoutine => 'Routine';
+
+  @override
+  String get goalsLife => 'Goals';
+
+  @override
+  String get goalsLifeIntro => 'A big goal gets easier in small steps. Plan one step at a time.';
+
+  @override
+  String get goalNew => 'New goal';
+
+  @override
+  String get goalTitleHint => 'What do you want to achieve? e.g. English B1';
+
+  @override
+  String get goalWhy => 'Why it matters to you';
+
+  @override
+  String get goalStepsHint => 'Steps, one per line';
+
+  @override
+  String goalStepsCount(int done, int total) {
+    return '$done/$total steps';
+  }
+
+  @override
+  String get goalPlanStep => 'Plan';
+
+  @override
+  String get goalStepPlanned => 'Added to today’s plan';
+
+  @override
+  String goalDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count days left', one: '1 day left');
+    return '$_temp0';
+  }
+
+  @override
+  String get goalNextStep => 'Next step';
+
+  @override
+  String get goalArchive => 'Archive';
+
+  @override
+  String get goalAllDone => 'Every step done. Well done! 🎉';
+
+  @override
+  String get reviewTitle => 'Weekly review';
+
+  @override
+  String get reviewIntro => 'A calm look back, then three focuses for next week.';
+
+  @override
+  String reviewTasks(int done, int total) {
+    return '$done of $total tasks done';
+  }
+
+  @override
+  String reviewHabits(int p) {
+    return 'Habits kept $p%';
+  }
+
+  @override
+  String reviewSpent(String amount) {
+    return 'Spent $amount';
+  }
+
+  @override
+  String get reviewMood => 'Average mood';
+
+  @override
+  String reviewMoreThanLast(int p) {
+    return '$p% more than the week before';
+  }
+
+  @override
+  String reviewLessThanLast(int p) {
+    return '$p% less than the week before';
+  }
+
+  @override
+  String reviewJournal(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count journal entries',
+      one: '1 journal entry',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reviewWins => 'Wins of the week';
+
+  @override
+  String get reviewNoWins => 'Small steps count too. Next week starts fresh.';
+
+  @override
+  String get reviewFocus => 'Three focuses for next week';
+
+  @override
+  String get reviewFocusHint => 'e.g. Finish the report';
+
+  @override
+  String get reviewPlanWeek => 'Plan next week';
+
+  @override
+  String reviewPlanned(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count focuses planned',
+      one: '1 focus planned',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get planAlso => 'Also on this day';
 
   @override

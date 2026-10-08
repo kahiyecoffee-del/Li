@@ -1358,6 +1358,258 @@ abstract class AppLocalizations {
   /// **'Now'**
   String get planNow;
 
+  /// No description provided for @routinesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Routines'**
+  String get routinesTitle;
+
+  /// No description provided for @routinesIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Save the things you do the same way, then add them to a day in one tap.'**
+  String get routinesIntro;
+
+  /// No description provided for @routinesMine.
+  ///
+  /// In en, this message translates to:
+  /// **'Your routines'**
+  String get routinesMine;
+
+  /// No description provided for @routinesReady.
+  ///
+  /// In en, this message translates to:
+  /// **'Ready-made'**
+  String get routinesReady;
+
+  /// No description provided for @routineAddToDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to a day'**
+  String get routineAddToDay;
+
+  /// No description provided for @routineAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 step added to your plan} other{{count} steps added to your plan}}'**
+  String routineAdded(int count);
+
+  /// No description provided for @routineUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Use'**
+  String get routineUse;
+
+  /// No description provided for @routineNew.
+  ///
+  /// In en, this message translates to:
+  /// **'New routine'**
+  String get routineNew;
+
+  /// No description provided for @routineName.
+  ///
+  /// In en, this message translates to:
+  /// **'Routine name'**
+  String get routineName;
+
+  /// No description provided for @routineAddStep.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a step'**
+  String get routineAddStep;
+
+  /// No description provided for @routineStepHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. Stretch 10 min'**
+  String get routineStepHint;
+
+  /// No description provided for @routineSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} steps · {duration}'**
+  String routineSummary(int count, String duration);
+
+  /// No description provided for @routineStartsAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Starts {time}'**
+  String routineStartsAt(String time);
+
+  /// No description provided for @planAddRoutine.
+  ///
+  /// In en, this message translates to:
+  /// **'Routine'**
+  String get planAddRoutine;
+
+  /// No description provided for @goalsLife.
+  ///
+  /// In en, this message translates to:
+  /// **'Goals'**
+  String get goalsLife;
+
+  /// No description provided for @goalsLifeIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'A big goal gets easier in small steps. Plan one step at a time.'**
+  String get goalsLifeIntro;
+
+  /// No description provided for @goalNew.
+  ///
+  /// In en, this message translates to:
+  /// **'New goal'**
+  String get goalNew;
+
+  /// No description provided for @goalTitleHint.
+  ///
+  /// In en, this message translates to:
+  /// **'What do you want to achieve? e.g. English B1'**
+  String get goalTitleHint;
+
+  /// No description provided for @goalWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'Why it matters to you'**
+  String get goalWhy;
+
+  /// No description provided for @goalStepsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Steps, one per line'**
+  String get goalStepsHint;
+
+  /// No description provided for @goalStepsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{done}/{total} steps'**
+  String goalStepsCount(int done, int total);
+
+  /// No description provided for @goalPlanStep.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan'**
+  String get goalPlanStep;
+
+  /// No description provided for @goalStepPlanned.
+  ///
+  /// In en, this message translates to:
+  /// **'Added to today’s plan'**
+  String get goalStepPlanned;
+
+  /// No description provided for @goalDaysLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 day left} other{{count} days left}}'**
+  String goalDaysLeft(int count);
+
+  /// No description provided for @goalNextStep.
+  ///
+  /// In en, this message translates to:
+  /// **'Next step'**
+  String get goalNextStep;
+
+  /// No description provided for @goalArchive.
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get goalArchive;
+
+  /// No description provided for @goalAllDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Every step done. Well done! 🎉'**
+  String get goalAllDone;
+
+  /// No description provided for @reviewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly review'**
+  String get reviewTitle;
+
+  /// No description provided for @reviewIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'A calm look back, then three focuses for next week.'**
+  String get reviewIntro;
+
+  /// No description provided for @reviewTasks.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {total} tasks done'**
+  String reviewTasks(int done, int total);
+
+  /// No description provided for @reviewHabits.
+  ///
+  /// In en, this message translates to:
+  /// **'Habits kept {p}%'**
+  String reviewHabits(int p);
+
+  /// No description provided for @reviewSpent.
+  ///
+  /// In en, this message translates to:
+  /// **'Spent {amount}'**
+  String reviewSpent(String amount);
+
+  /// No description provided for @reviewMood.
+  ///
+  /// In en, this message translates to:
+  /// **'Average mood'**
+  String get reviewMood;
+
+  /// No description provided for @reviewMoreThanLast.
+  ///
+  /// In en, this message translates to:
+  /// **'{p}% more than the week before'**
+  String reviewMoreThanLast(int p);
+
+  /// No description provided for @reviewLessThanLast.
+  ///
+  /// In en, this message translates to:
+  /// **'{p}% less than the week before'**
+  String reviewLessThanLast(int p);
+
+  /// No description provided for @reviewJournal.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 journal entry} other{{count} journal entries}}'**
+  String reviewJournal(int count);
+
+  /// No description provided for @reviewWins.
+  ///
+  /// In en, this message translates to:
+  /// **'Wins of the week'**
+  String get reviewWins;
+
+  /// No description provided for @reviewNoWins.
+  ///
+  /// In en, this message translates to:
+  /// **'Small steps count too. Next week starts fresh.'**
+  String get reviewNoWins;
+
+  /// No description provided for @reviewFocus.
+  ///
+  /// In en, this message translates to:
+  /// **'Three focuses for next week'**
+  String get reviewFocus;
+
+  /// No description provided for @reviewFocusHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. Finish the report'**
+  String get reviewFocusHint;
+
+  /// No description provided for @reviewPlanWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan next week'**
+  String get reviewPlanWeek;
+
+  /// No description provided for @reviewPlanned.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 focus planned} other{{count} focuses planned}}'**
+  String reviewPlanned(int count);
+
   /// No description provided for @planAlso.
   ///
   /// In en, this message translates to:

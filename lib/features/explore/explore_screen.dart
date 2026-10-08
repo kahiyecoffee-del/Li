@@ -28,6 +28,9 @@ class ExploreScreen extends ConsumerWidget {
       (Icons.edit_note_rounded, l.quickWrite, '/ai?topic=write', null, Accent.ai),
       (Icons.event_available_rounded, l.quickPlan, '/plan', null, Accent.plan),
       (Icons.wb_sunny_rounded, l.exploreMyDay, '/today', null, Accent.goals),
+      (Icons.auto_mode_rounded, l.routinesTitle, '/routines', null, Accent.wellbeing),
+      (Icons.flag_rounded, l.goalsLife, '/goals', null, Accent.goals),
+      (Icons.event_repeat_rounded, l.reviewTitle, '/review', null, Accent.insight),
     ];
     final tiles = <(IconData, String, String, String?, Accent)>[
       (Icons.account_balance_wallet_rounded, l.navMoney, '/money', null, Accent.money),

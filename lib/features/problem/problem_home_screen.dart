@@ -102,6 +102,29 @@ class HomeScreen extends ConsumerWidget {
               const QuickCaptureCard(),
               const SizedBox(height: Space.md),
               const TodayFlowCard(),
+              // Sundays: invite the weekly review.
+              if (DateTime.now().weekday == DateTime.sunday) ...[
+                const SizedBox(height: Space.md),
+                AppCard(
+                  onTap: () => context.push('/review'),
+                  child: Row(
+                    children: [
+                      const IconBubble(icon: Icons.event_repeat_rounded, accent: Accent.insight),
+                      const SizedBox(width: Space.md),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(l.reviewTitle, style: context.text.titleMedium),
+                            Text(l.reviewIntro, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
+                          ],
+                        ),
+                      ),
+                      const Icon(Icons.chevron_right_rounded),
+                    ],
+                  ),
+                ),
+              ],
               if (advice.length > 1) ...[
                 const SizedBox(height: Space.xl),
                 SectionTitle(

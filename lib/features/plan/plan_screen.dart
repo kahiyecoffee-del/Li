@@ -23,6 +23,7 @@ import '../../domain/models/task_item.dart';
 import '../../domain/plan/day_timeline.dart';
 import '../../l10n/gen/app_localizations.dart';
 import '../shell/main_shell.dart';
+import 'routines_screen.dart';
 import 'task_editor.dart';
 import 'time_picker_sheet.dart';
 
@@ -177,6 +178,7 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
         },
         onClearTime: () => setState(() => _choice = null),
         onSubmit: () => _quickAdd(day),
+        onRoutine: () => pickRoutineForDay(context, ref, day),
         onDetails: () =>
             showTaskEditor(context, day: day, title: _input.text.trim().isEmpty ? null : _input.text.trim()),
       ),
@@ -948,6 +950,7 @@ class _Composer extends StatelessWidget {
     required this.onClearTime,
     required this.onSubmit,
     required this.onDetails,
+    required this.onRoutine,
   });
   final TextEditingController controller;
   final FocusNode focus;
@@ -956,6 +959,7 @@ class _Composer extends StatelessWidget {
   final VoidCallback onClearTime;
   final VoidCallback onSubmit;
   final VoidCallback onDetails;
+  final VoidCallback onRoutine;
 
   @override
   Widget build(BuildContext context) {
@@ -1049,6 +1053,15 @@ class _Composer extends StatelessWidget {
                             style: context.text.labelMedium?.copyWith(color: context.semantic.muted),
                           ),
                           onPressed: onDetails,
+                        ),
+                        ActionChip(
+                          key: const Key('composer-routine'),
+                          avatar: Icon(Icons.auto_mode_rounded, size: 18, color: context.semantic.muted),
+                          label: Text(
+                            l.planAddRoutine,
+                            style: context.text.labelMedium?.copyWith(color: context.semantic.muted),
+                          ),
+                          onPressed: onRoutine,
                         ),
                       ],
                     ),
