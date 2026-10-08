@@ -90,6 +90,7 @@ class HomeScreen extends ConsumerWidget {
                 ),
               ),
               const SizedBox(height: Space.lg),
+              const StreakSaverCard(),
               const QuickCaptureCard(),
               const SizedBox(height: Space.md),
               const TodayFlowCard(),

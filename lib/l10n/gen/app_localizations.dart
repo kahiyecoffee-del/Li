@@ -4910,6 +4910,72 @@ abstract class AppLocalizations {
   /// **'Two minutes with Lio and your day has a plan.'**
   String get notifPlanBody;
 
+  /// No description provided for @notifBriefTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Good morning! 1 thing today} other{Good morning! {count} things today}}'**
+  String notifBriefTitle(int count);
+
+  /// No description provided for @notifBriefFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'First: {task}'**
+  String notifBriefFirst(String task);
+
+  /// No description provided for @notifBriefSpend.
+  ///
+  /// In en, this message translates to:
+  /// **'you can spend {amount}'**
+  String notifBriefSpend(String amount);
+
+  /// No description provided for @notifCloseTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Close the day'**
+  String get notifCloseTitle;
+
+  /// No description provided for @notifCloseBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 task is still open. One minute and tomorrow is ready.} other{{count} tasks are still open. One minute and tomorrow is ready.}}'**
+  String notifCloseBody(int count);
+
+  /// No description provided for @streakSaveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Save your {count}-day streak'**
+  String streakSaveTitle(int count);
+
+  /// No description provided for @streakSaveBody.
+  ///
+  /// In en, this message translates to:
+  /// **'You took yesterday off. Watch a short ad and Lio freezes that day for you (once a week).'**
+  String get streakSaveBody;
+
+  /// No description provided for @streakSaveBodyPremium.
+  ///
+  /// In en, this message translates to:
+  /// **'You took yesterday off. Lio can freeze that day for you (once a week).'**
+  String get streakSaveBodyPremium;
+
+  /// No description provided for @streakSaveWatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch and save'**
+  String get streakSaveWatch;
+
+  /// No description provided for @streakSaveFree.
+  ///
+  /// In en, this message translates to:
+  /// **'Save it'**
+  String get streakSaveFree;
+
+  /// No description provided for @streakSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Streak saved: {count} days'**
+  String streakSaved(int count);
+
   /// No description provided for @notifJournalTitle.
   ///
   /// In en, this message translates to:

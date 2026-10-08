@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:lifeos/core/utils/dates.dart';
 import 'package:lifeos/services/calendar/calendar_service.dart';
 import 'package:lifeos/domain/models/enums.dart';
+import 'package:lifeos/domain/models/money_models.dart';
 import 'package:lifeos/domain/models/task_item.dart';
 import 'package:lifeos/services/analytics/analytics_service.dart';
 
@@ -387,6 +388,33 @@ void main() {
     await pumpUntil(tester, find.textContaining('nothing overlaps now'));
     final tasks = (await tester.runAsync(() => app.seededRepos.tasks.getAll()))!;
     expect(tasks.firstWhere((t) => t.title == 'Call bank').scheduledAt, tomorrow.add(const Duration(hours: 11)));
+    await tearDownApp(tester);
+  });
+
+  testWidgets('Home offers to save a streak after a day off', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+    final today = Dates.dateOnly(DateTime.now());
+    await tester.runAsync(() async {
+      for (final back in [2, 3, 4]) {
+        final d = Dates.addDays(today, -back).add(const Duration(hours: 12));
+        await app.seededRepos.transactions.save(
+          MoneyTransaction(
+            id: 'tx$back',
+            updatedAt: d,
+            type: TransactionType.expense,
+            amountMinor: 5000,
+            currency: 'TRY',
+            category: ExpenseCategory.food,
+            date: d,
+          ),
+        );
+      }
+    });
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.byKey(const Key('streak-saver')));
+    expect(find.text('Save your 4-day streak'), findsOneWidget);
+    expect(find.text('Watch and save'), findsOneWidget);
     await tearDownApp(tester);
   });
 

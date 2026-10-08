@@ -164,7 +164,10 @@ final routerProvider = Provider<GoRouter>((ref) {
           ),
         ],
       ),
-      GoRoute(path: Routes.plan, builder: (_, _) => const PlanScreen()),
+      GoRoute(
+        path: Routes.plan,
+        builder: (_, s) => PlanScreen(closeDay: s.uri.queryParameters['close'] == '1'),
+      ),
       GoRoute(path: Routes.today, builder: (_, _) => const TodayScreen()),
       GoRoute(
         path: Routes.solve,

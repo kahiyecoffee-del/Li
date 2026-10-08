@@ -59,7 +59,45 @@ final activeDaysProvider = Provider<Set<String>>((ref) {
   for (final g in ref.watch(goalsRecordsProvider).list) {
     if (g.completedGoalIds.isNotEmpty) days.add(g.id);
   }
-  return days;
+  return days..addAll(ref.watch(frozenDaysProvider));
+});
+
+/// Days the user "froze" to keep a streak alive (kept on the device).
+class FrozenDays extends Notifier<Set<String>> {
+  static const _key = 'streak_frozen', _lastKey = 'streak_frozen_at';
+
+  @override
+  Set<String> build() => {...?ref.watch(servicesProvider).prefs.getStringList(_key)};
+
+  /// When the last freeze was used (one per week).
+  DateTime? get lastUsed {
+    final v = ref.read(servicesProvider).prefs.getString(_lastKey);
+    return v == null ? null : Dates.parseDayKey(v);
+  }
+
+  Future<void> freeze(DateTime day, {required DateTime today}) async {
+    final prefs = ref.read(servicesProvider).prefs;
+    state = {...state, Dates.dayKey(day)};
+    await prefs.setStringList(_key, state.toList());
+    await prefs.setString(_lastKey, Dates.dayKey(today));
+  }
+}
+
+final frozenDaysProvider = NotifierProvider<FrozenDays, Set<String>>(FrozenDays.new);
+
+/// The streak (in days) that freezing yesterday would save, or null when
+/// there is nothing to save: yesterday was active, the day before was not,
+/// the run is under two days, or a freeze was used in the last 7 days.
+final streakSaverProvider = Provider<int?>((ref) {
+  final today = ref.watch(todayProvider);
+  final active = ref.watch(activeDaysProvider);
+  final yesterday = Dates.addDays(today, -1);
+  if (active.contains(Dates.dayKey(yesterday))) return null;
+  if (!active.contains(Dates.dayKey(Dates.addDays(today, -2)))) return null;
+  final last = ref.read(frozenDaysProvider.notifier).lastUsed;
+  if (last != null && Dates.daysBetween(last, today) < 7) return null;
+  final saved = const StreakCalculator().compute({...active, Dates.dayKey(yesterday)}, today).current;
+  return saved >= 2 ? saved : null;
 });
 
 final streakProvider = Provider<StreakInfo>(

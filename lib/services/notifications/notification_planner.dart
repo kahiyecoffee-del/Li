@@ -12,7 +12,9 @@ enum NotificationKind {
   weeklyReview,
   planDay,
   journal,
-  billDue;
+  billDue,
+  morningBrief,
+  closeDay;
 
   /// Where tapping the notification takes the user.
   String get route => switch (this) {
@@ -24,6 +26,8 @@ enum NotificationKind {
     planDay => '/ai?topic=plan',
     journal => '/journal/new',
     billDue => '/money?tab=plan',
+    morningBrief => '/plan',
+    closeDay => '/plan?close=1',
   };
 }
 
@@ -35,6 +39,8 @@ class PlannedNotification {
     this.title = '',
     this.leadMinutes = 30,
     this.taskId,
+    this.count = 0,
+    this.extra,
   });
 
   /// Stable id so re-planning replaces instead of duplicating.
@@ -50,6 +56,12 @@ class PlannedNotification {
 
   /// The task a reminder is about (for its "Done" action).
   final String? taskId;
+
+  /// Morning brief / close the day: how many tasks the day holds (open).
+  final int count;
+
+  /// Morning brief: what is left to spend today, already formatted.
+  final String? extra;
 }
 
 /// Default quiet hours when the user has not set a routine.
@@ -74,6 +86,7 @@ class NotificationState {
     this.journaledToday = false,
     this.journalReminder = true,
     this.planReminder = true,
+    this.spendToday,
     this.quietStart = defaultQuietStart,
     this.quietEnd = defaultQuietEnd,
   });
@@ -100,6 +113,9 @@ class NotificationState {
   /// User settings for the daily journal and morning plan reminders.
   final bool journalReminder;
   final bool planReminder;
+
+  /// Today's safe-to-spend, formatted, for the morning brief.
+  final String? spendToday;
 
   /// Nothing is scheduled between [quietStart] and [quietEnd] (except
   /// reminders for tasks the user scheduled in that window themselves).
@@ -185,13 +201,53 @@ class NotificationPlanner {
     for (final (index, d) in [today, tomorrow].indexed) {
       final isToday = index == 0;
       final day = <PlannedNotification>[];
-      if (s.currentStreak >= 2 && (!isToday || !s.activeToday)) {
+      final open =
+          s.upcomingTasks
+              .where((t) => !t.deleted && !t.isCompleted && t.anchorDate != null && Dates.sameDay(t.anchorDate!, d))
+              .toList()
+            ..sort((a, b) => (a.scheduledAt ?? d).compareTo(b.scheduledAt ?? d));
+      // Close the day two hours before bed (19:00–22:00) while tasks are
+      // open; it replaces the streak nudge that evening.
+      final closing = open.isNotEmpty;
+      if (!closing && s.currentStreak >= 2 && (!isToday || !s.activeToday)) {
         day.add(PlannedNotification(id: 20 + index, kind: NotificationKind.streakAtRisk, at: _at(d, 21, 0)));
       }
-      if (s.planReminder && (!isToday || !s.hasPlanToday)) {
-        // 45 minutes after the user's wake time.
-        final wake = s.quietEnd.minutes + 45;
-        day.add(PlannedNotification(id: 60 + index, kind: NotificationKind.planDay, at: _at(d, wake ~/ 60, wake % 60)));
+      if (s.planReminder) {
+        if (open.isNotEmpty) {
+          // Morning brief, 15 minutes after waking: the day at a glance.
+          final at = s.quietEnd.minutes + 15;
+          final first = open.firstWhere((t) => t.scheduledAt != null, orElse: () => open.first);
+          final when = first.scheduledAt;
+          day.add(
+            PlannedNotification(
+              id: 60 + index,
+              kind: NotificationKind.morningBrief,
+              at: _at(d, at ~/ 60, at % 60),
+              count: open.length,
+              title: when == null
+                  ? first.title
+                  : '${when.hour.toString().padLeft(2, '0')}:${when.minute.toString().padLeft(2, '0')} ${first.title}',
+              extra: isToday ? s.spendToday : null,
+            ),
+          );
+        } else if (!isToday || !s.hasPlanToday) {
+          // 45 minutes after the user's wake time.
+          final wake = s.quietEnd.minutes + 45;
+          day.add(
+            PlannedNotification(id: 60 + index, kind: NotificationKind.planDay, at: _at(d, wake ~/ 60, wake % 60)),
+          );
+        }
+      }
+      if (closing) {
+        final m = (s.quietStart.minutes - 120).clamp(19 * 60, 22 * 60);
+        day.add(
+          PlannedNotification(
+            id: 80 + index,
+            kind: NotificationKind.closeDay,
+            at: _at(d, m ~/ 60, m % 60),
+            count: open.length,
+          ),
+        );
       }
       if (s.journalReminder && (!isToday || !s.journaledToday)) {
         day.add(PlannedNotification(id: 70 + index, kind: NotificationKind.journal, at: _at(d, 21, 15)));

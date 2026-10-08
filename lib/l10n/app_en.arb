@@ -1805,6 +1805,59 @@
   "notifMoodBody": "How are you feeling today?",
   "notifPlanTitle": "Good morning ☀️",
   "notifPlanBody": "Two minutes with Lio and your day has a plan.",
+  "notifBriefTitle": "{count, plural, =1{Good morning! 1 thing today} other{Good morning! {count} things today}}",
+  "@notifBriefTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "notifBriefFirst": "First: {task}",
+  "@notifBriefFirst": {
+    "placeholders": {
+      "task": {
+        "type": "String"
+      }
+    }
+  },
+  "notifBriefSpend": "you can spend {amount}",
+  "@notifBriefSpend": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "notifCloseTitle": "Close the day",
+  "notifCloseBody": "{count, plural, =1{1 task is still open. One minute and tomorrow is ready.} other{{count} tasks are still open. One minute and tomorrow is ready.}}",
+  "@notifCloseBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "streakSaveTitle": "Save your {count}-day streak",
+  "@streakSaveTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "streakSaveBody": "You took yesterday off. Watch a short ad and Lio freezes that day for you (once a week).",
+  "streakSaveBodyPremium": "You took yesterday off. Lio can freeze that day for you (once a week).",
+  "streakSaveWatch": "Watch and save",
+  "streakSaveFree": "Save it",
+  "streakSaved": "Streak saved: {count} days",
+  "@streakSaved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "notifJournalTitle": "Your journal",
   "notifJournalBody": "How was today? A few lines are enough.",
   "journalReminderSetting": "Evening journal reminder",

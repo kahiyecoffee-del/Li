@@ -104,5 +104,7 @@
 	<string>Dayly shows your calendar events on the planner so tasks don't overlap them. Nothing is changed or uploaded.</string>
 	<key>NSCalendarsFullAccessUsageDescription</key>
 	<string>Dayly shows your calendar events on the planner so tasks don't overlap them. Nothing is changed or uploaded.</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Lets Dayly show ads that fit you better. Dayly stays free either way; your plans, money and journal are never used for ads.</string>
 </dict>
 </plist>

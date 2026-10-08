@@ -170,11 +170,11 @@ void main() {
     await pumpUntil(tester, find.byKey(const Key('plan-composer')));
     final composer = find.descendant(of: find.byKey(const Key('plan-composer')), matching: find.byType(TextField));
     await tester.showKeyboard(composer);
-    await tester.enterText(composer, '18:30 spor 45 dk');
+    await tester.enterText(composer, '20:00 spor 45 dk');
     await tester.pump();
     // Submit the way the keyboard would, without the IME round trip (the
     // emulator's keyboard drops it).
-    tester.widget<TextField>(composer).onSubmitted!('18:30 spor 45 dk');
+    tester.widget<TextField>(composer).onSubmitted!('20:00 spor 45 dk');
     await pumpUntil(tester, find.textContaining('Spor'));
     FocusManager.instance.primaryFocus?.unfocus();
     for (var i = 0; i < 10; i++) {

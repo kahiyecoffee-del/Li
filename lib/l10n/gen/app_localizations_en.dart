@@ -2796,6 +2796,64 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notifPlanBody => 'Two minutes with Lio and your day has a plan.';
 
   @override
+  String notifBriefTitle(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Good morning! $count things today',
+      one: 'Good morning! 1 thing today',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String notifBriefFirst(String task) {
+    return 'First: $task';
+  }
+
+  @override
+  String notifBriefSpend(String amount) {
+    return 'you can spend $amount';
+  }
+
+  @override
+  String get notifCloseTitle => 'Close the day';
+
+  @override
+  String notifCloseBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count tasks are still open. One minute and tomorrow is ready.',
+      one: '1 task is still open. One minute and tomorrow is ready.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String streakSaveTitle(int count) {
+    return 'Save your $count-day streak';
+  }
+
+  @override
+  String get streakSaveBody =>
+      'You took yesterday off. Watch a short ad and Lio freezes that day for you (once a week).';
+
+  @override
+  String get streakSaveBodyPremium => 'You took yesterday off. Lio can freeze that day for you (once a week).';
+
+  @override
+  String get streakSaveWatch => 'Watch and save';
+
+  @override
+  String get streakSaveFree => 'Save it';
+
+  @override
+  String streakSaved(int count) {
+    return 'Streak saved: $count days';
+  }
+
+  @override
   String get notifJournalTitle => 'Your journal';
 
   @override

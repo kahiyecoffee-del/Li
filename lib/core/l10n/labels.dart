@@ -270,6 +270,11 @@ extension Labels on AppLocalizations {
     NotificationKind.planDay => (title: notifPlanTitle, body: notifPlanBody),
     NotificationKind.journal => (title: notifJournalTitle, body: notifJournalBody),
     NotificationKind.billDue => (title: notifBillTitle, body: notifBillBody(n.title)),
+    NotificationKind.morningBrief => (
+      title: notifBriefTitle(n.count),
+      body: [notifBriefFirst(n.title), if (n.extra != null) notifBriefSpend(n.extra!)].join(' · '),
+    ),
+    NotificationKind.closeDay => (title: notifCloseTitle, body: notifCloseBody(n.count)),
   };
 
   /// Friendly message for any error; raw exceptions are never displayed.

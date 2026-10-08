@@ -23,6 +23,10 @@ class _NamedEn extends AppLocalizationsEn {
   @override
   String get notifPlanBody => _r(super.notifPlanBody);
   @override
+  String get streakSaveBody => _r(super.streakSaveBody);
+  @override
+  String get streakSaveBodyPremium => _r(super.streakSaveBodyPremium);
+  @override
   String get lioLearnsSetting => _r(super.lioLearnsSetting);
   @override
   String get lioLearnsHelp => _r(super.lioLearnsHelp);
@@ -72,6 +76,10 @@ class _NamedTr extends AppLocalizationsTr {
   String get foodWeekIntro => _r(super.foodWeekIntro);
   @override
   String get notifPlanBody => _r(super.notifPlanBody);
+  @override
+  String get streakSaveBody => _r(super.streakSaveBody);
+  @override
+  String get streakSaveBodyPremium => _r(super.streakSaveBodyPremium);
   @override
   String get lioLearnsSetting => _r(super.lioLearnsSetting);
   @override

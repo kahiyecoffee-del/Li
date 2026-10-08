@@ -2730,6 +2730,51 @@ class AppLocalizationsTr extends AppLocalizations {
   String get notifPlanBody => 'Lio ile 2 dakika, günün planlansın.';
 
   @override
+  String notifBriefTitle(int count) {
+    return 'Günaydın! Bugün $count işin var';
+  }
+
+  @override
+  String notifBriefFirst(String task) {
+    return 'İlk: $task';
+  }
+
+  @override
+  String notifBriefSpend(String amount) {
+    return 'harcayabileceğin $amount';
+  }
+
+  @override
+  String get notifCloseTitle => 'Günü kapat';
+
+  @override
+  String notifCloseBody(int count) {
+    return '$count iş açık kaldı. 1 dakikada günü kapat, yarın hazır olsun.';
+  }
+
+  @override
+  String streakSaveTitle(int count) {
+    return '$count günlük serini kurtar';
+  }
+
+  @override
+  String get streakSaveBody => 'Dün ara verdin. Kısa bir reklam izle, Lio dünü senin için dondursun (haftada bir).';
+
+  @override
+  String get streakSaveBodyPremium => 'Dün ara verdin. Lio dünü senin için dondurabilir (haftada bir).';
+
+  @override
+  String get streakSaveWatch => 'İzle ve kurtar';
+
+  @override
+  String get streakSaveFree => 'Kurtar';
+
+  @override
+  String streakSaved(int count) {
+    return 'Serin kurtarıldı: $count gün';
+  }
+
+  @override
   String get notifJournalTitle => 'Günlüğün';
 
   @override

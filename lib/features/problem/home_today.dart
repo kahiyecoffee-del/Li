@@ -20,7 +20,9 @@ import '../../domain/models/habit.dart';
 import '../../domain/models/task_item.dart';
 import '../../domain/plan/day_timeline.dart';
 import '../../domain/problem/list_splitter.dart';
+import '../../services/ads/ads_service.dart';
 import '../plan/time_picker_sheet.dart';
+import '../premium/rewarded.dart';
 
 // --------------------------------------------------------------- capture
 
@@ -394,6 +396,59 @@ class _NextUp extends ConsumerWidget {
             },
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// "You took yesterday off": keep the streak with a rewarded ad (free for
+/// Premium), at most once a week.
+class StreakSaverCard extends ConsumerWidget {
+  const StreakSaverCard({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final days = ref.watch(streakSaverProvider);
+    if (days == null) return const SizedBox.shrink();
+    final l = context.l10n;
+    final premium = ref.watch(isPremiumProvider);
+    final gold = Theme.of(context).brightness == Brightness.dark ? Palette.goldDark : Palette.gold;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: Space.md),
+      child: AppCard(
+        key: const Key('streak-saver'),
+        child: Row(
+          children: [
+            Icon(Icons.local_fire_department_rounded, color: gold, size: 32),
+            const SizedBox(width: Space.md),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(l.streakSaveTitle(days), style: context.text.titleMedium),
+                  const SizedBox(height: 2),
+                  Text(
+                    premium ? l.streakSaveBodyPremium : l.streakSaveBody,
+                    style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
+                  ),
+                  const SizedBox(height: Space.sm),
+                  FilledButton.icon(
+                    onPressed: () async {
+                      final ok = premium || await watchRewardedAd(context, ref, RewardPlacement.streakRecovery);
+                      if (!ok || !context.mounted) return;
+                      final today = ref.read(todayProvider);
+                      await ref.read(frozenDaysProvider.notifier).freeze(Dates.addDays(today, -1), today: today);
+                      unawaited(HapticFeedback.mediumImpact());
+                      if (context.mounted) showSnack(context, l.streakSaved(days));
+                    },
+                    icon: Icon(premium ? Icons.ac_unit_rounded : Icons.play_circle_outline_rounded, size: 18),
+                    label: Text(premium ? l.streakSaveFree : l.streakSaveWatch),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

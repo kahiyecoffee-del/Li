@@ -24,6 +24,7 @@ import '../../domain/plan/day_timeline.dart';
 import '../../l10n/gen/app_localizations.dart';
 import '../shell/main_shell.dart';
 import '../../services/calendar/calendar_service.dart';
+import '../premium/interstitial.dart';
 import 'calendar_busy.dart';
 import 'routines_screen.dart';
 import 'task_editor.dart';
@@ -44,7 +45,10 @@ Accent categoryAccent(TaskCategory c) => switch (c) {
 /// The day planner: pick a day on the strip, see it as a timeline with the
 /// free time between tasks, and add tasks in one line at the bottom.
 class PlanScreen extends ConsumerStatefulWidget {
-  const PlanScreen({super.key});
+  const PlanScreen({super.key, this.closeDay = false});
+
+  /// Opened from the evening "Close the day" reminder: start the review.
+  final bool closeDay;
 
   @override
   ConsumerState<PlanScreen> createState() => _PlanScreenState();
@@ -67,6 +71,18 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
   void initState() {
     super.initState();
     _tick;
+    if (widget.closeDay) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        final today = ref.read(todayProvider);
+        final open = ref
+            .read(tasksProvider)
+            .list
+            .where((t) => !t.deleted && !t.isCompleted && t.anchorDate != null && Dates.sameDay(t.anchorDate!, today))
+            .toList();
+        if (open.isNotEmpty) unawaited(_reviewDay(open, today));
+      });
+    }
   }
 
   @override
@@ -372,13 +388,22 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
     return null;
   }
 
-  Future<void> _reviewDay(List<TaskItem> open, DateTime day) => showModalBottomSheet<void>(
-    context: context,
-    useRootNavigator: true,
-    isScrollControlled: true,
-    showDragHandle: true,
-    builder: (_) => _ShutdownSheet(day: day, ids: [for (final t in open) t.id]),
-  );
+  Future<void> _reviewDay(List<TaskItem> open, DateTime day) async {
+    await showModalBottomSheet<void>(
+      context: context,
+      useRootNavigator: true,
+      isScrollControlled: true,
+      showDragHandle: true,
+      builder: (_) => _ShutdownSheet(day: day, ids: [for (final t in open) t.id]),
+    );
+    if (!mounted) return;
+    // The day is closed: a natural break (ads only within the usual caps).
+    final left = ref
+        .read(tasksProvider)
+        .list
+        .where((t) => !t.deleted && !t.isCompleted && t.anchorDate != null && Dates.sameDay(t.anchorDate!, day));
+    if (left.isEmpty) await maybeShowInterstitial(ref);
+  }
 
   Future<void> _editDayHours() async {
     final p = ref.read(profileProvider).value;

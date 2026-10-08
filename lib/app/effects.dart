@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 
 import '../core/l10n/labels.dart';
 import '../core/utils/dates.dart';
+import '../core/widgets/formatters.dart';
 import '../domain/models/progress.dart';
 import '../l10n/gen/app_localizations.dart';
 import '../services/ads/ad_policy.dart';
@@ -232,6 +233,11 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
           journaledToday: ref.read(journalProvider).list.any((e) => Dates.dayKey(e.createdAt) == today),
           journalReminder: settings.journalReminder,
           planReminder: settings.planReminder,
+          spendToday: budget == null || budget.overToday
+              ? null
+              : ref
+                    .read(fmtProvider(Localizations.localeOf(context).toLanguageTag()))
+                    .money(budget.remainingTodayMinor),
           quietEnd: profile?.wakeTime ?? defaultQuietEnd,
           quietStart: profile?.sleepTime ?? defaultQuietStart,
         ),

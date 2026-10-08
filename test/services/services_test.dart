@@ -175,6 +175,37 @@ void main() {
       expect(payload, {'r': '/plan', 'k': 'm', 't': 'Standup', 'b': 'in 30 min'});
     });
 
+    test('a day with tasks gets a morning brief and an evening close-the-day', () {
+      final s = NotificationState(
+        now: now,
+        frequency: NotificationFrequency.normal,
+        dailyCap: 3,
+        spendToday: '₺320',
+        quietEnd: const DayTime(7 * 60),
+        quietStart: const DayTime(23 * 60),
+        upcomingTasks: [
+          TaskItem(
+            id: 'a',
+            updatedAt: now,
+            title: 'Gym',
+            scheduledAt: DateTime(2026, 6, 11, 18),
+            remindBefore: -1,
+            createdAt: now,
+          ),
+          TaskItem(id: 'b', updatedAt: now, title: 'Call bank', deadline: DateTime(2026, 6, 11), createdAt: now),
+        ],
+      );
+      final p = planner.plan(s);
+      final brief = p.firstWhere((n) => n.kind == NotificationKind.morningBrief);
+      expect(brief.at, DateTime(2026, 6, 11, 7, 15));
+      expect(brief.count, 2);
+      expect(brief.title, '18:00 Gym');
+      expect(brief.extra, isNull); // tomorrow's budget is not known yet
+      final close = p.firstWhere((n) => n.kind == NotificationKind.closeDay);
+      expect(close.at, DateTime(2026, 6, 11, 21));
+      expect(close.kind.route, '/plan?close=1');
+    });
+
     test('nudges are capped per day and skipped when satisfied', () {
       final p = planner.plan(
         NotificationState(
