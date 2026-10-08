@@ -21,6 +21,7 @@ import '../services/notifications/notification_service.dart';
 import '../services/notifications/push_service.dart';
 import '../services/ocr/ocr_service.dart';
 import '../services/voice/voice_input_service.dart';
+import '../services/assistant/assistant_service.dart';
 import '../services/weather/weather_service.dart';
 import '../services/widget/home_widget_service.dart';
 
@@ -47,6 +48,7 @@ class Services {
     this.functions,
     this.push,
     this.voice = const NoVoiceInput(),
+    this.assistant = const NoAssistant(),
     this.homeWidget = const NoHomeWidget(),
     CalendarService? calendar,
     DailyInfoService? dailyInfo,
@@ -75,6 +77,9 @@ class Services {
   final OcrService ocr;
   final JournalKeyStore journalKeys;
   final VoiceInputService voice;
+
+  /// Siri / Google Assistant / app-icon shortcuts.
+  final AssistantService assistant;
 
   /// Today's program on the home screen (iOS/Android only).
   final HomeWidgetService homeWidget;

@@ -34,6 +34,7 @@ import 'services/notifications/notification_service.dart';
 import 'services/notifications/push_service.dart';
 import 'services/ocr/ocr_mlkit.dart';
 import 'services/voice/voice_input_service.dart';
+import 'services/assistant/assistant_service.dart';
 import 'services/widget/home_widget_service.dart';
 import 'services/weather/weather_service.dart';
 
@@ -84,6 +85,7 @@ Future<Services> buildServices() async {
       news: NewsService(UnavailableNewsProvider(), prefs),
       ocr: MlKitOcrService(),
       voice: mobile ? DeviceVoiceInput() : const NoVoiceInput(),
+      assistant: mobile ? DeviceAssistant() : const NoAssistant(),
       homeWidget: mobile ? DeviceHomeWidget() : const NoHomeWidget(),
       calendar: mobile ? DeviceCalendarService() : NoCalendarService(),
       dailyInfo: DailyInfoService(HttpDailyInfoProvider(), prefs),
@@ -134,6 +136,7 @@ Future<Services> buildServices() async {
     news: NewsService(BackendNewsProvider(functions), prefs),
     ocr: MlKitOcrService(),
     voice: mobile ? DeviceVoiceInput() : const NoVoiceInput(),
+    assistant: mobile ? DeviceAssistant() : const NoAssistant(),
     homeWidget: mobile ? DeviceHomeWidget() : const NoHomeWidget(),
     calendar: mobile ? DeviceCalendarService() : NoCalendarService(),
     journalKeys: SecureJournalKeyStore(),

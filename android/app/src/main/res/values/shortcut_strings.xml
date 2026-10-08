@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shortcut_voice">Add by voice</string>
+    <string name="shortcut_voice_long">Say a task, expense or note</string>
+    <string name="shortcut_plan">My day</string>
+    <string name="shortcut_plan_long">Open today\'s plan</string>
+    <string name="shortcut_focus">Focus</string>
+    <string name="shortcut_focus_long">Start the focus timer</string>
+    <string-array name="feature_plan">
+        <item>my day</item>
+        <item>plan</item>
+        <item>today</item>
+        <item>schedule</item>
+    </string-array>
+    <string-array name="feature_focus">
+        <item>focus</item>
+        <item>focus timer</item>
+        <item>pomodoro</item>
+    </string-array>
+</resources>

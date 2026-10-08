@@ -28,6 +28,7 @@ import '../premium/happy_moment.dart';
 import 'calendar_busy.dart';
 import 'routines_screen.dart';
 import 'task_editor.dart';
+import '../voice/voice_button.dart';
 import 'time_picker_sheet.dart';
 
 String formatDuration(AppLocalizations l, int minutes) => durationLabel(l, minutes);
@@ -1355,6 +1356,7 @@ class _Composer extends StatelessWidget {
                             ),
                           ),
                         ),
+                        VoiceMicButton(controller: controller),
                         IconButton.filled(
                           tooltip: l.add,
                           onPressed: onSubmit,

@@ -51,7 +51,10 @@ void main() {
       if (large) tester.platformDispatcher.textScaleFactorTestValue = 1.4;
       addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
       final app = (await tester.runAsync(
-        () => TestApp.onboarded(prefs: {'locale': 'tr', 'showLio': true, if (dark) 'themeMode': 'dark'}),
+        () => TestApp.onboarded(
+          prefs: {'locale': 'tr', 'showLio': true, if (dark) 'themeMode': 'dark'},
+          voice: FakeVoice(null),
+        ),
       ))!;
       final now = DateTime.now();
       final d = DateTime(now.year, now.month, now.day);

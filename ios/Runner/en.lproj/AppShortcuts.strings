@@ -1,0 +1,10 @@
+/* Siri phrases (must include the app name). */
+"Add to ${applicationName}" = "Add to ${applicationName}";
+"Add something to ${applicationName}" = "Add something to ${applicationName}";
+"Note in ${applicationName}" = "Note in ${applicationName}";
+"Speak to ${applicationName}" = "Speak to ${applicationName}";
+"Talk to ${applicationName}" = "Talk to ${applicationName}";
+"Show my day in ${applicationName}" = "Show my day in ${applicationName}";
+"What's my plan in ${applicationName}" = "What's my plan in ${applicationName}";
+"Start focus in ${applicationName}" = "Start focus in ${applicationName}";
+"Focus with ${applicationName}" = "Focus with ${applicationName}";

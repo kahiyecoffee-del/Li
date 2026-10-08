@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shortcut_voice">Sesle ekle</string>
+    <string name="shortcut_voice_long">Görev, harcama ya da not söyle</string>
+    <string name="shortcut_plan">Bugünüm</string>
+    <string name="shortcut_plan_long">Bugünün planını aç</string>
+    <string name="shortcut_focus">Odaklan</string>
+    <string name="shortcut_focus_long">Odak sayacını başlat</string>
+    <string-array name="feature_plan">
+        <item>günüm</item>
+        <item>plan</item>
+        <item>bugün</item>
+        <item>programım</item>
+    </string-array>
+    <string-array name="feature_focus">
+        <item>odak</item>
+        <item>odaklan</item>
+        <item>pomodoro</item>
+    </string-array>
+</resources>

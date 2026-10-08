@@ -18,6 +18,8 @@ import '../services/notifications/notification_planner.dart';
 import '../services/notifications/open_hours.dart';
 import '../services/widget/home_widget_service.dart';
 import '../features/lio/garden.dart';
+import '../features/voice/voice_button.dart';
+import '../services/assistant/assistant_service.dart';
 import 'actions.dart';
 import 'derived_providers.dart';
 import 'providers.dart';
@@ -47,6 +49,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
   String? _sessionUid;
   bool _adsInitialized = false;
   StreamSubscription<String>? _taps;
+  StreamSubscription<AssistantCommand>? _assistant;
   DateTime? _pausedAt;
 
   @override
@@ -72,6 +75,20 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
       final r = route.contains('topic=') ? '$route&n=${DateTime.now().microsecondsSinceEpoch}' : route;
       ref.read(routerProvider).go(r);
     });
+    // Siri, Google Assistant and app-icon shortcuts.
+    _assistant = s.assistant.commands.listen((c) {
+      final router = ref.read(routerProvider);
+      switch (c.kind) {
+        case AssistantKind.open:
+          router.go(c.route!);
+        case AssistantKind.add:
+          ref.read(captureRequestProvider.notifier).request(CaptureRequest.text(c.text!));
+          router.go(Routes.home);
+        case AssistantKind.voice:
+          ref.read(captureRequestProvider.notifier).request(const CaptureRequest.listen());
+          router.go(Routes.home);
+      }
+    });
     ref.listenManual(
       sessionProvider.select((s) => s.value?.user.uid),
       (_, uid) => _onSession(uid),
@@ -94,6 +111,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
     _widgetDebounce?.cancel();
     unawaited(_taps?.cancel());
     unawaited(_widgetTaps?.cancel());
+    unawaited(_assistant?.cancel());
     unawaited(_doneTasks?.cancel());
     super.dispose();
   }

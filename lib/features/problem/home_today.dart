@@ -23,6 +23,7 @@ import '../../domain/problem/list_splitter.dart';
 import '../../services/ads/ads_service.dart';
 import '../plan/time_picker_sheet.dart';
 import '../premium/rewarded.dart';
+import '../voice/voice_button.dart';
 
 // --------------------------------------------------------------- capture
 
@@ -38,12 +39,30 @@ class QuickCaptureCard extends ConsumerStatefulWidget {
 
 class _QuickCaptureCardState extends ConsumerState<QuickCaptureCard> {
   final _c = TextEditingController();
+  final _mic = GlobalKey<VoiceMicButtonState>();
   CaptureKind? _override;
 
   @override
   void initState() {
     super.initState();
     _c.addListener(() => setState(() {}));
+    // Siri / Google Assistant / an app shortcut sent something to add.
+    ref.listenManual(captureRequestProvider, (_, r) {
+      if (r != null) WidgetsBinding.instance.addPostFrameCallback((_) => _takeRequest());
+    }, fireImmediately: true);
+  }
+
+  Future<void> _takeRequest() async {
+    if (!mounted) return;
+    final r = ref.read(captureRequestProvider.notifier).take();
+    if (r == null) return;
+    if (r.text != null) {
+      _c.text = r.text!;
+      _override = null;
+      await _save();
+    } else {
+      await _mic.currentState?.start();
+    }
   }
 
   @override
@@ -184,6 +203,7 @@ class _QuickCaptureCardState extends ConsumerState<QuickCaptureCard> {
                   ),
                 ),
               ),
+              VoiceMicButton(key: _mic, controller: _c),
               AnimatedScale(
                 scale: has ? 1 : 0.85,
                 duration: Motion.of(context, Motion.fast),

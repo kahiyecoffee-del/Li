@@ -1,0 +1,14 @@
+/* Siri, Kestirmeler ve ana ekran hızlı eylemleri. */
+"Add to Dayly" = "Dayly'ye ekle";
+"Adds a task, expense, shopping item or note. Times and amounts are understood." = "Görev, harcama, alışveriş ya da not ekler. Saat ve tutarları anlar.";
+"What" = "Ne";
+"What should I add?" = "Ne ekleyeyim?";
+"Speak to Dayly" = "Dayly'ye sesle ekle";
+"Opens Dayly listening, so you can say what to add." = "Dayly'yi dinlerken açar; ne ekleyeceğini söylersin.";
+"Show my day" = "Günümü göster";
+"Opens today's plan." = "Bugünün planını açar.";
+"Start focus" = "Odaklanmaya başla";
+"Opens the focus timer." = "Odak sayacını açar.";
+"Add by voice" = "Sesle ekle";
+"My day" = "Bugünüm";
+"Focus" = "Odaklan";

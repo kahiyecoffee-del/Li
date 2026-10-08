@@ -1,0 +1,10 @@
+/* Siri cümleleri (uygulama adı geçmeli). */
+"Add to ${applicationName}" = "${applicationName}'ye ekle";
+"Add something to ${applicationName}" = "${applicationName}'ye bir şey ekle";
+"Note in ${applicationName}" = "${applicationName}'ye not al";
+"Speak to ${applicationName}" = "${applicationName}'ye sesle ekle";
+"Talk to ${applicationName}" = "${applicationName} ile konuş";
+"Show my day in ${applicationName}" = "${applicationName}'de günümü göster";
+"What's my plan in ${applicationName}" = "${applicationName}'de planım ne";
+"Start focus in ${applicationName}" = "${applicationName}'de odaklanmayı başlat";
+"Focus with ${applicationName}" = "${applicationName} ile odaklan";

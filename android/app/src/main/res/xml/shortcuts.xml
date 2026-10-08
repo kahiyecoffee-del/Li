@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- App-icon shortcuts (long press) and Google Assistant App Actions:
+     "Hey Google, add dentist tomorrow at 3 in Dayly", "open my day in Dayly". -->
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <capability android:name="actions.intent.CREATE_THING">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.dayly.app"
+            android:targetClass="com.dayly.app.MainActivity">
+            <url-template android:value="dayly://assistant?action=add{&amp;text}" />
+            <parameter android:name="thing.name" android:key="text" android:required="false" />
+        </intent>
+    </capability>
+
+    <capability android:name="actions.intent.OPEN_APP_FEATURE">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.dayly.app"
+            android:targetClass="com.dayly.app.MainActivity">
+            <url-template android:value="dayly://assistant?action=open{&amp;feature}" />
+            <parameter android:name="feature" android:key="feature" />
+        </intent>
+    </capability>
+
+    <shortcut
+        android:shortcutId="voice"
+        android:enabled="true"
+        android:icon="@drawable/shortcut_mic"
+        android:shortcutShortLabel="@string/shortcut_voice"
+        android:shortcutLongLabel="@string/shortcut_voice_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.dayly.app"
+            android:targetClass="com.dayly.app.MainActivity"
+            android:data="dayly://assistant?action=voice" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="plan"
+        android:enabled="true"
+        android:icon="@drawable/shortcut_day"
+        android:shortcutShortLabel="@string/shortcut_plan"
+        android:shortcutLongLabel="@string/shortcut_plan_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.dayly.app"
+            android:targetClass="com.dayly.app.MainActivity"
+            android:data="dayly://assistant?action=open&amp;route=/plan" />
+        <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
+            <parameter-binding android:key="feature" android:value="@array/feature_plan" />
+        </capability-binding>
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="focus"
+        android:enabled="true"
+        android:icon="@drawable/shortcut_focus"
+        android:shortcutShortLabel="@string/shortcut_focus"
+        android:shortcutLongLabel="@string/shortcut_focus_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.dayly.app"
+            android:targetClass="com.dayly.app.MainActivity"
+            android:data="dayly://assistant?action=open&amp;route=/focus" />
+        <capability-binding android:key="actions.intent.OPEN_APP_FEATURE">
+            <parameter-binding android:key="feature" android:value="@array/feature_focus" />
+        </capability-binding>
+    </shortcut>
+</shortcuts>

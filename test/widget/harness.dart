@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:lifeos/services/assistant/assistant_service.dart';
+import 'package:lifeos/services/voice/voice_input_service.dart';
 import 'package:lifeos/app/app.dart';
 import 'package:lifeos/app/providers.dart';
 import 'package:lifeos/app/services.dart';
@@ -103,8 +105,16 @@ class TestApp {
     Map<String, Object> prefs = const {},
     bool online = true,
     List<CalendarEvent> calendar = const [],
+    VoiceInputService voice = const NoVoiceInput(),
+    AssistantService assistant = const NoAssistant(),
   }) async {
-    final app = await create(prefs: {'local_uid': 'local-test', ...prefs}, online: online, calendar: calendar);
+    final app = await create(
+      prefs: {'local_uid': 'local-test', ...prefs},
+      online: online,
+      calendar: calendar,
+      voice: voice,
+      assistant: assistant,
+    );
     final store = await DatabaseOpener.inMemory('seed${DateTime.now().microsecondsSinceEpoch}');
     final repos = UserRepos(store, journalKeys: MemoryJournalKeyStore());
     await repos.profile.save(
@@ -128,6 +138,8 @@ class TestApp {
     Map<String, Object> prefs = const {},
     bool online = true,
     List<CalendarEvent> calendar = const [],
+    VoiceInputService voice = const NoVoiceInput(),
+    AssistantService assistant = const NoAssistant(),
   }) async {
     SharedPreferences.setMockInitialValues({'showLio': false, ...prefs});
     final p = await SharedPreferences.getInstance();
@@ -149,6 +161,8 @@ class TestApp {
       news: NewsService(UnavailableNewsProvider(), p),
       ocr: FakeOcr(),
       journalKeys: MemoryJournalKeyStore(),
+      voice: voice,
+      assistant: assistant,
       calendar: NoCalendarService(fake: calendar, granted: calendar.isNotEmpty),
       dailyInfo: DailyInfoService(
         NoDailyInfoProvider(
@@ -214,4 +228,29 @@ void usePhoneViewport(WidgetTester tester) {
 Future<void> tearDownApp(WidgetTester tester) async {
   await tester.pumpWidget(const SizedBox());
   await tester.pump(const Duration(seconds: 5));
+}
+
+/// Hears [said] (partial first, then final).
+class FakeVoice implements VoiceInputService {
+  FakeVoice(this.said);
+  final String? said;
+  String? localeId;
+
+  @override
+  bool get supported => true;
+
+  @override
+  Future<bool> get available async => true;
+
+  @override
+  Future<String?> listen({required String localeId, void Function(String partial)? onPartial}) async {
+    this.localeId = localeId;
+    final s = said;
+    if (s != null) onPartial?.call(s.split(' ').first);
+    await Future<void>.delayed(const Duration(milliseconds: 50));
+    return s;
+  }
+
+  @override
+  Future<void> stop() async {}
 }
