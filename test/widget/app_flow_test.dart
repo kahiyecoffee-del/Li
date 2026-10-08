@@ -27,7 +27,9 @@ void main() {
 
     await tester.enterText(find.byType(TextField).first, '45000');
     await tester.tap(find.text('Next'));
-    await pumpUntil(tester, find.text('Monthly savings goal'));
+    // The short set-up goes straight on (savings, routine and food come later).
+    expect(find.text('Monthly savings goal'), findsNothing);
+    await pumpUntil(tester, find.text('Skip'));
 
     // Skip the remaining optional steps.
     for (var i = 0; i < 6 && find.text('Skip').evaluate().isNotEmpty; i++) {

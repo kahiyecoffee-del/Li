@@ -1952,6 +1952,36 @@ abstract class AppLocalizations {
   /// **'More'**
   String get taskMore;
 
+  /// No description provided for @gardenShortCharging.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 more to go} other{{count} more to go}}'**
+  String gardenShortCharging(int count);
+
+  /// No description provided for @gardenShortExploring.
+  ///
+  /// In en, this message translates to:
+  /// **'Exploring · back {time}'**
+  String gardenShortExploring(String time);
+
+  /// No description provided for @gardenShortGift.
+  ///
+  /// In en, this message translates to:
+  /// **'A postcard is waiting!'**
+  String get gardenShortGift;
+
+  /// No description provided for @gardenShortOpened.
+  ///
+  /// In en, this message translates to:
+  /// **'New trip tomorrow'**
+  String get gardenShortOpened;
+
+  /// No description provided for @todayStripHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Weather, rates, prayer times'**
+  String get todayStripHint;
+
   /// No description provided for @shoppingShare.
   ///
   /// In en, this message translates to:

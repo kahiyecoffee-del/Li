@@ -774,6 +774,25 @@
   "planDayEnd": "Ends",
   "planHowTo": "Tap a task to change anything · swipe right: done · left: tomorrow",
   "taskMore": "More",
+  "gardenShortCharging": "{count, plural, =1{1 more to go} other{{count} more to go}}",
+  "@gardenShortCharging": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "gardenShortExploring": "Exploring · back {time}",
+  "@gardenShortExploring": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "gardenShortGift": "A postcard is waiting!",
+  "gardenShortOpened": "New trip tomorrow",
+  "todayStripHint": "Weather, rates, prayer times",
   "shoppingShare": "Share list",
   "shoppingShareHeader": "Shopping list",
   "shoppingShareFooter": "Made with Dayly",

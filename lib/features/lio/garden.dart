@@ -72,7 +72,10 @@ final gardenProvider = NotifierProvider<GardenController, GardenState>(GardenCon
 
 /// Home: Lio's energy for the day, his trip and the postcard he brings back.
 class GardenCard extends ConsumerStatefulWidget {
-  const GardenCard({super.key});
+  const GardenCard({super.key, this.compact = false});
+
+  /// Half-width tile for the Home glance row.
+  final bool compact;
 
   @override
   ConsumerState<GardenCard> createState() => _GardenCardState();
@@ -108,6 +111,54 @@ class _GardenCardState extends ConsumerState<GardenCard> {
       GardenPhase.giftWaiting => (MascotMood.excited, l.gardenGift),
       GardenPhase.opened => (MascotMood.loving, l.gardenOpened),
     };
+    if (widget.compact) {
+      final short = switch (g.phase) {
+        GardenPhase.charging => l.gardenShortCharging(LioGarden.goal - g.energy),
+        GardenPhase.exploring => l.gardenShortExploring(fmt.time(g.backAt!)),
+        GardenPhase.giftWaiting => l.gardenShortGift,
+        GardenPhase.opened => l.gardenShortOpened,
+      };
+      return AppCard(
+        key: const Key('garden-card'),
+        onTap: switch (g.phase) {
+          GardenPhase.giftWaiting => () => openGift(context, ref),
+          GardenPhase.opened => () => context.push('/postcards'),
+          _ => null,
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Mascot(mood: mood, size: 40, float: g.phase == GardenPhase.giftWaiting),
+                const Spacer(),
+                if (g.phase == GardenPhase.charging)
+                  for (var i = 0; i < LioGarden.goal; i++)
+                    Icon(
+                      i < g.energy ? Icons.bolt_rounded : Icons.bolt_outlined,
+                      size: 18,
+                      color: i < g.energy ? gold : context.semantic.border,
+                    ),
+              ],
+            ),
+            const SizedBox(height: Space.sm),
+            Eyebrow(l.gardenTitle),
+            const SizedBox(height: 2),
+            Text(short, maxLines: 2, overflow: TextOverflow.ellipsis, style: context.text.titleSmall),
+            if (g.phase == GardenPhase.giftWaiting) ...[
+              const SizedBox(height: Space.xs),
+              FilledButton(
+                key: const Key('garden-open'),
+                style: FilledButton.styleFrom(minimumSize: const Size(0, 36)),
+                onPressed: () => openGift(context, ref),
+                child: Text(l.gardenOpen),
+              ),
+            ],
+          ],
+        ),
+      );
+    }
     return Padding(
       padding: const EdgeInsets.only(bottom: Space.md),
       child: AppCard(

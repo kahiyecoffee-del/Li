@@ -43,10 +43,13 @@ void main() {
     await tester0();
   });
 
-  for (final dark in [false, true]) {
-    final mode = dark ? 'dark' : 'light';
+  for (final (dark, large) in [(false, false), (true, false), (false, true)]) {
+    final mode = large ? 'large' : (dark ? 'dark' : 'light');
     testWidgets('screens $mode', (tester) async {
       usePhoneViewport(tester);
+      // A fifth of people raise the phone's text size: check that too.
+      if (large) tester.platformDispatcher.textScaleFactorTestValue = 1.4;
+      addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
       final app = (await tester.runAsync(
         () => TestApp.onboarded(prefs: {'locale': 'tr', 'showLio': true, if (dark) 'themeMode': 'dark'}),
       ))!;
@@ -118,7 +121,10 @@ void main() {
       await tester.testTextInput.receiveAction(TextInputAction.done);
       await tester.pump(const Duration(milliseconds: 500));
       await tester.tap(find.text('Keşfet').last);
-      await pumpUntil(tester, find.text('Planla'));
+      await pumpUntil(tester, find.text('Keşfet'));
+      await tester.scrollUntilVisible(find.text('Planla'), 250, scrollable: find.byType(Scrollable).first);
+      await tester.ensureVisible(find.text('Planla').last);
+      await tester.pump(const Duration(milliseconds: 300));
       await tester.tap(find.text('Planla').last);
       await pumpUntil(tester, find.byKey(const Key('plan-composer')));
       await _shot(tester, '$mode-plan');
@@ -143,13 +149,19 @@ void main() {
       await _shot(tester, '$mode-plan-2');
       await tester.binding
           .handlePopRoute(); // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
-      await pumpUntil(tester, find.text('Para'));
+      await pumpUntil(tester, find.text('Keşfet'));
+      await tester.scrollUntilVisible(find.text('Para'), 250, scrollable: find.byType(Scrollable).first);
+      await tester.ensureVisible(find.text('Para').last);
+      await tester.pump(const Duration(milliseconds: 300));
       await tester.tap(find.text('Para').last);
       await pumpUntil(tester, find.text('Özet'));
       await _shot(tester, '$mode-money');
       await tester.binding
           .handlePopRoute(); // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
-      await pumpUntil(tester, find.text('Yemek'));
+      await pumpUntil(tester, find.text('Keşfet'));
+      await tester.scrollUntilVisible(find.text('Yemek'), 250, scrollable: find.byType(Scrollable).first);
+      await tester.ensureVisible(find.text('Yemek').last);
+      await tester.pump(const Duration(milliseconds: 300));
       await _shot(tester, '$mode-explore');
       await tester.ensureVisible(find.text('Yemek').last);
       await tester.pump(const Duration(milliseconds: 300));
@@ -160,8 +172,9 @@ void main() {
           .handlePopRoute(); // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
       await pumpUntil(tester, find.text('Keşfet'));
       await tester.scrollUntilVisible(find.text('Rutinler'), -300, scrollable: find.byType(Scrollable).first);
-      await tester.ensureVisible(find.text('Rutinler'));
-      await tester.tap(find.text('Rutinler'));
+      await tester.runAsync(() => Scrollable.ensureVisible(tester.element(find.text('Rutinler').last), alignment: 0.3));
+      await tester.pump(const Duration(milliseconds: 300));
+      await tester.tap(find.text('Rutinler').last);
       await pumpUntil(tester, find.text('Hazır rutinler'));
       await _shot(tester, '$mode-routines');
       await tester.binding

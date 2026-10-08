@@ -126,6 +126,12 @@ void main() {
     final card = find.ancestor(of: find.text('Read'), matching: find.byType(Dismissible));
     final hasSlot = read.scheduledAt != null;
     if (hasSlot) {
+      // The list builds lazily: bring the card into the built range first.
+      final list = find.byWidgetPredicate((w) => w is Scrollable && w.axisDirection == AxisDirection.down).first;
+      for (var i = 0; i < 12 && card.evaluate().isEmpty; i++) {
+        await tester.drag(list, Offset(0, i < 6 ? -250 : 250));
+        await tester.pump(const Duration(milliseconds: 200));
+      }
       await tester.runAsync(() => Scrollable.ensureVisible(tester.element(card.first), alignment: 0.3));
       await tester.pump(const Duration(milliseconds: 300));
       await tester.drag(card.first, const Offset(-600, 0));
@@ -478,7 +484,7 @@ void main() {
       scrollable: find.byType(Scrollable).first,
     );
     await pumpUntil(tester, find.byKey(const Key('garden-open')));
-    expect(find.text('Lio is back with a postcard!'), findsOneWidget);
+    expect(find.text('A postcard is waiting!'), findsOneWidget);
     await tester.ensureVisible(find.byKey(const Key('garden-open')));
     await tester.tap(find.byKey(const Key('garden-open')));
     await pumpUntil(tester, find.text('1 of 24 collected'));

@@ -1105,6 +1105,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String get taskMore => 'More';
 
   @override
+  String gardenShortCharging(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count more to go', one: '1 more to go');
+    return '$_temp0';
+  }
+
+  @override
+  String gardenShortExploring(String time) {
+    return 'Exploring · back $time';
+  }
+
+  @override
+  String get gardenShortGift => 'A postcard is waiting!';
+
+  @override
+  String get gardenShortOpened => 'New trip tomorrow';
+
+  @override
+  String get todayStripHint => 'Weather, rates, prayer times';
+
+  @override
   String get shoppingShare => 'Share list';
 
   @override

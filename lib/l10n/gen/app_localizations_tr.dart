@@ -1077,6 +1077,25 @@ class AppLocalizationsTr extends AppLocalizations {
   String get taskMore => 'Daha fazla';
 
   @override
+  String gardenShortCharging(int count) {
+    return '$count iş daha';
+  }
+
+  @override
+  String gardenShortExploring(String time) {
+    return 'Keşifte · $time';
+  }
+
+  @override
+  String get gardenShortGift => 'Kartpostal geldi!';
+
+  @override
+  String get gardenShortOpened => 'Yarın yeni gezi';
+
+  @override
+  String get todayStripHint => 'Hava, kur, vakitler';
+
+  @override
   String get shoppingShare => 'Listeyi paylaş';
 
   @override

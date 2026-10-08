@@ -97,8 +97,7 @@ class HomeScreen extends ConsumerWidget {
               const SizedBox(height: Space.md),
               const TodayFlowCard(),
               const SizedBox(height: Space.md),
-              const GardenCard(),
-              const TodayInfoStrip(),
+              const _GlanceRow(),
               // Sundays: invite the weekly review.
               if (DateTime.now().weekday == DateTime.sunday) ...[
                 const SizedBox(height: Space.md),
@@ -130,7 +129,7 @@ class HomeScreen extends ConsumerWidget {
                       ? TextButton(onPressed: () => context.push('/insights'), child: Text(l.seeAll))
                       : null,
                 ),
-                for (final a in advice.skip(1).take(3))
+                for (final a in advice.skip(1).take(2))
                   Padding(
                     padding: const EdgeInsets.only(bottom: Space.sm),
                     child: FadeSlideIn(child: AdviceCard(a)),
@@ -292,7 +291,7 @@ class _QuickTools extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       mainAxisSpacing: Space.md,
       crossAxisSpacing: Space.md,
-      childAspectRatio: 1.05,
+      childAspectRatio: 1.05 / MediaQuery.textScalerOf(context).scale(1).clamp(1.0, 1.6),
       children: [
         for (final (icon, label, accent, onTap) in tools)
           AppCard(
@@ -317,4 +316,33 @@ class _QuickTools extends StatelessWidget {
       ],
     );
   }
+}
+
+/// Lio's day and Today side by side; stacked when the screen is narrow or
+/// the text is set large.
+class _GlanceRow extends StatelessWidget {
+  const _GlanceRow();
+
+  @override
+  Widget build(BuildContext context) => LayoutBuilder(
+    builder: (context, c) {
+      final big = MediaQuery.textScalerOf(context).scale(10) > 11.5;
+      if (big || c.maxWidth < 340) {
+        return const Column(children: [GardenCard(), TodayInfoStrip()]);
+      }
+      return const Padding(
+        padding: EdgeInsets.only(bottom: Space.md),
+        child: IntrinsicHeight(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(child: GardenCard(compact: true)),
+              SizedBox(width: Space.md),
+              Expanded(child: TodayInfoStrip(compact: true)),
+            ],
+          ),
+        ),
+      );
+    },
+  );
 }

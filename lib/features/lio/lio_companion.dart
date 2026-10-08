@@ -282,95 +282,99 @@ class _LioCompanionState extends ConsumerState<LioCompanion> with TickerProvider
     final width = MediaQuery.sizeOf(context).width;
     final x = _dragX ?? _x;
     final d = Motion.of(context, Motion.slow);
-    return AnimatedSlide(
-      offset: hidden ? const Offset(0, 1.6) : Offset.zero,
-      duration: d,
-      curve: Motion.curve,
-      child: AnimatedAlign(
-        alignment: Alignment(x, 1),
-        duration: _dragX != null ? Duration.zero : (_walkTime == Duration.zero ? d : _walkTime),
-        curve: _walkTime == Duration.zero ? Curves.easeOutBack : Curves.easeInOutSine,
-        onEnd: () => _walkTime = Duration.zero,
-        child: Padding(
-          // On the right, sit above the screen's + button.
-          padding: EdgeInsets.fromLTRB(Space.md, 0, Space.md, x > 0.6 && _dragX == null ? 76 : Space.sm),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: x > 0 ? CrossAxisAlignment.end : CrossAxisAlignment.start,
-            children: [
-              AnimatedSwitcher(
-                duration: Motion.of(context, Motion.normal),
-                switchInCurve: Curves.easeOutBack,
-                transitionBuilder: (c, a) => FadeTransition(
-                  opacity: a,
-                  child: ScaleTransition(
-                    scale: Tween(begin: 0.85, end: 1.0).animate(a),
-                    alignment: x > 0 ? Alignment.bottomRight : Alignment.bottomLeft,
-                    child: c,
+    // He stands just behind the tab bar, so he covers less of the page.
+    return Transform.translate(
+      offset: const Offset(0, 18),
+      child: AnimatedSlide(
+        offset: hidden ? const Offset(0, 1.6) : Offset.zero,
+        duration: d,
+        curve: Motion.curve,
+        child: AnimatedAlign(
+          alignment: Alignment(x, 1),
+          duration: _dragX != null ? Duration.zero : (_walkTime == Duration.zero ? d : _walkTime),
+          curve: _walkTime == Duration.zero ? Curves.easeOutBack : Curves.easeInOutSine,
+          onEnd: () => _walkTime = Duration.zero,
+          child: Padding(
+            // On the right, sit above the screen's + button.
+            padding: EdgeInsets.fromLTRB(Space.md, 0, Space.md, x > 0.6 && _dragX == null ? 76 : Space.sm),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: x > 0 ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+              children: [
+                AnimatedSwitcher(
+                  duration: Motion.of(context, Motion.normal),
+                  switchInCurve: Curves.easeOutBack,
+                  transitionBuilder: (c, a) => FadeTransition(
+                    opacity: a,
+                    child: ScaleTransition(
+                      scale: Tween(begin: 0.85, end: 1.0).animate(a),
+                      alignment: x > 0 ? Alignment.bottomRight : Alignment.bottomLeft,
+                      child: c,
+                    ),
                   ),
-                ),
-                child: _line == null || hidden
-                    ? const SizedBox.shrink()
-                    : _Bubble(
-                        key: ValueKey(_line!.text),
-                        line: _line!,
-                        maxWidth: math.min(300, width - 2 * Space.md),
-                        onAsk: () {
-                          _close();
-                          context.push('/ai');
-                        },
-                        onAnother: () => _say(),
-                        onClose: _close,
-                      ),
-              ),
-              const SizedBox(height: Space.xs),
-              Semantics(
-                button: true,
-                label: context.l10n.lioHelpTitle,
-                child: GestureDetector(
-                  key: const Key('lio-companion'),
-                  onTap: _help,
-                  onLongPress: _hideLio,
-                  onHorizontalDragUpdate: (e) => setState(() {
-                    final cur = _dragX ?? _x;
-                    final next = (cur + e.delta.dx / (width / 2)).clamp(-1.0, 1.0);
-                    if (next != cur) _facingRight = next > cur;
-                    _dragX = next;
-                  }),
-                  onHorizontalDragEnd: (_) => setState(() {
-                    _x = _dragX ?? _x;
-                    _dragX = null;
-                    _walkTime = Duration.zero;
-                    _doHop();
-                  }),
-                  child: AnimatedBuilder(
-                    animation: Listenable.merge([_hop, _step]),
-                    builder: (_, child) {
-                      final t = _hop.value;
-                      final lift = math.sin(t * math.pi) * 14 + _step.value * 4;
-                      final squash = 1 + math.sin(t * math.pi * 2) * 0.04;
-                      final tilt = (_step.value - 0.5) * 0.12 * (_step.isAnimating ? 1 : 0);
-                      return Transform.translate(
-                        offset: Offset(0, -lift),
-                        child: Transform.rotate(
-                          angle: tilt,
-                          child: Transform.scale(scaleY: squash, scaleX: 2 - squash, child: child),
+                  child: _line == null || hidden
+                      ? const SizedBox.shrink()
+                      : _Bubble(
+                          key: ValueKey(_line!.text),
+                          line: _line!,
+                          maxWidth: math.min(300, width - 2 * Space.md),
+                          onAsk: () {
+                            _close();
+                            context.push('/ai');
+                          },
+                          onAnother: () => _say(),
+                          onClose: _close,
                         ),
-                      );
-                    },
-                    child: Transform(
-                      alignment: Alignment.center,
-                      transform: Matrix4.diagonal3Values(_facingRight ? -1 : 1, 1, 1),
-                      child: Mascot(
-                        mood: _line?.mood ?? (_step.isAnimating ? MascotMood.happy : MascotMood.front),
-                        size: _size,
-                        float: false,
+                ),
+                const SizedBox(height: Space.xs),
+                Semantics(
+                  button: true,
+                  label: context.l10n.lioHelpTitle,
+                  child: GestureDetector(
+                    key: const Key('lio-companion'),
+                    onTap: _help,
+                    onLongPress: _hideLio,
+                    onHorizontalDragUpdate: (e) => setState(() {
+                      final cur = _dragX ?? _x;
+                      final next = (cur + e.delta.dx / (width / 2)).clamp(-1.0, 1.0);
+                      if (next != cur) _facingRight = next > cur;
+                      _dragX = next;
+                    }),
+                    onHorizontalDragEnd: (_) => setState(() {
+                      _x = _dragX ?? _x;
+                      _dragX = null;
+                      _walkTime = Duration.zero;
+                      _doHop();
+                    }),
+                    child: AnimatedBuilder(
+                      animation: Listenable.merge([_hop, _step]),
+                      builder: (_, child) {
+                        final t = _hop.value;
+                        final lift = math.sin(t * math.pi) * 14 + _step.value * 4;
+                        final squash = 1 + math.sin(t * math.pi * 2) * 0.04;
+                        final tilt = (_step.value - 0.5) * 0.12 * (_step.isAnimating ? 1 : 0);
+                        return Transform.translate(
+                          offset: Offset(0, -lift),
+                          child: Transform.rotate(
+                            angle: tilt,
+                            child: Transform.scale(scaleY: squash, scaleX: 2 - squash, child: child),
+                          ),
+                        );
+                      },
+                      child: Transform(
+                        alignment: Alignment.center,
+                        transform: Matrix4.diagonal3Values(_facingRight ? -1 : 1, 1, 1),
+                        child: Mascot(
+                          mood: _line?.mood ?? (_step.isAnimating ? MascotMood.happy : MascotMood.front),
+                          size: _size,
+                          float: false,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -384,6 +388,7 @@ Future<bool?> showLioHelp(BuildContext context, {required LioLine line}) => show
   context: context,
   useRootNavigator: true,
   showDragHandle: true,
+  isScrollControlled: true,
   builder: (_) => _LioHelpSheet(line: line),
 );
 
@@ -409,84 +414,89 @@ class _LioHelpSheet extends ConsumerWidget {
       (Icons.chat_bubble_outline_rounded, l.lioHelpAsk, Accent.ai, () => context.push('/ai')),
     ];
     return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.md),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * 0.85),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.md),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Mascot(mood: line.mood, size: 56, float: false),
-                const SizedBox(width: Space.md),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(l.lioHelpTitle, style: context.text.titleLarge),
-                      const SizedBox(height: 4),
-                      Text(line.text, style: context.text.bodyMedium?.copyWith(color: context.semantic.muted)),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: Space.lg),
-            GridView.count(
-              crossAxisCount: 3,
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              mainAxisSpacing: Space.sm,
-              crossAxisSpacing: Space.sm,
-              childAspectRatio: 1.05,
-              children: [
-                for (final (icon, label, accent, go) in actions)
-                  AppCard(
-                    padding: const EdgeInsets.all(Space.sm),
-                    onTap: () {
-                      Navigator.pop(context);
-                      go();
-                    },
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 40,
-                          height: 40,
-                          decoration: BoxDecoration(
-                            color: accent.color.withValues(alpha: 0.14),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(icon, size: 22, color: accent.color),
-                        ),
-                        const SizedBox(height: Space.sm),
-                        Text(
-                          label,
-                          textAlign: TextAlign.center,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: context.text.labelMedium,
-                        ),
-                      ],
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Mascot(mood: line.mood, size: 56, float: false),
+                    const SizedBox(width: Space.md),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(l.lioHelpTitle, style: context.text.titleLarge),
+                          const SizedBox(height: 4),
+                          Text(line.text, style: context.text.bodyMedium?.copyWith(color: context.semantic.muted)),
+                        ],
+                      ),
                     ),
-                  ),
+                  ],
+                ),
+                const SizedBox(height: Space.lg),
+                GridView.count(
+                  crossAxisCount: 3,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  mainAxisSpacing: Space.sm,
+                  crossAxisSpacing: Space.sm,
+                  childAspectRatio: 1.05 / MediaQuery.textScalerOf(context).scale(1).clamp(1.0, 1.6),
+                  children: [
+                    for (final (icon, label, accent, go) in actions)
+                      AppCard(
+                        padding: const EdgeInsets.all(Space.sm),
+                        onTap: () {
+                          Navigator.pop(context);
+                          go();
+                        },
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 40,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                color: accent.color.withValues(alpha: 0.14),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(icon, size: 22, color: accent.color),
+                            ),
+                            const SizedBox(height: Space.sm),
+                            Text(
+                              label,
+                              textAlign: TextAlign.center,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: context.text.labelMedium,
+                            ),
+                          ],
+                        ),
+                      ),
+                  ],
+                ),
+                const SizedBox(height: Space.sm),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(l.lioHelpTip, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
+                    ),
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, true),
+                      style: TextButton.styleFrom(foregroundColor: context.semantic.muted),
+                      child: Text(l.lioHelpHide),
+                    ),
+                  ],
+                ),
               ],
             ),
-            const SizedBox(height: Space.sm),
-            Row(
-              children: [
-                Expanded(
-                  child: Text(l.lioHelpTip, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
-                ),
-                TextButton(
-                  onPressed: () => Navigator.pop(context, true),
-                  style: TextButton.styleFrom(foregroundColor: context.semantic.muted),
-                  child: Text(l.lioHelpHide),
-                ),
-              ],
-            ),
-          ],
+          ),
         ),
       ),
     );

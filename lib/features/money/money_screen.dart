@@ -140,7 +140,8 @@ class _MoneyScreenState extends ConsumerState<MoneyScreen> with SingleTickerProv
             physics: const NeverScrollableScrollPhysics(),
             mainAxisSpacing: Space.md,
             crossAxisSpacing: Space.md,
-            childAspectRatio: 1.7,
+            // Taller tiles when the phone's text is set large.
+            childAspectRatio: 1.7 / MediaQuery.textScalerOf(context).scale(1).clamp(1.0, 1.6),
             children: [
               _Stat(label: l.moneyIncome, value: fmt.money(b.incomeMinor)),
               _Stat(label: l.moneySpent, value: fmt.money(b.spentMinor)),

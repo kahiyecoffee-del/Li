@@ -33,7 +33,12 @@ class LifeOsApp extends ConsumerWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       routerConfig: router,
-      builder: (context, child) => AppEffects(child: child ?? const SizedBox.shrink()),
+      // Honour the phone's text size (about a fifth of people raise it), up
+      // to a point where layouts stay readable.
+      builder: (context, child) => MediaQuery.withClampedTextScaling(
+        maxScaleFactor: 1.6,
+        child: AppEffects(child: child ?? const SizedBox.shrink()),
+      ),
     );
   }
 }

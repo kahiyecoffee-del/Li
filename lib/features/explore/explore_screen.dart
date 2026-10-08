@@ -79,13 +79,14 @@ class ExploreScreen extends ConsumerWidget {
     );
   }
 
+  // Large text: one tile per row so names are never split mid-word.
   Widget _grid(BuildContext context, List<(IconData, String, String, String?, Accent)> tiles) => GridView.count(
-    crossAxisCount: 2,
+    crossAxisCount: MediaQuery.textScalerOf(context).scale(10) > 12 ? 1 : 2,
     shrinkWrap: true,
     physics: const NeverScrollableScrollPhysics(),
     mainAxisSpacing: Space.md,
     crossAxisSpacing: Space.md,
-    childAspectRatio: 2.3,
+    childAspectRatio: MediaQuery.textScalerOf(context).scale(10) > 12 ? 4.2 : 2.3,
     children: [
       for (final (i, t) in tiles.indexed)
         FadeSlideIn(

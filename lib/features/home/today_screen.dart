@@ -220,7 +220,7 @@ class _TodayScreenState extends ConsumerState<TodayScreen> {
                   physics: const NeverScrollableScrollPhysics(),
                   mainAxisSpacing: Space.md,
                   crossAxisSpacing: Space.md,
-                  childAspectRatio: 1.9,
+                  childAspectRatio: 1.9 / MediaQuery.textScalerOf(context).scale(1).clamp(1.0, 1.6),
                   children: [
                     for (final (i, it) in items.indexed)
                       FadeSlideIn(

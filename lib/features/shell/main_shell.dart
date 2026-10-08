@@ -40,15 +40,19 @@ class MainShell extends ConsumerWidget {
       // Hidden while typing so the keyboard and the chat have the room.
       bottomNavigationBar: MediaQuery.viewInsetsOf(context).bottom > 0
           ? null
-          : _FloatingNavBar(
-              index: shell.currentIndex,
-              onSelect: (i) => shell.goBranch(i, initialLocation: i == shell.currentIndex),
-              items: [
-                (Icons.home_outlined, Icons.home_rounded, l.navHome),
-                (Icons.explore_outlined, Icons.explore_rounded, l.navExplore),
-                (Icons.bookmark_border_rounded, Icons.bookmark_rounded, l.navSaved),
-                (Icons.person_outline_rounded, Icons.person_rounded, l.navProfile),
-              ],
+          // Tab labels grow only a little with large text (like the system's).
+          : MediaQuery.withClampedTextScaling(
+              maxScaleFactor: 1.15,
+              child: _FloatingNavBar(
+                index: shell.currentIndex,
+                onSelect: (i) => shell.goBranch(i, initialLocation: i == shell.currentIndex),
+                items: [
+                  (Icons.home_outlined, Icons.home_rounded, l.navHome),
+                  (Icons.explore_outlined, Icons.explore_rounded, l.navExplore),
+                  (Icons.bookmark_border_rounded, Icons.bookmark_rounded, l.navSaved),
+                  (Icons.person_outline_rounded, Icons.person_rounded, l.navProfile),
+                ],
+              ),
             ),
     );
   }

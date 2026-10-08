@@ -247,7 +247,7 @@ class _MetricsGrid extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       mainAxisSpacing: Space.md,
       crossAxisSpacing: Space.md,
-      childAspectRatio: 1.45,
+      childAspectRatio: 1.45 / MediaQuery.textScalerOf(context).scale(1).clamp(1.0, 1.6),
       children: items
           .map(
             (i) => AppCard(

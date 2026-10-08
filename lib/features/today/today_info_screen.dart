@@ -263,7 +263,10 @@ String durationLabelShort(AppLocalizations l, Duration d) {
 
 /// Home: the two things people glance at most (rates and the next prayer).
 class TodayInfoStrip extends ConsumerWidget {
-  const TodayInfoStrip({super.key});
+  const TodayInfoStrip({super.key, this.compact = false});
+
+  /// Half-width tile for the Home glance row.
+  final bool compact;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -278,6 +281,37 @@ class TodayInfoStrip extends ConsumerWidget {
           if (rates.$1[c] != null) '${_symbols[c]} ${NumberFormat('#,##0.00', loc).format(rates.$1[c])}',
       if (next != null) l.todayNext(prayerName(l, next.$1), durationLabelShort(l, next.$2.difference(DateTime.now()))),
     ];
+    if (compact) {
+      return AppCard(
+        key: const Key('today-strip'),
+        onTap: () => context.push('/today-info'),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 40,
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: Icon(Icons.wb_sunny_outlined, color: context.colors.primary, size: 30),
+              ),
+            ),
+            const SizedBox(height: Space.sm),
+            Eyebrow(l.todayInfoTile),
+            const SizedBox(height: 2),
+            if (parts.isEmpty)
+              Text(l.todayStripHint, maxLines: 2, overflow: TextOverflow.ellipsis, style: context.text.titleSmall)
+            else
+              for (final p in parts.take(2))
+                Text(
+                  p,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: context.text.titleSmall?.copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
+                ),
+          ],
+        ),
+      );
+    }
     return Padding(
       padding: const EdgeInsets.only(bottom: Space.md),
       child: AppCard(

@@ -49,16 +49,21 @@ class FeatureFlags {
 /// Remote Config variants. The app only reads the assigned variant and logs an
 /// exposure event — there is no client-side randomization.
 enum Experiment {
-  onboarding('onboarding', ['control', 'short']),
+  // Short by default: long set-up before any value is a top reason people
+  // leave in the first minutes.
+  onboarding('onboarding', ['control', 'short'], fallback: 'short'),
   homeLayout('home_layout', ['control', 'compact']),
   rewardedPlacement('rewarded_placement', ['control', 'inline']),
   paywall('paywall', ['control', 'annual_first']),
   notifications('notifications', ['control', 'evening']);
 
-  const Experiment(this.key, this.variants);
+  const Experiment(this.key, this.variants, {this.fallback = 'control'});
 
   final String key;
   final List<String> variants;
+
+  /// The variant when Remote Config assigns none.
+  final String fallback;
 }
 
 class Experiments {
@@ -68,10 +73,10 @@ class Experiments {
   final void Function(Experiment, String variant) _onExposure;
   final _exposed = <Experiment>{};
 
-  /// Variant for [e]; unknown values fall back to `control`.
+  /// Variant for [e]; unknown values fall back to [Experiment.fallback].
   String variant(Experiment e) {
     final raw = _rc.json(RcKeys.experiments)[e.key];
-    final v = raw is String && e.variants.contains(raw) ? raw : 'control';
+    final v = raw is String && e.variants.contains(raw) ? raw : e.fallback;
     if (_exposed.add(e)) _onExposure(e, v);
     return v;
   }
