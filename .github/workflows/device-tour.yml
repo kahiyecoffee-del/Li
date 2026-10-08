@@ -129,6 +129,14 @@ jobs:
           for f in $(find out -name '*.png'); do cp "$f" "flat/$(basename $(dirname $f))-$(basename $f)"; done
           for f in $(find out -name '*.log'); do tail -n 300 "$f" > "flat/$(basename $f)"; done
           ls -la flat
-          gh release create "device-tour-${{ github.run_number }}" flat/* -R "$GITHUB_REPOSITORY" \
-            --target "${{ github.sha }}" --prerelease --title "Device tour ${{ github.run_number }}" \
-            --notes "Android: ${{ needs.android.result }}, iOS: ${{ needs.ios.result }}"
+          tag="device-tour-${{ github.run_number }}"
+          notes="Android: ${{ needs.android.result }}, iOS: ${{ needs.ios.result }}"
+          # A re-run keeps the run number: update that release instead of failing.
+          if gh release view "$tag" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "$tag" flat/* -R "$GITHUB_REPOSITORY" --clobber
+            gh release edit "$tag" -R "$GITHUB_REPOSITORY" --notes "$notes"
+          else
+            gh release create "$tag" flat/* -R "$GITHUB_REPOSITORY" \
+              --target "${{ github.sha }}" --prerelease --title "Device tour ${{ github.run_number }}" \
+              --notes "$notes"
+          fi
