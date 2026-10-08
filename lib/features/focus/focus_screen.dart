@@ -14,7 +14,7 @@ import '../../core/theme/tokens.dart';
 import '../../core/utils/dates.dart';
 import '../../core/widgets/common.dart';
 import '../../core/widgets/mascot.dart';
-import '../premium/interstitial.dart';
+import '../premium/happy_moment.dart';
 
 /// A running (or paused) focus session, kept on the device so it survives
 /// leaving the app.
@@ -268,7 +268,7 @@ class _FocusScreenState extends ConsumerState<FocusScreen> {
                       await ref.read(actionsProvider).toggleTask(task);
                       if (!context.mounted) return;
                       Navigator.of(context).maybePop();
-                      unawaited(maybeShowInterstitial(ref));
+                      unawaited(happyMoment(ref));
                     },
                     icon: const Icon(Icons.check_rounded),
                     label: Text(l.focusDoneTask),

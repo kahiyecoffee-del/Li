@@ -1077,6 +1077,50 @@ class AppLocalizationsTr extends AppLocalizations {
   String get taskMore => 'Daha fazla';
 
   @override
+  String get rateApp => 'Dayly’yi değerlendir';
+
+  @override
+  String get rateAppBody => 'Birkaç saniye sürer, bize çok yardımcı olur.';
+
+  @override
+  String get searchTitle => 'Ara';
+
+  @override
+  String get searchHint => 'Görev, tarif, harcama, liste…';
+
+  @override
+  String get searchStart => 'Dayly’deki her şeyde ara. Arama telefonunda yapılır.';
+
+  @override
+  String searchEmpty(String q) {
+    return '“$q” için bir şey bulunamadı.';
+  }
+
+  @override
+  String get searchGoTo => 'Git';
+
+  @override
+  String get searchTasks => 'Görevler';
+
+  @override
+  String get searchRecipes => 'Tarifler';
+
+  @override
+  String get searchSpending => 'Harcamalar';
+
+  @override
+  String get searchShopping => 'Alışveriş listesi';
+
+  @override
+  String get searchSaved => 'Kaydedilenler';
+
+  @override
+  String get searchJournal => 'Günlük';
+
+  @override
+  String get cleared => 'Temizlendi';
+
+  @override
   String gardenShortCharging(int count) {
     return '$count iş daha';
   }

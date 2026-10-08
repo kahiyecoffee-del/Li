@@ -90,8 +90,10 @@ void main() {
     // No time given: lands in "Anytime" and can be scheduled into a free slot.
     await tester.enterText(find.byType(TextField).last, 'read 20 min');
     await tester.tap(find.byTooltip('Add').last);
-    await pumpUntil(tester, find.text('Read'));
-    expect(find.text('Anytime'), findsOneWidget);
+    // Evening cards (close the day…) can push it below the fold.
+    await pumpUntil(tester, find.textContaining('Read'));
+    await bringIntoView(tester, find.text('Anytime'));
+    expect(find.text('Read'), findsWidgets);
     await scrollAndTap(tester, find.text('Schedule'));
     // Late at night there is no free slot left today.
     await pumpUntil(
@@ -573,6 +575,44 @@ void main() {
     await tearDownApp(tester);
   });
 
+  testWidgets('Search finds tasks and screens; a deleted task can be brought back', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+    final now = DateTime.now();
+    await tester.runAsync(
+      () => app.seededRepos.tasks.save(
+        TaskItem(id: 's1', updatedAt: now, title: 'Çiçekleri sula', deadline: now, createdAt: now),
+      ),
+    );
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.byKey(const Key('home-search')));
+    await tester.tap(find.byKey(const Key('home-search')));
+    await pumpUntil(tester, find.byKey(const Key('search-field')));
+    await tester.enterText(find.byKey(const Key('search-field')), 'cicek');
+    await tester.pump(const Duration(milliseconds: 300));
+    expect(find.text('Çiçekleri sula'), findsOneWidget);
+    await tester.enterText(find.byKey(const Key('search-field')), 'money');
+    await tester.pump(const Duration(milliseconds: 300));
+    expect(find.text('Go to'), findsOneWidget);
+
+    // Delete from the editor, then undo.
+    await tester.enterText(find.byKey(const Key('search-field')), 'cicek');
+    await tester.pump(const Duration(milliseconds: 300));
+    await tester.tap(find.text('Çiçekleri sula'));
+    await pumpUntil(tester, find.text('Delete'));
+    await tester.ensureVisible(find.text('Delete'));
+    await tester.tap(find.text('Delete'));
+    await pumpUntil(tester, find.text('Undo'));
+    final gone = (await tester.runAsync(() => app.seededRepos.tasks.getAll()))!;
+    expect(gone.where((x) => x.id == 's1' && !x.deleted), isEmpty);
+    await tester.tap(find.text('Undo'));
+    await tester.pump(const Duration(milliseconds: 300));
+    final t = (await tester.runAsync(() => app.seededRepos.tasks.getAll()))!.firstWhere((x) => x.id == 's1');
+    expect(t.deleted, isFalse);
+    expect(t.title, 'Çiçekleri sula');
+    await tearDownApp(tester);
+  });
+
   testWidgets('Turkish + dark mode render Home and My day', (tester) async {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded(prefs: {'locale': 'tr', 'themeMode': 'dark'})))!;
@@ -601,7 +641,8 @@ void main() {
       if (all.any((t) => t.title == 'Gym')) break;
       await tester.pump(const Duration(milliseconds: 100));
     }
-    expect(find.textContaining('18:30'), findsWidgets);
+    final gym = (await tester.runAsync(() => app.seededRepos.tasks.getAll()))!.firstWhere((t) => t.title == 'Gym');
+    expect((gym.scheduledAt!.hour, gym.scheduledAt!.minute, gym.estimatedMinutes), (18, 30, 45));
     expect(app.analytics.logged(AnalyticsEvent.taskCreated), isTrue);
     await tearDownApp(tester);
   });
@@ -963,4 +1004,16 @@ Future<void> pickPlanDay(WidgetTester tester, DateTime d) async {
   await tester.ensureVisible(find.byKey(key));
   await tester.tap(find.byKey(key));
   await tester.pump(const Duration(milliseconds: 500));
+}
+
+/// Drags the page's vertical list until [finder] is built (lists build
+/// lazily, and what is above the fold depends on the time of day).
+Future<void> bringIntoView(WidgetTester tester, Finder finder) async {
+  final list = find.byWidgetPredicate((w) => w is Scrollable && w.axisDirection == AxisDirection.down).first;
+  for (var i = 0; i < 12 && finder.evaluate().isEmpty; i++) {
+    await tester.drag(list, Offset(0, i < 6 ? -250 : 250));
+    await tester.pump(const Duration(milliseconds: 200));
+  }
+  await tester.runAsync(() => Scrollable.ensureVisible(tester.element(finder.first), alignment: 0.3));
+  await tester.pump(const Duration(milliseconds: 300));
 }

@@ -13,6 +13,7 @@ import '../services/config/feature_flags.dart';
 import '../services/config/remote_config_service.dart';
 import '../services/connectivity/connectivity_service.dart';
 import '../services/daily/daily_info_service.dart';
+import '../services/review/review_service.dart';
 import '../services/share/share_service.dart';
 import '../services/crash/crash_reporter.dart';
 import '../services/news/news_service.dart';
@@ -50,10 +51,12 @@ class Services {
     CalendarService? calendar,
     DailyInfoService? dailyInfo,
     ShareService? share,
+    ReviewService? review,
   }) : flags = FeatureFlags(remote),
        calendar = calendar ?? NoCalendarService(),
        dailyInfo = dailyInfo ?? DailyInfoService(const NoDailyInfoProvider(), prefs),
-       share = share ?? RecordingShareService();
+       share = share ?? RecordingShareService(),
+       review = review ?? NoReviewService();
 
   final SharedPreferences prefs;
   final AuthService auth;
@@ -84,6 +87,9 @@ class Services {
 
   /// The system share sheet.
   final ShareService share;
+
+  /// The store's rating sheet.
+  final ReviewService review;
 
   /// Null in local-only mode (Firebase not configured).
   final FirebaseFirestore? firestore;

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -186,6 +187,14 @@ class SettingsScreen extends ConsumerWidget {
               onTap: session?.sync == null ? null : () => session!.sync!.sync().ignore(),
             ),
             _Header(l.settingsAbout),
+            if (!(defaultTargetPlatform == TargetPlatform.iOS && AppConfig.appStoreId.isEmpty))
+              ListTile(
+                key: const Key('rate-app'),
+                leading: const Icon(Icons.star_outline_rounded),
+                title: Text(l.rateApp),
+                subtitle: Text(l.rateAppBody),
+                onTap: () => ref.read(servicesProvider).review.openStore(),
+              ),
             ListTile(
               leading: const Icon(Icons.policy_outlined),
               title: Text(l.privacyPolicy),

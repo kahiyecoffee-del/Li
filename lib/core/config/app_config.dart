@@ -36,6 +36,9 @@ abstract final class AppConfig {
     defaultValue: 'ca-app-pub-3940256099942544/2435281174',
   );
 
+  /// The App Store id (digits), once the app exists in App Store Connect.
+  static const appStoreId = String.fromEnvironment('APP_STORE_ID');
+
   static const admobNativeAndroid = String.fromEnvironment(
     'ADMOB_NATIVE_ANDROID',
     defaultValue: 'ca-app-pub-3940256099942544/2247696110',

@@ -1105,6 +1105,50 @@ class AppLocalizationsEn extends AppLocalizations {
   String get taskMore => 'More';
 
   @override
+  String get rateApp => 'Rate Dayly';
+
+  @override
+  String get rateAppBody => 'A few seconds that help us a lot.';
+
+  @override
+  String get searchTitle => 'Search';
+
+  @override
+  String get searchHint => 'Tasks, recipes, spending, lists…';
+
+  @override
+  String get searchStart => 'Search everything in Dayly. The search runs on your phone.';
+
+  @override
+  String searchEmpty(String q) {
+    return 'Nothing found for “$q”.';
+  }
+
+  @override
+  String get searchGoTo => 'Go to';
+
+  @override
+  String get searchTasks => 'Tasks';
+
+  @override
+  String get searchRecipes => 'Recipes';
+
+  @override
+  String get searchSpending => 'Spending';
+
+  @override
+  String get searchShopping => 'Shopping list';
+
+  @override
+  String get searchSaved => 'Saved';
+
+  @override
+  String get searchJournal => 'Journal';
+
+  @override
+  String get cleared => 'Cleared';
+
+  @override
   String gardenShortCharging(int count) {
     String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count more to go', one: '1 more to go');
     return '$_temp0';

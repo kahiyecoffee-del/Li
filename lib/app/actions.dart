@@ -158,6 +158,9 @@ class AppActions {
 
   Future<void> deleteTask(String id) => _repos.tasks.delete(id);
 
+  /// Brings back a task deleted a moment ago ("Undo").
+  Future<void> restoreTask(TaskItem t) => _repos.tasks.save(t.copyWith(deleted: false));
+
   /// Creates a task from the quick-add line on [day].
   Future<TaskItem> addQuickTask(QuickTask q, DateTime day) async {
     final at = q.hasTime ? DateTime(day.year, day.month, day.day, q.hour!, q.minute) : null;
@@ -378,9 +381,21 @@ class AppActions {
 
   Future<void> toggleShopping(ShoppingItem i) => _repos.shopping.save(i.copyWith(checked: !i.checked));
 
-  Future<void> clearCheckedShopping() async {
+  /// Removes ticked items; returns them so the removal can be undone.
+  Future<List<ShoppingItem>> clearCheckedShopping() async {
+    final removed = <ShoppingItem>[];
     for (final i in await _repos.shopping.getAll()) {
-      if (i.checked) await _repos.shopping.delete(i.id);
+      if (i.checked && !i.deleted) {
+        removed.add(i);
+        await _repos.shopping.delete(i.id);
+      }
+    }
+    return removed;
+  }
+
+  Future<void> restoreShopping(List<ShoppingItem> items) async {
+    for (final i in items) {
+      await _repos.shopping.save(i);
     }
   }
 }

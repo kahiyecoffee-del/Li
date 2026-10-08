@@ -106,7 +106,16 @@ class _ShoppingScreenState extends ConsumerState<ShoppingScreen> {
             ),
           if (hasChecked)
             TextButton(
-              onPressed: () => ref.read(actionsProvider).clearCheckedShopping(),
+              onPressed: () async {
+                final actions = ref.read(actionsProvider);
+                final removed = await actions.clearCheckedShopping();
+                if (!context.mounted || removed.isEmpty) return;
+                showSnack(
+                  context,
+                  l.cleared,
+                  action: SnackBarAction(label: l.undo, onPressed: () => actions.restoreShopping(removed)),
+                );
+              },
               child: Text(l.shoppingClearChecked),
             ),
         ],

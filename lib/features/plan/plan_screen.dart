@@ -24,7 +24,7 @@ import '../../domain/plan/day_timeline.dart';
 import '../../l10n/gen/app_localizations.dart';
 import '../shell/main_shell.dart';
 import '../../services/calendar/calendar_service.dart';
-import '../premium/interstitial.dart';
+import '../premium/happy_moment.dart';
 import 'calendar_busy.dart';
 import 'routines_screen.dart';
 import 'task_editor.dart';
@@ -423,7 +423,7 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
         .read(tasksProvider)
         .list
         .where((t) => !t.deleted && !t.isCompleted && t.anchorDate != null && Dates.sameDay(t.anchorDate!, day));
-    if (left.isEmpty) await maybeShowInterstitial(ref);
+    if (left.isEmpty) await happyMoment(ref);
   }
 
   Future<void> _editDayHours() async {
@@ -1539,8 +1539,11 @@ class _TaskMenu extends ConsumerWidget {
             await actions.duplicateTask(task);
             if (context.mounted) showSnack(context, l.taskDuplicated);
           case _TaskAction.delete:
-            await actions.deleteTask(task.id);
-            if (context.mounted) showSnack(context, l.deleted);
+            final messenger = ScaffoldMessenger.of(context);
+            final undo = await deleteTaskWithUndo(ref, task, l);
+            messenger
+              ..hideCurrentSnackBar()
+              ..showSnackBar(undo);
         }
       },
     );
@@ -1810,7 +1813,13 @@ class _ShutdownSheet extends ConsumerWidget {
                             ),
                           TextButton(
                             style: TextButton.styleFrom(foregroundColor: context.semantic.muted),
-                            onPressed: () => actions.deleteTask(t.id),
+                            onPressed: () async {
+                              final messenger = ScaffoldMessenger.of(context);
+                              final undo = await deleteTaskWithUndo(ref, t, l);
+                              messenger
+                                ..hideCurrentSnackBar()
+                                ..showSnackBar(undo);
+                            },
                             child: Text(l.planDrop),
                           ),
                         ],

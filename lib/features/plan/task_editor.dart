@@ -13,6 +13,7 @@ import '../../domain/models/task_item.dart';
 import '../../domain/plan/day_timeline.dart';
 import '../../app/providers.dart';
 import 'calendar_busy.dart';
+import '../../l10n/gen/app_localizations.dart';
 import 'time_picker_sheet.dart';
 
 Future<void> showTaskEditor(BuildContext context, {TaskItem? task, DateTime? day, String? title, TimeOfDay? time}) =>
@@ -287,11 +288,12 @@ class _TaskEditorState extends ConsumerState<TaskEditor> {
             if (widget.task != null)
               TextButton(
                 onPressed: () async {
-                  await ref.read(actionsProvider).deleteTask(widget.task!.id);
-                  if (context.mounted) {
-                    Navigator.pop(context);
-                    showSnack(context, l.deleted);
-                  }
+                  final messenger = ScaffoldMessenger.of(context);
+                  final undo = await deleteTaskWithUndo(ref, widget.task!, l);
+                  if (context.mounted) Navigator.pop(context);
+                  messenger
+                    ..hideCurrentSnackBar()
+                    ..showSnackBar(undo);
                 },
                 child: Text(l.delete, style: TextStyle(color: context.semantic.negative)),
               ),
@@ -300,4 +302,15 @@ class _TaskEditorState extends ConsumerState<TaskEditor> {
       ),
     );
   }
+}
+
+/// Deletes [t] at once and returns the "Deleted · Undo" snack bar: no "are
+/// you sure?" for something that can be brought back.
+Future<SnackBar> deleteTaskWithUndo(WidgetRef ref, TaskItem t, AppLocalizations l) async {
+  final actions = ref.read(actionsProvider);
+  await actions.deleteTask(t.id);
+  return SnackBar(
+    content: Text(l.deleted),
+    action: SnackBarAction(label: l.undo, onPressed: () => actions.restoreTask(t)),
+  );
 }

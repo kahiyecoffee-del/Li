@@ -53,7 +53,17 @@ class ExploreScreen extends ConsumerWidget {
     ];
     final streak = ref.watch(streakProvider);
     return Scaffold(
-      appBar: AppBar(title: Text(l.exploreTitle)),
+      appBar: AppBar(
+        title: Text(l.exploreTitle),
+        actions: [
+          IconButton(
+            key: const Key('open-search'),
+            tooltip: l.searchTitle,
+            icon: const Icon(Icons.search_rounded),
+            onPressed: () => context.push('/search'),
+          ),
+        ],
+      ),
       body: PageList(
         children: [
           SectionTitle(l.exploreSolve),

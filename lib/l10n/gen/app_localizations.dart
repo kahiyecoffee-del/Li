@@ -1952,6 +1952,90 @@ abstract class AppLocalizations {
   /// **'More'**
   String get taskMore;
 
+  /// No description provided for @rateApp.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate Dayly'**
+  String get rateApp;
+
+  /// No description provided for @rateAppBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A few seconds that help us a lot.'**
+  String get rateAppBody;
+
+  /// No description provided for @searchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get searchTitle;
+
+  /// No description provided for @searchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Tasks, recipes, spending, lists…'**
+  String get searchHint;
+
+  /// No description provided for @searchStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Search everything in Dayly. The search runs on your phone.'**
+  String get searchStart;
+
+  /// No description provided for @searchEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing found for “{q}”.'**
+  String searchEmpty(String q);
+
+  /// No description provided for @searchGoTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Go to'**
+  String get searchGoTo;
+
+  /// No description provided for @searchTasks.
+  ///
+  /// In en, this message translates to:
+  /// **'Tasks'**
+  String get searchTasks;
+
+  /// No description provided for @searchRecipes.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipes'**
+  String get searchRecipes;
+
+  /// No description provided for @searchSpending.
+  ///
+  /// In en, this message translates to:
+  /// **'Spending'**
+  String get searchSpending;
+
+  /// No description provided for @searchShopping.
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping list'**
+  String get searchShopping;
+
+  /// No description provided for @searchSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved'**
+  String get searchSaved;
+
+  /// No description provided for @searchJournal.
+  ///
+  /// In en, this message translates to:
+  /// **'Journal'**
+  String get searchJournal;
+
+  /// No description provided for @cleared.
+  ///
+  /// In en, this message translates to:
+  /// **'Cleared'**
+  String get cleared;
+
   /// No description provided for @gardenShortCharging.
   ///
   /// In en, this message translates to:

@@ -19,6 +19,7 @@ import '../../core/widgets/mascot.dart';
 import '../../domain/plan/day_timeline.dart';
 import '../../domain/plan/week_review.dart';
 import '../goals/goals_screen.dart';
+import '../premium/happy_moment.dart';
 import '../life/mood_sheet.dart';
 
 /// Sunday ritual: what the week looked like, then three focuses for the
@@ -245,6 +246,7 @@ class _WeeklyReviewScreenState extends ConsumerState<WeeklyReviewScreen> {
                 c.clear();
               }
               showSnack(context, l.reviewPlanned(n));
+              unawaited(happyMoment(ref));
             },
             icon: const Icon(Icons.event_available_rounded),
             label: Text(l.reviewPlanWeek),

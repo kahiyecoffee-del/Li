@@ -135,6 +135,12 @@ void main() {
       await tester.tap(find.text('Tamam').last);
       await pumpUntil(tester, find.textContaining('· 45 dk'));
       await _shot(tester, '$mode-plan-chosen');
+      // The timeline builds lazily: scroll until the task is built.
+      final list = find.byWidgetPredicate((w) => w is Scrollable && w.axisDirection == AxisDirection.down).first;
+      for (var i = 0; i < 12 && find.text('Ekip toplantısı').evaluate().isEmpty; i++) {
+        await tester.drag(list, Offset(0, i < 6 ? -250 : 250));
+        await tester.pump(const Duration(milliseconds: 200));
+      }
       await tester.runAsync(
         () => Scrollable.ensureVisible(tester.element(find.text('Ekip toplantısı').last), alignment: 0.3),
       );

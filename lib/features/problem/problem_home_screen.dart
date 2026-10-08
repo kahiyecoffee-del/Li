@@ -44,9 +44,22 @@ class HomeScreen extends ConsumerWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        name.isEmpty ? l.homeHelloNoName : l.homeHello(name),
-                        style: context.text.titleMedium?.copyWith(color: context.semantic.muted),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              name.isEmpty ? l.homeHelloNoName : l.homeHello(name),
+                              style: context.text.titleMedium?.copyWith(color: context.semantic.muted),
+                            ),
+                          ),
+                          IconButton(
+                            key: const Key('home-search'),
+                            tooltip: l.searchTitle,
+                            visualDensity: VisualDensity.compact,
+                            icon: const Icon(Icons.search_rounded),
+                            onPressed: () => context.push('/search'),
+                          ),
+                        ],
                       ),
                       const SizedBox(height: Space.xs),
                       Semantics(header: true, child: Text(l.homeQuestion, style: context.text.headlineMedium)),

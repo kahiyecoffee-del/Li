@@ -774,6 +774,27 @@
   "planDayEnd": "Ends",
   "planHowTo": "Tap a task to change anything · swipe right: done · left: tomorrow",
   "taskMore": "More",
+  "rateApp": "Rate Dayly",
+  "rateAppBody": "A few seconds that help us a lot.",
+  "searchTitle": "Search",
+  "searchHint": "Tasks, recipes, spending, lists…",
+  "searchStart": "Search everything in Dayly. The search runs on your phone.",
+  "searchEmpty": "Nothing found for “{q}”.",
+  "@searchEmpty": {
+    "placeholders": {
+      "q": {
+        "type": "String"
+      }
+    }
+  },
+  "searchGoTo": "Go to",
+  "searchTasks": "Tasks",
+  "searchRecipes": "Recipes",
+  "searchSpending": "Spending",
+  "searchShopping": "Shopping list",
+  "searchSaved": "Saved",
+  "searchJournal": "Journal",
+  "cleared": "Cleared",
   "gardenShortCharging": "{count, plural, =1{1 more to go} other{{count} more to go}}",
   "@gardenShortCharging": {
     "placeholders": {

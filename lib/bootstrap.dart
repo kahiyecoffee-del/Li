@@ -23,6 +23,7 @@ import 'services/analytics/analytics_service.dart';
 import 'services/auth/auth_service.dart';
 import 'services/calendar/calendar_service.dart';
 import 'services/daily/daily_info_service.dart';
+import 'services/review/review_service.dart';
 import 'services/share/share_service.dart';
 import 'services/billing/billing_service.dart';
 import 'services/config/remote_config_service.dart';
@@ -87,6 +88,7 @@ Future<Services> buildServices() async {
       calendar: mobile ? DeviceCalendarService() : NoCalendarService(),
       dailyInfo: DailyInfoService(HttpDailyInfoProvider(), prefs),
       share: SystemShareService(),
+      review: mobile ? StoreReviewService() : NoReviewService(),
       journalKeys: SecureJournalKeyStore(),
     );
   }
