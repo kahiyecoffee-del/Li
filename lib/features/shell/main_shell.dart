@@ -11,7 +11,8 @@ import '../../core/theme/tokens.dart';
 import '../../core/widgets/common.dart';
 import '../lio/lio_companion.dart';
 
-/// Bottom navigation: HOME · EXPLORE · SAVED · AI · PROFILE.
+/// Bottom navigation: HOME · EXPLORE · SAVED · PROFILE. Lio is not a tab:
+/// he walks along the bottom of every tab and helps when tapped.
 class MainShell extends ConsumerWidget {
   const MainShell({super.key, required this.shell});
 
@@ -46,7 +47,6 @@ class MainShell extends ConsumerWidget {
                 (Icons.home_outlined, Icons.home_rounded, l.navHome),
                 (Icons.explore_outlined, Icons.explore_rounded, l.navExplore),
                 (Icons.bookmark_border_rounded, Icons.bookmark_rounded, l.navSaved),
-                (Icons.auto_awesome_outlined, Icons.auto_awesome, l.navAi),
                 (Icons.person_outline_rounded, Icons.person_rounded, l.navProfile),
               ],
             ),

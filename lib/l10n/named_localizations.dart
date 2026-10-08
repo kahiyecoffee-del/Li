@@ -17,6 +17,8 @@ class _NamedEn extends AppLocalizationsEn {
   @override
   String get planWithLio => _r(super.planWithLio);
   @override
+  String get lioHelpHide => _r(super.lioHelpHide);
+  @override
   String get foodWeekIntro => _r(super.foodWeekIntro);
   @override
   String get notifPlanBody => _r(super.notifPlanBody);
@@ -64,6 +66,8 @@ class _NamedTr extends AppLocalizationsTr {
   String get planDayEmpty => _r(super.planDayEmpty);
   @override
   String get planWithLio => _r(super.planWithLio);
+  @override
+  String get lioHelpHide => _r(super.lioHelpHide);
   @override
   String get foodWeekIntro => _r(super.foodWeekIntro);
   @override

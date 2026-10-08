@@ -137,7 +137,7 @@ class _TodayScreenState extends ConsumerState<TodayScreen> {
                               ? Gradients.meadowDark
                               : Gradients.meadow,
                           padding: const EdgeInsets.fromLTRB(Space.md, Space.md, Space.lg, Space.md),
-                          onTap: () => context.go('/ai'),
+                          onTap: () => context.push('/ai'),
                           child: Row(
                             children: [
                               Mascot(mood: _mood(allDone), size: 92),
@@ -256,7 +256,7 @@ class _TodayScreenState extends ConsumerState<TodayScreen> {
       case 2:
         await showMoodSheet(context);
       case 3:
-        context.go('/ai');
+        await context.push('/ai');
     }
   }
 }

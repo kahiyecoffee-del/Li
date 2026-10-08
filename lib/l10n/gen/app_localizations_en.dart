@@ -1046,6 +1046,110 @@ class AppLocalizationsEn extends AppLocalizations {
   String get planPickDate => 'Pick a date';
 
   @override
+  String planClashes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count tasks overlap',
+      one: '1 task overlaps another',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get planFixClashes => 'Fix overlaps';
+
+  @override
+  String planClashesFixed(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Moved $count tasks, nothing overlaps now.',
+      one: 'Moved 1 task, nothing overlaps now.',
+      zero: 'Nothing overlaps.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String planClashWith(String title) {
+    return 'Overlaps “$title”';
+  }
+
+  @override
+  String get planMoveAfter => 'Move after it';
+
+  @override
+  String planUseFreeTime(String time) {
+    return 'Move to $time';
+  }
+
+  @override
+  String planDayHours(String start, String end) {
+    return 'Day $start – $end';
+  }
+
+  @override
+  String get planDayHoursTitle => 'When does your day start and end?';
+
+  @override
+  String get planDayStart => 'Starts';
+
+  @override
+  String get planDayEnd => 'Ends';
+
+  @override
+  String get planHowTo => 'Tap a task to change anything · swipe right: done · left: tomorrow';
+
+  @override
+  String get taskMore => 'More';
+
+  @override
+  String get taskChangeTime => 'Change time';
+
+  @override
+  String get taskOtherDay => 'Move to another day';
+
+  @override
+  String get taskDuplicate => 'Duplicate';
+
+  @override
+  String get taskClearTime => 'Remove time';
+
+  @override
+  String get taskDuplicated => 'Copied';
+
+  @override
+  String get taskMoved => 'Moved';
+
+  @override
+  String get lioHelpTitle => 'How can I help?';
+
+  @override
+  String get lioHelpPlan => 'Plan my day';
+
+  @override
+  String get lioHelpTask => 'Add a task';
+
+  @override
+  String get lioHelpMoney => 'My budget';
+
+  @override
+  String get lioHelpWrite => 'Write in my journal';
+
+  @override
+  String get lioHelpMood => 'How I feel';
+
+  @override
+  String get lioHelpAsk => 'Ask me anything';
+
+  @override
+  String get lioHelpHide => 'Hide Lio';
+
+  @override
+  String get lioHelpTip => 'Tip: drag me anywhere along the bottom.';
+
+  @override
   String durHM(int h, int m) {
     return '$h h $m min';
   }

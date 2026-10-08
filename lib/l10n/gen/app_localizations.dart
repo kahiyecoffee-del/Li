@@ -1880,6 +1880,168 @@ abstract class AppLocalizations {
   /// **'Pick a date'**
   String get planPickDate;
 
+  /// No description provided for @planClashes.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 task overlaps another} other{{count} tasks overlap}}'**
+  String planClashes(int count);
+
+  /// No description provided for @planFixClashes.
+  ///
+  /// In en, this message translates to:
+  /// **'Fix overlaps'**
+  String get planFixClashes;
+
+  /// No description provided for @planClashesFixed.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Nothing overlaps.} =1{Moved 1 task, nothing overlaps now.} other{Moved {count} tasks, nothing overlaps now.}}'**
+  String planClashesFixed(int count);
+
+  /// No description provided for @planClashWith.
+  ///
+  /// In en, this message translates to:
+  /// **'Overlaps “{title}”'**
+  String planClashWith(String title);
+
+  /// No description provided for @planMoveAfter.
+  ///
+  /// In en, this message translates to:
+  /// **'Move after it'**
+  String get planMoveAfter;
+
+  /// No description provided for @planUseFreeTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Move to {time}'**
+  String planUseFreeTime(String time);
+
+  /// No description provided for @planDayHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Day {start} – {end}'**
+  String planDayHours(String start, String end);
+
+  /// No description provided for @planDayHoursTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'When does your day start and end?'**
+  String get planDayHoursTitle;
+
+  /// No description provided for @planDayStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Starts'**
+  String get planDayStart;
+
+  /// No description provided for @planDayEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'Ends'**
+  String get planDayEnd;
+
+  /// No description provided for @planHowTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap a task to change anything · swipe right: done · left: tomorrow'**
+  String get planHowTo;
+
+  /// No description provided for @taskMore.
+  ///
+  /// In en, this message translates to:
+  /// **'More'**
+  String get taskMore;
+
+  /// No description provided for @taskChangeTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Change time'**
+  String get taskChangeTime;
+
+  /// No description provided for @taskOtherDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Move to another day'**
+  String get taskOtherDay;
+
+  /// No description provided for @taskDuplicate.
+  ///
+  /// In en, this message translates to:
+  /// **'Duplicate'**
+  String get taskDuplicate;
+
+  /// No description provided for @taskClearTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove time'**
+  String get taskClearTime;
+
+  /// No description provided for @taskDuplicated.
+  ///
+  /// In en, this message translates to:
+  /// **'Copied'**
+  String get taskDuplicated;
+
+  /// No description provided for @taskMoved.
+  ///
+  /// In en, this message translates to:
+  /// **'Moved'**
+  String get taskMoved;
+
+  /// No description provided for @lioHelpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How can I help?'**
+  String get lioHelpTitle;
+
+  /// No description provided for @lioHelpPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan my day'**
+  String get lioHelpPlan;
+
+  /// No description provided for @lioHelpTask.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a task'**
+  String get lioHelpTask;
+
+  /// No description provided for @lioHelpMoney.
+  ///
+  /// In en, this message translates to:
+  /// **'My budget'**
+  String get lioHelpMoney;
+
+  /// No description provided for @lioHelpWrite.
+  ///
+  /// In en, this message translates to:
+  /// **'Write in my journal'**
+  String get lioHelpWrite;
+
+  /// No description provided for @lioHelpMood.
+  ///
+  /// In en, this message translates to:
+  /// **'How I feel'**
+  String get lioHelpMood;
+
+  /// No description provided for @lioHelpAsk.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask me anything'**
+  String get lioHelpAsk;
+
+  /// No description provided for @lioHelpHide.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide Lio'**
+  String get lioHelpHide;
+
+  /// No description provided for @lioHelpTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Tip: drag me anywhere along the bottom.'**
+  String get lioHelpTip;
+
   /// No description provided for @durHM.
   ///
   /// In en, this message translates to:

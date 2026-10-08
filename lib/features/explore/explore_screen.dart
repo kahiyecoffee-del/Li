@@ -93,7 +93,7 @@ class ExploreScreen extends ConsumerWidget {
   );
 
   Widget _tile(BuildContext context, (IconData, String, String, String?, Accent) t) => AppCard(
-    onTap: () => t.$3.startsWith('/ai') ? context.go(t.$3) : context.push(t.$3),
+    onTap: () => context.push(t.$3),
     semanticLabel: t.$2,
     padding: const EdgeInsets.symmetric(horizontal: Space.md, vertical: Space.sm),
     child: Row(

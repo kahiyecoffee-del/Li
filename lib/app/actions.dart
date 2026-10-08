@@ -225,6 +225,44 @@ class AppActions {
     );
   }
 
+  /// Takes the time off [t]: it stays on its day, "any time".
+  Future<void> unscheduleTask(TaskItem t) => _repos.tasks.save(
+    t.copyWith(clearSchedule: true, deadline: Dates.dateOnly(t.scheduledAt ?? t.anchorDate ?? _now)),
+  );
+
+  /// A fresh, open copy of [t] (same day and time, or [at]).
+  Future<TaskItem> duplicateTask(TaskItem t, {DateTime? at}) async {
+    final copy = TaskItem(
+      id: newId(),
+      updatedAt: _now,
+      title: t.title,
+      priority: t.priority,
+      estimatedMinutes: t.estimatedMinutes,
+      category: t.category,
+      scheduledAt: at ?? t.scheduledAt,
+      deadline: (at ?? t.scheduledAt) == null ? (t.deadline ?? t.anchorDate) : null,
+      createdAt: _now,
+      remindBefore: t.remindBefore,
+    );
+    await saveTask(copy, isNew: true);
+    return copy;
+  }
+
+  /// Slides overlapping tasks on [day] apart. Returns how many moved.
+  Future<int> fixClashes(DateTime day) async {
+    final all = await _repos.tasks.getAll();
+    final moves = resolveClashes(all, day);
+    for (final t in all.where((t) => moves.containsKey(t.id))) {
+      await _repos.tasks.save(t.copyWith(scheduledAt: moves[t.id]));
+    }
+    return moves.length;
+  }
+
+  /// When the planner's day starts and ends.
+  Future<void> setDayHours(DayTime wake, DayTime sleep) async {
+    await saveProfile(_profile.copyWith(wakeTime: wake, sleepTime: sleep));
+  }
+
   Future<int> optimizePlan() async {
     final n = await AiActionExecutor.optimizeToday(_repos, _profile, _now);
     unawaited(_analytics.log(AnalyticsEvent.planOptimized, {'count': n}));

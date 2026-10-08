@@ -130,10 +130,25 @@ void main() {
     for (var i = 0; i < 10; i++) {
       await tester.pump(const Duration(milliseconds: 150));
     }
+    // Lio is not a tab: back to Home.
+    await tester.binding.handlePopRoute();
     await pumpUntil(tester, find.text('Keşfet'));
     await tester.tap(find.text('Keşfet').last);
     await pumpUntil(tester, find.text('Takip'));
     await shot(tester, '08-kesfet');
+
+    // Lio walks along the bottom; a tap opens his help.
+    await pumpUntil(tester, find.byKey(const Key('lio-companion')));
+    await tester.tap(find.byKey(const Key('lio-companion')), warnIfMissed: false);
+    await pumpUntil(tester, find.text('Nasıl yardım edeyim?'));
+    for (var i = 0; i < 4; i++) {
+      await tester.pump(const Duration(milliseconds: 150));
+    }
+    await shot(tester, '08b-lio-yardim');
+    await tester.binding.handlePopRoute();
+    for (var i = 0; i < 4; i++) {
+      await tester.pump(const Duration(milliseconds: 150));
+    }
 
     await tester.tap(find.text('Ana sayfa').last);
     await pumpUntil(tester, find.text('Bugün neyi çözelim?'));

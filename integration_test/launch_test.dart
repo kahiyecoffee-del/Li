@@ -19,7 +19,11 @@ void main() {
     }
     expect(find.byType(FilledButton), findsWidgets);
     if (Platform.isAndroid) await binding.convertFlutterSurfaceToImage();
-    await tester.pumpAndSettle(const Duration(milliseconds: 100), EnginePhase.sendSemanticsUpdate, const Duration(seconds: 5));
+    await tester.pumpAndSettle(
+      const Duration(milliseconds: 100),
+      EnginePhase.sendSemanticsUpdate,
+      const Duration(seconds: 5),
+    );
     await binding.takeScreenshot('00-launch');
   });
 }

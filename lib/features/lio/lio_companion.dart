@@ -15,6 +15,7 @@ import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
 import '../../core/widgets/mascot.dart';
 import '../../l10n/gen/app_localizations.dart';
+import '../plan/task_editor.dart';
 
 /// One thing Lio can say.
 class LioLine {
@@ -86,21 +87,21 @@ abstract final class LioScript {
   ];
 }
 
-/// Lio lives above the tab content: he hops when you switch tabs, walks to
-/// whichever side you drag him to, and now and then shares a tip or a bit of
-/// inspiration. Tap him to talk, long-press to send him to rest.
+/// Lio lives above the tab content and walks along the bottom of the
+/// screen: now and then he strolls somewhere else, hops when you switch
+/// tabs and shares a tip. Tap him for help, drag him anywhere, long-press
+/// to send him to rest.
 class LioCompanion extends ConsumerStatefulWidget {
   const LioCompanion({super.key, required this.tab});
 
   final int tab;
 
-  /// Shell tabs where Lio steps aside: Home and the assistant already feature
-  /// him, and Profile is for settings. Keeps him helpful, not everywhere.
-  static const hiddenOnTabs = {0, 3, 4};
+  /// Shell tabs where Lio steps aside (none: he goes everywhere).
+  static const hiddenOnTabs = <int>{};
 
-  /// Shell tab index (home, explore, saved, AI, profile) → [LioScript] tab
-  /// (0 home, 1 plan, 2 money, 3 life, 4 AI).
-  static const scriptTab = [0, 3, 0, 4, 4];
+  /// Shell tab index (home, explore, saved, profile) → [LioScript] tab
+  /// (0 home, 1 plan, 2 money, 3 life, 4 other).
+  static const scriptTab = [0, 3, 0, 4];
 
   @override
   ConsumerState<LioCompanion> createState() => _LioCompanionState();
@@ -108,17 +109,25 @@ class LioCompanion extends ConsumerStatefulWidget {
 
 class _LioCompanionState extends ConsumerState<LioCompanion> with TickerProviderStateMixin {
   static const _autoLimit = 6;
-  static const _size = 64.0;
+  static const _size = 60.0;
 
   late final AnimationController _hop = AnimationController(vsync: this, duration: const Duration(milliseconds: 620));
+
+  /// Little steps while he walks.
+  late final AnimationController _step = AnimationController(vsync: this, duration: const Duration(milliseconds: 340));
   final _rand = math.Random();
   final _seen = <String>{};
   final _greetedTabs = <int>{};
   Timer? _speakTimer;
   Timer? _hideTimer;
   Timer? _ambient;
+  Timer? _arrive;
   LioLine? _line;
-  bool _right = false;
+
+  /// Where he stands along the bottom, -1 (left) … 1 (right).
+  double _x = -0.85;
+  bool _facingRight = true;
+  Duration _walkTime = Duration.zero;
   double? _dragX;
   int _autoCount = 0;
 
@@ -128,11 +137,41 @@ class _LioCompanionState extends ConsumerState<LioCompanion> with TickerProvider
   void initState() {
     super.initState();
     _scheduleTabGreeting(const Duration(milliseconds: 2400));
-    // Ambient life: a small hop every so often, and occasionally a thought.
-    _ambient = Timer.periodic(const Duration(seconds: 14), (t) {
+    // Ambient life: a stroll or a hop every so often, and now and then a thought.
+    _ambient = Timer.periodic(const Duration(seconds: 9), (t) {
       if (!mounted) return;
-      _doHop();
-      if (_line == null && t.tick % 6 == 0 && _autoCount < _autoLimit) _say(auto: true);
+      if (_line == null && _dragX == null && _rand.nextDouble() < 0.6) {
+        _walkTo(_pickSpot());
+      } else {
+        _doHop();
+      }
+      if (_line == null && t.tick % 9 == 0 && _autoCount < _autoLimit) _say(auto: true);
+    });
+  }
+
+  double _pickSpot() {
+    for (var i = 0; i < 6; i++) {
+      final x = _rand.nextDouble() * 2 - 1;
+      if ((x - _x).abs() > 0.35) return x;
+    }
+    return -_x;
+  }
+
+  void _walkTo(double x) {
+    if (_reduceMotion) return;
+    final distance = (x - _x).abs();
+    setState(() {
+      _facingRight = x > _x;
+      _walkTime = Duration(milliseconds: (distance * 1700).round().clamp(500, 3400));
+      _x = x;
+    });
+    _step.repeat(reverse: true);
+    _arrive?.cancel();
+    _arrive = Timer(_walkTime, () {
+      if (!mounted) return;
+      _step
+        ..stop()
+        ..value = 0;
     });
   }
 
@@ -151,7 +190,9 @@ class _LioCompanionState extends ConsumerState<LioCompanion> with TickerProvider
     _speakTimer?.cancel();
     _hideTimer?.cancel();
     _ambient?.cancel();
+    _arrive?.cancel();
     _hop.dispose();
+    _step.dispose();
     super.dispose();
   }
 
@@ -188,7 +229,7 @@ class _LioCompanionState extends ConsumerState<LioCompanion> with TickerProvider
     );
   }
 
-  void _say({bool auto = false}) {
+  LioLine _pick() {
     final all = _lines();
     final fresh = all.where((x) => !_seen.contains(x.text)).toList();
     final pool = fresh.isEmpty ? all : fresh;
@@ -198,6 +239,11 @@ class _LioCompanionState extends ConsumerState<LioCompanion> with TickerProvider
     final candidates = top > 0 ? pool.where((x) => x.priority == top).toList() : pool;
     final pick = candidates[_rand.nextInt(candidates.length)];
     _seen.add(pick.text);
+    return pick;
+  }
+
+  void _say({bool auto = false}) {
+    final pick = _pick();
     if (auto) _autoCount++;
     setState(() => _line = pick);
     _doHop();
@@ -210,9 +256,17 @@ class _LioCompanionState extends ConsumerState<LioCompanion> with TickerProvider
     if (mounted && _line != null) setState(() => _line = null);
   }
 
+  Future<void> _help() async {
+    _close();
+    unawaited(HapticFeedback.selectionClick());
+    _doHop();
+    final hide = await showLioHelp(context, line: _pick());
+    if (hide == true && mounted) _hideLio();
+  }
+
   void _hideLio() {
     final l = context.l10n;
-    HapticFeedback.mediumImpact();
+    unawaited(HapticFeedback.mediumImpact());
     final ctrl = ref.read(settingsProvider.notifier);
     ctrl.update((s) => s.copyWith(showLio: false));
     showSnack(
@@ -226,7 +280,7 @@ class _LioCompanionState extends ConsumerState<LioCompanion> with TickerProvider
   Widget build(BuildContext context) {
     final hidden = LioCompanion.hiddenOnTabs.contains(widget.tab);
     final width = MediaQuery.sizeOf(context).width;
-    final x = _dragX ?? (_right ? 1.0 : -1.0);
+    final x = _dragX ?? _x;
     final d = Motion.of(context, Motion.slow);
     return AnimatedSlide(
       offset: hidden ? const Offset(0, 1.6) : Offset.zero,
@@ -234,11 +288,12 @@ class _LioCompanionState extends ConsumerState<LioCompanion> with TickerProvider
       curve: Motion.curve,
       child: AnimatedAlign(
         alignment: Alignment(x, 1),
-        duration: _dragX != null ? Duration.zero : d,
-        curve: Curves.easeOutBack,
+        duration: _dragX != null ? Duration.zero : (_walkTime == Duration.zero ? d : _walkTime),
+        curve: _walkTime == Duration.zero ? Curves.easeOutBack : Curves.easeInOutSine,
+        onEnd: () => _walkTime = Duration.zero,
         child: Padding(
           // On the right, sit above the screen's + button.
-          padding: EdgeInsets.fromLTRB(Space.md, 0, Space.md, _right && _dragX == null ? 76 : Space.sm),
+          padding: EdgeInsets.fromLTRB(Space.md, 0, Space.md, x > 0.6 && _dragX == null ? 76 : Space.sm),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: x > 0 ? CrossAxisAlignment.end : CrossAxisAlignment.start,
@@ -262,7 +317,7 @@ class _LioCompanionState extends ConsumerState<LioCompanion> with TickerProvider
                         maxWidth: math.min(300, width - 2 * Space.md),
                         onAsk: () {
                           _close();
-                          context.go('/ai');
+                          context.push('/ai');
                         },
                         onAnother: () => _say(),
                         onClose: _close,
@@ -271,43 +326,167 @@ class _LioCompanionState extends ConsumerState<LioCompanion> with TickerProvider
               const SizedBox(height: Space.xs),
               Semantics(
                 button: true,
-                label: context.l10n.lioName,
+                label: context.l10n.lioHelpTitle,
                 child: GestureDetector(
-                  onTap: () {
-                    HapticFeedback.selectionClick();
-                    _line == null ? _say() : _close();
-                  },
+                  key: const Key('lio-companion'),
+                  onTap: _help,
                   onLongPress: _hideLio,
                   onHorizontalDragUpdate: (e) => setState(() {
-                    final cur = _dragX ?? (_right ? 1.0 : -1.0);
-                    _dragX = (cur + e.delta.dx / (width / 2)).clamp(-1.0, 1.0);
+                    final cur = _dragX ?? _x;
+                    final next = (cur + e.delta.dx / (width / 2)).clamp(-1.0, 1.0);
+                    if (next != cur) _facingRight = next > cur;
+                    _dragX = next;
                   }),
                   onHorizontalDragEnd: (_) => setState(() {
-                    _right = (_dragX ?? -1) > 0;
+                    _x = _dragX ?? _x;
                     _dragX = null;
+                    _walkTime = Duration.zero;
                     _doHop();
                   }),
                   child: AnimatedBuilder(
-                    animation: _hop,
+                    animation: Listenable.merge([_hop, _step]),
                     builder: (_, child) {
                       final t = _hop.value;
-                      final lift = math.sin(t * math.pi) * 14;
+                      final lift = math.sin(t * math.pi) * 14 + _step.value * 4;
                       final squash = 1 + math.sin(t * math.pi * 2) * 0.04;
+                      final tilt = (_step.value - 0.5) * 0.12 * (_step.isAnimating ? 1 : 0);
                       return Transform.translate(
                         offset: Offset(0, -lift),
-                        child: Transform.scale(scaleY: squash, scaleX: 2 - squash, child: child),
+                        child: Transform.rotate(
+                          angle: tilt,
+                          child: Transform.scale(scaleY: squash, scaleX: 2 - squash, child: child),
+                        ),
                       );
                     },
                     child: Transform(
                       alignment: Alignment.center,
-                      transform: Matrix4.diagonal3Values(x > 0 ? -1 : 1, 1, 1),
-                      child: Mascot(mood: _line?.mood ?? MascotMood.front, size: _size, float: false),
+                      transform: Matrix4.diagonal3Values(_facingRight ? -1 : 1, 1, 1),
+                      child: Mascot(
+                        mood: _line?.mood ?? (_step.isAnimating ? MascotMood.happy : MascotMood.front),
+                        size: _size,
+                        float: false,
+                      ),
                     ),
                   ),
                 ),
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+/// What Lio offers when tapped: the most useful thing he noticed and a few
+/// one-tap shortcuts. Returns true when the person wants him hidden.
+Future<bool?> showLioHelp(BuildContext context, {required LioLine line}) => showModalBottomSheet<bool>(
+  context: context,
+  useRootNavigator: true,
+  showDragHandle: true,
+  builder: (_) => _LioHelpSheet(line: line),
+);
+
+class _LioHelpSheet extends ConsumerWidget {
+  const _LioHelpSheet({required this.line});
+  final LioLine line;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l = context.l10n;
+    String n() => '${DateTime.now().microsecondsSinceEpoch}';
+    final actions = <(IconData, String, Accent, VoidCallback)>[
+      (Icons.event_available_rounded, l.lioHelpPlan, Accent.plan, () => context.push('/ai?topic=plan&n=${n()}')),
+      (
+        Icons.add_task_rounded,
+        l.lioHelpTask,
+        Accent.goals,
+        () => showTaskEditor(context, day: ref.read(todayProvider)),
+      ),
+      (Icons.account_balance_wallet_outlined, l.lioHelpMoney, Accent.money, () => context.push('/money')),
+      (Icons.favorite_outline_rounded, l.lioHelpMood, Accent.wellbeing, () => context.push('/ai?topic=mood&n=${n()}')),
+      (Icons.menu_book_rounded, l.lioHelpWrite, Accent.news, () => context.push('/journal/new')),
+      (Icons.chat_bubble_outline_rounded, l.lioHelpAsk, Accent.ai, () => context.push('/ai')),
+    ];
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.md),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Mascot(mood: line.mood, size: 56, float: false),
+                const SizedBox(width: Space.md),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(l.lioHelpTitle, style: context.text.titleLarge),
+                      const SizedBox(height: 4),
+                      Text(line.text, style: context.text.bodyMedium?.copyWith(color: context.semantic.muted)),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: Space.lg),
+            GridView.count(
+              crossAxisCount: 3,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              mainAxisSpacing: Space.sm,
+              crossAxisSpacing: Space.sm,
+              childAspectRatio: 1.05,
+              children: [
+                for (final (icon, label, accent, go) in actions)
+                  AppCard(
+                    padding: const EdgeInsets.all(Space.sm),
+                    onTap: () {
+                      Navigator.pop(context);
+                      go();
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: accent.color.withValues(alpha: 0.14),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(icon, size: 22, color: accent.color),
+                        ),
+                        const SizedBox(height: Space.sm),
+                        Text(
+                          label,
+                          textAlign: TextAlign.center,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: context.text.labelMedium,
+                        ),
+                      ],
+                    ),
+                  ),
+              ],
+            ),
+            const SizedBox(height: Space.sm),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(l.lioHelpTip, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
+                ),
+                TextButton(
+                  onPressed: () => Navigator.pop(context, true),
+                  style: TextButton.styleFrom(foregroundColor: context.semantic.muted),
+                  child: Text(l.lioHelpHide),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

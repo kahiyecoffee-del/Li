@@ -224,7 +224,7 @@ class TodayPlanCard extends ConsumerWidget {
             Text(l.homeNoPlan, style: context.text.bodyMedium),
             const SizedBox(height: Space.sm),
             FilledButton.tonal(
-              onPressed: () => context.go('/ai?q=${Uri.encodeComponent(l.aiSuggestion1)}'),
+              onPressed: () => context.push('/ai?q=${Uri.encodeComponent(l.aiSuggestion1)}'),
               child: Text(l.homePlanDay),
             ),
           ] else
@@ -409,7 +409,9 @@ class InsightCard extends ConsumerWidget {
     final l = context.l10n;
     final insights = ref.watch(insightsProvider);
     return AppCard(
-      onTap: insights.isEmpty ? null : () => context.go('/ai?q=${Uri.encodeComponent(l.insightText(insights.first))}'),
+      onTap: insights.isEmpty
+          ? null
+          : () => context.push('/ai?q=${Uri.encodeComponent(l.insightText(insights.first))}'),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

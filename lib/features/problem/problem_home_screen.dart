@@ -9,7 +9,6 @@ import '../../core/l10n/labels.dart';
 import '../../core/theme/tokens.dart';
 import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
-import '../../core/widgets/mascot.dart';
 import '../lio/advice_view.dart';
 import '../premium/banner_slot.dart';
 import 'home_today.dart';
@@ -51,19 +50,11 @@ class HomeScreen extends ConsumerWidget {
                       Semantics(header: true, child: Text(l.homeQuestion, style: context.text.headlineMedium)),
                       const SizedBox(height: Space.md),
                       // Lio speaks: the most useful thing he noticed today.
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          const Mascot(mood: MascotMood.happy, size: 64),
-                          const SizedBox(width: Space.sm),
-                          Expanded(
-                            child: _SpeechBubble(
-                              text: top?.text ?? l.lioAllGood,
-                              action: top?.action,
-                              onAction: top == null ? null : () => top.go(context),
-                            ),
-                          ),
-                        ],
+                      // He walks along the bottom of the screen too.
+                      _SpeechBubble(
+                        text: top?.text ?? l.lioAllGood,
+                        action: top?.action,
+                        onAction: top == null ? null : () => top.go(context),
                       ),
                       const SizedBox(height: Space.lg),
                       Row(
@@ -73,7 +64,7 @@ class HomeScreen extends ConsumerWidget {
                               icon: Icons.auto_awesome_rounded,
                               label: l.solve,
                               primary: true,
-                              onTap: () => context.go('/ai'),
+                              onTap: () => context.push('/ai'),
                             ),
                           ),
                           const SizedBox(width: Space.sm),
@@ -81,7 +72,7 @@ class HomeScreen extends ConsumerWidget {
                             child: _HeroAction(
                               icon: Icons.event_available_rounded,
                               label: l.quickPlan,
-                              onTap: () => context.go('/ai?topic=plan&n=${nonce()}'),
+                              onTap: () => context.push('/ai?topic=plan&n=${nonce()}'),
                             ),
                           ),
                           const SizedBox(width: Space.sm),
@@ -205,7 +196,7 @@ class _SpeechBubble extends StatelessWidget {
         topLeft: Radius.circular(Radii.lg),
         topRight: Radius.circular(Radii.lg),
         bottomRight: Radius.circular(Radii.lg),
-        bottomLeft: Radius.circular(4),
+        bottomLeft: Radius.circular(Radii.lg),
       ),
     ),
     child: Column(
@@ -285,7 +276,7 @@ class _QuickTools extends StatelessWidget {
         Icons.edit_note_rounded,
         l.quickWrite,
         Accent.ai,
-        () => context.go('/ai?topic=write&n=${DateTime.now().microsecondsSinceEpoch}'),
+        () => context.push('/ai?topic=write&n=${DateTime.now().microsecondsSinceEpoch}'),
       ),
       (Icons.event_available_rounded, l.quickPlan, Accent.plan, () => context.push('/plan')),
     ];

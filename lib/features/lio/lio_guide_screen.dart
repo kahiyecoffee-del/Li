@@ -9,6 +9,7 @@ import 'package:go_router/go_router.dart';
 import '../../app/actions.dart';
 import '../../app/derived_providers.dart';
 import '../../app/providers.dart';
+import '../../app/router.dart';
 import '../../core/l10n/labels.dart';
 import '../../core/theme/tokens.dart';
 import '../../core/widgets/common.dart';
@@ -933,7 +934,9 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
           _brain(text);
           setState(() => _choices = _after(() => _root()));
         } else if (services.aiEnabled && online) {
-          context.go('/ai/chat?q=${Uri.encodeQueryComponent(text)}&send=1&n=${DateTime.now().microsecondsSinceEpoch}');
+          context.push(
+            '/ai/chat?q=${Uri.encodeQueryComponent(text)}&send=1&n=${DateTime.now().microsecondsSinceEpoch}',
+          );
         } else {
           _menu(l.gNotUnderstood, _rootChoices());
         }
@@ -954,15 +957,21 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
   @override
   Widget build(BuildContext context) {
     final asking = _question != null;
-    // With the keyboard up the tab bar is hidden and space is tight.
+    // With the keyboard up space is tight.
     final view = View.of(context);
     final inset = view.viewInsets.bottom / view.devicePixelRatio;
     final keyboard = inset > 0;
     final height = MediaQuery.sizeOf(context).height - inset;
     return Scaffold(
-      // The app shell already makes room for the keyboard.
-      resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        // Opened from a reminder or the widget there is nothing to go back to.
+        leading: Navigator.of(context).canPop()
+            ? null
+            : IconButton(
+                tooltip: l.close,
+                icon: const Icon(Icons.close_rounded),
+                onPressed: () => context.go(Routes.home),
+              ),
         title: Row(
           children: [
             const Mascot(mood: MascotMood.happy, size: 34, float: false),
@@ -1027,7 +1036,7 @@ class _LioGuideScreenState extends ConsumerState<LioGuideScreen> {
                 ),
               ),
             Padding(
-              padding: EdgeInsets.fromLTRB(Space.page, Space.xs, Space.sm, keyboard ? Space.sm : 96),
+              padding: EdgeInsets.fromLTRB(Space.page, Space.xs, Space.sm, Space.sm),
               child: Row(
                 children: [
                   Expanded(

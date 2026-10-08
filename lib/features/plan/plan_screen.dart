@@ -87,10 +87,17 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
             minutes: c.minutes,
           );
     unawaited(HapticFeedback.lightImpact());
-    await ref.read(actionsProvider).addQuickTask(q, day);
+    final others = ref.read(tasksProvider).list;
+    final t = await ref.read(actionsProvider).addQuickTask(q, day);
     _input.clear();
     setState(() => _choice = null);
-    if (mounted) showSnack(context, context.l10n.planQuickAdded(q.title));
+    if (!mounted) return;
+    final clash = t.scheduledAt == null ? null : clashFor(others, t.scheduledAt!, t.estimatedMinutes);
+    if (clash == null) {
+      showSnack(context, context.l10n.planQuickAdded(q.title));
+    } else {
+      warnClash(context, ref, t, clash);
+    }
   }
 
   Future<void> _autoSchedule(TaskItem t, DateTime day, List<TaskItem> dayTasks) async {
@@ -140,6 +147,8 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
       now: now,
     );
     final stats = dayStats(dayTasks, timeline);
+    final clashes = countClashes(dayTasks, day);
+    final fmt = ref.fmt(context);
     final busyDays = {
       for (final t in all)
         if (t.anchorDate != null && !t.isCompleted) Dates.dayKey(t.anchorDate!),
@@ -152,6 +161,13 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
       appBar: AppBar(
         title: Text(l.navPlan),
         actions: [
+          // Add a whole routine (morning, focus, evening…) to this day.
+          IconButton(
+            key: const Key('plan-routine'),
+            tooltip: l.planAddRoutine,
+            icon: const Icon(Icons.auto_mode_rounded),
+            onPressed: () => pickRoutineForDay(context, ref, day),
+          ),
           IconButton(
             tooltip: l.planPickDate,
             icon: const Icon(Icons.calendar_month_outlined),
@@ -178,7 +194,6 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
         },
         onClearTime: () => setState(() => _choice = null),
         onSubmit: () => _quickAdd(day),
-        onRoutine: () => pickRoutineForDay(context, ref, day),
         onDetails: () =>
             showTaskEditor(context, day: day, title: _input.text.trim().isEmpty ? null : _input.text.trim()),
       ),
@@ -205,6 +220,14 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
                       day: day,
                       isToday: isToday,
                       stats: stats,
+                      clashes: clashes,
+                      hours: l.planDayHours(fmt.time(start), fmt.time(end)),
+                      onEditHours: _editDayHours,
+                      onFixClashes: () async {
+                        unawaited(HapticFeedback.mediumImpact());
+                        final n = await ref.read(actionsProvider).fixClashes(day);
+                        if (context.mounted) showSnack(context, l.planClashesFixed(n));
+                      },
                       onOptimize: () async {
                         final n = await ref.read(actionsProvider).optimizePlan();
                         if (context.mounted) showSnack(context, l.planOptimized(n));
@@ -252,6 +275,10 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
                       l.planTimeline,
                       eyebrow: DateFormat.MMMMEEEEd(Localizations.localeOf(context).toString()).format(day),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: Space.sm),
+                      child: Text(l.planHowTo, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
+                    ),
                     ..._timelineRows(context, timeline, day, isToday, now).map(enter),
                   ],
                   if (anytime.isNotEmpty) ...[
@@ -276,6 +303,18 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
         ),
       ),
     );
+  }
+
+  Future<void> _editDayHours() async {
+    final p = ref.read(profileProvider).value;
+    final hours = await showModalBottomSheet<(DayTime, DayTime)>(
+      context: context,
+      useRootNavigator: true,
+      showDragHandle: true,
+      builder: (_) =>
+          _DayHoursSheet(wake: p?.wakeTime ?? const DayTime(8 * 60), sleep: p?.sleepTime ?? const DayTime(23 * 60)),
+    );
+    if (hours != null) await ref.read(actionsProvider).setDayHours(hours.$1, hours.$2);
   }
 
   /// Bills due, planned meals and habits for [day]: the rest of the day.
@@ -343,13 +382,19 @@ class _PlanScreenState extends ConsumerState<PlanScreen> {
     for (final e in entries) {
       maybeNow(e.start);
       switch (e) {
-        case TaskBlock(:final task):
+        case TaskBlock(:final task, :final clash):
           rows.add(
             _TimelineRow(
               time: fmt.time(e.start),
               dot: _Dot.task,
-              color: categoryAccent(task.category).color,
-              child: _TaskCard(task: task, range: '${fmt.time(e.start)} – ${fmt.time(e.end)}', postponeFrom: day),
+              color: clash == null ? categoryAccent(task.category).color : context.semantic.negative,
+              onTapTime: () => changeTaskTime(context, ref, task),
+              child: _TaskCard(
+                task: task,
+                range: '${fmt.time(e.start)} – ${fmt.time(e.end)}',
+                postponeFrom: day,
+                clash: clash,
+              ),
             ),
           );
         case FreeGap():
@@ -506,10 +551,23 @@ class _DateStripState extends State<_DateStrip> {
 // --------------------------------------------------------------- day summary
 
 class _DaySummary extends ConsumerWidget {
-  const _DaySummary({required this.day, required this.isToday, required this.stats, required this.onOptimize});
+  const _DaySummary({
+    required this.day,
+    required this.isToday,
+    required this.stats,
+    required this.clashes,
+    required this.hours,
+    required this.onEditHours,
+    required this.onFixClashes,
+    required this.onOptimize,
+  });
   final DateTime day;
   final bool isToday;
   final DayStats stats;
+  final int clashes;
+  final String hours;
+  final VoidCallback onEditHours;
+  final VoidCallback onFixClashes;
   final VoidCallback onOptimize;
 
   @override
@@ -556,11 +614,66 @@ class _DaySummary extends ConsumerWidget {
                       ].join(' · '),
                       style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
                     ),
+                    const SizedBox(height: 2),
+                    // The planning day itself is editable: when it starts and ends.
+                    InkWell(
+                      key: const Key('plan-day-hours'),
+                      onTap: onEditHours,
+                      borderRadius: BorderRadius.circular(Radii.sm),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 4),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.wb_twilight_rounded, size: 14, color: context.colors.primary),
+                            const SizedBox(width: 4),
+                            Flexible(
+                              child: Text(
+                                hours,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: context.text.labelMedium?.copyWith(
+                                  color: context.colors.primary,
+                                  fontFeatures: const [FontFeature.tabularFigures()],
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 2),
+                            Icon(Icons.edit_rounded, size: 12, color: context.colors.primary),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
             ],
           ),
+          if (clashes > 0) ...[
+            const SizedBox(height: Space.md),
+            Container(
+              key: const Key('plan-clashes'),
+              padding: const EdgeInsets.fromLTRB(Space.md, Space.xs, Space.xs, Space.xs),
+              decoration: BoxDecoration(
+                color: context.semantic.negative.withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(Radii.md),
+                border: Border.all(color: context.semantic.negative.withValues(alpha: 0.25)),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.warning_amber_rounded, size: 20, color: context.semantic.negative),
+                  const SizedBox(width: Space.sm),
+                  Expanded(
+                    child: Text(
+                      l.planClashes(clashes),
+                      style: context.text.labelLarge?.copyWith(color: context.semantic.negative),
+                    ),
+                  ),
+                  TextButton(onPressed: onFixClashes, child: Text(l.planFixClashes)),
+                ],
+              ),
+            ),
+          ],
           const SizedBox(height: Space.lg),
           Row(
             children: [
@@ -584,7 +697,7 @@ class _DaySummary extends ConsumerWidget {
                     minimumSize: const Size(0, 46),
                     padding: const EdgeInsets.symmetric(horizontal: 12),
                   ),
-                  onPressed: () => context.go('/ai?topic=plan&n=${DateTime.now().microsecondsSinceEpoch}'),
+                  onPressed: () => context.push('/ai?topic=plan&n=${DateTime.now().microsecondsSinceEpoch}'),
                   icon: const Icon(Icons.chat_bubble_outline_rounded, size: 18),
                   label: FittedBox(child: Text(l.planWithLio)),
                 ),
@@ -617,11 +730,14 @@ class _CountPill extends StatelessWidget {
 enum _Dot { task, free, now }
 
 class _TimelineRow extends StatelessWidget {
-  const _TimelineRow({required this.time, required this.dot, required this.child, this.color});
+  const _TimelineRow({required this.time, required this.dot, required this.child, this.color, this.onTapTime});
   final String time;
   final _Dot dot;
   final Widget child;
   final Color? color;
+
+  /// Tapping the time on the left changes it.
+  final VoidCallback? onTapTime;
 
   @override
   Widget build(BuildContext context) {
@@ -637,14 +753,18 @@ class _TimelineRow extends StatelessWidget {
         children: [
           SizedBox(
             width: 46,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 16),
-              child: Text(
-                time,
-                style: context.text.labelSmall?.copyWith(
-                  color: dot == _Dot.now ? gold : context.semantic.muted,
-                  fontFeatures: const [FontFeature.tabularFigures()],
-                  fontWeight: dot == _Dot.now ? FontWeight.w700 : FontWeight.w500,
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: onTapTime,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 16),
+                child: Text(
+                  time,
+                  style: context.text.labelSmall?.copyWith(
+                    color: dot == _Dot.now ? gold : context.semantic.muted,
+                    fontFeatures: const [FontFeature.tabularFigures()],
+                    fontWeight: dot == _Dot.now ? FontWeight.w700 : FontWeight.w500,
+                  ),
                 ),
               ),
             ),
@@ -766,12 +886,22 @@ class _DashedBorder extends CustomPainter {
 // --------------------------------------------------------------------- tasks
 
 class _TaskCard extends ConsumerWidget {
-  const _TaskCard({required this.task, this.range, this.overdue = false, this.trailingAction, this.postponeFrom});
+  const _TaskCard({
+    required this.task,
+    this.range,
+    this.overdue = false,
+    this.trailingAction,
+    this.postponeFrom,
+    this.clash,
+  });
 
   final TaskItem task;
   final String? range;
   final bool overdue;
   final (String, VoidCallback)? trailingAction;
+
+  /// An earlier task this one overlaps.
+  final TaskItem? clash;
 
   /// Swiping left moves the task to the day after this one.
   final DateTime? postponeFrom;
@@ -823,6 +953,32 @@ class _TaskCard extends ConsumerWidget {
                         color: overdue ? context.semantic.negative : context.semantic.muted,
                       ),
                     ),
+                    if (clash != null && !task.isCompleted) ...[
+                      const SizedBox(height: 4),
+                      Row(
+                        children: [
+                          Icon(Icons.warning_amber_rounded, size: 14, color: context.semantic.negative),
+                          const SizedBox(width: 4),
+                          Expanded(
+                            child: Text(
+                              l.planClashWith(clash!.title),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: context.text.labelSmall?.copyWith(color: context.semantic.negative),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: TextButton(
+                          key: Key('move-after-${task.id}'),
+                          style: TextButton.styleFrom(padding: EdgeInsets.zero, minimumSize: const Size(0, 36)),
+                          onPressed: () => moveAfterClash(context, ref, task, clash!),
+                          child: Text(l.planMoveAfter),
+                        ),
+                      ),
+                    ],
                     if (trailingAction != null && !task.isCompleted)
                       Align(
                         alignment: Alignment.centerLeft,
@@ -836,6 +992,7 @@ class _TaskCard extends ConsumerWidget {
                 ),
               ),
             ),
+            _TaskMenu(task: task),
             _CheckCircle(
               done: task.isCompleted,
               color: accent.color,
@@ -950,7 +1107,6 @@ class _Composer extends StatelessWidget {
     required this.onClearTime,
     required this.onSubmit,
     required this.onDetails,
-    required this.onRoutine,
   });
   final TextEditingController controller;
   final FocusNode focus;
@@ -959,7 +1115,6 @@ class _Composer extends StatelessWidget {
   final VoidCallback onClearTime;
   final VoidCallback onSubmit;
   final VoidCallback onDetails;
-  final VoidCallback onRoutine;
 
   @override
   Widget build(BuildContext context) {
@@ -1054,15 +1209,6 @@ class _Composer extends StatelessWidget {
                           ),
                           onPressed: onDetails,
                         ),
-                        ActionChip(
-                          key: const Key('composer-routine'),
-                          avatar: Icon(Icons.auto_mode_rounded, size: 18, color: context.semantic.muted),
-                          label: Text(
-                            l.planAddRoutine,
-                            style: context.text.labelMedium?.copyWith(color: context.semantic.muted),
-                          ),
-                          onPressed: onRoutine,
-                        ),
                       ],
                     ),
                   ],
@@ -1070,6 +1216,202 @@ class _Composer extends StatelessWidget {
               ),
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+// ------------------------------------------------------------- task helpers
+
+/// Opens the time wheel for [task] and saves what was picked ("any time"
+/// takes the time off but keeps the day).
+Future<void> changeTaskTime(BuildContext context, WidgetRef ref, TaskItem task) async {
+  final s = task.scheduledAt;
+  final c = await pickTimeAndDuration(
+    context,
+    time: s == null ? null : TimeOfDay(hour: s.hour, minute: s.minute),
+    minutes: task.estimatedMinutes,
+  );
+  if (c == null) return;
+  final day = Dates.dateOnly(s ?? task.anchorDate ?? DateTime.now());
+  final actions = ref.read(actionsProvider);
+  if (c.time == null) {
+    await actions.saveTask(
+      task.copyWith(estimatedMinutes: c.minutes, clearSchedule: true, deadline: day),
+      isNew: false,
+    );
+    return;
+  }
+  final at = DateTime(day.year, day.month, day.day, c.time!.hour, c.time!.minute);
+  final others = ref.read(tasksProvider).list;
+  final updated = task.copyWith(estimatedMinutes: c.minutes, scheduledAt: at, clearDeadline: true);
+  await actions.saveTask(updated, isNew: false);
+  final clash = clashFor(others, at, c.minutes, exceptId: task.id);
+  if (clash != null && context.mounted) warnClash(context, ref, updated, clash);
+}
+
+/// "This overlaps X" with a one-tap fix.
+void warnClash(BuildContext context, WidgetRef ref, TaskItem task, TaskItem clash) {
+  final l = context.l10n;
+  showSnack(
+    context,
+    l.planClashWith(clash.title),
+    action: SnackBarAction(label: l.planMoveAfter, onPressed: () => moveAfterClash(context, ref, task, clash)),
+  );
+}
+
+/// Moves [task] to the first free time after [clash] ends.
+Future<void> moveAfterClash(BuildContext context, WidgetRef ref, TaskItem task, TaskItem clash) async {
+  final l = context.l10n;
+  final fmt = ref.fmt(context);
+  final from = clash.scheduledAt!.add(Duration(minutes: clash.estimatedMinutes));
+  final dayEnd = Dates.addDays(Dates.dateOnly(from), 1).subtract(const Duration(minutes: 1));
+  final at = nextFreeStart(
+    ref.read(tasksProvider).list,
+    from,
+    task.estimatedMinutes,
+    dayEnd: dayEnd,
+    exceptId: task.id,
+  );
+  if (at == null) {
+    showSnack(context, l.planNoSlot);
+    return;
+  }
+  unawaited(HapticFeedback.selectionClick());
+  await ref.read(actionsProvider).scheduleTask(task, at);
+  if (context.mounted) showSnack(context, l.planScheduledAt(fmt.time(at)));
+}
+
+enum _TaskAction { edit, time, tomorrow, otherDay, clearTime, duplicate, delete }
+
+/// Everything about a task, one tap away.
+class _TaskMenu extends ConsumerWidget {
+  const _TaskMenu({required this.task});
+  final TaskItem task;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l = context.l10n;
+    final actions = ref.read(actionsProvider);
+    PopupMenuItem<_TaskAction> item(_TaskAction a, IconData icon, String label, {Color? color}) => PopupMenuItem(
+      value: a,
+      child: Row(
+        children: [
+          Icon(icon, size: 20, color: color ?? context.semantic.muted),
+          const SizedBox(width: Space.md),
+          Flexible(
+            child: Text(label, style: color == null ? null : TextStyle(color: color)),
+          ),
+        ],
+      ),
+    );
+    return PopupMenuButton<_TaskAction>(
+      key: Key('task-menu-${task.id}'),
+      tooltip: l.taskMore,
+      icon: Icon(Icons.more_horiz_rounded, color: context.semantic.muted),
+      padding: EdgeInsets.zero,
+      itemBuilder: (_) => [
+        item(_TaskAction.edit, Icons.edit_outlined, l.edit),
+        if (!task.isCompleted) ...[
+          item(_TaskAction.time, Icons.schedule_rounded, l.taskChangeTime),
+          item(_TaskAction.tomorrow, Icons.east_rounded, l.planPostpone),
+          item(_TaskAction.otherDay, Icons.calendar_month_outlined, l.taskOtherDay),
+          if (task.scheduledAt != null) item(_TaskAction.clearTime, Icons.timer_off_outlined, l.taskClearTime),
+        ],
+        item(_TaskAction.duplicate, Icons.copy_rounded, l.taskDuplicate),
+        item(_TaskAction.delete, Icons.delete_outline_rounded, l.delete, color: context.semantic.negative),
+      ],
+      onSelected: (a) async {
+        final day = Dates.dateOnly(task.anchorDate ?? DateTime.now());
+        switch (a) {
+          case _TaskAction.edit:
+            await showTaskEditor(context, task: task);
+          case _TaskAction.time:
+            await changeTaskTime(context, ref, task);
+          case _TaskAction.tomorrow:
+            await actions.postponeTask(task, day);
+            if (context.mounted) showSnack(context, l.planPostponed);
+          case _TaskAction.otherDay:
+            final d = await showDatePicker(
+              context: context,
+              initialDate: day,
+              firstDate: Dates.addDays(day, -365),
+              lastDate: Dates.addDays(day, 730),
+            );
+            if (d == null) return;
+            await actions.moveTaskTo(task, d);
+            if (context.mounted) showSnack(context, l.taskMoved);
+          case _TaskAction.clearTime:
+            await actions.unscheduleTask(task);
+          case _TaskAction.duplicate:
+            await actions.duplicateTask(task);
+            if (context.mounted) showSnack(context, l.taskDuplicated);
+          case _TaskAction.delete:
+            await actions.deleteTask(task.id);
+            if (context.mounted) showSnack(context, l.deleted);
+        }
+      },
+    );
+  }
+}
+
+/// When the planning day starts and ends.
+class _DayHoursSheet extends StatefulWidget {
+  const _DayHoursSheet({required this.wake, required this.sleep});
+  final DayTime wake, sleep;
+
+  @override
+  State<_DayHoursSheet> createState() => _DayHoursSheetState();
+}
+
+class _DayHoursSheetState extends State<_DayHoursSheet> {
+  late var _wake = widget.wake;
+  late var _sleep = widget.sleep;
+
+  Widget _pick(String label, DayTime value, ValueChanged<DayTime> onPick) => AppCard(
+    onTap: () async {
+      final t = await showTimePicker(
+        context: context,
+        initialTime: TimeOfDay(hour: value.hour, minute: value.minutes % 60),
+      );
+      if (t != null) setState(() => onPick(DayTime.hm(t.hour, t.minute)));
+    },
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Eyebrow(label),
+        const SizedBox(height: 4),
+        Text(
+          hhmm(TimeOfDay(hour: value.hour, minute: value.minutes % 60)),
+          style: context.text.headlineMedium?.copyWith(fontFeatures: const [FontFeature.tabularFigures()]),
+        ),
+      ],
+    ),
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.l10n;
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.lg),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(l.planDayHoursTitle, style: context.text.titleLarge),
+            const SizedBox(height: Space.lg),
+            Row(
+              children: [
+                Expanded(child: _pick(l.planDayStart, _wake, (v) => _wake = v)),
+                const SizedBox(width: Space.md),
+                Expanded(child: _pick(l.planDayEnd, _sleep, (v) => _sleep = v)),
+              ],
+            ),
+            const SizedBox(height: Space.lg),
+            FilledButton(onPressed: () => Navigator.pop(context, (_wake, _sleep)), child: Text(l.save)),
+          ],
         ),
       ),
     );

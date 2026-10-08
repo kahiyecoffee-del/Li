@@ -207,8 +207,11 @@ sealed class TimelineEntry {
 }
 
 class TaskBlock extends TimelineEntry {
-  const TaskBlock(this.task, super.start, super.end);
+  const TaskBlock(this.task, super.start, super.end, {this.clash});
   final TaskItem task;
+
+  /// An earlier task this one starts inside of (they overlap).
+  final TaskItem? clash;
 }
 
 class FreeGap extends TimelineEntry {
@@ -237,11 +240,18 @@ List<TimelineEntry> buildTimeline({
     cursor = DateTime(now.year, now.month, now.day, now.hour).add(Duration(minutes: q));
   }
   if (Dates.dateOnly(day).isBefore(Dates.dateOnly(now))) cursor = dayEnd; // no gaps in the past
+  TaskItem? longest; // the timed task that ends last so far
+  DateTime? longestEnd;
   for (final t in timed) {
     final start = t.scheduledAt!;
     final end = start.add(Duration(minutes: t.estimatedMinutes));
     if (start.difference(cursor).inMinutes >= minGap) out.add(FreeGap(cursor, start));
-    out.add(TaskBlock(t, start, end));
+    final clash = longestEnd != null && start.isBefore(longestEnd) ? longest : null;
+    out.add(TaskBlock(t, start, end, clash: clash));
+    if (longestEnd == null || end.isAfter(longestEnd)) {
+      longest = t;
+      longestEnd = end;
+    }
     if (end.isAfter(cursor)) cursor = end;
   }
   if (dayEnd.difference(cursor).inMinutes >= minGap) out.add(FreeGap(cursor, dayEnd));
@@ -263,3 +273,76 @@ DayStats dayStats(List<TaskItem> dayTasks, List<TimelineEntry> timeline) => DayS
   plannedMinutes: dayTasks.where((t) => !t.isCompleted).fold(0, (s, t) => s + t.estimatedMinutes),
   freeMinutes: timeline.whereType<FreeGap>().fold(0, (s, g) => s + g.minutes),
 );
+
+DateTime _end(TaskItem t) => t.scheduledAt!.add(Duration(minutes: t.estimatedMinutes));
+
+List<TaskItem> _timedOn(List<TaskItem> tasks, DateTime day, {String? exceptId}) =>
+    tasks
+        .where(
+          (t) =>
+              !t.deleted &&
+              !t.isCompleted &&
+              t.id != exceptId &&
+              t.scheduledAt != null &&
+              Dates.sameDay(t.scheduledAt!, day),
+        )
+        .toList()
+      ..sort((a, b) => a.scheduledAt!.compareTo(b.scheduledAt!));
+
+/// The first open task that [start]–[start]+[minutes] would overlap, if any.
+TaskItem? clashFor(List<TaskItem> tasks, DateTime start, int minutes, {String? exceptId}) {
+  final end = start.add(Duration(minutes: minutes));
+  for (final t in _timedOn(tasks, start, exceptId: exceptId)) {
+    if (t.scheduledAt!.isBefore(end) && _end(t).isAfter(start)) return t;
+  }
+  return null;
+}
+
+/// The earliest start at or after [from] where [minutes] fit without
+/// touching another open task that day, or null when nothing fits before
+/// [dayEnd].
+DateTime? nextFreeStart(
+  List<TaskItem> tasks,
+  DateTime from,
+  int minutes, {
+  required DateTime dayEnd,
+  String? exceptId,
+}) {
+  var at = from;
+  for (final t in _timedOn(tasks, from, exceptId: exceptId)) {
+    if (!_end(t).isAfter(at)) continue;
+    if (!t.scheduledAt!.isBefore(at.add(Duration(minutes: minutes)))) break;
+    at = _end(t);
+  }
+  return at.add(Duration(minutes: minutes)).isAfter(dayEnd) ? null : at;
+}
+
+/// How many open timed tasks on [day] overlap one before them.
+int countClashes(List<TaskItem> tasks, DateTime day) {
+  var n = 0;
+  DateTime? lastEnd;
+  for (final t in _timedOn(tasks, day)) {
+    if (lastEnd != null && t.scheduledAt!.isBefore(lastEnd)) n++;
+    final e = _end(t);
+    if (lastEnd == null || e.isAfter(lastEnd)) lastEnd = e;
+  }
+  return n;
+}
+
+/// Untangles [day]: keeps the order people chose and slides each task that
+/// overlaps the one before it to right after it. Returns task id → new start
+/// (only the ones that move).
+Map<String, DateTime> resolveClashes(List<TaskItem> tasks, DateTime day) {
+  final out = <String, DateTime>{};
+  DateTime? cursor;
+  for (final t in _timedOn(tasks, day)) {
+    var start = t.scheduledAt!;
+    if (cursor != null && start.isBefore(cursor)) {
+      start = cursor;
+      out[t.id] = start;
+    }
+    final e = start.add(Duration(minutes: t.estimatedMinutes));
+    if (cursor == null || e.isAfter(cursor)) cursor = e;
+  }
+  return out;
+}

@@ -93,4 +93,43 @@ void main() {
       expect(entries.length, 2);
     });
   });
+
+  group('overlaps', () {
+    final day = DateTime(2026, 6, 10);
+    TaskItem t(String id, int h, int m, int mins) => TaskItem(
+      id: id,
+      updatedAt: day,
+      title: id,
+      scheduledAt: DateTime(2026, 6, 10, h, m),
+      estimatedMinutes: mins,
+      createdAt: day,
+    );
+
+    test('the timeline marks a task that starts inside another', () {
+      final entries = buildTimeline(
+        tasks: [t('a', 10, 0, 60), t('b', 10, 30, 30), t('c', 11, 0, 30)],
+        day: day,
+        dayStart: DateTime(2026, 6, 10, 8),
+        dayEnd: DateTime(2026, 6, 10, 22),
+        now: DateTime(2026, 6, 9),
+      );
+      final blocks = entries.whereType<TaskBlock>().toList();
+      expect(blocks.map((b) => b.clash?.id).toList(), [null, 'a', null]);
+      expect(countClashes([t('a', 10, 0, 60), t('b', 10, 30, 30), t('c', 11, 0, 30)], day), 1);
+    });
+
+    test('clashFor, nextFreeStart and resolveClashes', () {
+      final tasks = [t('a', 10, 0, 60), t('b', 10, 30, 30), t('c', 11, 0, 30), t('d', 14, 0, 30)];
+      expect(clashFor(tasks, DateTime(2026, 6, 10, 9, 45), 30)?.id, 'a');
+      expect(clashFor(tasks, DateTime(2026, 6, 10, 12), 60), isNull);
+      expect(clashFor(tasks, DateTime(2026, 6, 10, 10), 60, exceptId: 'a')?.id, 'b');
+      expect(
+        nextFreeStart(tasks, DateTime(2026, 6, 10, 10), 30, dayEnd: DateTime(2026, 6, 10, 23)),
+        DateTime(2026, 6, 10, 11, 30),
+      );
+      expect(nextFreeStart(tasks, DateTime(2026, 6, 10, 22, 50), 30, dayEnd: DateTime(2026, 6, 10, 23)), isNull);
+      // b slides after a, then c after b; d is untouched.
+      expect(resolveClashes(tasks, day), {'b': DateTime(2026, 6, 10, 11), 'c': DateTime(2026, 6, 10, 11, 30)});
+    });
+  });
 }

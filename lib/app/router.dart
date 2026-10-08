@@ -135,38 +135,35 @@ final routerProvider = Provider<GoRouter>((ref) {
             routes: [GoRoute(path: Routes.saved, builder: (_, _) => const SavedScreen())],
           ),
           StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: Routes.ai,
-                // Query parameters belong to /ai itself, not to /ai/chat below it.
-                builder: (_, s) => s.uri.path == Routes.ai
-                    ? LioGuideScreen(
-                        initialText: s.uri.queryParameters['q'],
-                        topic: s.uri.queryParameters['topic'],
-                        nonce: s.uri.queryParameters['n'],
-                      )
-                    : const LioGuideScreen(),
-                routes: [
-                  // Free-form chat with the cloud assistant (only when configured).
-                  GoRoute(
-                    path: 'chat',
-                    builder: (_, s) => AiScreen(
-                      initialPrompt: s.uri.queryParameters['q'],
-                      autoSend: s.uri.queryParameters['send'] == '1',
-                      nonce: s.uri.queryParameters['n'],
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          StatefulShellBranch(
             routes: [GoRoute(path: Routes.profile, builder: (_, _) => const SettingsScreen(asTab: true))],
           ),
         ],
       ),
       // Older links: Life is now Explore.
       GoRoute(path: Routes.life, redirect: (_, _) => Routes.explore),
+      // Lio: opened from anywhere (he walks around the tabs), not a tab.
+      GoRoute(
+        path: Routes.ai,
+        // Query parameters belong to /ai itself, not to /ai/chat below it.
+        builder: (_, s) => s.uri.path == Routes.ai
+            ? LioGuideScreen(
+                initialText: s.uri.queryParameters['q'],
+                topic: s.uri.queryParameters['topic'],
+                nonce: s.uri.queryParameters['n'],
+              )
+            : const LioGuideScreen(),
+        routes: [
+          // Free-form chat with the cloud assistant (only when configured).
+          GoRoute(
+            path: 'chat',
+            builder: (_, s) => AiScreen(
+              initialPrompt: s.uri.queryParameters['q'],
+              autoSend: s.uri.queryParameters['send'] == '1',
+              nonce: s.uri.queryParameters['n'],
+            ),
+          ),
+        ],
+      ),
       GoRoute(path: Routes.plan, builder: (_, _) => const PlanScreen()),
       GoRoute(path: Routes.today, builder: (_, _) => const TodayScreen()),
       GoRoute(

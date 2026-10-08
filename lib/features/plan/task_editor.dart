@@ -10,6 +10,8 @@ import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
 import '../../domain/models/enums.dart';
 import '../../domain/models/task_item.dart';
+import '../../domain/plan/day_timeline.dart';
+import '../../app/providers.dart';
 import 'time_picker_sheet.dart';
 
 Future<void> showTaskEditor(BuildContext context, {TaskItem? task, DateTime? day, String? title, TimeOfDay? time}) =>
@@ -78,6 +80,45 @@ class _TaskEditorState extends ConsumerState<TaskEditor> {
     );
     await ref.read(actionsProvider).saveTask(t, isNew: existing == null);
     if (mounted) Navigator.pop(context);
+  }
+
+  /// Overlaps another task? Say so and offer the first free time after it.
+  Widget? _clashWarning(BuildContext context) {
+    if (_date == null || _time == null) return null;
+    final l = context.l10n;
+    final fmt = ref.fmt(context);
+    final start = DateTime(_date!.year, _date!.month, _date!.day, _time!.hour, _time!.minute);
+    final all = ref.watch(tasksProvider).list;
+    final clash = clashFor(all, start, _minutes, exceptId: widget.task?.id);
+    if (clash == null) return null;
+    final free = nextFreeStart(
+      all,
+      clash.scheduledAt!.add(Duration(minutes: clash.estimatedMinutes)),
+      _minutes,
+      dayEnd: Dates.addDays(_date!, 1).subtract(const Duration(minutes: 1)),
+      exceptId: widget.task?.id,
+    );
+    return Padding(
+      key: const Key('editor-clash'),
+      padding: const EdgeInsets.only(top: Space.sm),
+      child: Row(
+        children: [
+          Icon(Icons.warning_amber_rounded, size: 18, color: context.semantic.negative),
+          const SizedBox(width: Space.xs),
+          Expanded(
+            child: Text(
+              l.planClashWith(clash.title),
+              style: context.text.labelMedium?.copyWith(color: context.semantic.negative),
+            ),
+          ),
+          if (free != null)
+            TextButton(
+              onPressed: () => setState(() => _time = TimeOfDay(hour: free.hour, minute: free.minute)),
+              child: Text(l.planUseFreeTime(fmt.time(free))),
+            ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -174,6 +215,7 @@ class _TaskEditorState extends ConsumerState<TaskEditor> {
                 ],
               ),
             ),
+            ?_clashWarning(context),
             if (_time != null) ...[
               const SizedBox(height: Space.md),
               Text(l.remindLabel, style: context.text.titleSmall?.copyWith(color: context.semantic.muted)),
@@ -227,6 +269,17 @@ class _TaskEditorState extends ConsumerState<TaskEditor> {
             ),
             const SizedBox(height: Space.xl),
             FilledButton(onPressed: _save, child: Text(l.save)),
+            if (widget.task != null)
+              TextButton(
+                onPressed: () async {
+                  await ref.read(actionsProvider).duplicateTask(widget.task!);
+                  if (context.mounted) {
+                    Navigator.pop(context);
+                    showSnack(context, l.taskDuplicated);
+                  }
+                },
+                child: Text(l.taskDuplicate),
+              ),
             if (widget.task != null)
               TextButton(
                 onPressed: () async {

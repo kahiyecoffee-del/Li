@@ -724,6 +724,71 @@
   "planWithLio": "Plan with Lio",
   "planTimeline": "Timeline",
   "planPickDate": "Pick a date",
+  "planClashes": "{count, plural, =1{1 task overlaps another} other{{count} tasks overlap}}",
+  "@planClashes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "planFixClashes": "Fix overlaps",
+  "planClashesFixed": "{count, plural, =0{Nothing overlaps.} =1{Moved 1 task, nothing overlaps now.} other{Moved {count} tasks, nothing overlaps now.}}",
+  "@planClashesFixed": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "planClashWith": "Overlaps “{title}”",
+  "@planClashWith": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "planMoveAfter": "Move after it",
+  "planUseFreeTime": "Move to {time}",
+  "@planUseFreeTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "planDayHours": "Day {start} – {end}",
+  "@planDayHours": {
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "planDayHoursTitle": "When does your day start and end?",
+  "planDayStart": "Starts",
+  "planDayEnd": "Ends",
+  "planHowTo": "Tap a task to change anything · swipe right: done · left: tomorrow",
+  "taskMore": "More",
+  "taskChangeTime": "Change time",
+  "taskOtherDay": "Move to another day",
+  "taskDuplicate": "Duplicate",
+  "taskClearTime": "Remove time",
+  "taskDuplicated": "Copied",
+  "taskMoved": "Moved",
+  "lioHelpTitle": "How can I help?",
+  "lioHelpPlan": "Plan my day",
+  "lioHelpTask": "Add a task",
+  "lioHelpMoney": "My budget",
+  "lioHelpWrite": "Write in my journal",
+  "lioHelpMood": "How I feel",
+  "lioHelpAsk": "Ask me anything",
+  "lioHelpHide": "Hide Lio",
+  "lioHelpTip": "Tip: drag me anywhere along the bottom.",
   "durHM": "{h} h {m} min",
   "@durHM": {
     "placeholders": {

@@ -1024,6 +1024,104 @@ class AppLocalizationsTr extends AppLocalizations {
   String get planPickDate => 'Tarih seç';
 
   @override
+  String planClashes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count görev çakışıyor');
+    return '$_temp0';
+  }
+
+  @override
+  String get planFixClashes => 'Çakışmaları düzelt';
+
+  @override
+  String planClashesFixed(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count görev kaydırıldı, artık çakışma yok.',
+      zero: 'Çakışan bir şey yok.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String planClashWith(String title) {
+    return '“$title” ile çakışıyor';
+  }
+
+  @override
+  String get planMoveAfter => 'Sonrasına al';
+
+  @override
+  String planUseFreeTime(String time) {
+    return '$time saatine al';
+  }
+
+  @override
+  String planDayHours(String start, String end) {
+    return 'Gün $start – $end';
+  }
+
+  @override
+  String get planDayHoursTitle => 'Günün ne zaman başlıyor, ne zaman bitiyor?';
+
+  @override
+  String get planDayStart => 'Başlar';
+
+  @override
+  String get planDayEnd => 'Biter';
+
+  @override
+  String get planHowTo => 'Göreve dokun, her şeyini değiştir · sağa kaydır: bitti · sola: yarına';
+
+  @override
+  String get taskMore => 'Daha fazla';
+
+  @override
+  String get taskChangeTime => 'Saati değiştir';
+
+  @override
+  String get taskOtherDay => 'Başka güne taşı';
+
+  @override
+  String get taskDuplicate => 'Kopyala';
+
+  @override
+  String get taskClearTime => 'Saati kaldır';
+
+  @override
+  String get taskDuplicated => 'Kopyalandı';
+
+  @override
+  String get taskMoved => 'Taşındı';
+
+  @override
+  String get lioHelpTitle => 'Nasıl yardım edeyim?';
+
+  @override
+  String get lioHelpPlan => 'Günümü planla';
+
+  @override
+  String get lioHelpTask => 'Görev ekle';
+
+  @override
+  String get lioHelpMoney => 'Bütçem';
+
+  @override
+  String get lioHelpWrite => 'Günlüğe yaz';
+
+  @override
+  String get lioHelpMood => 'Nasıl hissediyorum';
+
+  @override
+  String get lioHelpAsk => 'Bana bir şey sor';
+
+  @override
+  String get lioHelpHide => 'Lio’yu gizle';
+
+  @override
+  String get lioHelpTip => 'İpucu: beni alt kenarda istediğin yere sürükleyebilirsin.';
+
+  @override
   String durHM(int h, int m) {
     return '$h sa $m dk';
   }

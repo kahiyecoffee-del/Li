@@ -48,7 +48,7 @@ void main() {
     testWidgets('screens $mode', (tester) async {
       usePhoneViewport(tester);
       final app = (await tester.runAsync(
-        () => TestApp.onboarded(prefs: {'locale': 'tr', if (dark) 'themeMode': 'dark'}),
+        () => TestApp.onboarded(prefs: {'locale': 'tr', 'showLio': true, if (dark) 'themeMode': 'dark'}),
       ))!;
       final now = DateTime.now();
       final d = DateTime(now.year, now.month, now.day);
@@ -80,6 +80,7 @@ void main() {
           t('3', 'Annemi ara', 13, 30, 20, TaskCategory.social),
           t('4', 'Market alışverişi', 18, 0, 45, TaskCategory.errands),
           t('5', 'Kitap oku', 0, 0, 30, TaskCategory.learning, timed: false),
+          t('6', 'Kahve molası', 10, 30, 20, TaskCategory.personal),
         ]) {
           await repos.tasks.save(x);
         }
@@ -103,6 +104,13 @@ void main() {
       await tester.pumpWidget(app.widget());
       await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
       await _shot(tester, '$mode-home');
+      await tester.tap(find.byKey(const Key('lio-companion')), warnIfMissed: false);
+      await pumpUntil(tester, find.text('Nasıl yardım edeyim?'));
+      await tester.pump(const Duration(milliseconds: 600));
+      await _shot(tester, '$mode-lio-help');
+      await tester.binding
+          .handlePopRoute(); // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
+      await tester.pump(const Duration(milliseconds: 600));
       await tester.enterText(find.byKey(const Key('capture-field')), 'yarın 15:00 dişçi 30 dk');
       await tester.pump();
       await tester.drag(find.byType(ListView).first, const Offset(0, -300));
@@ -121,6 +129,10 @@ void main() {
       await tester.tap(find.text('Tamam').last);
       await pumpUntil(tester, find.textContaining('· 45 dk'));
       await _shot(tester, '$mode-plan-chosen');
+      await tester.runAsync(
+        () => Scrollable.ensureVisible(tester.element(find.text('Ekip toplantısı')), alignment: 0.3),
+      );
+      await tester.pump(const Duration(milliseconds: 400));
       await tester.tap(find.text('Ekip toplantısı'));
       await pumpUntil(tester, find.byKey(const Key('editor-time')));
       await _shot(tester, '$mode-editor');

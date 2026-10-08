@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:lifeos/core/utils/dates.dart';
 import 'package:lifeos/domain/models/enums.dart';
 import 'package:lifeos/domain/models/task_item.dart';
 import 'package:lifeos/services/analytics/analytics_service.dart';
@@ -235,7 +236,7 @@ void main() {
     };
     await tester.pumpWidget(app.widget());
     await pumpUntil(tester, find.text('What should we solve today?'));
-    await tester.tap(find.text('AI').last);
+    await tester.tap(find.text('Solve'));
     await pumpUntil(tester, find.text('How can I help today?'));
 
     await tester.enterText(find.byType(TextField).last, 'Add a meeting tomorrow at 9');
@@ -250,21 +251,63 @@ void main() {
     expect(app.ai.requests.single.context['currency'], 'TRY');
 
     // Nothing is created before confirmation.
-    await openPlan(tester);
-    await pickPlanDay(tester, tomorrow);
-    expect(find.text('Team meeting'), findsNothing);
-    await tester.binding.handlePopRoute();
-    await pumpUntil(tester, find.text('AI'));
+    final before = await tester.runAsync(() => app.seededRepos.tasks.getAll());
+    expect(before!.where((t) => t.title == 'Team meeting'), isEmpty);
 
-    await tester.tap(find.text('AI').last);
-    await pumpUntil(tester, find.text('Confirm'));
     await tester.tap(find.text('Confirm'));
     await pumpUntil(tester, find.textContaining('Done'));
     expect(app.analytics.logged(AnalyticsEvent.aiActionConfirmed), isTrue);
 
+    // Lio is not a tab any more: back (chat, then Lio) to Home, then the plan.
+    while (find.text('Explore').evaluate().isEmpty) {
+      await tester.binding.handlePopRoute();
+      await tester.pump(const Duration(milliseconds: 400));
+    }
     await openPlan(tester);
     await pickPlanDay(tester, tomorrow);
     await pumpUntil(tester, find.text('Team meeting'));
+    await tearDownApp(tester);
+  });
+
+  testWidgets('Planner: overlaps are flagged and fixed; every task has a menu', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    await openPlan(tester);
+    final tomorrow = Dates.addDays(Dates.dateOnly(DateTime.now()), 1);
+    await pickPlanDay(tester, tomorrow);
+    Future<void> add(String text) async {
+      final field = find.descendant(of: find.byKey(const Key('plan-composer')), matching: find.byType(TextField));
+      await tester.enterText(field, text);
+      await tester.testTextInput.receiveAction(TextInputAction.done);
+      await tester.pump(const Duration(milliseconds: 400));
+    }
+
+    await add('Meeting 10:00 1 hour');
+    await add('Call mom 10:30 30 min');
+    await pumpUntil(tester, find.byKey(const Key('plan-clashes')));
+    expect(find.textContaining('Overlaps'), findsWidgets);
+    await tester.tap(find.text('Fix overlaps'));
+    await pumpUntil(tester, find.textContaining('nothing overlaps now'));
+    await tester.pump(const Duration(milliseconds: 400));
+    expect(find.byKey(const Key('plan-clashes')), findsNothing);
+    final tasks = (await tester.runAsync(() => app.seededRepos.tasks.getAll()))!;
+    final call = tasks.firstWhere((t) => t.title == 'Call mom');
+    expect(call.scheduledAt!.hour, 11);
+
+    // The ⋯ menu: duplicate the call.
+    // Up from under the composer at the bottom.
+    await tester.runAsync(
+      () => Scrollable.ensureVisible(tester.element(find.byKey(Key('task-menu-${call.id}'))), alignment: 0.3),
+    );
+    await tester.pump(const Duration(milliseconds: 400));
+    await tester.tap(find.byKey(Key('task-menu-${call.id}')));
+    await pumpUntil(tester, find.text('Duplicate'));
+    await tester.tap(find.text('Duplicate'));
+    await pumpUntil(tester, find.text('Copied'));
+    final after = (await tester.runAsync(() => app.seededRepos.tasks.getAll()))!;
+    expect(after.where((t) => t.title == 'Call mom' && !t.deleted).length, 2);
     await tearDownApp(tester);
   });
 
@@ -317,19 +360,21 @@ void main() {
     await tearDownApp(tester);
   });
 
-  testWidgets('Lio: tap for a tip, then jump to the assistant', (tester) async {
+  testWidgets('Lio walks every tab; a tap opens his help, which leads to the assistant', (tester) async {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded(prefs: {'showLio': true})))!;
     await tester.pumpWidget(app.widget());
     await pumpUntil(tester, find.text('What should we solve today?'));
-    // Home already shows Lio; the walking companion appears on other tabs.
+    // No assistant tab: Lio is the way in.
+    expect(find.text('AI'), findsNothing);
+    final lio = find.byKey(const Key('lio-companion'));
+    await pumpUntil(tester, lio);
     await tester.tap(find.text('Explore').last);
-    final lio = find.bySemanticsLabel('Lio, your companion');
     await pumpUntil(tester, lio);
     await tester.tap(lio);
-    await pumpUntil(tester, find.text('Ask Lio'));
-    expect(find.text('Another one'), findsWidgets);
-    await tester.tap(find.text('Ask Lio').last);
+    await pumpUntil(tester, find.text('How can I help?'));
+    expect(find.text('Plan my day'), findsOneWidget);
+    await tester.tap(find.text('Ask me anything'));
     await pumpUntil(tester, find.text('How can I help today?'));
     await tearDownApp(tester);
   });
@@ -339,7 +384,7 @@ void main() {
     final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
     await tester.pumpWidget(app.widget());
     await pumpUntil(tester, find.text('What should we solve today?'));
-    await tester.tap(find.text('AI').last);
+    await tester.tap(find.text('Solve'));
     await pumpUntil(tester, find.byType(TextField));
     await tester.enterText(find.byType(TextField).last, 'How much can I spend today?');
     await tester.testTextInput.receiveAction(TextInputAction.send);
@@ -407,7 +452,7 @@ void main() {
     final app = (await tester.runAsync(() => TestApp.onboarded(prefs: {'locale': 'tr', 'assistantName': 'Maya'})))!;
     await tester.pumpWidget(app.widget());
     await pumpUntil(tester, find.text('Bugün neyi çözelim?'));
-    await tester.tap(find.text('YZ').last);
+    await tester.tap(find.text('Çöz'));
     await pumpUntil(tester, find.text('Maya'));
     expect(find.text('Lio'), findsNothing);
     await tearDownApp(tester);
@@ -434,7 +479,7 @@ void main() {
       final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
       await tester.pumpWidget(app.widget());
       await pumpUntil(tester, find.text('What should we solve today?'));
-      await tester.tap(find.text('AI').last);
+      await tester.tap(find.text('Solve'));
       await pumpUntil(tester, find.text('How can I help today?'));
       return app;
     }

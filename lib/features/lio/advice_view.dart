@@ -26,7 +26,7 @@ String _nonce() => '${DateTime.now().microsecondsSinceEpoch}';
 AdviceText describeAdvice(Advice a, AppLocalizations l, Fmt fmt) {
   String money(int? minor) => fmt.money(minor ?? 0);
   void push(BuildContext c, String r) => c.push(r);
-  void lio(BuildContext c, String topic) => c.go('/ai?topic=$topic&n=${_nonce()}');
+  void lio(BuildContext c, String topic) => c.push('/ai?topic=$topic&n=${_nonce()}');
   const wallet = Icons.account_balance_wallet_rounded;
   return switch (a.kind) {
     AdviceKind.overBudgetToday => AdviceText(

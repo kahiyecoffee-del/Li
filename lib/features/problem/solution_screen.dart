@@ -50,7 +50,7 @@ class _SolutionScreenState extends ConsumerState<SolutionScreen> {
 
   void _askLio() {
     final q = Uri.encodeQueryComponent(widget.query);
-    context.go('/ai?q=$q&n=${DateTime.now().microsecondsSinceEpoch}');
+    context.push('/ai?q=$q&n=${DateTime.now().microsecondsSinceEpoch}');
   }
 
   @override
