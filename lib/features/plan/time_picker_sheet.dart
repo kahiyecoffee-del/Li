@@ -90,127 +90,140 @@ class _TimeSheetState extends State<_TimeSheet> {
     final initial = DateTime(now.year, now.month, now.day, _time.hour, _time.minute - _time.minute % 5);
     return SafeArea(
       top: false,
-      child: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.lg),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(l.timeSheetTitle, style: context.text.headlineSmall),
-            const SizedBox(height: Space.lg),
-            // Live summary: what you will do, from when to when.
-            AnimatedSwitcher(
-              duration: Motion.of(context, Motion.fast),
-              child: Container(
-                key: ValueKey('${_time.hour}:${_time.minute}:$_minutes'),
-                padding: const EdgeInsets.symmetric(horizontal: Space.lg, vertical: Space.md),
-                decoration: BoxDecoration(
-                  color: context.colors.primary.withValues(alpha: 0.08),
-                  borderRadius: BorderRadius.circular(Radii.md),
-                  border: Border.all(color: gold.withValues(alpha: 0.35), width: 0.8),
-                ),
-                child: Row(
-                  children: [
-                    Icon(Icons.schedule_rounded, color: context.colors.primary, size: 20),
-                    const SizedBox(width: Space.sm),
-                    Expanded(
-                      child: Text(
-                        rangeLabel(_time, _minutes),
-                        style: context.text.headlineSmall?.copyWith(
-                          fontSize: 22,
-                          fontFeatures: const [FontFeature.tabularFigures()],
-                        ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Flexible(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.fromLTRB(Space.page, 0, Space.page, Space.sm),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(l.timeSheetTitle, style: context.text.headlineSmall),
+                  const SizedBox(height: Space.lg),
+                  // Live summary: what you will do, from when to when.
+                  AnimatedSwitcher(
+                    duration: Motion.of(context, Motion.fast),
+                    child: Container(
+                      key: ValueKey('${_time.hour}:${_time.minute}:$_minutes'),
+                      padding: const EdgeInsets.symmetric(horizontal: Space.lg, vertical: Space.md),
+                      decoration: BoxDecoration(
+                        color: context.colors.primary.withValues(alpha: 0.08),
+                        borderRadius: BorderRadius.circular(Radii.md),
+                        border: Border.all(color: gold.withValues(alpha: 0.35), width: 0.8),
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(Icons.schedule_rounded, color: context.colors.primary, size: 20),
+                          const SizedBox(width: Space.sm),
+                          Expanded(
+                            child: Text(
+                              rangeLabel(_time, _minutes),
+                              style: context.text.headlineSmall?.copyWith(
+                                fontSize: 22,
+                                fontFeatures: const [FontFeature.tabularFigures()],
+                              ),
+                            ),
+                          ),
+                          Text(durationLabel(l, _minutes), style: context.text.labelLarge?.copyWith(color: gold)),
+                        ],
                       ),
                     ),
-                    Text(durationLabel(l, _minutes), style: context.text.labelLarge?.copyWith(color: gold)),
-                  ],
-                ),
+                  ),
+                  const SizedBox(height: Space.lg),
+                  Text(l.timeStart, style: context.text.titleSmall?.copyWith(color: context.semantic.muted)),
+                  const SizedBox(height: Space.sm),
+                  // One tap for the usual times; the wheel is for the exact minute.
+                  Wrap(
+                    spacing: Space.xs,
+                    runSpacing: Space.xs,
+                    children: [
+                      for (final (label, t) in [
+                        (l.presetMorning, const TimeOfDay(hour: 9, minute: 0)),
+                        (l.presetNoon, const TimeOfDay(hour: 12, minute: 30)),
+                        (l.presetAfternoon, const TimeOfDay(hour: 15, minute: 0)),
+                        (l.presetEvening, const TimeOfDay(hour: 19, minute: 0)),
+                        (l.presetInHour, _inAnHour()),
+                      ])
+                        ActionChip(
+                          label: Text('$label · ${hhmm(t)}'),
+                          onPressed: () => _setTime(t),
+                          visualDensity: VisualDensity.compact,
+                        ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 168,
+                    child: CupertinoTheme(
+                      data: CupertinoThemeData(
+                        brightness: Theme.of(context).brightness,
+                        textTheme: CupertinoTextThemeData(
+                          dateTimePickerTextStyle: context.text.titleLarge?.copyWith(
+                            fontSize: 22,
+                            fontFamily: 'Jakarta',
+                          ),
+                        ),
+                      ),
+                      child: CupertinoDatePicker(
+                        key: ValueKey('time-wheel-$_wheel'),
+                        mode: CupertinoDatePickerMode.time,
+                        use24hFormat:
+                            MediaQuery.alwaysUse24HourFormatOf(context) ||
+                            Localizations.localeOf(context).languageCode != 'en',
+                        minuteInterval: 5,
+                        initialDateTime: initial,
+                        onDateTimeChanged: (d) {
+                          unawaited(HapticFeedback.selectionClick());
+                          setState(() => _time = TimeOfDay(hour: d.hour, minute: d.minute));
+                        },
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: Space.md),
+                  Text(l.taskDuration, style: context.text.titleSmall?.copyWith(color: context.semantic.muted)),
+                  const SizedBox(height: Space.sm),
+                  Wrap(
+                    spacing: Space.sm,
+                    runSpacing: Space.sm,
+                    children: [
+                      for (final m in _presets)
+                        ChoiceChip(
+                          label: Text(durationLabel(l, m)),
+                          selected: !_custom && _minutes == m,
+                          onSelected: (_) => setState(() {
+                            _custom = false;
+                            _minutes = m;
+                          }),
+                        ),
+                      ChoiceChip(
+                        label: Text(l.timeCustom),
+                        selected: _custom,
+                        onSelected: (_) => setState(() => _custom = true),
+                      ),
+                    ],
+                  ),
+                  AnimatedSize(
+                    duration: Motion.of(context, Motion.normal),
+                    curve: Motion.emphasized,
+                    child: _custom
+                        ? Slider(
+                            value: _minutes.clamp(5, 480).toDouble(),
+                            min: 5,
+                            max: 480,
+                            divisions: 95,
+                            label: durationLabel(l, _minutes),
+                            onChanged: (v) => setState(() => _minutes = v.round()),
+                          )
+                        : const SizedBox(width: double.infinity),
+                  ),
+                ],
               ),
             ),
-            const SizedBox(height: Space.lg),
-            Text(l.timeStart, style: context.text.titleSmall?.copyWith(color: context.semantic.muted)),
-            const SizedBox(height: Space.sm),
-            // One tap for the usual times; the wheel is for the exact minute.
-            Wrap(
-              spacing: Space.xs,
-              runSpacing: Space.xs,
-              children: [
-                for (final (label, t) in [
-                  (l.presetMorning, const TimeOfDay(hour: 9, minute: 0)),
-                  (l.presetNoon, const TimeOfDay(hour: 12, minute: 30)),
-                  (l.presetAfternoon, const TimeOfDay(hour: 15, minute: 0)),
-                  (l.presetEvening, const TimeOfDay(hour: 19, minute: 0)),
-                  (l.presetInHour, _inAnHour()),
-                ])
-                  ActionChip(
-                    label: Text('$label · ${hhmm(t)}'),
-                    onPressed: () => _setTime(t),
-                    visualDensity: VisualDensity.compact,
-                  ),
-              ],
-            ),
-            SizedBox(
-              height: 168,
-              child: CupertinoTheme(
-                data: CupertinoThemeData(
-                  brightness: Theme.of(context).brightness,
-                  textTheme: CupertinoTextThemeData(
-                    dateTimePickerTextStyle: context.text.titleLarge?.copyWith(fontSize: 22, fontFamily: 'Jakarta'),
-                  ),
-                ),
-                child: CupertinoDatePicker(
-                  key: ValueKey('time-wheel-$_wheel'),
-                  mode: CupertinoDatePickerMode.time,
-                  use24hFormat:
-                      MediaQuery.alwaysUse24HourFormatOf(context) ||
-                      Localizations.localeOf(context).languageCode != 'en',
-                  minuteInterval: 5,
-                  initialDateTime: initial,
-                  onDateTimeChanged: (d) {
-                    unawaited(HapticFeedback.selectionClick());
-                    setState(() => _time = TimeOfDay(hour: d.hour, minute: d.minute));
-                  },
-                ),
-              ),
-            ),
-            const SizedBox(height: Space.md),
-            Text(l.taskDuration, style: context.text.titleSmall?.copyWith(color: context.semantic.muted)),
-            const SizedBox(height: Space.sm),
-            Wrap(
-              spacing: Space.sm,
-              runSpacing: Space.sm,
-              children: [
-                for (final m in _presets)
-                  ChoiceChip(
-                    label: Text(durationLabel(l, m)),
-                    selected: !_custom && _minutes == m,
-                    onSelected: (_) => setState(() {
-                      _custom = false;
-                      _minutes = m;
-                    }),
-                  ),
-                ChoiceChip(
-                  label: Text(l.timeCustom),
-                  selected: _custom,
-                  onSelected: (_) => setState(() => _custom = true),
-                ),
-              ],
-            ),
-            AnimatedSize(
-              duration: Motion.of(context, Motion.normal),
-              curve: Motion.emphasized,
-              child: _custom
-                  ? Slider(
-                      value: _minutes.clamp(5, 480).toDouble(),
-                      min: 5,
-                      max: 480,
-                      divisions: 95,
-                      label: durationLabel(l, _minutes),
-                      onChanged: (v) => setState(() => _minutes = v.round()),
-                    )
-                  : const SizedBox(width: double.infinity),
-            ),
-            const SizedBox(height: Space.lg),
-            Row(
+          ),
+          // Always visible, however tall the sheet gets.
+          Padding(
+            padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, Space.lg),
+            child: Row(
               children: [
                 if (widget.allowNoTime)
                   Expanded(
@@ -228,8 +241,8 @@ class _TimeSheetState extends State<_TimeSheet> {
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
