@@ -151,12 +151,15 @@ void main() {
           .handlePopRoute(); // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
       await pumpUntil(tester, find.text('Yemek'));
       await _shot(tester, '$mode-explore');
+      await tester.ensureVisible(find.text('Yemek').last);
+      await tester.pump(const Duration(milliseconds: 300));
       await tester.tap(find.text('Yemek').last);
       await pumpUntil(tester, find.text('Tarifler'));
       await _shot(tester, '$mode-food');
       await tester.binding
           .handlePopRoute(); // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
-      await pumpUntil(tester, find.text('Rutinler'));
+      await pumpUntil(tester, find.text('Keşfet'));
+      await tester.scrollUntilVisible(find.text('Rutinler'), -300, scrollable: find.byType(Scrollable).first);
       await tester.ensureVisible(find.text('Rutinler'));
       await tester.tap(find.text('Rutinler'));
       await pumpUntil(tester, find.text('Hazır rutinler'));
@@ -168,6 +171,15 @@ void main() {
       await tester.tap(find.text('Haftalık değerlendirme'));
       await pumpUntil(tester, find.text('Gelecek hafta için üç odak'));
       await _shot(tester, '$mode-review');
+      await tester.binding
+          .handlePopRoute(); // ignore: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
+      await pumpUntil(tester, find.text('Bugün'));
+      await tester.scrollUntilVisible(find.text('Bugün'), -300, scrollable: find.byType(Scrollable).first);
+      await tester.tap(find.text('Bugün').last);
+      await pumpUntil(tester, find.byKey(const Key('today-rates')));
+      await tester.tap(find.byKey(const Key('today-prayer-toggle')));
+      await tester.pump(const Duration(milliseconds: 600));
+      await _shot(tester, '$mode-today');
       await tearDownApp(tester);
     });
   }

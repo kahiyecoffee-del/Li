@@ -2,6 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:lifeos/domain/models/user_profile.dart';
+import 'package:lifeos/services/share/share_service.dart';
+import 'package:flutter/services.dart';
 import 'package:lifeos/services/notifications/notification_service.dart';
 import 'package:go_router/go_router.dart';
 import 'package:lifeos/core/utils/dates.dart';
@@ -108,7 +111,12 @@ void main() {
     await pumpUntil(tester, find.textContaining('· 45 min'));
     await tester.enterText(find.byType(TextField).last, 'gym');
     await tester.tap(find.byTooltip('Add').last);
-    await pumpUntil(tester, find.text('Gym'));
+    // The timeline may put it below the fold: check what was saved.
+    for (var i = 0; i < 40; i++) {
+      final all = (await tester.runAsync(() => app.seededRepos.tasks.getAll()))!;
+      if (all.any((t) => t.title == 'Gym')) break;
+      await tester.pump(const Duration(milliseconds: 100));
+    }
     final gym = (await tester.runAsync(() => app.seededRepos.tasks.getAll()))!.firstWhere((t) => t.title == 'Gym');
     expect(gym.estimatedMinutes, 45);
     expect(gym.scheduledAt, isNotNull);
@@ -211,6 +219,7 @@ void main() {
     // Weekly review: one focus, placed on a day of next week.
     await openExploreTile(tester, 'Weekly review');
     await pumpUntil(tester, find.text('Three focuses for next week'));
+    await tester.scrollUntilVisible(find.byKey(const Key('focus-0')), 300, scrollable: find.byType(Scrollable).first);
     await tester.enterText(find.byKey(const Key('focus-0')), 'finish the report');
     await scrollAndTap(tester, find.text('Plan next week'));
     await pumpUntil(tester, find.text('1 focus planned'));
@@ -495,6 +504,69 @@ void main() {
     await tearDownApp(tester);
   });
 
+  testWidgets('Today page: rates, opt-in prayer times and nearby links', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+    await tester.runAsync(() async {
+      final p = (await app.seededRepos.profile.get(UserProfile.singletonId))!;
+      await app.seededRepos.profile.save(p.copyWith(place: const Place(name: 'İstanbul', latitude: 41, longitude: 29)));
+    });
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    unawaited(GoRouter.of(tester.element(find.text('What should we solve today?'))).push('/today-info'));
+    await pumpUntil(tester, find.byKey(const Key('today-rates')));
+    await pumpUntil(tester, find.textContaining('41.50'));
+    expect(find.byKey(const Key('today-prayer')), findsNothing);
+    await tester.ensureVisible(find.byKey(const Key('today-prayer-toggle')));
+    await tester.tap(find.byKey(const Key('today-prayer-toggle')));
+    await pumpUntil(tester, find.text('Maghrib'));
+    expect(find.text('18:35'), findsOneWidget);
+    await tester.ensureVisible(find.text('Pharmacy on duty'));
+    expect(find.text('Fuel prices'), findsOneWidget);
+    await tearDownApp(tester);
+  });
+
+  testWidgets('Shopping: share the list as a message and add one someone sent', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+    String? clipboard = '🛒 Shopping list\n☐ Milk\n☐ Bread\n\nMade with Dayly';
+    tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(SystemChannels.platform, (call) async {
+      if (call.method == 'Clipboard.getData') return {'text': clipboard};
+      return null;
+    });
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    unawaited(GoRouter.of(tester.element(find.text('What should we solve today?'))).push('/shopping'));
+    await pumpUntil(tester, find.byKey(const Key('shopping-paste')));
+    await tester.tap(find.byKey(const Key('shopping-paste')));
+    await pumpUntil(tester, find.text('2 items added'));
+    await pumpUntil(tester, find.text('Milk'));
+    await tester.tap(find.byKey(const Key('shopping-share')));
+    await tester.pump();
+    final share = app.services.share as RecordingShareService;
+    expect(share.texts.single, contains('☐ Milk'));
+    expect(share.texts.single, contains('☐ Bread'));
+    clipboard = null;
+    await tearDownApp(tester);
+  });
+
+  testWidgets('Weekly review: the week card can be shared as a picture', (tester) async {
+    usePhoneViewport(tester);
+    final app = (await tester.runAsync(() => TestApp.onboarded(online: false)))!;
+    await tester.pumpWidget(app.widget());
+    await pumpUntil(tester, find.text('What should we solve today?'));
+    unawaited(GoRouter.of(tester.element(find.text('What should we solve today?'))).push('/review'));
+    await pumpUntil(tester, find.byKey(const Key('review-share')));
+    expect(find.text('My week with Dayly'), findsOneWidget);
+    await tester.runAsync(() async {
+      await tester.tap(find.byKey(const Key('review-share')));
+      await Future<void>.delayed(const Duration(milliseconds: 500));
+    });
+    await tester.pump();
+    expect((app.services.share as RecordingShareService).images, ['dayly-week.png']);
+    await tearDownApp(tester);
+  });
+
   testWidgets('Turkish + dark mode render Home and My day', (tester) async {
     usePhoneViewport(tester);
     final app = (await tester.runAsync(() => TestApp.onboarded(prefs: {'locale': 'tr', 'themeMode': 'dark'})))!;
@@ -517,7 +589,12 @@ void main() {
     // One line: title, time and length.
     await tester.enterText(find.byType(TextField).last, 'gym 18:30 45 min');
     await tester.tap(find.byTooltip('Add').last);
-    await pumpUntil(tester, find.text('Gym'));
+    // The timeline may put it below the fold: check what was saved.
+    for (var i = 0; i < 40; i++) {
+      final all = (await tester.runAsync(() => app.seededRepos.tasks.getAll()))!;
+      if (all.any((t) => t.title == 'Gym')) break;
+      await tester.pump(const Duration(milliseconds: 100));
+    }
     expect(find.textContaining('18:30'), findsWidgets);
     expect(app.analytics.logged(AnalyticsEvent.taskCreated), isTrue);
     await tearDownApp(tester);

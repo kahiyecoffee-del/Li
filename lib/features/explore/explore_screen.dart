@@ -33,6 +33,9 @@ class ExploreScreen extends ConsumerWidget {
       (Icons.event_repeat_rounded, l.reviewTitle, '/review', null, Accent.insight),
     ];
     final tiles = <(IconData, String, String, String?, Accent)>[
+      (Icons.today_rounded, l.todayInfoTile, '/today-info', null, Accent.news),
+      (Icons.center_focus_strong_rounded, l.focusTitle, '/focus', null, Accent.wellbeing),
+      (Icons.local_post_office_rounded, l.gardenCollection, '/postcards', null, Accent.food),
       (Icons.account_balance_wallet_rounded, l.navMoney, '/money', null, Accent.money),
       (Icons.repeat_rounded, l.lifeHabits, '/habits', null, Accent.goals),
       (Icons.mood_rounded, l.lifeMood, '/mood', null, Accent.wellbeing),

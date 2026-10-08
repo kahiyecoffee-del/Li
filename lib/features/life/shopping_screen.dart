@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/actions.dart';
+import '../../domain/lists/list_share.dart';
 import '../../app/providers.dart';
 import '../../core/l10n/labels.dart';
 import '../../core/theme/tokens.dart';
@@ -33,6 +35,21 @@ class _ShoppingScreenState extends ConsumerState<ShoppingScreen> {
     if (names.isEmpty) return;
     _input.clear();
     await ref.read(actionsProvider).addShoppingItems(names);
+    unawaited(_aiCategorizeUnknown());
+  }
+
+  /// A list someone sent (copied from WhatsApp etc.): one tap to add it.
+  Future<void> _paste() async {
+    final l = context.l10n;
+    final data = await Clipboard.getData(Clipboard.kTextPlain);
+    final names = parseSharedList(data?.text ?? '', footer: l.shoppingShareFooter);
+    if (!mounted) return;
+    if (names.isEmpty) {
+      showSnack(context, l.shoppingPasteEmpty);
+      return;
+    }
+    final n = await ref.read(actionsProvider).addShoppingItems(names);
+    if (mounted) showSnack(context, l.shoppingPasted(n));
     unawaited(_aiCategorizeUnknown());
   }
 
@@ -70,6 +87,23 @@ class _ShoppingScreenState extends ConsumerState<ShoppingScreen> {
       appBar: AppBar(
         title: Text(l.lifeShopping),
         actions: [
+          if (items.any((i) => !i.checked))
+            IconButton(
+              key: const Key('shopping-share'),
+              tooltip: l.shoppingShare,
+              icon: const Icon(Icons.ios_share_rounded),
+              onPressed: () => ref
+                  .read(servicesProvider)
+                  .share
+                  .shareText(
+                    shoppingShareText(
+                      [for (final i in items.where((i) => !i.checked)) i.name],
+                      header: l.shoppingShareHeader,
+                      footer: l.shoppingShareFooter,
+                    ),
+                    subject: l.shoppingShareHeader,
+                  ),
+            ),
           if (hasChecked)
             TextButton(
               onPressed: () => ref.read(actionsProvider).clearCheckedShopping(),
@@ -86,6 +120,15 @@ class _ShoppingScreenState extends ConsumerState<ShoppingScreen> {
               suffixIcon: IconButton(tooltip: l.add, icon: const Icon(Icons.add), onPressed: _add),
             ),
             onSubmitted: (_) => _add(),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: TextButton.icon(
+              key: const Key('shopping-paste'),
+              onPressed: _paste,
+              icon: const Icon(Icons.content_paste_rounded, size: 18),
+              label: Text(l.shoppingPaste),
+            ),
           ),
           if (items.isEmpty) EmptyState(icon: Icons.shopping_cart_outlined, message: l.shoppingEmpty),
           for (final c in ShoppingCategory.values)

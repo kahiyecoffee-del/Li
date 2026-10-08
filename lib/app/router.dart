@@ -11,6 +11,7 @@ import '../features/home/today_screen.dart';
 import '../features/lio/insights_screen.dart';
 import '../features/focus/focus_screen.dart';
 import '../features/lio/garden.dart';
+import '../features/today/today_info_screen.dart';
 import '../features/lio/lio_guide_screen.dart';
 import '../features/life/journal_editor_screen.dart';
 import '../features/life/journal_read_screen.dart';
@@ -177,6 +178,7 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (_, s) => FocusScreen(taskId: s.uri.queryParameters['task']),
       ),
       GoRoute(path: '/postcards', builder: (_, _) => const PostcardsScreen()),
+      GoRoute(path: '/today-info', builder: (_, _) => const TodayInfoScreen()),
       GoRoute(
         path: Routes.solve,
         builder: (_, s) => SolutionScreen(query: s.uri.queryParameters['q'] ?? ''),

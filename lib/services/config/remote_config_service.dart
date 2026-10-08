@@ -16,6 +16,7 @@ abstract final class RcKeys {
   static const bannerEnabled = 'banner_enabled';
   static const nativeEnabled = 'native_enabled';
   static const nativeEvery = 'native_every';
+  static const premiumTrialDays = 'premium_trial_days';
   static const appOpenEnabled = 'app_open_enabled';
   static const appOpenMinHours = 'app_open_min_hours';
   static const premiumPrice = 'premium_price';
@@ -42,6 +43,9 @@ const Map<String, Object> remoteDefaults = {
   // Native ads inside browse lists (recipes, news), one per this many items.
   RcKeys.nativeEnabled: true,
   RcKeys.nativeEvery: 8,
+  // Set to the store offer's length once a free trial is configured in App
+  // Store Connect / Play Console; 0 hides the trial wording.
+  RcKeys.premiumTrialDays: 0,
   RcKeys.appOpenEnabled: true,
   RcKeys.appOpenMinHours: 4,
   // Which paywall price point / product set to show: "default" | "discount".

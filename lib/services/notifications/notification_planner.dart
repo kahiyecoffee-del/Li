@@ -90,6 +90,7 @@ class NotificationState {
     this.planReminder = true,
     this.spendToday,
     this.gardenBackAt,
+    this.openHours = const {},
     this.quietStart = defaultQuietStart,
     this.quietEnd = defaultQuietEnd,
   });
@@ -122,6 +123,10 @@ class NotificationState {
 
   /// When Lio comes back from today's trip (his postcard waits).
   final DateTime? gardenBackAt;
+
+  /// How often the app was opened at each hour (last two weeks), so nudges
+  /// land when the person usually looks at their phone.
+  final Map<int, int> openHours;
 
   /// Nothing is scheduled between [quietStart] and [quietEnd] (except
   /// reminders for tasks the user scheduled in that window themselves).
@@ -263,10 +268,12 @@ class NotificationPlanner {
         );
       }
       if (s.journalReminder && (!isToday || !s.journaledToday)) {
-        day.add(PlannedNotification(id: 70 + index, kind: NotificationKind.journal, at: _at(d, 21, 15)));
+        final h = bestHour(s.openHours, preferred: 21, min: 19, max: 22);
+        day.add(PlannedNotification(id: 70 + index, kind: NotificationKind.journal, at: _at(d, h, 15)));
       }
       if (s.hasBudget && (!isToday || !s.loggedSpendingToday)) {
-        day.add(PlannedNotification(id: 30 + index, kind: NotificationKind.logSpending, at: _at(d, 20, 30)));
+        final h = bestHour(s.openHours, preferred: 20, min: 18, max: 22);
+        day.add(PlannedNotification(id: 30 + index, kind: NotificationKind.logSpending, at: _at(d, h, 30)));
       }
       if (s.budgetTight && !isToday) {
         day.add(PlannedNotification(id: 40 + index, kind: NotificationKind.budgetTight, at: _at(d, 9, 0)));
@@ -274,11 +281,28 @@ class NotificationPlanner {
       // The evening journal also asks how you feel, so it replaces the
       // separate mood check-in when it is on (one evening nudge, not two).
       if (!s.journalReminder && (!isToday || !s.moodLoggedToday)) {
-        day.add(PlannedNotification(id: 50 + index, kind: NotificationKind.moodCheckIn, at: _at(d, 19, 30)));
+        final h = bestHour(s.openHours, preferred: 19, min: 17, max: 21);
+        day.add(PlannedNotification(id: 50 + index, kind: NotificationKind.moodCheckIn, at: _at(d, h, 30)));
       }
       nudges.addAll(day.where((n) => n.at.isAfter(s.now) && !_quiet(n.at, s)).take(s.dailyCap));
     }
     return [...out, ...nudges]..sort((a, b) => a.at.compareTo(b.at));
+  }
+
+  /// The hour in [min]..[max] when the app is opened most, or [preferred]
+  /// until there is enough history (ties go to the hour nearest [preferred]).
+  static int bestHour(Map<int, int> opens, {required int preferred, required int min, required int max}) {
+    if (opens.values.fold(0, (a, b) => a + b) < 7) return preferred;
+    var best = preferred;
+    var bestCount = opens[preferred] ?? 0;
+    for (var h = min; h <= max; h++) {
+      final c = opens[h] ?? 0;
+      if (c > bestCount || (c == bestCount && c > 0 && (h - preferred).abs() < (best - preferred).abs())) {
+        best = h;
+        bestCount = c;
+      }
+    }
+    return best;
   }
 
   static DateTime _at(DateTime d, int h, int m) => DateTime(d.year, d.month, d.day, h, m);

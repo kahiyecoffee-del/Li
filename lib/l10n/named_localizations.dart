@@ -31,6 +31,8 @@ class _NamedEn extends AppLocalizationsEn {
   @override
   String get foodWeekIntro => _r(super.foodWeekIntro);
   @override
+  String get premiumFeaturePostcards => _r(super.premiumFeaturePostcards);
+  @override
   String get notifPlanBody => _r(super.notifPlanBody);
   @override
   String get streakSaveBody => _r(super.streakSaveBody);
@@ -94,6 +96,8 @@ class _NamedTr extends AppLocalizationsTr {
   String get lioHelpHide => _r(super.lioHelpHide);
   @override
   String get foodWeekIntro => _r(super.foodWeekIntro);
+  @override
+  String get premiumFeaturePostcards => _r(super.premiumFeaturePostcards);
   @override
   String get notifPlanBody => _r(super.notifPlanBody);
   @override

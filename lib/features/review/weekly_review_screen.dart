@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -13,6 +15,7 @@ import '../../core/theme/tokens.dart';
 import '../../core/utils/dates.dart';
 import '../../core/widgets/common.dart';
 import '../../core/widgets/formatters.dart';
+import '../../core/widgets/mascot.dart';
 import '../../domain/plan/day_timeline.dart';
 import '../../domain/plan/week_review.dart';
 import '../goals/goals_screen.dart';
@@ -30,6 +33,22 @@ class WeeklyReviewScreen extends ConsumerStatefulWidget {
 class _WeeklyReviewScreenState extends ConsumerState<WeeklyReviewScreen> {
   final _focus = [TextEditingController(), TextEditingController(), TextEditingController()];
   final _days = <int>[0, 1, 2];
+  final _cardKey = GlobalKey();
+
+  /// The week card as a picture, through the share sheet (Instagram, WhatsApp…).
+  Future<void> _share() async {
+    final l = context.l10n;
+    final boundary = _cardKey.currentContext?.findRenderObject() as RenderRepaintBoundary?;
+    if (boundary == null) return;
+    final image = await boundary.toImage(pixelRatio: 3);
+    final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
+    image.dispose();
+    if (bytes == null || !mounted) return;
+    await ref
+        .read(servicesProvider)
+        .share
+        .shareImage(bytes.buffer.asUint8List(), name: 'dayly-week.png', text: l.reviewShareText);
+  }
 
   @override
   void dispose() {
@@ -84,6 +103,25 @@ class _WeeklyReviewScreenState extends ConsumerState<WeeklyReviewScreen> {
           const SizedBox(height: Space.xs),
           Text(l.reviewIntro, style: context.text.bodyMedium?.copyWith(color: context.semantic.muted)),
           const SizedBox(height: Space.lg),
+          RepaintBoundary(
+            key: _cardKey,
+            child: _WeekCard(
+              range: '${DateFormat.MMMd(loc).format(w.start)} – ${DateFormat.MMMd(loc).format(w.end)}',
+              done: w.tasksDone,
+              habits: w.habitRate == null ? null : (w.habitRate! * 100).round(),
+              streak: ref.watch(streakProvider).current,
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton.icon(
+              key: const Key('review-share'),
+              onPressed: _share,
+              icon: const Icon(Icons.ios_share_rounded, size: 18),
+              label: Text(l.reviewShare),
+            ),
+          ),
+          const SizedBox(height: Space.sm),
           AppCard(
             child: Column(
               children: [
@@ -211,6 +249,69 @@ class _WeeklyReviewScreenState extends ConsumerState<WeeklyReviewScreen> {
             icon: const Icon(Icons.event_available_rounded),
             label: Text(l.reviewPlanWeek),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+/// The shareable summary: three numbers, Lio and the week's dates.
+class _WeekCard extends StatelessWidget {
+  const _WeekCard({required this.range, required this.done, required this.habits, required this.streak});
+  final String range;
+  final int done;
+  final int? habits;
+  final int streak;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.l10n;
+    Widget stat(String value, String label) => Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(value, style: context.text.headlineMedium?.copyWith(color: Colors.white)),
+          Text(label, style: context.text.bodySmall?.copyWith(color: Colors.white.withValues(alpha: 0.85))),
+        ],
+      ),
+    );
+    return Container(
+      padding: const EdgeInsets.all(Space.lg),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(Radii.lg),
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [Color(0xFF4A6B52), Color(0xFF2F4A37)],
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(l.reviewShareText, style: context.text.titleLarge?.copyWith(color: Colors.white)),
+                    Text(range, style: context.text.bodySmall?.copyWith(color: Colors.white.withValues(alpha: 0.8))),
+                  ],
+                ),
+              ),
+              const Mascot(mood: MascotMood.excited, size: 56, float: false),
+            ],
+          ),
+          const SizedBox(height: Space.lg),
+          Row(
+            children: [
+              stat('$done', l.reviewCardTasks),
+              if (habits != null) stat(l.percentValue(habits!), l.reviewCardHabits),
+              stat('$streak', l.reviewCardStreak),
+            ],
+          ),
+          const SizedBox(height: Space.md),
+          Text('dayly', style: context.text.labelLarge?.copyWith(color: const Color(0xFFD9BC82), letterSpacing: 2)),
         ],
       ),
     );

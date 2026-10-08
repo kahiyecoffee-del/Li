@@ -17,6 +17,7 @@ import 'package:lifeos/services/ai/ai_service.dart';
 import 'package:lifeos/services/analytics/analytics_service.dart';
 import 'package:lifeos/services/auth/auth_service.dart';
 import 'package:lifeos/services/calendar/calendar_service.dart';
+import 'package:lifeos/services/daily/daily_info_service.dart';
 import 'package:lifeos/services/billing/billing_service.dart';
 import 'package:lifeos/services/config/remote_config_service.dart';
 import 'package:lifeos/services/connectivity/connectivity_service.dart';
@@ -149,6 +150,23 @@ class TestApp {
       ocr: FakeOcr(),
       journalKeys: MemoryJournalKeyStore(),
       calendar: NoCalendarService(fake: calendar, granted: calendar.isNotEmpty),
+      dailyInfo: DailyInfoService(
+        NoDailyInfoProvider(
+          fakeRates: const {'USD': 41.5, 'EUR': 48.25, 'GBP': 55.1},
+          fakePrayer: PrayerTimes(
+            day: '',
+            times: const {
+              'imsak': '05:40',
+              'gunes': '07:05',
+              'ogle': '12:55',
+              'ikindi': '16:05',
+              'aksam': '18:35',
+              'yatsi': '19:55',
+            },
+          ),
+        ),
+        p,
+      ),
     );
     return TestApp._(services, analytics, ai);
   }

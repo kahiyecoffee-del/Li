@@ -1952,6 +1952,216 @@ abstract class AppLocalizations {
   /// **'More'**
   String get taskMore;
 
+  /// No description provided for @shoppingShare.
+  ///
+  /// In en, this message translates to:
+  /// **'Share list'**
+  String get shoppingShare;
+
+  /// No description provided for @shoppingShareHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Shopping list'**
+  String get shoppingShareHeader;
+
+  /// No description provided for @shoppingShareFooter.
+  ///
+  /// In en, this message translates to:
+  /// **'Made with Dayly'**
+  String get shoppingShareFooter;
+
+  /// No description provided for @shoppingPaste.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a list someone sent'**
+  String get shoppingPaste;
+
+  /// No description provided for @shoppingPasted.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 item added} other{{count} items added}}'**
+  String shoppingPasted(int count);
+
+  /// No description provided for @shoppingPasteEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy the list first, then tap here.'**
+  String get shoppingPasteEmpty;
+
+  /// No description provided for @reviewShare.
+  ///
+  /// In en, this message translates to:
+  /// **'Share my week'**
+  String get reviewShare;
+
+  /// No description provided for @reviewShareText.
+  ///
+  /// In en, this message translates to:
+  /// **'My week with Dayly'**
+  String get reviewShareText;
+
+  /// No description provided for @reviewCardTasks.
+  ///
+  /// In en, this message translates to:
+  /// **'things done'**
+  String get reviewCardTasks;
+
+  /// No description provided for @reviewCardHabits.
+  ///
+  /// In en, this message translates to:
+  /// **'habits kept'**
+  String get reviewCardHabits;
+
+  /// No description provided for @reviewCardStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'day streak'**
+  String get reviewCardStreak;
+
+  /// No description provided for @todayInfoTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Today at a glance'**
+  String get todayInfoTitle;
+
+  /// No description provided for @todayInfoTile.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get todayInfoTile;
+
+  /// No description provided for @todayRates.
+  ///
+  /// In en, this message translates to:
+  /// **'Exchange rates'**
+  String get todayRates;
+
+  /// No description provided for @todayRatesNote.
+  ///
+  /// In en, this message translates to:
+  /// **'European Central Bank reference rates, updated on working days. Banks and exchange offices differ.'**
+  String get todayRatesNote;
+
+  /// No description provided for @todayRatesUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'As of {date}'**
+  String todayRatesUpdated(String date);
+
+  /// No description provided for @todayRatesOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Show exchange rates'**
+  String get todayRatesOff;
+
+  /// No description provided for @todayPrayer.
+  ///
+  /// In en, this message translates to:
+  /// **'Prayer times'**
+  String get todayPrayer;
+
+  /// No description provided for @todayPrayerOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Show prayer times'**
+  String get todayPrayerOn;
+
+  /// No description provided for @todayPrayerNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Diyanet method. Times can differ by a minute or two from your mosque.'**
+  String get todayPrayerNote;
+
+  /// No description provided for @todayNeedsCity.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick your city to see this.'**
+  String get todayNeedsCity;
+
+  /// No description provided for @todayPickCity.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick city'**
+  String get todayPickCity;
+
+  /// No description provided for @todayNext.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} in {time}'**
+  String todayNext(String name, String time);
+
+  /// No description provided for @prayerImsak.
+  ///
+  /// In en, this message translates to:
+  /// **'Fajr'**
+  String get prayerImsak;
+
+  /// No description provided for @prayerGunes.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunrise'**
+  String get prayerGunes;
+
+  /// No description provided for @prayerOgle.
+  ///
+  /// In en, this message translates to:
+  /// **'Dhuhr'**
+  String get prayerOgle;
+
+  /// No description provided for @prayerIkindi.
+  ///
+  /// In en, this message translates to:
+  /// **'Asr'**
+  String get prayerIkindi;
+
+  /// No description provided for @prayerAksam.
+  ///
+  /// In en, this message translates to:
+  /// **'Maghrib'**
+  String get prayerAksam;
+
+  /// No description provided for @prayerYatsi.
+  ///
+  /// In en, this message translates to:
+  /// **'Isha'**
+  String get prayerYatsi;
+
+  /// No description provided for @todayNearby.
+  ///
+  /// In en, this message translates to:
+  /// **'Nearby'**
+  String get todayNearby;
+
+  /// No description provided for @todayPharmacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Pharmacy on duty'**
+  String get todayPharmacy;
+
+  /// No description provided for @todayFuel.
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel prices'**
+  String get todayFuel;
+
+  /// No description provided for @todayOpensOutside.
+  ///
+  /// In en, this message translates to:
+  /// **'Opens in your maps or browser.'**
+  String get todayOpensOutside;
+
+  /// No description provided for @todayUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load right now. Pull down to try again.'**
+  String get todayUnavailable;
+
+  /// No description provided for @todayWeather.
+  ///
+  /// In en, this message translates to:
+  /// **'Weather'**
+  String get todayWeather;
+
   /// No description provided for @widgetDone.
   ///
   /// In en, this message translates to:
@@ -4817,7 +5027,7 @@ abstract class AppLocalizations {
   /// No description provided for @deleteAccountBody.
   ///
   /// In en, this message translates to:
-  /// **'This permanently deletes your account and all data in the cloud and on this device. Active subscriptions must be cancelled in Google Play.'**
+  /// **'This permanently deletes your account and all data in the cloud and on this device. Active subscriptions must be cancelled in your app store (Google Play or the App Store).'**
   String get deleteAccountBody;
 
   /// No description provided for @deleteConfirmTitle.
@@ -4999,6 +5209,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Premium feature'**
   String get premiumLocked;
+
+  /// No description provided for @premiumFeatureStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'Save your streak without ads'**
+  String get premiumFeatureStreak;
+
+  /// No description provided for @premiumFeaturePostcards.
+  ///
+  /// In en, this message translates to:
+  /// **'Two postcards from Lio every day'**
+  String get premiumFeaturePostcards;
+
+  /// No description provided for @premiumTrial.
+  ///
+  /// In en, this message translates to:
+  /// **'{days}-day free trial, cancel anytime'**
+  String premiumTrial(int days);
+
+  /// No description provided for @premiumTry.
+  ///
+  /// In en, this message translates to:
+  /// **'Start free trial'**
+  String get premiumTry;
+
+  /// No description provided for @premiumManageIos.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage subscription in the App Store'**
+  String get premiumManageIos;
+
+  /// No description provided for @premiumDisclosureIos.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscriptions renew automatically at the price shown until cancelled. Cancel anytime in your Apple Account settings at least 24 hours before renewal. Payment is charged to your Apple Account.'**
+  String get premiumDisclosureIos;
+
+  /// No description provided for @gardenAnotherFree.
+  ///
+  /// In en, this message translates to:
+  /// **'One more'**
+  String get gardenAnotherFree;
 
   /// No description provided for @tryWithAd.
   ///

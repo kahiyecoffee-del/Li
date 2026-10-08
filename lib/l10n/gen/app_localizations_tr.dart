@@ -1077,6 +1077,118 @@ class AppLocalizationsTr extends AppLocalizations {
   String get taskMore => 'Daha fazla';
 
   @override
+  String get shoppingShare => 'Listeyi paylaş';
+
+  @override
+  String get shoppingShareHeader => 'Alışveriş listesi';
+
+  @override
+  String get shoppingShareFooter => 'Dayly ile hazırlandı';
+
+  @override
+  String get shoppingPaste => 'Gelen listeyi ekle';
+
+  @override
+  String shoppingPasted(int count) {
+    return '$count ürün eklendi';
+  }
+
+  @override
+  String get shoppingPasteEmpty => 'Önce listeyi kopyala, sonra buraya dokun.';
+
+  @override
+  String get reviewShare => 'Haftamı paylaş';
+
+  @override
+  String get reviewShareText => 'Dayly ile haftam';
+
+  @override
+  String get reviewCardTasks => 'iş bitti';
+
+  @override
+  String get reviewCardHabits => 'alışkanlık tuttu';
+
+  @override
+  String get reviewCardStreak => 'günlük seri';
+
+  @override
+  String get todayInfoTitle => 'Bugün neler var';
+
+  @override
+  String get todayInfoTile => 'Bugün';
+
+  @override
+  String get todayRates => 'Döviz kurları';
+
+  @override
+  String get todayRatesNote =>
+      'Avrupa Merkez Bankası referans kurları, iş günlerinde güncellenir. Banka ve döviz bürosu kurları farklıdır.';
+
+  @override
+  String todayRatesUpdated(String date) {
+    return '$date itibarıyla';
+  }
+
+  @override
+  String get todayRatesOff => 'Döviz kurlarını göster';
+
+  @override
+  String get todayPrayer => 'Ezan vakitleri';
+
+  @override
+  String get todayPrayerOn => 'Ezan vakitlerini göster';
+
+  @override
+  String get todayPrayerNote => 'Diyanet hesabı. Camideki vakitle bir iki dakika fark olabilir.';
+
+  @override
+  String get todayNeedsCity => 'Bunu görmek için şehrini seç.';
+
+  @override
+  String get todayPickCity => 'Şehir seç';
+
+  @override
+  String todayNext(String name, String time) {
+    return '$name vaktine $time';
+  }
+
+  @override
+  String get prayerImsak => 'İmsak';
+
+  @override
+  String get prayerGunes => 'Güneş';
+
+  @override
+  String get prayerOgle => 'Öğle';
+
+  @override
+  String get prayerIkindi => 'İkindi';
+
+  @override
+  String get prayerAksam => 'Akşam';
+
+  @override
+  String get prayerYatsi => 'Yatsı';
+
+  @override
+  String get todayNearby => 'Yakınımda';
+
+  @override
+  String get todayPharmacy => 'Nöbetçi eczane';
+
+  @override
+  String get todayFuel => 'Akaryakıt fiyatları';
+
+  @override
+  String get todayOpensOutside => 'Harita ya da tarayıcıda açılır.';
+
+  @override
+  String get todayUnavailable => 'Şu an yüklenemedi. Tekrar denemek için aşağı çek.';
+
+  @override
+  String get todayWeather => 'Hava durumu';
+
+  @override
   String widgetDone(String title) {
     return '✓ Bitti: $title';
   }
@@ -2685,7 +2797,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get deleteAccountBody =>
-      'Bu işlem hesabını ve buluttaki ve bu cihazdaki tüm verileri kalıcı olarak siler. Aktif abonelikler Google Play’den iptal edilmelidir.';
+      'Bu işlem hesabını ve buluttaki ve bu cihazdaki tüm verileri kalıcı olarak siler. Aktif abonelikler uygulama mağazasından (Google Play veya App Store) iptal edilmelidir.';
 
   @override
   String get deleteConfirmTitle => 'Emin misin?';
@@ -2781,6 +2893,30 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get premiumLocked => 'Premium özellik';
+
+  @override
+  String get premiumFeatureStreak => 'Reklamsız seri kurtarma';
+
+  @override
+  String get premiumFeaturePostcards => 'Lio’dan her gün iki kartpostal';
+
+  @override
+  String premiumTrial(int days) {
+    return '$days gün ücretsiz dene, istediğin zaman iptal et';
+  }
+
+  @override
+  String get premiumTry => 'Ücretsiz denemeyi başlat';
+
+  @override
+  String get premiumManageIos => 'Aboneliği App Store’da yönet';
+
+  @override
+  String get premiumDisclosureIos =>
+      'Abonelikler iptal edilene kadar gösterilen fiyattan otomatik olarak yenilenir. Yenilemeden en az 24 saat önce Apple Hesabı ayarlarından istediğin zaman iptal edebilirsin. Ödeme Apple Hesabından alınır.';
+
+  @override
+  String get gardenAnotherFree => 'Bir tane daha';
 
   @override
   String get tryWithAd => 'Kısa bir reklamla bir kez dene';

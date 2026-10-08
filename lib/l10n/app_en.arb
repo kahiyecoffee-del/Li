@@ -774,6 +774,65 @@
   "planDayEnd": "Ends",
   "planHowTo": "Tap a task to change anything · swipe right: done · left: tomorrow",
   "taskMore": "More",
+  "shoppingShare": "Share list",
+  "shoppingShareHeader": "Shopping list",
+  "shoppingShareFooter": "Made with Dayly",
+  "shoppingPaste": "Add a list someone sent",
+  "shoppingPasted": "{count, plural, =1{1 item added} other{{count} items added}}",
+  "@shoppingPasted": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shoppingPasteEmpty": "Copy the list first, then tap here.",
+  "reviewShare": "Share my week",
+  "reviewShareText": "My week with Dayly",
+  "reviewCardTasks": "things done",
+  "reviewCardHabits": "habits kept",
+  "reviewCardStreak": "day streak",
+  "todayInfoTitle": "Today at a glance",
+  "todayInfoTile": "Today",
+  "todayRates": "Exchange rates",
+  "todayRatesNote": "European Central Bank reference rates, updated on working days. Banks and exchange offices differ.",
+  "todayRatesUpdated": "As of {date}",
+  "@todayRatesUpdated": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "todayRatesOff": "Show exchange rates",
+  "todayPrayer": "Prayer times",
+  "todayPrayerOn": "Show prayer times",
+  "todayPrayerNote": "Diyanet method. Times can differ by a minute or two from your mosque.",
+  "todayNeedsCity": "Pick your city to see this.",
+  "todayPickCity": "Pick city",
+  "todayNext": "{name} in {time}",
+  "@todayNext": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "prayerImsak": "Fajr",
+  "prayerGunes": "Sunrise",
+  "prayerOgle": "Dhuhr",
+  "prayerIkindi": "Asr",
+  "prayerAksam": "Maghrib",
+  "prayerYatsi": "Isha",
+  "todayNearby": "Nearby",
+  "todayPharmacy": "Pharmacy on duty",
+  "todayFuel": "Fuel prices",
+  "todayOpensOutside": "Opens in your maps or browser.",
+  "todayUnavailable": "Could not load right now. Pull down to try again.",
+  "todayWeather": "Weather",
   "widgetDone": "✓ Done: {title}",
   "@widgetDone": {
     "placeholders": {
@@ -1806,7 +1865,7 @@
   "deleteMemories": "Delete AI memory",
   "deleteChats": "Delete AI conversations",
   "deleteAccount": "Delete account",
-  "deleteAccountBody": "This permanently deletes your account and all data in the cloud and on this device. Active subscriptions must be cancelled in Google Play.",
+  "deleteAccountBody": "This permanently deletes your account and all data in the cloud and on this device. Active subscriptions must be cancelled in your app store (Google Play or the App Store).",
   "deleteConfirmTitle": "Are you sure?",
   "deleteConfirmBody": "This cannot be undone.",
   "typeDeleteToConfirm": "Type DELETE to confirm",
@@ -1851,6 +1910,20 @@
   "premiumSuccess": "Welcome to Premium!",
   "premiumDisclosure": "Subscriptions renew automatically at the price shown until cancelled. Cancel anytime in Google Play at least 24 hours before renewal. Payment is charged to your Google Play account.",
   "premiumLocked": "Premium feature",
+  "premiumFeatureStreak": "Save your streak without ads",
+  "premiumFeaturePostcards": "Two postcards from Lio every day",
+  "premiumTrial": "{days}-day free trial, cancel anytime",
+  "@premiumTrial": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "premiumTry": "Start free trial",
+  "premiumManageIos": "Manage subscription in the App Store",
+  "premiumDisclosureIos": "Subscriptions renew automatically at the price shown until cancelled. Cancel anytime in your Apple Account settings at least 24 hours before renewal. Payment is charged to your Apple Account.",
+  "gardenAnotherFree": "One more",
   "tryWithAd": "Try once with a short ad",
   "notifTaskTitle": "Coming up",
   "notifTaskBody": "{minutes, plural, =1{“{title}” starts in 1 minute.} other{“{title}” starts in {minutes} minutes.}}",

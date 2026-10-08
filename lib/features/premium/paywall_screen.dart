@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -12,6 +13,7 @@ import '../../core/widgets/common.dart';
 import '../../services/analytics/analytics_service.dart';
 import '../../services/billing/billing_service.dart';
 import '../../services/config/feature_flags.dart';
+import '../../services/config/remote_config_service.dart';
 
 /// Premium subscription paywall (Google Play Billing). Prices always come
 /// from Play; the `paywall` experiment only changes plan ordering.
@@ -81,7 +83,11 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
       (Icons.analytics_outlined, l.premiumFeatureAnalytics),
       (Icons.restaurant_menu_outlined, l.premiumFeatureMeals),
       (Icons.psychology_outlined, l.premiumFeatureMemory),
+      (Icons.ac_unit_rounded, l.premiumFeatureStreak),
+      (Icons.local_post_office_outlined, l.premiumFeaturePostcards),
     ];
+    final ios = defaultTargetPlatform == TargetPlatform.iOS;
+    final trialDays = ref.read(servicesProvider).remote.getInt(RcKeys.premiumTrialDays);
     return Scaffold(
       appBar: AppBar(),
       body: ListView(
@@ -112,10 +118,14 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
             const SizedBox(height: Space.md),
             OutlinedButton(
               onPressed: () => launchUrl(
-                Uri.parse('https://play.google.com/store/account/subscriptions?package=${AppConfig.androidPackage}'),
+                Uri.parse(
+                  ios
+                      ? 'https://apps.apple.com/account/subscriptions'
+                      : 'https://play.google.com/store/account/subscriptions?package=${AppConfig.androidPackage}',
+                ),
                 mode: LaunchMode.externalApplication,
               ),
-              child: Text(l.premiumManage),
+              child: Text(ios ? l.premiumManageIos : l.premiumManage),
             ),
           ] else
             FutureBuilder<List<PremiumProduct>>(
@@ -157,11 +167,20 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                       ),
                     ),
                     const SizedBox(height: Space.md),
+                    if (trialDays > 0)
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: Space.sm),
+                        child: Text(
+                          l.premiumTrial(trialDays),
+                          textAlign: TextAlign.center,
+                          style: context.text.titleSmall?.copyWith(color: context.colors.primary),
+                        ),
+                      ),
                     FilledButton(
                       onPressed: _pending ? null : () => ref.read(servicesProvider).billing.buy(_selected!),
                       child: _pending
                           ? const SizedBox.square(dimension: 22, child: CircularProgressIndicator(strokeWidth: 2))
-                          : Text(l.premiumSubscribe),
+                          : Text(trialDays > 0 ? l.premiumTry : l.premiumSubscribe),
                     ),
                   ],
                 );
@@ -169,7 +188,10 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
             ),
           TextButton(onPressed: () => ref.read(servicesProvider).billing.restore(), child: Text(l.premiumRestore)),
           const SizedBox(height: Space.md),
-          Text(l.premiumDisclosure, style: context.text.bodySmall?.copyWith(color: context.semantic.muted)),
+          Text(
+            ios ? l.premiumDisclosureIos : l.premiumDisclosure,
+            style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
+          ),
         ],
       ),
     );

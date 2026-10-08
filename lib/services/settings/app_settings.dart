@@ -28,6 +28,8 @@ class AppSettings {
     this.favoriteRecipes = const {},
     this.planBreak = 0,
     this.showCalendar = false,
+    this.showRates = true,
+    this.showPrayerTimes = false,
   });
 
   final ThemeMode themeMode;
@@ -64,6 +66,10 @@ class AppSettings {
   /// Show the phone's calendar events on the planner (read-only).
   final bool showCalendar;
 
+  /// Today page: exchange rates and (opt-in) prayer times.
+  final bool showRates;
+  final bool showPrayerTimes;
+
   AppSettings copyWith({
     ThemeMode? themeMode,
     bool? highContrast,
@@ -83,6 +89,8 @@ class AppSettings {
     Set<String>? favoriteRecipes,
     int? planBreak,
     bool? showCalendar,
+    bool? showRates,
+    bool? showPrayerTimes,
   }) => AppSettings(
     themeMode: themeMode ?? this.themeMode,
     highContrast: highContrast ?? this.highContrast,
@@ -101,6 +109,8 @@ class AppSettings {
     favoriteRecipes: favoriteRecipes ?? this.favoriteRecipes,
     planBreak: planBreak ?? this.planBreak,
     showCalendar: showCalendar ?? this.showCalendar,
+    showRates: showRates ?? this.showRates,
+    showPrayerTimes: showPrayerTimes ?? this.showPrayerTimes,
   );
 }
 
@@ -136,6 +146,8 @@ class SettingsStore {
       favoriteRecipes: {...?_p.getStringList('favoriteRecipes')},
       planBreak: _p.getInt('planBreak') ?? 0,
       showCalendar: _p.getBool('showCalendar') ?? false,
+      showRates: _p.getBool('showRates') ?? true,
+      showPrayerTimes: _p.getBool('showPrayerTimes') ?? false,
     );
   }
 
@@ -156,6 +168,8 @@ class SettingsStore {
     await _p.setBool('showLio', s.showLio);
     await _p.setInt('planBreak', s.planBreak);
     await _p.setBool('showCalendar', s.showCalendar);
+    await _p.setBool('showRates', s.showRates);
+    await _p.setBool('showPrayerTimes', s.showPrayerTimes);
     await _p.setBool('journalReminder', s.journalReminder);
     await _p.setBool('planReminder', s.planReminder);
     await _p.setBool('lioLearnsJournal', s.lioLearnsJournal);

@@ -212,10 +212,12 @@ class _PostcardSheetState extends ConsumerState<_PostcardSheet> {
               style: context.text.bodySmall?.copyWith(color: context.semantic.muted),
             ),
             const SizedBox(height: Space.md),
-            if (!_extraTaken && !ref.watch(isPremiumProvider))
+            if (!_extraTaken)
               OutlinedButton.icon(
                 onPressed: () async {
-                  final ok = await watchRewardedAd(context, ref, RewardPlacement.extraInsights);
+                  // Premium: no ad for the second one.
+                  final ok =
+                      ref.read(isPremiumProvider) || await watchRewardedAd(context, ref, RewardPlacement.extraInsights);
                   if (!ok || !mounted) return;
                   final more = await ref.read(gardenProvider.notifier).open(extra: true);
                   setState(() {
@@ -223,8 +225,10 @@ class _PostcardSheetState extends ConsumerState<_PostcardSheet> {
                     _extraTaken = true;
                   });
                 },
-                icon: const Icon(Icons.play_circle_outline_rounded),
-                label: Text(l.gardenAnother),
+                icon: Icon(
+                  ref.watch(isPremiumProvider) ? Icons.mail_outline_rounded : Icons.play_circle_outline_rounded,
+                ),
+                label: Text(ref.watch(isPremiumProvider) ? l.gardenAnotherFree : l.gardenAnother),
               ),
             TextButton(
               onPressed: () {

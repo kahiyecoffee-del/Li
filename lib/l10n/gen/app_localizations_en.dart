@@ -1105,6 +1105,119 @@ class AppLocalizationsEn extends AppLocalizations {
   String get taskMore => 'More';
 
   @override
+  String get shoppingShare => 'Share list';
+
+  @override
+  String get shoppingShareHeader => 'Shopping list';
+
+  @override
+  String get shoppingShareFooter => 'Made with Dayly';
+
+  @override
+  String get shoppingPaste => 'Add a list someone sent';
+
+  @override
+  String shoppingPasted(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: '$count items added', one: '1 item added');
+    return '$_temp0';
+  }
+
+  @override
+  String get shoppingPasteEmpty => 'Copy the list first, then tap here.';
+
+  @override
+  String get reviewShare => 'Share my week';
+
+  @override
+  String get reviewShareText => 'My week with Dayly';
+
+  @override
+  String get reviewCardTasks => 'things done';
+
+  @override
+  String get reviewCardHabits => 'habits kept';
+
+  @override
+  String get reviewCardStreak => 'day streak';
+
+  @override
+  String get todayInfoTitle => 'Today at a glance';
+
+  @override
+  String get todayInfoTile => 'Today';
+
+  @override
+  String get todayRates => 'Exchange rates';
+
+  @override
+  String get todayRatesNote =>
+      'European Central Bank reference rates, updated on working days. Banks and exchange offices differ.';
+
+  @override
+  String todayRatesUpdated(String date) {
+    return 'As of $date';
+  }
+
+  @override
+  String get todayRatesOff => 'Show exchange rates';
+
+  @override
+  String get todayPrayer => 'Prayer times';
+
+  @override
+  String get todayPrayerOn => 'Show prayer times';
+
+  @override
+  String get todayPrayerNote => 'Diyanet method. Times can differ by a minute or two from your mosque.';
+
+  @override
+  String get todayNeedsCity => 'Pick your city to see this.';
+
+  @override
+  String get todayPickCity => 'Pick city';
+
+  @override
+  String todayNext(String name, String time) {
+    return '$name in $time';
+  }
+
+  @override
+  String get prayerImsak => 'Fajr';
+
+  @override
+  String get prayerGunes => 'Sunrise';
+
+  @override
+  String get prayerOgle => 'Dhuhr';
+
+  @override
+  String get prayerIkindi => 'Asr';
+
+  @override
+  String get prayerAksam => 'Maghrib';
+
+  @override
+  String get prayerYatsi => 'Isha';
+
+  @override
+  String get todayNearby => 'Nearby';
+
+  @override
+  String get todayPharmacy => 'Pharmacy on duty';
+
+  @override
+  String get todayFuel => 'Fuel prices';
+
+  @override
+  String get todayOpensOutside => 'Opens in your maps or browser.';
+
+  @override
+  String get todayUnavailable => 'Could not load right now. Pull down to try again.';
+
+  @override
+  String get todayWeather => 'Weather';
+
+  @override
   String widgetDone(String title) {
     return '✓ Done: $title';
   }
@@ -2751,7 +2864,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get deleteAccountBody =>
-      'This permanently deletes your account and all data in the cloud and on this device. Active subscriptions must be cancelled in Google Play.';
+      'This permanently deletes your account and all data in the cloud and on this device. Active subscriptions must be cancelled in your app store (Google Play or the App Store).';
 
   @override
   String get deleteConfirmTitle => 'Are you sure?';
@@ -2853,6 +2966,30 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get premiumLocked => 'Premium feature';
+
+  @override
+  String get premiumFeatureStreak => 'Save your streak without ads';
+
+  @override
+  String get premiumFeaturePostcards => 'Two postcards from Lio every day';
+
+  @override
+  String premiumTrial(int days) {
+    return '$days-day free trial, cancel anytime';
+  }
+
+  @override
+  String get premiumTry => 'Start free trial';
+
+  @override
+  String get premiumManageIos => 'Manage subscription in the App Store';
+
+  @override
+  String get premiumDisclosureIos =>
+      'Subscriptions renew automatically at the price shown until cancelled. Cancel anytime in your Apple Account settings at least 24 hours before renewal. Payment is charged to your Apple Account.';
+
+  @override
+  String get gardenAnotherFree => 'One more';
 
   @override
   String get tryWithAd => 'Try once with a short ad';

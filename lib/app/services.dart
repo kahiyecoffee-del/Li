@@ -12,6 +12,8 @@ import '../services/calendar/calendar_service.dart';
 import '../services/config/feature_flags.dart';
 import '../services/config/remote_config_service.dart';
 import '../services/connectivity/connectivity_service.dart';
+import '../services/daily/daily_info_service.dart';
+import '../services/share/share_service.dart';
 import '../services/crash/crash_reporter.dart';
 import '../services/news/news_service.dart';
 import '../services/notifications/notification_service.dart';
@@ -46,8 +48,12 @@ class Services {
     this.voice = const NoVoiceInput(),
     this.homeWidget = const NoHomeWidget(),
     CalendarService? calendar,
+    DailyInfoService? dailyInfo,
+    ShareService? share,
   }) : flags = FeatureFlags(remote),
-       calendar = calendar ?? NoCalendarService();
+       calendar = calendar ?? NoCalendarService(),
+       dailyInfo = dailyInfo ?? DailyInfoService(const NoDailyInfoProvider(), prefs),
+       share = share ?? RecordingShareService();
 
   final SharedPreferences prefs;
   final AuthService auth;
@@ -72,6 +78,12 @@ class Services {
 
   /// The phone's calendar, read-only (iOS/Android only).
   final CalendarService calendar;
+
+  /// Exchange rates and prayer times for the Today page.
+  final DailyInfoService dailyInfo;
+
+  /// The system share sheet.
+  final ShareService share;
 
   /// Null in local-only mode (Firebase not configured).
   final FirebaseFirestore? firestore;

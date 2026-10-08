@@ -15,6 +15,7 @@ import '../services/analytics/analytics_service.dart';
 import '../services/config/feature_flags.dart';
 import '../services/config/remote_config_service.dart';
 import '../services/notifications/notification_planner.dart';
+import '../services/notifications/open_hours.dart';
 import '../services/widget/home_widget_service.dart';
 import '../features/lio/garden.dart';
 import 'actions.dart';
@@ -54,6 +55,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
     WidgetsBinding.instance.addObserver(this);
     final s = ref.read(servicesProvider);
     unawaited(s.analytics.log(AnalyticsEvent.appOpen));
+    unawaited(OpenHours(s.prefs).record(DateTime.now()));
     unawaited(s.notifications.initialize());
     // Tapping a reminder opens the right screen (plan with Lio, journal…).
     _taps = s.notifications.taps.listen((route) {
@@ -105,7 +107,10 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
       _updateHomeWidget();
       // Coming back after a real break (not a quick app switch).
       final away = _pausedAt == null ? Duration.zero : DateTime.now().difference(_pausedAt!);
-      if (away > const Duration(seconds: 30)) unawaited(_maybeAppOpenAd());
+      if (away > const Duration(seconds: 30)) {
+        unawaited(_maybeAppOpenAd());
+        unawaited(OpenHours(ref.read(servicesProvider).prefs).record(DateTime.now()));
+      }
     }
   }
 
@@ -235,6 +240,7 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
           journalReminder: settings.journalReminder,
           planReminder: settings.planReminder,
           gardenBackAt: ref.read(gardenProvider.notifier).backAt,
+          openHours: OpenHours(services.prefs).counts(),
           spendToday: budget == null || budget.overToday
               ? null
               : ref

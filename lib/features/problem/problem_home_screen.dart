@@ -12,6 +12,7 @@ import '../../core/widgets/formatters.dart';
 import '../lio/advice_view.dart';
 import '../premium/banner_slot.dart';
 import '../lio/garden.dart';
+import '../today/today_info_screen.dart';
 import 'home_today.dart';
 import 'problem_flow.dart';
 
@@ -97,6 +98,7 @@ class HomeScreen extends ConsumerWidget {
               const TodayFlowCard(),
               const SizedBox(height: Space.md),
               const GardenCard(),
+              const TodayInfoStrip(),
               // Sundays: invite the weekly review.
               if (DateTime.now().weekday == DateTime.sunday) ...[
                 const SizedBox(height: Space.md),

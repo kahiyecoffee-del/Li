@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/utils/dates.dart';
+import '../services/daily/daily_info_service.dart';
 import '../domain/engines/badge_engine.dart';
 import '../domain/engines/budget_engine.dart';
 import '../domain/engines/money_insights.dart';
@@ -270,6 +271,20 @@ final weatherProvider = FutureProvider<Weather?>((ref) async {
   final place = ref.watch(profileProvider.select((p) => p.value?.place));
   if (place == null) return null;
   return ref.watch(servicesProvider).weather.get(place);
+});
+
+/// Lira rates for the Today page (cached 6 hours; last known offline).
+final ratesProvider = FutureProvider<(LiraRates, DateTime)?>((ref) async {
+  if (!ref.watch(settingsProvider.select((s) => s.showRates))) return null;
+  return ref.watch(servicesProvider).dailyInfo.rates();
+});
+
+/// Today's prayer times where the user lives (opt-in).
+final prayerTimesProvider = FutureProvider<PrayerTimes?>((ref) async {
+  if (!ref.watch(settingsProvider.select((s) => s.showPrayerTimes))) return null;
+  final place = ref.watch(profileProvider.select((p) => p.value?.place));
+  if (place == null) return null;
+  return ref.watch(servicesProvider).dailyInfo.prayerTimes(place, ref.watch(todayProvider));
 });
 
 final newsProvider = FutureProvider.family<List<NewsArticle>, String>((ref, language) async {
