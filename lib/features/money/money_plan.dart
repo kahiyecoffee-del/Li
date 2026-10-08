@@ -136,28 +136,44 @@ class _BillRow extends ConsumerWidget {
   }
 }
 
-Future<void> showBillSheet(BuildContext context, {RecurringBill? bill}) => showModalBottomSheet<void>(
+Future<void> showBillSheet(
+  BuildContext context, {
+  RecurringBill? bill,
+  ExpenseCategory? category,
+  String? name,
+  int? amountMinor,
+  int? day,
+}) => showModalBottomSheet<void>(
   context: context,
   useRootNavigator: true,
   isScrollControlled: true,
-  builder: (_) => _BillSheet(bill: bill),
+  builder: (_) => _BillSheet(bill: bill, category: category, name: name, amountMinor: amountMinor, day: day),
 );
 
 class _BillSheet extends ConsumerStatefulWidget {
-  const _BillSheet({this.bill});
+  const _BillSheet({this.bill, this.category, this.name, this.amountMinor, this.day});
   final RecurringBill? bill;
+
+  /// Defaults for a new bill (e.g. a found subscription).
+  final ExpenseCategory? category;
+  final String? name;
+  final int? amountMinor;
+  final int? day;
 
   @override
   ConsumerState<_BillSheet> createState() => _BillSheetState();
 }
 
 class _BillSheetState extends ConsumerState<_BillSheet> {
-  late final _name = TextEditingController(text: widget.bill?.name);
+  late final _name = TextEditingController(text: widget.bill?.name ?? widget.name);
   late final _amount = TextEditingController(
-    text: widget.bill == null ? '' : (widget.bill!.amountMinor / 100).toStringAsFixed(0),
+    text: switch (widget.bill?.amountMinor ?? widget.amountMinor) {
+      null => '',
+      final m => m % 100 == 0 ? '${m ~/ 100}' : (m / 100).toStringAsFixed(2),
+    },
   );
-  late int _day = widget.bill?.dayOfMonth ?? DateTime.now().day;
-  late ExpenseCategory _cat = widget.bill?.category ?? ExpenseCategory.bills;
+  late int _day = widget.bill?.dayOfMonth ?? widget.day ?? DateTime.now().day;
+  late ExpenseCategory _cat = widget.bill?.category ?? widget.category ?? ExpenseCategory.bills;
   late bool _remind = widget.bill?.remind ?? true;
 
   @override

@@ -207,7 +207,8 @@ class LocalNotificationService implements NotificationService {
     await _plugin.cancelAll();
     for (final n in plan) {
       final t = text(n);
-      final task = n.kind == NotificationKind.taskReminder && n.taskId != null;
+      final task =
+          (n.kind == NotificationKind.taskReminder || n.kind == NotificationKind.medication) && n.taskId != null;
       try {
         await _plugin.zonedSchedule(
           id: n.id,

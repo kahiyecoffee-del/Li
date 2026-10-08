@@ -17,6 +17,7 @@ import '../services/config/remote_config_service.dart';
 import '../services/notifications/notification_planner.dart';
 import '../services/notifications/open_hours.dart';
 import '../services/widget/home_widget_service.dart';
+import '../features/care/meds_screen.dart';
 import '../features/lio/garden.dart';
 import '../features/voice/voice_button.dart';
 import '../services/assistant/assistant_service.dart';
@@ -67,6 +68,11 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
     });
     // "Done" on a task reminder ticks the task off.
     _doneTasks = s.notifications.doneTasks.listen((id) async {
+      // "Done" on a medicine reminder: the dose is taken.
+      if (id.startsWith(medDonePrefix)) {
+        await ref.read(actionsProvider).takeDose(id.substring(medDonePrefix.length));
+        return;
+      }
       final t = ref.read(tasksProvider).list.where((t) => t.id == id && !t.isCompleted).firstOrNull;
       if (t != null) await ref.read(actionsProvider).toggleTask(t);
     });
@@ -258,6 +264,8 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
           journalReminder: settings.journalReminder,
           planReminder: settings.planReminder,
           gardenBackAt: ref.read(gardenProvider.notifier).backAt,
+          meds: ref.read(medicationsProvider).list,
+          takenDoses: ref.read(takenDoseIdsProvider),
           openHours: OpenHours(services.prefs).counts(),
           spendToday: budget == null || budget.overToday
               ? null
@@ -346,6 +354,8 @@ class _AppEffectsState extends ConsumerState<AppEffects> with WidgetsBindingObse
       ref.listen(settingsProvider.select((s) => s.notificationFrequency), (_, _) => _scheduleNotifications());
       ref.listen(journalProvider, (_, _) => _scheduleNotifications());
       ref.listen(billsProvider, (_, _) => _scheduleNotifications());
+      ref.listen(medicationsProvider, (_, _) => _scheduleNotifications());
+      ref.listen(medDosesProvider, (_, _) => _scheduleNotifications());
       ref.listen(
         settingsProvider.select((s) => (s.journalReminder, s.planReminder)),
         (_, _) => _scheduleNotifications(),

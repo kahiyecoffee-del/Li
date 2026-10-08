@@ -1,4 +1,5 @@
 import '../domain/models/ai_models.dart';
+import '../domain/models/care.dart';
 import '../domain/models/entity.dart';
 import '../domain/models/food.dart';
 import '../domain/models/habit.dart';
@@ -35,6 +36,9 @@ abstract final class Collections {
     RecurringBill.codec,
     Routine.codec,
     LifeGoal.codec,
+    Debt.codec,
+    Medication.codec,
+    MedDose.codec,
   ];
 
   static List<String> get names => all.map((c) => c.collection).toList();

@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/utils/dates.dart';
 import '../core/utils/ids.dart';
 import '../data/repositories/user_repos.dart';
+import '../domain/models/care.dart';
 import '../domain/models/enums.dart';
 import '../domain/models/food.dart';
 import '../domain/models/habit.dart';
@@ -110,6 +111,81 @@ class AppActions {
   Future<void> payBill(RecurringBill b) async {
     await addTransaction(amountMinor: b.amountMinor, category: b.category, description: b.name);
     await _repos.bills.save(b.copyWith(lastPaidMonth: Dates.monthKey(_now)));
+  }
+
+  Future<void> restoreBill(RecurringBill b) => _repos.bills.save(b);
+
+  // Debts ------------------------------------------------------------------
+  Future<Debt> addDebt({
+    required String person,
+    required int amountMinor,
+    required bool theyOwe,
+    String note = '',
+    DateTime? due,
+  }) async {
+    final d = Debt(
+      id: newId(),
+      updatedAt: _now,
+      person: person.trim(),
+      amountMinor: amountMinor,
+      theyOwe: theyOwe,
+      note: note.trim(),
+      due: due,
+      createdAt: _now,
+    );
+    await _repos.debts.save(d);
+    return d;
+  }
+
+  Future<void> saveDebt(Debt d) => _repos.debts.save(d);
+
+  /// Settles every open debt with [person] (returns them for undo).
+  Future<List<Debt>> settleWith(String person) async {
+    final key = person.trim().toLowerCase();
+    final open = (_ref.read(debtsProvider).value ?? const <Debt>[])
+        .where((d) => d.isOpen && d.person.trim().toLowerCase() == key)
+        .toList();
+    for (final d in open) {
+      await _repos.debts.save(d.copyWith(settledAt: _now));
+    }
+    return open;
+  }
+
+  Future<void> restoreDebts(List<Debt> debts) async {
+    for (final d in debts) {
+      await _repos.debts.save(d.copyWith(reopen: true));
+    }
+  }
+
+  Future<void> deleteDebt(String id) => _repos.debts.delete(id);
+
+  // Medications ------------------------------------------------------------
+  Future<void> saveMedication(Medication m) => _repos.medications.save(m);
+
+  Future<void> deleteMedication(String id) => _repos.medications.delete(id);
+
+  Future<void> restoreMedication(Medication m) => _repos.medications.save(m);
+
+  /// Marks a dose taken (once) and counts it off the stock.
+  Future<void> takeDose(String doseId) async {
+    final existing = await _repos.medDoses.get(doseId);
+    if (existing != null && !existing.deleted) return;
+    await _repos.medDoses.save(MedDose(id: doseId, updatedAt: _now, takenAt: _now));
+    final medId = doseId.split('|').first;
+    final m = await _repos.medications.get(medId);
+    if (m != null && !m.deleted && m.stock != null) {
+      await _repos.medications.save(m.copyWith(stock: (m.stock! - m.perDose).clamp(0, 1 << 30)));
+    }
+  }
+
+  Future<void> undoDose(String doseId) async {
+    final existing = await _repos.medDoses.get(doseId);
+    if (existing == null || existing.deleted) return;
+    await _repos.medDoses.delete(doseId);
+    final m = await _repos.medications.get(doseId.split('|').first);
+    if (m != null && !m.deleted && m.stock != null) {
+      await _repos.medications.save(m.copyWith(stock: m.stock! + m.perDose));
+    }
   }
 
   // Tasks ------------------------------------------------------------------

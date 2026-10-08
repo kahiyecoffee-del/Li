@@ -1105,6 +1105,273 @@ class AppLocalizationsEn extends AppLocalizations {
   String get taskMore => 'More';
 
   @override
+  String get subsTitle => 'Subscriptions';
+
+  @override
+  String subsMonthly(String amount) {
+    return '$amount a month';
+  }
+
+  @override
+  String subsYearly(String amount) {
+    return '$amount a year';
+  }
+
+  @override
+  String get subsIntro => 'Every subscription in one place. Cancel the ones you no longer use.';
+
+  @override
+  String get subsEmpty => 'No subscriptions yet. Add Netflix, Spotify, iCloud… and see what they cost in a year.';
+
+  @override
+  String get subsAdd => 'Add subscription';
+
+  @override
+  String get subsFound => 'Looks like a subscription';
+
+  @override
+  String subsFoundBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Paid in $count months',
+      one: 'Paid this month',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String subsStillUsing(String name) {
+    return 'Still using $name?';
+  }
+
+  @override
+  String subsStillUsingBody(String amount) {
+    return 'It costs $amount a year.';
+  }
+
+  @override
+  String get subsKeep => 'Yes, keep it';
+
+  @override
+  String get subsCancel => 'No, I’ll cancel it';
+
+  @override
+  String subsCancelled(String name) {
+    return '$name removed. Remember to cancel it with the provider too.';
+  }
+
+  @override
+  String get subsReview => 'Check';
+
+  @override
+  String subsUnreviewed(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count subscriptions to check',
+      one: '1 subscription to check',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get debtsTitle => 'Debts & splits';
+
+  @override
+  String get debtsOwedToYou => 'Owed to you';
+
+  @override
+  String get debtsYouOwe => 'You owe';
+
+  @override
+  String get debtsEmpty => 'Nobody owes anybody. Add a debt or split a bill.';
+
+  @override
+  String get debtsAdd => 'Add debt';
+
+  @override
+  String get debtsSplit => 'Split a bill';
+
+  @override
+  String get debtsPerson => 'Who?';
+
+  @override
+  String get debtsTheyOwe => 'They owe me';
+
+  @override
+  String get debtsIOwe => 'I owe them';
+
+  @override
+  String get debtsNote => 'What for? (optional)';
+
+  @override
+  String debtsPersonOwes(String amount) {
+    return 'Owes you $amount';
+  }
+
+  @override
+  String debtsYouOwePerson(String amount) {
+    return 'You owe $amount';
+  }
+
+  @override
+  String get debtsSettle => 'Settled';
+
+  @override
+  String debtsSettled(String name) {
+    return 'Settled with $name';
+  }
+
+  @override
+  String get debtsRemind => 'Remind';
+
+  @override
+  String debtsRemindText(String name, String amount) {
+    return 'Hi $name! A friendly reminder about $amount. Thanks! 🙏';
+  }
+
+  @override
+  String get debtsHistory => 'Settled';
+
+  @override
+  String get splitTotal => 'Bill total';
+
+  @override
+  String get splitPeople => 'People (including you)';
+
+  @override
+  String get splitTip => 'Tip';
+
+  @override
+  String splitEach(String amount) {
+    return '$amount each';
+  }
+
+  @override
+  String splitWithTip(String amount) {
+    return 'Total with tip: $amount';
+  }
+
+  @override
+  String get splitNames => 'Who else was there? (comma separated)';
+
+  @override
+  String get splitSave => 'Save as debts';
+
+  @override
+  String splitShareText(String total, int people, String each) {
+    return '$total ÷ $people = $each each';
+  }
+
+  @override
+  String get share => 'Share';
+
+  @override
+  String get splitNote => 'Bill split';
+
+  @override
+  String splitSaved(int count) {
+    String _temp0 = intl.Intl.pluralLogic(count, locale: localeName, other: 'Saved $count debts', one: 'Saved 1 debt');
+    return '$_temp0';
+  }
+
+  @override
+  String get medsTitle => 'Medicines';
+
+  @override
+  String get medsIntro => 'Medicines and vitamins with reminders. Tap when you take one.';
+
+  @override
+  String get medsEmpty => 'Add a medicine or vitamin to get reminders on time.';
+
+  @override
+  String get medsAdd => 'Add medicine';
+
+  @override
+  String get medsName => 'Name';
+
+  @override
+  String get medsDose => 'Dose (e.g. 500 mg, 1 tablet)';
+
+  @override
+  String get medsTimes => 'Times';
+
+  @override
+  String get medsAddTime => 'Add time';
+
+  @override
+  String get medsStock => 'Pills left (optional)';
+
+  @override
+  String get medsTake => 'Take';
+
+  @override
+  String get medsTaken => 'Taken';
+
+  @override
+  String medsDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days left',
+      one: '1 day left',
+      zero: 'Runs out today',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get medsRefill => 'Refill soon';
+
+  @override
+  String get medsDueTitle => 'Time for your medicine';
+
+  @override
+  String get medsReminders => 'Reminders';
+
+  @override
+  String get medsDisclaimer => 'Reminders only. Always follow your doctor’s advice.';
+
+  @override
+  String get medsNone => 'No doses today';
+
+  @override
+  String get notifMedTitle => 'Medicine time 💊';
+
+  @override
+  String notifMedBody(String name) {
+    return '$name: tap Done once you’ve taken it.';
+  }
+
+  @override
+  String get quizTitle => 'Question of the day';
+
+  @override
+  String quizStreak(int count) {
+    return '$count-day streak';
+  }
+
+  @override
+  String get quizRight => 'Correct! Lio got +1 energy.';
+
+  @override
+  String quizWrong(String answer) {
+    return 'Not quite. The answer is $answer.';
+  }
+
+  @override
+  String get quizHint => 'Hint: remove 2';
+
+  @override
+  String get quizComeBack => 'A new question tomorrow';
+
+  @override
+  String quizTotal(int count) {
+    return '$count right so far';
+  }
+
+  @override
   String get rateApp => 'Rate Dayly';
 
   @override

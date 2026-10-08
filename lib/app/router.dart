@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../features/care/meds_screen.dart';
+import '../features/money/debts_screen.dart';
+import '../features/money/subscriptions_screen.dart';
 import '../features/ai/ai_screen.dart';
 import '../features/auth/auth_screen.dart';
 import '../features/auth/welcome_screen.dart';
@@ -179,6 +182,9 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (_, s) => FocusScreen(taskId: s.uri.queryParameters['task']),
       ),
       GoRoute(path: '/postcards', builder: (_, _) => const PostcardsScreen()),
+      GoRoute(path: '/subscriptions', builder: (_, _) => const SubscriptionsScreen()),
+      GoRoute(path: '/debts', builder: (_, _) => const DebtsScreen()),
+      GoRoute(path: '/meds', builder: (_, _) => const MedsScreen()),
       GoRoute(path: '/today-info', builder: (_, _) => const TodayInfoScreen()),
       GoRoute(path: '/search', builder: (_, _) => const SearchScreen()),
       GoRoute(

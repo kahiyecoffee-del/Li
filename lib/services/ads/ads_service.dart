@@ -15,6 +15,7 @@ enum RewardPlacement {
   premiumPreview,
   streakRecovery,
   advancedAnalysis,
+  quizHint,
 }
 
 enum RewardOutcome { earned, dismissed, unavailable }

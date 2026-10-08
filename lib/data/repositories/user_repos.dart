@@ -1,4 +1,5 @@
 import '../../domain/models/ai_models.dart';
+import '../../domain/models/care.dart';
 import '../../domain/models/food.dart';
 import '../../domain/models/habit.dart';
 import '../../domain/models/money_models.dart';
@@ -40,6 +41,9 @@ class UserRepos {
        bills = Repository(store, RecurringBill.codec, onLocalWrite: onWrite, clock: clock),
        routines = Repository(store, Routine.codec, onLocalWrite: onWrite, clock: clock),
        lifeGoals = Repository(store, LifeGoal.codec, onLocalWrite: onWrite, clock: clock),
+       debts = Repository(store, Debt.codec, onLocalWrite: onWrite, clock: clock),
+       medications = Repository(store, Medication.codec, onLocalWrite: onWrite, clock: clock),
+       medDoses = Repository(store, MedDose.codec, onLocalWrite: onWrite, clock: clock),
        journal = JournalRepository(Repository(store, JournalEntry.codec, clock: clock), journalKeys);
 
   final Repository<UserProfile> profile;
@@ -63,5 +67,8 @@ class UserRepos {
   final Repository<RecurringBill> bills;
   final Repository<Routine> routines;
   final Repository<LifeGoal> lifeGoals;
+  final Repository<Debt> debts;
+  final Repository<Medication> medications;
+  final Repository<MedDose> medDoses;
   final JournalRepository journal;
 }

@@ -1952,6 +1952,420 @@ abstract class AppLocalizations {
   /// **'More'**
   String get taskMore;
 
+  /// No description provided for @subsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Subscriptions'**
+  String get subsTitle;
+
+  /// No description provided for @subsMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} a month'**
+  String subsMonthly(String amount);
+
+  /// No description provided for @subsYearly.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} a year'**
+  String subsYearly(String amount);
+
+  /// No description provided for @subsIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Every subscription in one place. Cancel the ones you no longer use.'**
+  String get subsIntro;
+
+  /// No description provided for @subsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No subscriptions yet. Add Netflix, Spotify, iCloud… and see what they cost in a year.'**
+  String get subsEmpty;
+
+  /// No description provided for @subsAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Add subscription'**
+  String get subsAdd;
+
+  /// No description provided for @subsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Looks like a subscription'**
+  String get subsFound;
+
+  /// No description provided for @subsFoundBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Paid this month} other{Paid in {count} months}}'**
+  String subsFoundBody(int count);
+
+  /// No description provided for @subsStillUsing.
+  ///
+  /// In en, this message translates to:
+  /// **'Still using {name}?'**
+  String subsStillUsing(String name);
+
+  /// No description provided for @subsStillUsingBody.
+  ///
+  /// In en, this message translates to:
+  /// **'It costs {amount} a year.'**
+  String subsStillUsingBody(String amount);
+
+  /// No description provided for @subsKeep.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, keep it'**
+  String get subsKeep;
+
+  /// No description provided for @subsCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'No, I’ll cancel it'**
+  String get subsCancel;
+
+  /// No description provided for @subsCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} removed. Remember to cancel it with the provider too.'**
+  String subsCancelled(String name);
+
+  /// No description provided for @subsReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Check'**
+  String get subsReview;
+
+  /// No description provided for @subsUnreviewed.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 subscription to check} other{{count} subscriptions to check}}'**
+  String subsUnreviewed(int count);
+
+  /// No description provided for @debtsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Debts & splits'**
+  String get debtsTitle;
+
+  /// No description provided for @debtsOwedToYou.
+  ///
+  /// In en, this message translates to:
+  /// **'Owed to you'**
+  String get debtsOwedToYou;
+
+  /// No description provided for @debtsYouOwe.
+  ///
+  /// In en, this message translates to:
+  /// **'You owe'**
+  String get debtsYouOwe;
+
+  /// No description provided for @debtsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nobody owes anybody. Add a debt or split a bill.'**
+  String get debtsEmpty;
+
+  /// No description provided for @debtsAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Add debt'**
+  String get debtsAdd;
+
+  /// No description provided for @debtsSplit.
+  ///
+  /// In en, this message translates to:
+  /// **'Split a bill'**
+  String get debtsSplit;
+
+  /// No description provided for @debtsPerson.
+  ///
+  /// In en, this message translates to:
+  /// **'Who?'**
+  String get debtsPerson;
+
+  /// No description provided for @debtsTheyOwe.
+  ///
+  /// In en, this message translates to:
+  /// **'They owe me'**
+  String get debtsTheyOwe;
+
+  /// No description provided for @debtsIOwe.
+  ///
+  /// In en, this message translates to:
+  /// **'I owe them'**
+  String get debtsIOwe;
+
+  /// No description provided for @debtsNote.
+  ///
+  /// In en, this message translates to:
+  /// **'What for? (optional)'**
+  String get debtsNote;
+
+  /// No description provided for @debtsPersonOwes.
+  ///
+  /// In en, this message translates to:
+  /// **'Owes you {amount}'**
+  String debtsPersonOwes(String amount);
+
+  /// No description provided for @debtsYouOwePerson.
+  ///
+  /// In en, this message translates to:
+  /// **'You owe {amount}'**
+  String debtsYouOwePerson(String amount);
+
+  /// No description provided for @debtsSettle.
+  ///
+  /// In en, this message translates to:
+  /// **'Settled'**
+  String get debtsSettle;
+
+  /// No description provided for @debtsSettled.
+  ///
+  /// In en, this message translates to:
+  /// **'Settled with {name}'**
+  String debtsSettled(String name);
+
+  /// No description provided for @debtsRemind.
+  ///
+  /// In en, this message translates to:
+  /// **'Remind'**
+  String get debtsRemind;
+
+  /// No description provided for @debtsRemindText.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi {name}! A friendly reminder about {amount}. Thanks! 🙏'**
+  String debtsRemindText(String name, String amount);
+
+  /// No description provided for @debtsHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Settled'**
+  String get debtsHistory;
+
+  /// No description provided for @splitTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Bill total'**
+  String get splitTotal;
+
+  /// No description provided for @splitPeople.
+  ///
+  /// In en, this message translates to:
+  /// **'People (including you)'**
+  String get splitPeople;
+
+  /// No description provided for @splitTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Tip'**
+  String get splitTip;
+
+  /// No description provided for @splitEach.
+  ///
+  /// In en, this message translates to:
+  /// **'{amount} each'**
+  String splitEach(String amount);
+
+  /// No description provided for @splitWithTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Total with tip: {amount}'**
+  String splitWithTip(String amount);
+
+  /// No description provided for @splitNames.
+  ///
+  /// In en, this message translates to:
+  /// **'Who else was there? (comma separated)'**
+  String get splitNames;
+
+  /// No description provided for @splitSave.
+  ///
+  /// In en, this message translates to:
+  /// **'Save as debts'**
+  String get splitSave;
+
+  /// No description provided for @splitShareText.
+  ///
+  /// In en, this message translates to:
+  /// **'{total} ÷ {people} = {each} each'**
+  String splitShareText(String total, int people, String each);
+
+  /// No description provided for @share.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get share;
+
+  /// No description provided for @splitNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Bill split'**
+  String get splitNote;
+
+  /// No description provided for @splitSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Saved 1 debt} other{Saved {count} debts}}'**
+  String splitSaved(int count);
+
+  /// No description provided for @medsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Medicines'**
+  String get medsTitle;
+
+  /// No description provided for @medsIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Medicines and vitamins with reminders. Tap when you take one.'**
+  String get medsIntro;
+
+  /// No description provided for @medsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a medicine or vitamin to get reminders on time.'**
+  String get medsEmpty;
+
+  /// No description provided for @medsAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Add medicine'**
+  String get medsAdd;
+
+  /// No description provided for @medsName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get medsName;
+
+  /// No description provided for @medsDose.
+  ///
+  /// In en, this message translates to:
+  /// **'Dose (e.g. 500 mg, 1 tablet)'**
+  String get medsDose;
+
+  /// No description provided for @medsTimes.
+  ///
+  /// In en, this message translates to:
+  /// **'Times'**
+  String get medsTimes;
+
+  /// No description provided for @medsAddTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Add time'**
+  String get medsAddTime;
+
+  /// No description provided for @medsStock.
+  ///
+  /// In en, this message translates to:
+  /// **'Pills left (optional)'**
+  String get medsStock;
+
+  /// No description provided for @medsTake.
+  ///
+  /// In en, this message translates to:
+  /// **'Take'**
+  String get medsTake;
+
+  /// No description provided for @medsTaken.
+  ///
+  /// In en, this message translates to:
+  /// **'Taken'**
+  String get medsTaken;
+
+  /// No description provided for @medsDaysLeft.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Runs out today} =1{1 day left} other{{count} days left}}'**
+  String medsDaysLeft(int count);
+
+  /// No description provided for @medsRefill.
+  ///
+  /// In en, this message translates to:
+  /// **'Refill soon'**
+  String get medsRefill;
+
+  /// No description provided for @medsDueTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Time for your medicine'**
+  String get medsDueTitle;
+
+  /// No description provided for @medsReminders.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders'**
+  String get medsReminders;
+
+  /// No description provided for @medsDisclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders only. Always follow your doctor’s advice.'**
+  String get medsDisclaimer;
+
+  /// No description provided for @medsNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No doses today'**
+  String get medsNone;
+
+  /// No description provided for @notifMedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Medicine time 💊'**
+  String get notifMedTitle;
+
+  /// No description provided for @notifMedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}: tap Done once you’ve taken it.'**
+  String notifMedBody(String name);
+
+  /// No description provided for @quizTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Question of the day'**
+  String get quizTitle;
+
+  /// No description provided for @quizStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'{count}-day streak'**
+  String quizStreak(int count);
+
+  /// No description provided for @quizRight.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct! Lio got +1 energy.'**
+  String get quizRight;
+
+  /// No description provided for @quizWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite. The answer is {answer}.'**
+  String quizWrong(String answer);
+
+  /// No description provided for @quizHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Hint: remove 2'**
+  String get quizHint;
+
+  /// No description provided for @quizComeBack.
+  ///
+  /// In en, this message translates to:
+  /// **'A new question tomorrow'**
+  String get quizComeBack;
+
+  /// No description provided for @quizTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} right so far'**
+  String quizTotal(int count);
+
   /// No description provided for @rateApp.
   ///
   /// In en, this message translates to:

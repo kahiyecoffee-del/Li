@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../quiz/daily_quiz.dart';
 import '../../app/derived_providers.dart';
 import '../../app/providers.dart';
 import '../../core/l10n/labels.dart';
@@ -30,6 +31,7 @@ final lioEnergyProvider = Provider<int>((ref) {
   e += ref.watch(habitLogsProvider).list.where((h) => h.day == key && h.count > 0).length;
   if (ref.watch(moodsProvider).list.any((m) => !m.deleted && m.day == key)) e++;
   e += ref.watch(focusLogProvider).$1;
+  if (ref.watch(quizRightTodayProvider)) e++;
   return e;
 });
 

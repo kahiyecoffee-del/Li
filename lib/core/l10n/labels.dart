@@ -276,6 +276,7 @@ extension Labels on AppLocalizations {
     ),
     NotificationKind.closeDay => (title: notifCloseTitle, body: notifCloseBody(n.count)),
     NotificationKind.gardenGift => (title: notifGardenTitle, body: notifGardenBody),
+    NotificationKind.medication => (title: notifMedTitle, body: notifMedBody(n.title)),
   };
 
   /// Friendly message for any error; raw exceptions are never displayed.

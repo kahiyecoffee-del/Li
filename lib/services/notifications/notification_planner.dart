@@ -1,4 +1,5 @@
 import '../../core/utils/dates.dart';
+import '../../domain/models/care.dart';
 import '../../domain/models/enums.dart';
 import '../../domain/models/money_models.dart';
 import '../../domain/models/task_item.dart';
@@ -15,7 +16,8 @@ enum NotificationKind {
   billDue,
   morningBrief,
   closeDay,
-  gardenGift;
+  gardenGift,
+  medication;
 
   /// Where tapping the notification takes the user.
   String get route => switch (this) {
@@ -30,8 +32,12 @@ enum NotificationKind {
     morningBrief => '/plan',
     closeDay => '/plan?close=1',
     gardenGift => '/home',
+    medication => '/meds',
   };
 }
+
+/// "Done" on a medicine reminder carries `med:<dose id>`.
+const medDonePrefix = 'med:';
 
 class PlannedNotification {
   const PlannedNotification({
@@ -91,6 +97,8 @@ class NotificationState {
     this.spendToday,
     this.gardenBackAt,
     this.openHours = const {},
+    this.meds = const [],
+    this.takenDoses = const {},
     this.quietStart = defaultQuietStart,
     this.quietEnd = defaultQuietEnd,
   });
@@ -127,6 +135,10 @@ class NotificationState {
   /// How often the app was opened at each hour (last two weeks), so nudges
   /// land when the person usually looks at their phone.
   final Map<int, int> openHours;
+
+  /// Medicines with daily times, and the dose ids already taken.
+  final List<Medication> meds;
+  final Set<String> takenDoses;
 
   /// Nothing is scheduled between [quietStart] and [quietEnd] (except
   /// reminders for tasks the user scheduled in that window themselves).
@@ -190,6 +202,28 @@ class NotificationPlanner {
               kind: NotificationKind.billDue,
               at: at,
               title: b.name,
+            ),
+          );
+        }
+      }
+    }
+
+    // Medicine reminders (user-chosen times, so quiet hours do not apply).
+    for (final m in s.meds) {
+      if (m.deleted || !m.active) continue;
+      for (final (dayIndex, d) in [today, tomorrow].indexed) {
+        for (final (ti, t) in m.times.take(16).indexed) {
+          final at = _at(d, int.parse(t.substring(0, 2)), int.parse(t.substring(3)));
+          final doseId = MedDose.idFor(m.id, Dates.dayKey(d), t);
+          if (!at.isAfter(s.now) || !at.isBefore(horizon) || s.takenDoses.contains(doseId)) continue;
+          out.add(
+            PlannedNotification(
+              id: 2000000 + ((m.id.hashCode & 0xFFFF) << 5) + (ti << 1) + dayIndex,
+              kind: NotificationKind.medication,
+              at: at,
+              leadMinutes: 0,
+              title: [m.name, if (m.dose.isNotEmpty) m.dose].join(' · '),
+              taskId: '$medDonePrefix$doseId',
             ),
           );
         }

@@ -17,6 +17,8 @@ class _NamedEn extends AppLocalizationsEn {
   @override
   String get planWithLio => _r(super.planWithLio);
   @override
+  String get quizRight => _r(super.quizRight);
+  @override
   String get gardenTitle => _r(super.gardenTitle);
   @override
   String gardenCharging(int count) => _r(super.gardenCharging(count));
@@ -82,6 +84,8 @@ class _NamedTr extends AppLocalizationsTr {
   String get planDayEmpty => _r(super.planDayEmpty);
   @override
   String get planWithLio => _r(super.planWithLio);
+  @override
+  String get quizRight => _r(super.quizRight);
   @override
   String get gardenTitle => _r(super.gardenTitle);
   @override

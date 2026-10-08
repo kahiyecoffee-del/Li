@@ -774,6 +774,224 @@
   "planDayEnd": "Ends",
   "planHowTo": "Tap a task to change anything · swipe right: done · left: tomorrow",
   "taskMore": "More",
+  "subsTitle": "Subscriptions",
+  "subsMonthly": "{amount} a month",
+  "@subsMonthly": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "subsYearly": "{amount} a year",
+  "@subsYearly": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "subsIntro": "Every subscription in one place. Cancel the ones you no longer use.",
+  "subsEmpty": "No subscriptions yet. Add Netflix, Spotify, iCloud… and see what they cost in a year.",
+  "subsAdd": "Add subscription",
+  "subsFound": "Looks like a subscription",
+  "subsFoundBody": "{count, plural, =1{Paid this month} other{Paid in {count} months}}",
+  "@subsFoundBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "subsStillUsing": "Still using {name}?",
+  "@subsStillUsing": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "subsStillUsingBody": "It costs {amount} a year.",
+  "@subsStillUsingBody": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "subsKeep": "Yes, keep it",
+  "subsCancel": "No, I’ll cancel it",
+  "subsCancelled": "{name} removed. Remember to cancel it with the provider too.",
+  "@subsCancelled": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "subsReview": "Check",
+  "subsUnreviewed": "{count, plural, =1{1 subscription to check} other{{count} subscriptions to check}}",
+  "@subsUnreviewed": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "debtsTitle": "Debts & splits",
+  "debtsOwedToYou": "Owed to you",
+  "debtsYouOwe": "You owe",
+  "debtsEmpty": "Nobody owes anybody. Add a debt or split a bill.",
+  "debtsAdd": "Add debt",
+  "debtsSplit": "Split a bill",
+  "debtsPerson": "Who?",
+  "debtsTheyOwe": "They owe me",
+  "debtsIOwe": "I owe them",
+  "debtsNote": "What for? (optional)",
+  "debtsPersonOwes": "Owes you {amount}",
+  "@debtsPersonOwes": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "debtsYouOwePerson": "You owe {amount}",
+  "@debtsYouOwePerson": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "debtsSettle": "Settled",
+  "debtsSettled": "Settled with {name}",
+  "@debtsSettled": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "debtsRemind": "Remind",
+  "debtsRemindText": "Hi {name}! A friendly reminder about {amount}. Thanks! 🙏",
+  "@debtsRemindText": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "debtsHistory": "Settled",
+  "splitTotal": "Bill total",
+  "splitPeople": "People (including you)",
+  "splitTip": "Tip",
+  "splitEach": "{amount} each",
+  "@splitEach": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "splitWithTip": "Total with tip: {amount}",
+  "@splitWithTip": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "splitNames": "Who else was there? (comma separated)",
+  "splitSave": "Save as debts",
+  "splitShareText": "{total} ÷ {people} = {each} each",
+  "@splitShareText": {
+    "placeholders": {
+      "total": {
+        "type": "String"
+      },
+      "people": {
+        "type": "int"
+      },
+      "each": {
+        "type": "String"
+      }
+    }
+  },
+  "share": "Share",
+  "splitNote": "Bill split",
+  "splitSaved": "{count, plural, =1{Saved 1 debt} other{Saved {count} debts}}",
+  "@splitSaved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "medsTitle": "Medicines",
+  "medsIntro": "Medicines and vitamins with reminders. Tap when you take one.",
+  "medsEmpty": "Add a medicine or vitamin to get reminders on time.",
+  "medsAdd": "Add medicine",
+  "medsName": "Name",
+  "medsDose": "Dose (e.g. 500 mg, 1 tablet)",
+  "medsTimes": "Times",
+  "medsAddTime": "Add time",
+  "medsStock": "Pills left (optional)",
+  "medsTake": "Take",
+  "medsTaken": "Taken",
+  "medsDaysLeft": "{count, plural, =0{Runs out today} =1{1 day left} other{{count} days left}}",
+  "@medsDaysLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "medsRefill": "Refill soon",
+  "medsDueTitle": "Time for your medicine",
+  "medsReminders": "Reminders",
+  "medsDisclaimer": "Reminders only. Always follow your doctor’s advice.",
+  "medsNone": "No doses today",
+  "notifMedTitle": "Medicine time 💊",
+  "notifMedBody": "{name}: tap Done once you’ve taken it.",
+  "@notifMedBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "quizTitle": "Question of the day",
+  "quizStreak": "{count}-day streak",
+  "@quizStreak": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "quizRight": "Correct! Lio got +1 energy.",
+  "quizWrong": "Not quite. The answer is {answer}.",
+  "@quizWrong": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "quizHint": "Hint: remove 2",
+  "quizComeBack": "A new question tomorrow",
+  "quizTotal": "{count} right so far",
+  "@quizTotal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "rateApp": "Rate Dayly",
   "rateAppBody": "A few seconds that help us a lot.",
   "searchTitle": "Search",

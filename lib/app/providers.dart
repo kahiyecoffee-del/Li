@@ -8,6 +8,7 @@ import '../data/local/local_store.dart';
 import '../data/repositories/user_repos.dart';
 import '../domain/models/routine_goal.dart';
 import '../domain/models/ai_models.dart';
+import '../domain/models/care.dart';
 import '../domain/models/food.dart';
 import '../domain/models/habit.dart';
 import '../domain/models/money_models.dart';
@@ -126,6 +127,9 @@ final savingsGoalsProvider = StreamProvider<List<SavingsGoal>>(
 final billsProvider = StreamProvider<List<RecurringBill>>((ref) => ref.watch(reposProvider).bills.watchAll());
 final routinesProvider = StreamProvider<List<Routine>>((ref) => ref.watch(reposProvider).routines.watchAll());
 final lifeGoalsProvider = StreamProvider<List<LifeGoal>>((ref) => ref.watch(reposProvider).lifeGoals.watchAll());
+final debtsProvider = StreamProvider<List<Debt>>((ref) => ref.watch(reposProvider).debts.watchAll());
+final medicationsProvider = StreamProvider<List<Medication>>((ref) => ref.watch(reposProvider).medications.watchAll());
+final medDosesProvider = StreamProvider<List<MedDose>>((ref) => ref.watch(reposProvider).medDoses.watchAll());
 final tasksProvider = StreamProvider<List<TaskItem>>((ref) => ref.watch(reposProvider).tasks.watchAll());
 final transactionsProvider = StreamProvider<List<MoneyTransaction>>(
   (ref) => ref.watch(reposProvider).transactions.watchAll(),

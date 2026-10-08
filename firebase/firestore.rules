@@ -24,7 +24,8 @@ service cloud.firestore {
       return c in ['profile', 'tasks', 'transactions', 'budgets', 'habits', 'habit_logs',
                    'mood_logs', 'sleep_logs', 'meal_plans', 'pantry_items', 'shopping_items',
                    'ai_memories', 'daily_scores', 'daily_goals', 'achievements', 'saved_items',
-                   'savings_goals', 'recurring_bills', 'routines', 'life_goals'];
+                   'savings_goals', 'recurring_bills', 'routines', 'life_goals', 'debts', 'medications',
+                   'med_doses'];
     }
 
     // Every synced write carries sync metadata and a server timestamp used
@@ -58,8 +59,11 @@ service cloud.firestore {
             && d.dayOfMonth is int && d.dayOfMonth >= 1 && d.dayOfMonth <= 31)
         || (c == 'routines' && d.name is string && d.name.size() <= 80 && d.steps is list && d.steps.size() <= 30)
         || (c == 'life_goals' && d.title is string && d.title.size() <= 120 && d.steps is list && d.steps.size() <= 60)
+        || (c == 'debts' && d.person is string && d.person.size() <= 80
+            && d.amountMinor is int && d.amountMinor >= 0 && d.amountMinor <= 100000000000 && d.theyOwe is bool)
+        || (c == 'medications' && d.name is string && d.name.size() <= 80 && d.times is list && d.times.size() <= 12)
         || !(c in ['transactions', 'tasks', 'mood_logs', 'habit_logs', 'ai_memories', 'saved_items',
-                   'savings_goals', 'recurring_bills', 'routines', 'life_goals']);
+                   'savings_goals', 'recurring_bills', 'routines', 'life_goals', 'debts', 'medications']);
     }
 
     match /users/{uid} {

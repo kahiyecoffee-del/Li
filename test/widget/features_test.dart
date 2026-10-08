@@ -653,7 +653,8 @@ void main() {
     await tester.pumpWidget(app.widget());
     await pumpUntil(tester, find.text('What should we solve today?'));
     await tester.tap(find.text('Explore').last);
-    await pumpUntil(tester, find.text('Habits'));
+    await pumpUntil(tester, find.text('Explore'));
+    await bringIntoView(tester, find.text('Habits'));
     await tester.tap(find.text('Habits'));
     await pumpUntil(tester, find.byType(FloatingActionButton));
     await tester.tap(find.byType(FloatingActionButton));

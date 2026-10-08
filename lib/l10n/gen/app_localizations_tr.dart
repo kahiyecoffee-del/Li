@@ -1077,6 +1077,253 @@ class AppLocalizationsTr extends AppLocalizations {
   String get taskMore => 'Daha fazla';
 
   @override
+  String get subsTitle => 'Abonelikler';
+
+  @override
+  String subsMonthly(String amount) {
+    return 'Ayda $amount';
+  }
+
+  @override
+  String subsYearly(String amount) {
+    return 'Yılda $amount';
+  }
+
+  @override
+  String get subsIntro => 'Tüm abonelikler tek yerde. Artık kullanmadıklarını iptal et.';
+
+  @override
+  String get subsEmpty => 'Henüz abonelik yok. Netflix, Spotify, iCloud… ekle, yılda ne tuttuğunu gör.';
+
+  @override
+  String get subsAdd => 'Abonelik ekle';
+
+  @override
+  String get subsFound => 'Abonelik gibi görünüyor';
+
+  @override
+  String subsFoundBody(int count) {
+    return '$count aydır ödeniyor';
+  }
+
+  @override
+  String subsStillUsing(String name) {
+    return '$name hâlâ kullanıyor musun?';
+  }
+
+  @override
+  String subsStillUsingBody(String amount) {
+    return 'Yılda $amount tutuyor.';
+  }
+
+  @override
+  String get subsKeep => 'Evet, kalsın';
+
+  @override
+  String get subsCancel => 'Hayır, iptal edeceğim';
+
+  @override
+  String subsCancelled(String name) {
+    return '$name kaldırıldı. Sağlayıcıdan da iptal etmeyi unutma.';
+  }
+
+  @override
+  String get subsReview => 'Gözden geçir';
+
+  @override
+  String subsUnreviewed(int count) {
+    return '$count aboneliği gözden geçir';
+  }
+
+  @override
+  String get debtsTitle => 'Borçlar ve bölüşme';
+
+  @override
+  String get debtsOwedToYou => 'Sana borçlu';
+
+  @override
+  String get debtsYouOwe => 'Senin borcun';
+
+  @override
+  String get debtsEmpty => 'Kimse kimseye borçlu değil. Borç ekle ya da hesap böl.';
+
+  @override
+  String get debtsAdd => 'Borç ekle';
+
+  @override
+  String get debtsSplit => 'Hesap böl';
+
+  @override
+  String get debtsPerson => 'Kim?';
+
+  @override
+  String get debtsTheyOwe => 'O bana borçlu';
+
+  @override
+  String get debtsIOwe => 'Ben ona borçluyum';
+
+  @override
+  String get debtsNote => 'Ne için? (isteğe bağlı)';
+
+  @override
+  String debtsPersonOwes(String amount) {
+    return 'Sana $amount borçlu';
+  }
+
+  @override
+  String debtsYouOwePerson(String amount) {
+    return '$amount borcun var';
+  }
+
+  @override
+  String get debtsSettle => 'Ödendi';
+
+  @override
+  String debtsSettled(String name) {
+    return '$name ile hesap kapandı';
+  }
+
+  @override
+  String get debtsRemind => 'Hatırlat';
+
+  @override
+  String debtsRemindText(String name, String amount) {
+    return 'Selam $name! $amount için küçük bir hatırlatma. Teşekkürler! 🙏';
+  }
+
+  @override
+  String get debtsHistory => 'Kapananlar';
+
+  @override
+  String get splitTotal => 'Hesap tutarı';
+
+  @override
+  String get splitPeople => 'Kişi sayısı (sen dahil)';
+
+  @override
+  String get splitTip => 'Bahşiş';
+
+  @override
+  String splitEach(String amount) {
+    return 'Kişi başı $amount';
+  }
+
+  @override
+  String splitWithTip(String amount) {
+    return 'Bahşişle toplam: $amount';
+  }
+
+  @override
+  String get splitNames => 'Başka kimler vardı? (virgülle ayır)';
+
+  @override
+  String get splitSave => 'Borç olarak kaydet';
+
+  @override
+  String splitShareText(String total, int people, String each) {
+    return '$total ÷ $people = kişi başı $each';
+  }
+
+  @override
+  String get share => 'Paylaş';
+
+  @override
+  String get splitNote => 'Hesap bölüşme';
+
+  @override
+  String splitSaved(int count) {
+    return '$count borç kaydedildi';
+  }
+
+  @override
+  String get medsTitle => 'İlaçlar';
+
+  @override
+  String get medsIntro => 'Hatırlatmalı ilaç ve vitaminler. Aldığında dokun.';
+
+  @override
+  String get medsEmpty => 'Zamanında hatırlatma için bir ilaç ya da vitamin ekle.';
+
+  @override
+  String get medsAdd => 'İlaç ekle';
+
+  @override
+  String get medsName => 'Adı';
+
+  @override
+  String get medsDose => 'Doz (ör. 500 mg, 1 tablet)';
+
+  @override
+  String get medsTimes => 'Saatler';
+
+  @override
+  String get medsAddTime => 'Saat ekle';
+
+  @override
+  String get medsStock => 'Kalan adet (isteğe bağlı)';
+
+  @override
+  String get medsTake => 'Aldım';
+
+  @override
+  String get medsTaken => 'Alındı';
+
+  @override
+  String medsDaysLeft(int count) {
+    return '$count günlük kaldı';
+  }
+
+  @override
+  String get medsRefill => 'Yakında bitecek';
+
+  @override
+  String get medsDueTitle => 'İlaç zamanı';
+
+  @override
+  String get medsReminders => 'Hatırlatmalar';
+
+  @override
+  String get medsDisclaimer => 'Yalnızca hatırlatmadır. Her zaman doktorunun önerisine uy.';
+
+  @override
+  String get medsNone => 'Bugün doz yok';
+
+  @override
+  String get notifMedTitle => 'İlaç zamanı 💊';
+
+  @override
+  String notifMedBody(String name) {
+    return '$name: aldığında Bitti’ye dokun.';
+  }
+
+  @override
+  String get quizTitle => 'Günün sorusu';
+
+  @override
+  String quizStreak(int count) {
+    return '$count günlük seri';
+  }
+
+  @override
+  String get quizRight => 'Doğru! Lio +1 enerji kazandı.';
+
+  @override
+  String quizWrong(String answer) {
+    return 'Olmadı. Doğru cevap: $answer.';
+  }
+
+  @override
+  String get quizHint => 'İpucu: 2 şıkkı ele';
+
+  @override
+  String get quizComeBack => 'Yarın yeni soru';
+
+  @override
+  String quizTotal(int count) {
+    return 'Şimdiye kadar $count doğru';
+  }
+
+  @override
   String get rateApp => 'Dayly’yi değerlendir';
 
   @override

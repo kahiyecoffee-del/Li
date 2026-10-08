@@ -19,6 +19,7 @@ import '../../domain/models/money_models.dart';
 import '../shell/main_shell.dart';
 import 'expense_sheet.dart';
 import 'money_plan.dart';
+import 'subscriptions_screen.dart';
 
 class MoneyScreen extends ConsumerStatefulWidget {
   const MoneyScreen({super.key, this.initialTab = 0});
@@ -399,6 +400,7 @@ class _MoneyScreenState extends ConsumerState<MoneyScreen> with SingleTickerProv
   Widget _plan() => ListView(
     padding: const EdgeInsets.fromLTRB(Space.page, Space.sm, Space.page, 120),
     children: [
+      const MoneyExtrasRow(),
       const BillsSection(),
       const GoalsSection(),
       LimitsSection(onAdd: () => showAddLimit(context)),

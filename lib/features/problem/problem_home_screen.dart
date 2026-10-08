@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../care/meds_screen.dart';
+import '../quiz/daily_quiz.dart';
 import '../../app/derived_providers.dart';
 import '../../app/providers.dart';
 import '../../core/l10n/labels.dart';
@@ -106,11 +108,14 @@ class HomeScreen extends ConsumerWidget {
               ),
               const SizedBox(height: Space.lg),
               const StreakSaverCard(),
+              const DueDosesCard(),
               const QuickCaptureCard(),
               const SizedBox(height: Space.md),
               const TodayFlowCard(),
               const SizedBox(height: Space.md),
               const _GlanceRow(),
+              const SizedBox(height: Space.md),
+              const DailyQuizCard(),
               // Sundays: invite the weekly review.
               if (DateTime.now().weekday == DateTime.sunday) ...[
                 const SizedBox(height: Space.md),
