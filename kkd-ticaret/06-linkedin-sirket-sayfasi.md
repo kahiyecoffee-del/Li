@@ -1,39 +1,43 @@
-# LinkedIn Şirket Sayfası – Amana Safety
+# LinkedIn Şirket Sayfası – Bridgeline Sourcing
 
-> Çalışma adı: **Amana Safety**. Başka bir isim seçersen "Amana Safety" geçen yerleri değiştirmen yeterli.
+> Marka: **Bridgeline Sourcing**. Neden iyi bir seçim:
+> - **"Köprü" fikri:** İsim doğrudan işi anlatıyor; üretici ile alıcı arasındaki köprü sensin.
+> - **Genişlemeye uygun:** İsimde "Safety" geçmediği için ileride başka sektörlere de açılabilirsin.
+> - **Telaffuzu kolay:** P ve V harfi içermiyor, Arapça konuşanlar da rahat söyler.
 >
-> **İsim kontrolü (Ekim 2026 web taraması):** "Amana Safety" adında bir KKD firması bulunmadı.
-> - **Benzer isimler:** BAE'de inşaat sektöründe bilinen bir **Amana** grubu var. Körfez'de yangın güvenliği danışmanlığı yapan **Aman International** var.
-> - **Ne yapmalı:** Karışıklık olmasın diye sayfada her zaman "Amana Safety" tam adını ve "PPE Sourcing" ifadesini kullan.
-> - **Tescil:** TÜRKPATENT'te marka tescili ve alan adı (.com) kontrolünü yine de yap.
-> - **Yedek isim:** Haris Safety. Aramada hiçbir çakışma çıkmadı.
+> **İsim kontrolü (Ekim 2026 web taraması):**
+> - "Bridgeline Sourcing" adında bir firma bulunmadı.
+> - ABD'de borsada işlem gören **Bridgeline Digital** (yazılım, NASDAQ: BLIN) var. Sektör farklı ama "Bridgeline" kelimesi o firmanın tescilli markası olabilir. Bu yüzden ismi hiçbir yerde tek başına "Bridgeline" olarak kullanma, her zaman **"Bridgeline Sourcing"** yaz.
+> - **Alan adı:** `bridgeline.com` zaten dolu. `bridgelinesourcing.com` boşta mı kontrol et.
+> - **Marka tescili:** TÜRKPATENT'te tescil araması yap.
+> - **Benzer isim uyarısı:** Bölgede aktif olan **Blackline Safety** ile karışmaması için "Bridgeline Safety" gibi bir kullanımdan kaçın.
 
 ---
 
 ## 0. Önce bilmen gerekenler
 - **Şirket sayfası tek başına açılamaz.** LinkedIn bunu kişisel bir profile bağlı açtırıyor ve sayfayı o profil yönetiyor. Önce kişisel profilini düzenle (`03-linkedin-profil.md`).
 - **Resmi şirket şart değil.** Şahıs şirketi açmadan da sayfa açabilirsin. Şirketi kurunca resmi unvanı "About" kısmına eklersin.
-- **Kurumsal e-posta:** `ad@amanasafety.com` gibi bir adres güven verir. Alan adını aldıktan sonra Google Workspace ya da Zoho Mail ile kurabilirsin. Gmail adresi bu işte amatör görünür.
+- **Kurumsal e-posta:** `ad@bridgelinesourcing.com` gibi bir adres güven verir. Alan adını aldıktan sonra Google Workspace ya da Zoho Mail ile kurabilirsin. Gmail adresi bu işte amatör görünür.
 - **İnsanlar şirkete değil kişiye güvenir.** Mesajları kişisel profilinden at. Şirket sayfası arka planda güven ve ciddiyet sağlar.
 
 ## 1. Sayfayı açma adımları
 1. LinkedIn → sağ üstte **For Business** → **Create a Company Page** → **Company** seçeneği.
 2. Aşağıdaki alanları doldur ve sayfayı oluştur.
 3. Sayfa açılınca **Edit page** üzerinden "About", "Specialties", logo ve kapak görselini ekle.
-4. Kişisel profilinde **Experience** kısmına "Founder – Amana Safety" ekle ve şirket olarak bu sayfayı seç. Sayfanın logosu profilinde görünür.
+4. Kişisel profilinde **Experience** kısmına "Founder – Bridgeline Sourcing" ekle ve şirket olarak bu sayfayı seç. Sayfanın logosu profilinde görünür.
 
 ## 2. Temel alanlar
 
 | Alan | Ne yazılacak |
 |---|---|
-| **Name** | Amana Safety |
-| **LinkedIn public URL** | linkedin.com/company/amana-safety (dolu çıkarsa `amana-safety-sourcing`) |
-| **Website** | amanasafety.com (yoksa şimdilik boş bırak; tek sayfalık bir site sonra eklenir) |
+| **Name** | Bridgeline Sourcing |
+| **LinkedIn public URL** | linkedin.com/company/bridgeline-sourcing |
+| **Website** | bridgelinesourcing.com (yoksa şimdilik boş bırak; tek sayfalık bir site sonra eklenir) |
 | **Industry** | Wholesale Import and Export |
 | **Company size** | 0–1 employees |
 | **Company type** | Self-employed (şahıs şirketi kurulunca: Sole proprietorship) |
 | **Location** | İstanbul, Türkiye (ya da bulunduğun şehir) |
-| **Tagline (120 karakter)** | Certified PPE for the Gulf – connecting trusted manufacturers with buyers in Saudi Arabia, UAE & Iraq |
+| **Tagline (120 karakter)** | Bridging certified manufacturers and Middle East buyers – PPE sourcing for Saudi Arabia, UAE & Iraq |
 | **Button** | Contact us → e-posta ya da WhatsApp bağlantısı |
 
 **Tagline alternatifleri:**
@@ -42,9 +46,9 @@
 
 ## 3. Hakkında (About) – en fazla 2000 karakter
 
-> **Amana Safety connects certified PPE manufacturers with distributors, contractors and industrial buyers across Saudi Arabia, the UAE, Qatar, Kuwait, Oman and Iraq.**
+> **Bridgeline Sourcing is the bridge between certified manufacturers and industrial buyers in the Middle East. Our first focus is personal protective equipment (PPE) for Saudi Arabia, the UAE, Qatar, Kuwait, Oman and Iraq.**
 >
-> *Amana* means trust – and trust is what PPE supply is built on. A boot that fails a site inspection, a coverall without the right certificate, or a delayed shipment can stop a project. We work only with manufacturers whose certifications we can verify, and we keep every step transparent.
+> PPE supply is built on trust. A boot that fails a site inspection, a coverall without the right certificate, or a delayed shipment can stop a project. We work only with manufacturers whose certifications we can verify, and we keep every step transparent.
 >
 > **For manufacturers**
 > We represent your products in the Gulf on a commission-only basis: no retainer, no upfront cost. We identify qualified distributors and project buyers, introduce your range and support communication through samples and first orders.
@@ -64,7 +68,7 @@
 > ✔ No hidden costs – clear terms from the start
 > ✔ Fast, direct communication in English, Turkish [and Arabic]
 >
-> 📩 [info@amanasafety.com] | WhatsApp: [+90 ...]
+> 📩 [info@bridgelinesourcing.com] | WhatsApp: [+90 ...]
 
 *(Arapça bilmiyorsan "and Arabic" kısmını sil.)*
 
@@ -74,7 +78,7 @@ PPE, Personal Protective Equipment, Safety Footwear, FR Workwear, Flame Resistan
 ## 5. Görseller
 
 **Logo (400×400 px, kare)**
-- **Konsept:** Kalkan şekli içinde "A" harfi ya da sade bir "AMANA" yazısı.
+- **Konsept:** İki noktayı birleştiren sade bir köprü kemeri, yanında "BRIDGELINE" ve altında daha ince harflerle "SOURCING" yazısı. Alternatif olarak "B" harfinin içinden geçen bir köprü çizgisi.
 - **Renkler:** Lacivert (#0B2545, güven) ve emniyet turuncusu (#F28C28, KKD'yi hatırlatır). Beyaz arka planda okunur olmalı.
 - **Nasıl yapılır:** Canva'da "Logo" şablonu. Fiverr'da 15–40 dolara profesyonel bir logo da yaptırabilirsin.
 
@@ -88,7 +92,7 @@ PPE, Personal Protective Equipment, Safety Footwear, FR Workwear, Flame Resistan
 ## 6. İlk 3 gönderi (sayfa açılır açılmaz paylaş)
 
 **Gönderi 1 – Tanıtım**
-> Introducing Amana Safety 🦺
+> Introducing Bridgeline Sourcing 🦺
 >
 > Across the Gulf, PPE is not optional – from Aramco sites to mega-projects, every boot, glove and coverall must meet strict standards.
 >
