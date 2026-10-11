@@ -6,3 +6,5 @@ Orta Doğu (Suudi Arabistan, BAE, Katar, Kuveyt, Umman, Irak) için KKD üretici
 - `kkd-ticaret/02-temsilcilik-sozlesmesi-taslak.md` – Satış temsilciliği sözleşmesi taslağı
 - `kkd-ticaret/03-linkedin-profil.md` – LinkedIn profil rehberi
 - `kkd-ticaret/04-takip-tablosu.csv` – Temas takip tablosu
+- `kkd-ticaret/05-uretici-listesi.csv` – Üretici hedef listesi
+- `kkd-ticaret/06-linkedin-sirket-sayfasi.md` – LinkedIn şirket sayfası (Amana Safety)
