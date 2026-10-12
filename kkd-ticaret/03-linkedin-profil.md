@@ -76,3 +76,27 @@ Diğerleri: B2B Sales, Negotiation, Occupational Health & Safety, Export, Distri
   - Alıcılar: "Procurement Manager", "Purchasing", "HSE Manager" + Saudi Arabia, UAE, Iraq + "PPE" / "safety"
 - **Gruplar:** PPE, HSE ve Middle East procurement gruplarına katıl, oralarda yorum yap.
 - **Kabul edenlere** 1–2 gün içinde ilk mesajı gönder (A1 ve B1'in kısaltılmış hali).
+
+---
+
+## Eray Burak Sözer – kişisel profil metinleri (Ekim 2026, global konumlandırma)
+
+**Başlık:**
+Founder @ Bridgeline Global Sourcing | Connecting Certified Manufacturers with Global Buyers | PPE & Industrial Products
+
+**Hakkında:**
+I connect certified manufacturers with distributors, contractors and industrial buyers around the world.
+
+At Bridgeline Global Sourcing, our first focus is personal protective equipment (PPE): safety footwear, flame-resistant workwear, work gloves and head, eye and respiratory protection. We work only with manufacturers whose certifications (CE/EN, ANSI, NFPA) we can verify, and we keep every step transparent – from first contact to first order.
+
+For manufacturers: I represent your products in new markets on a commission-only basis – no retainer, no upfront cost.
+For buyers: tell me your specifications, volumes and timelines; I shortlist certified suppliers and coordinate samples so you can test before you order.
+
+Based in Antalya, Türkiye – working with partners worldwide.
+
+📩 eraysozer@bridgelineglobalsourcing.com
+
+**Deneyim – Bridgeline Global Sourcing (Founder):**
+Independent sourcing and sales representation connecting certified manufacturers with buyers worldwide. Current focus: PPE (safety footwear, FR workwear, gloves). Identifying distributors and project buyers, verifying supplier certifications, coordinating samples and first orders.
+
+**Yetenekler:** International Trade, Business Development, B2B Sales, Supplier Sourcing, Personal Protective Equipment (PPE), Negotiation, Export, Procurement, Occupational Health & Safety, Market Research
