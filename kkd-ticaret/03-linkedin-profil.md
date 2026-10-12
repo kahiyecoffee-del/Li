@@ -44,7 +44,7 @@ Seçeneklerden birini kullan:
 
 ## 5. Deneyim (Experience)
 **Pozisyon:** `Founder & Sales Representative`
-**Şirket:** `[Marka] – PPE Sales Representation` (şahıs şirketi açılınca resmi unvanla güncelle)
+**Şirket:** `Bridgeline Sourcing` (şirket sayfası olmadan logosuz görünür; sorun değil) (şahıs şirketi açılınca resmi unvanla güncelle)
 **Tarih:** Başladığın ay – Halen
 **Açıklama:**
 > Independent sales representation for certified PPE manufacturers in the GCC and Iraq. Identifying distributors, contractors and project buyers; matching their requirements with certified suppliers; coordinating samples and first orders.
@@ -67,7 +67,7 @@ Diğerleri: B2B Sales, Negotiation, Occupational Health & Safety, Export, Distri
   - "What NFPA 2112 means for FR coveralls in Saudi oil & gas"
   - "Choosing safety footwear for 45°C job sites"
   - "SASO/SABER: what PPE importers to Saudi Arabia need to know"
-- **Şirket sayfası:** `[Marka]` için bir LinkedIn şirket sayfası aç ve deneyim kısmını ona bağla.
+- **Şirket sayfası:** Şirket sayfası şimdilik opsiyonel. Kişisel profil ana vitrin; sayfa sonra açılabilir.
 
 ## 8. Ağ kurma planı (ilk 30 gün)
 - **Günde 15–20 bağlantı isteği gönder.** LinkedIn'in haftalık sınırı yaklaşık 100–200 istek, bunu aşma. Her isteğe not ekle (`01-mesaj-sablonlari.md` → A2 ve B2).
