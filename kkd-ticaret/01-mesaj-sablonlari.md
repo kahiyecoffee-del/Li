@@ -3,7 +3,7 @@
 Hedef: Orta Doğu (Suudi Arabistan, BAE, Katar, Kuveyt, Umman, Irak) için KKD üreticileri ile dağıtıcıları buluşturmak.
 Model: Komisyonlu satış temsilcisi (mal, para ve lojistiğe dokunulmaz).
 
-**Köşeli parantezleri doldur:** `[Ad Soyad]`, `[Marka]` (Bridgeline Global Sourcing), `[Telefon/WhatsApp]`, `[LinkedIn]`, `[Firma]`, `[Ürün]`.
+**Köşeli parantezleri doldur:** `[Ad Soyad]`, `[E-posta]` (ad.soyad@bridgelineglobals.com), `[Marka]` (Bridgeline Global Sourcing), `[Telefon/WhatsApp]`, `[LinkedIn]`, `[Firma]`, `[Ürün]`.
 
 **Altın kurallar**
 - İlk temasta asla diğer tarafın adını verme. İsim, imzalı sözleşmeden sonra verilir.
