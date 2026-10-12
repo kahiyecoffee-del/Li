@@ -1,6 +1,7 @@
 # Bridgeline Global Sourcing – Durum ve Devam Notu
 
-> Yeni oturumda Claude'a: **"kkd-ticaret klasörünü oku, Bridgeline işine devam ediyoruz"** de. Bu dosya önce okunur.
+> Yeni oturumda Claude'a: **"Bridgeline işine devam ediyoruz"** de. Claude önce Drive'daki **Bridgeline Global Sourcing** klasöründeki bu notu (veya GitHub'daki kkd-ticaret/00-durum.md yedeğini) okur.
+> **Asıl kopya: Google Drive** (klasör: Bridgeline Global Sourcing). GitHub = yedek.
 
 ## Kim / ne
 - **Kurucu:** Eray Burak Sözer (Antalya; Akdeniz Üniversitesi, Ekonomi)
@@ -15,18 +16,19 @@
 - Alan adı `bridgelineglobalsourcing.com` (Namecheap) + Google Workspace e-posta `eraysozer@bridgelineglobalsourcing.com`; SPF, DKIM, DMARC, MX tamam (bkz. 07)
 - E-posta imzası (Gmail uygulaması + mobil web)
 - LinkedIn kişisel profil: yeni fotoğraf, kapak, başlık, Hakkında, deneyim, yetenekler (bkz. 03). Şirket sayfası şimdilik yok (bağlantı sayısı yetersizdi).
-- Portföy (08-portfoy.xlsx): 32 distribütör + 23 son kullanıcı (sanayi/inşaat) + 19 şantiye + 17 üretici, 7 ülke
+- Portföy: 32 distribütör + 23 son kullanıcı (sanayi/inşaat) + 19 şantiye + 17 üretici, 7 ülke → Drive'da **"Portföy – Bridgeline"** (Google Sheets, asıl kopya)
+- Gmail, Google Drive ve Google Calendar Claude'a bağlandı (kurumsal hesap)
+- LinkedIn: kurumsal e-posta eklendi, ayarlar tamamlandı (Ekim 2026)
 
 ## Açık işler
-- [ ] LinkedIn: doğrulama rozeti (iş e-postasıyla), İngilizce dil ekle, kapakta kesilen yazıyı düzelt, Bridgeline deneyim açıklaması, 50+ bağlantı
-- [ ] Gmail'i Claude'a bağla (claude.ai/customize/connectors) → yeni oturum
-- [ ] LinkedIn birincil e-posta = kurumsal adres + mesaj bildirimlerini e-postaya aç
+- [ ] LinkedIn: 50+ bağlantı (devam ediyor); doğrulama rozeti alındı mı kontrol et
+- [ ] Google Calendar saat dilimi UTC → İstanbul (GMT+3)
 - [ ] İki adımlı doğrulama (Google hesabı)
 - [ ] 1. dalga mesajları (~15 firma: yüksek öncelikli distribütörler + şantiyeler) – talep keşfi odaklı
 - [ ] Mesaj şablonlarını global konumlandırmaya göre güncelle (01 hâlâ "GCC" diyor)
 - [ ] Şahıs şirketi (ilk komisyon/sözleşme öncesi) – mali müşavir; genç girişimci istisnasını sor
 - [ ] Kimlik kartı yenileme (NVİ randevusu) – şirket, banka, ödeme platformları için gerekli
-- [ ] (Gmail bağlanınca) Günlük sabah kontrol rutini: gelen cevaplar özeti + bugünkü takipler
+- [ ] Günlük sabah kontrol rutini kur: gelen cevaplar özeti + bugünkü takipler (Gmail bağlı)
 
 ## Strateji (kararlaştırılanlar)
 - Görüntülü görüşme olmadığı için güveni yazılı kanıtla kur: kurumsal e-posta, doğrulanmış LinkedIn, sertifikaları önceden paylaşmak, hızlı ve net yazılı cevap, gerektiğinde üreticinin kendi ekibini (teknik/satış) devreye sokmak.
@@ -39,4 +41,4 @@
 - Uzak dur: yaptırımlı ülkeler, askeri/polis teçhizatı, ön ödeme isteyenler.
 
 ## Dosyalar
-01 mesaj şablonları · 02 temsilcilik sözleşmesi taslağı · 03 LinkedIn profil · 04 takip tablosu (eski; 08 kullanılıyor) · 05 üretici listesi (CSV) · 06 LinkedIn şirket sayfası · 07 e-posta altyapısı · 08 portföy (Excel)
+01 mesaj şablonları · 02 temsilcilik sözleşmesi taslağı · 03 LinkedIn profil · 04 takip tablosu (eski; 08 kullanılıyor) · 05 üretici listesi (CSV) · 06 LinkedIn şirket sayfası · 07 e-posta altyapısı · 08 portföy (Excel, eski kopya – asıl: Drive'daki Google Sheets)
