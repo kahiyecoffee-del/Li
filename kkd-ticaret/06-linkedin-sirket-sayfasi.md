@@ -6,9 +6,9 @@
 > - **Telaffuzu kolay:** P ve V harfi içermiyor, Arapça konuşanlar da rahat söyler.
 >
 > **İsim kontrolü (Ekim 2026 web taraması):**
-> - "Bridgeline Sourcing" adında bir firma bulunmadı.
+> - **Dikkat:** LinkedIn'de ABD merkezli, giyim markalarıyla çalışan bir **"Bridgeline Sourcing"** sayfası var (2 takipçi, `bridgelinesourcing.com` onlara ait, sitenin süresi dolmuş). Karışmamak için farklı alan adı (`bridgeline-sourcing.com` vb.) ve farklı LinkedIn URL'si kullan. Bölge ve ürün odağını (Middle East / PPE) her yerde belirt.
 > - ABD'de borsada işlem gören **Bridgeline Digital** (yazılım, NASDAQ: BLIN) var. Sektör farklı ama "Bridgeline" kelimesi o firmanın tescilli markası olabilir. Bu yüzden ismi hiçbir yerde tek başına "Bridgeline" olarak kullanma, her zaman **"Bridgeline Sourcing"** yaz.
-> - **Alan adı:** `bridgeline.com` zaten dolu. `bridgelinesourcing.com` boşta mı kontrol et.
+> - **Alan adı:** `bridgeline.com` ve `bridgelinesourcing.com` dolu. `bridgeline-sourcing.com` gibi bir alternatif al.
 > - **Marka tescili:** TÜRKPATENT'te tescil araması yap.
 > - **Benzer isim uyarısı:** Bölgede aktif olan **Blackline Safety** ile karışmaması için "Bridgeline Safety" gibi bir kullanımdan kaçın.
 
@@ -17,7 +17,7 @@
 ## 0. Önce bilmen gerekenler
 - **Şirket sayfası tek başına açılamaz.** LinkedIn bunu kişisel bir profile bağlı açtırıyor ve sayfayı o profil yönetiyor. Önce kişisel profilini düzenle (`03-linkedin-profil.md`).
 - **Resmi şirket şart değil.** Şahıs şirketi açmadan da sayfa açabilirsin. Şirketi kurunca resmi unvanı "About" kısmına eklersin.
-- **Kurumsal e-posta:** `ad@bridgelinesourcing.com` gibi bir adres güven verir. Alan adını aldıktan sonra Google Workspace ya da Zoho Mail ile kurabilirsin. Gmail adresi bu işte amatör görünür.
+- **Kurumsal e-posta:** `ad@bridgeline-sourcing.com` gibi bir adres güven verir. Alan adını aldıktan sonra Google Workspace ya da Zoho Mail ile kurabilirsin. Gmail adresi bu işte amatör görünür.
 - **İnsanlar şirkete değil kişiye güvenir.** Mesajları kişisel profilinden at. Şirket sayfası arka planda güven ve ciddiyet sağlar.
 
 ## 1. Sayfayı açma adımları
@@ -31,8 +31,8 @@
 | Alan | Ne yazılacak |
 |---|---|
 | **Name** | Bridgeline Sourcing |
-| **LinkedIn public URL** | linkedin.com/company/bridgeline-sourcing |
-| **Website** | bridgelinesourcing.com (yoksa şimdilik boş bırak; tek sayfalık bir site sonra eklenir) |
+| **LinkedIn public URL** | linkedin.com/company/bridgeline-sourcing-me (diğer firmanınkiyle karışmasın) |
+| **Website** | bridgeline-sourcing.com (yoksa şimdilik boş bırak; tek sayfalık bir site sonra eklenir) |
 | **Industry** | Wholesale Import and Export |
 | **Company size** | 0–1 employees |
 | **Company type** | Self-employed (şahıs şirketi kurulunca: Sole proprietorship) |
@@ -68,7 +68,7 @@
 > ✔ No hidden costs – clear terms from the start
 > ✔ Fast, direct communication in English, Turkish [and Arabic]
 >
-> 📩 [info@bridgelinesourcing.com] | WhatsApp: [+90 ...]
+> 📩 [info@bridgeline-sourcing.com] | WhatsApp: [+90 ...]
 
 *(Arapça bilmiyorsan "and Arabic" kısmını sil.)*
 
