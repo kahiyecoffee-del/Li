@@ -1,6 +1,6 @@
-# KKD Aracılık – Orta Doğu
+# Bridgeline Global Sourcing
 
-Orta Doğu (Suudi Arabistan, BAE, Katar, Kuveyt, Umman, Irak) için KKD üreticileri ile dağıtıcıları buluşturan komisyonlu satış temsilciliği çalışma dosyaları.
+Sertifikalı üreticileri dünya genelindeki alıcılarla buluşturan komisyonlu satış temsilciliği çalışma dosyaları. İlk odak: KKD (iş güvenliği ekipmanı), Körfez + Irak pazarı.
 
 - `kkd-ticaret/00-durum.md` – Güncel durum ve devam notu (yeni oturumda önce bunu oku)
 - `kkd-ticaret/01-mesaj-sablonlari.md` – Üretici ve alıcılara mesaj şablonları
