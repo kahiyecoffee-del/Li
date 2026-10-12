@@ -44,7 +44,7 @@ Seçeneklerden birini kullan:
 
 ## 5. Deneyim (Experience)
 **Pozisyon:** `Founder & Sales Representative`
-**Şirket:** `Bridgeline Sourcing` (şirket sayfası olmadan logosuz görünür; sorun değil) (şahıs şirketi açılınca resmi unvanla güncelle)
+**Şirket:** `Bridgeline Global Sourcing` (şirket sayfası olmadan logosuz görünür; sorun değil) (şahıs şirketi açılınca resmi unvanla güncelle)
 **Tarih:** Başladığın ay – Halen
 **Açıklama:**
 > Independent sales representation for certified PPE manufacturers in the GCC and Iraq. Identifying distributors, contractors and project buyers; matching their requirements with certified suppliers; coordinating samples and first orders.
