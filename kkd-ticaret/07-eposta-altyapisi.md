@@ -23,3 +23,13 @@
 - **Yenileme:** Namecheap alan adı yenilemesi her yıl otomatik. Kart süresi dolarsa güncelle, yoksa e-posta durur.
 - **Yeni alan adını ısıtma:** 1. hafta tanıdıklara normal e-posta; 2. hafta günde 5–10 soğuk e-posta; 3–4. hafta günde 15–25.
 - **İleride (isteğe bağlı):** Birkaç hafta sorunsuz gidince DMARC `p=none` → `p=quarantine` yapılabilir.
+
+## E-posta imzası (Gmail uygulaması + mobil web'de ayarlı)
+```
+Eray Burak Sözer
+Founder | Bridgeline Global Sourcing
+PPE Sourcing & Sales Representation
+WhatsApp: +90 543 684 95 16
+eraysozer@bridgelineglobalsourcing.com
+```
+Not: Masaüstü Gmail imzası ayrıca ayarlanmalı (Gmail → ⚙️ → Tüm ayarlar → İmza). Kopyalarken biçim taşımaması için önce Notlar'a yapıştırıp oradan kopyala.
