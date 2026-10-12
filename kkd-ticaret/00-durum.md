@@ -42,3 +42,11 @@
 
 ## Dosyalar
 01 mesaj şablonları · 02 temsilcilik sözleşmesi taslağı · 03 LinkedIn profil · 04 takip tablosu (eski; 08 kullanılıyor) · 05 üretici listesi (CSV) · 06 LinkedIn şirket sayfası · 07 e-posta altyapısı · 08 portföy (Excel, eski kopya – asıl: Drive'daki Google Sheets)
+
+## Drive (asıl kopya) – bağlantılar
+- Klasör: https://drive.google.com/drive/folders/1zUsQvSVl0HgnRonGQ86YcOWym11aeFmr
+- Portföy – Bridgeline (Sheets): https://docs.google.com/spreadsheets/d/1K_jnhXc3gBFXYeptPBOn4uaHDsFRw9ed2KAqM6iqO6I
+- 00 – Durum ve Açık İşler (Docs): https://docs.google.com/document/d/16Htdd2xDKbL-ptDoJkQX3ToW4TY_8E2ISKpu5ENFGK0
+- 02 – Temsilcilik Sözleşmesi Taslağı (Docs): https://docs.google.com/document/d/1C1uJJuacSlxdUXiSRe48Ejzqzq2cz2609YOTviYwisE
+- 07 – E-posta Altyapısı (Docs): https://docs.google.com/document/d/1TS8pJAqmenIXvEkUa4vEZvaVvQjwWMnQqJj6wM3mhe8
+- 01 – Mesaj Şablonları: henüz yüklenmedi; acente modeli + global konumlandırmaya göre yeniden yazılıp 1. dalga ile birlikte yüklenecek.
