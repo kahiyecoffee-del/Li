@@ -24,11 +24,13 @@
 - [ ] LinkedIn: 50+ bağlantı (devam ediyor); doğrulama rozeti alındı mı kontrol et
 - [ ] Google Calendar saat dilimi UTC → İstanbul (GMT+3)
 - [ ] İki adımlı doğrulama (Google hesabı)
-- [ ] 1. dalga mesajları (~15 firma: yüksek öncelikli distribütörler + şantiyeler) – talep keşfi odaklı
+- [ ] 1. dalga – e-posta: 5 taslak Gmail'de hazır (Rakme info@rakme-safety.com, RAF Safety info@therafsafety.com, Saif & Jasser sajco@emirates.net.ae, SAMS info@sams-solutions.com, Global International queries@globalintl.com). Eray gönderecek (alan adı yeni: günde 2–3).
+- [ ] 1. dalga – LinkedIn: Eray bağlantı + mesaj (Technoavia, Al Usool, SafetyZone e-postası bulunamadı → LinkedIn'den; yükleniciler: Nesma, Binladin, Albawani, Besix, Tristar)
+- [ ] Nesma vendor portal (nesmapartners.com/vendors) – üretici anlaşması olunca değerlendirilir
 - [ ] Mesaj şablonlarını global konumlandırmaya göre güncelle (01 hâlâ "GCC" diyor)
 - [ ] Şahıs şirketi (ilk komisyon/sözleşme öncesi) – mali müşavir; genç girişimci istisnasını sor
 - [ ] Kimlik kartı yenileme (NVİ randevusu) – şirket, banka, ödeme platformları için gerekli
-- [ ] Günlük sabah kontrol rutini kur: gelen cevaplar özeti + bugünkü takipler (Gmail bağlı)
+- [x] Günlük sabah özeti kuruldu: hafta içi 08:45 İstanbul (trigger trig_01J2jqNkge64kUNuJ7dBH4h1, bu oturuma gelir)
 
 ## Strateji (kararlaştırılanlar)
 - Görüntülü görüşme olmadığı için güveni yazılı kanıtla kur: kurumsal e-posta, doğrulanmış LinkedIn, sertifikaları önceden paylaşmak, hızlı ve net yazılı cevap, gerektiğinde üreticinin kendi ekibini (teknik/satış) devreye sokmak.
