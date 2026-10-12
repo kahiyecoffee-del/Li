@@ -28,7 +28,9 @@ This Sales Representation Agreement (the "Agreement") is made on [Date] between:
 1.3 **Territory:** [Kingdom of Saudi Arabia, United Arab Emirates, Qatar, Kuwait, Oman, Iraq].
 
 ### 2. Role of the Representative
-2.1 The Representative shall identify and introduce prospective clients to the Principal and support communication until orders are placed.
+2.1 The Representative shall promote the Products in the Territory, solicit orders from clients and forward such orders to the Principal. The Representative shall act as the primary point of contact between the Principal and clients obtained by the Representative.
+2.1a **Orders:** The Representative shall forward each order in writing using the Principal's current price list and terms. Every order is subject to written acceptance by the Principal. The Principal is responsible for order confirmation, production, invoicing the client, collecting payment, shipping, export documentation and after-sales service.
+2.1b **Communication:** The Principal shall not contact clients obtained by the Representative except through, or with the Representative in copy on, all communications, unless the Representative agrees otherwise in writing.
 2.2 The Representative has no authority to enter into contracts, accept orders, set prices or make commitments on behalf of the Principal.
 2.3 The Representative is an independent contractor. Nothing in this Agreement creates an employment, partnership or joint-venture relationship.
 2.4 The Representative bears its own costs unless otherwise agreed in writing.
@@ -36,7 +38,7 @@ This Sales Representation Agreement (the "Agreement") is made on [Date] between:
 ### 3. Client Registration
 3.1 Before introducing a prospect, the Representative shall register it with the Principal by e-mail, stating the company name and country.
 3.2 The Principal shall, within three (3) business days, notify the Representative if the prospect is already an existing client of the Principal (having placed an order within the previous 24 months). Without such notice, the prospect becomes a "Registered Client".
-3.3 Any client that places an order with the Principal following an introduction by the Representative is a Registered Client, whether or not formally registered.
+3.3 Any client whose order is forwarded by the Representative, or who places an order with the Principal following contact by the Representative, is a Registered Client, whether or not formally registered.
 
 ### 4. Commission
 4.1 The Principal shall pay the Representative a commission of **[5]%** of the net invoice value (excluding freight, insurance and taxes) of all orders placed by Registered Clients.

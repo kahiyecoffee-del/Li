@@ -5,7 +5,7 @@
 ## Kim / ne
 - **Kurucu:** Eray Burak Sözer (Antalya; Akdeniz Üniversitesi, Ekonomi)
 - **Marka:** Bridgeline Global Sourcing (global konumlandırma; ilk odak KKD / PPE)
-- **Model:** **Acente (komisyonlu satış temsilcisi)** – finder değil. Üreticiyi bölgede sürekli temsil eder, alıcı ilişkisini yönetir. **Operasyonel faaliyet yok:** teklif, numune, üretim, sevkiyat, ödeme, gümrük, satış sonrası tamamen üreticide. Mal ve paraya dokunulmaz. Hedef komisyon %3–8.
+- **Model:** **Acente (komisyonlu satış temsilcisi)** – finder değil. Üreticiyi bölgede sürekli temsil eder. **Alıcı ile üreticiyi tanıştırmaz:** alıcıdan siparişi kendisi alır, üreticiye iletir; üretici onaylar, faturayı keser, tahsil eder ve doğrudan alıcıya kargolar; Eray'a komisyon öder. Tüm yazışmalar Eray üzerinden / Eray CC'de. **Operasyonel faaliyet yok:** teklif, numune, üretim, sevkiyat, ödeme, gümrük, satış sonrası tamamen üreticide. Mal ve paraya dokunulmaz. Hedef komisyon %3–8.
 - **İletişim tercihi:** **Görüntülü görüşme yapılmaz.** İletişim e-posta, LinkedIn ve WhatsApp (yazılı) üzerinden. Görüşme isteyenlere yazılı alternatif önerilir.
 - **Hedef pazar (ilk):** Körfez + Irak (BAE, Suudi Arabistan, Katar, Kuveyt, Bahreyn, Umman, Irak)
 - **Ürünler:** İş ayakkabısı, FR (alev geciktirici) iş kıyafeti, iş eldiveni; ileride diğer KKD
@@ -34,7 +34,7 @@
 - Dalgalarla ilerle: 2 ayda 74 firmanın tamamı, her dalgada ~15–20 firma.
 - Son kullanıcılar (Aramco, ADNOC, şantiyeler) = talep kaynağı; satış distribütörler üzerinden. Gerçek talep bilgisiyle üreticiye git.
 - Üreticiye asla uydurma hacim/alıcı söyleme; "30+ distribütörlük ağ kuruyorum, seçici çalışıyorum" çizgisi.
-- Alıcı adını imzalı sözleşme + müşteri kaydı olmadan üreticiye verme.
+- Üretici sevkiyat/fatura için alıcı adını göreceği için: siparişi iletmeden önce imzalı sözleşme + müşteri kaydı şart (sözleşme 2.1b: üretici alıcıyla sadece Eray üzerinden/CC'de yazışır).
 - Claude hiçbir mesajı Eray'ın onayı olmadan göndermez; taslak hazırlar.
 - Uzak dur: yaptırımlı ülkeler, askeri/polis teçhizatı, ön ödeme isteyenler.
 

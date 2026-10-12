@@ -136,27 +136,49 @@ Model: Komisyonlu satış temsilcisi (mal, para ve lojistiğe dokunulmaz).
 
 ---
 
-## C. TANIŞTIRMA VE KOMİSYON GÜVENCESİ
+## C. SİPARİŞ İLETME VE KOMİSYON (acente modeli – tanıştırma yok)
 
-### C1. Tanıştırma e-postası (iki tarafa birden, sözleşme imzalandıktan sonra)
+> Model: Alıcıdan siparişi Eray alır, üreticiye iletir. Üretici onaylar, faturayı alıcıya keser, ödemeyi tahsil eder ve doğrudan alıcıya sevk eder. Eray'a komisyon öder. Alıcı ile üretici arasındaki yazışmalar Eray üzerinden ya da Eray CC'de yürür.
+> Not: Üretici sevkiyat ve fatura için alıcının adını/adresini mutlaka görür. Bu yüzden siparişi iletmeden önce **imzalı temsilcilik sözleşmesi + müşteri kaydı (A6)** şart.
 
-**Subject:** Introduction – [Alıcı firma] (Saudi Arabia) & [Üretici firma] ([Ülke])
+### C1. Alıcıya teklif (üreticinin fiyat listesinden)
 
-> Dear [Alıcı ad] and [Üretici ad],
+**Subject:** Quotation – [Ürün] – [Alıcı firma]
+
+> Dear [Name],
 >
-> As discussed, I'm pleased to introduce you to each other.
+> Thank you for your enquiry. Please find our offer below:
+> - Product: [model, standard, e.g. S3 safety boot, EN ISO 20345]
+> - Quantity: [X] pairs / pcs
+> - Unit price: USD [X] ([FOB Istanbul / CIF Jebel Ali])
+> - Lead time: [X] weeks after order confirmation
+> - Payment terms: [e.g. 30% advance, 70% against B/L copy / L/C at sight]
+> - Certificates: attached
 >
-> - **[Alıcı firma]** is a [PPE distributor based in Riyadh] looking for [ürün].
-> - **[Üretici firma]** is a certified manufacturer of [ürün], represented by me in the GCC.
->
-> I'll stay in copy to coordinate samples and the first order. [Üretici ad], could you please confirm receipt of this introduction?
+> This offer is valid until [date]. To confirm, please send your purchase order to this e-mail address.
 >
 > Best regards,
-> [Ad Soyad]
+> Eray Burak Sözer
+> Bridgeline Global Sourcing
 
-> Not: Üreticiden "received, thank you for the introduction" gibi yazılı onay al. Bu e-posta anlaşmazlıkta en güçlü delilin olur.
+### C1b. Siparişi üreticiye iletme
 
-### C2. Komisyon talebi (sipariş ödendikten sonra)
+**Subject:** New order – [Alıcı firma] – [PO No.]
+
+> Dear [Name],
+>
+> Please find attached a purchase order from our registered client [Alıcı firma] ([Ülke]), registered under our agreement on [tarih].
+> - PO No.: [X]
+> - Products / quantities: [ ]
+> - Agreed price and terms: as per your price list dated [ ] / quotation [ ]
+> - Delivery address and consignee: [ ]
+>
+> Please confirm acceptance in writing and share the proforma invoice, with me in copy on all communications with the client.
+>
+> Best regards,
+> Eray Burak Sözer
+
+### C2. Komisyon talebi (alıcı ödemeyi yaptıktan sonra)
 
 **Subject:** Commission – Order [No.] / [Alıcı firma]
 
