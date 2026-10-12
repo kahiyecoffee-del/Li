@@ -9,3 +9,4 @@ Orta Doğu (Suudi Arabistan, BAE, Katar, Kuveyt, Umman, Irak) için KKD üretici
 - `kkd-ticaret/05-uretici-listesi.csv` – Üretici hedef listesi
 - `kkd-ticaret/06-linkedin-sirket-sayfasi.md` – LinkedIn şirket sayfası (Bridgeline Global Sourcing)
 - `kkd-ticaret/07-eposta-altyapisi.md` – E-posta altyapısı ve DNS kayıtları
+- `kkd-ticaret/08-portfoy.xlsx` – Alıcı (18) ve üretici (17) portföyü, takip sütunlarıyla
