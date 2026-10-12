@@ -8,7 +8,7 @@
 > **İsim kontrolü (Ekim 2026 web taraması):**
 > - "Bridgeline Global Sourcing" adında bir firma bulunmadı.
 > - Benzer isimler: ABD'de giyim odaklı küçük bir **"Bridgeline Sourcing"** (LinkedIn sayfası var, alan adı `bridgelinesourcing.com` onlarda) ve yazılım firması **Bridgeline Digital** (NASDAQ: BLIN). İkisiyle karışmamak için ismi her zaman **tam** yaz: "Bridgeline Global Sourcing" (kısaltma olarak "Bridgeline" tek başına kullanma; "BGS" kullanılabilir).
-> - **Alan adı:** `bridgelineglobalsourcing.com` (Namecheap, otomatik yenileme açık). E-posta: Google Workspace, `ad.soyad@bridgelineglobalsourcing.com`.
+> - **Alan adı:** `bridgelineglobalsourcing.com` (Namecheap, otomatik yenileme açık). E-posta: Google Workspace, `eraysozer@bridgelineglobalsourcing.com`.
 > - **Marka tescili:** TÜRKPATENT'te tam adla arama yap.
 
 ---
@@ -16,7 +16,7 @@
 ## 0. Önce bilmen gerekenler
 - **Şirket sayfası tek başına açılamaz.** LinkedIn bunu kişisel bir profile bağlı açtırıyor ve sayfayı o profil yönetiyor. Önce kişisel profilini düzenle (`03-linkedin-profil.md`).
 - **Resmi şirket şart değil.** Şahıs şirketi açmadan da sayfa açabilirsin. Şirketi kurunca resmi unvanı "About" kısmına eklersin.
-- **Kurumsal e-posta:** `ad@bridgelineglobalsourcing.com` gibi bir adres güven verir. Alan adını aldıktan sonra Google Workspace ya da Zoho Mail ile kurabilirsin. Gmail adresi bu işte amatör görünür.
+- **Kurumsal e-posta:** `eraysozer@bridgelineglobalsourcing.com` gibi bir adres güven verir. Alan adını aldıktan sonra Google Workspace ya da Zoho Mail ile kurabilirsin. Gmail adresi bu işte amatör görünür.
 - **İnsanlar şirkete değil kişiye güvenir.** Mesajları kişisel profilinden at. Şirket sayfası arka planda güven ve ciddiyet sağlar.
 
 ## 1. Sayfayı açma adımları
