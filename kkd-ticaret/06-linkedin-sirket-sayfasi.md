@@ -7,7 +7,7 @@
 >
 > **İsim kontrolü (Ekim 2026 web taraması):**
 > - "Bridgeline Global Sourcing" adında bir firma bulunmadı.
-> - Benzer isimler: ABD'de giyim odaklı küçük bir **"Bridgeline Global Sourcing"** (LinkedIn sayfası var, alan adı `bridgelinesourcing.com` onlarda) ve yazılım firması **Bridgeline Digital** (NASDAQ: BLIN). İkisiyle karışmamak için ismi her zaman **tam** yaz: "Bridgeline Global Sourcing" (kısaltma olarak "Bridgeline" tek başına kullanma; "BGS" kullanılabilir).
+> - Benzer isimler: ABD'de giyim odaklı küçük bir **"Bridgeline Sourcing"** (LinkedIn sayfası var, alan adı `bridgelinesourcing.com` onlarda) ve yazılım firması **Bridgeline Digital** (NASDAQ: BLIN). İkisiyle karışmamak için ismi her zaman **tam** yaz: "Bridgeline Global Sourcing" (kısaltma olarak "Bridgeline" tek başına kullanma; "BGS" kullanılabilir).
 > - **Alan adı:** `bridgelineglobal.com` ya da `bridgelineglobalsourcing.com` boşta mı kontrol et.
 > - **Marka tescili:** TÜRKPATENT'te tam adla arama yap.
 
