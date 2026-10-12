@@ -10,7 +10,7 @@
 - **İletişim tercihi:** **Görüntülü görüşme yapılmaz.** İletişim e-posta, LinkedIn ve WhatsApp (yazılı) üzerinden. Görüşme isteyenlere yazılı alternatif önerilir.
 - **Hedef pazar (ilk):** Körfez + Irak (BAE, Suudi Arabistan, Katar, Kuveyt, Bahreyn, Umman, Irak)
 - **Ürünler:** İş ayakkabısı, FR (alev geciktirici) iş kıyafeti, iş eldiveni; ileride diğer KKD
-- **Kaynak ülkeler:** Türkiye (ayakkabı, FR), Pakistan (deri eldiven), Çin
+- **Kaynak ülkeler:** Türkiye ve Pakistan (başlangıç) + Avrupa ve Asya (genişletiliyor; e-postalarda 'Türkiye, Pakistan, Europe and Asia, premium/mid/value' deniyor)
 
 ## Tamamlananlar (Ekim 2026)
 - Alan adı `bridgelineglobalsourcing.com` (Namecheap) + Google Workspace e-posta `eraysozer@bridgelineglobalsourcing.com`; SPF, DKIM, DMARC, MX tamam (bkz. 07)
@@ -26,6 +26,7 @@
 - [ ] İki adımlı doğrulama (Google hesabı)
 - [ ] 1. dalga – e-posta: 5 taslak Gmail'de hazır (Rakme info@rakme-safety.com, RAF Safety info@therafsafety.com, Saif & Jasser sajco@emirates.net.ae, SAMS info@sams-solutions.com, Global International queries@globalintl.com). Eray gönderecek (alan adı yeni: günde 2–3).
 - [ ] 1. dalga – LinkedIn: Eray bağlantı + mesaj (Technoavia, Al Usool, SafetyZone e-postası bulunamadı → LinkedIn'den; yükleniciler: Nesma, Binladin, Albawani, Besix, Tristar)
+- [ ] **YARIN (13 Ekim):** Üretici portföyünü genişlet – 3 fiyat seviyesi: Premium (İtalya, Portekiz, İspanya, Almanya), Orta (Türkiye, G. Kore), Ekonomik (Çin, Hindistan, Pakistan, Vietnam, Malezya-nitril). Her ülkeden 2–4 orta ölçekli, ihracatçı, sertifikalı üretici; büyük markalar sadece referans. Drive'daki portföy tablosuna "Üretici" olarak ekle.
 - [ ] Nesma vendor portal (nesmapartners.com/vendors) – üretici anlaşması olunca değerlendirilir
 - [ ] Mesaj şablonlarını global konumlandırmaya göre güncelle (01 hâlâ "GCC" diyor)
 - [ ] Şahıs şirketi (ilk komisyon/sözleşme öncesi) – mali müşavir; genç girişimci istisnasını sor
