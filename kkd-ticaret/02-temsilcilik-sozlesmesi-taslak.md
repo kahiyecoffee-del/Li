@@ -9,6 +9,7 @@
 2. Sözleşme bittikten sonraki koruma süresi (madde 4.3)
 3. Atlatma yasağı (madde 6)
 4. Fatura kopyası görme hakkı (madde 5)
+5. Alıcıyla yazışmaların senin üzerinden / CC'de yürümesi (madde 2.1b)
 
 **Pazarlıkta esneyebilirsin:** Komisyon oranı, bölge genişliği, münhasırlık (başta münhasır olmayan kabul edilebilir).
 
@@ -36,7 +37,7 @@ This Sales Representation Agreement (the "Agreement") is made on [Date] between:
 2.4 The Representative bears its own costs unless otherwise agreed in writing.
 
 ### 3. Client Registration
-3.1 Before introducing a prospect, the Representative shall register it with the Principal by e-mail, stating the company name and country.
+3.1 Before forwarding a quotation request or order from a prospect, the Representative shall register it with the Principal by e-mail, stating the company name and country.
 3.2 The Principal shall, within three (3) business days, notify the Representative if the prospect is already an existing client of the Principal (having placed an order within the previous 24 months). Without such notice, the prospect becomes a "Registered Client".
 3.3 Any client whose order is forwarded by the Representative, or who places an order with the Principal following contact by the Representative, is a Registered Client, whether or not formally registered.
 
