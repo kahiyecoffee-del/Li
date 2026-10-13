@@ -16,7 +16,7 @@
 - Alan adı `bridgelineglobalsourcing.com` (Namecheap) + Google Workspace e-posta `eraysozer@bridgelineglobalsourcing.com`; SPF, DKIM, DMARC, MX tamam (bkz. 07)
 - E-posta imzası (Gmail uygulaması + mobil web)
 - LinkedIn kişisel profil: yeni fotoğraf, kapak, başlık, Hakkında, deneyim, yetenekler (bkz. 03). Şirket sayfası şimdilik yok (bağlantı sayısı yetersizdi).
-- Portföy: 32 distribütör + 23 son kullanıcı (sanayi/inşaat) + 19 şantiye + 17 üretici, 7 ülke → Drive'da **"Portföy – Bridgeline"** (Google Sheets, asıl kopya)
+- Portföy: 32 distribütör + 23 son kullanıcı (sanayi/inşaat) + 19 şantiye + 35 üretici (Türkiye, Pakistan, Çin, Hindistan, Malezya, Sri Lanka, Portekiz), 7 ülke → Drive'da **"Portföy – Bridgeline"** (Google Sheets, asıl kopya)
 - Gmail, Google Drive ve Google Calendar Claude'a bağlandı (kurumsal hesap)
 - LinkedIn: kurumsal e-posta eklendi, ayarlar tamamlandı (Ekim 2026)
 
@@ -26,7 +26,7 @@
 - [ ] İki adımlı doğrulama (Google hesabı)
 - [ ] 1. dalga – e-posta: 5 taslak Gmail'de hazır (Rakme info@rakme-safety.com, RAF Safety info@therafsafety.com, Saif & Jasser sajco@emirates.net.ae, SAMS info@sams-solutions.com, Global International queries@globalintl.com). Eray gönderecek (alan adı yeni: günde 2–3).
 - [ ] 1. dalga – LinkedIn: Eray bağlantı + mesaj (Technoavia, Al Usool, SafetyZone e-postası bulunamadı → LinkedIn'den; yükleniciler: Nesma, Binladin, Albawani, Besix, Tristar)
-- [ ] **YARIN (13 Ekim):** Üretici portföyünü genişlet – 3 fiyat seviyesi: Premium (İtalya, Portekiz, İspanya, Almanya), Orta (Türkiye, G. Kore), Ekonomik (Çin, Hindistan, Pakistan, Vietnam, Malezya-nitril). Her ülkeden 2–4 orta ölçekli, ihracatçı, sertifikalı üretici; büyük markalar sadece referans. Drive'daki portföy tablosuna "Üretici" olarak ekle.
+- [x] 13 Ekim: 18 yeni üretici eklendi (Çin, Hindistan, Malezya, Sri Lanka, Portekiz). Kalan: İtalya/İspanya/Almanya premium, G. Kore, Vietnam (zayıf sonuç). Eski not: Üretici portföyünü genişlet – 3 fiyat seviyesi: Premium (İtalya, Portekiz, İspanya, Almanya), Orta (Türkiye, G. Kore), Ekonomik (Çin, Hindistan, Pakistan, Vietnam, Malezya-nitril). Her ülkeden 2–4 orta ölçekli, ihracatçı, sertifikalı üretici; büyük markalar sadece referans. Drive'daki portföy tablosuna "Üretici" olarak ekle.
 - [ ] Nesma vendor portal (nesmapartners.com/vendors) – üretici anlaşması olunca değerlendirilir
 - [ ] Mesaj şablonlarını global konumlandırmaya göre güncelle (01 hâlâ "GCC" diyor)
 - [ ] Şahıs şirketi (ilk komisyon/sözleşme öncesi) – mali müşavir; genç girişimci istisnasını sor
@@ -48,7 +48,8 @@
 
 ## Drive (asıl kopya) – bağlantılar
 - Klasör: https://drive.google.com/drive/folders/1zUsQvSVl0HgnRonGQ86YcOWym11aeFmr
-- Portföy – Bridgeline (Sheets): https://docs.google.com/spreadsheets/d/1K_jnhXc3gBFXYeptPBOn4uaHDsFRw9ed2KAqM6iqO6I
+- Portföy – Bridgeline (Sheets, 13.10 güncel, 109 kayıt): https://docs.google.com/spreadsheets/d/1NAD9Xt598ONWan67CgqmuHV2Q3TF7fvuvyNV04coQ2U
+- (Eski kopya, adı 'ESKİ – Portföy (12.10, kullanma)': 1K_jnhXc3gBFXYeptPBOn4uaHDsFRw9ed2KAqM6iqO6I)
 - 00 – Durum ve Açık İşler (Docs): https://docs.google.com/document/d/16Htdd2xDKbL-ptDoJkQX3ToW4TY_8E2ISKpu5ENFGK0
 - 02 – Temsilcilik Sözleşmesi Taslağı (Docs): https://docs.google.com/document/d/1C1uJJuacSlxdUXiSRe48Ejzqzq2cz2609YOTviYwisE
 - 07 – E-posta Altyapısı (Docs): https://docs.google.com/document/d/1TS8pJAqmenIXvEkUa4vEZvaVvQjwWMnQqJj6wM3mhe8
