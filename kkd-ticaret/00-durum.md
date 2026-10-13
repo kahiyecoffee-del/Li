@@ -21,6 +21,8 @@
 - LinkedIn: kurumsal e-posta eklendi, ayarlar tamamlandı (Ekim 2026)
 
 ## Açık işler
+- [ ] ⚠️ **Google Workspace deneme süresi ~26 Ekim'de bitiyor** → admin.google.com → Billing → ödeme yöntemi ekle (yoksa e-posta durur). Sabah özetlerinde hatırlat.
+- [ ] 13.10 durum: Gönderildi → Rakme, SAMS (13.10). Planlı → Global International 14.10 09:10, Saif & Jasser 14.10 09:21. Taslak → RAF Safety (Perşembe 15.10 09:00). LinkedIn mesaj atıldı → Luqman Razack (Rakme, GM?), Shabir Zahid Muniwala (SAMS CEO), Shajimon Vathamkolli (SAMS Kıdemli Satış Danışmanı).
 - [ ] LinkedIn: 50+ bağlantı (devam ediyor); doğrulama rozeti alındı mı kontrol et
 - [ ] Google Calendar saat dilimi UTC → İstanbul (GMT+3)
 - [ ] İki adımlı doğrulama (Google hesabı)
