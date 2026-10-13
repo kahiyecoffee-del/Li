@@ -31,32 +31,32 @@
 |---|---|
 | **Name** | Bridgeline Global Sourcing |
 | **LinkedIn public URL** | linkedin.com/company/bridgeline-global-sourcing |
-| **Website** | bridgelineglobalsourcing.com (yoksa şimdilik boş bırak; tek sayfalık bir site sonra eklenir) |
+| **Website** | Şimdilik boş bırak (site yok; açılmayan bir adres güven kırar). Site kurulunca ekle. |
 | **Industry** | Wholesale Import and Export |
 | **Company size** | 0–1 employees |
 | **Company type** | Self-employed (şahıs şirketi kurulunca: Sole proprietorship) |
-| **Location** | İstanbul, Türkiye (ya da bulunduğun şehir) |
-| **Tagline (120 karakter)** | Bridging certified manufacturers and Middle East buyers – PPE sourcing for Saudi Arabia, UAE & Iraq |
-| **Button** | Contact us → e-posta ya da WhatsApp bağlantısı |
+| **Location** | Antalya, Türkiye |
+| **Tagline (120 karakter)** | Connecting certified manufacturers with buyers worldwide · PPE & industrial products |
+| **Button** | Şimdilik ekleme (site yok); site kurulunca "Visit website" |
 
 **Tagline alternatifleri:**
-- `PPE sourcing & sales representation for the GCC and Iraq | Certified safety footwear, FR workwear, gloves`
-- `Trusted PPE supply for Middle East industry – certified manufacturers, transparent terms`
+- `Global sourcing & sales representation for certified PPE manufacturers`
+- `Certified PPE for industrial buyers worldwide – transparent terms, one point of contact`
 
 ## 3. Hakkında (About) – en fazla 2000 karakter
 
-> **Bridgeline Global Sourcing is the bridge between certified manufacturers and industrial buyers in the Middle East. Our first focus is personal protective equipment (PPE) for Saudi Arabia, the UAE, Qatar, Kuwait, Oman and Iraq.**
+> **Bridgeline Global Sourcing connects certified manufacturers with distributors, contractors and industrial buyers worldwide. Our first focus is personal protective equipment (PPE).**
 >
 > PPE supply is built on trust. A boot that fails a site inspection, a coverall without the right certificate, or a delayed shipment can stop a project. We work only with manufacturers whose certifications we can verify, and we keep every step transparent.
 >
 > **For manufacturers**
-> We represent your products in the Gulf on a commission-only basis: no retainer, no upfront cost. We identify qualified distributors and project buyers, introduce your range and support communication through samples and first orders.
+> We represent your products in new markets on a commission-only basis: no retainer, no upfront cost. We find qualified buyers and bring their quotation requests and orders to you.
 >
 > **For buyers**
-> Tell us your specifications, volumes and delivery timelines. We shortlist certified suppliers that fit, share documentation upfront and coordinate samples so your team can test before ordering.
+> Send us your specifications, volumes and delivery timelines. We source quotations from certified manufacturers, share documentation upfront, arrange samples and stay your single point of contact until the order is placed.
 >
 > **Product focus**
-> • Safety footwear (EN ISO 20345 S1–S3)
+> • Safety footwear (EN ISO 20345)
 > • Flame-resistant workwear (EN ISO 11612, NFPA 2112)
 > • Work gloves (EN 388, EN 407)
 > • Head, eye, hearing and respiratory protection
@@ -65,14 +65,13 @@
 > **How we work**
 > ✔ Certified products only – documentation shared before samples
 > ✔ No hidden costs – clear terms from the start
-> ✔ Fast, direct communication in English, Turkish [and Arabic]
+> ✔ Fast written communication in English and Turkish
 >
-> 📩 [info@bridgelineglobalsourcing.com] | WhatsApp: [+90 ...]
+> 📩 eraysozer@bridgelineglobalsourcing.com
 
-*(Arapça bilmiyorsan "and Arabic" kısmını sil.)*
 
 ## 4. Uzmanlık alanları (Specialties, en fazla 20 adet)
-PPE, Personal Protective Equipment, Safety Footwear, FR Workwear, Flame Resistant Clothing, Work Gloves, Industrial Safety, Sales Representation, Supplier Sourcing, GCC Market, Saudi Arabia, UAE, Iraq, Oil and Gas Safety, Construction Safety, HSE, Export, Import
+PPE, Personal Protective Equipment, Safety Footwear, FR Workwear, Flame Resistant Clothing, Work Gloves, Industrial Safety, Sales Representation, Supplier Sourcing, Global Sourcing, International Trade, Oil and Gas Safety, Construction Safety, HSE, Export, Import, Middle East, B2B
 
 ## 5. Görseller
 
@@ -83,8 +82,8 @@ PPE, Personal Protective Equipment, Safety Footwear, FR Workwear, Flame Resistan
 
 **Kapak görseli (1128×191 px)**
 - Sol tarafta lacivert zemin üzerine beyaz metin:
-  `Certified PPE for the Gulf`
-  `Saudi Arabia · UAE · Qatar · Kuwait · Oman · Iraq`
+  `Certified manufacturers. Global buyers.`
+  `PPE · Safety Footwear · FR Workwear · Gloves`
 - Sağ tarafta bir iş sahası fotoğrafı (baret, reflektif yelek). Canva'da ücretsiz stok fotoğraf var.
 - Kenarlarda mobil görünümde metin kesilebilir, metni ortada tut.
 
@@ -95,11 +94,11 @@ PPE, Personal Protective Equipment, Safety Footwear, FR Workwear, Flame Resistan
 >
 > Across the Gulf, PPE is not optional – from Aramco sites to mega-projects, every boot, glove and coverall must meet strict standards.
 >
-> We connect certified manufacturers with distributors and industrial buyers in Saudi Arabia, the UAE, Qatar, Kuwait, Oman and Iraq – with verified documentation and transparent terms.
+> We connect certified PPE manufacturers with distributors and industrial buyers worldwide – starting with the Gulf – with verified documentation and transparent terms.
 >
-> Manufacturer looking to grow in the GCC? Buyer looking for a reliable alternative supplier? Let's talk.
+> Manufacturer looking to reach new markets? Buyer looking for a reliable alternative supplier? Let's talk.
 >
-> #PPE #Safety #GCC #SaudiArabia #UAE #HSE
+> #PPE #Safety #GlobalSourcing #HSE #GCC
 
 **Gönderi 2 – Bilgi: NFPA 2112**
 > FR coveralls in the Gulf: why NFPA 2112 matters
