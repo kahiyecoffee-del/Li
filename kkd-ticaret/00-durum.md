@@ -51,8 +51,9 @@
 
 ## Drive (asıl kopya) – bağlantılar
 - Klasör: https://drive.google.com/drive/folders/1zUsQvSVl0HgnRonGQ86YcOWym11aeFmr
-- Portföy – Bridgeline (Sheets, 13.10 güncel, 109 kayıt): https://docs.google.com/spreadsheets/d/1NAD9Xt598ONWan67CgqmuHV2Q3TF7fvuvyNV04coQ2U
-- (Eski kopya, adı 'ESKİ – Portföy (12.10, kullanma)': 1K_jnhXc3gBFXYeptPBOn4uaHDsFRw9ed2KAqM6iqO6I)
+- Portföy – Bridgeline (Sheets, 13.10 akşam güncel, 109 kayıt): https://docs.google.com/spreadsheets/d/1U0G2oE7HgSg30zQyw11rncPy1WejSOTSQ3exkJIhjc8
+- (Eski kopyalar, kullanma: 'ESKİ – Portföy (13.10 öğlen, kullanma)': 1NAD9Xt598ONWan67CgqmuHV2Q3TF7fvuvyNV04coQ2U · 'ESKİ – Portföy (12.10, kullanma)': 1K_jnhXc3gBFXYeptPBOn4uaHDsFRw9ed2KAqM6iqO6I)
+- Not: Her güncellemede yeni dosya oluşturulur; eskisi 'ESKİ' diye yeniden adlandırılır. Hep 'Portföy – Bridgeline' adlı dosyayı kullan.
 - 00 – Durum ve Açık İşler (Docs): https://docs.google.com/document/d/16Htdd2xDKbL-ptDoJkQX3ToW4TY_8E2ISKpu5ENFGK0
 - 02 – Temsilcilik Sözleşmesi Taslağı (Docs): https://docs.google.com/document/d/1C1uJJuacSlxdUXiSRe48Ejzqzq2cz2609YOTviYwisE
 - 07 – E-posta Altyapısı (Docs): https://docs.google.com/document/d/1TS8pJAqmenIXvEkUa4vEZvaVvQjwWMnQqJj6wM3mhe8
