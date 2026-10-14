@@ -77,6 +77,7 @@ Each party shall keep confidential all non-public information received from the 
 11.1 This Agreement is the entire agreement between the parties on its subject matter. Amendments must be in writing and signed by both parties.
 11.2 Notices may be given by e-mail to the addresses below.
 11.3 This Agreement may be signed electronically and in counterparts.
+11.4 The Representative may perform this Agreement, and issue commission invoices, through a sole proprietorship or company registered in the Representative's name. The Representative shall notify the Principal in writing of the registered trade name and tax number before issuing the first invoice; this does not constitute an assignment and all rights, including Registered Clients, continue unchanged.
 
 ---
 
