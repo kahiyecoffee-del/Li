@@ -36,6 +36,9 @@
 - [ ] Kimlik kartı yenileme (NVİ randevusu) – şirket, banka, ödeme platformları için gerekli
 - [x] Günlük sabah özeti kuruldu: hafta içi 08:45 İstanbul (trigger trig_01J2jqNkge64kUNuJ7dBH4h1, bu oturuma gelir)
 
+- 14.10: Türk üreticilere geçiş. İlk hedef Zimaro (Bartın OSB, PU enjeksiyon iş ayakkabısı; EEN'deki "distribütör arıyor" kaydıyla büyük ihtimalle aynı firma). Türkçe temsilcilik e-postası taslağı Gmail'de (info@zimaropro.com.tr). Zimaro askeri bot da üretiyor: sözleşmede ürünler yalnızca endüstriyel iş güvenliği ayakkabısı, askeri ürünler hariç.
+- Fikir (onay bekliyor): "Yurt dışında proje yapan Türk müteahhitler" yeni alıcı kategorisi (Irak/Körfez/Afrika). Türkiye içi alıcılar şimdilik yok.
+
 ## Strateji (kararlaştırılanlar)
 - Görüntülü görüşme olmadığı için güveni yazılı kanıtla kur: kurumsal e-posta, doğrulanmış LinkedIn, sertifikaları önceden paylaşmak, hızlı ve net yazılı cevap, gerektiğinde üreticinin kendi ekibini (teknik/satış) devreye sokmak.
 - Acente olarak Eray'ın işi: temsil, tanıtım, ilişki yönetimi, yazılı koordinasyon ve komisyon takibi. Operasyon üreticide.
