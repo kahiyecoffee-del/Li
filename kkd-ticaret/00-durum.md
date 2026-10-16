@@ -36,6 +36,8 @@
 - [ ] Kimlik kartı yenileme (NVİ randevusu) – şirket, banka, ödeme platformları için gerekli
 - [x] Günlük sabah özeti kuruldu: hafta içi 08:45 İstanbul (trigger trig_01J2jqNkge64kUNuJ7dBH4h1, bu oturuma gelir)
 
+- 15.10: Zimaro (14:10) ve RAF Safety (15:30) ilk e-postaları gitti. Takip: Zimaro 20.10, RAF 21.10. Rakme/SAMS takipleri 18.10'a programlı (saat 18:10 → 09:00'a çekilmeli).
+- 15.10: bridgelineglobals.com aslında Google (Squarespace) üzerinden SATIN ALINMIŞ; iletişim bilgisi doğrulaması istendi, Eray doğruladığını söyledi (teyit: yeni uyarı gelmezse tamam).
 - 14.10: Türk üreticilere geçiş. İlk hedef Zimaro (Bartın OSB, PU enjeksiyon iş ayakkabısı; EEN'deki "distribütör arıyor" kaydıyla büyük ihtimalle aynı firma). Türkçe temsilcilik e-postası taslağı Gmail'de (info@zimaropro.com.tr). Zimaro askeri bot da üretiyor: sözleşmede ürünler yalnızca endüstriyel iş güvenliği ayakkabısı, askeri ürünler hariç.
 - Fikir (onay bekliyor): "Yurt dışında proje yapan Türk müteahhitler" yeni alıcı kategorisi (Irak/Körfez/Afrika). Türkiye içi alıcılar şimdilik yok.
 
@@ -54,8 +56,8 @@
 
 ## Drive (asıl kopya) – bağlantılar
 - Klasör: https://drive.google.com/drive/folders/1zUsQvSVl0HgnRonGQ86YcOWym11aeFmr
-- Portföy – Bridgeline (Sheets, 13.10 akşam güncel, 109 kayıt): https://docs.google.com/spreadsheets/d/1U0G2oE7HgSg30zQyw11rncPy1WejSOTSQ3exkJIhjc8
-- (Eski kopyalar, kullanma: 'ESKİ – Portföy (13.10 öğlen, kullanma)': 1NAD9Xt598ONWan67CgqmuHV2Q3TF7fvuvyNV04coQ2U · 'ESKİ – Portföy (12.10, kullanma)': 1K_jnhXc3gBFXYeptPBOn4uaHDsFRw9ed2KAqM6iqO6I)
+- Portföy – Bridgeline (Sheets, 16.10 güncel, 109 kayıt): https://docs.google.com/spreadsheets/d/1EB3O1xjjDLKiC-qcOvvSNc0tQbisQbWoMcsmCTQIg9g
+- (Eski kopyalar, kullanma: 'ESKİ – Portföy (13.10 akşam, kullanma)': 1U0G2oE7HgSg30zQyw11rncPy1WejSOTSQ3exkJIhjc8 · 'ESKİ – Portföy (13.10 öğlen, kullanma)': 1NAD9Xt598ONWan67CgqmuHV2Q3TF7fvuvyNV04coQ2U · 'ESKİ – Portföy (12.10, kullanma)': 1K_jnhXc3gBFXYeptPBOn4uaHDsFRw9ed2KAqM6iqO6I)
 - Not: Her güncellemede yeni dosya oluşturulur; eskisi 'ESKİ' diye yeniden adlandırılır. Hep 'Portföy – Bridgeline' adlı dosyayı kullan.
 - 00 – Durum ve Açık İşler (Docs): https://docs.google.com/document/d/16Htdd2xDKbL-ptDoJkQX3ToW4TY_8E2ISKpu5ENFGK0
 - 02 – Temsilcilik Sözleşmesi Taslağı (Docs): https://docs.google.com/document/d/1C1uJJuacSlxdUXiSRe48Ejzqzq2cz2609YOTviYwisE
