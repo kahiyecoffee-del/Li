@@ -56,3 +56,23 @@ eraysozer@bridgelineglobalsourcing.com
 ## Takip (5–7 gün sonra, aynı konuya cevap olarak)
 
 Dear [Firma] team, just following up on my note below. A short reply with the safety footwear classes and volumes you buy is enough – I will come back with options and indicative prices. Best regards, Eray
+
+---
+
+## v2 – KISA ŞABLON (20.10'dan itibaren yeni e-postalarda kullan; ≤110 kelime)
+
+**Subject:** Turkish S1–S3 safety shoes for [Firma]
+
+Dear [Firma] team,
+
+[Firmaya özel TEK cümle.]
+
+I'm Eray from Bridgeline Global Sourcing. I'm putting together a Turkish PU-injection safety shoe line (S1–S3) for distributors in [bölge] – priced between Far East and European brands, with short transit times.
+
+Which classes and monthly volumes do you usually buy? I'll come back with matching options and indicative prices.
+
+Best regards,
+Eray Burak Sözer
+Bridgeline Global Sourcing | WhatsApp +90 543 684 95 16
+
+**Fiyat listesi gelince (v3):** "S3 PU safety boot, EN ISO 20345, FOB Istanbul $X–Y, MOQ Z pairs, samples available" satırı eklenecek – asıl cevap aldıracak sürüm bu.
