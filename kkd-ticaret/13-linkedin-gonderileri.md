@@ -106,3 +106,18 @@ Reply with a number – curious to see the results.
 - 11.11 Çar: Gönderi 4 (Numune)
 - 15.11 Paz: Gönderi 7 (İkinci kaynak)
 Görsel: her gönderiye Canva'da sade bir görsel (lacivert + turuncu, logo) – görselli gönderiler daha çok görülür.
+
+
+## NOT (20.10): ÜSLUP KURALI
+Gönderiler sade, düz yazı, emoji madde işareti yok, en fazla 3 etiket, "rule of thumb" gibi kalıplar yok; tek pratik bilgi + soru/CTA.
+
+### Gönderi 1 – nihai (düz yazı) sürümü
+A question we hear often from buyers: what do S1, S2 and S3 actually mean on a safety shoe?
+
+All three give the same toe protection under EN ISO 20345 (200 joules). The difference is what comes on top. S1 adds an antistatic, energy-absorbing heel. S2 adds a water-resistant upper. S3 adds a puncture-resistant midsole and a cleated outsole.
+
+In practice, S1 or S1P is usually enough for dry, indoor work. If your people work outdoors, on wet ground or around nails and debris, S3 is the safer specification.
+
+If you're reviewing footwear for a site or a team, tell us the working conditions and we can point you to the right class.
+
+#PPE #SafetyFootwear #ENISO20345
