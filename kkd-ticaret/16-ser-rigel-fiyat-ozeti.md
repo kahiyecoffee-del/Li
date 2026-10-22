@@ -48,3 +48,27 @@ Fiyatlar EUR + KDV (ihracatta KDV yok). Incoterm/ihracat iskontosu listede YOK �
 - Bu liste büyük olasılıkla yurt içi bayi listesi. İhracat fiyatı/iskonto + Incoterm (EXW/FOB) + ödeme şartı ve komisyon % netleşmeden alıcıya kesin fiyat verme.
 - En rekabetçi giriş ürünleri: Yepa M90/110 S3 (~€16–18) ve Rigel Valencia/M1020 S1 (~€20–23). Premium: Milenyum S3L ~€32–34.
 - v3 satırı taslağı (Ser onayı sonrası): "S3 PU-injection safety shoe, EN ISO 20345:2022, CE (EU type exam), from EUR 16.30 ex-works Istanbul, MOQ 300 pairs per model, 20–45 days, samples available." (fiyatlar Ser'den doğrulanana kadar gönderme)
+
+---
+## SER CEVABI (22.10 akşam, Ömer Yeşil) – kesin şartlar
+1. Liste fiyatları = Ser'in NET fiyatı. Biz kendi komisyonumuzu (%5/%10/%20, bizim takdir) üstüne ekleyip alıcıya nihai fiyatı veriyoruz. Tahsilattan sonra komisyon faturamızı Ser'e kesiyoruz.
+2. Fiyatlar EXW İstanbul, sabit. Ciddi projelerde hacme göre özel iskonto. TL Eco serisi İHRACATA SATILMIYOR.
+3. İhracat MOQ = toplam 500 çift (karışık model/beden olabilir, stoklu ürün dahil). (Yurt içi 300.)
+4. Ödeme: sipariş onayında %40 peşin, sevkiyat öncesi %60 TT. Stoklu ürün: sevkiyat öncesi %100. Masraf tipi "OUR". Akreditif/vadeli YOK.
+5. DoC ve belgeler mevcut (Drive linkiyle sonra gelecek). Model bazlı test raporu yok (Universal 2163 malzeme bazlı raporluyor). İdeal müşteri: özel sektör/fabrikalara satan güçlü yerel distribütör; "aşırı kurumsal" yapılar istemiyorlar.
+6. Numune bedelsiz (ciddi taleplerde), hazırlık ≤10 gün. Termin 4–8 hafta (stokta daha kısa).
+7. Sözleşme taslağı omer@serfootwear.com'a gönderilebilir (Ömer firma ortağı).
+8. Şirket bilgisi komisyon faturasından önce yeter.
+
+## Alıcı fiyatı hesabı (Ser net × 1.08 = %8 komisyon, yuvarlanmış)
+| Ürün | Ser net € | Alıcıya € |
+|---|---|---|
+| Yepa 110 S3 | 16.30 | 17.60 |
+| Yepa M90 S3 | 17.80 | 19.20 |
+| Yepa M1090 bot S3 | 18.80 | 20.30 |
+| Yepa kaynakçı S3 | 19.30 | 20.85 |
+| Yepa 116 S1 | 15.50 | 16.70 |
+| Rigel S90 S3L | 23.00 | 24.80 |
+| Rigel Monza S3L | 25.00 | 27.00 |
+| Rigel Milenyum S3L | 32.00 | 34.50 |
+Örnek: 500 çift × €17.80 = €8.900 sipariş → %8 = ~€712 komisyon. Kazanç hacimle büyür; küçük siparişlerde düşük.

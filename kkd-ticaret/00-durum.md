@@ -72,3 +72,6 @@
 
 ## 22.10 Ser'e soru maili gönderildi (Eray gönderdi)
 8 soru: komisyon/liste anlamı, EXW-FOB + iskonto, MOQ 300/500, ödeme, sertifikalar/DoC, numune, sözleşme muhatabı, şahıs şirketi. Cevap bekleniyor (takip: 26.10 sabahı ya da WhatsApp). Alıcı v3 taslağı Gmail'de bekliyor (r7460942392904062021), Ser cevabından sonra kesinleştirilecek.
+
+## 22.10 akşam Ser cevap verdi (kesin şartlar)
+Ayrıntı: 16-ser-rigel-fiyat-ozeti.md. Özet: net fiyat + bizim komisyon (%5–20 bizde), EXW İstanbul, ihracat MOQ 500 toplam (karışık), %40 peşin/%60 sevkiyat öncesi TT (stoklu %100 peşin), akreditif yok, Eco ihracatta yok, numune bedelsiz (~10 gün), sözleşme omer@serfootwear.com'a. Alıcı taslağı (r7460942392904062021) fiyatlı v3 ile güncellendi (%8 komisyon varsayımı). Sıradaki: komisyon %'sini Eray onaylayacak, 22.10/26.10 taslakları güncellenecek, sözleşme taslağı (TR) Ömer'e.
