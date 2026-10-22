@@ -75,3 +75,6 @@
 
 ## 22.10 akşam Ser cevap verdi (kesin şartlar)
 Ayrıntı: 16-ser-rigel-fiyat-ozeti.md. Özet: net fiyat + bizim komisyon (%5–20 bizde), EXW İstanbul, ihracat MOQ 500 toplam (karışık), %40 peşin/%60 sevkiyat öncesi TT (stoklu %100 peşin), akreditif yok, Eco ihracatta yok, numune bedelsiz (~10 gün), sözleşme omer@serfootwear.com'a. Alıcı taslağı (r7460942392904062021) fiyatlı v3 ile güncellendi (%8 komisyon varsayımı). Sıradaki: komisyon %'sini Eray onaylayacak, 22.10/26.10 taslakları güncellenecek, sözleşme taslağı (TR) Ömer'e.
+
+## 22.10 komisyon %8 onaylandı
+Alıcı fiyatı = Ser net × 1.08. 22.10 batch'indeki 10 taslak (SPM Maroc, ESP, Glauben, Twipake, Frontier, SITCO, Integrated, Modamer, ProUniforma, EtalonSnab) fiyatlı v3 metnine güncellendi (EXW İstanbul, MOQ 500 toplam, %40/%60 TT, bedelsiz numune). Gönderilmedi; Eray "gönder" diyecek (öneri: Körfez firmaları Pazar 25.10 sabahı, diğerleri Cuma 23.10 10:00). 26.10 batch'i (15 taslak) sırada: kısalt + adres doğrula + fiyatlı v3. Sözleşme taslağı (TR) hazırlanacak, omer@serfootwear.com'a.
