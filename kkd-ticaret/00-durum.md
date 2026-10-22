@@ -69,3 +69,6 @@
 
 ## 22.10 Rigel/Yepa listesi okundu
 Özet: 16-ser-rigel-fiyat-ozeti.md. Fiyatlar € +KDV (Rigel €20–35, Yepa €15.5–19.3), MOQ model başı 300 (Ser mailinde 500), teslim 20–45 gün. Sertifika: Universal Certification (2163), yalnız Milenyum High S3L, 28.08.2026, 5 yıl. Bekleyen: ihracat fiyatı/Incoterm, komisyon %, diğer modellerin sertifikaları, NANDO doğrulaması.
+
+## 22.10 Ser'e soru maili gönderildi (Eray gönderdi)
+8 soru: komisyon/liste anlamı, EXW-FOB + iskonto, MOQ 300/500, ödeme, sertifikalar/DoC, numune, sözleşme muhatabı, şahıs şirketi. Cevap bekleniyor (takip: 26.10 sabahı ya da WhatsApp). Alıcı v3 taslağı Gmail'de bekliyor (r7460942392904062021), Ser cevabından sonra kesinleştirilecek.
