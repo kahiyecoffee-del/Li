@@ -36,6 +36,7 @@
 - [ ] Kimlik kartı yenileme (NVİ randevusu) – şirket, banka, ödeme platformları için gerekli
 - [x] Günlük sabah özeti kuruldu: hafta içi 08:45 İstanbul (trigger trig_01J2jqNkge64kUNuJ7dBH4h1, bu oturuma gelir)
 
+- 22.10: ★ SER FOOTWEAR (Ömer Yeşil, Export Manager) OLUMLU CEVAP: komisyon modeli uyuyor; Rigel 2026 katalog+fiyat listesi (komisyon hariç) ekte; MOQ model başı 500; termin 4-8 hf; 35.000 çift stok; numune bedelsiz; kapalı pazar yok. Yanıt taslağı Gmail'de (komisyon %, Incoterm/ödeme, belge, sözleşme). Sonraki: sözleşme TR/EN, alıcılara 'fiyat listesi hazır' v3 şablonu.
 - 19.10: YENİ AKIŞ: Toplu e-posta (bkz. 10-toplu-eposta-sablonu.md). Eray her sabah listeyi onaylar ('gönder'), Claude gönderir. Tempo 10→20→30/gün. Bölgeler: Körfez+Irak, Kafkasya+Orta Asya, Balkanlar+Kuzey Afrika, Doğu Afrika (karışık).
 - 18.10: ODAK: Şu an yalnızca iş ayakkabısı (Zimaro). Eldiven/FR vb. diğer ürünleri alıcı mesajlarında ŞİMDİLİK ANMA – önce ayakkabı işi otursun.
 - 15.10: Zimaro (14:10) ve RAF Safety (15:30) ilk e-postaları gitti. Takip: Zimaro 20.10, RAF 21.10. Rakme/SAMS takipleri 18.10'a programlı (saat 18:10 → 09:00'a çekilmeli).
