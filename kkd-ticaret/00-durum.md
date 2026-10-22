@@ -66,3 +66,6 @@
 - 02 – Temsilcilik Sözleşmesi Taslağı (Docs): https://docs.google.com/document/d/1C1uJJuacSlxdUXiSRe48Ejzqzq2cz2609YOTviYwisE
 - 07 – E-posta Altyapısı (Docs): https://docs.google.com/document/d/1TS8pJAqmenIXvEkUa4vEZvaVvQjwWMnQqJj6wM3mhe8
 - 01 – Mesaj Şablonları: henüz yüklenmedi; acente modeli + global konumlandırmaya göre yeniden yazılıp 1. dalga ile birlikte yüklenecek.
+
+## 22.10 Rigel/Yepa listesi okundu
+Özet: 16-ser-rigel-fiyat-ozeti.md. Fiyatlar € +KDV (Rigel €20–35, Yepa €15.5–19.3), MOQ model başı 300 (Ser mailinde 500), teslim 20–45 gün. Sertifika: Universal Certification (2163), yalnız Milenyum High S3L, 28.08.2026, 5 yıl. Bekleyen: ihracat fiyatı/Incoterm, komisyon %, diğer modellerin sertifikaları, NANDO doğrulaması.
