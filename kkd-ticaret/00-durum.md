@@ -81,3 +81,6 @@ Alıcı fiyatı = Ser net × 1.08. 22.10 batch'indeki 10 taslak (SPM Maroc, ESP,
 
 ## 23.10 sabah özeti
 Yeni cevap yok; yeni bounce yok (Pars info@parsayakkabi.com: geçici gecikme, Gmail 47 saat deniyor). 22.10 batch (10 taslak) GÖNDERİLMEDİ – fiyatlı v3'e güncel, Eray "gönder"/zamanlama bekliyor. Workspace deneme ~26.10 (3 gün).
+
+## 23.10 strateji: yeni üretici arayışı MOLADA
+Eray kararı: Ser (Rigel/Yepa) ile ilerle, yeni üretici araştırması durdu, tüm odak alıcıya satış. Sözleşme taslağı hazır: 17-ser-sozlesme-taslagi.md (bekliyor, Eray onayı + avukat kontrolü sonrası omer@serfootwear.com'a). Eldiven/FR vb. ertelendi. Takip listesinde üretici satırları (Eurootto, YDS, Zimaro vb.) pasif.
