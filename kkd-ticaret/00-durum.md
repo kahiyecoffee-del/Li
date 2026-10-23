@@ -112,3 +112,6 @@ Eray gerçek kişi olarak imzalar, şahıs işletmesi/vergi kaydı ilk komisyon 
 
 ## 23.10 Teklif rehberi
 20-teklif-rehberi.md: alıcı cevabı akışı, sektöre göre model+fiyat (Ser net ×1.10), 500→1.000 çift yükseltme (yalnız Ser kademeli fiyatı onaylarsa), teklif e-posta şablonu, Ömer'e sorulacaklar (kademeli iskonto, FOB, numune, DoC).
+
+## 23.10 Karar: indirim yok
+Alıcılara indirim/kademeli fiyat verilmez; fiyat = Ser net × 1.10 sabit. Adet yükseltme yalnız tek sevkiyat/fiyat kilidi/stok gerekçesiyle. Ömer'e kademeli iskonto sorulmayacak. 20-teklif-rehberi.md güncellendi.

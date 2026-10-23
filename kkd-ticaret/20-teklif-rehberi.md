@@ -24,13 +24,13 @@ Fiyat formülü: **Alıcı fiyatı = Ser net fiyatı × 1,10** (yuvarlanmış, E
 | Maden, saha (bot, kompozit burun) | Rigel Milenyum High | S3L | 34.00 | 37.40 |
 (Rigel serisi kompozit/fiber burun, metal-free; Yepa çelik burun.)
 
-## 3. Adet stratejisi (dürüst yükseltme)
-- İhracat minimumu toplam 500 çift (karışık). Stok ürün dahil. Alıcı 500–800 isterse **1.000 çifte** yönlendirmek meşru ve bizim lehimize; ama gerekçesi GERÇEK olmalı:
-  - Ser "ciddi projelerde hacme göre iskonto" verdiğini söyledi → **önce Ömer'den kademeli fiyat iste** (1.000 / 2.000 / 5.000 çift). Fiyat gelmeden "indirim" vaat etme.
-  - Tek sevkiyatta nakliye çift başına daha ucuz; beden/model dağılımı daha rahat; fiyat kilidi (sipariş sonrası fiyat değişmez); stoktan hızlı çıkış.
+## 3. Adet stratejisi (İNDİRİM YOK – Eray kararı 23.10)
+- **Fiyat sabit:** Her adet için aynı birim fiyat (Ser net × 1,10). İndirim teklif edilmez, kademeli fiyat Ser'den istenmez, "özel fiyat" denmez. Alıcı pazarlık ederse fiyatı koruruz; gerekirse model değiştirip (daha ekonomik model) yanıt veririz.
+- İhracat minimumu toplam 500 çift (karışık). Alıcı 500–800 isterse **1.000 çifte** yönlendirme, indirimsiz ve gerçek faydalarla:
+  - Tek sevkiyat, nakliye çift başına daha verimli, sipariş sonrası fiyat kilidi, stoktan hızlı çıkış, beden/model dağılımı rahat.
   - Ödeme şartı aynı (%40 / %60).
 - Komisyon büyüdükçe büyür: 1.000 çift × ort. €20 net × %10 = ~€2.000.
-- Alıcıya baskı yok; seçenek sun: A) 500 çift, B) 1.000 çift (birim fiyat daha iyi/avantajlı ise). Yalnızca onayı alınmış rakamı yaz.
+- Alıcıya baskı yok: seçenek sun (A: 500–800, B: 1.000), aynı birim fiyatla.
 
 ## 4. Teklif e-postası şablonu (EN)
 **Subject:** Quotation: [model] for [Firma] – [adet] pairs
@@ -43,7 +43,7 @@ Thank you for your reply. For [sektör/iş: örn. oil & gas site work in Basra /
 
 Quantity options:
 - [500] pairs: EUR [fiyat] per pair, total EUR [toplam]
-- [1,000] pairs: EUR [fiyat – YALNIZCA Ser onaylıysa], total EUR [toplam] – a single shipment and fixed price for the whole quantity
+- [1,000] pairs: same unit price, total EUR [toplam] – one shipment, price fixed for the whole quantity, faster availability from stock
 
 Terms: 40% with order confirmation, 60% before shipment by bank transfer. Production 4-8 weeks (stock items sooner). Free samples are available for serious requests, ready in about 10 days. CE certificate and declaration of conformity per model on request. Quotation valid for [30] days.
 
@@ -55,11 +55,11 @@ Bridgeline Global Sourcing | WhatsApp +90 543 684 95 16
 
 ## 5. Örnek (doldurulmuş)
 Alıcı "yaklaşık 800 çift S3 bot, saha işi" derse:
-- Öneri: Yepa M1090 S3 bot, 20.70 €/çift. 800 çift = €16.560. Seçenek B: 1.000 çift = €20.700 (iskonto Ser'den alınırsa daha düşük birim fiyat).
-- Gerekçe cümlesi: "For 1,000 pairs I can request project pricing and ship in one lot with a fixed price for the whole quantity."
+- Öneri: Yepa M1090 S3 bot, 20.70 €/çift. 800 çift = €16.560. Seçenek B: 1.000 çift = €20.700 (aynı birim fiyat, tek sevkiyat).
+- Gerekçe cümlesi: "For 1,000 pairs everything ships in one lot and the price stays fixed for the whole quantity, so you avoid a second freight and any price change."
 
 ## 6. Ser'e sorulacak (Ömer)
-1. 1.000 / 2.000 / 5.000 çift için kademeli iskonto.
+1. (Kademeli iskonto İSTENMEZ – karar: indirim yok.)
 2. Her sipariş için numune talebi formatı ve numune beden aralığı.
 3. FOB İstanbul fiyatı veya forwarder desteği (alıcılar çoğu zaman FOB ister).
 4. Yepa modelleri için CE belgeleri/DoC.
