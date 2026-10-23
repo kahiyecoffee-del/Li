@@ -72,3 +72,16 @@ Fiyatlar EUR + KDV (ihracatta KDV yok). Incoterm/ihracat iskontosu listede YOK �
 | Rigel Monza S3L | 25.00 | 27.00 |
 | Rigel Milenyum S3L | 32.00 | 34.50 |
 Örnek: 500 çift × €17.80 = €8.900 sipariş → %8 = ~€712 komisyon. Kazanç hacimle büyür; küçük siparişlerde düşük.
+
+---
+## KOMİSYON %10'A ÇEKİLDİ (23.10, Eray kararı) – alıcı fiyatı = Ser net × 1.10
+| Ürün | Ser net € | Alıcıya € |
+|---|---|---|
+| Yepa 110 S3 | 16.30 | 17.90 |
+| Yepa M90 S3 | 17.80 | 19.60 |
+| Yepa 116 S1 | 15.50 | 17.10 |
+| Rigel S90 S3L | 23.00 | 25.30 |
+| Rigel Monza S3L | 25.00 | 27.50 |
+| Rigel Milenyum S3L | 32.00 | 35.20 |
+Tahmin: 4.000 çift × ort. €22 = €88.000 ciro → %10 = ~€8.800 brüt komisyon (vergi öncesi).
+Alıcı maillerinde 'from' fiyatlar: S3 17.90 / S1 17.10 / S3L deri 25.30 / S3L kompozit 35.20.

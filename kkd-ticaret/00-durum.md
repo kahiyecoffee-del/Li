@@ -87,3 +87,6 @@ Eray kararı: Ser (Rigel/Yepa) ile ilerle, yeni üretici araştırması durdu, t
 
 ## 23.10 26.10 batch'i fiyatlı v3'e güncellendi; yeni liste araştırması başladı
 15 taslak (Madras, Gama Protect, Tring, Spark, EURL Chams, Global Safety, ETG, Safety Hub, BESTORG, Safe Union, Uniforma and Safety, Alphatech, Modern Eastern, Cherry, Midco) fiyatlı v3 metnine çevrildi (EXW, MOQ 500, %40/%60, numune). Gönderilmedi. Yeni alıcı listesi (40 firma hedefi) arka planda araştırılıyor → 18-yeni-liste-25-10.csv. Plan: 25.10 Pazar çalışma günü: Körfez 3 firma gönderimi + yeni listeden ilk batch taslakları + 19.10 gönderilenlere takip taslakları (26.10'da gider).
+
+## 23.10 komisyon %10 + yeni liste hazır
+Komisyon %10'a çekildi; tüm 26 alıcı taslağı (22.10 batch 10 + 26.10 batch 15 + genel şablon) yeni fiyatlara güncellendi (S3 17.90 / S1 17.10 / S3L 25.30 / premium 35.20). Yeni liste: 18-yeni-liste-25-10.csv (40 firma; e-postalar kaynak sayfada DOĞRULANMADI – gönderimden önce kontrol). Eksik: Ermenistan, Kırgızistan, Karadağ/Kosova, Gana. Sözleşme taslağında %10 sabit değil (fark esaslı), değişiklik gerekmiyor.
