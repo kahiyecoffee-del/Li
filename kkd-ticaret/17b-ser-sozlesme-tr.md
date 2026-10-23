@@ -78,7 +78,7 @@ Taraflar rüşvet ve yolsuzlukla mücadele, ihracat kontrolü ve yaptırım mevz
 ### 15. Diğer Hükümler
 15.1 Bu sözleşme tarafların konuya ilişkin tüm anlaşmasıdır. Değişiklikler yazılı yapılır. Bildirimler yukarıdaki e-posta adreslerine yapılır.
 15.2 Taraflar, e-posta yazışmaları ve elektronik kayıtların bu sözleşmeden doğan uyuşmazlıklarda kesin delil niteliği taşıdığını kabul eder (HMK m.193).
-15.3 Sözleşme elektronik olarak veya iki nüsha olarak imzalanabilir.
+15.3 Sözleşme, taraflarca kullanılan elektronik imza hizmeti (güvenli elektronik imza veya e-imza platformu), ıslak imzalı taranmış nüsha veya iki asıl nüsha ile imzalanabilir. Taraflar, bu yollarla atılan imzaların ve bunların e-posta ile iletilmesinin sözleşmeyi bağlayıcı kıldığını ve delil olarak kullanılabileceğini kabul eder.
 
 ### 16. Halefiyet ve Mirasçılar
 16.1 Müvekkil'in unvan, marka veya yapısındaki değişiklik, birleşme, bölünme, devir veya ürünlerin başka bir şirket ya da markayla satılması bu sözleşmeyi ve Temsilci'nin Komisyon haklarını etkilemez; halefler ve Ürünleri devralan kişiler sözleşmeye bağlıdır. Müvekkil bu yükümlülüğü devralana yazılı olarak bildirir.
