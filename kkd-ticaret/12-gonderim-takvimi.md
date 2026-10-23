@@ -29,3 +29,8 @@ LinkedIn: e-postanın gittiği günün ERTESİ günü aynı firmalara bağlantı
 - 21.10: RAF Safety, Ultra Safety, Dottex, Border PPE
 - 22.10: Gaye Yıldırım (Zimaro) LinkedIn hatırlatması
 - 26.10: 19.10'da gidenlerin (9 firma) takibi – taslakları 25.10 akşamı hazırlarım
+
+## GÜNCEL (23.10): fiyatlı v3 sonrası plan
+- Cuma 23.10: 22.10 batch'inden Maroc, ESP, Glauben, Twipake, Modamer, ProUniforma, EtalonSnab (Eray onayıyla; 08:30–11:00)
+- Pazar 25.10 (çalışma günü): Integrated (QA), SITCO (BH), Frontier (OM) gönderimi; yeni liste taslakları; 19.10 takip taslakları
+- Pazartesi 26.10: 26.10 batch'i (15) – önce adres doğrulaması

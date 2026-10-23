@@ -84,3 +84,6 @@ Yeni cevap yok; yeni bounce yok (Pars info@parsayakkabi.com: geçici gecikme, Gm
 
 ## 23.10 strateji: yeni üretici arayışı MOLADA
 Eray kararı: Ser (Rigel/Yepa) ile ilerle, yeni üretici araştırması durdu, tüm odak alıcıya satış. Sözleşme taslağı hazır: 17-ser-sozlesme-taslagi.md (bekliyor, Eray onayı + avukat kontrolü sonrası omer@serfootwear.com'a). Eldiven/FR vb. ertelendi. Takip listesinde üretici satırları (Eurootto, YDS, Zimaro vb.) pasif.
+
+## 23.10 26.10 batch'i fiyatlı v3'e güncellendi; yeni liste araştırması başladı
+15 taslak (Madras, Gama Protect, Tring, Spark, EURL Chams, Global Safety, ETG, Safety Hub, BESTORG, Safe Union, Uniforma and Safety, Alphatech, Modern Eastern, Cherry, Midco) fiyatlı v3 metnine çevrildi (EXW, MOQ 500, %40/%60, numune). Gönderilmedi. Yeni alıcı listesi (40 firma hedefi) arka planda araştırılıyor → 18-yeni-liste-25-10.csv. Plan: 25.10 Pazar çalışma günü: Körfez 3 firma gönderimi + yeni listeden ilk batch taslakları + 19.10 gönderilenlere takip taslakları (26.10'da gider).
