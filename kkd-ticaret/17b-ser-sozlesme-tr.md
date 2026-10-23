@@ -28,22 +28,27 @@ Bu sözleşme ....../....../2026 tarihinde aşağıdaki taraflar arasında yapı
 
 ### 5. Müşteri Kaydı
 5.1 Temsilci, bir müşteri adayından gelen talebi iletmeden önce firma adı ve ülkesini e-postayla Müvekkil'e bildirerek kaydeder. Müşteri kimlikleri Müvekkil'e yalnızca bu kayıtla bildirilir.
-5.2 Müvekkil, 3 iş günü içinde adayın son 24 ay içinde kendisine sipariş vermiş mevcut müşteri olup olmadığını bildirir. Bildirilmezse aday "Kayıtlı Müşteri" olur.
+5.2 Müvekkil, 3 iş günü içinde adayın son 24 ay içinde kendisine sipariş vermiş mevcut müşteri olup olmadığını bildirir. Müvekkil'in itirazı, son 24 aya ait fatura veya sevk belgesiyle belgelenmelidir; belgesiz itiraz geçersizdir. Süresinde itiraz edilmezse aday "Kayıtlı Müşteri" olur.
 5.3 Temsilci'nin ilettiği siparişi veren veya Temsilci'nin temasından sonra Müvekkil'e sipariş veren her müşteri, ayrıca kaydedilmemiş olsa bile Kayıtlı Müşteri sayılır.
 
 ### 6. Komisyon
 6.1 Temsilci'nin her sipariş için komisyonu, kabul edilen siparişte yazılı Müşteri Fiyatı ile aynı mallar için Müvekkil'in net fiyatı arasındaki farktır ("Komisyon").
-6.2 **Tekrar siparişler ve koruma süresi:** Komisyon; sözleşme süresince ve sözleşmenin herhangi bir nedenle sona ermesinden sonra **24 ay** boyunca Kayıtlı Müşteri'nin (ve bağlı şirketleri veya adına hareket edenlerin) verdiği tüm siparişler, tekrar siparişler dahil, için doğar.
+6.2 **Tekrar siparişler ve koruma süresi:** Komisyon; sözleşme süresince ve sözleşmenin herhangi bir nedenle sona ermesinden sonra **24 ay** boyunca Kayıtlı Müşteri'nin (ve bağlı şirketleri veya adına hareket edenlerin) verdiği tüm siparişler, tekrar siparişler dahil, için doğar. Sözleşme sona ermeden önce Temsilci'nin sunduğu tekliflere dayanan veya başlattığı görüşmelerin sonucu olan siparişler de bu kapsamdadır.
 6.3 **Ödeme:** Müvekkil, müşteriden tahsil ettiği her ödeme (avans dahil) için ilgili Komisyon payını, ödemenin Müvekkil'e ulaşmasından itibaren **10 gün** içinde, Temsilci'nin faturasına karşılık banka havalesiyle öder. Komisyon Avro olarak ödenir; Müvekkil'in tarafındaki banka masrafları Müvekkil'e aittir.
 6.4 Müşteri ödemediği tutar için Komisyon doğmaz; ancak Müvekkil makul tahsil çabası göstermiş ve durumu Temsilci'ye yazılı bildirmiş olmalıdır. Siparişin Müvekkil'in kusuru nedeniyle (kabul edilen siparişin teslim edilmemesi, iptali, ayıplı ifa gibi) ifa edilmemesi halinde, ifa edilseydi doğacak Komisyon üzerindeki Temsilci'nin hakları saklıdır.
 6.5 Komisyon KDV hariçtir. Mevzuat gereği KDV ödenmesi gerekirse Temsilci'nin faturasına eklenir ve Müvekkil tarafından ayrıca ödenir.
 
+6.6 **Fiyatın korunması:** Müvekkil, kabul ettiği siparişteki Müşteri Fiyatı'nı Temsilci'nin yazılı onayı olmadan düşüremez, müşteriye ayrıca indirim veya iade yapamaz. Aksi halde Komisyon, indirimden önceki Müşteri Fiyatı üzerinden hesaplanır.
+6.7 **Gecikme:** Komisyonun vadesinde ödenmemesi halinde ticari işlerde uygulanan avans faizi işletilir.
+6.8 Temsilci'ye satış kotası, asgari satış veya asgari faaliyet yükümlülüğü getirilmez; yetersiz satış tek başına fesih sebebi sayılmaz.
+
 ### 7. Bilgi ve Şeffaflık
 7.1 Müvekkil, Kayıtlı Müşteri'ye kestiği her faturanın bir kopyasını 7 gün içinde, her tahsilatı banka teyidi (dekont veya ekstre) ile 5 gün içinde Temsilci'ye iletir.
 7.2 Temsilci talep ederse, yılda bir kez, Kayıtlı Müşteri'lere yapılan satışların yetkili tarafından onaylı dökümü verilir.
+7.3 Dökümde Komisyon'un %5'ten fazla eksik ödendiği anlaşılırsa Temsilci, kendi seçeceği bir mali müşavir veya bağımsız denetçiye ilgili kayıtları inceletebilir; inceleme masrafı eksik ödeme tespit edilirse Müvekkil'e aittir.
 
 ### 8. Atlatma Yasağı
-Müvekkil, doğrudan veya bağlı şirketleri ya da üçüncü kişiler aracılığıyla, Komisyon ödememek amacıyla Kayıtlı Müşteri ile iş yapmaya çalışmaz veya iş yapmaz. Bu şekilde yapılan işler de 6. madde uyarınca Komisyon'a tabidir.
+Müvekkil, doğrudan veya bağlı şirketleri ya da üçüncü kişiler aracılığıyla, Komisyon ödememek amacıyla Kayıtlı Müşteri ile iş yapmaya çalışmaz veya iş yapmaz. Bu şekilde yapılan işler de 6. madde uyarınca Komisyon'a tabidir ve ayrıca ödenmeyen Komisyon'un %50'si tutarında cezai şart Temsilci'ye ödenir.
 
 ### 9. Ürün Uygunluğu
 9.1 Müvekkil, Ürünlerin geçerli AB tip inceleme belgeleri ile 2016/425 sayılı Tüzük ve EN ISO 20345 uyarınca uygunluk beyanlarına sahip olduğunu taahhüt eder ve model bazında belge/beyan kopyalarını talepten itibaren 10 gün içinde (ör. paylaşım bağlantısıyla) verir. Ek-2 verilen belgeleri listeler.
@@ -57,9 +62,10 @@ Müvekkil, doğrudan veya bağlı şirketleri ya da üçüncü kişiler aracıl�
 Taraflar rüşvet ve yolsuzlukla mücadele, ihracat kontrolü ve yaptırım mevzuatına uyar. Hiçbir taraf, yaptırıma tabi kişi ve ülkelerle veya askeri ürünlerde işlem yapmakla yükümlü değildir.
 
 ### 12. Süre ve Fesih
-12.1 Sözleşme imza tarihinde başlar, 1 yıl sürer ve taraflardan biri 60 gün önce yazılı bildirimle sona erdirmedikçe birer yıllık sürelerle kendiliğinden yenilenir.
+12.1 Sözleşme imza tarihinde başlar, **2 yıl** sürer ve taraflardan biri süre bitiminden en az 90 gün önce yazılı bildirimle sona erdirmedikçe birer yıllık sürelerle kendiliğinden yenilenir. İlk iki yıl içinde taraflar sözleşmeyi, haklı sebep olmadıkça feshedemez.
 12.2 Taraflardan biri, diğerinin sözleşmeyi esaslı şekilde ihlal etmesi ve yazılı ihtardan itibaren 30 gün içinde gidermemesi halinde sözleşmeyi feshedebilir.
-12.3 6., 7., 8., 10., 13. ve 14. maddeler sona ermeden sonra da geçerlidir. Türk Ticaret Kanunu'nun emredici hükümleri (bildirim süreleri ve denkleştirme tazminatı dahil) saklıdır.
+12.3 Müvekkil Komisyon'u 30 günden fazla geciktirirse Temsilci sözleşmeyi derhal feshedebilir; bu halde de 6.2'deki koruma süresi devam eder.
+12.4 6., 7., 8., 10., 13., 14. ve 16. maddeler sona ermeden sonra da geçerlidir. Türk Ticaret Kanunu'nun emredici hükümleri (bildirim süreleri ve denkleştirme tazminatı dahil) saklıdır.
 
 ### 13. Vergi ve Giderler
 13.1 Taraflar kendi vergi yükümlülüklerinden sorumludur. Sözleşmeden doğan damga vergisi (varsa) taraflarca yarı yarıya ödenir.
@@ -73,6 +79,11 @@ Taraflar rüşvet ve yolsuzlukla mücadele, ihracat kontrolü ve yaptırım mevz
 15.1 Bu sözleşme tarafların konuya ilişkin tüm anlaşmasıdır. Değişiklikler yazılı yapılır. Bildirimler yukarıdaki e-posta adreslerine yapılır.
 15.2 Taraflar, e-posta yazışmaları ve elektronik kayıtların bu sözleşmeden doğan uyuşmazlıklarda kesin delil niteliği taşıdığını kabul eder (HMK m.193).
 15.3 Sözleşme elektronik olarak veya iki nüsha olarak imzalanabilir.
+
+### 16. Halefiyet ve Mirasçılar
+16.1 Müvekkil'in unvan, marka veya yapısındaki değişiklik, birleşme, bölünme, devir veya ürünlerin başka bir şirket ya da markayla satılması bu sözleşmeyi ve Temsilci'nin Komisyon haklarını etkilemez; halefler ve Ürünleri devralan kişiler sözleşmeye bağlıdır. Müvekkil bu yükümlülüğü devralana yazılı olarak bildirir.
+16.2 Temsilci'nin ölümü veya işletmesini devretmesi halinde Komisyon alacakları mirasçılarına veya devralana geçer.
+
 
 &nbsp;
 
