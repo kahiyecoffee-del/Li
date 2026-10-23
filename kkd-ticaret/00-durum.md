@@ -90,3 +90,6 @@ Eray kararı: Ser (Rigel/Yepa) ile ilerle, yeni üretici araştırması durdu, t
 
 ## 23.10 komisyon %10 + yeni liste hazır
 Komisyon %10'a çekildi; tüm 26 alıcı taslağı (22.10 batch 10 + 26.10 batch 15 + genel şablon) yeni fiyatlara güncellendi (S3 17.90 / S1 17.10 / S3L 25.30 / premium 35.20). Yeni liste: 18-yeni-liste-25-10.csv (40 firma; e-postalar kaynak sayfada DOĞRULANMADI – gönderimden önce kontrol). Eksik: Ermenistan, Kırgızistan, Karadağ/Kosova, Gana. Sözleşme taslağında %10 sabit değil (fark esaslı), değişiklik gerekmiyor.
+
+## 23.10 Hedef tablosu (Drive)
+Bridgeline – Satış Hedef Tablosu (12 hafta): https://docs.google.com/spreadsheets/d/1seN2wSYL170hyRCdPPKrwYN3kAWzN24Umy3LdGh0RvU/edit (kopya: 19-hedef-tablosu.csv). Varsayım: %5 cevap, %50 teklif, %15 sipariş, 500 çift/sipariş, ort. €22 net, %10 komisyon → 12 haftada ~1.660 mail, ~6 sipariş, ~3.100 çift, ~€6.800 komisyon. Sabah özetinde gerçek rakamlar bu tabloya işlenecek.

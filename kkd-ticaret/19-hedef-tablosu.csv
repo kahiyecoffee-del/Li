@@ -1,0 +1,24 @@
+Varsayım (değiştirilebilir),Değer
+Komisyon oranı,0.1
+Ort. Ser net fiyat (€/çift),22
+Sipariş büyüklüğü (çift),500
+Mail → cevap oranı,0.05
+Cevap → teklif oranı,0.5
+Teklif → sipariş oranı,0.15
+
+Hafta,Pazartesi,Hedef mail,Gerçek mail,Hedef cevap,Gerçek cevap,Hedef teklif,Gerçek teklif,Hedef sipariş,Gerçek sipariş,Hedef çift,Hedef komisyon (€),Gerçek çift,Gerçek komisyon (€),Not
+1,2026-10-26,60,,=C10*$B$5,,=E10*$B$6,,=G10*$B$7,,=I10*$B$4,=K10*$B$3*$B$2,=J10*$B$4,=M10*$B$3*$B$2,26.10 batch 15 + yeni liste + 19.10 takipleri
+2,2026-11-02,100,,=C11*$B$5,,=E11*$B$6,,=G11*$B$7,,=I11*$B$4,=K11*$B$3*$B$2,=J11*$B$4,=M11*$B$3*$B$2,Isınma: 20/gün
+3,2026-11-09,150,,=C12*$B$5,,=E12*$B$6,,=G12*$B$7,,=I12*$B$4,=K12*$B$3*$B$2,=J12*$B$4,=M12*$B$3*$B$2,30/gün
+4,2026-11-16,150,,=C13*$B$5,,=E13*$B$6,,=G13*$B$7,,=I13*$B$4,=K13*$B$3*$B$2,=J13*$B$4,=M13*$B$3*$B$2,
+5,2026-11-23,150,,=C14*$B$5,,=E14*$B$6,,=G14*$B$7,,=I14*$B$4,=K14*$B$3*$B$2,=J14*$B$4,=M14*$B$3*$B$2,
+6,2026-11-30,150,,=C15*$B$5,,=E15*$B$6,,=G15*$B$7,,=I15*$B$4,=K15*$B$3*$B$2,=J15*$B$4,=M15*$B$3*$B$2,
+7,2026-12-07,150,,=C16*$B$5,,=E16*$B$6,,=G16*$B$7,,=I16*$B$4,=K16*$B$3*$B$2,=J16*$B$4,=M16*$B$3*$B$2,
+8,2026-12-14,150,,=C17*$B$5,,=E17*$B$6,,=G17*$B$7,,=I17*$B$4,=K17*$B$3*$B$2,=J17*$B$4,=M17*$B$3*$B$2,
+9,2026-12-21,150,,=C18*$B$5,,=E18*$B$6,,=G18*$B$7,,=I18*$B$4,=K18*$B$3*$B$2,=J18*$B$4,=M18*$B$3*$B$2,Yılbaşı yavaşlar
+10,2026-12-28,150,,=C19*$B$5,,=E19*$B$6,,=G19*$B$7,,=I19*$B$4,=K19*$B$3*$B$2,=J19*$B$4,=M19*$B$3*$B$2,
+11,2027-01-04,150,,=C20*$B$5,,=E20*$B$6,,=G20*$B$7,,=I20*$B$4,=K20*$B$3*$B$2,=J20*$B$4,=M20*$B$3*$B$2,
+12,2027-01-11,150,,=C21*$B$5,,=E21*$B$6,,=G21*$B$7,,=I21*$B$4,=K21*$B$3*$B$2,=J21*$B$4,=M21*$B$3*$B$2,
+TOPLAM,,=SUM(C10:C21),=SUM(D10:D21),=SUM(E10:E21),=SUM(F10:F21),=SUM(G10:G21),=SUM(H10:H21),=SUM(I10:I21),=SUM(J10:J21),=SUM(K10:K21),=SUM(L10:L21),=SUM(M10:M21),=SUM(N10:N21),
+
+Okuma notu,Bu oranlarla 4.000 çift (8 sipariş) için yaklaşık 2.100 mail gerekir; 12 haftada hedef ~1.700 mail → ~6-7 sipariş / ~3.300 çift. Takip mailleri ve LinkedIn oranları artırır; ilk gerçek verilerle B5-B7'yi güncelle.
