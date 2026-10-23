@@ -60,18 +60,7 @@ Fiyatlar EUR + KDV (ihracatta KDV yok). Incoterm/ihracat iskontosu listede YOK �
 7. Sözleşme taslağı omer@serfootwear.com'a gönderilebilir (Ömer firma ortağı).
 8. Şirket bilgisi komisyon faturasından önce yeter.
 
-## Alıcı fiyatı hesabı (Ser net × 1.08 = %8 komisyon, yuvarlanmış)
-| Ürün | Ser net € | Alıcıya € |
-|---|---|---|
-| Yepa 110 S3 | 16.30 | 17.60 |
-| Yepa M90 S3 | 17.80 | 19.20 |
-| Yepa M1090 bot S3 | 18.80 | 20.30 |
-| Yepa kaynakçı S3 | 19.30 | 20.85 |
-| Yepa 116 S1 | 15.50 | 16.70 |
-| Rigel S90 S3L | 23.00 | 24.80 |
-| Rigel Monza S3L | 25.00 | 27.00 |
-| Rigel Milenyum S3L | 32.00 | 34.50 |
-Örnek: 500 çift × €17.80 = €8.900 sipariş → %8 = ~€712 komisyon. Kazanç hacimle büyür; küçük siparişlerde düşük.
+## (ESKİ %8 tablosu kaldırıldı – güncel fiyatlar aşağıdaki %10 tablosunda)
 
 ---
 ## KOMİSYON %10'A ÇEKİLDİ (23.10, Eray kararı) – alıcı fiyatı = Ser net × 1.10
