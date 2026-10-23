@@ -106,3 +106,6 @@ Zamanlama kararı: taslak şimdi (1-2 gün içinde) Ömer'e 'görüş için', im
 
 ## 23.10 Sözleşme güçlendirildi (uzun vadeli kazanç)
 Eklendi: 2 yıl ilk süre + 90 gün bildirim, ilk 2 yılda haklı sebepsiz fesih yok (12.1); satış kotası yok (6.8); fiyat indirimi Temsilci onayı olmadan yok, komisyon orijinal fiyattan (6.6); gecikme faizi (6.7); denetim hakkı %5 (7.3); atlatmada %50 cezai şart (8); Müvekkil ödeme gecikmesi >30 gün → fesih, koruma sürer (12.3); halefiyet/devir/marka değişikliği + mirasçılar (16); kayıt itirazı belgeli (5.2); teklif/görüşme kaynaklı siparişler tail kapsamında (6.2). Pazarlıkta esneyebilir: cezai şart %, 2 yıl→1 yıl, madde 1.3. Kırmızı çizgi: 6.1, 6.2 (24 ay), 6.3, 6.6, 7.1, 8.
+
+## 23.10 Sözleşme gerçek kişi olarak imzalanabilir
+Eray gerçek kişi olarak imzalar, şahıs işletmesi/vergi kaydı ilk komisyon faturasından önce (13.2 güncellendi; Temsilci paragrafı gerçek kişi). Şahıs işletmesi ayrı tüzel kişi değil. Açılış: ilk müşteri siparişi onayı ile alıcı avansı arasındaki süre (Ser avansı alınca 10 gün). Mali müşavir teyidi: işe başlama bildirimi (VUK 156, 10 gün), Bağ-Kur 4/b başlangıcı, KDV.

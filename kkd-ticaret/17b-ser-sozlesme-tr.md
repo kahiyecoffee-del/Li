@@ -4,7 +4,7 @@ Bu sözleşme ....../....../2026 tarihinde aşağıdaki taraflar arasında yapı
 
 **Müvekkil:** SER AYAKKABI SANAYİ VE TİCARET LİMİTED ŞİRKETİ, Çınardere Mah. Ankara Cad. No:1/B, Pendik / İstanbul. E-posta: omer@serfootwear.com
 
-**Temsilci:** ................................ (Eray Burak Sözer – şahıs işletmesi; ticaret unvanı: ................................, vergi dairesi / no: ................................), adres: ................................, Bridgeline Global Sourcing markası altında faaliyet gösterir. E-posta: eraysozer@bridgelineglobalsourcing.com
+**Temsilci:** Eray Burak Sözer (T.C. Kimlik No: ................................), adres: ................................, Bridgeline Global Sourcing markası altında faaliyet gösterir. E-posta: eraysozer@bridgelineglobalsourcing.com
 
 ### 1. Konu ve Yetki
 1.1 Müvekkil, Temsilci'yi Ürünler için Bölge'de bağımsız ve münhasır olmayan satış temsilcisi (acente) olarak atamıştır. İlişki, Türk Ticaret Kanunu'nun acentelik hükümlerine (m.102 ve devamı) tabidir.
@@ -69,7 +69,7 @@ Taraflar rüşvet ve yolsuzlukla mücadele, ihracat kontrolü ve yaptırım mevz
 
 ### 13. Vergi ve Giderler
 13.1 Taraflar kendi vergi yükümlülüklerinden sorumludur. Sözleşmeden doğan damga vergisi (varsa) taraflarca yarı yarıya ödenir.
-13.2 Temsilci, bu sözleşmeyi ve Komisyon faturalarını kendi adına kayıtlı şahıs işletmesi veya şirketi üzerinden yürütebilir; ticaret unvanı ve vergi numarasını ilk fatura öncesinde yazılı bildirir. Bu bir devir sayılmaz ve Kayıtlı Müşteri'ler üzerindeki haklar aynen devam eder.
+13.2 Temsilci bu sözleşmeyi gerçek kişi olarak imzalar. Temsilci, ilk Komisyon faturasından önce vergi kaydını (şahıs işletmesi veya şirket) tamamlayıp ticaret unvanı, vergi dairesi ve vergi numarasını Müvekkil'e yazılı bildirir ve Komisyon faturalarını bu kayıt üzerinden düzenler. Bu bir devir veya taraf değişikliği sayılmaz; sözleşme ve Kayıtlı Müşteri'ler üzerindeki haklar aynen devam eder. Fatura, kayıt tamamlanana kadar düzenlenemediği için Komisyon alacağı saklıdır; Müvekkil, fatura tarihinden itibaren 10 gün içinde öder ve bu sürede gecikme faizi işlemez.
 
 ### 14. Uygulanacak Hukuk ve Uyuşmazlıklar
 14.1 Sözleşmeye Türk hukuku uygulanır.
