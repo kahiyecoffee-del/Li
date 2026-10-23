@@ -109,3 +109,6 @@ Eklendi: 2 yıl ilk süre + 90 gün bildirim, ilk 2 yılda haklı sebepsiz fesih
 
 ## 23.10 Sözleşme gerçek kişi olarak imzalanabilir
 Eray gerçek kişi olarak imzalar, şahıs işletmesi/vergi kaydı ilk komisyon faturasından önce (13.2 güncellendi; Temsilci paragrafı gerçek kişi). Şahıs işletmesi ayrı tüzel kişi değil. Açılış: ilk müşteri siparişi onayı ile alıcı avansı arasındaki süre (Ser avansı alınca 10 gün). Mali müşavir teyidi: işe başlama bildirimi (VUK 156, 10 gün), Bağ-Kur 4/b başlangıcı, KDV.
+
+## 23.10 Teklif rehberi
+20-teklif-rehberi.md: alıcı cevabı akışı, sektöre göre model+fiyat (Ser net ×1.10), 500→1.000 çift yükseltme (yalnız Ser kademeli fiyatı onaylarsa), teklif e-posta şablonu, Ömer'e sorulacaklar (kademeli iskonto, FOB, numune, DoC).
