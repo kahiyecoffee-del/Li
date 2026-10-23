@@ -78,3 +78,6 @@ Ayrıntı: 16-ser-rigel-fiyat-ozeti.md. Özet: net fiyat + bizim komisyon (%5–
 
 ## 22.10 komisyon %8 onaylandı
 Alıcı fiyatı = Ser net × 1.08. 22.10 batch'indeki 10 taslak (SPM Maroc, ESP, Glauben, Twipake, Frontier, SITCO, Integrated, Modamer, ProUniforma, EtalonSnab) fiyatlı v3 metnine güncellendi (EXW İstanbul, MOQ 500 toplam, %40/%60 TT, bedelsiz numune). Gönderilmedi; Eray "gönder" diyecek (öneri: Körfez firmaları Pazar 25.10 sabahı, diğerleri Cuma 23.10 10:00). 26.10 batch'i (15 taslak) sırada: kısalt + adres doğrula + fiyatlı v3. Sözleşme taslağı (TR) hazırlanacak, omer@serfootwear.com'a.
+
+## 23.10 sabah özeti
+Yeni cevap yok; yeni bounce yok (Pars info@parsayakkabi.com: geçici gecikme, Gmail 47 saat deniyor). 22.10 batch (10 taslak) GÖNDERİLMEDİ – fiyatlı v3'e güncel, Eray "gönder"/zamanlama bekliyor. Workspace deneme ~26.10 (3 gün).
