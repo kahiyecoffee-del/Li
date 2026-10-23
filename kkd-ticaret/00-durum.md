@@ -115,3 +115,10 @@ Eray gerçek kişi olarak imzalar, şahıs işletmesi/vergi kaydı ilk komisyon 
 
 ## 23.10 Karar: indirim yok
 Alıcılara indirim/kademeli fiyat verilmez; fiyat = Ser net × 1.10 sabit. Adet yükseltme yalnız tek sevkiyat/fiyat kilidi/stok gerekçesiyle. Ömer'e kademeli iskonto sorulmayacak. 20-teklif-rehberi.md güncellendi.
+
+## 23.10 gece: otomasyon kuruldu (Eray onayı)
+- Pzt 26.10 10:30 İstanbul: sözleşme maili Ömer'e (22-omer-sozlesme-maili.txt, Ser thread'inde cevap olarak).
+- Takip (fiyatlı, 21-takip-sablonlari.md): Pzt 26.10 10:00 (19.10 grubu 9), Sal 27.10 10:00 (20.10 grubu 11), Çar 28.10 10:00 (21.10 grubu 7). Cevap vermiş/bounce alan firmaya gitmez.
+- Yeni gönderimler: Paz 25.10 08:30 (3), Pzt 26.10 08:30/09:00/11:00/12:00 (15).
+- Özetler: sabah 08:45 (mevcut rutin) + akşam 19:00 (yeni, 'Bridgeline akşam özeti 19:00'). Eray özetleri bu oturumdan okur.
+- Zamanlanmış gönderimler bu oturum açıkken tetiklenir; gitmezse taslaklar Gmail'de duruyor.
