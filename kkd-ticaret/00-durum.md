@@ -93,3 +93,8 @@ Komisyon %10'a çekildi; tüm 26 alıcı taslağı (22.10 batch 10 + 26.10 batch
 
 ## 23.10 Hedef tablosu (Drive)
 Bridgeline – Satış Hedef Tablosu (12 hafta): https://docs.google.com/spreadsheets/d/1seN2wSYL170hyRCdPPKrwYN3kAWzN24Umy3LdGh0RvU/edit (kopya: 19-hedef-tablosu.csv). Varsayım: %5 cevap, %50 teklif, %15 sipariş, 500 çift/sipariş, ort. €22 net, %10 komisyon → 12 haftada ~1.660 mail, ~6 sipariş, ~3.100 çift, ~€6.800 komisyon. Sabah özetinde gerçek rakamlar bu tabloya işlenecek.
+
+## 23.10 akşam: 7 mail GÖNDERİLDİ + kalanlar otomatik zamanlandı
+Gönderildi (Eray "gönder" dedi): SPM Maroc, ESP, Glauben, Twipake, Modamer, ProUniforma, EtalonSnab (fiyatlı v3, %10). Takip: 30.10.
+Zamanlandı (send_later ile oturum kendisi gönderir, önce bounce/taslak kontrolü): Pazar 25.10 08:30 İstanbul → Integrated, SITCO, Frontier. Pazartesi 26.10 → 08:30 BESTORG/Safe Union/Uniforma; 09:00 Alphatech/Modern Eastern/Cherry/Midco; 11:00 Madras/Gama/Tring/Spark/Chams/Global Safety; 12:00 ETG/Safety Hub. Not: oturum açık/uyanık olmalı; gitmezse taslaklar Gmail'de duruyor, elle gönder.
+Yeni liste (18-yeni-liste-25-10.csv) taslakları 25.10'da hazırlanacak.
