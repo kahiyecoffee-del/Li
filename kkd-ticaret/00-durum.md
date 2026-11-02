@@ -122,3 +122,6 @@ Alıcılara indirim/kademeli fiyat verilmez; fiyat = Ser net × 1.10 sabit. Adet
 - Yeni gönderimler: Paz 25.10 08:30 (3), Pzt 26.10 08:30/09:00/11:00/12:00 (15).
 - Özetler: sabah 08:45 (mevcut rutin) + akşam 19:00 (yeni, 'Bridgeline akşam özeti 19:00'). Eray özetleri bu oturumdan okur.
 - Zamanlanmış gönderimler bu oturum açıkken tetiklenir; gitmezse taslaklar Gmail'de duruyor.
+
+## 02.11 geç tetiklenen zamanlı görev
+25.10 08:30'luk Körfez gönderimi 02.11'de tetiklendi (oturum bu sürede uykudaydı). Integrated, SITCO, Frontier gönderildi (02.11, fiyatlı v3 %10). Bounce'lar: Midco (info@midcosafety.com), ProUniforma (info@prouniforma.uz), Pars (kalıcı). 26.10 batch'inin 7'si (BESTORG, Safe Union, Uniforma, Alphatech, Modern Eastern, Cherry, Midco) gitmiş; Madras, Gama, Tring, Spark, EURL Chams, Global Safety, ETG, Safety Hub taslak olarak duruyor. Ömer'e sözleşme maili ve 26-28.10 takipleri Gmail gönderilenlerde görünmüyor – Eray'a sorulacak. Workspace faturalama uyarısı mailde ('Action required').
