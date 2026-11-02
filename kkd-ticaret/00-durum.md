@@ -125,3 +125,6 @@ Alıcılara indirim/kademeli fiyat verilmez; fiyat = Ser net × 1.10 sabit. Adet
 
 ## 02.11 geç tetiklenen zamanlı görev
 25.10 08:30'luk Körfez gönderimi 02.11'de tetiklendi (oturum bu sürede uykudaydı). Integrated, SITCO, Frontier gönderildi (02.11, fiyatlı v3 %10). Bounce'lar: Midco (info@midcosafety.com), ProUniforma (info@prouniforma.uz), Pars (kalıcı). 26.10 batch'inin 7'si (BESTORG, Safe Union, Uniforma, Alphatech, Modern Eastern, Cherry, Midco) gitmiş; Madras, Gama, Tring, Spark, EURL Chams, Global Safety, ETG, Safety Hub taslak olarak duruyor. Ömer'e sözleşme maili ve 26-28.10 takipleri Gmail gönderilenlerde görünmüyor – Eray'a sorulacak. Workspace faturalama uyarısı mailde ('Action required').
+
+## 02.11 akşam özeti
+Gönderilenler toplam: 19-21.10: 30, 23.10: 7, 26.10: 7, 02.11: 3. Cevap: yalnızca Ser (olumlu), Zaker otomatik. Bounce: SITCO (02.11), Midco, ProUniforma, Horizon, PRO OBUV, Pars. Bekleyen: 8 taslak, 27 takip, Ömer sözleşme maili (Eray kararı bekleniyor). Zamanlı görevler 8-9 gün geç tetiklendi; tekrar kurulmayacak. Workspace faturalama uyarısı geldi.
