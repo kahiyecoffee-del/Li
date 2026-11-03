@@ -131,3 +131,6 @@ Gönderilenler toplam: 19-21.10: 30, 23.10: 7, 26.10: 7, 02.11: 3. Cevap: yalnı
 
 ## 03.11 sabah özeti
 Yeni cevap/bounce yok (SITCO bounce zaten işaretli). LinkedIn: 2 bildirim (bağlantı isteği/kabul), iş mesajı yok. Eray'ın kararı bekleniyor: 8 taslak, 27 takip, Ömer'e sözleşme maili. Dün giden mail yok. Workspace faturalama uyarısı açık.
+
+## 03.11 akşam özeti
+Yeni cevap/bounce yok. Integrated (Katar) alan adından DMARC raporu geldi (maili alan sunucu işledi; teslim sinyali). Bugün giden mail yok. Eray'ın kararı hâlâ bekleniyor (8 taslak, 27 takip, Ömer sözleşme maili).
