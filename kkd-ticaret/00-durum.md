@@ -134,3 +134,6 @@ Yeni cevap/bounce yok (SITCO bounce zaten işaretli). LinkedIn: 2 bildirim (bağ
 
 ## 03.11 akşam özeti
 Yeni cevap/bounce yok. Integrated (Katar) alan adından DMARC raporu geldi (maili alan sunucu işledi; teslim sinyali). Bugün giden mail yok. Eray'ın kararı hâlâ bekleniyor (8 taslak, 27 takip, Ömer sözleşme maili).
+
+## 04.11 sabah özeti
+Yeni insan cevabı yok. SITCO: "Message blocked" (alıcı sunucu engelledi, adres hatası değil; alan adı/içerik filtrelemesi olabilir) → LinkedIn'den ulaş. DMARC raporları: Zoho ve Yahoo (Integrated Qatar) – maillerin işlendiği sinyali. Zaker WhatsApp hatırlatması 05.11. Eray'ın kararı bekleniyor (8 taslak, 27 takip, Ömer sözleşme).
