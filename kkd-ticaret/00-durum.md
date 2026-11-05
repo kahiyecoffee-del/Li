@@ -137,3 +137,6 @@ Yeni cevap/bounce yok. Integrated (Katar) alan adından DMARC raporu geldi (mail
 
 ## 04.11 sabah özeti
 Yeni insan cevabı yok. SITCO: "Message blocked" (alıcı sunucu engelledi, adres hatası değil; alan adı/içerik filtrelemesi olabilir) → LinkedIn'den ulaş. DMARC raporları: Zoho ve Yahoo (Integrated Qatar) – maillerin işlendiği sinyali. Zaker WhatsApp hatırlatması 05.11. Eray'ın kararı bekleniyor (8 taslak, 27 takip, Ömer sözleşme).
+
+## 05.11 Eray: "sen mail göndermeye devam et"
+Gönderildi 05.11: 8 taslak (Madras, Gama, Tring, Spark, EURL Chams, Global Safety, ETG, Safety Hub) + 19.10 grubu fiyatlı takip (9: Josiba, Saudistark, Safety Shoes UAE, Fares, SSK, Borkit, Fabricon, Guardline, EPI Maroc). Zamanlandı (send_later): 06.11 10:00 (8 takip), 08.11 09:00 (6), 09.11 10:00 (4). Tempo: günlük ≤30. Ömer'e sözleşme maili HÂLÂ gönderilmedi (Eray'ın ayrı onayı bekleniyor). Zaker WhatsApp Eray'a bırakıldı.
