@@ -140,3 +140,6 @@ Yeni insan cevabı yok. SITCO: "Message blocked" (alıcı sunucu engelledi, adre
 
 ## 05.11 Eray: "sen mail göndermeye devam et"
 Gönderildi 05.11: 8 taslak (Madras, Gama, Tring, Spark, EURL Chams, Global Safety, ETG, Safety Hub) + 19.10 grubu fiyatlı takip (9: Josiba, Saudistark, Safety Shoes UAE, Fares, SSK, Borkit, Fabricon, Guardline, EPI Maroc). Zamanlandı (send_later): 06.11 10:00 (8 takip), 08.11 09:00 (6), 09.11 10:00 (4). Tempo: günlük ≤30. Ömer'e sözleşme maili HÂLÂ gönderilmedi (Eray'ın ayrı onayı bekleniyor). Zaker WhatsApp Eray'a bırakıldı.
+
+## 06.11 takip gönderildi (8)
+AsArt, Safe Trade, Debet, The Supply, KEMA, Devsons, Oran Protection, Profform (fiyatlı, thread'de). Cevap/bounce yoktu. Sonraki: 08.11 09:00 (6), 09.11 10:00 (4).
