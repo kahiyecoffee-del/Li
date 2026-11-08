@@ -143,3 +143,6 @@ Gönderildi 05.11: 8 taslak (Madras, Gama, Tring, Spark, EURL Chams, Global Safe
 
 ## 06.11 takip gönderildi (8)
 AsArt, Safe Trade, Debet, The Supply, KEMA, Devsons, Oran Protection, Profform (fiyatlı, thread'de). Cevap/bounce yoktu. Sonraki: 08.11 09:00 (6), 09.11 10:00 (4).
+
+## 08.11 takip gönderildi (6)
+SSTC, Encore, Mubarakiya, Frontline, Evrohem, ProSafety (fiyatlı, thread'de; cevap/bounce yoktu). Kalan: 09.11 10:00 (4: CSS Georgia, Lynx, Veylon, ERTIS).
