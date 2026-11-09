@@ -146,3 +146,6 @@ AsArt, Safe Trade, Debet, The Supply, KEMA, Devsons, Oran Protection, Profform (
 
 ## 08.11 takip gönderildi (6)
 SSTC, Encore, Mubarakiya, Frontline, Evrohem, ProSafety (fiyatlı, thread'de; cevap/bounce yoktu). Kalan: 09.11 10:00 (4: CSS Georgia, Lynx, Veylon, ERTIS).
+
+## 09.11 son takip grubu gönderildi (4)
+CSS Georgia, Lynx, Veylon, ERTIS. Tüm ilk 40 firmaya fiyatlı takip tamamlandı. Toplam 82 mail, 6 bounce, 0 cevap. Sonraki: karar bekleniyor (yeni liste / A-B / LinkedIn), Ömer sözleşme maili.
