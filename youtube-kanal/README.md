@@ -5,7 +5,9 @@ Her şey ücretsiz ve yerel çalışır (API anahtarı gerekmez).
 
 ## İmza tarz (izlenme süresi için)
 Ayrıntılar ve kaynaklar: [`arastirma-izlenme.md`](arastirma-izlenme.md)
-- **İmza karakter:** turuncu atkı, fikir anında yanan anten, pembe yanaklar
+- **Anlatıcı karakter "Mo":** lavanta renkli yuvarlak gövde, büyük ifadeli gözler, makarna kollar, beyaz eldivenler, turuncu atkı, fikir anında yanan anten.
+  Seslendirmeyle ağzı oynar, göz kırpar, yeni beliren nesneye 1 sn bakar (izleyicinin dikkatini oraya çeker).
+  Eski çöp adam için senaryoya `"character": "stick"` yaz.
 - **Çizilerek belirme:** nesneler kalem ucuyla çizilerek gelir, kalem cızırtısı sesiyle
 - **Geçişler:** renkli bant süpürmesi ve "whoosh" sesi
 - **Kamera:** yavaş yaklaşma, vurgulu kelimede hafif zıplama, `"punch": true` sahnede vuruş, şok pozunda sarsıntı

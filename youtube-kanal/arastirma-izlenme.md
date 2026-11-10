@@ -24,7 +24,8 @@
 | **3–4 saniyede bir görsel değişim** | 12 kısa sahne. Her geçişte renkli bant süpürmesi ve "whoosh" sesi var. 5 farklı mekân: oda, ofis, defter, park, şehir. | 2, 8 |
 | **Sinyalleme** | Senaryoda `*yıldızlı*` kelimeler altyazıda mercan rengi ve fosforlu çizgiyle vurgulanıyor. Kamera o anda hafifçe yaklaşıyor. Söylenen kelime sarı. | 7 |
 | **Çizilerek belirme (imza)** | Nesneler kalem ucuyla soldan sağa çiziliyor, "kalem cızırtısı" sesi eşlik ediyor. | 2, 8 |
-| **İmza karakter** | Turuncu atkı, ucu fikir anında yanan anten, pembe yanaklar. Kanal kimliği sağlar ve tanınırlığı artırır. | (marka) |
+| **Anlatıcı karakter "Mo"** | Yuvarlak, sevimli maskot. Turuncu atkısı ve fikir anında yanan anteni var. Kanal kimliği sağlar. | (marka) |
+| **Bakış yönlendirme** | Mo, yeni beliren nesneye 1 saniye bakar. İzleyicinin gözü de oraya gider. | 7 |
 | **Bölüm etiketi** | "RULE 1 / RULE 2" sekmesi izleyiciye ilerlemeyi gösterir. Uzun videolarda üstte ilerleme çubuğu var. | 7 |
 | **Ses tasarımı** | Koddan üretilen, telifsiz lo-fi müzik. Konuşma başlayınca otomatik kısılıyor (ducking), böylece dikkati bölmüyor. Ses YouTube standardı -14 LUFS'a ayarlı. | 8 |
 | **Döngü sonu** | Son cümle "So next time a task feels huge, remember…" başa ("You're not lazy.") bağlanıyor. Sonda boşluk yok. | 5 |

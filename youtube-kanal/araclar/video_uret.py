@@ -23,6 +23,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import arkaplan as ab  # noqa: E402
+import karakter  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONT_PATH = os.path.join(ROOT, "fonts", "Kalam-Bold.ttf")
@@ -43,7 +44,7 @@ LANGS = {
 FORMATS = {
     # Shorts: altyazı üstte, alt kısım YouTube arayüzüne bırakılır.
     "short": dict(w=1080, h=1920, fig_x=540, hip_y=1195, sc=1.25, cap_y=230,
-                  cap_size=104, cap_w=980, prop_c=(540, 545), prop_dx=290, prop_sc=1.3, focus=(540, 900)),
+                  cap_size=104, cap_w=980, prop_c=(540, 520), prop_dx=290, prop_sc=1.3, focus=(540, 900)),
     "long": dict(w=1920, h=1080, fig_x=560, hip_y=640, sc=0.85, cap_y=985,
                  cap_size=68, cap_w=1700, prop_c=(1320, 440), prop_dx=360, prop_sc=1.45, focus=(900, 520)),
 }
@@ -721,6 +722,24 @@ def draw_badge(img, F, text, cap_box=None):
     d.text((x0 + w / 2, y0 + h / 2), text, font=f, fill="white", anchor="mm", stroke_width=2, stroke_fill=INK)
 
 
+LOOK = {"point_right": (1, 0), "point_left": (-1, 0), "phone": (0.6, 0.9), "read": (0, 1), "idea": (0.3, -1),
+        "think": (0.7, -0.8), "tired": (0, 0.6), "sad": (0, 0.7)}
+
+
+def look_dir(scene, pname, lt, F, face):
+    """Yeni beliren nesneye 1 sn bak (izleyicinin dikkatini oraya yönlendirir), sonra kameraya/poz yönüne."""
+    for spec in scene.get("props", []):
+        if spec.get("pos") in ANCHORED:
+            continue
+        dl = lt - spec.get("delay", 0.0)
+        if 0 <= dl < 1.1:
+            x, y = prop_pos(spec, F, {})
+            dx, dy = x - face[0], y - face[1]
+            n = math.hypot(dx, dy) or 1
+            return dx / n, dy / n
+    return LOOK.get(pname, (0.0, 0.0))
+
+
 def render_prop(img, pen_seed, spec, F, anchors, lt, dur, lang):
     delay = spec.get("delay", 0.0)
     if lt < delay:
@@ -807,7 +826,16 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
             ab.deco(name, d, F, lt, font, fig_c)
         mouth = float(env[fi]) if env is not None and fi < len(env) else 0.0
         glow = pname in ("idea", "celebrate") or expr == "happy"
-        anchors = draw_figure(pen, p, expr, F["fig_x"], F["hip_y"], sc_, mouth, t=t, glow=glow)
+        if F.get("character", "mo") == "stick":
+            anchors = draw_figure(pen, p, expr, F["fig_x"], F["hip_y"], sc_, mouth, t=t, glow=glow)
+        else:
+            cs = sc_ * 1.08
+            ground = F["hip_y"] + 292 * sc_
+            face = (F["fig_x"], ground - 95 * cs - 0.67 * 390 * cs)
+            blink = (t % 3.7) < 0.11 or ((t + 1.3) % 5.9) < 0.1
+            anchors = karakter.draw_character(img, p, expr, F["fig_x"], ground, cs, mouth, t, glow=glow,
+                                              look=look_dir(scene, pname, lt, F, face), blink=blink,
+                                              talking=env is not None and mouth > 0.05)
         for j, spec in enumerate(scene.get("props", [])):
             render_prop(img, fi // 4 + j, spec, F, anchors, lt, dur, lang)
 
@@ -884,6 +912,7 @@ def main():
             sys.exit(f"Desteklenmeyen dil: {lg}. Desteklenen: {', '.join(LANGS)}")
     for sc in data["scenes"]:
         sc.setdefault("bg", data.get("bg", "room"))
+    F = dict(F, character=data.get("character", "mo"))
     slug = data.get("slug") or os.path.splitext(os.path.basename(args.senaryo))[0]
     outdir = os.path.join(args.cikti, slug)
     os.makedirs(outdir, exist_ok=True)
