@@ -360,7 +360,8 @@ def word_times(start, end, text):
 KEY = (255, 120, 100)
 
 
-def draw_caption(img, F, t, start, end, text, font_fn, highlight=(255, 205, 50), key=None, box=(20, 20, 25, 185)):
+def draw_caption(img, F, t, start, end, text, font_fn, highlight=(255, 205, 50), key=None, box=(20, 20, 25, 185),
+                 text_col=(255, 255, 255), stroke_col=(15, 15, 15), stroke_scale=1.0):
     """Kutu içinde altyazı: anahtar kelimeler mercan rengi, söylenen kelime sarı ve zıplar."""
     d = ImageDraw.Draw(img, "RGBA")
     wt = word_times(start, end, text)
@@ -393,7 +394,7 @@ def draw_caption(img, F, t, start, end, text, font_fn, highlight=(255, 205, 50),
     cx, cy = F["w"] / 2, F["cap_y"]
     y0 = cy - box_h / 2
     d.rounded_rectangle([cx - box_w / 2, y0, cx + box_w / 2, y0 + box_h], radius=int(size * 0.35), fill=box)
-    stroke = max(2, int(size * 0.07))
+    stroke = int(max(2, int(size * 0.07)) * stroke_scale)
     for li, (idxs, lw) in enumerate(lines):
         x = cx - lw / 2
         y = y0 + pad * 0.6 + li * lh
@@ -402,11 +403,11 @@ def draw_caption(img, F, t, start, end, text, font_fn, highlight=(255, 205, 50),
             if i == cur:
                 col, dy = highlight, -size * 0.06
             else:
-                col, dy = ((key or KEY) if kw else (255, 255, 255)), 0
+                col, dy = ((key or KEY) if kw else text_col), 0
             if kw:  # anahtar kelimenin altına fosforlu kalem çizgisi
                 d.rounded_rectangle([x - 4, y + asc * 0.78, x + widths[i] + 4, y + asc * 0.98],
                                     radius=6, fill=(*(key or KEY), 150))
-            d.text((x, y + dy), words[i], font=f, fill=col, stroke_width=stroke, stroke_fill=(15, 15, 15))
+            d.text((x, y + dy), words[i], font=f, fill=col, stroke_width=stroke, stroke_fill=stroke_col)
             x += widths[i] + space
     return (cx - box_w / 2, y0, cx + box_w / 2, y0 + box_h)
 

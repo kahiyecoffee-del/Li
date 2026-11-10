@@ -197,6 +197,11 @@ THEMES = {
                      swipe=[(120, 30, 45), (35, 80, 62), (32, 45, 82), (165, 125, 55)], stars=False, badge=(130, 32, 48),
                      cap_box=(28, 20, 16, 200), cap_key=(240, 175, 120), cap_cur=(255, 214, 110), music="ambient", cap_scale=0.84,
                      character="theo", bar=(200, 160, 70)),
+    # karakalem: kâğıt, grafit, kırmızı/mavi kalem vurguları
+    "karakalem": dict(font="Kalam-Bold.ttf", font_hi="Kalam-Bold.ttf", swipe=[(236, 230, 215), (228, 220, 202)], stars=False,
+                      badge=(150, 45, 35), cap_box=(240, 234, 220, 238), cap_key=(176, 48, 38), cap_cur=(48, 86, 168),
+                      cap_text=(40, 38, 42), cap_stroke=(40, 38, 42), cap_stroke_scale=0.0, music="ambient", cap_scale=0.9,
+                      character="none", bar=(150, 45, 35)),
 }
 CUR = {"theme": THEMES["playful"], "lang": "en"}
 
@@ -973,6 +978,7 @@ class VideoClip:
 
 
 _clips = {}
+_sketches = {}
 
 
 def render_cutaway(spec, F, lt, dur, t, scene_key=None):
@@ -1141,9 +1147,19 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
             p = blend(pp, p, ease(lt / 0.3))
 
         media = scene.get("image") or scene.get("video")
-        if media:
+        if scene.get("sketch") is not None:
+            media = media or {}
+            if scene_idx not in _sketches:
+                import eskiz
+                _sketches.clear()
+                sk = eskiz.SketchScene(scene["sketch"], W, H, seed=scene_idx * 13 + 1)
+                _sketches[scene_idx] = (sk, max(1.0, sk.end / max(dur * 0.55, 0.5)))
+            sk, speed = _sketches[scene_idx]
+            img = sk.frame(lt * speed)
+        elif media:
             img = render_cutaway(media, F, lt, dur, t, scene_key=scene_idx)
-            if scene.get("props"):
+        if media is not None and (media or scene.get("sketch") is not None):
+            if scene.get("props") and media:
                 dim = media.get("dim", 0.3)
                 if dim:
                     img = Image.blend(img, Image.new("RGB", img.size, (0, 0, 0)), dim)
@@ -1164,7 +1180,9 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
                         th = CUR["theme"]
                         Fc = dict(F, cap_size=F["cap_size"] * th.get("cap_scale", 1.0))
                         cb = ab.draw_caption(img, Fc, t, a, b, txt, font, highlight=th["cap_cur"], key=th["cap_key"],
-                                             box=th["cap_box"])
+                                             box=th["cap_box"], text_col=th.get("cap_text", (255, 255, 255)),
+                                             stroke_col=th.get("cap_stroke", (15, 15, 15)),
+                                             stroke_scale=th.get("cap_stroke_scale", 1.0))
                         if badges and scene.get("badge") and lt > 0.15:
                             bt = scene["badge"].get(lang) if isinstance(scene["badge"], dict) else scene["badge"]
                             draw_badge(img, Fc, bt, cb)
@@ -1305,6 +1323,8 @@ def main():
         data["scenes"].insert(pos, dict(pose=sub.get("pose", "point_right"), bg=sub.get("bg"), punch=False,
                                         props=[dict(type="subscribe", pos=sub.get("pos", "center"), size=sub.get("size", 1.0),
                                                     click=sub.get("click", 1.2))], say=sub["say"]))
+        if sub.get("sketch") is not None:
+            data["scenes"][pos]["sketch"] = sub["sketch"]
         for k in ("image", "video"):
             if sub.get(k):
                 data["scenes"][pos][k] = dict(sub[k], dim=sub[k].get("dim", 0.45))

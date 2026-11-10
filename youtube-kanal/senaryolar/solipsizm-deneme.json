@@ -1,0 +1,1001 @@
+{
+  "slug": "solipsizm-deneme",
+  "format": "long",
+  "theme": "karakalem",
+  "character": "none",
+  "languages": [
+    "en"
+  ],
+  "subtitles": [
+    "tr"
+  ],
+  "voices": {
+    "en": "bm_george"
+  },
+  "meta": {
+    "en": {
+      "title": "Solipsism: The Only Thing You Can Be Sure Exists",
+      "description": "Test render.",
+      "tags": [
+        "solipsism",
+        "philosophy"
+      ]
+    },
+    "tr": {
+      "title": "Solipsizm: Var olduğundan emin olabileceğin tek şey",
+      "description": "Deneme.",
+      "tags": [
+        "solipsizm",
+        "felsefe"
+      ]
+    }
+  },
+  "subscribe": {
+    "after": 12,
+    "sketch": [
+      {
+        "el": "subscribe",
+        "x": 0.45,
+        "y": 0.45,
+        "s": 1.4
+      },
+      {
+        "el": "arrow",
+        "x": 0.2,
+        "y": 0.75,
+        "x2": 0.33,
+        "y2": 0.55,
+        "color": "red",
+        "s": 1.2
+      }
+    ],
+    "say": {
+      "en": "Quick favor before we start: if you like ideas that break your brain a little, *subscribe*. It genuinely helps the channel.",
+      "tr": "Başlamadan küçük bir rica: Beynini biraz yakan fikirleri seviyorsan *abone ol*. Kanala gerçekten çok yardımı oluyor."
+    }
+  },
+  "scenes": [
+    {
+      "say": {
+        "en": "There is only one thing in the entire universe you can be *absolutely sure* exists.",
+        "tr": "Tüm evrende var olduğundan *kesinlikle emin* olabileceğin tek bir şey var."
+      },
+      "sketch": [
+        {
+          "el": "stars",
+          "n": 45,
+          "h": 0.95
+        },
+        {
+          "el": "head",
+          "x": 0.5,
+          "y": 0.42,
+          "s": 0.55,
+          "glow": true
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "Not the chair you're sitting on.",
+        "tr": "Oturduğun sandalye değil."
+      },
+      "sketch": [
+        {
+          "el": "ground",
+          "x": 0.5,
+          "y": 0.8,
+          "w": 0.75
+        },
+        {
+          "el": "chair",
+          "x": 0.5,
+          "y": 0.8,
+          "s": 1.5
+        },
+        {
+          "el": "cross",
+          "x": 0.5,
+          "y": 0.52,
+          "s": 1.3,
+          "at": 0.9
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "Not the people you love.",
+        "tr": "Sevdiğin insanlar değil."
+      },
+      "sketch": [
+        {
+          "el": "ground",
+          "x": 0.5,
+          "y": 0.8,
+          "w": 0.75
+        },
+        {
+          "el": "figure",
+          "x": 0.42,
+          "y": 0.8,
+          "h": 0.55,
+          "pose": "stand",
+          "face": 1
+        },
+        {
+          "el": "figure",
+          "x": 0.58,
+          "y": 0.8,
+          "h": 0.5,
+          "pose": "stand",
+          "face": -1,
+          "hat": "dress"
+        },
+        {
+          "el": "cross",
+          "x": 0.5,
+          "y": 0.5,
+          "s": 1.6,
+          "at": 1.0
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "Not even the screen in front of you.",
+        "tr": "Önündeki ekran bile değil."
+      },
+      "sketch": [
+        {
+          "el": "screen",
+          "x": 0.5,
+          "y": 0.62,
+          "s": 1.5
+        },
+        {
+          "el": "cross",
+          "x": 0.5,
+          "y": 0.47,
+          "s": 1.4,
+          "at": 1.0
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "Just one thing: *your own mind*.",
+        "tr": "Sadece tek bir şey: *kendi zihnin*."
+      },
+      "sketch": [
+        {
+          "el": "head",
+          "x": 0.5,
+          "y": 0.45,
+          "s": 0.85,
+          "glow": true
+        },
+        {
+          "el": "text",
+          "x": 0.5,
+          "y": 0.1,
+          "text": "your own mind",
+          "size": 1.0,
+          "underline": "red"
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "Everything else — every face, every voice, every memory of a world outside — could, in principle, be something your mind is producing on its own.",
+        "tr": "Geri kalan her şey (her yüz, her ses, dışarıdaki bir dünyaya dair her anı) ilke olarak zihninin kendi kendine ürettiği bir şey olabilir."
+      },
+      "sketch": [
+        {
+          "el": "head",
+          "x": 0.22,
+          "y": 0.45,
+          "s": 0.65,
+          "glow": true
+        },
+        {
+          "el": "arrow",
+          "x": 0.36,
+          "y": 0.3,
+          "x2": 0.55,
+          "y2": 0.2,
+          "s": 1.0
+        },
+        {
+          "el": "figure",
+          "x": 0.62,
+          "y": 0.33,
+          "h": 0.25,
+          "pose": "stand",
+          "face": -1
+        },
+        {
+          "el": "arrow",
+          "x": 0.37,
+          "y": 0.45,
+          "x2": 0.58,
+          "y2": 0.48,
+          "s": 1.0,
+          "bend": 0.0
+        },
+        {
+          "el": "bubble",
+          "x": 0.7,
+          "y": 0.48,
+          "s": 0.5,
+          "kind": "speech"
+        },
+        {
+          "el": "arrow",
+          "x": 0.36,
+          "y": 0.58,
+          "x2": 0.56,
+          "y2": 0.72,
+          "s": 1.0,
+          "bend": -0.2
+        },
+        {
+          "el": "globe",
+          "x": 0.67,
+          "y": 0.73,
+          "s": 0.6
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "This idea is called *solipsism*.",
+        "tr": "Bu fikrin adı *solipsizm*."
+      },
+      "sketch": [
+        {
+          "el": "text",
+          "x": 0.5,
+          "y": 0.42,
+          "text": "SOLIPSISM",
+          "size": 2.2,
+          "underline": "red"
+        },
+        {
+          "el": "head",
+          "x": 0.5,
+          "y": 0.68,
+          "s": 0.3,
+          "lock": false
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "And here's what makes it unsettling: for more than two thousand years, some of the greatest thinkers in history have tried to prove it wrong...",
+        "tr": "Rahatsız edici olan şu: İki bin yılı aşkın süredir tarihin en büyük düşünürlerinden bazıları onu çürütmeye çalıştı…"
+      },
+      "sketch": [
+        {
+          "el": "ground",
+          "x": 0.5,
+          "y": 0.8,
+          "w": 0.75
+        },
+        {
+          "el": "figure",
+          "x": 0.2,
+          "y": 0.8,
+          "h": 0.45,
+          "pose": "point",
+          "face": 1
+        },
+        {
+          "el": "figure",
+          "x": 0.34,
+          "y": 0.8,
+          "h": 0.47,
+          "pose": "think",
+          "face": 1,
+          "hat": "wig"
+        },
+        {
+          "el": "figure",
+          "x": 0.48,
+          "y": 0.8,
+          "h": 0.46,
+          "pose": "point",
+          "face": 1,
+          "hat": "tricorn"
+        },
+        {
+          "el": "text",
+          "x": 0.78,
+          "y": 0.45,
+          "text": "?",
+          "size": 4.0
+        },
+        {
+          "el": "text",
+          "x": 0.2,
+          "y": 0.12,
+          "text": "400 BC",
+          "size": 0.6
+        },
+        {
+          "el": "arrow",
+          "x": 0.27,
+          "y": 0.12,
+          "x2": 0.62,
+          "y2": 0.12,
+          "bend": 0.0,
+          "s": 0.8
+        },
+        {
+          "el": "text",
+          "x": 0.7,
+          "y": 0.12,
+          "text": "today",
+          "size": 0.6
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "...and they still argue about whether anyone has succeeded.",
+        "tr": "…ve hâlâ birinin başarıp başaramadığını tartışıyorlar."
+      },
+      "sketch": [
+        {
+          "el": "ground",
+          "x": 0.5,
+          "y": 0.8,
+          "w": 0.75
+        },
+        {
+          "el": "figure",
+          "x": 0.36,
+          "y": 0.8,
+          "h": 0.55,
+          "pose": "point",
+          "face": 1
+        },
+        {
+          "el": "figure",
+          "x": 0.64,
+          "y": 0.8,
+          "h": 0.55,
+          "pose": "shrug",
+          "face": -1,
+          "hat": "wig"
+        },
+        {
+          "el": "bubble",
+          "x": 0.3,
+          "y": 0.2,
+          "s": 0.45,
+          "kind": "speech",
+          "tail": [
+            0.36,
+            0.33
+          ]
+        },
+        {
+          "el": "text",
+          "x": 0.3,
+          "y": 0.2,
+          "text": "Proved!",
+          "size": 0.7
+        },
+        {
+          "el": "bubble",
+          "x": 0.7,
+          "y": 0.2,
+          "s": 0.45,
+          "kind": "speech",
+          "tail": [
+            0.63,
+            0.33
+          ]
+        },
+        {
+          "el": "text",
+          "x": 0.7,
+          "y": 0.2,
+          "text": "Did you?",
+          "size": 0.7
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "By the end of this video, you'll know where this idea came from,",
+        "tr": "Bu videonun sonunda bu fikrin nereden geldiğini,"
+      },
+      "sketch": [
+        {
+          "el": "scroll",
+          "x": 0.5,
+          "y": 0.47,
+          "s": 1.2,
+          "text": "2,500 years of doubt"
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "why your brain spent years of your childhood learning to escape it,",
+        "tr": "beyninin çocukluğun boyunca ondan kurtulmayı neden yıllarca öğrendiğini,"
+      },
+      "sketch": [
+        {
+          "el": "ground",
+          "x": 0.5,
+          "y": 0.8,
+          "w": 0.75
+        },
+        {
+          "el": "child_q",
+          "x": 0.5,
+          "y": 0.8,
+          "s": 1.4
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "and why one famous logician openly admitted she *believed* it.",
+        "tr": "ve ünlü bir mantıkçının ona *inandığını* neden açıkça itiraf ettiğini öğreneceksin."
+      },
+      "sketch": [
+        {
+          "el": "ground",
+          "x": 0.5,
+          "y": 0.8,
+          "w": 0.75
+        },
+        {
+          "el": "figure",
+          "x": 0.38,
+          "y": 0.8,
+          "h": 0.56,
+          "pose": "hold",
+          "face": 1,
+          "hat": "dress"
+        },
+        {
+          "el": "letter",
+          "x": 0.66,
+          "y": 0.45,
+          "s": 1.0,
+          "text": "\"I am a solipsist\""
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "The word comes from Latin: *solus*, meaning \"alone,\" and *ipse*, meaning \"self.\" Alone with the self.",
+        "tr": "Kelime Latinceden gelir: *solus*, yani \"yalnız\", ve *ipse*, yani \"kendi\". Kendiyle baş başa."
+      },
+      "sketch": [
+        {
+          "el": "text",
+          "x": 0.28,
+          "y": 0.25,
+          "text": "SOLUS",
+          "size": 1.4
+        },
+        {
+          "el": "text",
+          "x": 0.28,
+          "y": 0.37,
+          "text": "alone",
+          "size": 0.7,
+          "color": "blue"
+        },
+        {
+          "el": "text",
+          "x": 0.5,
+          "y": 0.27,
+          "text": "+",
+          "size": 1.4
+        },
+        {
+          "el": "text",
+          "x": 0.72,
+          "y": 0.25,
+          "text": "IPSE",
+          "size": 1.4
+        },
+        {
+          "el": "text",
+          "x": 0.72,
+          "y": 0.37,
+          "text": "self",
+          "size": 0.7,
+          "color": "blue"
+        },
+        {
+          "el": "arrow",
+          "x": 0.5,
+          "y": 0.42,
+          "x2": 0.5,
+          "y2": 0.55,
+          "bend": 0.0
+        },
+        {
+          "el": "text",
+          "x": 0.5,
+          "y": 0.66,
+          "text": "SOLIPSISM",
+          "size": 1.5,
+          "underline": "red"
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "Philosophers usually separate two versions.",
+        "tr": "Filozoflar genelde iki türü ayırır."
+      },
+      "sketch": [
+        {
+          "el": "text",
+          "x": 0.3,
+          "y": 0.2,
+          "text": "1. strong",
+          "size": 1.0
+        },
+        {
+          "el": "text",
+          "x": 0.7,
+          "y": 0.2,
+          "text": "2. weak",
+          "size": 1.0
+        },
+        {
+          "el": "line",
+          "x": 0.5,
+          "y": 0.12,
+          "x2": 0.5,
+          "y2": 0.8
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "The strong version, *metaphysical solipsism*, says: only my mind exists. That's it. The world and other people are just contents of my experience.",
+        "tr": "Güçlü olanı, *metafizik solipsizm*, şunu söyler: Yalnızca benim zihnim var. Bu kadar. Dünya ve diğer insanlar sadece deneyimimin içerikleridir."
+      },
+      "sketch": [
+        {
+          "el": "head",
+          "x": 0.3,
+          "y": 0.55,
+          "s": 0.6
+        },
+        {
+          "el": "bubble",
+          "x": 0.62,
+          "y": 0.38,
+          "s": 1.1,
+          "tail": [
+            0.38,
+            0.4
+          ]
+        },
+        {
+          "el": "globe",
+          "x": 0.56,
+          "y": 0.38,
+          "s": 0.5
+        },
+        {
+          "el": "figure",
+          "x": 0.7,
+          "y": 0.5,
+          "h": 0.22,
+          "face": -1
+        },
+        {
+          "el": "figure",
+          "x": 0.76,
+          "y": 0.5,
+          "h": 0.2,
+          "face": -1,
+          "hat": "dress"
+        },
+        {
+          "el": "text",
+          "x": 0.62,
+          "y": 0.72,
+          "text": "only my mind",
+          "size": 0.8,
+          "underline": "red"
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "The weaker version, *epistemological solipsism*, is more modest — and much harder to escape.",
+        "tr": "Zayıf olanı, *epistemolojik solipsizm*, daha mütevazıdır ama ondan kurtulmak çok daha zordur."
+      },
+      "sketch": [
+        {
+          "el": "room",
+          "x": 0.5,
+          "y": 0.78,
+          "s": 1.2
+        },
+        {
+          "el": "figure",
+          "x": 0.48,
+          "y": 0.76,
+          "h": 0.33,
+          "pose": "think"
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "It says: I can't *know* that anything outside my mind exists. Maybe it does. I just can't prove it.",
+        "tr": "Şunu söyler: Zihnimin dışında bir şeyin var olduğunu *bilemem*. Belki vardır. Sadece kanıtlayamam."
+      },
+      "sketch": [
+        {
+          "el": "head",
+          "x": 0.38,
+          "y": 0.48,
+          "s": 0.7
+        },
+        {
+          "el": "text",
+          "x": 0.72,
+          "y": 0.3,
+          "text": "world?",
+          "size": 1.0
+        },
+        {
+          "el": "text",
+          "x": 0.75,
+          "y": 0.48,
+          "text": "people?",
+          "size": 1.0
+        },
+        {
+          "el": "text",
+          "x": 0.7,
+          "y": 0.66,
+          "text": "proof?",
+          "size": 1.0,
+          "color": "red"
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "Most philosophers reject the first. The second is the one that keeps them awake at night.",
+        "tr": "Filozofların çoğu birincisini reddeder. Onları geceleri uyutmayan ikincisidir."
+      },
+      "sketch": [
+        {
+          "el": "moon",
+          "x": 0.78,
+          "y": 0.2,
+          "s": 1.0
+        },
+        {
+          "el": "bed",
+          "x": 0.45,
+          "y": 0.8,
+          "s": 1.3
+        },
+        {
+          "el": "figure",
+          "x": 0.52,
+          "y": 0.66,
+          "h": 0.4,
+          "pose": "lie",
+          "face": -1
+        },
+        {
+          "el": "bubble",
+          "x": 0.62,
+          "y": 0.3,
+          "s": 0.55,
+          "tail": [
+            0.42,
+            0.55
+          ]
+        },
+        {
+          "el": "text",
+          "x": 0.62,
+          "y": 0.3,
+          "text": "?",
+          "size": 1.4
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "The idea is older than you might think.",
+        "tr": "Bu fikir sandığından daha eski."
+      },
+      "sketch": [
+        {
+          "el": "hourglass",
+          "x": 0.5,
+          "y": 0.45,
+          "s": 1.4
+        },
+        {
+          "el": "text",
+          "x": 0.5,
+          "y": 0.1,
+          "text": "2,500 years",
+          "size": 0.9
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "Around the fifth century BC, the Greek thinker *Gorgias* wrote a work usually called *On Non-Being*.",
+        "tr": "MÖ beşinci yüzyıl civarında Yunan düşünür *Gorgias*, genelde *Var Olmayan Üzerine* diye anılan bir eser yazdı."
+      },
+      "sketch": [
+        {
+          "el": "ground",
+          "x": 0.5,
+          "y": 0.8,
+          "w": 0.75
+        },
+        {
+          "el": "figure",
+          "x": 0.3,
+          "y": 0.8,
+          "h": 0.6,
+          "pose": "point",
+          "face": 1
+        },
+        {
+          "el": "scroll",
+          "x": 0.65,
+          "y": 0.42,
+          "s": 1.0,
+          "text": "On Non-Being"
+        },
+        {
+          "el": "text",
+          "x": 0.3,
+          "y": 0.08,
+          "text": "Gorgias · 5th c. BC",
+          "size": 0.7
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "Its argument came in three steps: nothing exists; even if something existed, it couldn't be known; and even if it could be known, it couldn't be communicated to anyone else.",
+        "tr": "Argümanı üç adımdan oluşuyordu: Hiçbir şey yoktur. Bir şey olsaydı bile bilinemezdi. Bilinebilseydi bile başkasına aktarılamazdı."
+      },
+      "sketch": [
+        {
+          "el": "stairs",
+          "x": 0.12,
+          "y": 0.82,
+          "s": 1.6,
+          "n": 3,
+          "labels": [
+            "Nothing exists",
+            "Can't be known",
+            "Can't be told"
+          ]
+        },
+        {
+          "el": "figure",
+          "x": 0.2,
+          "y": 0.67,
+          "h": 0.3,
+          "pose": "climb"
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "Whether Gorgias meant it seriously or as a showpiece of clever rhetoric, the third step points straight at our problem: your experience is *locked inside you*.",
+        "tr": "Gorgias bunu ciddi olarak mı yoksa zekice bir söz gösterisi olarak mı söyledi bilinmez. Ama üçüncü adım tam olarak bizim sorunumuzu işaret ediyor: Deneyimin *senin içine kilitli*."
+      },
+      "sketch": [
+        {
+          "el": "head",
+          "x": 0.5,
+          "y": 0.45,
+          "s": 0.85,
+          "lock": true
+        },
+        {
+          "el": "text",
+          "x": 0.5,
+          "y": 0.08,
+          "text": "3. can't be told",
+          "size": 0.8,
+          "underline": "red"
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "In ancient China, the philosopher *Zhuangzi* told a famous story.",
+        "tr": "Antik Çin'de filozof *Zhuangzi* ünlü bir hikâye anlattı."
+      },
+      "sketch": [
+        {
+          "el": "ground",
+          "x": 0.5,
+          "y": 0.8,
+          "w": 0.75
+        },
+        {
+          "el": "figure",
+          "x": 0.5,
+          "y": 0.8,
+          "h": 0.45,
+          "pose": "sit",
+          "face": 1
+        },
+        {
+          "el": "text",
+          "x": 0.5,
+          "y": 0.12,
+          "text": "Zhuangzi · 4th c. BC",
+          "size": 0.8
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "He dreamed he was a butterfly, fluttering happily, with no idea he was Zhuangzi.",
+        "tr": "Rüyasında mutlu mutlu uçuşan bir kelebek olduğunu, Zhuangzi olduğundan habersiz olduğunu gördü."
+      },
+      "sketch": [
+        {
+          "el": "bed",
+          "x": 0.42,
+          "y": 0.82,
+          "s": 1.3
+        },
+        {
+          "el": "figure",
+          "x": 0.5,
+          "y": 0.68,
+          "h": 0.4,
+          "pose": "lie",
+          "face": -1
+        },
+        {
+          "el": "bubble",
+          "x": 0.66,
+          "y": 0.3,
+          "s": 1.0,
+          "tail": [
+            0.4,
+            0.58
+          ]
+        },
+        {
+          "el": "butterfly",
+          "x": 0.66,
+          "y": 0.3,
+          "s": 0.7
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "Then he woke up — and wasn't sure anymore.",
+        "tr": "Sonra uyandı ve artık emin değildi."
+      },
+      "sketch": [
+        {
+          "el": "bed",
+          "x": 0.42,
+          "y": 0.82,
+          "s": 1.3
+        },
+        {
+          "el": "figure",
+          "x": 0.45,
+          "y": 0.72,
+          "h": 0.45,
+          "pose": "sitbed",
+          "face": 1
+        },
+        {
+          "el": "text",
+          "x": 0.6,
+          "y": 0.2,
+          "text": "?",
+          "size": 3.0
+        }
+      ]
+    },
+    {
+      "say": {
+        "en": "Was he a man who had dreamed of being a butterfly... or a butterfly now dreaming he was a man?",
+        "tr": "Kelebek olduğunu rüyasında gören bir adam mıydı… yoksa şimdi adam olduğunu rüyasında gören bir kelebek mi?"
+      },
+      "sketch": [
+        {
+          "el": "ground",
+          "x": 0.5,
+          "y": 0.8,
+          "w": 0.75
+        },
+        {
+          "el": "figure",
+          "x": 0.25,
+          "y": 0.8,
+          "h": 0.45,
+          "face": 1
+        },
+        {
+          "el": "bubble",
+          "x": 0.3,
+          "y": 0.25,
+          "s": 0.6,
+          "tail": [
+            0.25,
+            0.38
+          ]
+        },
+        {
+          "el": "butterfly",
+          "x": 0.3,
+          "y": 0.25,
+          "s": 0.4
+        },
+        {
+          "el": "butterfly",
+          "x": 0.72,
+          "y": 0.6,
+          "s": 0.8
+        },
+        {
+          "el": "bubble",
+          "x": 0.72,
+          "y": 0.25,
+          "s": 0.6,
+          "tail": [
+            0.72,
+            0.45
+          ]
+        },
+        {
+          "el": "figure",
+          "x": 0.72,
+          "y": 0.33,
+          "h": 0.17,
+          "face": -1
+        },
+        {
+          "el": "arrow",
+          "x": 0.42,
+          "y": 0.5,
+          "x2": 0.58,
+          "y2": 0.5,
+          "bend": -0.3,
+          "color": "red"
+        },
+        {
+          "el": "arrow",
+          "x": 0.58,
+          "y": 0.62,
+          "x2": 0.42,
+          "y2": 0.62,
+          "bend": -0.3,
+          "color": "red"
+        }
+      ]
+    }
+  ]
+}
