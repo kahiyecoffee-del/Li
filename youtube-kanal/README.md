@@ -3,6 +3,18 @@
 Senaryo (JSON) → çok dilli seslendirme → çöp adam animasyonu → MP4 + altyazı + yükleme notları.
 Her şey ücretsiz ve yerel çalışır (API anahtarı gerekmez).
 
+## Temalar
+Senaryoda `"theme"` alanı:
+| Tema | Karakter | Yazı tipi | Müzik | Arka planlar |
+|---|---|---|---|---|
+| `academia` (felsefe/tarih) | **Theo**: gözlüklü, sakallı, tüvit ceketli; 2.5D "kil" gölgelendirme | Merriweather (Hintçe: Tiro Devanagari) | sinematik ambient | library, study, agora, parchment, night |
+| `playful` | **Mo**: yuvarlak maskot | Kalam (el yazısı) | lo-fi | room, office, park, city, notebook |
+
+Karakteri ayrıca seçmek için: `"character": "theo" | "mo" | "stick"`. Sesi dil başına değiştirmek için: `"voices": {"en": "bm_george"}` (İngiliz aksanlı erkek sesi).
+
+**Tarih/felsefe aksesuarları:** scroll (açılan parşömen), column (sütun), hourglass (akan kum saati), quill (tüy kalem), crown (taç), laurel (defne çelengi),
+portrait (isim plakalı portre, `"text"`), chain (zincir, `"broken": true`), scales (terazi, `"left"` / `"right"` etiketleri).
+
 ## İmza tarz (izlenme süresi için)
 Ayrıntılar ve kaynaklar: [`arastirma-izlenme.md`](arastirma-izlenme.md)
 - **Anlatıcı karakter "Mo":** lavanta renkli yuvarlak gövde, büyük ifadeli gözler, makarna kollar, beyaz eldivenler, turuncu atkı, fikir anında yanan anten.

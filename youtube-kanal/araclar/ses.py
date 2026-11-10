@@ -86,7 +86,48 @@ def _note(midi):
     return 440.0 * 2 ** ((midi - 69) / 12)
 
 
-def music(total, bpm=88, seed=1):
+def ambient(total, seed=2):
+    """Felsefe/tarih için sakin, sinematik altyapı: yaylı pad + seyrek piyano + derin drone (Dm - Bb - F - C)."""
+    n = int(total * SR) + SR
+    out = np.zeros(n, dtype=np.float32)
+    bar = 60 / 66 * 4
+    chords = [[50, 57, 62, 65], [46, 53, 58, 62], [41, 53, 57, 60], [48, 55, 60, 64]]
+    rng = np.random.default_rng(seed)
+    t0, bi = 0.0, 0
+    seg_len = bar * 2
+    while t0 < total:
+        ch = chords[bi % 4]
+        t = _t(seg_len + 1.5)
+        pad = np.zeros_like(t, dtype=np.float64)
+        for m in ch[1:]:
+            f = _note(m)
+            for det in (-0.12, 0.0, 0.13):  # hafif akortsuzluk = yaylı sıcaklığı
+                ff = f * 2 ** (det / 12)
+                pad += np.sin(2 * np.pi * ff * t) + 0.35 * np.sin(4 * np.pi * ff * t) + 0.12 * np.sin(6 * np.pi * ff * t)
+        pad *= (0.6 + 0.4 * np.sin(2 * np.pi * 0.15 * t)) * _env(len(t), 1.4, 1.6) * 0.022
+        drone = np.sin(2 * np.pi * _note(ch[0] - 12) * t) * _env(len(t), 1.0, 1.5) * 0.09
+        seg = (pad + drone).astype(np.float32)
+        for k in range(4):  # seyrek piyano
+            if rng.random() < 0.75:
+                m = ch[rng.integers(1, 4)] + 12
+                tt = _t(3.0)
+                f = _note(m)
+                pl = (np.sin(2 * np.pi * f * tt) + 0.4 * np.sin(4 * np.pi * f * tt) + 0.15 * np.sin(6 * np.pi * f * tt))
+                pl *= np.exp(-tt * 1.6) * _env(len(tt), 0.005, 0.3) * 0.06
+                i = int((k * seg_len / 4 + rng.uniform(0, 0.3)) * SR)
+                seg[i:i + len(pl)] += pl[:len(seg) - i]
+        a = int(t0 * SR)
+        out[a:a + len(seg)] += seg[:n - a]
+        t0 += seg_len
+        bi += 1
+    out = _lowpass(out, 5)[:int(total * SR)]
+    out *= _env(len(out), 1.0, 1.5)
+    return out / (np.max(np.abs(out)) + 1e-9)
+
+
+def music(total, bpm=88, seed=1, style="lofi"):
+    if style == "ambient":
+        return ambient(total)
     n = int(total * SR) + SR
     out = np.zeros(n, dtype=np.float32)
     beat = 60 / bpm

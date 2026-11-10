@@ -24,6 +24,7 @@ from PIL import Image, ImageDraw, ImageFont
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import arkaplan as ab  # noqa: E402
 import karakter  # noqa: E402
+import theo  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONT_PATH = os.path.join(ROOT, "fonts", "Kalam-Bold.ttf")
@@ -188,12 +189,38 @@ class Pen:
 
 _font_cache = {}
 
+# Temalar: renkler, yazı tipi, müzik, karakter
+THEMES = {
+    "playful": dict(font="Kalam-Bold.ttf", font_hi="Kalam-Bold.ttf", swipe=[(255, 201, 60), (255, 107, 91), (46, 196, 182),
+                    (120, 110, 230)], stars=True, badge=(255, 107, 91), cap_box=(20, 20, 25, 185), cap_key=(255, 120, 100),
+                    cap_cur=(255, 205, 50), music="lofi", character="mo", bar=(255, 201, 60)),
+    "academia": dict(font="Merriweather.ttf", font_hi="TiroDevanagariHindi-Regular.ttf",
+                     swipe=[(120, 30, 45), (35, 80, 62), (32, 45, 82), (165, 125, 55)], stars=False, badge=(130, 32, 48),
+                     cap_box=(28, 20, 16, 200), cap_key=(240, 175, 120), cap_cur=(255, 214, 110), music="ambient", cap_scale=0.84,
+                     character="theo", bar=(200, 160, 70)),
+}
+CUR = {"theme": THEMES["playful"], "lang": "en"}
+
 
 def font(size):
     size = int(size)
-    if size not in _font_cache:
-        _font_cache[size] = ImageFont.truetype(FONT_PATH, size)
-    return _font_cache[size]
+    th = CUR["theme"]
+    path = os.path.join(ROOT, "fonts", th["font_hi"] if CUR["lang"] == "hi" else th["font"])
+    key = (path, size)
+    if key not in _font_cache:
+        f = ImageFont.truetype(path, size)
+        try:
+            axes = f.get_variation_axes()
+            vals = []
+            for ax in axes:
+                n = ax["name"]
+                n = n.decode() if isinstance(n, bytes) else n
+                vals.append({"Weight": 800, "Width": 100}.get(n, max(ax["minimum"], min(ax["maximum"], size * 0.4))))
+            f.set_variation_by_axes(vals)
+        except Exception:
+            pass
+        _font_cache[key] = f
+    return _font_cache[key]
 
 
 def text_center(draw, xy, text, size, fill=INK, stroke=0, stroke_fill=INK, max_w=None):
@@ -458,6 +485,106 @@ def draw_prop(pen, spec, c, s, t, lang):
         pen.line([(x - dirx * w / 2 + off, y), (x + dirx * w / 2 + off, y)], w=int(pen.lw * 1.2))
         pen.line([(x + dirx * (w / 2 - 0.35 * S) + off, y - 0.35 * S), (x + dirx * w / 2 + off, y),
                   (x + dirx * (w / 2 - 0.35 * S) + off, y + 0.35 * S)], w=int(pen.lw * 1.2))
+    elif kind == "scroll":
+        w, h = 2.2 * S, 1.3 * S
+        unroll = min(1.0, 0.25 + t / 0.6)
+        ww = w * unroll
+        pen.rrect([x - ww / 2, y - h / 2, x + ww / 2, y + h / 2], int(0.05 * S), fill=(240, 222, 180))
+        for i in range(4):
+            yy = y - h / 2 + 0.3 * S + i * 0.22 * S
+            if ww > 0.8 * S:
+                d.line([(x - ww / 2 + 0.25 * S, yy), (x + ww / 2 - 0.25 * S - (i % 2) * 0.3 * S, yy)], fill=(140, 110, 80),
+                       width=max(2, int(5 * s)))
+        for sx in (-1, 1):
+            pen.rrect([x + sx * ww / 2 - 0.16 * S, y - h / 2 - 0.12 * S, x + sx * ww / 2 + 0.16 * S, y + h / 2 + 0.12 * S],
+                      int(0.12 * S), fill=(200, 170, 120))
+        if spec.get("text"):
+            text_center(d, (x, y), prop_text(spec, lang), 0.42 * S, fill=(90, 60, 40), max_w=ww * 0.8)
+    elif kind == "column":
+        w, h = 0.55 * S, 2.2 * S
+        pen.rrect([x - w / 2, y - h / 2 + 0.25 * S, x + w / 2, y + h / 2 - 0.2 * S], 0, fill=(235, 228, 212))
+        for i in range(1, 4):
+            fx = x - w / 2 + i * w / 4
+            d.line([(fx, y - h / 2 + 0.3 * S), (fx, y + h / 2 - 0.25 * S)], fill=(190, 180, 160), width=max(2, int(4 * s)))
+        pen.rrect([x - w * 0.8, y - h / 2, x + w * 0.8, y - h / 2 + 0.25 * S], int(0.05 * S), fill=(235, 228, 212))
+        pen.rrect([x - w * 0.75, y + h / 2 - 0.2 * S, x + w * 0.75, y + h / 2], 0, fill=(235, 228, 212))
+    elif kind == "hourglass":
+        w, h = 1.0 * S, 1.6 * S
+        k = min(1.0, t / 4.0)
+        pen.rrect([x - w * 0.6, y - h / 2 - 0.12 * S, x + w * 0.6, y - h / 2 + 0.04 * S], int(0.04 * S), fill=(130, 85, 50))
+        pen.rrect([x - w * 0.6, y + h / 2 - 0.04 * S, x + w * 0.6, y + h / 2 + 0.12 * S], int(0.04 * S), fill=(130, 85, 50))
+        top_sand = (1 - k) * 0.85
+        d.polygon([(x - w / 2 * top_sand, y - h * 0.05 - h * 0.4 * top_sand), (x + w / 2 * top_sand, y - h * 0.05 - h * 0.4 * top_sand),
+                   (x, y - h * 0.03)], fill=(230, 190, 110))
+        d.polygon([(x - w / 2 * 0.85, y + h / 2 - 0.05 * S), (x + w / 2 * 0.85, y + h / 2 - 0.05 * S),
+                   (x, y + h / 2 - 0.05 * S - h * 0.38 * (0.15 + 0.85 * k))], fill=(230, 190, 110))
+        if k < 1:
+            d.line([(x, y - h * 0.03), (x, y + h / 2 - 0.1 * S)], fill=(230, 190, 110), width=max(2, int(4 * s)))
+        pen.line([(x - w / 2, y - h / 2), (x - 0.08 * S, y), (x - w / 2, y + h / 2)], color=(90, 70, 60), w=int(pen.lw * 0.6))
+        pen.line([(x + w / 2, y - h / 2), (x + 0.08 * S, y), (x + w / 2, y + h / 2)], color=(90, 70, 60), w=int(pen.lw * 0.6))
+    elif kind == "quill":
+        ang = math.radians(-35 + 8 * math.sin(t * 6))
+        L_ = 1.9 * S
+        tipx, tipy = x - math.sin(ang) * L_ / 2, y + math.cos(ang) * L_ / 2
+        topx, topy = x + math.sin(ang) * L_ / 2, y - math.cos(ang) * L_ / 2
+        nx_, ny_ = math.cos(ang) * 0.32 * S, math.sin(ang) * 0.32 * S
+        midx, midy = (tipx + topx) / 2, (tipy + topy) / 2
+        pen.poly([(tipx, tipy), (midx - nx_, midy - ny_), (topx, topy), (midx + nx_ * 0.6, midy + ny_ * 0.6)], fill=(245, 242, 235))
+        pen.line([(tipx, tipy), (topx, topy)], color=(120, 100, 80), w=int(pen.lw * 0.5))
+        d.ellipse([tipx - 0.08 * S, tipy - 0.08 * S, tipx + 0.08 * S, tipy + 0.08 * S], fill=(30, 30, 40))
+    elif kind == "crown":
+        w, h = 1.8 * S, 1.0 * S
+        pts = [(x - w / 2, y + h / 2), (x - w / 2, y - h / 4), (x - w / 4, y + h / 8), (x, y - h / 2), (x + w / 4, y + h / 8),
+               (x + w / 2, y - h / 4), (x + w / 2, y + h / 2)]
+        pen.poly(pts, fill=(235, 185, 60))
+        for gx_, gc in ((x - w / 3, RED), (x, BLUE), (x + w / 3, GREEN)):
+            d.ellipse([gx_ - 0.1 * S, y + h / 4 - 0.1 * S, gx_ + 0.1 * S, y + h / 4 + 0.1 * S], fill=gc, outline=INK, width=2)
+    elif kind == "laurel":
+        r = 0.9 * S
+        for side in (-1, 1):
+            for i in range(7):
+                a = math.radians(200 - i * 22) if side < 0 else math.radians(-20 + i * 22)
+                lx_, ly_ = x + math.cos(a) * r * side * (-1 if side < 0 else 1), y + math.sin(a) * r * 0.9
+                lx_ = x + side * abs(math.cos(a)) * r
+                ly_ = y - math.sin(math.radians(i * 22 - 40)) * r * 0.9
+                d.ellipse([lx_ - 0.18 * S, ly_ - 0.1 * S, lx_ + 0.18 * S, ly_ + 0.1 * S], fill=(110, 150, 70), outline=INK, width=2)
+        if spec.get("text"):
+            text_center(d, (x, y), prop_text(spec, lang), 0.55 * S, fill=INK, max_w=1.4 * S)
+    elif kind == "portrait":
+        w, h = 1.7 * S, 2.1 * S
+        pen.rrect([x - w / 2, y - h / 2, x + w / 2, y + h / 2], int(0.05 * S), fill=(190, 145, 70))
+        d.rectangle([x - w / 2 + 0.16 * S, y - h / 2 + 0.16 * S, x + w / 2 - 0.16 * S, y + h / 2 - 0.5 * S], fill=(225, 210, 180))
+        hx_, hy_ = x, y - 0.35 * S
+        d.ellipse([hx_ - 0.32 * S, hy_ - 0.4 * S, hx_ + 0.32 * S, hy_ + 0.35 * S], fill=(110, 90, 75))
+        d.chord([x - 0.6 * S, hy_ + 0.3 * S, x + 0.6 * S, y + h / 2 - 0.2 * S], 180, 360, fill=(110, 90, 75))
+        d.rectangle([x - w / 2 + 0.16 * S, y + h / 2 - 0.52 * S, x + w / 2 - 0.16 * S, y + h / 2 - 0.16 * S], fill=(60, 40, 30))
+        if spec.get("text"):
+            text_center(d, (x, y + h / 2 - 0.34 * S), prop_text(spec, lang), 0.26 * S, fill=(235, 200, 120), max_w=w - 0.4 * S)
+    elif kind == "chain":
+        n = 5
+        for i in range(n):
+            cx_ = x - 1.0 * S + i * 0.5 * S
+            cy_ = y + 0.08 * S * math.sin(t * 3 + i)
+            if i % 2 == 0:
+                d.ellipse([cx_ - 0.32 * S, cy_ - 0.2 * S, cx_ + 0.32 * S, cy_ + 0.2 * S], outline=(120, 120, 130), width=int(pen.lw * 0.9))
+            else:
+                d.ellipse([cx_ - 0.3 * S, cy_ - 0.08 * S, cx_ + 0.3 * S, cy_ + 0.08 * S], outline=(150, 150, 160), width=int(pen.lw * 0.9))
+        if spec.get("broken") and t > 0.5:
+            d.line([(x - 0.15 * S, y - 0.3 * S), (x + 0.15 * S, y + 0.3 * S)], fill=RED, width=int(pen.lw))
+    elif kind == "scales":
+        tilt = 0.25 * math.sin(min(t, 1.5) * 2) * spec.get("tilt", 1)
+        pen.line([(x, y - 0.9 * S), (x, y + 0.9 * S)], w=int(pen.lw * 0.8))
+        pen.line([(x - 0.5 * S, y + 0.9 * S), (x + 0.5 * S, y + 0.9 * S)], w=int(pen.lw * 0.8))
+        lx_, ly_ = x - 1.1 * S, y - 0.75 * S + tilt * S
+        rx_, ry_ = x + 1.1 * S, y - 0.75 * S - tilt * S
+        pen.line([(lx_, ly_), (rx_, ry_)], w=int(pen.lw * 0.8))
+        for (px, py), lbl in (((lx_, ly_), spec.get("left")), ((rx_, ry_), spec.get("right"))):
+            pen.line([(px, py), (px - 0.35 * S, py + 0.6 * S)], w=int(pen.lw * 0.4))
+            pen.line([(px, py), (px + 0.35 * S, py + 0.6 * S)], w=int(pen.lw * 0.4))
+            d.chord([px - 0.45 * S, py + 0.4 * S, px + 0.45 * S, py + 0.85 * S], 0, 180, fill=(220, 180, 80), outline=INK, width=3)
+            if lbl:
+                txt = lbl.get(lang, lbl.get("en")) if isinstance(lbl, dict) else lbl
+                text_center(d, (px, py + 1.15 * S), txt, 0.3 * S, fill=INK, max_w=1.2 * S)
     else:
         raise ValueError(f"Bilinmeyen aksesuar: {kind}")
 
@@ -487,7 +614,8 @@ def tts(text, lang, speed):
     if _kokoro is None:
         from kokoro_onnx import Kokoro
         _kokoro = Kokoro(os.path.join(MODEL_DIR, "kokoro-v1.0.onnx"), os.path.join(MODEL_DIR, "voices-v1.0.bin"))
-    cfg = LANGS[lang]
+    cfg = dict(LANGS[lang])
+    cfg["voice"] = CUR.get("voices", {}).get(lang, cfg["voice"])
     text = text.replace("*", "")
     samples, sr = _kokoro.create(text, voice=cfg["voice"], speed=speed, lang=cfg["kokoro"])
     assert sr == SR
@@ -637,7 +765,7 @@ def final_mix(voice, events, use_music):
         place(fx, sfx(name, seed=k), at, gain)
     out += fx * 0.8
     if use_music:
-        m = music(len(voice) / SR)
+        m = music(len(voice) / SR, style=CUR["theme"]["music"])
         m = m[:len(voice)]
         out[:len(m)] += duck(m, voice) * 0.13
     peak = np.max(np.abs(out))
@@ -701,7 +829,10 @@ def draw_swipe(img, F, u, color):
     for k in range(5):  # bandın üzerinde yıldız karalamaları
         yy = H * (0.15 + 0.17 * k)
         xx = cx + skew * (1 - 2 * yy / H) + (k % 2 - 0.5) * bw * 0.4
-        ab.doodle_star(d, xx, yy, 30 * F["sc"], (255, 255, 255), max(2, int(4 * F["sc"])))
+        if CUR["theme"]["stars"]:
+            ab.doodle_star(d, xx, yy, 30 * F["sc"], (255, 255, 255), max(2, int(4 * F["sc"])))
+        else:  # ince altın çizgi
+            d.line([(cx + skew * 0.9 - bw * 0.35, 0), (cx - skew * 0.9 - bw * 0.35, H)], fill=(215, 175, 85), width=lw // 2)
 
 
 def draw_badge(img, F, text, cap_box=None):
@@ -717,7 +848,7 @@ def draw_badge(img, F, text, cap_box=None):
         y0 = cap_box[1] - h * 0.72
     else:
         x0, y0 = 40, 30
-    d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=int(h * 0.45), fill=BRAND[1], outline=INK,
+    d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=int(h * 0.45), fill=CUR["theme"]["badge"], outline=INK,
                         width=max(3, int(5 * F["sc"])))
     d.text((x0 + w / 2, y0 + h / 2), text, font=f, fill="white", anchor="mm", stroke_width=2, stroke_fill=INK)
 
@@ -826,14 +957,19 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
             ab.deco(name, d, F, lt, font, fig_c)
         mouth = float(env[fi]) if env is not None and fi < len(env) else 0.0
         glow = pname in ("idea", "celebrate") or expr == "happy"
-        if F.get("character", "mo") == "stick":
+        if F.get("character") == "stick":
             anchors = draw_figure(pen, p, expr, F["fig_x"], F["hip_y"], sc_, mouth, t=t, glow=glow)
         else:
             cs = sc_ * 1.08
             ground = F["hip_y"] + 292 * sc_
             face = (F["fig_x"], ground - 95 * cs - 0.67 * 390 * cs)
             blink = (t % 3.7) < 0.11 or ((t + 1.3) % 5.9) < 0.1
-            anchors = karakter.draw_character(img, p, expr, F["fig_x"], ground, cs, mouth, t, glow=glow,
+            drawer = theo if F.get("character") == "theo" else karakter
+            if drawer is theo:
+                cs = sc_ * 0.82
+                face = (F["fig_x"], ground - 640 * cs)
+                glow = pname == "idea"
+            anchors = drawer.draw_character(img, p, expr, F["fig_x"], ground, cs, mouth, t, glow=glow,
                                               look=look_dir(scene, pname, lt, F, face), blink=blink,
                                               talking=env is not None and mouth > 0.05)
         for j, spec in enumerate(scene.get("props", [])):
@@ -853,22 +989,26 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
                 b = spans[i][0]
                 u = (t - (b - SWIPE / 2)) / SWIPE
                 if 0 <= u <= 1:
-                    draw_swipe(img, F, u, BRAND[i % len(BRAND)])
+                    sw = CUR["theme"]["swipe"]
+                    draw_swipe(img, F, u, sw[i % len(sw)])
 
         cap_box = None
         if captions:
             for a, b, txt in captions:
                 if a <= t < b:
-                    cap_box = ab.draw_caption(img, F, t, a, b, txt, font)
+                    th = CUR["theme"]
+                    Fc = dict(F, cap_size=F["cap_size"] * th.get("cap_scale", 1.0))
+                    cap_box = ab.draw_caption(img, Fc, t, a, b, txt, font, highlight=th["cap_cur"], key=th["cap_key"],
+                                              box=th["cap_box"])
                     break
         if badges and scene.get("badge"):
             btxt = scene["badge"].get(lang) if isinstance(scene["badge"], dict) else scene["badge"]
             if btxt and lt > 0.15:
-                draw_badge(img, F, btxt, cap_box)
+                draw_badge(img, dict(F, cap_size=F["cap_size"] * CUR["theme"].get("cap_scale", 1.0)), btxt, cap_box)
         if H < W:  # uzun video: üstte ilerleme çubuğu
             dd = ImageDraw.Draw(img)
             dd.rectangle([0, 0, W, 8], fill=(230, 225, 215))
-            dd.rectangle([0, 0, W * t / total, 8], fill=BRAND[0])
+            dd.rectangle([0, 0, W * t / total, 8], fill=CUR["theme"]["bar"])
         ff.stdin.write(img.tobytes())
         if fi % (FPS * 5) == 0:
             print(f"  video [{lang}]: {t:5.1f}/{total:.1f} sn", flush=True)
@@ -912,7 +1052,9 @@ def main():
             sys.exit(f"Desteklenmeyen dil: {lg}. Desteklenen: {', '.join(LANGS)}")
     for sc in data["scenes"]:
         sc.setdefault("bg", data.get("bg", "room"))
-    F = dict(F, character=data.get("character", "mo"))
+    CUR["theme"] = THEMES[data.get("theme", "playful")]
+    CUR["voices"] = data.get("voices", {})
+    F = dict(F, character=data.get("character", CUR["theme"]["character"]))
     slug = data.get("slug") or os.path.splitext(os.path.basename(args.senaryo))[0]
     outdir = os.path.join(args.cikti, slug)
     os.makedirs(outdir, exist_ok=True)
@@ -930,6 +1072,7 @@ def main():
 
     if args.mod == "ayri":
         for lang in langs:
+            CUR["lang"] = lang
             spans, total = layout(timeline, lambda au, lg=lang: len(au[lg]) / SR, data.get("loop", False))
             voice = mix_audio(timeline, spans, total, lang)
             caps = []
@@ -946,6 +1089,7 @@ def main():
     else:
         spans, total = layout(timeline, lambda au: max(len(a) for a in au.values()) / SR, data.get("loop", False))
         base = os.path.join(outdir, f"{slug}_{fmt}_coklu")
+        CUR["lang"] = langs[0]
         events = sfx_events(timeline, spans)
         main_audio = final_mix(mix_audio(timeline, spans, total, langs[0]), events, use_music)
         render_video(base, timeline, spans, total, F, langs[0], main_audio, None, None, badges=False)

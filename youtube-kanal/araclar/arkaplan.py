@@ -360,7 +360,7 @@ def word_times(start, end, text):
 KEY = (255, 120, 100)
 
 
-def draw_caption(img, F, t, start, end, text, font_fn, highlight=(255, 205, 50)):
+def draw_caption(img, F, t, start, end, text, font_fn, highlight=(255, 205, 50), key=None, box=(20, 20, 25, 185)):
     """Kutu içinde altyazı: anahtar kelimeler mercan rengi, söylenen kelime sarı ve zıplar."""
     d = ImageDraw.Draw(img, "RGBA")
     wt = word_times(start, end, text)
@@ -392,7 +392,7 @@ def draw_caption(img, F, t, start, end, text, font_fn, highlight=(255, 205, 50))
     box_h = lh * len(lines) + pad * 1.2
     cx, cy = F["w"] / 2, F["cap_y"]
     y0 = cy - box_h / 2
-    d.rounded_rectangle([cx - box_w / 2, y0, cx + box_w / 2, y0 + box_h], radius=int(size * 0.35), fill=(20, 20, 25, 185))
+    d.rounded_rectangle([cx - box_w / 2, y0, cx + box_w / 2, y0 + box_h], radius=int(size * 0.35), fill=box)
     stroke = max(2, int(size * 0.07))
     for li, (idxs, lw) in enumerate(lines):
         x = cx - lw / 2
@@ -402,10 +402,177 @@ def draw_caption(img, F, t, start, end, text, font_fn, highlight=(255, 205, 50))
             if i == cur:
                 col, dy = highlight, -size * 0.06
             else:
-                col, dy = (KEY if kw else (255, 255, 255)), 0
+                col, dy = ((key or KEY) if kw else (255, 255, 255)), 0
             if kw:  # anahtar kelimenin altına fosforlu kalem çizgisi
                 d.rounded_rectangle([x - 4, y + asc * 0.78, x + widths[i] + 4, y + asc * 0.98],
-                                    radius=6, fill=(255, 120, 100, 150))
+                                    radius=6, fill=(*(key or KEY), 150))
             d.text((x, y + dy), words[i], font=f, fill=col, stroke_width=stroke, stroke_fill=(15, 15, 15))
             x += widths[i] + space
     return (cx - box_w / 2, y0, cx + box_w / 2, y0 + box_h)
+
+
+# --------------------------------------------------------------------------- #
+# Akademi teması (felsefe / tarih): kütüphane, çalışma odası, agora, parşömen
+# --------------------------------------------------------------------------- #
+def _vignette(img, strength=0.38):
+    W, H = img.size
+    y, x = np.ogrid[0:H, 0:W]
+    r = np.sqrt(((x - W / 2) / (W / 2)) ** 2 + ((y - H / 2) / (H / 2)) ** 2)
+    k = 1 - strength * np.clip(r - 0.55, 0, 1) ** 1.5
+    arr = np.asarray(img).astype(np.float32) * k[..., None]
+    return Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8))
+
+
+def _bookshelf(d, x0, y0, x1, y1, seed, s):
+    rng = random.Random(seed)
+    wood, dark = (110, 70, 45), (80, 50, 32)
+    d.rectangle([x0, y0, x1, y1], fill=(60, 38, 26))
+    shelf_h = 150 * s
+    y = y0 + 12 * s
+    cols = [(130, 40, 45), (40, 70, 60), (45, 55, 95), (150, 110, 50), (95, 60, 40), (120, 90, 110), (70, 85, 60)]
+    while y + shelf_h < y1:
+        x = x0 + 10 * s
+        while x < x1 - 30 * s:
+            bw = rng.uniform(18, 34) * s
+            bh = rng.uniform(0.62, 0.92) * shelf_h
+            c = rng.choice(cols)
+            if rng.random() < 0.08:  # yatık kitap yığını
+                for k in range(3):
+                    d.rectangle([x, y + shelf_h - 22 * s * (k + 1), x + 90 * s, y + shelf_h - 22 * s * k], fill=rng.choice(cols),
+                                outline=dark, width=2)
+                x += 100 * s
+                continue
+            d.rectangle([x, y + shelf_h - bh, x + bw, y + shelf_h], fill=c, outline=_darker(c, 0.6), width=2)
+            d.line([(x + 3 * s, y + shelf_h - bh + 12 * s), (x + bw - 3 * s, y + shelf_h - bh + 12 * s)], fill=(200, 170, 90), width=2)
+            x += bw + rng.uniform(0, 4) * s
+        y += shelf_h
+        d.rectangle([x0, y - 6 * s, x1, y + 8 * s], fill=wood, outline=dark, width=2)
+    d.rectangle([x0, y0, x1, y1], outline=dark, width=int(10 * s))
+
+
+def _column(d, x, y_top, y_bot, w, color=(232, 225, 210)):
+    shade = _darker(color, 0.82)
+    d.rectangle([x - w / 2, y_top + 40, x + w / 2, y_bot - 30], fill=color)
+    for k in range(1, 6):
+        fx = x - w / 2 + k * w / 6
+        d.line([(fx, y_top + 45), (fx, y_bot - 35)], fill=shade, width=max(2, int(w / 40)))
+    d.rectangle([x - w * 0.7, y_top, x + w * 0.7, y_top + 40], fill=color, outline=shade, width=3)
+    d.ellipse([x - w * 0.8, y_top + 5, x - w * 0.45, y_top + 38], fill=color, outline=shade, width=3)
+    d.ellipse([x + w * 0.45, y_top + 5, x + w * 0.8, y_top + 38], fill=color, outline=shade, width=3)
+    d.rectangle([x - w * 0.65, y_bot - 30, x + w * 0.65, y_bot], fill=color, outline=shade, width=3)
+
+
+def build_academia(kind, F):
+    W, H, sc = F["w"], F["h"], F["sc"]
+    S = slots(F)
+    fl, s = S["floor"], S["s"]
+    img = Image.new("RGB", (W, H), (235, 225, 205))
+    d = ImageDraw.Draw(img)
+    if kind == "library":
+        _vgrad(d, (0, 0, W, fl), (70, 50, 40), (95, 68, 50))
+        if H > W:
+            _bookshelf(d, -20, 360 * sc, W * 0.36, fl, 1, sc)
+            _bookshelf(d, W * 0.64, 360 * sc, W + 20, fl, 2, sc)
+        else:
+            _bookshelf(d, -20, 80, W * 0.26, fl, 1, sc)
+            _bookshelf(d, W * 0.74, 80, W + 20, fl, 2, sc)
+        d.rectangle([0, fl, W, H], fill=(120, 40, 40))  # halı
+        for y in range(int(fl) + 30, H, 46):
+            d.line([(0, y), (W, y)], fill=(140, 55, 50), width=4)
+        d.rectangle([0, fl - 8, W, fl + 10], fill=(90, 58, 38))
+    elif kind == "study":
+        _vgrad(d, (0, 0, W, fl), (60, 78, 70), (78, 98, 86))  # koyu yeşil duvar
+        for x in range(0, W, 120):
+            d.line([(x, 0), (x, fl)], fill=(70, 90, 80), width=3)
+        d.rectangle([0, fl, W, H], fill=(100, 66, 44))
+        for i, y in enumerate(range(int(fl) + 50, H, 64)):
+            d.line([(0, y), (W, y)], fill=(85, 55, 36), width=3)
+        lx, ly = S["left_low"]
+        # masa + mum + küre
+        d.rectangle([lx - 120 * s, ly - 230 * s, lx + 170 * s, ly - 205 * s], fill=(120, 78, 50), outline=(70, 45, 30), width=4)
+        d.line([(lx - 100 * s, ly - 205 * s), (lx - 100 * s, ly)], fill=(70, 45, 30), width=int(14 * s))
+        d.line([(lx + 150 * s, ly - 205 * s), (lx + 150 * s, ly)], fill=(70, 45, 30), width=int(14 * s))
+        gx, gy = lx + 60 * s, ly - 300 * s
+        d.ellipse([gx - 60 * s, gy - 60 * s, gx + 60 * s, gy + 60 * s], fill=(70, 120, 150), outline=(60, 45, 30), width=4)
+        d.arc([gx - 75 * s, gy - 75 * s, gx + 75 * s, gy + 75 * s], 120, 420, fill=(190, 150, 70), width=int(6 * s))
+        d.polygon([(gx - 30 * s, gy - 20 * s), (gx + 10 * s, gy - 40 * s), (gx + 25 * s, gy + 10 * s), (gx - 10 * s, gy + 25 * s)],
+                  fill=(150, 160, 100))
+        d.line([(gx, gy + 75 * s), (gx, ly - 230 * s)], fill=(60, 45, 30), width=int(8 * s))
+        rx, ry = S["right_high"]
+        # çerçeveli harita
+        d.rectangle([rx - 130 * s, ry - 100 * s, rx + 130 * s, ry + 100 * s], fill=(225, 205, 160), outline=(110, 75, 40), width=int(12 * s))
+        rng = random.Random(4)
+        for _ in range(4):
+            cx_, cy_ = rx + rng.uniform(-80, 80) * s, ry + rng.uniform(-50, 50) * s
+            d.ellipse([cx_ - 35 * s, cy_ - 22 * s, cx_ + 35 * s, cy_ + 22 * s], outline=(140, 110, 70), width=3)
+        hx, hy = S["left_high"]
+        _bookshelf(d, hx - 120 * s, hy - 60 * s, hx + 120 * s, hy + 100 * s, 7, sc * 0.6)
+    elif kind == "agora":
+        _vgrad(d, (0, 0, W, fl), (120, 170, 215), (235, 225, 200))
+        # uzak tepeler ve tapınak
+        d.ellipse([-W * 0.3, fl - 260 * sc, W * 0.7, fl + 300 * sc], fill=(170, 175, 140))
+        d.ellipse([W * 0.4, fl - 200 * sc, W * 1.3, fl + 300 * sc], fill=(155, 165, 130))
+        tx = W * (0.8 if H > W else 0.85)
+        tw = 300 * sc
+        d.polygon([(tx - tw / 2 - 20, fl - 300 * sc), (tx, fl - 380 * sc), (tx + tw / 2 + 20, fl - 300 * sc)], fill=(225, 218, 200),
+                  outline=(180, 170, 150), width=3)
+        for k in range(5):
+            _column(d, tx - tw / 2 + 25 + k * (tw - 50) / 4, fl - 300 * sc, fl - 150 * sc, 22 * sc)
+        d.rectangle([0, fl - 150 * sc, W, fl], fill=(200, 190, 165))
+        d.rectangle([0, fl, W, H], fill=(215, 200, 170))
+        for x in range(0, W, 140):
+            d.line([(x, fl), (x - 60, H)], fill=(195, 180, 150), width=3)
+        for y in range(int(fl) + 60, H, 80):
+            d.line([(0, y), (W, y)], fill=(195, 180, 150), width=3)
+        lx = S["left_low"][0]
+        rx = S["right_low"][0]
+        _column(d, lx, fl - 720 * s, fl, 90 * s)
+        _column(d, rx, fl - 720 * s, fl, 90 * s)
+        # zeytin dalı
+        ox, oy = W * 0.5, fl - 150 * sc
+    elif kind == "parchment":
+        d.rectangle([0, 0, W, H], fill=(232, 212, 170))
+        arr = np.asarray(img).astype(np.int16)
+        rng = np.random.default_rng(3)
+        from PIL import ImageFilter
+        blot = Image.fromarray((rng.random((H // 40 + 1, W // 40 + 1)) * 255).astype(np.uint8)).resize((W, H), Image.BICUBIC)
+        blot = blot.filter(ImageFilter.GaussianBlur(40))
+        b = np.asarray(blot).astype(np.int16)[..., None]
+        arr = arr - ((b - 128) * 0.12).astype(np.int16) - np.array([0, 4, 10], dtype=np.int16)
+        img = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8))
+        d = ImageDraw.Draw(img)
+        # harita çizgileri, pusula
+        rr = random.Random(9)
+        for _ in range(6):
+            x0, y0 = rr.uniform(0, W), rr.uniform(0, H)
+            pts = [(x0 + k * 40 * sc, y0 + 30 * sc * math.sin(k * 0.7 + rr.random())) for k in range(14)]
+            d.line(pts, fill=(170, 140, 100), width=3, joint="curve")
+        cx_, cy_ = W * 0.82, H * (0.88 if H > W else 0.8)
+        r = 80 * sc
+        d.ellipse([cx_ - r, cy_ - r, cx_ + r, cy_ + r], outline=(140, 100, 60), width=4)
+        for a in range(4):
+            ang = a * math.pi / 2
+            d.polygon([(cx_ + math.cos(ang) * r * 1.2, cy_ + math.sin(ang) * r * 1.2),
+                       (cx_ + math.cos(ang + 0.5) * r * 0.25, cy_ + math.sin(ang + 0.5) * r * 0.25),
+                       (cx_ + math.cos(ang - 0.5) * r * 0.25, cy_ + math.sin(ang - 0.5) * r * 0.25)], fill=(140, 100, 60))
+        d.line([(F["fig_x"] - 320 * sc, fl), (F["fig_x"] + 320 * sc, fl)], fill=(150, 115, 80), width=int(6 * sc))
+    elif kind == "night":
+        _vgrad(d, (0, 0, W, H), (20, 25, 50), (60, 50, 80))
+        rng = random.Random(2)
+        for _ in range(int(W * H / 9000)):
+            x, y = rng.uniform(0, W), rng.uniform(0, fl)
+            r = rng.choice([1, 1, 2, 3])
+            d.ellipse([x - r, y - r, x + r, y + r], fill=(255, 250, 220))
+        d.ellipse([W * 0.75, H * 0.08, W * 0.75 + 130 * sc, H * 0.08 + 130 * sc], fill=(245, 235, 200))
+        d.rectangle([0, fl, W, H], fill=(40, 40, 55))
+    return _vignette(_grain(img, 5))
+
+
+ACADEMIA_BGS = ("library", "study", "agora", "parchment", "night")
+_orig_build = build_static
+
+
+def build_static(kind, F):  # noqa: F811
+    if kind in ACADEMIA_BGS:
+        return build_academia(kind, F)
+    return _orig_build(kind, F)

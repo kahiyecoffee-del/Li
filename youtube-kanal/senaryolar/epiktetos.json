@@ -1,0 +1,344 @@
+{
+  "slug": "epiktetos",
+  "format": "short",
+  "theme": "academia",
+  "loop": true,
+  "languages": [
+    "en",
+    "es",
+    "pt",
+    "hi"
+  ],
+  "voices": {
+    "en": "bm_george"
+  },
+  "meta": {
+    "en": {
+      "title": "The Slave Who Taught an Emperor How to Live #shorts",
+      "description": "Epictetus was born a slave, never wrote a book — and still shaped Marcus Aurelius. His one idea: the dichotomy of control.\n\nSources: Epictetus, Enchiridion 1; Discourses (recorded by Arrian); Marcus Aurelius, Meditations 1.7.\n\n#philosophy #stoicism #history #epictetus",
+      "tags": [
+        "epictetus",
+        "stoicism",
+        "philosophy",
+        "marcus aurelius",
+        "history",
+        "dichotomy of control",
+        "stoic"
+      ]
+    },
+    "es": {
+      "title": "El esclavo que enseñó a un emperador a vivir #shorts",
+      "description": "Epicteto nació esclavo, nunca escribió un libro y aun así marcó a Marco Aurelio. Su idea: la dicotomía del control.\n\nFuentes: Epicteto, Enquiridión 1; Disertaciones (Arriano); Marco Aurelio, Meditaciones 1.7.\n\n#filosofia #estoicismo #historia",
+      "tags": [
+        "epicteto",
+        "estoicismo",
+        "filosofía",
+        "marco aurelio",
+        "historia"
+      ]
+    },
+    "pt": {
+      "title": "O escravo que ensinou um imperador a viver #shorts",
+      "description": "Epicteto nasceu escravo, nunca escreveu um livro e mesmo assim influenciou Marco Aurélio. Sua ideia: a dicotomia do controle.\n\nFontes: Epicteto, Encheirídion 1; Diatribes (Arriano); Marco Aurélio, Meditações 1.7.\n\n#filosofia #estoicismo #historia",
+      "tags": [
+        "epicteto",
+        "estoicismo",
+        "filosofia",
+        "marco aurélio",
+        "história"
+      ]
+    },
+    "hi": {
+      "title": "वो गुलाम जिसने सम्राट को जीना सिखाया #shorts",
+      "description": "एपिक्टेटस गुलाम पैदा हुआ, कभी कोई किताब नहीं लिखी — फिर भी मार्कस ऑरेलियस पर गहरा असर डाला। उसका विचार: क्या हमारे हाथ में है और क्या नहीं।\n\n#philosophy #stoicism #history",
+      "tags": [
+        "epictetus hindi",
+        "stoicism hindi",
+        "philosophy",
+        "marcus aurelius",
+        "इतिहास"
+      ]
+    }
+  },
+  "scenes": [
+    {
+      "pose": "point_right",
+      "bg": "agora",
+      "punch": true,
+      "props": [
+        {
+          "type": "chain",
+          "pos": "left",
+          "size": 1.0
+        },
+        {
+          "type": "crown",
+          "pos": "right",
+          "size": 0.9,
+          "delay": 0.9
+        }
+      ],
+      "say": {
+        "en": "A *slave* taught a Roman *emperor* how to live.",
+        "es": "Un *esclavo* le enseñó a un *emperador* romano a vivir.",
+        "pt": "Um *escravo* ensinou um *imperador* romano a viver.",
+        "hi": "एक *गुलाम* ने एक रोमन *सम्राट* को जीना सिखाया।"
+      }
+    },
+    {
+      "pose": "talk",
+      "bg": "parchment",
+      "badge": {
+        "en": "~50 AD",
+        "es": "~50 d.C.",
+        "pt": "~50 d.C.",
+        "hi": "~50 ई."
+      },
+      "props": [
+        {
+          "type": "portrait",
+          "pos": "center",
+          "size": 1.0,
+          "text": {
+            "en": "EPICTETUS",
+            "es": "EPICTETO",
+            "pt": "EPICTETO",
+            "hi": "एपिक्टेटस"
+          }
+        }
+      ],
+      "say": {
+        "en": "His name was *Epictetus*. Born around fifty AD, he was owned by a secretary of Emperor Nero.",
+        "es": "Se llamaba *Epicteto*. Nació hacia el año cincuenta, y era propiedad de un secretario del emperador Nerón.",
+        "pt": "Seu nome era *Epicteto*. Nasceu por volta do ano cinquenta, e pertencia a um secretário do imperador Nero.",
+        "hi": "उसका नाम था *एपिक्टेटस*। लगभग पचास ईस्वी में जन्मा, वह सम्राट नीरो के एक सचिव का गुलाम था।"
+      }
+    },
+    {
+      "pose": "sad",
+      "bg": "study",
+      "props": [
+        {
+          "type": "chain",
+          "pos": "center",
+          "size": 1.0
+        }
+      ],
+      "say": {
+        "en": "Legend says his master twisted his leg until it broke.",
+        "es": "Cuenta la leyenda que su amo le torció la pierna hasta romperla.",
+        "pt": "Diz a lenda que seu dono torceu sua perna até quebrá-la.",
+        "hi": "कहते हैं, उसके मालिक ने उसकी टांग तब तक मरोड़ी जब तक वह टूट न गई।"
+      }
+    },
+    {
+      "pose": "shrug",
+      "expr": "neutral",
+      "bg": "study",
+      "props": [
+        {
+          "type": "bubble",
+          "pos": "center",
+          "size": 1.0,
+          "text": {
+            "en": "I told you.",
+            "es": "Te lo dije.",
+            "pt": "Eu avisei.",
+            "hi": "मैंने कहा था।"
+          }
+        }
+      ],
+      "say": {
+        "en": "Epictetus only said: *I told you it would break*.",
+        "es": "Epicteto solo dijo: *te dije que se rompería*.",
+        "pt": "Epicteto apenas disse: *eu avisei que ia quebrar*.",
+        "hi": "एपिक्टेटस ने बस इतना कहा: *मैंने कहा था, यह टूट जाएगी*।"
+      }
+    },
+    {
+      "pose": "think",
+      "bg": "library",
+      "props": [
+        {
+          "type": "question",
+          "pos": "center",
+          "size": 1.0
+        }
+      ],
+      "say": {
+        "en": "How can anyone stay that calm? He followed *one idea*. Emperors and prisoners of war have used it for two thousand years.",
+        "es": "¿Cómo puede alguien estar tan tranquilo? Seguía *una sola idea*. Emperadores y prisioneros de guerra la han usado durante dos mil años.",
+        "pt": "Como alguém fica tão calmo? Ele seguia *uma única ideia*. Imperadores e prisioneiros de guerra a usam há dois mil anos.",
+        "hi": "कोई इतना शांत कैसे रह सकता है? वह *एक ही विचार* पर चलता था। सम्राटों और युद्धबंदियों ने दो हज़ार साल से इसे अपनाया है।"
+      }
+    },
+    {
+      "pose": "point_right",
+      "bg": "library",
+      "badge": {
+        "en": "THE IDEA",
+        "es": "LA IDEA",
+        "pt": "A IDEIA",
+        "hi": "विचार"
+      },
+      "props": [
+        {
+          "type": "scales",
+          "pos": "center",
+          "size": 1.0,
+          "left": {
+            "en": "mine",
+            "es": "mío",
+            "pt": "meu",
+            "hi": "मेरा"
+          },
+          "right": {
+            "en": "not mine",
+            "es": "no mío",
+            "pt": "não meu",
+            "hi": "मेरा नहीं"
+          }
+        }
+      ],
+      "say": {
+        "en": "Some things are *up to us*: our judgments, our choices, our actions.",
+        "es": "Algunas cosas *dependen de nosotros*: nuestros juicios, decisiones y acciones.",
+        "pt": "Algumas coisas *dependem de nós*: nossos julgamentos, escolhas e ações.",
+        "hi": "कुछ चीज़ें *हमारे हाथ में* हैं: हमारी सोच, हमारे फ़ैसले, हमारे कर्म।"
+      }
+    },
+    {
+      "pose": "point_left",
+      "bg": "library",
+      "badge": {
+        "en": "THE IDEA",
+        "es": "LA IDEA",
+        "pt": "A IDEIA",
+        "hi": "विचार"
+      },
+      "props": [
+        {
+          "type": "cross",
+          "pos": "center",
+          "size": 0.9
+        }
+      ],
+      "say": {
+        "en": "Everything else is *not*: our body, our reputation, what other people do.",
+        "es": "Todo lo demás *no*: nuestro cuerpo, nuestra reputación, lo que hacen los demás.",
+        "pt": "Todo o resto *não*: nosso corpo, nossa reputação, o que os outros fazem.",
+        "hi": "बाकी सब *नहीं*: हमारा शरीर, हमारी इज़्ज़त, दूसरे लोग क्या करते हैं।"
+      }
+    },
+    {
+      "pose": "talk",
+      "bg": "night",
+      "props": [
+        {
+          "type": "hourglass",
+          "pos": "center",
+          "size": 1.0
+        }
+      ],
+      "say": {
+        "en": "We suffer when we fight what we *cannot control*.",
+        "es": "Sufrimos cuando luchamos contra lo que *no podemos controlar*.",
+        "pt": "Sofremos quando lutamos contra o que *não podemos controlar*.",
+        "hi": "हम तब दुखी होते हैं जब उससे लड़ते हैं जिसे हम *काबू नहीं कर सकते*।"
+      }
+    },
+    {
+      "pose": "talk",
+      "bg": "agora",
+      "props": [
+        {
+          "type": "quill",
+          "pos": "left",
+          "size": 0.9
+        },
+        {
+          "type": "cross",
+          "pos": "right",
+          "size": 0.6,
+          "delay": 1.2
+        }
+      ],
+      "say": {
+        "en": "He was later freed, taught philosophy, and was banished by Emperor Domitian. He never *wrote* a single book.",
+        "es": "Más tarde fue liberado, enseñó filosofía y fue desterrado por el emperador Domiciano. Nunca *escribió* un libro.",
+        "pt": "Mais tarde foi libertado, ensinou filosofia e foi exilado pelo imperador Domiciano. Nunca *escreveu* um livro.",
+        "hi": "बाद में वह आज़ाद हुआ, दर्शन पढ़ाया, और सम्राट डोमिशियन ने उसे देश से निकाल दिया। उसने एक भी किताब *नहीं लिखी*।"
+      }
+    },
+    {
+      "pose": "read",
+      "bg": "study",
+      "props": [
+        {
+          "type": "scroll",
+          "pos": "center",
+          "size": 1.0,
+          "text": {
+            "en": "Discourses",
+            "es": "Disertaciones",
+            "pt": "Diatribes",
+            "hi": "प्रवचन"
+          }
+        }
+      ],
+      "say": {
+        "en": "His student *Arrian* wrote his lessons down.",
+        "es": "Su alumno *Arriano* escribió sus lecciones.",
+        "pt": "Seu aluno *Arriano* registrou suas lições.",
+        "hi": "उसके शिष्य *एरियन* ने उसकी शिक्षाएँ लिख लीं।"
+      }
+    },
+    {
+      "pose": "idea",
+      "bg": "parchment",
+      "punch": true,
+      "props": [
+        {
+          "type": "portrait",
+          "pos": "center",
+          "size": 1.0,
+          "text": {
+            "en": "MARCUS AURELIUS",
+            "es": "MARCO AURELIO",
+            "pt": "MARCO AURÉLIO",
+            "hi": "मार्कस ऑरेलियस"
+          }
+        }
+      ],
+      "say": {
+        "en": "And the future emperor *Marcus Aurelius* read those notes, and quoted him in his own private journal.",
+        "es": "Y el futuro emperador *Marco Aurelio* leyó esas notas y lo citó en su diario personal.",
+        "pt": "E o futuro imperador *Marco Aurélio* leu essas anotações e o citou em seu diário pessoal.",
+        "hi": "और भविष्य के सम्राट *मार्कस ऑरेलियस* ने वे नोट्स पढ़े, और अपनी निजी डायरी में उसे उद्धृत किया।"
+      }
+    },
+    {
+      "pose": "point_right",
+      "bg": "library",
+      "props": [
+        {
+          "type": "bigtext",
+          "pos": "center",
+          "size": 0.75,
+          "text": {
+            "en": "UP TO ME?",
+            "es": "¿DEPENDE DE MÍ?",
+            "pt": "DEPENDE DE MIM?",
+            "hi": "मेरे हाथ में?"
+          }
+        }
+      ],
+      "say": {
+        "en": "So next time something upsets you, ask: is this *up to me*? Because that is how...",
+        "es": "Así que la próxima vez que algo te altere, pregúntate: ¿esto *depende de mí*? Porque así es como...",
+        "pt": "Então, da próxima vez que algo te abalar, pergunte: isso *depende de mim*? Porque foi assim que...",
+        "hi": "तो अगली बार कुछ परेशान करे, तो पूछो: क्या यह *मेरे हाथ में* है? क्योंकि इसी तरह..."
+      }
+    }
+  ]
+}
