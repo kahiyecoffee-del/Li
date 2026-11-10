@@ -8,18 +8,32 @@ Senaryoda `"theme"` alanı:
 | Tema | Karakter | Yazı tipi | Müzik | Arka planlar |
 |---|---|---|---|---|
 | `academia` (felsefe/tarih) | **Theo**: gözlüklü, sakallı, tüvit ceketli; 2.5D "kil" gölgelendirme | Merriweather (Hintçe: Tiro Devanagari) | sinematik ambient | library, study, agora, parchment, night |
-| `playful` | **Mo**: yuvarlak maskot | Kalam (el yazısı) | lo-fi | room, office, park, city, notebook |
+| `playful` | çöp adam | Kalam (el yazısı) | lo-fi | room, office, park, city, notebook |
 
-Karakteri ayrıca seçmek için: `"character": "theo" | "mo" | "stick"`. Sesi dil başına değiştirmek için: `"voices": {"en": "bm_george"}` (İngiliz aksanlı erkek sesi).
+Karakteri ayrıca seçmek için: `"character": "theo" | "stick"`. Sesi dil başına değiştirmek için: `"voices": {"en": "bm_george"}` (İngiliz aksanlı erkek sesi).
 
 **Tarih/felsefe aksesuarları:** scroll (açılan parşömen), column (sütun), hourglass (akan kum saati), quill (tüy kalem), crown (taç), laurel (defne çelengi),
 portrait (isim plakalı portre, `"text"`), chain (zincir, `"broken": true`), scales (terazi, `"left"` / `"right"` etiketleri).
 
+## Sahne görselleri (tarihî tablolar, heykeller)
+Wikimedia Commons'tan **yalnızca serbest lisanslı** (kamu malı, CC0, CC BY, CC BY-SA) görseller kullanılır.
+```bash
+python3 araclar/gorsel.py ara "Marcus Aurelius bust"            # ✔ = lisans uygun
+python3 araclar/gorsel.py indir "File:Head Marcus Aurelius archmus Heraklion.jpg"
+```
+Sahnede: `"image": {"file": "File:...", "label": "Marcus Aurelius · Heraklion", "focus": [0.5, 0.4], "move": "in|out|left|right"}`.
+Görsel tam ekran gösterilir: yavaş yakınlaşma/kaydırma (Ken Burns), sıcak renk tonu, film kumlanması, vinyet.
+Geniş tablolar dikey videoda çerçeveli ve bulanık arka planla gösterilir. Atıf satırları açıklamaya otomatik eklenir.
+Not: Çıplaklık içeren tablolardan kaçın (YouTube yaş sınırı koyabilir).
+
+## Abone ol hatırlatması
+```json
+"subscribe": {"after": 4, "bg": "library", "say": {"en": "Quick favor: ... *subscribe* ..."}}
+```
+`after` numaralı sahneden sonra kısa bir sahne eklenir: imleç gelir, kırmızı düğmeye tıklar, düğme "SUBSCRIBED ✓" olur, zil çalar (tık + zil sesiyle).
+
 ## İmza tarz (izlenme süresi için)
 Ayrıntılar ve kaynaklar: [`arastirma-izlenme.md`](arastirma-izlenme.md)
-- **Anlatıcı karakter "Mo":** lavanta renkli yuvarlak gövde, büyük ifadeli gözler, makarna kollar, beyaz eldivenler, turuncu atkı, fikir anında yanan anten.
-  Seslendirmeyle ağzı oynar, göz kırpar, yeni beliren nesneye 1 sn bakar (izleyicinin dikkatini oraya çeker).
-  Eski çöp adam için senaryoya `"character": "stick"` yaz.
 - **Çizilerek belirme:** nesneler kalem ucuyla çizilerek gelir, kalem cızırtısı sesiyle
 - **Geçişler:** renkli bant süpürmesi ve "whoosh" sesi
 - **Kamera:** yavaş yaklaşma, vurgulu kelimede hafif zıplama, `"punch": true` sahnede vuruş, şok pozunda sarsıntı

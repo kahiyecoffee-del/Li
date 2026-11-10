@@ -23,7 +23,6 @@ from PIL import Image, ImageDraw, ImageFont
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import arkaplan as ab  # noqa: E402
-import karakter  # noqa: E402
 import theo  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -193,7 +192,7 @@ _font_cache = {}
 THEMES = {
     "playful": dict(font="Kalam-Bold.ttf", font_hi="Kalam-Bold.ttf", swipe=[(255, 201, 60), (255, 107, 91), (46, 196, 182),
                     (120, 110, 230)], stars=True, badge=(255, 107, 91), cap_box=(20, 20, 25, 185), cap_key=(255, 120, 100),
-                    cap_cur=(255, 205, 50), music="lofi", character="mo", bar=(255, 201, 60)),
+                    cap_cur=(255, 205, 50), music="lofi", character="stick", bar=(255, 201, 60)),
     "academia": dict(font="Merriweather.ttf", font_hi="TiroDevanagariHindi-Regular.ttf",
                      swipe=[(120, 30, 45), (35, 80, 62), (32, 45, 82), (165, 125, 55)], stars=False, badge=(130, 32, 48),
                      cap_box=(28, 20, 16, 200), cap_key=(240, 175, 120), cap_cur=(255, 214, 110), music="ambient", cap_scale=0.84,
@@ -485,6 +484,40 @@ def draw_prop(pen, spec, c, s, t, lang):
         pen.line([(x - dirx * w / 2 + off, y), (x + dirx * w / 2 + off, y)], w=int(pen.lw * 1.2))
         pen.line([(x + dirx * (w / 2 - 0.35 * S) + off, y - 0.35 * S), (x + dirx * w / 2 + off, y),
                   (x + dirx * (w / 2 - 0.35 * S) + off, y + 0.35 * S)], w=int(pen.lw * 1.2))
+    elif kind == "subscribe":
+        txt_a = {"en": "SUBSCRIBE", "es": "SUSCRIBIRSE", "pt": "INSCREVER-SE", "hi": "सब्सक्राइब", "fr": "S'ABONNER",
+                 "it": "ISCRIVITI"}.get(lang, "SUBSCRIBE")
+        txt_b = {"en": "SUBSCRIBED", "es": "SUSCRITO", "pt": "INSCRITO", "hi": "सब्सक्राइब्ड", "fr": "ABONNÉ",
+                 "it": "ISCRITTO"}.get(lang, "SUBSCRIBED")
+        click = spec.get("click", 1.1)
+        done = t >= click
+        press = 0.92 if click <= t < click + 0.12 else 1.0
+        w, h = 3.4 * S * press, 0.9 * S * press
+        col = (90, 90, 95) if done else (220, 30, 35)
+        pen.rrect([x - w / 2, y - h / 2, x + w / 2, y + h / 2], int(h / 2), fill=col)
+        text_center(d, (x - 0.25 * S if done else x, y), txt_b if done else txt_a, 0.42 * S, fill="white", max_w=w - 0.9 * S)
+        if done:
+            pen.line([(x + w / 2 - 0.62 * S, y), (x + w / 2 - 0.48 * S, y + 0.14 * S), (x + w / 2 - 0.25 * S, y - 0.16 * S)],
+                     color="white", w=int(pen.lw * 0.6))
+        # zil
+        bx, by = x + w / 2 + 0.75 * S, y
+        wig = 0.35 * math.sin((t - click) * 30) * math.exp(-(t - click) * 3) if done else 0
+        bell = []
+        for k in range(13):
+            a = math.pi + math.pi * k / 12
+            bell.append((bx + math.cos(a) * 0.32 * S, by - 0.05 * S + math.sin(a) * 0.38 * S))
+        bell += [(bx + 0.42 * S, by + 0.28 * S), (bx - 0.42 * S, by + 0.28 * S)]
+        ca, sa = math.cos(wig), math.sin(wig)
+        bell = [(bx + (px - bx) * ca - (py - by) * sa, by + (px - bx) * sa + (py - by) * ca) for px, py in bell]
+        pen.poly(bell, fill=(255, 205, 60) if done else (235, 235, 235))
+        d.ellipse([bx - 0.08 * S, by + 0.28 * S, bx + 0.08 * S, by + 0.42 * S], fill=INK)
+        # imleç: gelir ve tıklar
+        if t < click + 0.5:
+            k = ease(min(1.0, t / max(click - 0.1, 0.1)))
+            cx_, cy_ = x + 1.6 * S * (1 - k) + 0.3 * S, y + 1.4 * S * (1 - k) + 0.15 * S
+            hand = [(cx_, cy_), (cx_, cy_ + 0.55 * S), (cx_ + 0.14 * S, cy_ + 0.42 * S), (cx_ + 0.26 * S, cy_ + 0.66 * S),
+                    (cx_ + 0.34 * S, cy_ + 0.62 * S), (cx_ + 0.23 * S, cy_ + 0.39 * S), (cx_ + 0.42 * S, cy_ + 0.39 * S)]
+            pen.poly(hand, fill="white")
     elif kind == "scroll":
         w, h = 2.2 * S, 1.3 * S
         unroll = min(1.0, 0.25 + t / 0.6)
@@ -752,6 +785,11 @@ def sfx_events(timeline, spans):
             if spec["type"] == "clock":
                 for k in range(4):
                     ev.append(("tick", at + 0.5 + k * 0.5, 0.5))
+        for spec in sc.get("props", []):
+            if spec["type"] == "subscribe":
+                at = st + spec.get("delay", 0.0) + spec.get("click", 1.1)
+                ev.append(("click", at, 0.8))
+                ev.append(("ding", at + 0.1, 0.5))
         for e in sc.get("sfx", []):
             ev.append((e["name"], st + e.get("at", 0.0), e.get("gain", 0.6)))
     return ev
@@ -853,6 +891,108 @@ def draw_badge(img, F, text, cap_box=None):
     d.text((x0 + w / 2, y0 + h / 2), text, font=f, fill="white", anchor="mm", stroke_width=2, stroke_fill=INK)
 
 
+# --------------------------------------------------------------------------- #
+# Sahne görselleri: tarihî tablo/fotoğraf + Ken Burns + film dokusu
+# --------------------------------------------------------------------------- #
+_img_cache = {}
+_grain_tiles = {}
+
+
+def _grade(im, theme):
+    arr = np.asarray(im.convert("RGB")).astype(np.float32)
+    if theme == "academia":  # sıcak, hafif sepya, kontrast
+        lum = arr.mean(axis=2, keepdims=True)
+        sep = np.concatenate([lum * 1.07, lum * 0.97, lum * 0.82], axis=2)
+        arr = arr * 0.72 + sep * 0.28
+        arr = (arr - 128) * 1.08 + 128
+    return Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8))
+
+
+def cutaway_source(spec, F):
+    """Sahne görselini hazırlar: (kaynak_görüntü, mod)."""
+    key = (spec["file"], F["w"], F["h"])
+    if key in _img_cache:
+        return _img_cache[key]
+    import gorsel
+    path, info = gorsel.fetch(spec["file"])
+    im = _grade(Image.open(path), "academia" if CUR["theme"] is THEMES["academia"] else "")
+    W, H = F["w"], F["h"]
+    ar_img, ar_frame = im.width / im.height, W / H
+    mode = spec.get("fit") or ("contain" if max(ar_img / ar_frame, ar_frame / ar_img) > 1.6 else "cover")
+    if mode == "cover":
+        sc_ = max(W / im.width, H / im.height) * 1.25
+        src = im.resize((int(im.width * sc_), int(im.height * sc_)), Image.LANCZOS)
+        bg = None
+    else:  # bulanık arka plan + çerçeveli tablo
+        sc_ = min(W * 0.94 / im.width, H * 0.6 / im.height)
+        src = im.resize((int(im.width * sc_), int(im.height * sc_)), Image.LANCZOS)
+        from PIL import ImageFilter, ImageEnhance
+        cov = max(W / im.width, H / im.height) * 1.1
+        bg = im.resize((int(im.width * cov), int(im.height * cov)), Image.BILINEAR)
+        bg = bg.crop(((bg.width - W) // 2, (bg.height - H) // 2, (bg.width - W) // 2 + W, (bg.height - H) // 2 + H))
+        bg = ImageEnhance.Brightness(bg.filter(ImageFilter.GaussianBlur(40))).enhance(0.45)
+    _img_cache[key] = (src, mode, bg, info)
+    return _img_cache[key]
+
+
+def render_cutaway(spec, F, lt, dur, t):
+    W, H = F["w"], F["h"]
+    src, mode, bg, info = cutaway_source(spec, F)
+    u = min(1.0, max(0.0, lt / max(dur, 0.1)))
+    move = spec.get("move", "in")
+    fx, fy = spec.get("focus", [0.5, 0.4])
+    if mode == "cover":
+        z = 1.0 + 0.12 * (u if move != "out" else 1 - u)
+        cw, ch = W * 1.0 / (src.width / (W * 1.25)) / z / 1.0, None
+        # görünen pencere (kaynak piksel cinsinden)
+        base = min(src.width / W, src.height / H)
+        cw, ch = W * base / z, H * base / z
+        cx = fx * src.width
+        cy = fy * src.height
+        if move == "left":
+            cx += (0.5 - u) * cw * 0.2
+        elif move == "right":
+            cx -= (0.5 - u) * cw * 0.2
+        x0 = min(max(cx - cw / 2, 0), src.width - cw)
+        y0 = min(max(cy - ch / 2, 0), src.height - ch)
+        img = src.resize((W, H), Image.BILINEAR, box=(x0, y0, x0 + cw, y0 + ch))
+    else:
+        img = bg.copy()
+        z = 1.0 + 0.06 * u
+        pw, ph = int(src.width * z), int(src.height * z)
+        pic = src.resize((pw, ph), Image.BILINEAR)
+        px, py = (W - pw) // 2, int(H * 0.5 - ph / 2)
+        d = ImageDraw.Draw(img)
+        fr = int(14 * F["sc"])
+        d.rectangle([px - fr, py - fr, px + pw + fr, py + ph + fr], fill=(150, 115, 55))
+        d.rectangle([px - fr // 3, py - fr // 3, px + pw + fr // 3, py + ph + fr // 3], fill=(60, 42, 25))
+        img.paste(pic, (px, py))
+    # film dokusu: kumlanma + hafif titreme + vinyet
+    key = (W, H)
+    if key not in _grain_tiles:
+        rng = np.random.default_rng(5)
+        tiles = [rng.normal(0, 7, (H // 2, W // 2)).astype(np.float32) for _ in range(4)]
+        yy, xx = np.ogrid[0:H, 0:W]
+        r = np.sqrt(((xx - W / 2) / (W / 2)) ** 2 + ((yy - H / 2) / (H / 2)) ** 2)
+        vig = (1 - 0.45 * np.clip(r - 0.5, 0, 1) ** 1.4).astype(np.float32)
+        _grain_tiles[key] = (tiles, vig)
+    tiles, vig = _grain_tiles[key]
+    g = np.kron(tiles[int(t * 12) % 4], np.ones((2, 2), dtype=np.float32))[:H, :W]
+    flick = 1 + 0.015 * math.sin(t * 23) * math.sin(t * 7)
+    arr = np.asarray(img).astype(np.float32) * (vig * flick)[..., None] + g[..., None]
+    img = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8))
+    lbl = spec.get("label")
+    if lbl:
+        txt = lbl.get(CUR["lang"], lbl.get("en")) if isinstance(lbl, dict) else lbl
+        d = ImageDraw.Draw(img, "RGBA")
+        f = font(26 * F["sc"])
+        tw = d.textlength(txt, font=f)
+        y = H - (330 if H > W else 70) * F["sc"]
+        d.rectangle([30, y - 6, 30 + tw + 24, y + 30 * F["sc"] + 6], fill=(0, 0, 0, 120))
+        d.text((42, y), txt, font=f, fill=(235, 220, 190))
+    return img
+
+
 LOOK = {"point_right": (1, 0), "point_left": (-1, 0), "phone": (0.6, 0.9), "read": (0, 1), "idea": (0.3, -1),
         "think": (0.7, -0.8), "tired": (0, 0.6), "sad": (0, 0.7)}
 
@@ -945,6 +1085,36 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
             pp, _ = pose(prev_scene.get("pose", "talk"), lt + spans[scene_idx - 1][1])
             p = blend(pp, p, ease(lt / 0.3))
 
+        if scene.get("image"):
+            img = render_cutaway(scene["image"], F, lt, dur, t)
+            if scene.get("props"):
+                dim = scene["image"].get("dim", 0.3)
+                if dim:
+                    img = Image.blend(img, Image.new("RGB", img.size, (0, 0, 0)), dim)
+                for j, spec in enumerate(scene["props"]):
+                    render_prop(img, fi // 4 + j, spec, F, {}, lt, dur, lang)
+            z = camera_zoom(t, st, dur, dict(scene, punch=False), ())
+            img = apply_camera(img, F, 1 + (z - 1) * 0.5)
+            for i in (scene_idx, scene_idx + 1):
+                if 0 < i < len(spans):
+                    b = spans[i][0]
+                    u = (t - (b - SWIPE / 2)) / SWIPE
+                    if 0 <= u <= 1:
+                        sw = CUR["theme"]["swipe"]
+                        draw_swipe(img, F, u, sw[i % len(sw)])
+            if captions:
+                for a, b, txt in captions:
+                    if a <= t < b:
+                        th = CUR["theme"]
+                        Fc = dict(F, cap_size=F["cap_size"] * th.get("cap_scale", 1.0))
+                        cb = ab.draw_caption(img, Fc, t, a, b, txt, font, highlight=th["cap_cur"], key=th["cap_key"],
+                                             box=th["cap_box"])
+                        if badges and scene.get("badge") and lt > 0.15:
+                            bt = scene["badge"].get(lang) if isinstance(scene["badge"], dict) else scene["badge"]
+                            draw_badge(img, Fc, bt, cb)
+                        break
+            ff.stdin.write(img.tobytes())
+            continue
         kind = scene.get("bg", "room")
         if kind not in bg_cache:
             bg_cache[kind] = ab.build_static(kind, F)
@@ -964,12 +1134,10 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
             ground = F["hip_y"] + 292 * sc_
             face = (F["fig_x"], ground - 95 * cs - 0.67 * 390 * cs)
             blink = (t % 3.7) < 0.11 or ((t + 1.3) % 5.9) < 0.1
-            drawer = theo if F.get("character") == "theo" else karakter
-            if drawer is theo:
-                cs = sc_ * 0.82
-                face = (F["fig_x"], ground - 640 * cs)
-                glow = pname == "idea"
-            anchors = drawer.draw_character(img, p, expr, F["fig_x"], ground, cs, mouth, t, glow=glow,
+            cs = sc_ * 0.82
+            face = (F["fig_x"], ground - 640 * cs)
+            glow = pname == "idea"
+            anchors = theo.draw_character(img, p, expr, F["fig_x"], ground, cs, mouth, t, glow=glow,
                                               look=look_dir(scene, pname, lt, F, face), blink=blink,
                                               talking=env is not None and mouth > 0.05)
         for j, spec in enumerate(scene.get("props", [])):
@@ -1019,10 +1187,30 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
         sys.exit("ffmpeg hatası")
 
 
+def image_credits(scenes):
+    """Kullanılan sahne görsellerinin atıf satırları (CC BY / BY-SA için zorunlu)."""
+    import gorsel
+    lines, seen = [], set()
+    for sc in scenes:
+        f = (sc.get("image") or {}).get("file")
+        if f and f not in seen:
+            seen.add(f)
+            info = gorsel._db().get(f)
+            if info:
+                lines.append(gorsel.credit_line(info))
+    return lines
+
+
+CREDITS = []
+
+
 def write_notes(path, meta, lang, total):
     m = meta.get(lang, {})
+    desc = m.get("description", "")
+    if CREDITS:
+        desc += "\n\nImages (Wikimedia Commons):\n" + "\n".join("• " + c for c in CREDITS)
     with open(path, "w", encoding="utf-8") as f:
-        f.write(f"BAŞLIK:\n{m.get('title', '')}\n\nAÇIKLAMA:\n{m.get('description', '')}\n\n")
+        f.write(f"BAŞLIK:\n{m.get('title', '')}\n\nAÇIKLAMA:\n{desc}\n\n")
         f.write(f"ETİKETLER:\n{', '.join(m.get('tags', []))}\n\nSÜRE: {total:.1f} sn\n")
 
 
@@ -1050,11 +1238,20 @@ def main():
     for lg in langs:
         if lg not in LANGS:
             sys.exit(f"Desteklenmeyen dil: {lg}. Desteklenen: {', '.join(LANGS)}")
+    sub = data.get("subscribe")
+    if sub:  # ilk paragraftan sonra abone ol hatırlatması
+        pos = sub.get("after", 1)
+        data["scenes"].insert(pos, dict(pose=sub.get("pose", "point_right"), bg=sub.get("bg"), punch=False,
+                                        props=[dict(type="subscribe", pos="center", size=sub.get("size", 1.0),
+                                                    click=sub.get("click", 1.2))], say=sub["say"]))
     for sc in data["scenes"]:
+        if not sc.get("bg"):
+            sc.pop("bg", None)
         sc.setdefault("bg", data.get("bg", "room"))
     CUR["theme"] = THEMES[data.get("theme", "playful")]
     CUR["voices"] = data.get("voices", {})
     F = dict(F, character=data.get("character", CUR["theme"]["character"]))
+    CREDITS[:] = image_credits(data["scenes"])
     slug = data.get("slug") or os.path.splitext(os.path.basename(args.senaryo))[0]
     outdir = os.path.join(args.cikti, slug)
     os.makedirs(outdir, exist_ok=True)

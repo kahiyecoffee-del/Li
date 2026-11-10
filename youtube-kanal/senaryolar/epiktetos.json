@@ -65,24 +65,20 @@
       "pose": "point_right",
       "bg": "agora",
       "punch": true,
-      "props": [
-        {
-          "type": "chain",
-          "pos": "left",
-          "size": 1.0
-        },
-        {
-          "type": "crown",
-          "pos": "right",
-          "size": 0.9,
-          "delay": 0.9
-        }
-      ],
       "say": {
         "en": "A *slave* taught a Roman *emperor* how to live.",
         "es": "Un *esclavo* le enseñó a un *emperador* romano a vivir.",
         "pt": "Um *escravo* ensinou um *imperador* romano a viver.",
         "hi": "एक *गुलाम* ने एक रोमन *सम्राट* को जीना सिखाया।"
+      },
+      "image": {
+        "file": "File:Ancient statue of emperor Marcus Aurelius.jpg",
+        "label": "Marcus Aurelius · Capitoline Museums, Rome",
+        "focus": [
+          0.5,
+          0.42
+        ],
+        "move": "in"
       }
     },
     {
@@ -94,41 +90,39 @@
         "pt": "~50 d.C.",
         "hi": "~50 ई."
       },
-      "props": [
-        {
-          "type": "portrait",
-          "pos": "center",
-          "size": 1.0,
-          "text": {
-            "en": "EPICTETUS",
-            "es": "EPICTETO",
-            "pt": "EPICTETO",
-            "hi": "एपिक्टेटस"
-          }
-        }
-      ],
       "say": {
         "en": "His name was *Epictetus*. Born around fifty AD, he was owned by a secretary of Emperor Nero.",
         "es": "Se llamaba *Epicteto*. Nació hacia el año cincuenta, y era propiedad de un secretario del emperador Nerón.",
         "pt": "Seu nome era *Epicteto*. Nasceu por volta do ano cinquenta, e pertencia a um secretário do imperador Nero.",
         "hi": "उसका नाम था *एपिक्टेटस*। लगभग पचास ईस्वी में जन्मा, वह सम्राट नीरो के एक सचिव का गुलाम था।"
+      },
+      "image": {
+        "file": "File:Epictetus portrait from Les Morales de Plutarque, Sénèque, Socrate et Epictète, 1653, Indian ink.png",
+        "label": "Epictetus · ink portrait, 1653",
+        "focus": [
+          0.5,
+          0.35
+        ],
+        "move": "in"
       }
     },
     {
       "pose": "sad",
       "bg": "study",
-      "props": [
-        {
-          "type": "chain",
-          "pos": "center",
-          "size": 1.0
-        }
-      ],
       "say": {
         "en": "Legend says his master twisted his leg until it broke.",
         "es": "Cuenta la leyenda que su amo le torció la pierna hasta romperla.",
         "pt": "Diz a lenda que seu dono torceu sua perna até quebrá-la.",
         "hi": "कहते हैं, उसके मालिक ने उसकी टांग तब तक मरोड़ी जब तक वह टूट न गई।"
+      },
+      "image": {
+        "file": "File:Epictetus - from Voltaire's Romances translated from the French - 1889 edition.jpg",
+        "label": "Epictetus · illustration, 1889",
+        "focus": [
+          0.5,
+          0.45
+        ],
+        "move": "left"
       }
     },
     {
@@ -138,8 +132,12 @@
       "props": [
         {
           "type": "bubble",
-          "pos": "center",
+          "pos": [
+            0.5,
+            0.7
+          ],
           "size": 1.0,
+          "delay": 0.5,
           "text": {
             "en": "I told you.",
             "es": "Te lo dije.",
@@ -153,23 +151,35 @@
         "es": "Epicteto solo dijo: *te dije que se rompería*.",
         "pt": "Epicteto apenas disse: *eu avisei que ia quebrar*.",
         "hi": "एपिक्टेटस ने बस इतना कहा: *मैंने कहा था, यह टूट जाएगी*।"
+      },
+      "image": {
+        "file": "File:Epictetus - Henri Bonnart engraving c. 1700.png",
+        "label": "Epictetus · Henri Bonnart, c. 1700",
+        "focus": [
+          0.5,
+          0.3
+        ],
+        "move": "in",
+        "dim": 0.15
       }
     },
     {
       "pose": "think",
       "bg": "library",
-      "props": [
-        {
-          "type": "question",
-          "pos": "center",
-          "size": 1.0
-        }
-      ],
       "say": {
         "en": "How can anyone stay that calm? He followed *one idea*. Emperors and prisoners of war have used it for two thousand years.",
         "es": "¿Cómo puede alguien estar tan tranquilo? Seguía *una sola idea*. Emperadores y prisioneros de guerra la han usado durante dos mil años.",
         "pt": "Como alguém fica tão calmo? Ele seguia *uma única ideia*. Imperadores e prisioneiros de guerra a usam há dois mil anos.",
         "hi": "कोई इतना शांत कैसे रह सकता है? वह *एक ही विचार* पर चलता था। सम्राटों और युद्धबंदियों ने दो हज़ार साल से इसे अपनाया है।"
+      },
+      "image": {
+        "file": "File:The Death of Socrates MET 31.45 1.jpg",
+        "label": "Jacques-Louis David · The Death of Socrates, 1787",
+        "focus": [
+          0.5,
+          0.45
+        ],
+        "move": "right"
       }
     },
     {
@@ -184,8 +194,12 @@
       "props": [
         {
           "type": "scales",
-          "pos": "center",
-          "size": 1.0,
+          "pos": [
+            0.5,
+            0.7
+          ],
+          "size": 0.9,
+          "delay": 0.4,
           "left": {
             "en": "mine",
             "es": "mío",
@@ -205,6 +219,16 @@
         "es": "Algunas cosas *dependen de nosotros*: nuestros juicios, decisiones y acciones.",
         "pt": "Algumas coisas *dependem de nós*: nossos julgamentos, escolhas e ações.",
         "hi": "कुछ चीज़ें *हमारे हाथ में* हैं: हमारी सोच, हमारे फ़ैसले, हमारे कर्म।"
+      },
+      "image": {
+        "file": "File:Zeno of Citium2.jpg",
+        "label": "Zeno of Citium, founder of Stoicism",
+        "focus": [
+          0.5,
+          0.3
+        ],
+        "move": "in",
+        "dim": 0.35
       }
     },
     {
@@ -219,8 +243,12 @@
       "props": [
         {
           "type": "cross",
-          "pos": "center",
-          "size": 0.9
+          "pos": [
+            0.5,
+            0.7
+          ],
+          "size": 0.8,
+          "delay": 1.2
         }
       ],
       "say": {
@@ -228,93 +256,93 @@
         "es": "Todo lo demás *no*: nuestro cuerpo, nuestra reputación, lo que hacen los demás.",
         "pt": "Todo o resto *não*: nosso corpo, nossa reputação, o que os outros fazem.",
         "hi": "बाकी सब *नहीं*: हमारा शरीर, हमारी इज़्ज़त, दूसरे लोग क्या करते हैं।"
+      },
+      "image": {
+        "file": "File:Hovhannes Aivazovsky - The Ninth Wave - Google Art Project.jpg",
+        "label": "Ivan Aivazovsky · The Ninth Wave, 1850",
+        "focus": [
+          0.5,
+          0.5
+        ],
+        "move": "left",
+        "dim": 0.1
       }
     },
     {
       "pose": "talk",
       "bg": "night",
-      "props": [
-        {
-          "type": "hourglass",
-          "pos": "center",
-          "size": 1.0
-        }
-      ],
       "say": {
         "en": "We suffer when we fight what we *cannot control*.",
         "es": "Sufrimos cuando luchamos contra lo que *no podemos controlar*.",
         "pt": "Sofremos quando lutamos contra o que *não podemos controlar*.",
         "hi": "हम तब दुखी होते हैं जब उससे लड़ते हैं जिसे हम *काबू नहीं कर सकते*।"
+      },
+      "image": {
+        "file": "File:Titian - Sisyphus - Madrid - Prado.jpg",
+        "label": "Titian · Sisyphus, 1549",
+        "focus": [
+          0.5,
+          0.4
+        ],
+        "move": "in"
       }
     },
     {
       "pose": "talk",
       "bg": "agora",
-      "props": [
-        {
-          "type": "quill",
-          "pos": "left",
-          "size": 0.9
-        },
-        {
-          "type": "cross",
-          "pos": "right",
-          "size": 0.6,
-          "delay": 1.2
-        }
-      ],
       "say": {
         "en": "He was later freed, taught philosophy, and was banished by Emperor Domitian. He never *wrote* a single book.",
         "es": "Más tarde fue liberado, enseñó filosofía y fue desterrado por el emperador Domiciano. Nunca *escribió* un libro.",
         "pt": "Mais tarde foi libertado, ensinou filosofia e foi exilado pelo imperador Domiciano. Nunca *escreveu* um livro.",
         "hi": "बाद में वह आज़ाद हुआ, दर्शन पढ़ाया, और सम्राट डोमिशियन ने उसे देश से निकाल दिया। उसने एक भी किताब *नहीं लिखी*।"
+      },
+      "image": {
+        "file": "File:Claude Lorrain - Capriccio with ruins of the Roman Forum - Google Art Project.jpg",
+        "label": "Claude Lorrain · Roman Forum, 17th c.",
+        "focus": [
+          0.45,
+          0.5
+        ],
+        "move": "right"
       }
     },
     {
       "pose": "read",
       "bg": "study",
-      "props": [
-        {
-          "type": "scroll",
-          "pos": "center",
-          "size": 1.0,
-          "text": {
-            "en": "Discourses",
-            "es": "Disertaciones",
-            "pt": "Diatribes",
-            "hi": "प्रवचन"
-          }
-        }
-      ],
       "say": {
         "en": "His student *Arrian* wrote his lessons down.",
         "es": "Su alumno *Arriano* escribió sus lecciones.",
         "pt": "Seu aluno *Arriano* registrou suas lições.",
         "hi": "उसके शिष्य *एरियन* ने उसकी शिक्षाएँ लिख लीं।"
+      },
+      "image": {
+        "file": "File:Cover of The Discourses of Epictetus, circa 1887.png",
+        "label": "The Discourses of Epictetus · 1887 edition",
+        "focus": [
+          0.5,
+          0.35
+        ],
+        "move": "in"
       }
     },
     {
       "pose": "idea",
       "bg": "parchment",
-      "punch": true,
-      "props": [
-        {
-          "type": "portrait",
-          "pos": "center",
-          "size": 1.0,
-          "text": {
-            "en": "MARCUS AURELIUS",
-            "es": "MARCO AURELIO",
-            "pt": "MARCO AURÉLIO",
-            "hi": "मार्कस ऑरेलियस"
-          }
-        }
-      ],
+      "punch": false,
       "say": {
         "en": "And the future emperor *Marcus Aurelius* read those notes, and quoted him in his own private journal.",
         "es": "Y el futuro emperador *Marco Aurelio* leyó esas notas y lo citó en su diario personal.",
         "pt": "E o futuro imperador *Marco Aurélio* leu essas anotações e o citou em seu diário pessoal.",
         "hi": "और भविष्य के सम्राट *मार्कस ऑरेलियस* ने वे नोट्स पढ़े, और अपनी निजी डायरी में उसे उद्धृत किया।"
+      },
+      "image": {
+        "file": "File:Head Marcus Aurelius archmus Heraklion.jpg",
+        "label": "Marcus Aurelius · Heraklion Museum",
+        "focus": [
+          0.5,
+          0.38
+        ],
+        "move": "in"
       }
     },
     {
@@ -340,5 +368,16 @@
         "hi": "तो अगली बार कुछ परेशान करे, तो पूछो: क्या यह *मेरे हाथ में* है? क्योंकि इसी तरह..."
       }
     }
-  ]
+  ],
+  "subscribe": {
+    "after": 4,
+    "bg": "library",
+    "pose": "point_right",
+    "say": {
+      "en": "Quick favor: if you enjoy stories like this, *subscribe*. It really helps the channel.",
+      "es": "Un pequeño favor: si te gustan historias como esta, *suscríbete*. Ayuda mucho al canal.",
+      "pt": "Um pequeno favor: se você curte histórias assim, *inscreva-se*. Ajuda muito o canal.",
+      "hi": "एक छोटी सी गुज़ारिश: अगर ऐसी कहानियाँ पसंद हैं, तो *सब्सक्राइब* करो। इससे चैनल को बहुत मदद मिलती है।"
+    }
+  }
 }

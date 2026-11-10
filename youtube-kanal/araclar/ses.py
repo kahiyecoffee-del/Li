@@ -69,6 +69,10 @@ def sfx(name, seed=0):
         f = 110 * np.exp(-t * 9) + 45
         x = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t * 9)
         return (x * 0.9).astype(np.float32)
+    if name == "click":
+        t = _t(0.05)
+        x = _band_noise(0.05, 2000, 8000, seed) * np.exp(-t * 120) + np.sin(2 * np.pi * 1800 * t) * np.exp(-t * 90) * 0.5
+        return (x * 0.6).astype(np.float32)
     if name == "tick":
         t = _t(0.03)
         return (np.sin(2 * np.pi * 2400 * t) * np.exp(-t * 200) * 0.4).astype(np.float32)
