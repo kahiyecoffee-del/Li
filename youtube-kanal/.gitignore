@@ -4,3 +4,4 @@ __pycache__/
 # 100 MB üstü videolar GitHub limitini aşar; doğrudan paylaşılır
 cikti/solipsizm/*.mp4
 cikti/**/*.wav
+cikti/**/*_paylasim.mp4
