@@ -1221,6 +1221,8 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
                             draw_badge(img, Fc, bt, cb)
                         break
             ff.stdin.write(img.tobytes())
+            if fi % (FPS * 10) == 0:
+                print(f"  video [{lang}]: {t:5.1f}/{total:.1f} sn", flush=True)
             continue
         kind = scene.get("bg", "room")
         if kind not in bg_cache:

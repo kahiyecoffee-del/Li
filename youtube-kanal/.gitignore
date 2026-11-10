@@ -1,3 +1,6 @@
 modeller/
 __pycache__/
 *.wav
+# 100 MB üstü videolar GitHub limitini aşar; doğrudan paylaşılır
+cikti/solipsizm/*.mp4
+cikti/**/*.wav
