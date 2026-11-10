@@ -3,6 +3,16 @@
 Senaryo (JSON) → çok dilli seslendirme → çöp adam animasyonu → MP4 + altyazı + yükleme notları.
 Her şey ücretsiz ve yerel çalışır (API anahtarı gerekmez).
 
+## İmza tarz (izlenme süresi için)
+Ayrıntılar ve kaynaklar: [`arastirma-izlenme.md`](arastirma-izlenme.md)
+- **İmza karakter:** turuncu atkı, fikir anında yanan anten, pembe yanaklar
+- **Çizilerek belirme:** nesneler kalem ucuyla çizilerek gelir, kalem cızırtısı sesiyle
+- **Geçişler:** renkli bant süpürmesi ve "whoosh" sesi
+- **Kamera:** yavaş yaklaşma, vurgulu kelimede hafif zıplama, `"punch": true` sahnede vuruş, şok pozunda sarsıntı
+- **Ses:** koddan üretilen telifsiz lo-fi müzik (konuşmada otomatik kısılır), efektler (pop, ding, tik tak, boom), -14 LUFS
+- **Altyazı:** `*yıldızlı*` kelimeler mercan rengi ve fosforlu çizgili, söylenen kelime sarı. `"badge"` ile "RULE 1" sekmesi
+- **Döngü:** senaryoda `"loop": true` ise sonda boşluk kalmaz (Shorts'ta son cümle başa bağlanır)
+
 ## Kurulum (bir kez)
 ```bash
 ./kurulum.sh          # Python paketleri + ses modeli (~350 MB) + ffmpeg kontrolü
@@ -14,6 +24,7 @@ python3 araclar/video_uret.py senaryolar/2-dakika-kurali.json                 # 
 python3 araclar/video_uret.py senaryolar/2-dakika-kurali.json --diller en,es  # sadece bazı diller
 python3 araclar/video_uret.py senaryo.json --format long                      # 16:9 uzun video
 python3 araclar/video_uret.py senaryo.json --format long --mod coklu          # tek video + dil başına ses kanalı
+python3 araclar/video_uret.py senaryo.json --muziksiz                         # arka plan müziği olmadan
 ```
 Çıktılar `cikti/<senaryo>/` altına yazılır:
 - `*_<dil>.mp4`: altyazısı gömülü video
@@ -44,9 +55,10 @@ Türkçe bu ücretsiz modelde yok. Türkçe için ElevenLabs gibi bir servis ekl
   "slug": "video-adi", "format": "short", "languages": ["en", "es"],
   "meta": {"en": {"title": "...", "description": "...", "tags": ["..."]}},
   "scenes": [
-    {"pose": "talk", "bg": "park", "deco": ["sparkles"],
+    {"pose": "talk", "bg": "park", "deco": ["sparkles"], "punch": false, "badge": {"en": "RULE 1"},
+     "sfx": [{"name": "boing", "at": 0.5}],
      "props": [{"type": "bulb", "pos": "left", "size": 1.0, "delay": 0.3}],
-     "say": {"en": "Narration...", "es": "Narración..."}}
+     "say": {"en": "Narration with a *keyword*...", "es": "Narración con *palabra clave*..."}}
   ]
 }
 ```

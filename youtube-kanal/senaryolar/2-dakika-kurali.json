@@ -57,7 +57,33 @@
   },
   "scenes": [
     {
+      "pose": "shock",
+      "bg": "room",
+      "punch": true,
+      "props": [
+        {
+          "type": "bigtext",
+          "pos": "center",
+          "size": 1.1,
+          "color": "red",
+          "text": {
+            "en": "NOT LAZY",
+            "es": "NO ERES FLOJO",
+            "pt": "NÃO É PREGUIÇA",
+            "hi": "आलसी नहीं"
+          }
+        }
+      ],
+      "say": {
+        "en": "You're *not lazy*.",
+        "es": "*No eres flojo*.",
+        "pt": "Você *não é preguiçoso*.",
+        "hi": "तुम *आलसी नहीं* हो।"
+      }
+    },
+    {
       "pose": "tired",
+      "bg": "room",
       "props": [
         {
           "type": "mountain",
@@ -72,15 +98,32 @@
         }
       ],
       "say": {
-        "en": "You're not lazy. Your brain just hates big tasks.",
-        "es": "No eres flojo. Tu cerebro simplemente odia las tareas grandes.",
-        "pt": "Você não é preguiçoso. Seu cérebro só odeia tarefas grandes.",
-        "hi": "तुम आलसी नहीं हो। तुम्हारा दिमाग बस बड़े कामों से बचता है।"
-      },
-      "bg": "room"
+        "en": "Your brain just hates *big tasks*.",
+        "es": "Tu cerebro odia las *tareas grandes*.",
+        "pt": "Seu cérebro só odeia *tarefas grandes*.",
+        "hi": "तुम्हारा दिमाग बस *बड़े कामों* से बचता है।"
+      }
+    },
+    {
+      "pose": "think",
+      "bg": "room",
+      "props": [
+        {
+          "type": "brain",
+          "pos": "center",
+          "size": 1.3
+        }
+      ],
+      "say": {
+        "en": "A huge task feels *uncomfortable*...",
+        "es": "Una tarea enorme se siente *incómoda*...",
+        "pt": "Uma tarefa enorme é *desconfortável*...",
+        "hi": "बड़ा काम *बेचैनी* देता है..."
+      }
     },
     {
       "pose": "phone",
+      "bg": "room",
       "props": [
         {
           "type": "phone",
@@ -88,22 +131,28 @@
           "size": 0.45
         },
         {
-          "type": "brain",
+          "type": "bubble",
           "pos": "center",
-          "size": 1.3,
-          "delay": 0.2
+          "size": 1.0,
+          "delay": 0.6,
+          "text": {
+            "en": "just 5 min...",
+            "es": "solo 5 min...",
+            "pt": "só 5 min...",
+            "hi": "बस 5 मिनट..."
+          }
         }
       ],
       "say": {
-        "en": "When a task feels too big, it feels bad. So your brain grabs something easy... like your phone.",
-        "es": "Cuando una tarea parece enorme, se siente mal. Así que tu cerebro busca algo fácil... como tu teléfono.",
-        "pt": "Quando uma tarefa parece grande demais, dá um desconforto. Então seu cérebro procura algo fácil... como o celular.",
-        "hi": "जब कोई काम बहुत बड़ा लगता है, तो बुरा महसूस होता है। इसलिए दिमाग कुछ आसान ढूंढता है... जैसे तुम्हारा फ़ोन।"
-      },
-      "bg": "room"
+        "en": "So your brain escapes to something easy. Like your *phone*.",
+        "es": "Así que tu cerebro escapa a algo fácil. Como tu *teléfono*.",
+        "pt": "Então seu cérebro foge para algo fácil. Tipo o *celular*.",
+        "hi": "तो दिमाग किसी आसान चीज़ में भागता है। जैसे तुम्हारा *फ़ोन*।"
+      }
     },
     {
       "pose": "idea",
+      "bg": "office",
       "props": [
         {
           "type": "bulb",
@@ -113,49 +162,108 @@
         {
           "type": "bigtext",
           "pos": "right",
-          "size": 0.9,
+          "size": 0.8,
+          "delay": 0.3,
           "text": {
-            "en": "2 MIN",
-            "es": "2 MIN",
-            "pt": "2 MIN",
-            "hi": "2 मिनट"
-          },
-          "delay": 0.3
+            "en": "2 RULES",
+            "es": "2 REGLAS",
+            "pt": "2 REGRAS",
+            "hi": "2 नियम"
+          }
         }
       ],
       "say": {
-        "en": "The fix is simple. It's called the two-minute rule.",
-        "es": "La solución es simple. Se llama la regla de los dos minutos.",
-        "pt": "A solução é simples. Chama-se a regra dos dois minutos.",
-        "hi": "इसका हल आसान है। इसे दो मिनट का नियम कहते हैं।"
-      },
-      "bg": "office"
+        "en": "Two tiny rules fix this. And *rule two* is the one almost nobody uses.",
+        "es": "Dos reglas pequeñas lo arreglan. Y la *regla dos* casi nadie la usa.",
+        "pt": "Duas regrinhas resolvem isso. E a *regra dois* quase ninguém usa.",
+        "hi": "दो छोटे नियम इसे ठीक करते हैं। और *दूसरा नियम* लगभग कोई इस्तेमाल नहीं करता।"
+      }
     },
     {
       "pose": "point_right",
+      "bg": "office",
+      "badge": {
+        "en": "RULE 1",
+        "es": "REGLA 1",
+        "pt": "REGRA 1",
+        "hi": "नियम 1"
+      },
       "props": [
         {
           "type": "clock",
           "pos": "center",
           "size": 1.1
-        },
-        {
-          "type": "check",
-          "pos": "right",
-          "size": 0.7,
-          "delay": 1.5
         }
       ],
       "say": {
-        "en": "Rule one: if something takes less than two minutes, do it right now.",
-        "es": "Regla uno: si algo toma menos de dos minutos, hazlo ahora mismo.",
-        "pt": "Regra um: se algo leva menos de dois minutos, faça agora mesmo.",
-        "hi": "पहला नियम: अगर कोई काम दो मिनट से कम का है, तो उसे अभी कर दो।"
+        "en": "Rule one: if it takes less than *two minutes*, do it *right now*.",
+        "es": "Regla uno: si toma menos de *dos minutos*, hazlo *ahora mismo*.",
+        "pt": "Regra um: se leva menos de *dois minutos*, faça *agora mesmo*.",
+        "hi": "पहला नियम: अगर काम *दो मिनट* से कम का है, तो उसे *अभी* कर दो।"
+      }
+    },
+    {
+      "pose": "celebrate",
+      "bg": "office",
+      "badge": {
+        "en": "RULE 1",
+        "es": "REGLA 1",
+        "pt": "REGRA 1",
+        "hi": "नियम 1"
       },
-      "bg": "office"
+      "props": [
+        {
+          "type": "check",
+          "pos": "center",
+          "size": 1.0
+        }
+      ],
+      "say": {
+        "en": "Reply to that text. Wash that cup. *Done*.",
+        "es": "Responde ese mensaje. Lava esa taza. *Listo*.",
+        "pt": "Responda aquela mensagem. Lave aquela xícara. *Pronto*.",
+        "hi": "वो मैसेज का जवाब दो। वो कप धो दो। *हो गया*।"
+      }
+    },
+    {
+      "pose": "think",
+      "bg": "notebook",
+      "badge": {
+        "en": "RULE 2",
+        "es": "REGLA 2",
+        "pt": "REGRA 2",
+        "hi": "नियम 2"
+      },
+      "punch": true,
+      "props": [
+        {
+          "type": "bigtext",
+          "pos": "center",
+          "size": 1.0,
+          "text": {
+            "en": "2 MIN",
+            "es": "2 MIN",
+            "pt": "2 MIN",
+            "hi": "2 मिनट"
+          }
+        }
+      ],
+      "say": {
+        "en": "Rule two: never start a big goal. Start its *two-minute version*.",
+        "es": "Regla dos: nunca empieces una meta grande. Empieza su *versión de dos minutos*.",
+        "pt": "Regra dois: nunca comece uma meta grande. Comece a *versão de dois minutos*.",
+        "hi": "दूसरा नियम: बड़ा लक्ष्य कभी शुरू मत करो। उसका *दो मिनट वाला रूप* शुरू करो।"
+      }
     },
     {
       "pose": "read",
+      "bg": "notebook",
+      "badge": {
+        "en": "RULE 2",
+        "es": "REGLA 2",
+        "pt": "REGRA 2",
+        "hi": "नियम 2"
+      },
       "props": [
         {
           "type": "book",
@@ -170,25 +278,31 @@
           "type": "bubble",
           "pos": "center",
           "size": 1.0,
+          "delay": 0.8,
           "text": {
             "en": "1 page",
             "es": "1 página",
             "pt": "1 página",
             "hi": "1 पेज"
-          },
-          "delay": 1.0
+          }
         }
       ],
       "say": {
-        "en": "Rule two: shrink big goals into a two-minute start. Want to read more? Read one page.",
-        "es": "Regla dos: convierte las metas grandes en un comienzo de dos minutos. ¿Quieres leer más? Lee una página.",
-        "pt": "Regra dois: transforme grandes metas num começo de dois minutos. Quer ler mais? Leia uma página.",
-        "hi": "दूसरा नियम: बड़े लक्ष्य को दो मिनट की शुरुआत में बदलो। ज़्यादा पढ़ना है? बस एक पेज पढ़ो।"
-      },
-      "bg": "notebook"
+        "en": "Want to read more? Read *one page*.",
+        "es": "¿Quieres leer más? Lee *una página*.",
+        "pt": "Quer ler mais? Leia *uma página*.",
+        "hi": "ज़्यादा पढ़ना है? बस *एक पेज* पढ़ो।"
+      }
     },
     {
       "pose": "walk",
+      "bg": "park",
+      "badge": {
+        "en": "RULE 2",
+        "es": "REGLA 2",
+        "pt": "REGRA 2",
+        "hi": "नियम 2"
+      },
       "props": [
         {
           "type": "shoe",
@@ -197,15 +311,15 @@
         }
       ],
       "say": {
-        "en": "Want to work out? Just put on your shoes.",
-        "es": "¿Quieres hacer ejercicio? Solo ponte los zapatos.",
-        "pt": "Quer treinar? É só calçar o tênis.",
-        "hi": "कसरत करनी है? बस जूते पहन लो।"
-      },
-      "bg": "park"
+        "en": "Want to work out? Just put on your *shoes*.",
+        "es": "¿Quieres hacer ejercicio? Solo ponte los *zapatos*.",
+        "pt": "Quer treinar? É só calçar o *tênis*.",
+        "hi": "कसरत करनी है? बस *जूते* पहन लो।"
+      }
     },
     {
       "pose": "run",
+      "bg": "park",
       "props": [
         {
           "type": "chart_up",
@@ -214,30 +328,36 @@
         }
       ],
       "say": {
-        "en": "Starting is the hardest part. Once you begin, it's much easier to keep going.",
-        "es": "Empezar es lo más difícil. Una vez que comienzas, es mucho más fácil seguir.",
-        "pt": "Começar é a parte mais difícil. Depois que você começa, fica muito mais fácil continuar.",
-        "hi": "शुरुआत करना ही सबसे मुश्किल है। एक बार शुरू कर दिया, तो आगे बढ़ना बहुत आसान हो जाता है।"
-      },
-      "bg": "park"
+        "en": "Starting is the hardest part. After that, *momentum* does the rest.",
+        "es": "Empezar es lo más difícil. Después, el *impulso* hace el resto.",
+        "pt": "Começar é a parte mais difícil. Depois, o *embalo* faz o resto.",
+        "hi": "शुरुआत ही सबसे मुश्किल है। उसके बाद *रफ़्तार* बाकी काम कर देती है।"
+      }
     },
     {
-      "pose": "wave",
+      "pose": "talk",
+      "bg": "room",
       "props": [
         {
-          "type": "heart",
+          "type": "mountain",
           "pos": "center",
-          "size": 1.2
+          "size": 0.9,
+          "text": {
+            "en": "BIG TASK",
+            "es": "TAREA",
+            "pt": "TAREFA",
+            "hi": "बड़ा काम"
+          }
         }
       ],
       "say": {
-        "en": "Try it today, and follow for more simple brain tricks.",
-        "es": "Pruébalo hoy y sígueme para más trucos simples para tu cerebro.",
-        "pt": "Experimente hoje e me siga para mais truques simples para o cérebro.",
-        "hi": "आज ही आज़माओ, और ऐसे ही आसान दिमागी ट्रिक्स के लिए फ़ॉलो करो।"
-      },
-      "bg": "city"
+        "en": "So next time a task feels huge, remember...",
+        "es": "Así que la próxima vez que una tarea parezca enorme, recuerda...",
+        "pt": "Então, da próxima vez que uma tarefa parecer enorme, lembre...",
+        "hi": "तो अगली बार जब कोई काम बहुत बड़ा लगे, तो याद रखना..."
+      }
     }
   ],
-  "bg": "room"
+  "bg": "room",
+  "loop": true
 }

@@ -1,80 +1,88 @@
 1
-00:00:00,200 --> 00:00:03,044
-You're not lazy. Your brain just hates big
+00:00:00,050 --> 00:00:01,330
+You're not lazy.
 
 2
-00:00:03,044 --> 00:00:03,613
-tasks.
+00:00:01,680 --> 00:00:03,749
+Your brain just hates big tasks.
 
 3
-00:00:03,963 --> 00:00:06,688
-When a task feels too big, it feels bad.
+00:00:04,099 --> 00:00:06,467
+A huge task feels uncomfortable...
 
 4
-00:00:06,688 --> 00:00:09,223
-So your brain grabs something easy...
+00:00:06,817 --> 00:00:09,225
+So your brain escapes to something easy.
 
 5
-00:00:09,223 --> 00:00:10,427
-like your phone.
+00:00:09,225 --> 00:00:10,401
+Like your phone.
 
 6
-00:00:10,777 --> 00:00:11,905
-The fix is simple.
+00:00:10,751 --> 00:00:12,644
+Two tiny rules fix this.
 
 7
-00:00:11,905 --> 00:00:13,785
-It's called the two-minute rule.
+00:00:12,644 --> 00:00:15,588
+And rule two is the one almost nobody
 
 8
-00:00:14,135 --> 00:00:16,608
-Rule one: if something takes less than two
+00:00:15,588 --> 00:00:16,149
+uses.
 
 9
-00:00:16,608 --> 00:00:18,146
-minutes, do it right now.
+00:00:16,499 --> 00:00:18,519
+Rule one: if it takes less than two
 
 10
-00:00:18,496 --> 00:00:20,743
-Rule two: shrink big goals into a
+00:00:18,519 --> 00:00:20,125
+minutes, do it right now.
 
 11
-00:00:20,743 --> 00:00:21,991
-two-minute start.
+00:00:20,475 --> 00:00:21,923
+Reply to that text.
 
 12
-00:00:21,991 --> 00:00:23,302
-Want to read more?
+00:00:21,923 --> 00:00:23,569
+Wash that cup. Done.
 
 13
-00:00:23,302 --> 00:00:24,363
-Read one page.
+00:00:23,919 --> 00:00:25,948
+Rule two: never start a big goal.
 
 14
-00:00:24,713 --> 00:00:25,826
-Want to work out?
+00:00:25,948 --> 00:00:27,865
+Start its two-minute version.
 
 15
-00:00:25,826 --> 00:00:27,273
-Just put on your shoes.
+00:00:28,215 --> 00:00:29,515
+Want to read more?
 
 16
-00:00:27,623 --> 00:00:29,589
-Starting is the hardest part.
+00:00:29,515 --> 00:00:30,690
+Read one page.
 
 17
-00:00:29,589 --> 00:00:32,232
-Once you begin, it's much easier to keep
+00:00:31,040 --> 00:00:32,107
+Want to work out?
 
 18
-00:00:32,232 --> 00:00:32,785
-going.
+00:00:32,107 --> 00:00:33,600
+Just put on your shoes.
 
 19
-00:00:33,135 --> 00:00:35,576
-Try it today, and follow for more simple
+00:00:33,950 --> 00:00:35,941
+Starting is the hardest part.
 
 20
-00:00:35,576 --> 00:00:36,485
-brain tricks.
+00:00:35,941 --> 00:00:38,430
+After that, momentum does the rest.
+
+21
+00:00:38,780 --> 00:00:41,016
+So next time a task feels huge,
+
+22
+00:00:41,016 --> 00:00:41,937
+remember...
 

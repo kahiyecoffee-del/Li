@@ -43,9 +43,9 @@ LANGS = {
 FORMATS = {
     # Shorts: altyazı üstte, alt kısım YouTube arayüzüne bırakılır.
     "short": dict(w=1080, h=1920, fig_x=540, hip_y=1195, sc=1.25, cap_y=230,
-                  cap_size=104, cap_w=980, prop_c=(540, 530), prop_dx=290, prop_sc=1.3),
+                  cap_size=104, cap_w=980, prop_c=(540, 545), prop_dx=290, prop_sc=1.3, focus=(540, 900)),
     "long": dict(w=1920, h=1080, fig_x=560, hip_y=640, sc=0.85, cap_y=985,
-                 cap_size=68, cap_w=1700, prop_c=(1320, 440), prop_dx=360, prop_sc=1.45),
+                 cap_size=68, cap_w=1700, prop_c=(1320, 440), prop_dx=360, prop_sc=1.45, focus=(900, 520)),
 }
 
 BG = (250, 249, 244)
@@ -220,7 +220,11 @@ def limb(start, a1, a2, l1, l2):
     return e, h
 
 
-def draw_figure(pen, p, expr, cx, hip_y, sc, mouth_open):
+SCARF = (255, 120, 60)
+CHEEK = (255, 160, 160)
+
+
+def draw_figure(pen, p, expr, cx, hip_y, sc, mouth_open, t=0.0, glow=False):
     L = dict(torso=230 * sc, head=62 * sc, ua=125 * sc, fa=115 * sc, th=150 * sc, sh=140 * sc)
     hip = (cx, hip_y + p["bob"] * sc)
     lean = rad(p["lean"])
@@ -241,11 +245,36 @@ def draw_figure(pen, p, expr, cx, hip_y, sc, mouth_open):
         hands.append(hand)
 
     r = L["head"]
-    pen.circle(head, r, fill=BG)
+    d = pen.d
+    # imza: anten (fikir anında yanar)
+    ax0 = (head[0] + 0.25 * r, head[1] - 0.95 * r)
+    sway = 6 * sc * math.sin(t * 3)
+    ax1 = (head[0] + 0.55 * r + sway, head[1] - 1.55 * r)
+    ax2 = (head[0] + 0.3 * r + sway * 1.5, head[1] - 1.95 * r)
+    pen.line([ax0, ax1, ax2], w=int(pen.lw * 0.55))
+    br = 14 * sc * (1.25 if glow else 1.0)
+    if glow:
+        for k in range(8):
+            a = k * math.pi / 4 + t * 2
+            d.line([(ax2[0] + math.cos(a) * br * 1.6, ax2[1] + math.sin(a) * br * 1.6),
+                    (ax2[0] + math.cos(a) * br * 2.3, ax2[1] + math.sin(a) * br * 2.3)], fill=(255, 190, 40),
+                   width=max(2, int(5 * sc)))
+    d.ellipse([ax2[0] - br, ax2[1] - br, ax2[0] + br, ax2[1] + br], fill=(255, 201, 60) if glow else (255, 107, 91),
+              outline=INK, width=max(2, int(5 * sc)))
+    pen.circle(head, r, fill=(255, 255, 255))
+    # imza: atkı (uçları rüzgârda dalgalanır)
+    nk = (neck[0], neck[1] + 4 * sc)
+    d.rounded_rectangle([nk[0] - 34 * sc, nk[1] - 12 * sc, nk[0] + 34 * sc, nk[1] + 14 * sc], radius=int(12 * sc),
+                        fill=SCARF, outline=INK, width=max(2, int(5 * sc)))
+    tail = []
+    for k in range(5):
+        u = k / 4
+        tail.append((nk[0] + 18 * sc + u * 70 * sc, nk[1] + 8 * sc + u * 50 * sc + 9 * sc * math.sin(t * 7 - u * 4) * u))
+    pen.line(tail, color=INK, w=int(24 * sc))
+    pen.line(tail, color=SCARF, w=int(15 * sc), jitter=False)
     hx, hy = head
     ex, ey, er = 21 * sc, -10 * sc, 7 * sc
     look = 8 * sc if expr == "down" else 0
-    d = pen.d
     if expr == "tired":
         for sx in (-1, 1):
             d.line([(hx + sx * ex - 12 * sc, hy + ey + 2 * sc), (hx + sx * ex + 12 * sc, hy + ey + 2 * sc)],
@@ -264,6 +293,9 @@ def draw_figure(pen, p, expr, cx, hip_y, sc, mouth_open):
         d.line([(hx + ex - 12 * sc, hy + ey - 22 * sc), (hx + ex + 12 * sc, hy + ey - 28 * sc)],
                fill=INK, width=int(6 * sc))
 
+    for sx in (-1, 1):
+        cxk = hx + sx * 36 * sc
+        d.ellipse([cxk - 11 * sc, hy + 10 * sc, cxk + 11 * sc, hy + 20 * sc], fill=CHEEK)
     my = hy + 26 * sc + look * 0.5
     mw = 22 * sc
     if expr == "shock":
@@ -455,6 +487,7 @@ def tts(text, lang, speed):
         from kokoro_onnx import Kokoro
         _kokoro = Kokoro(os.path.join(MODEL_DIR, "kokoro-v1.0.onnx"), os.path.join(MODEL_DIR, "voices-v1.0.bin"))
     cfg = LANGS[lang]
+    text = text.replace("*", "")
     samples, sr = _kokoro.create(text, voice=cfg["voice"], speed=speed, lang=cfg["kokoro"])
     assert sr == SR
     return np.asarray(samples, dtype=np.float32)
@@ -542,18 +575,19 @@ def build_timeline(scenes, langs, speed):
     return out
 
 
-def layout(timeline, durs_for):
-    """Sahne başlangıç zamanları ve süreleri."""
-    t = LEAD
+def layout(timeline, durs_for, loop=False):
+    """Sahne başlangıç zamanları ve süreleri. loop=True: sonda boşluk yok (Shorts döngüsü)."""
+    t = 0.05 if loop else LEAD
     spans = []
     for idx, (sc, audios) in enumerate(timeline):
         d = durs_for(audios) + GAP
         spans.append((t, d))
         t += d
-    return spans, t + TAIL
+    return spans, t + (0.1 if loop else TAIL)
 
 
 def mix_audio(timeline, spans, total, lang):
+    """Sadece konuşma kanalı (ağız animasyonu için de kullanılır)."""
     buf = np.zeros(int(total * SR) + SR, dtype=np.float32)
     for (sc, audios), (st, _) in zip(timeline, spans):
         a = audios[lang]
@@ -561,10 +595,178 @@ def mix_audio(timeline, spans, total, lang):
         buf[i:i + len(a)] += a
     buf = buf[:int(total * SR)]
     peak = np.max(np.abs(buf)) or 1
-    return buf * (0.89 / peak)
+    return buf * (0.85 / peak)
 
 
-def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, env):
+LOUDNORM = "loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000"  # YouTube hedef ses seviyesi
+REVEAL = 0.45          # aksesuarın "çizilerek" belirme süresi
+SWIPE = 0.36           # geçiş bandı süresi
+BRAND = [(255, 201, 60), (255, 107, 91), (46, 196, 182), (120, 110, 230)]
+ANCHORED = ("hand_r", "hand_l", "hands", "head")
+
+
+def sfx_events(timeline, spans):
+    ev = []
+    for i, ((sc, _), (st, dur)) in enumerate(zip(timeline, spans)):
+        if i > 0:
+            ev.append(("whoosh", st - SWIPE / 2 - 0.05, 0.55))
+        if sc.get("punch"):
+            ev.append(("boom", st, 0.7))
+        for j, spec in enumerate(sc.get("props", [])):
+            at = st + spec.get("delay", 0.0)
+            if spec.get("pos") in ANCHORED:
+                ev.append(("pop", at, 0.45))
+            else:
+                ev.append(("scribble", at, 0.6))
+            if spec["type"] in ("check", "bulb", "coin"):
+                ev.append(("ding", at + REVEAL * 0.7, 0.45))
+            if spec["type"] == "clock":
+                for k in range(4):
+                    ev.append(("tick", at + 0.5 + k * 0.5, 0.5))
+        for e in sc.get("sfx", []):
+            ev.append((e["name"], st + e.get("at", 0.0), e.get("gain", 0.6)))
+    return ev
+
+
+def final_mix(voice, events, use_music):
+    from ses import sfx, music, duck, place
+    out = voice.copy()
+    fx = np.zeros_like(voice)
+    for k, (name, at, gain) in enumerate(events):
+        place(fx, sfx(name, seed=k), at, gain)
+    out += fx * 0.8
+    if use_music:
+        m = music(len(voice) / SR)
+        m = m[:len(voice)]
+        out[:len(m)] += duck(m, voice) * 0.13
+    peak = np.max(np.abs(out))
+    if peak > 0.97:
+        out = np.tanh(out * 1.1) * (0.97 / np.tanh(peak * 1.1))
+    return out.astype(np.float32)
+
+
+def caption_word_times(caps):
+    """Altyazı parçalarından anahtar kelime (*...*) zamanları."""
+    times = []
+    for a, b, txt in caps:
+        for (t0, t1, w, kw) in ab.word_times(a, b, txt):
+            if kw:
+                times.append(t0)
+    # aynı vurgunun ardışık kelimeleri tek vuruş olsun
+    out = []
+    for t in times:
+        if not out or t - out[-1] > 0.6:
+            out.append(t)
+    return out
+
+
+def camera_zoom(t, st, dur, scene, kw_times):
+    z = 1.0 + 0.04 * min(1.0, max(0.0, t - st) / max(dur, 0.1))  # yavaş yaklaşma
+    for k in kw_times:
+        dt = t - k
+        if -0.08 < dt < 0.7:
+            z += 0.05 * (ease((dt + 0.08) / 0.08) if dt < 0 else math.exp(-dt * 5))
+    if scene.get("punch"):
+        dt = t - st
+        if 0 <= dt < 0.9:
+            z += 0.12 * math.exp(-dt * 4)
+    return z
+
+
+def apply_camera(img, F, z, shake=(0, 0)):
+    z = max(z, 1.0)
+    if abs(z - 1.0) < 1e-3 and shake == (0, 0):
+        return img
+    W, H = F["w"], F["h"]
+    fx, fy = F.get("focus", (W / 2, H / 2))
+    cw, ch = W / z, H / z
+    x0 = min(max(fx - cw / 2 + shake[0], 0), W - cw)
+    y0 = min(max(fy - ch / 2 + shake[1], 0), H - ch)
+    return img.resize((W, H), Image.BILINEAR, box=(x0, y0, x0 + cw, y0 + ch))
+
+
+def draw_swipe(img, F, u, color):
+    """Sahne geçişi: el çizimi renkli bant ekranı süpürür."""
+    W, H = F["w"], F["h"]
+    d = ImageDraw.Draw(img)
+    skew = 0.3 * W
+    bw = 1.5 * W
+    cx = -bw + u * (W + 2 * bw)
+    pts = [(cx - bw / 2 + skew, 0), (cx + bw / 2 + skew, 0), (cx + bw / 2 - skew, H), (cx - bw / 2 - skew, H)]
+    d.polygon(pts, fill=color)
+    lw = int(10 * F["sc"])
+    d.line([pts[0], pts[3]], fill=INK, width=lw)
+    d.line([pts[1], pts[2]], fill=INK, width=lw)
+    for k in range(5):  # bandın üzerinde yıldız karalamaları
+        yy = H * (0.15 + 0.17 * k)
+        xx = cx + skew * (1 - 2 * yy / H) + (k % 2 - 0.5) * bw * 0.4
+        ab.doodle_star(d, xx, yy, 30 * F["sc"], (255, 255, 255), max(2, int(4 * F["sc"])))
+
+
+def draw_badge(img, F, text, cap_box=None):
+    """Bölüm etiketi (ör. KURAL 1): altyazı kutusunun üst kenarına yapışık sekme."""
+    d = ImageDraw.Draw(img)
+    size = F["cap_size"] * 0.5
+    f = font(size)
+    tw = d.textlength(text, font=f)
+    pad = size * 0.5
+    w, h = tw + pad * 2, size * 1.35
+    if cap_box:
+        x0 = cap_box[0] + size * 0.3
+        y0 = cap_box[1] - h * 0.72
+    else:
+        x0, y0 = 40, 30
+    d.rounded_rectangle([x0, y0, x0 + w, y0 + h], radius=int(h * 0.45), fill=BRAND[1], outline=INK,
+                        width=max(3, int(5 * F["sc"])))
+    d.text((x0 + w / 2, y0 + h / 2), text, font=f, fill="white", anchor="mm", stroke_width=2, stroke_fill=INK)
+
+
+def render_prop(img, pen_seed, spec, F, anchors, lt, dur, lang):
+    delay = spec.get("delay", 0.0)
+    if lt < delay:
+        return
+    sc_ = F["sc"]
+    x, y = prop_pos(spec, F, anchors)
+    anchored = spec.get("pos") in ANCHORED
+    pt = lt - delay
+    base = spec.get("size", 1.0) * sc_ * F["prop_sc"]
+    k = 1.0
+    if dur - lt < 0.2:
+        k *= max(0.0, (dur - lt) / 0.2)
+    if anchored:
+        k *= ease_back(pt / 0.3)
+    else:
+        k *= 0.9 + 0.1 * ease_back(pt / REVEAL)
+        y += 6 * math.sin(lt * 2 + len(spec["type"])) * sc_
+    if k <= 0.12:
+        return
+    if anchored or pt >= REVEAL:
+        d = ImageDraw.Draw(img)
+        draw_prop(Pen(d, sc_, pen_seed), spec, (x, y), base * k, pt, lang)
+        return
+    # çizilerek belirme: şeffaf katmana çiz, soldan sağa maske ile aç
+    layer = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    draw_prop(Pen(ImageDraw.Draw(layer), sc_, pen_seed), spec, (x, y), base * k, pt, lang)
+    bbox = layer.getbbox()
+    if not bbox:
+        return
+    u = ease(pt / REVEAL)
+    edge = bbox[0] + (bbox[2] - bbox[0] + 40) * u
+    mask = Image.new("L", img.size, 0)
+    ImageDraw.Draw(mask).rectangle([bbox[0] - 5, bbox[1] - 5, edge, bbox[3] + 5], fill=255)
+    alpha = Image.composite(layer.getchannel("A"), mask, mask)
+    layer.putalpha(alpha)
+    img.paste(layer, (0, 0), layer)
+    # kalem ucu
+    d = ImageDraw.Draw(img)
+    py = bbox[1] + (bbox[3] - bbox[1]) * (0.5 + 0.4 * math.sin(pt * 40))
+    r = 9 * sc_
+    if edge < bbox[2]:
+        d.line([(edge, py), (edge + 40 * sc_, py - 70 * sc_)], fill=INK, width=int(12 * sc_))
+        d.ellipse([edge - r, py - r, edge + r, py + r], fill=INK)
+
+
+def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, env, kw_times=(), badges=True):
     W, H = F["w"], F["h"]
     n = int(math.ceil(total * FPS))
     wav = path_noext + ".wav"
@@ -572,7 +774,7 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
     sf.write(wav, audio, SR)
     cmd = ["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
            "-r", str(FPS), "-i", "-", "-i", wav, "-c:v", "libx264", "-preset", "medium", "-crf", "20",
-           "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart",
+           "-pix_fmt", "yuv420p", "-af", LOUDNORM, "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart",
            path_noext + ".mp4"]
     ff = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     sc_ = F["sc"]
@@ -585,7 +787,8 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
         st, dur = spans[scene_idx]
         scene = timeline[scene_idx][0]
         lt = t - st if t >= st else 0.0
-        p, expr = pose(scene.get("pose", "talk"), lt)
+        pname = scene.get("pose", "talk")
+        p, expr = pose(pname, lt)
         expr = scene.get("expr", expr)
         if scene_idx > 0:
             prev_scene = timeline[scene_idx - 1][0]
@@ -596,35 +799,48 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
         if kind not in bg_cache:
             bg_cache[kind] = ab.build_static(kind, F)
         img = bg_cache[kind].copy()
-        if scene_idx > 0 and lt < 0.35:
-            pk = timeline[scene_idx - 1][0].get("bg", "room")
-            if pk != kind:
-                img = Image.blend(bg_cache[pk], img, ease(lt / 0.35))
         d = ImageDraw.Draw(img)
         ab.animate(kind, d, F, t)
         pen = Pen(d, sc_, seed=fi // 4)
         fig_c = (F["fig_x"], F["hip_y"] - 120 * sc_)
-        for name in scene.get("deco", ab.DEFAULT_DECO.get(scene.get("pose", "talk"), [])):
+        for name in scene.get("deco", ab.DEFAULT_DECO.get(pname, [])):
             ab.deco(name, d, F, lt, font, fig_c)
         mouth = float(env[fi]) if env is not None and fi < len(env) else 0.0
-        anchors = draw_figure(pen, p, expr, F["fig_x"], F["hip_y"], sc_, mouth)
-        for spec in scene.get("props", []):
-            delay = spec.get("delay", 0.0)
-            if lt < delay:
-                continue
-            k = ease_back((lt - delay) / 0.35)
-            if dur - lt < 0.2:  # sahne sonunda küçülerek çık
-                k *= max(0.0, (dur - lt) / 0.2)
-            if k <= 0.12:
-                continue
-            x, y = prop_pos(spec, F, anchors)
-            fl = 0 if spec.get("pos") in anchors else 6 * math.sin(lt * 2 + hash(spec["type"]) % 5)
-            draw_prop(pen, spec, (x, y + fl * sc_), spec.get("size", 1.0) * sc_ * F["prop_sc"] * k, lt - delay, lang)
+        glow = pname in ("idea", "celebrate") or expr == "happy"
+        anchors = draw_figure(pen, p, expr, F["fig_x"], F["hip_y"], sc_, mouth, t=t, glow=glow)
+        for j, spec in enumerate(scene.get("props", [])):
+            render_prop(img, fi // 4 + j, spec, F, anchors, lt, dur, lang)
+
+        # kamera: yavaş yaklaşma + vurgu kelimelerinde zıplama + şok sarsıntısı
+        z = camera_zoom(t, st, dur, scene, kw_times)
+        shake = (0, 0)
+        if pname == "shock" and lt < 0.5:
+            a = 14 * sc_ * (1 - lt / 0.5)
+            shake = (a * math.sin(t * 90), a * math.cos(t * 77))
+        img = apply_camera(img, F, z, shake)
+
+        # geçiş bandı (bir önceki sahnenin sonu ile bu sahnenin başını örter)
+        for i in (scene_idx, scene_idx + 1):
+            if 0 < i < len(spans):
+                b = spans[i][0]
+                u = (t - (b - SWIPE / 2)) / SWIPE
+                if 0 <= u <= 1:
+                    draw_swipe(img, F, u, BRAND[i % len(BRAND)])
+
+        cap_box = None
         if captions:
             for a, b, txt in captions:
                 if a <= t < b:
-                    ab.draw_caption(img, F, t, a, b, txt, font)
+                    cap_box = ab.draw_caption(img, F, t, a, b, txt, font)
                     break
+        if badges and scene.get("badge"):
+            btxt = scene["badge"].get(lang) if isinstance(scene["badge"], dict) else scene["badge"]
+            if btxt and lt > 0.15:
+                draw_badge(img, F, btxt, cap_box)
+        if H < W:  # uzun video: üstte ilerleme çubuğu
+            dd = ImageDraw.Draw(img)
+            dd.rectangle([0, 0, W, 8], fill=(230, 225, 215))
+            dd.rectangle([0, 0, W * t / total, 8], fill=BRAND[0])
         ff.stdin.write(img.tobytes())
         if fi % (FPS * 5) == 0:
             print(f"  video [{lang}]: {t:5.1f}/{total:.1f} sn", flush=True)
@@ -642,6 +858,10 @@ def write_notes(path, meta, lang, total):
         f.write(f"ETİKETLER:\n{', '.join(m.get('tags', []))}\n\nSÜRE: {total:.1f} sn\n")
 
 
+def plain(txt):
+    return txt.replace("*", "")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("senaryo")
@@ -650,6 +870,7 @@ def main():
     ap.add_argument("--mod", choices=["ayri", "coklu"], default="ayri",
                     help="ayri: dil başına ayrı video (altyazı gömülü). coklu: tek video + dil başına ses dosyası")
     ap.add_argument("--hiz", type=float, default=1.0, help="konuşma hızı")
+    ap.add_argument("--muziksiz", action="store_true", help="arka plan müziği ekleme")
     ap.add_argument("--cikti", default=os.path.join(ROOT, "cikti"))
     args = ap.parse_args()
 
@@ -667,42 +888,47 @@ def main():
     outdir = os.path.join(args.cikti, slug)
     os.makedirs(outdir, exist_ok=True)
     cap_chars = 22 if fmt == "short" else 42
+    use_music = data.get("music", True) and not args.muziksiz
 
     print(f"Senaryo: {slug} | format: {fmt} | diller: {','.join(langs)} | mod: {args.mod}")
     timeline = build_timeline(data["scenes"], langs, args.hiz)
 
+    def srt_for(spans, lang):
+        out = []
+        for (sc, au), (st, _) in zip(timeline, spans):
+            out += [(a, b, plain(x)) for a, b, x in timed_chunks(sc["say"][lang], st, len(au[lang]) / SR, 42)]
+        return out
+
     if args.mod == "ayri":
         for lang in langs:
-            spans, total = layout(timeline, lambda au, lg=lang: len(au[lg]) / SR)
-            audio = mix_audio(timeline, spans, total, lang)
-            caps, srt = [], []
+            spans, total = layout(timeline, lambda au, lg=lang: len(au[lg]) / SR, data.get("loop", False))
+            voice = mix_audio(timeline, spans, total, lang)
+            caps = []
             for (sc, au), (st, _) in zip(timeline, spans):
-                d = len(au[lang]) / SR
-                caps += timed_chunks(sc["say"][lang], st, d, cap_chars)
-                srt += timed_chunks(sc["say"][lang], st, d, 42)
-            env = envelope(audio, int(math.ceil(total * FPS)))
+                caps += timed_chunks(sc["say"][lang], st, len(au[lang]) / SR, cap_chars)
+            env = envelope(voice, int(math.ceil(total * FPS)))
+            audio = final_mix(voice, sfx_events(timeline, spans), use_music)
             base = os.path.join(outdir, f"{slug}_{fmt}_{lang}")
-            render_video(base, timeline, spans, total, F, lang, audio, caps if data.get("burn_captions", True) else None, env)
-            write_srt(base + ".srt", srt)
+            render_video(base, timeline, spans, total, F, lang, audio,
+                         caps if data.get("burn_captions", True) else None, env, caption_word_times(caps))
+            write_srt(base + ".srt", srt_for(spans, lang))
             write_notes(base + "_yukleme.txt", data.get("meta", {}), lang, total)
             print(f"✔ {base}.mp4 ({total:.1f} sn)")
     else:
-        spans, total = layout(timeline, lambda au: max(len(a) for a in au.values()) / SR)
+        spans, total = layout(timeline, lambda au: max(len(a) for a in au.values()) / SR, data.get("loop", False))
         base = os.path.join(outdir, f"{slug}_{fmt}_coklu")
-        main_audio = mix_audio(timeline, spans, total, langs[0])
-        render_video(base, timeline, spans, total, F, langs[0], main_audio, None, None)
+        events = sfx_events(timeline, spans)
+        main_audio = final_mix(mix_audio(timeline, spans, total, langs[0]), events, use_music)
+        render_video(base, timeline, spans, total, F, langs[0], main_audio, None, None, badges=False)
         import soundfile as sf
         for lang in langs:
-            audio = mix_audio(timeline, spans, total, lang)
+            audio = final_mix(mix_audio(timeline, spans, total, lang), events, use_music)
             wav = f"{base}_{lang}.wav"
             sf.write(wav, audio, SR)
-            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-c:a", "aac", "-b:a", "192k",
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-af", LOUDNORM, "-c:a", "aac", "-b:a", "192k",
                             f"{base}_ses_{lang}.m4a"], check=True)
             os.remove(wav)
-            srt = []
-            for (sc, au), (st, _) in zip(timeline, spans):
-                srt += timed_chunks(sc["say"][lang], st, len(au[lang]) / SR, 42)
-            write_srt(f"{base}_{lang}.srt", srt)
+            write_srt(f"{base}_{lang}.srt", srt_for(spans, lang))
             write_notes(f"{base}_{lang}_yukleme.txt", data.get("meta", {}), lang, total)
         print(f"✔ {base}.mp4 + {len(langs)} ses kanalı ({total:.1f} sn)")
 

@@ -1,80 +1,84 @@
 1
-00:00:00,200 --> 00:00:02,679
-No eres flojo. Tu cerebro simplemente odia
+00:00:00,050 --> 00:00:01,117
+No eres flojo.
 
 2
-00:00:02,679 --> 00:00:03,891
-las tareas grandes.
+00:00:01,467 --> 00:00:03,685
+Tu cerebro odia las tareas grandes.
 
 3
-00:00:04,241 --> 00:00:06,664
-Cuando una tarea parece enorme, se siente
+00:00:04,035 --> 00:00:06,254
+Una tarea enorme se siente incómoda...
 
 4
-00:00:06,664 --> 00:00:08,702
-mal. Así que tu cerebro busca algo
+00:00:06,604 --> 00:00:08,886
+Así que tu cerebro escapa a algo fácil.
 
 5
-00:00:08,702 --> 00:00:10,299
-fácil... como tu teléfono.
+00:00:08,886 --> 00:00:10,081
+Como tu teléfono.
 
 6
-00:00:10,649 --> 00:00:11,954
-La solución es simple.
+00:00:10,431 --> 00:00:12,334
+Dos reglas pequeñas lo arreglan.
 
 7
-00:00:11,954 --> 00:00:14,041
-Se llama la regla de los dos minutos.
+00:00:12,334 --> 00:00:14,399
+Y la regla dos casi nadie la usa.
 
 8
-00:00:14,391 --> 00:00:16,429
-Regla uno: si algo toma menos de dos
+00:00:14,749 --> 00:00:16,980
+Regla uno: si toma menos de dos minutos,
 
 9
-00:00:16,429 --> 00:00:17,997
-minutos, hazlo ahora mismo.
+00:00:16,980 --> 00:00:18,120
+hazlo ahora mismo.
 
 10
-00:00:18,347 --> 00:00:20,639
-Regla dos: convierte las metas grandes en
+00:00:18,470 --> 00:00:19,832
+Responde ese mensaje.
 
 11
-00:00:20,639 --> 00:00:22,203
-un comienzo de dos minutos.
+00:00:19,832 --> 00:00:21,307
+Lava esa taza. Listo.
 
 12
-00:00:22,203 --> 00:00:23,297
-¿Quieres leer más?
+00:00:21,657 --> 00:00:24,103
+Regla dos: nunca empieces una meta grande.
 
 13
-00:00:23,297 --> 00:00:24,235
-Lee una página.
+00:00:24,103 --> 00:00:26,223
+Empieza su versión de dos minutos.
 
 14
-00:00:24,585 --> 00:00:26,078
-¿Quieres hacer ejercicio?
+00:00:26,573 --> 00:00:27,633
+¿Quieres leer más?
 
 15
-00:00:26,078 --> 00:00:27,465
-Solo ponte los zapatos.
+00:00:27,633 --> 00:00:28,642
+Lee una página.
 
 16
-00:00:27,815 --> 00:00:29,440
-Empezar es lo más difícil.
+00:00:28,992 --> 00:00:30,432
+¿Quieres hacer ejercicio?
 
 17
-00:00:29,440 --> 00:00:31,905
-Una vez que comienzas, es mucho más fácil
+00:00:30,432 --> 00:00:31,872
+Solo ponte los zapatos.
 
 18
-00:00:31,905 --> 00:00:32,465
-seguir.
+00:00:32,222 --> 00:00:33,823
+Empezar es lo más difícil.
 
 19
-00:00:32,815 --> 00:00:34,886
-Pruébalo hoy y sígueme para más trucos
+00:00:33,823 --> 00:00:35,977
+Después, el impulso hace el resto.
 
 20
-00:00:34,886 --> 00:00:36,250
-simples para tu cerebro.
+00:00:36,327 --> 00:00:38,389
+Así que la próxima vez que una tarea
+
+21
+00:00:38,389 --> 00:00:39,975
+parezca enorme, recuerda...
 

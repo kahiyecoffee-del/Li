@@ -331,19 +331,43 @@ def deco(name, d, F, t, font_fn, avoid):
 # --------------------------------------------------------------------------- #
 # Karaoke altyazı
 # --------------------------------------------------------------------------- #
-def draw_caption(img, F, t, start, end, text, font_fn, highlight=(255, 205, 50)):
-    """Kutu içinde altyazı; o an söylenen kelime sarı ve büyük."""
-    d = ImageDraw.Draw(img, "RGBA")
-    words = text.split()
-    if not words:
-        return
-    total = sum(len(w) + 1 for w in words)
-    acc, cur = 0, len(words) - 1
-    for i, w in enumerate(words):
+def parse_words(text):
+    """'*' ile işaretli anahtar kelimeleri ayırır: [(kelime, anahtar_mi)]."""
+    out, inside = [], False
+    for w in text.split():
+        opens = w.startswith("*")
+        closes = w.rstrip(".,!?;:।…").endswith("*")
+        kw = inside or opens
+        out.append((w.replace("*", ""), kw))
+        if opens and not closes:
+            inside = True
+        elif closes:
+            inside = False
+    return out
+
+
+def word_times(start, end, text):
+    words = parse_words(text)
+    total = sum(len(w) + 1 for w, _ in words) or 1
+    res, acc = [], 0
+    for w, kw in words:
+        t0 = start + (end - start) * acc / total
         acc += len(w) + 1
-        if t < start + (end - start) * acc / total:
-            cur = i
-            break
+        res.append((t0, start + (end - start) * acc / total, w, kw))
+    return res
+
+
+KEY = (255, 120, 100)
+
+
+def draw_caption(img, F, t, start, end, text, font_fn, highlight=(255, 205, 50)):
+    """Kutu içinde altyazı: anahtar kelimeler mercan rengi, söylenen kelime sarı ve zıplar."""
+    d = ImageDraw.Draw(img, "RGBA")
+    wt = word_times(start, end, text)
+    if not wt:
+        return None
+    words = [w for _, _, w, _ in wt]
+    cur = next((i for i, (a, b, _, _) in enumerate(wt) if a <= t < b), len(wt) - 1)
     size = F["cap_size"]
     pop = 0.9 + 0.1 * min(1.0, (t - start) / 0.12)
     while True:
@@ -368,12 +392,20 @@ def draw_caption(img, F, t, start, end, text, font_fn, highlight=(255, 205, 50))
     box_h = lh * len(lines) + pad * 1.2
     cx, cy = F["w"] / 2, F["cap_y"]
     y0 = cy - box_h / 2
-    d.rounded_rectangle([cx - box_w / 2, y0, cx + box_w / 2, y0 + box_h], radius=int(size * 0.35), fill=(20, 20, 25, 175))
+    d.rounded_rectangle([cx - box_w / 2, y0, cx + box_w / 2, y0 + box_h], radius=int(size * 0.35), fill=(20, 20, 25, 185))
     stroke = max(2, int(size * 0.07))
     for li, (idxs, lw) in enumerate(lines):
         x = cx - lw / 2
         y = y0 + pad * 0.6 + li * lh
         for i in idxs:
-            col = highlight if i == cur else (255, 255, 255)
-            d.text((x, y), words[i], font=f, fill=col, stroke_width=stroke, stroke_fill=(15, 15, 15))
+            kw = wt[i][3]
+            if i == cur:
+                col, dy = highlight, -size * 0.06
+            else:
+                col, dy = (KEY if kw else (255, 255, 255)), 0
+            if kw:  # anahtar kelimenin altına fosforlu kalem çizgisi
+                d.rounded_rectangle([x - 4, y + asc * 0.78, x + widths[i] + 4, y + asc * 0.98],
+                                    radius=6, fill=(255, 120, 100, 150))
+            d.text((x, y + dy), words[i], font=f, fill=col, stroke_width=stroke, stroke_fill=(15, 15, 15))
             x += widths[i] + space
+    return (cx - box_w / 2, y0, cx + box_w / 2, y0 + box_h)
