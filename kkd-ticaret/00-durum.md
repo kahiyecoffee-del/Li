@@ -149,3 +149,6 @@ SSTC, Encore, Mubarakiya, Frontline, Evrohem, ProSafety (fiyatlı, thread'de; ce
 
 ## 09.11 son takip grubu gönderildi (4)
 CSS Georgia, Lynx, Veylon, ERTIS. Tüm ilk 40 firmaya fiyatlı takip tamamlandı. Toplam 82 mail, 6 bounce, 0 cevap. Sonraki: karar bekleniyor (yeni liste / A-B / LinkedIn), Ömer sözleşme maili.
+
+## 10.11 Eray: 'Ömeri beklet'
+Ömer'e sözleşme maili GÖNDERİLMEYECEK (Gmail'de taslak duruyor: r764749854377650378; PDF eklenmemiş). Eray 'sözleşmeyi gönder' diyene kadar bekliyor. Ömer thread'inde 22.10'dan beri yeni mesaj yok. Otomatik gönderim görevi yok.
