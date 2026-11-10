@@ -152,3 +152,6 @@ CSS Georgia, Lynx, Veylon, ERTIS. Tüm ilk 40 firmaya fiyatlı takip tamamlandı
 
 ## 10.11 Eray: 'Ömeri beklet'
 Ömer'e sözleşme maili GÖNDERİLMEYECEK (Gmail'de taslak duruyor: r764749854377650378; PDF eklenmemiş). Eray 'sözleşmeyi gönder' diyene kadar bekliyor. Ömer thread'inde 22.10'dan beri yeni mesaj yok. Otomatik gönderim görevi yok.
+
+## 10.11 Eray: 'müşteri maillerini at' – yeni listeden 14 mail gönderildi
+PPE-Online, Nexa Safety, Hajajweh & Zeidan, Baku Engineering, Specsiz.kz (RU), ProofLine (RU), Leonis (RU), Makom Treid, Interkoncept, Univers Safety, Textrade, Bansi, Wegmar, SafeU (fiyatlı v3 %10). Atlananlar: ilk listede zaten olanlar (Guardline, SSK, Josiba, EPI Maroc), perakende/şüpheli ve e-postasız olanlar. Ömer BEKLETİLİYOR (Eray sözleşmeyi gönder diyene kadar). Takip: 17.11. Toplam 96 mail.
