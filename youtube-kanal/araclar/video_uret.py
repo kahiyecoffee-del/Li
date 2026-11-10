@@ -935,8 +935,58 @@ def cutaway_source(spec, F):
     return _img_cache[key]
 
 
-def render_cutaway(spec, F, lt, dur, t):
+class VideoClip:
+    """ffmpeg ile video karelerini sırayla okur (kapla + kırp, 30 fps, sessiz). Biterse başa sarar."""
+
+    def __init__(self, spec, F):
+        import gorsel
+        self.path, self.info = gorsel.fetch(spec["file"])
+        self.W, self.H = F["w"], F["h"]
+        self.start = spec.get("start", 0.0)
+        self.speed = spec.get("speed", 1.0)
+        self.proc = None
+        self.last = None
+
+    def _open(self):
+        vf = (f"setpts=PTS/{self.speed},scale={self.W}:{self.H}:force_original_aspect_ratio=increase,"
+              f"crop={self.W}:{self.H},fps={FPS}")
+        self.proc = subprocess.Popen(["ffmpeg", "-loglevel", "error", "-ss", str(self.start), "-i", self.path, "-an",
+                                      "-vf", vf, "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
+
+    def frame(self):
+        n = self.W * self.H * 3
+        for _ in range(2):
+            if self.proc is None:
+                self._open()
+            buf = self.proc.stdout.read(n)
+            if len(buf) == n:
+                self.last = Image.frombytes("RGB", (self.W, self.H), buf)
+                return self.last
+            self.close()  # bitti: başa sar
+        return self.last or Image.new("RGB", (self.W, self.H))
+
+    def close(self):
+        if self.proc:
+            self.proc.kill()
+            self.proc.wait()
+            self.proc = None
+
+
+_clips = {}
+
+
+def render_cutaway(spec, F, lt, dur, t, scene_key=None):
     W, H = F["w"], F["h"]
+    if spec.get("file", "").lower().endswith(("webm", "ogv", "mp4", "mpg", "mpeg")) or spec.get("video"):
+        if scene_key not in _clips:
+            for c in _clips.values():
+                c.close()
+            _clips.clear()
+            _clips[scene_key] = VideoClip(spec, F)
+        img = _clips[scene_key].frame()
+        if CUR["theme"] is THEMES["academia"]:
+            img = _grade(img, "academia")
+        return film_finish(img, F, t, spec)
     src, mode, bg, info = cutaway_source(spec, F)
     u = min(1.0, max(0.0, lt / max(dur, 0.1)))
     move = spec.get("move", "in")
@@ -967,7 +1017,12 @@ def render_cutaway(spec, F, lt, dur, t):
         d.rectangle([px - fr, py - fr, px + pw + fr, py + ph + fr], fill=(150, 115, 55))
         d.rectangle([px - fr // 3, py - fr // 3, px + pw + fr // 3, py + ph + fr // 3], fill=(60, 42, 25))
         img.paste(pic, (px, py))
-    # film dokusu: kumlanma + hafif titreme + vinyet
+    return film_finish(img, F, t, spec)
+
+
+def film_finish(img, F, t, spec):
+    """Film dokusu: kumlanma + hafif titreme + vinyet + kaynak etiketi."""
+    W, H = F["w"], F["h"]
     key = (W, H)
     if key not in _grain_tiles:
         rng = np.random.default_rng(5)
@@ -1085,10 +1140,11 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
             pp, _ = pose(prev_scene.get("pose", "talk"), lt + spans[scene_idx - 1][1])
             p = blend(pp, p, ease(lt / 0.3))
 
-        if scene.get("image"):
-            img = render_cutaway(scene["image"], F, lt, dur, t)
+        media = scene.get("image") or scene.get("video")
+        if media:
+            img = render_cutaway(media, F, lt, dur, t, scene_key=scene_idx)
             if scene.get("props"):
-                dim = scene["image"].get("dim", 0.3)
+                dim = media.get("dim", 0.3)
                 if dim:
                     img = Image.blend(img, Image.new("RGB", img.size, (0, 0, 0)), dim)
                 for j, spec in enumerate(scene["props"]):
@@ -1127,7 +1183,9 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
             ab.deco(name, d, F, lt, font, fig_c)
         mouth = float(env[fi]) if env is not None and fi < len(env) else 0.0
         glow = pname in ("idea", "celebrate") or expr == "happy"
-        if F.get("character") == "stick":
+        if F.get("character") == "none":
+            anchors = {}
+        elif F.get("character") == "stick":
             anchors = draw_figure(pen, p, expr, F["fig_x"], F["hip_y"], sc_, mouth, t=t, glow=glow)
         else:
             cs = sc_ * 1.08
@@ -1180,6 +1238,9 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
         ff.stdin.write(img.tobytes())
         if fi % (FPS * 5) == 0:
             print(f"  video [{lang}]: {t:5.1f}/{total:.1f} sn", flush=True)
+    for c in _clips.values():
+        c.close()
+    _clips.clear()
     ff.stdin.close()
     ff.wait()
     os.remove(wav)
@@ -1192,7 +1253,7 @@ def image_credits(scenes):
     import gorsel
     lines, seen = [], set()
     for sc in scenes:
-        f = (sc.get("image") or {}).get("file")
+        f = (sc.get("image") or sc.get("video") or {}).get("file")
         if f and f not in seen:
             seen.add(f)
             info = gorsel._db().get(f)
@@ -1242,8 +1303,11 @@ def main():
     if sub:  # ilk paragraftan sonra abone ol hatırlatması
         pos = sub.get("after", 1)
         data["scenes"].insert(pos, dict(pose=sub.get("pose", "point_right"), bg=sub.get("bg"), punch=False,
-                                        props=[dict(type="subscribe", pos="center", size=sub.get("size", 1.0),
+                                        props=[dict(type="subscribe", pos=sub.get("pos", "center"), size=sub.get("size", 1.0),
                                                     click=sub.get("click", 1.2))], say=sub["say"]))
+        for k in ("image", "video"):
+            if sub.get(k):
+                data["scenes"][pos][k] = dict(sub[k], dim=sub[k].get("dim", 0.45))
     for sc in data["scenes"]:
         if not sc.get("bg"):
             sc.pop("bg", None)
@@ -1282,6 +1346,15 @@ def main():
                          caps if data.get("burn_captions", True) else None, env, caption_word_times(caps))
             write_srt(base + ".srt", srt_for(spans, lang))
             write_notes(base + "_yukleme.txt", data.get("meta", {}), lang, total)
+            for sl in data.get("subtitles", []):  # diğer diller: sadece altyazı (SRT) + çevrilmiş başlık/açıklama
+                srt = []
+                for (sc, au), (st, _) in zip(timeline, spans):
+                    txt = sc["say"].get(sl)
+                    if not txt:
+                        sys.exit(f"Altyazı için '{sl}' metni eksik: {sc['say'].get(lang, '')[:40]}")
+                    srt += [(a, b, plain(x)) for a, b, x in timed_chunks(txt, st, len(au[lang]) / SR, 42)]
+                write_srt(f"{base}.{sl}.srt", srt)
+                write_notes(f"{base}_yukleme_{sl}.txt", data.get("meta", {}), sl, total)
             print(f"✔ {base}.mp4 ({total:.1f} sn)")
     else:
         spans, total = layout(timeline, lambda au: max(len(a) for a in au.values()) / SR, data.get("loop", False))

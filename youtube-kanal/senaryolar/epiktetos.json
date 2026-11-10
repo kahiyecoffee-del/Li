@@ -4,10 +4,7 @@
   "theme": "academia",
   "loop": true,
   "languages": [
-    "en",
-    "es",
-    "pt",
-    "hi"
+    "en"
   ],
   "voices": {
     "en": "bm_george"
@@ -58,6 +55,39 @@
         "marcus aurelius",
         "इतिहास"
       ]
+    },
+    "tr": {
+      "title": "İmparatora nasıl yaşanacağını öğreten köle #shorts",
+      "description": "Epiktetos köle olarak doğdu, hiç kitap yazmadı ama Marcus Aurelius'u derinden etkiledi. Tek fikri: neyin bize bağlı olup neyin olmadığı.\n\nKaynaklar: Epiktetos, Enkheiridion 1; Söylevler (Arrianos); Marcus Aurelius, Kendime Düşünceler 1.7.\n\n#felsefe #stoacılık #tarih",
+      "tags": [
+        "epiktetos",
+        "stoacılık",
+        "felsefe",
+        "marcus aurelius",
+        "tarih"
+      ]
+    },
+    "de": {
+      "title": "Der Sklave, der einen Kaiser das Leben lehrte #shorts",
+      "description": "Epiktet wurde als Sklave geboren, schrieb nie ein Buch und prägte doch Mark Aurel. Seine Idee: die Unterscheidung zwischen dem, was bei uns liegt, und dem, was nicht.\n\nQuellen: Epiktet, Handbüchlein 1; Lehrgespräche (Arrian); Mark Aurel, Selbstbetrachtungen 1.7.\n\n#philosophie #stoizismus #geschichte",
+      "tags": [
+        "epiktet",
+        "stoizismus",
+        "philosophie",
+        "mark aurel",
+        "geschichte"
+      ]
+    },
+    "fr": {
+      "title": "L'esclave qui apprit à un empereur à vivre #shorts",
+      "description": "Épictète est né esclave, n'a jamais écrit de livre, et a pourtant marqué Marc Aurèle. Son idée : distinguer ce qui dépend de nous et ce qui n'en dépend pas.\n\nSources : Épictète, Manuel 1 ; Entretiens (Arrien) ; Marc Aurèle, Pensées 1.7.\n\n#philosophie #stoicisme #histoire",
+      "tags": [
+        "épictète",
+        "stoïcisme",
+        "philosophie",
+        "marc aurèle",
+        "histoire"
+      ]
     }
   },
   "scenes": [
@@ -69,7 +99,10 @@
         "en": "A *slave* taught a Roman *emperor* how to live.",
         "es": "Un *esclavo* le enseñó a un *emperador* romano a vivir.",
         "pt": "Um *escravo* ensinou um *imperador* romano a viver.",
-        "hi": "एक *गुलाम* ने एक रोमन *सम्राट* को जीना सिखाया।"
+        "hi": "एक *गुलाम* ने एक रोमन *सम्राट* को जीना सिखाया।",
+        "tr": "Bir *köle*, bir Roma *imparatoruna* nasıl yaşanacağını öğretti.",
+        "de": "Ein *Sklave* lehrte einen römischen *Kaiser*, wie man lebt.",
+        "fr": "Un *esclave* a appris à un *empereur* romain à vivre."
       },
       "image": {
         "file": "File:Ancient statue of emperor Marcus Aurelius.jpg",
@@ -94,7 +127,10 @@
         "en": "His name was *Epictetus*. Born around fifty AD, he was owned by a secretary of Emperor Nero.",
         "es": "Se llamaba *Epicteto*. Nació hacia el año cincuenta, y era propiedad de un secretario del emperador Nerón.",
         "pt": "Seu nome era *Epicteto*. Nasceu por volta do ano cinquenta, e pertencia a um secretário do imperador Nero.",
-        "hi": "उसका नाम था *एपिक्टेटस*। लगभग पचास ईस्वी में जन्मा, वह सम्राट नीरो के एक सचिव का गुलाम था।"
+        "hi": "उसका नाम था *एपिक्टेटस*। लगभग पचास ईस्वी में जन्मा, वह सम्राट नीरो के एक सचिव का गुलाम था।",
+        "tr": "Adı *Epiktetos*'tu. MS elli civarında doğdu ve İmparator Neron'un bir sekreterinin kölesiydi.",
+        "de": "Sein Name war *Epiktet*. Um das Jahr fünfzig geboren, gehörte er einem Sekretär von Kaiser Nero.",
+        "fr": "Il s'appelait *Épictète*. Né vers l'an cinquante, il appartenait à un secrétaire de l'empereur Néron."
       },
       "image": {
         "file": "File:Epictetus portrait from Les Morales de Plutarque, Sénèque, Socrate et Epictète, 1653, Indian ink.png",
@@ -113,7 +149,10 @@
         "en": "Legend says his master twisted his leg until it broke.",
         "es": "Cuenta la leyenda que su amo le torció la pierna hasta romperla.",
         "pt": "Diz a lenda que seu dono torceu sua perna até quebrá-la.",
-        "hi": "कहते हैं, उसके मालिक ने उसकी टांग तब तक मरोड़ी जब तक वह टूट न गई।"
+        "hi": "कहते हैं, उसके मालिक ने उसकी टांग तब तक मरोड़ी जब तक वह टूट न गई।",
+        "tr": "Rivayete göre efendisi, bacağını kırılana kadar büktü.",
+        "de": "Der Legende nach verdrehte sein Herr ihm das Bein, bis es brach.",
+        "fr": "La légende dit que son maître lui tordit la jambe jusqu'à la briser."
       },
       "image": {
         "file": "File:Epictetus - from Voltaire's Romances translated from the French - 1889 edition.jpg",
@@ -150,7 +189,10 @@
         "en": "Epictetus only said: *I told you it would break*.",
         "es": "Epicteto solo dijo: *te dije que se rompería*.",
         "pt": "Epicteto apenas disse: *eu avisei que ia quebrar*.",
-        "hi": "एपिक्टेटस ने बस इतना कहा: *मैंने कहा था, यह टूट जाएगी*।"
+        "hi": "एपिक्टेटस ने बस इतना कहा: *मैंने कहा था, यह टूट जाएगी*।",
+        "tr": "Epiktetos sadece şunu söyledi: *Kırılacak demiştim*.",
+        "de": "Epiktet sagte nur: *Ich habe dir gesagt, dass es bricht*.",
+        "fr": "Épictète dit seulement : *je t'avais dit qu'elle casserait*."
       },
       "image": {
         "file": "File:Epictetus - Henri Bonnart engraving c. 1700.png",
@@ -170,7 +212,10 @@
         "en": "How can anyone stay that calm? He followed *one idea*. Emperors and prisoners of war have used it for two thousand years.",
         "es": "¿Cómo puede alguien estar tan tranquilo? Seguía *una sola idea*. Emperadores y prisioneros de guerra la han usado durante dos mil años.",
         "pt": "Como alguém fica tão calmo? Ele seguia *uma única ideia*. Imperadores e prisioneiros de guerra a usam há dois mil anos.",
-        "hi": "कोई इतना शांत कैसे रह सकता है? वह *एक ही विचार* पर चलता था। सम्राटों और युद्धबंदियों ने दो हज़ार साल से इसे अपनाया है।"
+        "hi": "कोई इतना शांत कैसे रह सकता है? वह *एक ही विचार* पर चलता था। सम्राटों और युद्धबंदियों ने दो हज़ार साल से इसे अपनाया है।",
+        "tr": "Biri nasıl bu kadar sakin kalabilir? *Tek bir fikre* göre yaşıyordu. İmparatorlar ve savaş esirleri iki bin yıldır bu fikri kullanıyor.",
+        "de": "Wie kann jemand so ruhig bleiben? Er folgte *einer einzigen Idee*. Kaiser und Kriegsgefangene nutzen sie seit zweitausend Jahren.",
+        "fr": "Comment rester aussi calme ? Il suivait *une seule idée*. Des empereurs et des prisonniers de guerre l'utilisent depuis deux mille ans."
       },
       "image": {
         "file": "File:The Death of Socrates MET 31.45 1.jpg",
@@ -218,7 +263,10 @@
         "en": "Some things are *up to us*: our judgments, our choices, our actions.",
         "es": "Algunas cosas *dependen de nosotros*: nuestros juicios, decisiones y acciones.",
         "pt": "Algumas coisas *dependem de nós*: nossos julgamentos, escolhas e ações.",
-        "hi": "कुछ चीज़ें *हमारे हाथ में* हैं: हमारी सोच, हमारे फ़ैसले, हमारे कर्म।"
+        "hi": "कुछ चीज़ें *हमारे हाथ में* हैं: हमारी सोच, हमारे फ़ैसले, हमारे कर्म।",
+        "tr": "Bazı şeyler *bize bağlıdır*: yargılarımız, seçimlerimiz, eylemlerimiz.",
+        "de": "Manches *liegt bei uns*: unsere Urteile, unsere Entscheidungen, unser Handeln.",
+        "fr": "Certaines choses *dépendent de nous* : nos jugements, nos choix, nos actes."
       },
       "image": {
         "file": "File:Zeno of Citium2.jpg",
@@ -255,7 +303,10 @@
         "en": "Everything else is *not*: our body, our reputation, what other people do.",
         "es": "Todo lo demás *no*: nuestro cuerpo, nuestra reputación, lo que hacen los demás.",
         "pt": "Todo o resto *não*: nosso corpo, nossa reputação, o que os outros fazem.",
-        "hi": "बाकी सब *नहीं*: हमारा शरीर, हमारी इज़्ज़त, दूसरे लोग क्या करते हैं।"
+        "hi": "बाकी सब *नहीं*: हमारा शरीर, हमारी इज़्ज़त, दूसरे लोग क्या करते हैं।",
+        "tr": "Geri kalan her şey *değildir*: bedenimiz, itibarımız, başkalarının yaptıkları.",
+        "de": "Alles andere *nicht*: unser Körper, unser Ruf, was andere tun.",
+        "fr": "Tout le reste, *non* : notre corps, notre réputation, ce que font les autres."
       },
       "image": {
         "file": "File:Hovhannes Aivazovsky - The Ninth Wave - Google Art Project.jpg",
@@ -275,7 +326,10 @@
         "en": "We suffer when we fight what we *cannot control*.",
         "es": "Sufrimos cuando luchamos contra lo que *no podemos controlar*.",
         "pt": "Sofremos quando lutamos contra o que *não podemos controlar*.",
-        "hi": "हम तब दुखी होते हैं जब उससे लड़ते हैं जिसे हम *काबू नहीं कर सकते*।"
+        "hi": "हम तब दुखी होते हैं जब उससे लड़ते हैं जिसे हम *काबू नहीं कर सकते*।",
+        "tr": "*Kontrol edemediğimiz* şeylerle savaştığımızda acı çekeriz.",
+        "de": "Wir leiden, wenn wir gegen das kämpfen, was wir *nicht kontrollieren können*.",
+        "fr": "Nous souffrons quand nous luttons contre ce que nous *ne pouvons pas contrôler*."
       },
       "image": {
         "file": "File:Titian - Sisyphus - Madrid - Prado.jpg",
@@ -294,7 +348,10 @@
         "en": "He was later freed, taught philosophy, and was banished by Emperor Domitian. He never *wrote* a single book.",
         "es": "Más tarde fue liberado, enseñó filosofía y fue desterrado por el emperador Domiciano. Nunca *escribió* un libro.",
         "pt": "Mais tarde foi libertado, ensinou filosofia e foi exilado pelo imperador Domiciano. Nunca *escreveu* um livro.",
-        "hi": "बाद में वह आज़ाद हुआ, दर्शन पढ़ाया, और सम्राट डोमिशियन ने उसे देश से निकाल दिया। उसने एक भी किताब *नहीं लिखी*।"
+        "hi": "बाद में वह आज़ाद हुआ, दर्शन पढ़ाया, और सम्राट डोमिशियन ने उसे देश से निकाल दिया। उसने एक भी किताब *नहीं लिखी*।",
+        "tr": "Sonradan özgür bırakıldı, felsefe öğretti ve İmparator Domitianus tarafından sürgüne gönderildi. Tek bir kitap bile *yazmadı*.",
+        "de": "Später wurde er freigelassen, lehrte Philosophie und wurde von Kaiser Domitian verbannt. Er hat nie ein einziges Buch *geschrieben*.",
+        "fr": "Plus tard, il fut affranchi, enseigna la philosophie et fut banni par l'empereur Domitien. Il n'a jamais *écrit* un seul livre."
       },
       "image": {
         "file": "File:Claude Lorrain - Capriccio with ruins of the Roman Forum - Google Art Project.jpg",
@@ -313,7 +370,10 @@
         "en": "His student *Arrian* wrote his lessons down.",
         "es": "Su alumno *Arriano* escribió sus lecciones.",
         "pt": "Seu aluno *Arriano* registrou suas lições.",
-        "hi": "उसके शिष्य *एरियन* ने उसकी शिक्षाएँ लिख लीं।"
+        "hi": "उसके शिष्य *एरियन* ने उसकी शिक्षाएँ लिख लीं।",
+        "tr": "Öğrencisi *Arrianos* derslerini yazıya geçirdi.",
+        "de": "Sein Schüler *Arrian* schrieb seine Lehren auf.",
+        "fr": "Son élève *Arrien* mit ses leçons par écrit."
       },
       "image": {
         "file": "File:Cover of The Discourses of Epictetus, circa 1887.png",
@@ -333,7 +393,10 @@
         "en": "And the future emperor *Marcus Aurelius* read those notes, and quoted him in his own private journal.",
         "es": "Y el futuro emperador *Marco Aurelio* leyó esas notas y lo citó en su diario personal.",
         "pt": "E o futuro imperador *Marco Aurélio* leu essas anotações e o citou em seu diário pessoal.",
-        "hi": "और भविष्य के सम्राट *मार्कस ऑरेलियस* ने वे नोट्स पढ़े, और अपनी निजी डायरी में उसे उद्धृत किया।"
+        "hi": "और भविष्य के सम्राट *मार्कस ऑरेलियस* ने वे नोट्स पढ़े, और अपनी निजी डायरी में उसे उद्धृत किया।",
+        "tr": "Ve geleceğin imparatoru *Marcus Aurelius* bu notları okudu, onu kendi kişisel günlüğünde alıntıladı.",
+        "de": "Und der künftige Kaiser *Mark Aurel* las diese Notizen und zitierte ihn in seinem privaten Tagebuch.",
+        "fr": "Et le futur empereur *Marc Aurèle* lut ces notes, et le cita dans son journal intime."
       },
       "image": {
         "file": "File:Head Marcus Aurelius archmus Heraklion.jpg",
@@ -351,13 +414,14 @@
       "props": [
         {
           "type": "bigtext",
-          "pos": "center",
+          "pos": [
+            0.5,
+            0.72
+          ],
           "size": 0.75,
+          "delay": 0.6,
           "text": {
-            "en": "UP TO ME?",
-            "es": "¿DEPENDE DE MÍ?",
-            "pt": "DEPENDE DE MIM?",
-            "hi": "मेरे हाथ में?"
+            "en": "UP TO ME?"
           }
         }
       ],
@@ -365,19 +429,55 @@
         "en": "So next time something upsets you, ask: is this *up to me*? Because that is how...",
         "es": "Así que la próxima vez que algo te altere, pregúntate: ¿esto *depende de mí*? Porque así es como...",
         "pt": "Então, da próxima vez que algo te abalar, pergunte: isso *depende de mim*? Porque foi assim que...",
-        "hi": "तो अगली बार कुछ परेशान करे, तो पूछो: क्या यह *मेरे हाथ में* है? क्योंकि इसी तरह..."
+        "hi": "तो अगली बार कुछ परेशान करे, तो पूछो: क्या यह *मेरे हाथ में* है? क्योंकि इसी तरह...",
+        "tr": "Yani bir dahaki sefere bir şey canını sıktığında sor: bu *bana mı bağlı*? Çünkü işte böyle...",
+        "de": "Also, wenn dich das nächste Mal etwas aufregt, frag dich: *liegt das bei mir*? Denn genau so...",
+        "fr": "Alors la prochaine fois que quelque chose te contrarie, demande-toi : est-ce que ça *dépend de moi* ? Car c'est ainsi que..."
+      },
+      "image": {
+        "file": "File:Ancient statue of emperor Marcus Aurelius.jpg",
+        "label": "Marcus Aurelius · Capitoline Museums, Rome",
+        "focus": [
+          0.5,
+          0.42
+        ],
+        "move": "out",
+        "dim": 0.35
       }
     }
   ],
   "subscribe": {
     "after": 4,
-    "bg": "library",
-    "pose": "point_right",
+    "image": {
+      "file": "File:Epictetus portrait from Les Morales de Plutarque, Sénèque, Socrate et Epictète, 1653, Indian ink.png",
+      "focus": [
+        0.5,
+        0.35
+      ],
+      "move": "out",
+      "dim": 0.55
+    },
+    "pos": [
+      0.5,
+      0.7
+    ],
     "say": {
       "en": "Quick favor: if you enjoy stories like this, *subscribe*. It really helps the channel.",
       "es": "Un pequeño favor: si te gustan historias como esta, *suscríbete*. Ayuda mucho al canal.",
       "pt": "Um pequeno favor: se você curte histórias assim, *inscreva-se*. Ajuda muito o canal.",
-      "hi": "एक छोटी सी गुज़ारिश: अगर ऐसी कहानियाँ पसंद हैं, तो *सब्सक्राइब* करो। इससे चैनल को बहुत मदद मिलती है।"
+      "hi": "एक छोटी सी गुज़ारिश: अगर ऐसी कहानियाँ पसंद हैं, तो *सब्सक्राइब* करो। इससे चैनल को बहुत मदद मिलती है।",
+      "tr": "Küçük bir rica: böyle hikâyeleri seviyorsan *abone ol*. Kanala gerçekten çok yardımı oluyor.",
+      "de": "Kleine Bitte: Wenn dir solche Geschichten gefallen, *abonniere* den Kanal. Das hilft wirklich sehr.",
+      "fr": "Petite faveur : si tu aimes ce genre d'histoires, *abonne-toi*. Ça aide vraiment la chaîne."
     }
-  }
+  },
+  "subtitles": [
+    "es",
+    "pt",
+    "fr",
+    "de",
+    "hi",
+    "tr"
+  ],
+  "character": "none"
 }
