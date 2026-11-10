@@ -201,7 +201,7 @@ THEMES = {
     "karakalem": dict(font="Kalam-Bold.ttf", font_hi="Kalam-Bold.ttf", swipe=[(236, 230, 215), (228, 220, 202)], stars=False,
                       badge=(150, 45, 35), cap_box=(240, 234, 220, 238), cap_key=(176, 48, 38), cap_cur=(48, 86, 168),
                       cap_text=(40, 38, 42), cap_stroke=(40, 38, 42), cap_stroke_scale=0.0, music="ambient", cap_scale=0.9,
-                      character="none", bar=(150, 45, 35)),
+                      character="none", bar=(150, 45, 35), whoosh=False, music_gain=0.24, duck=0.55, gap=0.65),
 }
 CUR = {"theme": THEMES["playful"], "lang": "en"}
 
@@ -655,9 +655,27 @@ def tts(text, lang, speed):
     cfg = dict(LANGS[lang])
     cfg["voice"] = CUR.get("voices", {}).get(lang, cfg["voice"])
     text = text.replace("*", "")
-    samples, sr = _kokoro.create(text, voice=cfg["voice"], speed=speed, lang=cfg["kokoro"])
-    assert sr == SR
-    return np.asarray(samples, dtype=np.float32)
+    speed = speed * CUR.get("speech_rate", 1.0)
+    # daha insani okuma: cümle cümle seslendir, aralara doğal duraklar koy
+    import re
+    parts = [p.strip() for p in re.split(r"(?<=[.!?…])\s+|(?<=—)\s+", text) if p.strip()]
+    out = []
+    for i, part in enumerate(parts):
+        samples, sr = _kokoro.create(part, voice=cfg["voice"], speed=speed, lang=cfg["kokoro"])
+        assert sr == SR
+        a = np.asarray(samples, dtype=np.float32)
+        # baştaki/sondaki sessizliği kırp
+        nz = np.nonzero(np.abs(a) > 0.01)[0]
+        if len(nz):
+            a = a[max(0, nz[0] - int(0.03 * SR)):nz[-1] + int(0.06 * SR)]
+        out.append(a)
+        if i < len(parts) - 1:
+            end = part.rstrip()[-1:]
+            pause = {"?": 0.5, "…": 0.6, ".": 0.38, "!": 0.4, "—": 0.22}.get(end, 0.3)
+            if part.rstrip().endswith("..."):
+                pause = 0.6
+            out.append(np.zeros(int(pause * SR), dtype=np.float32))
+    return np.concatenate(out) if out else np.zeros(1, dtype=np.float32)
 
 
 def envelope(audio, n_frames):
@@ -747,7 +765,7 @@ def layout(timeline, durs_for, loop=False):
     t = 0.05 if loop else LEAD
     spans = []
     for idx, (sc, audios) in enumerate(timeline):
-        d = durs_for(audios) + GAP
+        d = durs_for(audios) + CUR["theme"].get("gap", GAP)
         spans.append((t, d))
         t += d
     return spans, t + (0.1 if loop else TAIL)
@@ -776,7 +794,8 @@ def sfx_events(timeline, spans):
     ev = []
     for i, ((sc, _), (st, dur)) in enumerate(zip(timeline, spans)):
         if i > 0:
-            ev.append(("whoosh", st - SWIPE / 2 - 0.05, 0.55))
+            if CUR["theme"].get("whoosh", True):
+                ev.append(("whoosh", st - SWIPE / 2 - 0.05, 0.55))
         if sc.get("punch"):
             ev.append(("boom", st, 0.7))
         for j, spec in enumerate(sc.get("props", [])):
@@ -810,7 +829,7 @@ def final_mix(voice, events, use_music):
     if use_music:
         m = music(len(voice) / SR, style=CUR["theme"]["music"])
         m = m[:len(voice)]
-        out[:len(m)] += duck(m, voice) * 0.13
+        out[:len(m)] += duck(m, voice, depth=CUR["theme"].get("duck", 0.7)) * CUR["theme"].get("music_gain", 0.13)
     peak = np.max(np.abs(out))
     if peak > 0.97:
         out = np.tanh(out * 1.1) * (0.97 / np.tanh(peak * 1.1))
@@ -1156,6 +1175,20 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
                 _sketches[scene_idx] = (sk, max(1.0, sk.end / max(dur * 0.55, 0.5)))
             sk, speed = _sketches[scene_idx]
             img = sk.frame(lt * speed)
+        elif media and media.get("style") == "sketch":  # gerçek portre/tablo, karakalem olarak çizilir
+            if scene_idx not in _sketches:
+                import gorsel
+                import karakalem
+                path, _info = gorsel.fetch(media["file"])
+                skp = karakalem.Sketch(Image.open(path), W, H, mode=media.get("fit", "contain"),
+                                       focus=tuple(media.get("focus", [0.5, 0.4])), tint=media.get("tint", 0.22), seed=scene_idx + 3)
+                _sketches.clear()
+                _sketches[scene_idx] = (skp, min(3.2, max(1.2, dur * 0.5)))
+            skp, dtime = _sketches[scene_idx]
+            img = skp.frame(lt / dtime)
+            if media.get("label") and lt > dtime * 0.7:
+                import eskiz
+                eskiz.Text(media["label"], W / 2, H * 0.08, int(46 * W / 1920), eskiz.INK).draw(img, min(1.0, (lt - dtime * 0.7) / 0.8))
         elif media:
             img = render_cutaway(media, F, lt, dur, t, scene_key=scene_idx)
         if media is not None and (media or scene.get("sketch") is not None):
@@ -1334,6 +1367,7 @@ def main():
         sc.setdefault("bg", data.get("bg", "room"))
     CUR["theme"] = THEMES[data.get("theme", "playful")]
     CUR["voices"] = data.get("voices", {})
+    CUR["speech_rate"] = data.get("speech_rate", 1.0)
     F = dict(F, character=data.get("character", CUR["theme"]["character"]))
     CREDITS[:] = image_credits(data["scenes"])
     slug = data.get("slug") or os.path.splitext(os.path.basename(args.senaryo))[0]

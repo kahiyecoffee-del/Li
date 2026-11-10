@@ -623,6 +623,252 @@ ELEMENTS = {
 }
 
 
+def _rect(x0, y0, x1, y1):
+    return [(x0, y0), (x1, y0), (x1, y1), (x0, y1), (x0, y0)]
+
+
+def _blob(points, tone=0.85, color=INK, seed=0, style="charcoal", smooth=0.0):
+    xs, ys = [p[0] for p in points], [p[1] for p in points]
+    m, o = mask_from(lambda d, T, ss: d.polygon([T(p) for p in points], fill=255), (min(xs) - 4, min(ys) - 4, max(xs) + 4, max(ys) + 4),
+                     smooth=smooth)
+    return Fill(m, o, tone=tone, color=color, seed=seed, style=style)
+
+
+def el_glass_stick(x, y, s, seed=0, **_):
+    w, h = 220 * s, 330 * s
+    out = [Stroke([(x - w / 2, y - h), (x - w * 0.4, y), (x + w * 0.4, y), (x + w / 2, y - h)], 5 * s + 1, seed=seed),
+           Stroke(wobble([(x - w * 0.47, y - h * 0.55), (x + w * 0.47, y - h * 0.55)], 3, seed), 3 * s + 1, BLUE, seed=seed + 1)]
+    for k in range(4):
+        yy = y - h * 0.45 + k * h * 0.11
+        out.append(Stroke([(x - w * 0.42, yy), (x + w * 0.42, yy)], 2, (120, 150, 200), 1, seed + 5 + k))
+    out.append(Stroke([(x - w * 0.9, y - h * 1.15), (x - w * 0.05, y - h * 0.55)], 8 * s + 1, (120, 80, 50), seed=seed + 2))
+    out.append(Stroke([(x - w * 0.05, y - h * 0.55), (x + w * 0.15, y - h * 0.08)], 8 * s + 1, (120, 80, 50), seed=seed + 3))
+    return out
+
+
+def el_eye(x, y, s, seed=0, **_):
+    w, h = 300 * s, 140 * s
+    out = [Stroke(bez((x - w / 2, y), (x, y - h * 1.1), (x + w / 2, y)), 6 * s + 1, seed=seed),
+           Stroke(bez((x - w / 2, y), (x, y + h * 1.1), (x + w / 2, y)), 6 * s + 1, seed=seed + 1),
+           Stroke(ellipse_pts(x, y, h * 0.42, h * 0.42, n=24, seed=seed), 4 * s + 1, seed=seed + 2)]
+    m, o = mask_from(lambda d, T, ss: d.ellipse([T((x - h * 0.2, y - h * 0.2)), T((x + h * 0.2, y + h * 0.2))], fill=255),
+                     (x - h * 0.22, y - h * 0.22, x + h * 0.22, y + h * 0.22))
+    out.append(Fill(m, o, tone=0.95, seed=seed))
+    for k in range(5):
+        a = math.pi * (1.15 + k * 0.17)
+        out.append(Stroke([(x + math.cos(a) * w * 0.42, y + math.sin(a) * h * 0.62),
+                           (x + math.cos(a) * w * 0.5, y + math.sin(a) * h * 0.95)], 3 * s + 1, seed=seed + 9 + k))
+    return out
+
+
+def el_demon(x, y, s, strings_to=None, seed=0, W=1920, H=1080, **_):
+    """Gökyüzünde büyük boynuzlu iblis silüeti; ellerinden aşağı ipler (kukla)."""
+    r = 120 * s
+    pts = [(x - r * 1.6, y + r * 1.2), (x - r * 1.3, y + r * 0.2), (x - r * 0.75, y - r * 0.35), (x - r * 1.05, y - r * 1.0),
+           (x - r * 1.0, y - r * 1.7), (x - r * 0.55, y - r * 0.75), (x, y - r * 0.85), (x + r * 0.55, y - r * 0.75),
+           (x + r * 1.0, y - r * 1.7), (x + r * 1.05, y - r * 1.0), (x + r * 0.75, y - r * 0.35), (x + r * 1.3, y + r * 0.2),
+           (x + r * 1.6, y + r * 1.2)]
+    out = [_blob(pts, tone=0.92, seed=seed, smooth=r * 0.03)]
+    grin = [(x - r * 0.45, y + r * 0.25), (x - r * 0.3, y + r * 0.38), (x - r * 0.15, y + r * 0.28), (x, y + r * 0.42),
+            (x + r * 0.15, y + r * 0.28), (x + r * 0.3, y + r * 0.38), (x + r * 0.45, y + r * 0.25)]
+    out.append(Stroke(grin, 4 * s + 1, (238, 232, 218), 1, seed=seed + 7))
+    for side in (-1, 1):
+        ex, ey = x + side * r * 0.35, y - r * 0.15
+        m, o = mask_from(lambda d, T, ss: d.polygon([T((ex - r * 0.18, ey - r * 0.05 * side)), T((ex + r * 0.18, ey + r * 0.05 * side)),
+                                                     T((ex, ey + r * 0.1))], fill=255), (ex - r * 0.2, ey - r * 0.12, ex + r * 0.2, ey + r * 0.12))
+        out.append(Fill(m, o, tone=0.95, color=RED, seed=seed + side, outline=False))
+    if strings_to:
+        for k, (tx, ty) in enumerate(strings_to):
+            sx = x + (-1 if k % 2 == 0 else 1) * r * (1.2 + 0.2 * k)
+            out.append(Stroke([(sx, y + r * 1.0), (tx * W, ty * H)], 2, COLORS["grey"], 1, seed + 20 + k))
+    return out
+
+
+def el_pit(x, y, s, figure_in=True, seed=0, **_):
+    w, d_ = 520 * s, 330 * s
+    out = [Stroke(wobble([(x - w * 1.0, y - d_), (x - w / 2, y - d_)], 2, seed), 5 * s + 1, seed=seed),
+           Stroke(wobble([(x + w / 2, y - d_), (x + w * 1.0, y - d_)], 2, seed + 1), 5 * s + 1, seed=seed + 1),
+           Stroke(wobble([(x - w / 2, y - d_), (x - w * 0.45, y), (x + w * 0.45, y), (x + w / 2, y - d_)], 3, seed + 2), 5 * s + 1, seed=seed + 2)]
+    hm, ho = mask_from(lambda dd, T, ss: dd.polygon([T((x - w / 2, y - d_)), T((x - w * 0.45, y)), T((x + w * 0.45, y)), T((x + w / 2, y - d_))],
+                                                     fill=255), (x - w / 2, y - d_, x + w / 2, y))
+    out.append(Fill(hm, ho, tone=0.35, style="hatch", seed=seed, outline=False))
+    if figure_in:
+        items, _a = figure(x, y - 6 * s, d_ * 0.75, "think", 1, seed=seed + 5)
+        out += items
+    return out
+
+
+def el_ladder(x, y, s, h=1.0, broken=False, seed=0, **_):
+    L, w = 520 * s * h, 90 * s
+    out = [Stroke(wobble([(x - w / 2, y), (x - w / 2 + 40 * s, y - L)], 2, seed), 6 * s + 1, (120, 80, 50), seed=seed),
+           Stroke(wobble([(x + w / 2, y), (x + w / 2 + 40 * s, y - L)], 2, seed + 1), 6 * s + 1, (120, 80, 50), seed=seed + 1)]
+    n = 7
+    for k in range(1, n):
+        u = k / n
+        yy = y - L * u
+        x0, x1 = x - w / 2 + 40 * s * u, x + w / 2 + 40 * s * u
+        if broken and k in (3, 5):
+            out.append(Stroke([(x0, yy), (x0 + w * 0.35, yy + 14 * s)], 5 * s, (120, 80, 50), seed=seed + k))
+            continue
+        out.append(Stroke([(x0, yy), (x1, yy)], 5 * s, (120, 80, 50), seed=seed + k))
+    return out
+
+
+def el_stone(x, y, s, seed=0, **_):
+    r = 120 * s
+    pts = [(x - r * 1.3, y), (x - r * 1.2, y - r * 0.6), (x - r * 0.5, y - r * 1.05), (x + r * 0.4, y - r * 0.95),
+           (x + r * 1.2, y - r * 0.45), (x + r * 1.35, y)]
+    return [_blob(pts, tone=0.55, seed=seed, smooth=r * 0.06), Stroke(wobble(pts, 3, seed), 5 * s + 1, seed=seed)]
+
+
+def el_house(x, y, s, lit=True, seed=0, **_):
+    w, h = 360 * s, 260 * s
+    out = [Stroke(_rect(x - w / 2, y - h, x + w / 2, y), 6 * s + 1, seed=seed),
+           Stroke([(x - w * 0.6, y - h), (x, y - h * 1.8), (x + w * 0.6, y - h)], 6 * s + 1, seed=seed + 1),
+           Stroke(_rect(x - 40 * s, y - 130 * s, x + 40 * s, y), 4 * s + 1, seed=seed + 2)]
+    for wx in (x - w * 0.32, x + w * 0.32):
+        if lit:
+            m, o = mask_from(lambda d, T, ss, wx=wx: d.rectangle([T((wx - 45 * s, y - h * 0.8)), T((wx + 45 * s, y - h * 0.45))], fill=255),
+                             (wx - 45 * s, y - h * 0.8, wx + 45 * s, y - h * 0.45))
+            out.append(Fill(m, o, tone=0.95, color=(245, 205, 110), seed=seed, outline=False))
+        out.append(Stroke(_rect(wx - 45 * s, y - h * 0.8, wx + 45 * s, y - h * 0.45), 4 * s + 1, seed=seed + 3))
+    return out
+
+
+def el_basket(x, y, s, seed=0, **_):
+    w, h = 220 * s, 130 * s
+    out = [Stroke(bez((x - w / 2, y - h), (x, y - h * 0.8), (x + w / 2, y - h)), 5 * s + 1, (140, 95, 50), seed=seed),
+           Stroke([(x - w / 2, y - h), (x - w * 0.38, y), (x + w * 0.38, y), (x + w / 2, y - h)], 5 * s + 1, (140, 95, 50), seed=seed + 1),
+           Stroke(bez((x - w * 0.42, y - h), (x, y - h * 2.2), (x + w * 0.42, y - h)), 4 * s + 1, (140, 95, 50), seed=seed + 2)]
+    for k in range(3):
+        yy = y - h * (0.25 + 0.25 * k)
+        out.append(Stroke([(x - w * 0.44, yy), (x + w * 0.44, yy)], 2, (160, 115, 70), 1, seed + 5 + k))
+    return out
+
+
+def el_box(x, y, s, seed=0, **_):
+    w, h = 220 * s, 160 * s
+    return [Stroke(_rect(x - w / 2, y - h, x + w / 2, y), 5 * s + 1, (120, 80, 50), seed=seed),
+            Stroke([(x - w / 2, y - h), (x - w / 2 + 40 * s, y - h - 40 * s), (x + w / 2 + 40 * s, y - h - 40 * s), (x + w / 2, y - h)],
+                   4 * s + 1, (120, 80, 50), seed=seed + 1),
+            Stroke([(x + w / 2 + 40 * s, y - h - 40 * s), (x + w / 2 + 40 * s, y - 40 * s), (x + w / 2, y)], 4 * s + 1, (120, 80, 50), seed=seed + 2)]
+
+
+def el_marble(x, y, s, color="blue", seed=0, **_):
+    r = 26 * s
+    m, o = mask_from(lambda d, T, ss: d.ellipse([T((x - r, y - r)), T((x + r, y + r))], fill=255), (x - r, y - r, x + r, y + r))
+    return [Fill(m, o, tone=0.95, color=COLORS.get(color, BLUE), seed=seed)]
+
+
+def el_camera(x, y, s, face=-1, seed=0, **_):
+    w, h = 200 * s, 120 * s
+    out = [Stroke(_rect(x - w / 2, y - h / 2, x + w / 2, y + h / 2), 5 * s + 1, seed=seed),
+           Stroke(ellipse_pts(x - w * 0.22, y - h * 0.85, h * 0.35, h * 0.35, n=20, seed=seed), 4 * s + 1, seed=seed + 1),
+           Stroke(ellipse_pts(x + w * 0.22, y - h * 0.85, h * 0.35, h * 0.35, n=20, seed=seed + 1), 4 * s + 1, seed=seed + 2),
+           Stroke([(x + face * w / 2, y - h * 0.3), (x + face * w * 0.85, y - h * 0.5), (x + face * w * 0.85, y + h * 0.5),
+                   (x + face * w / 2, y + h * 0.3)], 4 * s + 1, seed=seed + 3),
+           Stroke([(x, y + h / 2), (x - w * 0.4, y + h * 2.4)], 4 * s + 1, seed=seed + 4),
+           Stroke([(x, y + h / 2), (x + w * 0.4, y + h * 2.4)], 4 * s + 1, seed=seed + 5),
+           Stroke([(x, y + h / 2), (x, y + h * 2.4)], 4 * s + 1, seed=seed + 6)]
+    return out
+
+
+def el_dome(x, y, s, seed=0, **_):
+    r = 520 * s
+    out = [Stroke([(x + math.cos(u) * r, y - math.sin(u) * r * 0.75) for u in np.linspace(0, math.pi, 40)], 4 * s + 1, BLUE, seed=seed)]
+    for k in range(1, 5):
+        u = k / 5 * math.pi
+        out.append(Stroke([(x + math.cos(u) * r, y - math.sin(u) * r * 0.75), (x + math.cos(u) * r * 0.5, y)], 2, (120, 150, 200), 1, seed + k))
+    return out
+
+
+def el_vat(x, y, s, wires=True, seed=0, **_):
+    w, h = 260 * s, 340 * s
+    out = [Stroke([(x - w / 2, y - h), (x - w / 2, y), (x + w / 2, y), (x + w / 2, y - h)], 5 * s + 1, seed=seed),
+           Stroke(ellipse_pts(x, y - h, w / 2, 26 * s, n=30, seed=seed), 4 * s + 1, seed=seed + 1),
+           Stroke(wobble([(x - w * 0.48, y - h * 0.82), (x + w * 0.48, y - h * 0.82)], 3, seed), 3 * s + 1, (120, 150, 200), seed=seed + 2)]
+    bx, by = x, y - h * 0.42
+    bm, bo = mask_from(lambda d, T, ss: d.ellipse([T((bx - w * 0.32, by - h * 0.22)), T((bx + w * 0.32, by + h * 0.18))], fill=255),
+                       (bx - w * 0.34, by - h * 0.24, bx + w * 0.34, by + h * 0.2), smooth=4)
+    out.append(Fill(bm, bo, tone=0.75, color=(200, 120, 130), seed=seed))
+    for k in range(5):
+        yy = by - h * 0.15 + k * h * 0.07
+        out.append(Stroke(bez((bx - w * 0.28, yy), (bx, yy - 20 * s * ((-1) ** k)), (bx + w * 0.28, yy), 10), 2, (120, 50, 60), 1, seed + 9 + k))
+    if wires:
+        for k, dx in enumerate((-0.15, 0.0, 0.15)):
+            out.append(Stroke(bez((bx + w * dx, by - h * 0.18), (bx + w * dx + 60 * s, y - h * 1.4), (x + w * 1.1, y - h * (0.9 - 0.15 * k)), 16),
+                              3 * s + 1, seed=seed + 20 + k))
+    return out
+
+
+def el_top(x, y, s, seed=0, **_):
+    w, h = 140 * s, 180 * s
+    out = [Stroke([(x - w / 2, y - h * 0.6), (x, y), (x + w / 2, y - h * 0.6)], 5 * s + 1, seed=seed),
+           Stroke(ellipse_pts(x, y - h * 0.6, w / 2, 20 * s, n=26, seed=seed), 5 * s + 1, seed=seed + 1),
+           Stroke([(x, y - h * 0.6), (x, y - h)], 7 * s + 1, seed=seed + 2)]
+    for k in range(3):
+        out.append(Stroke([(x + math.cos(u) * w * (0.8 + 0.12 * k), y - h * 0.35 + math.sin(u) * 30 * s) for u in np.linspace(0.3, 2.6, 12)],
+                          2, COLORS["grey"], 1, seed + 5 + k))
+    return out
+
+
+def el_backgammon(x, y, s, seed=0, **_):
+    w, h = 520 * s, 300 * s
+    out = [Stroke(_rect(x - w / 2, y - h / 2, x + w / 2, y + h / 2), 6 * s + 1, (120, 80, 50), seed=seed),
+           Stroke([(x, y - h / 2), (x, y + h / 2)], 4 * s + 1, (120, 80, 50), seed=seed + 1)]
+    for k in range(12):
+        side = -1 if k < 6 else 1
+        cx = x - w / 2 + (k + 0.5 + (0.6 if k >= 6 else 0)) * (w / 12.6)
+        out.append(Stroke([(cx - 16 * s, y - h / 2 + 4), (cx, y - h * 0.08), (cx + 16 * s, y - h / 2 + 4)], 2, INK if k % 2 else RED, 1, seed + k))
+        out.append(Stroke([(cx - 16 * s, y + h / 2 - 4), (cx, y + h * 0.08), (cx + 16 * s, y + h / 2 - 4)], 2, RED if k % 2 else INK, 1,
+                          seed + 30 + k))
+    for k, (dx, dy) in enumerate(((-0.3, -0.3), (-0.25, -0.3), (0.2, 0.32), (0.32, 0.25))):
+        cx, cy = x + dx * w, y + dy * h
+        out.append(Stroke(ellipse_pts(cx, cy, 16 * s, 16 * s, n=14, seed=seed + k), 4 * s + 1, seed=seed + 50 + k))
+    return out
+
+
+def el_dots(x, y, s, n=50, cols=10, highlight=1, seed=0, **_):
+    out = []
+    sp = 46 * s
+    rows = (n + cols - 1) // cols
+    for i in range(n):
+        cx = x + (i % cols - (cols - 1) / 2) * sp
+        cy = y + (i // cols - (rows - 1) / 2) * sp
+        c = RED if i < highlight else INK
+        out.append(Stroke(ellipse_pts(cx, cy, 10 * s, 10 * s, n=12, seed=seed + i), 4 * s + 1, c, 1, seed + i))
+    return out
+
+
+def el_heads(x, y, s, n=3, glow=True, links=True, seed=0, **_):
+    """Yan yana küçük başlar (birden çok zihin) ve aralarında oklar."""
+    out = []
+    xs = [x + (i - (n - 1) / 2) * 330 * s for i in range(n)]
+    for i, cx in enumerate(xs):
+        out += el_head(cx, y, s * 0.45, face=1 if i < n / 2 else -1, glow=glow, seed=seed + i)
+    if links:
+        for a, b in zip(xs, xs[1:]):
+            out.append(Stroke(bez((a + 90 * s, y - 160 * s), ((a + b) / 2, y - 260 * s), (b - 90 * s, y - 160 * s), 14), 3 * s + 1, BLUE,
+                              seed=seed + 20))
+    return out
+
+
+def el_portrait_frame(x, y, s, text=None, seed=0, **_):
+    w, h = 300 * s, 380 * s
+    out = [Stroke(_rect(x - w / 2, y - h / 2, x + w / 2, y + h / 2), 7 * s + 1, (150, 110, 60), seed=seed)]
+    out += el_head(x, y + 30 * s, s * 0.55, seed=seed)
+    if text:
+        out.append(Text(text, x, y + h / 2 + 50 * s, 44 * s, INK))
+    return out
+
+
+ELEMENTS_EXTRA = {
+    "glass_stick": el_glass_stick, "eye": el_eye, "demon": el_demon, "pit": el_pit, "ladder": el_ladder, "stone": el_stone,
+    "house": el_house, "basket": el_basket, "box": el_box, "marble": el_marble, "camera": el_camera, "dome": el_dome, "vat": el_vat,
+    "top": el_top, "backgammon": el_backgammon, "dots": el_dots, "heads": el_heads, "portrait_frame": el_portrait_frame,
+}
+
+
 # --------------------------------------------------------------------------- #
 # Sahne: öğeleri sırayla çizer
 # --------------------------------------------------------------------------- #
@@ -641,7 +887,8 @@ class SketchScene:
                                   e.pop("hat", None), e.pop("tone", 0.88), seed + i, W)
             else:
                 s = e.pop("s", 1.0) * k
-                items = ELEMENTS[name](x, y, s, seed=seed + i * 7, W=W, H=H, **e)
+                fn = ELEMENTS.get(name) or ELEMENTS_EXTRA[name]
+                items = fn(x, y, s, seed=seed + i * 7, W=W, H=H, **e)
             self.groups.append([at, items])
         # başlangıç zamanı verilmeyenler sırayla, kendi ağırlıklarıyla
         t = 0.0

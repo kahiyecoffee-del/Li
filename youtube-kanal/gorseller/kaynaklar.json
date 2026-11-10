@@ -89,5 +89,38 @@
     "duration": null,
     "page": "https://commons.wikimedia.org/wiki/File:Goya-Capricho-43.jpg",
     "file": "Goya_Capricho_43_jpg_0fa033.jpg"
+  },
+  "File:Frans Hals, Portrait of René Descartes.jpg": {
+    "title": "File:Frans Hals, Portrait of René Descartes.jpg",
+    "width": 2178,
+    "height": 2958,
+    "license": "Public domain",
+    "artist": "Frans Hals",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Frans_Hals%2C_Portrait_of_Ren%C3%A9_Descartes.jpg/1920px-Frans_Hals%2C_Portrait_of_Ren%C3%A9_Descartes.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "duration": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Frans_Hals,_Portrait_of_Ren%C3%A9_Descartes.jpg",
+    "file": "Frans_Hals_Portrait_of_Ren_Descartes_jpg_f57d8e.jpg"
+  },
+  "File:Bishop George Berkeley by John Smibert, perhaps 1727, oil on canvas, from the National Portrait Gallery - NPG-8900050A 2.jpg": {
+    "title": "File:Bishop George Berkeley by John Smibert, perhaps 1727, oil on canvas, from the National Portrait Gallery - NPG-8900050A 2.jpg",
+    "width": 5895,
+    "height": 7924,
+    "license": "Public domain",
+    "artist": "John Smibert",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Bishop_George_Berkeley_by_John_Smibert%2C_perhaps_1727%2C_oil_on_canvas%2C_from_the_National_Portrait_Gallery_-_NPG-8900050A_2.jpg/1920px-Bishop_George_Berkeley_by_John_Smibert%2C_perhaps_1727%2C_oil_on_canvas%2C_from_the_National_Portrait_Gallery_-_NPG-8900050A_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "duration": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Bishop_George_Berkeley_by_John_Smibert,_perhaps_1727,_oil_on_canvas,_from_the_National_Portrait_Gallery_-_NPG-8900050A_2.jpg",
+    "file": "Bishop_George_Berkeley_by_John_Smibert_perhaps_1727_oil_on_c_22518d.jpg"
+  },
+  "File:Exhibition '100 Years of medical Photography', 1955. Wellcome M0014260.jpg": {
+    "title": "File:Exhibition '100 Years of medical Photography', 1955. Wellcome M0014260.jpg",
+    "width": 4488,
+    "height": 2460,
+    "license": "CC BY 4.0",
+    "artist": "",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Exhibition_%27100_Years_of_medical_Photography%27%2C_1955._Wellcome_M0014260.jpg/1920px-Exhibition_%27100_Years_of_medical_Photography%27%2C_1955._Wellcome_M0014260.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "duration": null,
+    "page": "https://commons.wikimedia.org/wiki/File:Exhibition_%27100_Years_of_medical_Photography%27,_1955._Wellcome_M0014260.jpg",
+    "file": "Exhibition_100_Years_of_medical_Photography_1955_Wellcome_M0_e83eb6.jpg"
   }
 }
