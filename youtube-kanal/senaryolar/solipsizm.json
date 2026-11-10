@@ -2631,15 +2631,13 @@
     "en": "In 1865, *John Stuart Mill* offered the classic answer: the *argument from analogy*.",
     "tr": "1865'te *John Stuart Mill* klasik cevabı verdi: *analoji argümanı*."
    },
-   "sketch": [
-    {
-     "el": "portrait_frame",
-     "x": 0.5,
-     "y": 0.45,
-     "s": 1.3,
-     "text": "John Stuart Mill · 1806–1873"
-    }
-   ]
+   "image": {
+    "file": "File:John Stuart Mill by London Stereoscopic Company, c1870.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "John Stuart Mill · 1806–1873",
+    "tint": 0.3
+   }
   },
   {
    "say": {
@@ -3992,7 +3990,7 @@
      "el": "text",
      "x": 0.5,
      "y": 0.1,
-     "text": "thought experiment → life",
+     "text": "thought experiment = real life",
      "size": 1.0,
      "color": "blue",
      "underline": false
@@ -4018,15 +4016,13 @@
     "en": "*Christine Ladd-Franklin* was a brilliant American logician and psychologist.",
     "tr": "*Christine Ladd-Franklin* parlak bir Amerikalı mantıkçı ve psikologdu."
    },
-   "sketch": [
-    {
-     "el": "portrait_frame",
-     "x": 0.5,
-     "y": 0.45,
-     "s": 1.3,
-     "text": "Christine Ladd-Franklin · 1847–1930"
-    }
-   ]
+   "image": {
+    "file": "File:Mrs. Christine Ladd Franklin LOC 15112776473.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Christine Ladd-Franklin · 1847–1930",
+    "tint": 0.3
+   }
   },
   {
    "say": {
@@ -5213,15 +5209,13 @@
     "en": "And another answer comes from the Scottish philosopher *David Hume*.",
     "tr": "Bir diğer cevap İskoç filozof *David Hume*'dan geliyor."
    },
-   "sketch": [
-    {
-     "el": "portrait_frame",
-     "x": 0.5,
-     "y": 0.45,
-     "s": 1.3,
-     "text": "David Hume · 1711–1776"
-    }
-   ]
+   "image": {
+    "file": "File:Allan Ramsay - David Hume, 1711 - 1776. Historian and philosopher - Google Art Project.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "David Hume · 1711–1776",
+    "tint": 0.3
+   }
   },
   {
    "say": {
