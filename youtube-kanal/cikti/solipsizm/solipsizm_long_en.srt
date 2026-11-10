@@ -1,0 +1,1576 @@
+1
+00:00:00,200 --> 00:00:02,791
+There is only one thing in the entire
+
+2
+00:00:02,791 --> 00:00:05,381
+universe you can be absolutely sure
+
+3
+00:00:05,381 --> 00:00:06,029
+exists.
+
+4
+00:00:06,679 --> 00:00:08,752
+Not the chair you're sitting on.
+
+5
+00:00:09,402 --> 00:00:11,331
+Not the people you love.
+
+6
+00:00:11,981 --> 00:00:14,554
+Not even the screen in front of you.
+
+7
+00:00:15,204 --> 00:00:17,675
+Just one thing: your own mind.
+
+8
+00:00:18,325 --> 00:00:21,542
+Everything else — every face, every voice,
+
+9
+00:00:21,542 --> 00:00:24,616
+every memory of a world outside — could,
+
+10
+00:00:24,616 --> 00:00:27,619
+in principle, be something your mind is
+
+11
+00:00:27,619 --> 00:00:29,335
+producing on its own.
+
+12
+00:00:29,985 --> 00:00:32,781
+This idea is called solipsism.
+
+13
+00:00:33,431 --> 00:00:35,800
+And here's what makes it unsettling:
+
+14
+00:00:35,800 --> 00:00:38,473
+for more than two thousand years, some of
+
+15
+00:00:38,473 --> 00:00:40,903
+the greatest thinkers in history have
+
+16
+00:00:40,903 --> 00:00:42,665
+tried to prove it wrong...
+
+17
+00:00:43,315 --> 00:00:45,773
+...and they still argue about whether
+
+18
+00:00:45,773 --> 00:00:47,247
+anyone has succeeded.
+
+19
+00:00:47,897 --> 00:00:50,220
+By the end of this video, you'll know
+
+20
+00:00:50,220 --> 00:00:51,904
+where this idea came from,
+
+21
+00:00:52,554 --> 00:00:54,794
+why your brain spent years of your
+
+22
+00:00:54,794 --> 00:00:56,913
+childhood learning to escape it,
+
+23
+00:00:57,563 --> 00:01:00,150
+and why one famous logician openly
+
+24
+00:01:00,150 --> 00:01:02,247
+admitted she believed it.
+
+25
+00:01:02,897 --> 00:01:04,990
+Quick favor before we start:
+
+26
+00:01:04,990 --> 00:01:07,960
+if you like ideas that break your brain a
+
+27
+00:01:07,960 --> 00:01:09,513
+little, subscribe.
+
+28
+00:01:09,513 --> 00:01:11,808
+It genuinely helps the channel.
+
+29
+00:01:12,458 --> 00:01:14,302
+The word comes from Latin:
+
+30
+00:01:14,302 --> 00:01:16,844
+solus, meaning "alone," and ipse,
+
+31
+00:01:16,844 --> 00:01:19,323
+meaning "self." Alone with the self.
+
+32
+00:01:19,973 --> 00:01:22,510
+Philosophers usually separate two
+
+33
+00:01:22,510 --> 00:01:23,356
+versions.
+
+34
+00:01:24,006 --> 00:01:26,769
+The strong version, metaphysical
+
+35
+00:01:26,769 --> 00:01:28,304
+solipsism, says:
+
+36
+00:01:28,304 --> 00:01:30,070
+only my mind exists.
+
+37
+00:01:30,070 --> 00:01:33,447
+That's it. The world and other people are
+
+38
+00:01:33,447 --> 00:01:36,057
+just contents of my experience.
+
+39
+00:01:36,707 --> 00:01:39,534
+The weaker version, epistemological
+
+40
+00:01:39,534 --> 00:01:42,434
+solipsism, is more modest — and much
+
+41
+00:01:42,434 --> 00:01:43,883
+harder to escape.
+
+42
+00:01:44,533 --> 00:01:47,656
+It says: I can't know that anything
+
+43
+00:01:47,656 --> 00:01:49,686
+outside my mind exists.
+
+44
+00:01:49,686 --> 00:01:52,809
+Maybe it does. I just can't prove it.
+
+45
+00:01:53,459 --> 00:01:56,253
+Most philosophers reject the first.
+
+46
+00:01:56,253 --> 00:01:59,194
+The second is the one that keeps them
+
+47
+00:01:59,194 --> 00:02:00,517
+awake at night.
+
+48
+00:02:01,167 --> 00:02:04,185
+The idea is older than you might think.
+
+49
+00:02:04,835 --> 00:02:07,568
+Around the fifth century BC, the Greek
+
+50
+00:02:07,568 --> 00:02:10,302
+thinker Gorgias wrote a work usually
+
+51
+00:02:10,302 --> 00:02:11,968
+called On Non-Being.
+
+52
+00:02:12,618 --> 00:02:14,971
+Its argument came in three steps:
+
+53
+00:02:14,971 --> 00:02:17,912
+nothing exists; even if something existed,
+
+54
+00:02:17,912 --> 00:02:20,853
+it couldn't be known; and even if it could
+
+55
+00:02:20,853 --> 00:02:23,663
+be known, it couldn't be communicated to
+
+56
+00:02:23,663 --> 00:02:24,643
+anyone else.
+
+57
+00:02:25,293 --> 00:02:28,116
+Whether Gorgias meant it seriously or as a
+
+58
+00:02:28,116 --> 00:02:30,750
+showpiece of clever rhetoric, the third
+
+59
+00:02:30,750 --> 00:02:33,196
+step points straight at our problem:
+
+60
+00:02:33,196 --> 00:02:35,830
+your experience is locked inside you.
+
+61
+00:02:36,480 --> 00:02:38,918
+In ancient China, the philosopher
+
+62
+00:02:38,918 --> 00:02:41,220
+Zhuangzi told a famous story.
+
+63
+00:02:41,870 --> 00:02:44,882
+He dreamed he was a butterfly, fluttering
+
+64
+00:02:44,882 --> 00:02:47,689
+happily, with no idea he was Zhuangzi.
+
+65
+00:02:48,339 --> 00:02:51,690
+Then he woke up — and wasn't sure anymore.
+
+66
+00:02:52,340 --> 00:02:55,536
+Was he a man who had dreamed of being a
+
+67
+00:02:55,536 --> 00:02:58,807
+butterfly... or a butterfly now dreaming
+
+68
+00:02:58,807 --> 00:03:00,024
+he was a man?
+
+69
+00:03:00,674 --> 00:03:03,551
+Meanwhile, in India, a similar question
+
+70
+00:03:03,551 --> 00:03:05,264
+took a different path.
+
+71
+00:03:05,914 --> 00:03:08,694
+Around the fourth or fifth century, the
+
+72
+00:03:08,694 --> 00:03:11,606
+Buddhist philosopher Vasubandhu wrote a
+
+73
+00:03:11,606 --> 00:03:14,452
+short text known as the Twenty Verses.
+
+74
+00:03:15,102 --> 00:03:17,983
+His school, Yogācāra, is often called
+
+75
+00:03:17,983 --> 00:03:19,629
+"consciousness-only."
+
+76
+00:03:20,279 --> 00:03:22,835
+His starting point sounds familiar:
+
+77
+00:03:22,835 --> 00:03:25,659
+in a dream, you see places, people, and
+
+78
+00:03:25,659 --> 00:03:28,484
+objects that feel completely real — yet
+
+79
+00:03:28,484 --> 00:03:30,905
+there's nothing outside your mind
+
+80
+00:03:30,905 --> 00:03:32,116
+producing them.
+
+81
+00:03:32,766 --> 00:03:35,028
+So how do we know waking life is
+
+82
+00:03:35,028 --> 00:03:35,868
+different?
+
+83
+00:03:36,519 --> 00:03:38,226
+But here's the twist:
+
+84
+00:03:38,226 --> 00:03:40,788
+Vasubandhu was not a solipsist.
+
+85
+00:03:41,438 --> 00:03:44,643
+His tradition accepted many minds — many
+
+86
+00:03:44,643 --> 00:03:47,923
+streams of consciousness, influencing one
+
+87
+00:03:47,923 --> 00:03:48,743
+another.
+
+88
+00:03:49,393 --> 00:03:52,238
+The question wasn't "Am I the only one?"
+
+89
+00:03:52,238 --> 00:03:55,017
+It was "What are we really experiencing
+
+90
+00:03:55,017 --> 00:03:57,068
+when we experience a world?"
+
+91
+00:03:57,718 --> 00:04:00,467
+Centuries later, the Hindu philosopher
+
+92
+00:04:00,467 --> 00:04:03,283
+Adi Shankara taught that the everyday
+
+93
+00:04:03,283 --> 00:04:05,898
+world of separate things is maya —
+
+94
+00:04:05,898 --> 00:04:06,904
+appearance —
+
+95
+00:04:07,554 --> 00:04:10,342
+and that, at the deepest level, there is
+
+96
+00:04:10,342 --> 00:04:11,444
+only one Self.
+
+97
+00:04:12,094 --> 00:04:15,028
+That's not "only my mind exists" either.
+
+98
+00:04:15,028 --> 00:04:18,030
+It's closer to: the line between "me" and
+
+99
+00:04:18,030 --> 00:04:20,760
+"everything else" may not be where we
+
+100
+00:04:20,760 --> 00:04:21,374
+think.
+
+101
+00:04:22,024 --> 00:04:25,672
+Two thousand years later, in the 1600s, a
+
+102
+00:04:25,672 --> 00:04:29,237
+French philosopher decided to take doubt
+
+103
+00:04:29,237 --> 00:04:31,309
+to its absolute limit.
+
+104
+00:04:31,959 --> 00:04:34,707
+His name was René Descartes.
+
+105
+00:04:35,357 --> 00:04:37,766
+His plan was simple and radical:
+
+106
+00:04:37,766 --> 00:04:40,863
+throw out every belief that could possibly
+
+107
+00:04:40,863 --> 00:04:43,753
+be false, and see if anything survives.
+
+108
+00:04:44,403 --> 00:04:46,064
+First, the senses.
+
+109
+00:04:46,064 --> 00:04:49,305
+They fool us all the time — a straight
+
+110
+00:04:49,305 --> 00:04:51,598
+stick looks bent in water.
+
+111
+00:04:52,248 --> 00:04:54,494
+So they can't be fully trusted.
+
+112
+00:04:55,144 --> 00:04:57,209
+Then, the dream argument.
+
+113
+00:04:57,209 --> 00:05:00,101
+Every night you experience vivid worlds
+
+114
+00:05:00,101 --> 00:05:03,131
+that feel completely real while you're in
+
+115
+00:05:03,131 --> 00:05:03,682
+them.
+
+116
+00:05:04,332 --> 00:05:06,962
+Can you be certain, right now, that you're
+
+117
+00:05:06,962 --> 00:05:07,488
+awake?
+
+118
+00:05:08,138 --> 00:05:10,639
+And finally, his most famous thought
+
+119
+00:05:10,639 --> 00:05:11,537
+experiment.
+
+120
+00:05:12,187 --> 00:05:14,660
+What if there were an evil demon,
+
+121
+00:05:14,660 --> 00:05:17,523
+supremely powerful and cunning, using all
+
+122
+00:05:17,523 --> 00:05:19,475
+its energy to deceive you —
+
+123
+00:05:20,125 --> 00:05:22,973
+feeding you a fake world, fake people,
+
+124
+00:05:22,973 --> 00:05:24,710
+even fake mathematics?
+
+125
+00:05:25,360 --> 00:05:28,337
+Descartes pushed until almost nothing was
+
+126
+00:05:28,337 --> 00:05:28,878
+left.
+
+127
+00:05:29,528 --> 00:05:32,297
+And then he found the one thing the demon
+
+128
+00:05:32,297 --> 00:05:33,555
+could never fake.
+
+129
+00:05:34,205 --> 00:05:37,210
+If you are being deceived, then you exist
+
+130
+00:05:37,210 --> 00:05:40,078
+— someone must be there to be deceived.
+
+131
+00:05:40,728 --> 00:05:43,044
+Doubting is a kind of thinking, and
+
+132
+00:05:43,044 --> 00:05:44,933
+thinking requires a thinker.
+
+133
+00:05:45,583 --> 00:05:48,658
+In his words: I think, therefore I am.
+
+134
+00:05:49,308 --> 00:05:52,146
+It's one of the most famous sentences in
+
+135
+00:05:52,146 --> 00:05:53,070
+philosophy.
+
+136
+00:05:53,720 --> 00:05:56,550
+But notice what it actually proves.
+
+137
+00:05:56,550 --> 00:05:58,785
+It proves that you exist.
+
+138
+00:05:59,435 --> 00:06:02,426
+Not your body — just your thinking.
+
+139
+00:06:03,076 --> 00:06:05,848
+And it says absolutely nothing about
+
+140
+00:06:05,848 --> 00:06:06,914
+anyone else.
+
+141
+00:06:07,564 --> 00:06:10,395
+Descartes had dug himself into a hole, and
+
+142
+00:06:10,395 --> 00:06:11,275
+he knew it.
+
+143
+00:06:11,925 --> 00:06:14,906
+To climb out, he argued that a perfect God
+
+144
+00:06:14,906 --> 00:06:17,423
+exists and would not allow us to be
+
+145
+00:06:17,423 --> 00:06:19,344
+deceived about everything.
+
+146
+00:06:19,994 --> 00:06:22,682
+Many later readers found that step much
+
+147
+00:06:22,682 --> 00:06:25,562
+weaker than the doubt that came before it.
+
+148
+00:06:26,212 --> 00:06:29,041
+The hole he dug was convincing.
+
+149
+00:06:29,041 --> 00:06:31,371
+The ladder out was not.
+
+150
+00:06:32,021 --> 00:06:34,841
+A century later, the Irish bishop George
+
+151
+00:06:34,841 --> 00:06:36,828
+Berkeley went even further.
+
+152
+00:06:37,478 --> 00:06:41,060
+In 1710 he argued that physical objects
+
+153
+00:06:41,060 --> 00:06:44,386
+are nothing more than collections of
+
+154
+00:06:44,386 --> 00:06:45,666
+perceptions.
+
+155
+00:06:46,316 --> 00:06:49,129
+To be, he said, is to be perceived.
+
+156
+00:06:49,779 --> 00:06:53,113
+Berkeley wasn't a solipsist — he believed
+
+157
+00:06:53,113 --> 00:06:55,614
+other minds and God were real.
+
+158
+00:06:56,264 --> 00:06:58,717
+But critics said his ideas slid
+
+159
+00:06:58,717 --> 00:07:00,232
+dangerously close.
+
+160
+00:07:00,882 --> 00:07:03,413
+His most famous critic didn't use an
+
+161
+00:07:03,413 --> 00:07:04,646
+argument at all.
+
+162
+00:07:05,296 --> 00:07:08,830
+In 1763, the writer Samuel Johnson was
+
+163
+00:07:08,830 --> 00:07:12,529
+walking with his biographer James Boswell,
+
+164
+00:07:12,529 --> 00:07:15,981
+who remarked that Berkeley's theory was
+
+165
+00:07:15,981 --> 00:07:17,954
+impossible to refute.
+
+166
+00:07:18,604 --> 00:07:21,399
+Johnson walked up to a large stone, kicked
+
+167
+00:07:21,399 --> 00:07:24,070
+it hard enough to bounce back, and said:
+
+168
+00:07:24,070 --> 00:07:25,561
+"I refute it thus."
+
+169
+00:07:26,211 --> 00:07:27,884
+It's a great moment.
+
+170
+00:07:27,884 --> 00:07:31,158
+It's also, philosophers will tell you, not
+
+171
+00:07:31,158 --> 00:07:32,831
+a refutation at all.
+
+172
+00:07:33,481 --> 00:07:36,589
+Berkeley never denied that you feel the
+
+173
+00:07:36,589 --> 00:07:39,768
+stone. He only questioned what the feeling
+
+174
+00:07:39,768 --> 00:07:40,757
+is made of.
+
+175
+00:07:41,407 --> 00:07:44,232
+And this brings us to the heart of it — a
+
+176
+00:07:44,232 --> 00:07:46,993
+puzzle philosophers call the problem of
+
+177
+00:07:46,993 --> 00:07:48,020
+other minds.
+
+178
+00:07:48,670 --> 00:07:51,219
+You see other people laugh, cry, flinch
+
+179
+00:07:51,219 --> 00:07:52,494
+when they're hurt.
+
+180
+00:07:53,144 --> 00:07:56,024
+But you never experience their pain.
+
+181
+00:07:56,024 --> 00:07:58,092
+You only see the outside:
+
+182
+00:07:58,092 --> 00:08:00,381
+a face, a sound, a movement.
+
+183
+00:08:01,031 --> 00:08:03,582
+Their inner world, if there is one, is
+
+184
+00:08:03,582 --> 00:08:05,511
+permanently hidden from you.
+
+185
+00:08:06,161 --> 00:08:09,952
+In 1865, John Stuart Mill offered the
+
+186
+00:08:09,952 --> 00:08:13,291
+classic answer: the argument from
+
+187
+00:08:13,291 --> 00:08:14,374
+analogy.
+
+188
+00:08:15,024 --> 00:08:17,062
+When I'm hurt, I wince.
+
+189
+00:08:17,062 --> 00:08:20,118
+Others wince in the same situations.
+
+190
+00:08:20,118 --> 00:08:23,566
+So, by analogy, they probably feel what I
+
+191
+00:08:23,566 --> 00:08:24,193
+feel.
+
+192
+00:08:24,843 --> 00:08:28,054
+It sounds reasonable — until you notice
+
+193
+00:08:28,054 --> 00:08:31,112
+the problem. You're generalizing from
+
+194
+00:08:31,112 --> 00:08:33,023
+exactly one example:
+
+195
+00:08:33,023 --> 00:08:33,941
+yourself.
+
+196
+00:08:34,591 --> 00:08:37,533
+Modern philosophers have made the puzzle
+
+197
+00:08:37,533 --> 00:08:38,628
+even sharper.
+
+198
+00:08:39,278 --> 00:08:43,140
+In 1996, David Chalmers popularized the
+
+199
+00:08:43,140 --> 00:08:46,299
+idea of a philosophical zombie:
+
+200
+00:08:46,949 --> 00:08:49,933
+a being that looks and acts exactly like a
+
+201
+00:08:49,933 --> 00:08:52,850
+person, says "ouch," writes poetry, falls
+
+202
+00:08:52,850 --> 00:08:53,646
+in love —
+
+203
+00:08:54,296 --> 00:08:56,727
+but has no inner experience at all.
+
+204
+00:08:57,377 --> 00:09:00,171
+The lights are on, but nobody's home.
+
+205
+00:09:00,821 --> 00:09:03,008
+Here's the uncomfortable question:
+
+206
+00:09:03,008 --> 00:09:05,669
+from the outside, how would you ever tell
+
+207
+00:09:05,669 --> 00:09:06,792
+the difference?
+
+208
+00:09:07,442 --> 00:09:09,256
+Let's try something.
+
+209
+00:09:09,256 --> 00:09:12,805
+Think of someone you know well — a friend,
+
+210
+00:09:12,805 --> 00:09:13,751
+a parent.
+
+211
+00:09:14,401 --> 00:09:17,646
+Now try to prove — not believe, but
+
+212
+00:09:17,646 --> 00:09:21,053
+prove — that they feel anything at all.
+
+213
+00:09:21,703 --> 00:09:24,948
+You'll notice that every piece of evidence
+
+214
+00:09:24,948 --> 00:09:27,833
+is behavior: words, faces, reactions.
+
+215
+00:09:28,483 --> 00:09:31,549
+Now flip it. How would they prove that
+
+216
+00:09:31,549 --> 00:09:33,189
+you feel anything?
+
+217
+00:09:33,839 --> 00:09:36,800
+You are certain about your own pain, and
+
+218
+00:09:36,800 --> 00:09:39,211
+uncertain about everyone else's.
+
+219
+00:09:39,211 --> 00:09:42,173
+That asymmetry is the whole problem in a
+
+220
+00:09:42,173 --> 00:09:43,344
+single breath.
+
+221
+00:09:43,994 --> 00:09:46,436
+There's even a word for the opposite
+
+222
+00:09:46,436 --> 00:09:49,066
+feeling: sonder, coined by the writer
+
+223
+00:09:49,066 --> 00:09:50,005
+John Koenig.
+
+224
+00:09:50,655 --> 00:09:53,632
+It's the sudden realization that every
+
+225
+00:09:53,632 --> 00:09:56,682
+stranger around you has a life as vivid
+
+226
+00:09:56,682 --> 00:09:58,933
+and complicated as your own.
+
+227
+00:09:59,583 --> 00:10:02,423
+And here's where psychology gives us a
+
+228
+00:10:02,423 --> 00:10:03,808
+surprising twist.
+
+229
+00:10:03,808 --> 00:10:06,925
+In a sense, every one of us starts life as
+
+230
+00:10:06,925 --> 00:10:08,518
+a kind of solipsist.
+
+231
+00:10:09,168 --> 00:10:12,012
+Very young children struggle to understand
+
+232
+00:10:12,012 --> 00:10:14,730
+that other people have beliefs different
+
+233
+00:10:14,730 --> 00:10:15,868
+from their own.
+
+234
+00:10:16,518 --> 00:10:19,289
+Psychologists test this with what's called
+
+235
+00:10:19,289 --> 00:10:20,828
+a false-belief task.
+
+236
+00:10:21,478 --> 00:10:24,556
+In one well-known version, the Sally–Anne
+
+237
+00:10:24,556 --> 00:10:27,566
+test, a child watches a doll named Sally
+
+238
+00:10:27,566 --> 00:10:30,165
+put a marble in a basket and leave.
+
+239
+00:10:30,815 --> 00:10:33,592
+While she's gone, Anne moves the marble
+
+240
+00:10:33,592 --> 00:10:34,518
+into a box.
+
+241
+00:10:35,168 --> 00:10:36,731
+Then the child is asked:
+
+242
+00:10:36,731 --> 00:10:39,048
+when Sally comes back, where will she
+
+243
+00:10:39,048 --> 00:10:39,511
+look?
+
+244
+00:10:40,161 --> 00:10:41,998
+Most three-year-olds say:
+
+245
+00:10:41,998 --> 00:10:44,950
+the box — because that's where they know
+
+246
+00:10:44,950 --> 00:10:45,540
+it is.
+
+247
+00:10:46,190 --> 00:10:49,096
+Around age four, most children start to
+
+248
+00:10:49,096 --> 00:10:50,617
+answer: the basket.
+
+249
+00:10:51,267 --> 00:10:53,517
+They've realized something huge:
+
+250
+00:10:53,517 --> 00:10:56,410
+other people have minds of their own, with
+
+251
+00:10:56,410 --> 00:10:59,302
+their own, sometimes wrong, picture of the
+
+252
+00:10:59,302 --> 00:10:59,881
+world.
+
+253
+00:11:00,530 --> 00:11:03,640
+Psychologists call this ability theory of
+
+254
+00:11:03,640 --> 00:11:04,262
+mind.
+
+255
+00:11:04,912 --> 00:11:07,867
+So in a way, your brain already made its
+
+256
+00:11:07,867 --> 00:11:10,891
+leap out of solipsism — not by proof, but
+
+257
+00:11:10,891 --> 00:11:12,266
+by development.
+
+258
+00:11:12,916 --> 00:11:15,879
+And sometimes, that sense of reality can
+
+259
+00:11:15,879 --> 00:11:16,430
+slip.
+
+260
+00:11:17,080 --> 00:11:20,036
+Many people experience brief moments of
+
+261
+00:11:20,036 --> 00:11:23,203
+derealization — a feeling that the world
+
+262
+00:11:23,203 --> 00:11:26,089
+is flat, distant, dreamlike, not quite
+
+263
+00:11:26,089 --> 00:11:26,652
+real.
+
+264
+00:11:27,302 --> 00:11:30,439
+When it's persistent and distressing, it's
+
+265
+00:11:30,439 --> 00:11:33,087
+recognized as a clinical condition,
+
+266
+00:11:33,087 --> 00:11:35,526
+depersonalization-derealization
+
+267
+00:11:35,526 --> 00:11:38,593
+disorder, estimated to affect around two
+
+268
+00:11:38,593 --> 00:11:40,057
+percent of people.
+
+269
+00:11:40,707 --> 00:11:43,950
+In the 2000s, psychiatrist Joel Gold and
+
+270
+00:11:43,950 --> 00:11:47,050
+his brother, the philosopher Ian Gold,
+
+271
+00:11:47,050 --> 00:11:50,005
+began describing patients who believed
+
+272
+00:11:50,005 --> 00:11:52,960
+their entire life was a staged reality
+
+273
+00:11:52,960 --> 00:11:56,204
+show, with everyone around them as actors.
+
+274
+00:11:56,854 --> 00:11:59,800
+They called it the Truman Show delusion.
+
+275
+00:12:00,450 --> 00:12:03,141
+The philosophers' thought experiment, it
+
+276
+00:12:03,141 --> 00:12:05,645
+turns out, can become someone's lived
+
+277
+00:12:05,645 --> 00:12:06,522
+experience.
+
+278
+00:12:07,172 --> 00:12:09,916
+Now, the logician I promised you.
+
+279
+00:12:10,566 --> 00:12:13,717
+Christine Ladd-Franklin was a brilliant
+
+280
+00:12:13,717 --> 00:12:16,438
+American logician and psychologist.
+
+281
+00:12:17,088 --> 00:12:19,846
+In his 1948 book Human Knowledge,
+
+282
+00:12:19,846 --> 00:12:22,895
+Bertrand Russell recalled receiving a
+
+283
+00:12:22,895 --> 00:12:24,274
+letter from her.
+
+284
+00:12:24,924 --> 00:12:27,462
+She told him she was a solipsist — and
+
+285
+00:12:27,462 --> 00:12:29,939
+that she was surprised there were no
+
+286
+00:12:29,939 --> 00:12:30,620
+others.
+
+287
+00:12:31,270 --> 00:12:34,442
+Think about that sentence for a second.
+
+288
+00:12:34,442 --> 00:12:37,765
+If solipsism is true, of course there are
+
+289
+00:12:37,765 --> 00:12:40,559
+no others. That's the whole point.
+
+290
+00:12:41,209 --> 00:12:43,128
+And yet she was surprised.
+
+291
+00:12:43,778 --> 00:12:46,958
+It's funny. But it also shows something
+
+292
+00:12:46,958 --> 00:12:50,289
+important: solipsism is almost impossible
+
+293
+00:12:50,289 --> 00:12:52,257
+to live consistently.
+
+294
+00:12:52,907 --> 00:12:55,468
+The moment you talk, write, argue, or
+
+295
+00:12:55,468 --> 00:12:58,156
+expect to be understood, you're already
+
+296
+00:12:58,156 --> 00:13:00,845
+acting as if other minds are out there.
+
+297
+00:13:01,495 --> 00:13:03,943
+The Austrian philosopher Ludwig
+
+298
+00:13:03,943 --> 00:13:07,091
+Wittgenstein turned that observation into
+
+299
+00:13:07,091 --> 00:13:09,889
+one of the most powerful responses to
+
+300
+00:13:09,889 --> 00:13:10,799
+solipsism.
+
+301
+00:13:11,449 --> 00:13:13,908
+His point, roughly, was this:
+
+302
+00:13:13,908 --> 00:13:16,828
+the solipsist expresses the idea in
+
+303
+00:13:16,828 --> 00:13:19,748
+language. But language is public.
+
+304
+00:13:20,398 --> 00:13:23,363
+Words get their meaning from shared rules,
+
+305
+00:13:23,363 --> 00:13:25,011
+from use among people.
+
+306
+00:13:25,661 --> 00:13:28,794
+A truly private language — one that only
+
+307
+00:13:28,794 --> 00:13:31,788
+you could ever understand — may not even
+
+308
+00:13:31,788 --> 00:13:32,832
+be possible.
+
+309
+00:13:33,482 --> 00:13:36,613
+So the very sentence "only my mind exists"
+
+310
+00:13:36,613 --> 00:13:39,605
+borrows its meaning from a world full of
+
+311
+00:13:39,605 --> 00:13:40,858
+other speakers.
+
+312
+00:13:41,508 --> 00:13:44,531
+Strangely, in his early work, Wittgenstein
+
+313
+00:13:44,531 --> 00:13:47,554
+also wrote that what the solipsist means
+
+314
+00:13:47,554 --> 00:13:50,376
+is, in a sense, quite correct — it just
+
+315
+00:13:50,376 --> 00:13:51,719
+cannot be said.
+
+316
+00:13:52,369 --> 00:13:54,387
+It can only show itself.
+
+317
+00:13:54,387 --> 00:13:57,675
+Philosophers are still arguing about what
+
+318
+00:13:57,675 --> 00:13:59,170
+exactly he meant.
+
+319
+00:13:59,820 --> 00:14:03,170
+Today, the old demon has a new costume.
+
+320
+00:14:03,820 --> 00:14:07,503
+In 1981, the philosopher Hilary Putnam
+
+321
+00:14:07,503 --> 00:14:10,243
+described a brain in a vat:
+
+322
+00:14:10,893 --> 00:14:14,084
+a brain kept alive by scientists, wired to
+
+323
+00:14:14,084 --> 00:14:16,850
+a computer that feeds it a perfectly
+
+324
+00:14:16,850 --> 00:14:18,268
+convincing world.
+
+325
+00:14:18,918 --> 00:14:21,406
+How could you know you're not that brain?
+
+326
+00:14:22,056 --> 00:14:24,566
+Putnam himself argued the scenario
+
+327
+00:14:24,566 --> 00:14:27,348
+undermines itself — that if you really
+
+328
+00:14:27,348 --> 00:14:30,130
+were such a brain, your words couldn't
+
+329
+00:14:30,130 --> 00:14:32,708
+even refer to real brains and vats.
+
+330
+00:14:33,358 --> 00:14:36,205
+Not everyone accepts his argument.
+
+331
+00:14:36,855 --> 00:14:39,894
+And in 2003, Nick Bostrom published the
+
+332
+00:14:39,894 --> 00:14:42,726
+simulation argument, suggesting that
+
+333
+00:14:42,726 --> 00:14:45,558
+under certain assumptions, we might be
+
+334
+00:14:45,558 --> 00:14:47,976
+living in a computer simulation.
+
+335
+00:14:48,626 --> 00:14:52,238
+That isn't solipsism — a simulation could
+
+336
+00:14:52,238 --> 00:14:54,454
+contain many real minds.
+
+337
+00:14:55,104 --> 00:14:57,679
+But it reopens Descartes's question:
+
+338
+00:14:57,679 --> 00:15:00,451
+how much of what you experience can you
+
+339
+00:15:00,451 --> 00:15:01,837
+actually verify?
+
+340
+00:15:02,487 --> 00:15:05,193
+Pop culture loves this question.
+
+341
+00:15:05,843 --> 00:15:08,523
+In The Truman Show, a man slowly
+
+342
+00:15:08,523 --> 00:15:11,781
+discovers that his whole life is a TV set,
+
+343
+00:15:11,781 --> 00:15:14,461
+and everyone he knows is an actor.
+
+344
+00:15:15,111 --> 00:15:18,264
+In The Matrix, the world is a simulation
+
+345
+00:15:18,264 --> 00:15:21,138
+fed into people's brains — Descartes's
+
+346
+00:15:21,138 --> 00:15:23,240
+demon with better graphics.
+
+347
+00:15:23,890 --> 00:15:26,453
+In Inception, characters carry small
+
+348
+00:15:26,453 --> 00:15:29,203
+objects to test whether they're dreaming.
+
+349
+00:15:29,853 --> 00:15:32,979
+None of these stories are really solipsism
+
+350
+00:15:32,979 --> 00:15:35,898
+— there are always other real people in
+
+351
+00:15:35,898 --> 00:15:36,454
+them.
+
+352
+00:15:37,104 --> 00:15:38,725
+Maybe that's telling:
+
+353
+00:15:38,725 --> 00:15:41,428
+even our wildest fantasies about fake
+
+354
+00:15:41,428 --> 00:15:44,401
+worlds can't quite let go of other minds.
+
+355
+00:15:45,051 --> 00:15:48,024
+So why isn't everyone a solipsist?
+
+356
+00:15:48,674 --> 00:15:51,223
+One answer: inference to the best
+
+357
+00:15:51,223 --> 00:15:52,325
+explanation.
+
+358
+00:15:52,975 --> 00:15:55,820
+The world behaves too consistently, too
+
+359
+00:15:55,820 --> 00:15:58,665
+surprisingly, too independently of your
+
+360
+00:15:58,665 --> 00:15:59,342
+wishes.
+
+361
+00:15:59,992 --> 00:16:02,399
+Other people tell you things you didn't
+
+362
+00:16:02,399 --> 00:16:04,749
+know, disagree with you, surprise you.
+
+363
+00:16:05,399 --> 00:16:08,172
+The simplest explanation is that they're
+
+364
+00:16:08,172 --> 00:16:08,817
+real.
+
+365
+00:16:09,467 --> 00:16:12,309
+And another answer comes from the Scottish
+
+366
+00:16:12,309 --> 00:16:14,078
+philosopher David Hume.
+
+367
+00:16:14,728 --> 00:16:17,875
+Hume took skeptical doubts seriously — and
+
+368
+00:16:17,875 --> 00:16:20,952
+admitted they didn't survive contact with
+
+369
+00:16:20,952 --> 00:16:22,140
+ordinary life.
+
+370
+00:16:22,790 --> 00:16:25,374
+He wrote that he would dine, play a game
+
+371
+00:16:25,374 --> 00:16:27,897
+of backgammon, talk and be merry with
+
+372
+00:16:27,897 --> 00:16:28,798
+his friends,
+
+373
+00:16:29,448 --> 00:16:32,224
+and after a few hours, his speculations
+
+374
+00:16:32,224 --> 00:16:35,001
+would seem so cold and strained that he
+
+375
+00:16:35,001 --> 00:16:37,910
+couldn't bring himself to return to them.
+
+376
+00:16:38,560 --> 00:16:41,555
+Nature, in other words, is stronger than
+
+377
+00:16:41,555 --> 00:16:42,575
+philosophy.
+
+378
+00:16:43,225 --> 00:16:45,314
+So here's where we end up.
+
+379
+00:16:45,964 --> 00:16:48,959
+You cannot prove, with absolute certainty,
+
+380
+00:16:48,959 --> 00:16:51,022
+that anyone else has a mind.
+
+381
+00:16:51,672 --> 00:16:53,206
+Not your friends.
+
+382
+00:16:53,206 --> 00:16:56,425
+Not your family. Not the person reading
+
+383
+00:16:56,425 --> 00:16:58,955
+the comments under this video.
+
+384
+00:16:59,605 --> 00:17:02,424
+But every day, you act as if they do.
+
+385
+00:17:03,074 --> 00:17:05,754
+You apologize. You explain.
+
+386
+00:17:05,754 --> 00:17:08,523
+You hope to be understood.
+
+387
+00:17:09,173 --> 00:17:12,883
+Maybe that's the real answer to solipsism.
+
+388
+00:17:12,883 --> 00:17:15,520
+Not a proof — but a choice.
+
+389
+00:17:16,170 --> 00:17:19,182
+A choice to treat the minds around you as
+
+390
+00:17:19,182 --> 00:17:21,715
+real, because the alternative is a
+
+391
+00:17:21,715 --> 00:17:24,385
+universe with only one person in it.
+
+392
+00:17:25,035 --> 00:17:27,685
+Because in the end, there is only one
+
+393
+00:17:27,685 --> 00:17:30,666
+thing you can be absolutely sure exists...
+
+394
+00:17:30,666 --> 00:17:33,448
+and it's lonely in there by yourself.
+
