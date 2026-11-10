@@ -21,6 +21,9 @@ import sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import arkaplan as ab  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONT_PATH = os.path.join(ROOT, "fonts", "Kalam-Bold.ttf")
 MODEL_DIR = os.environ.get("KOKORO_DIR", os.path.join(ROOT, "modeller"))
@@ -573,7 +576,7 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
            path_noext + ".mp4"]
     ff = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     sc_ = F["sc"]
-    prev_pose = None
+    bg_cache = {}
     scene_idx = 0
     for fi in range(n):
         t = fi / FPS
@@ -589,13 +592,20 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
             pp, _ = pose(prev_scene.get("pose", "talk"), lt + spans[scene_idx - 1][1])
             p = blend(pp, p, ease(lt / 0.3))
 
-        img = Image.new("RGB", (W, H), BG)
+        kind = scene.get("bg", "room")
+        if kind not in bg_cache:
+            bg_cache[kind] = ab.build_static(kind, F)
+        img = bg_cache[kind].copy()
+        if scene_idx > 0 and lt < 0.35:
+            pk = timeline[scene_idx - 1][0].get("bg", "room")
+            if pk != kind:
+                img = Image.blend(bg_cache[pk], img, ease(lt / 0.35))
         d = ImageDraw.Draw(img)
+        ab.animate(kind, d, F, t)
         pen = Pen(d, sc_, seed=fi // 4)
-        # zemin çizgisi
-        gy = F["hip_y"] + 292 * sc_
-        pen.line([(F["fig_x"] - 260 * sc_, gy), (F["fig_x"] + 260 * sc_, gy)], color=(170, 170, 170),
-                 w=int(6 * sc_))
+        fig_c = (F["fig_x"], F["hip_y"] - 120 * sc_)
+        for name in scene.get("deco", ab.DEFAULT_DECO.get(scene.get("pose", "talk"), [])):
+            ab.deco(name, d, F, lt, font, fig_c)
         mouth = float(env[fi]) if env is not None and fi < len(env) else 0.0
         anchors = draw_figure(pen, p, expr, F["fig_x"], F["hip_y"], sc_, mouth)
         for spec in scene.get("props", []):
@@ -613,9 +623,7 @@ def render_video(path_noext, timeline, spans, total, F, lang, audio, captions, e
         if captions:
             for a, b, txt in captions:
                 if a <= t < b:
-                    pop = 0.85 + 0.15 * ease_back((t - a) / 0.15)
-                    text_center(d, (W / 2, F["cap_y"]), txt, F["cap_size"] * pop, fill="white",
-                                stroke=int(F["cap_size"] * 0.11), stroke_fill=INK, max_w=F["cap_w"])
+                    ab.draw_caption(img, F, t, a, b, txt, font)
                     break
         ff.stdin.write(img.tobytes())
         if fi % (FPS * 5) == 0:
@@ -653,6 +661,8 @@ def main():
     for lg in langs:
         if lg not in LANGS:
             sys.exit(f"Desteklenmeyen dil: {lg}. Desteklenen: {', '.join(LANGS)}")
+    for sc in data["scenes"]:
+        sc.setdefault("bg", data.get("bg", "room"))
     slug = data.get("slug") or os.path.splitext(os.path.basename(args.senaryo))[0]
     outdir = os.path.join(args.cikti, slug)
     os.makedirs(outdir, exist_ok=True)

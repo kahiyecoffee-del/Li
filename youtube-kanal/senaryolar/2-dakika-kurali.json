@@ -1,121 +1,243 @@
 {
   "slug": "2-dakika-kurali",
   "format": "short",
-  "languages": ["en", "es", "pt", "hi"],
+  "languages": [
+    "en",
+    "es",
+    "pt",
+    "hi"
+  ],
   "meta": {
     "en": {
       "title": "The 2-Minute Rule That Kills Procrastination #shorts",
       "description": "You're not lazy — big tasks just feel bad, so your brain reaches for something easy. The 2-minute rule fixes that.\n\n1) If it takes less than 2 minutes, do it now.\n2) Shrink big goals into a 2-minute start.\n\n#productivity #procrastination #habits #selfimprovement",
-      "tags": ["2 minute rule", "procrastination", "productivity", "habits", "motivation", "brain hacks", "self improvement"]
+      "tags": [
+        "2 minute rule",
+        "procrastination",
+        "productivity",
+        "habits",
+        "motivation",
+        "brain hacks",
+        "self improvement"
+      ]
     },
     "es": {
       "title": "La regla de los 2 minutos que acaba con la procrastinación #shorts",
       "description": "No eres flojo: las tareas grandes se sienten mal y tu cerebro busca algo fácil. La regla de los 2 minutos lo soluciona.\n\n1) Si toma menos de 2 minutos, hazlo ya.\n2) Convierte metas grandes en un inicio de 2 minutos.\n\n#productividad #procrastinacion #habitos",
-      "tags": ["regla de los 2 minutos", "procrastinación", "productividad", "hábitos", "motivación"]
+      "tags": [
+        "regla de los 2 minutos",
+        "procrastinación",
+        "productividad",
+        "hábitos",
+        "motivación"
+      ]
     },
     "pt": {
       "title": "A regra dos 2 minutos que acaba com a procrastinação #shorts",
       "description": "Você não é preguiçoso: tarefas grandes incomodam e o cérebro procura algo fácil. A regra dos 2 minutos resolve isso.\n\n1) Se leva menos de 2 minutos, faça agora.\n2) Transforme grandes metas num começo de 2 minutos.\n\n#produtividade #procrastinacao #habitos",
-      "tags": ["regra dos 2 minutos", "procrastinação", "produtividade", "hábitos", "motivação"]
+      "tags": [
+        "regra dos 2 minutos",
+        "procrastinação",
+        "produtividade",
+        "hábitos",
+        "motivação"
+      ]
     },
     "hi": {
       "title": "2 मिनट का नियम जो टालमटोल खत्म कर दे #shorts",
       "description": "तुम आलसी नहीं हो — बड़े काम बुरे लगते हैं, इसलिए दिमाग कुछ आसान ढूंढता है। 2 मिनट का नियम इसे ठीक करता है।\n\n1) जो काम 2 मिनट से कम का है, अभी करो।\n2) बड़े लक्ष्य को 2 मिनट की शुरुआत में बदलो।\n\n#productivity #motivation #habits",
-      "tags": ["2 minute rule hindi", "procrastination hindi", "productivity", "motivation", "आदतें"]
+      "tags": [
+        "2 minute rule hindi",
+        "procrastination hindi",
+        "productivity",
+        "motivation",
+        "आदतें"
+      ]
     }
   },
   "scenes": [
     {
       "pose": "tired",
-      "props": [{"type": "mountain", "pos": "center", "size": 1.1, "text": {"en": "BIG TASK", "es": "TAREA", "pt": "TAREFA", "hi": "बड़ा काम"}}],
+      "props": [
+        {
+          "type": "mountain",
+          "pos": "center",
+          "size": 1.1,
+          "text": {
+            "en": "BIG TASK",
+            "es": "TAREA",
+            "pt": "TAREFA",
+            "hi": "बड़ा काम"
+          }
+        }
+      ],
       "say": {
         "en": "You're not lazy. Your brain just hates big tasks.",
         "es": "No eres flojo. Tu cerebro simplemente odia las tareas grandes.",
         "pt": "Você não é preguiçoso. Seu cérebro só odeia tarefas grandes.",
         "hi": "तुम आलसी नहीं हो। तुम्हारा दिमाग बस बड़े कामों से बचता है।"
-      }
+      },
+      "bg": "room"
     },
     {
       "pose": "phone",
       "props": [
-        {"type": "phone", "pos": "hand_r", "size": 0.45},
-        {"type": "brain", "pos": "center", "size": 1.3, "delay": 0.2}
+        {
+          "type": "phone",
+          "pos": "hand_r",
+          "size": 0.45
+        },
+        {
+          "type": "brain",
+          "pos": "center",
+          "size": 1.3,
+          "delay": 0.2
+        }
       ],
       "say": {
         "en": "When a task feels too big, it feels bad. So your brain grabs something easy... like your phone.",
         "es": "Cuando una tarea parece enorme, se siente mal. Así que tu cerebro busca algo fácil... como tu teléfono.",
         "pt": "Quando uma tarefa parece grande demais, dá um desconforto. Então seu cérebro procura algo fácil... como o celular.",
         "hi": "जब कोई काम बहुत बड़ा लगता है, तो बुरा महसूस होता है। इसलिए दिमाग कुछ आसान ढूंढता है... जैसे तुम्हारा फ़ोन।"
-      }
+      },
+      "bg": "room"
     },
     {
       "pose": "idea",
       "props": [
-        {"type": "bulb", "pos": "left", "size": 0.8},
-        {"type": "bigtext", "pos": "right", "size": 0.9, "text": {"en": "2 MIN", "es": "2 MIN", "pt": "2 MIN", "hi": "2 मिनट"}, "delay": 0.3}
+        {
+          "type": "bulb",
+          "pos": "left",
+          "size": 0.8
+        },
+        {
+          "type": "bigtext",
+          "pos": "right",
+          "size": 0.9,
+          "text": {
+            "en": "2 MIN",
+            "es": "2 MIN",
+            "pt": "2 MIN",
+            "hi": "2 मिनट"
+          },
+          "delay": 0.3
+        }
       ],
       "say": {
         "en": "The fix is simple. It's called the two-minute rule.",
         "es": "La solución es simple. Se llama la regla de los dos minutos.",
         "pt": "A solução é simples. Chama-se a regra dos dois minutos.",
         "hi": "इसका हल आसान है। इसे दो मिनट का नियम कहते हैं।"
-      }
+      },
+      "bg": "office"
     },
     {
       "pose": "point_right",
       "props": [
-        {"type": "clock", "pos": "center", "size": 1.1},
-        {"type": "check", "pos": "right", "size": 0.7, "delay": 1.5}
+        {
+          "type": "clock",
+          "pos": "center",
+          "size": 1.1
+        },
+        {
+          "type": "check",
+          "pos": "right",
+          "size": 0.7,
+          "delay": 1.5
+        }
       ],
       "say": {
         "en": "Rule one: if something takes less than two minutes, do it right now.",
         "es": "Regla uno: si algo toma menos de dos minutos, hazlo ahora mismo.",
         "pt": "Regra um: se algo leva menos de dois minutos, faça agora mesmo.",
         "hi": "पहला नियम: अगर कोई काम दो मिनट से कम का है, तो उसे अभी कर दो।"
-      }
+      },
+      "bg": "office"
     },
     {
       "pose": "read",
       "props": [
-        {"type": "book", "pos": "hands", "size": 0.55, "offset": [0, 0.35]},
-        {"type": "bubble", "pos": "center", "size": 1.0, "text": {"en": "1 page", "es": "1 página", "pt": "1 página", "hi": "1 पेज"}, "delay": 1.0}
+        {
+          "type": "book",
+          "pos": "hands",
+          "size": 0.55,
+          "offset": [
+            0,
+            0.35
+          ]
+        },
+        {
+          "type": "bubble",
+          "pos": "center",
+          "size": 1.0,
+          "text": {
+            "en": "1 page",
+            "es": "1 página",
+            "pt": "1 página",
+            "hi": "1 पेज"
+          },
+          "delay": 1.0
+        }
       ],
       "say": {
         "en": "Rule two: shrink big goals into a two-minute start. Want to read more? Read one page.",
         "es": "Regla dos: convierte las metas grandes en un comienzo de dos minutos. ¿Quieres leer más? Lee una página.",
         "pt": "Regra dois: transforme grandes metas num começo de dois minutos. Quer ler mais? Leia uma página.",
         "hi": "दूसरा नियम: बड़े लक्ष्य को दो मिनट की शुरुआत में बदलो। ज़्यादा पढ़ना है? बस एक पेज पढ़ो।"
-      }
+      },
+      "bg": "notebook"
     },
     {
       "pose": "walk",
-      "props": [{"type": "shoe", "pos": "center", "size": 1.3}],
+      "props": [
+        {
+          "type": "shoe",
+          "pos": "center",
+          "size": 1.3
+        }
+      ],
       "say": {
         "en": "Want to work out? Just put on your shoes.",
         "es": "¿Quieres hacer ejercicio? Solo ponte los zapatos.",
         "pt": "Quer treinar? É só calçar o tênis.",
         "hi": "कसरत करनी है? बस जूते पहन लो।"
-      }
+      },
+      "bg": "park"
     },
     {
       "pose": "run",
-      "props": [{"type": "chart_up", "pos": "center", "size": 1.3}],
+      "props": [
+        {
+          "type": "chart_up",
+          "pos": "center",
+          "size": 1.3
+        }
+      ],
       "say": {
         "en": "Starting is the hardest part. Once you begin, it's much easier to keep going.",
         "es": "Empezar es lo más difícil. Una vez que comienzas, es mucho más fácil seguir.",
         "pt": "Começar é a parte mais difícil. Depois que você começa, fica muito mais fácil continuar.",
         "hi": "शुरुआत करना ही सबसे मुश्किल है। एक बार शुरू कर दिया, तो आगे बढ़ना बहुत आसान हो जाता है।"
-      }
+      },
+      "bg": "park"
     },
     {
       "pose": "wave",
-      "props": [{"type": "heart", "pos": "center", "size": 1.2}],
+      "props": [
+        {
+          "type": "heart",
+          "pos": "center",
+          "size": 1.2
+        }
+      ],
       "say": {
         "en": "Try it today, and follow for more simple brain tricks.",
         "es": "Pruébalo hoy y sígueme para más trucos simples para tu cerebro.",
         "pt": "Experimente hoje e me siga para mais truques simples para o cérebro.",
         "hi": "आज ही आज़माओ, और ऐसे ही आसान दिमागी ट्रिक्स के लिए फ़ॉलो करो।"
-      }
+      },
+      "bg": "city"
     }
-  ]
+  ],
+  "bg": "room"
 }

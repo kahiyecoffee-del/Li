@@ -44,7 +44,7 @@ Türkçe bu ücretsiz modelde yok. Türkçe için ElevenLabs gibi bir servis ekl
   "slug": "video-adi", "format": "short", "languages": ["en", "es"],
   "meta": {"en": {"title": "...", "description": "...", "tags": ["..."]}},
   "scenes": [
-    {"pose": "talk",
+    {"pose": "talk", "bg": "park", "deco": ["sparkles"],
      "props": [{"type": "bulb", "pos": "left", "size": 1.0, "delay": 0.3}],
      "say": {"en": "Narration...", "es": "Narración..."}}
   ]
@@ -52,6 +52,14 @@ Türkçe bu ücretsiz modelde yok. Türkçe için ElevenLabs gibi bir servis ekl
 ```
 **Pozlar:** stand, talk, wave, point_right, point_left, idea, think, shock, celebrate, tired, sad, shrug, walk, run, phone, read
 (isteğe bağlı `"expr"`: neutral, happy, sad, shock, tired, confused, think, down)
+
+**Arka planlar (`"bg"`, sahne başına veya senaryo genelinde):** room (oda), office (ofis), park, city (şehir), notebook (defter), plain (düz).
+Sahne arka planı değişince yumuşak geçiş yapılır. Bulutlar, güneş ve kuşlar hareketlidir.
+
+**Dekorasyonlar (`"deco": [...]`):** sparkles, confetti, hearts, speed, coins, questions, exclaims, zzz, rain.
+Yazılmazsa poza göre otomatik seçilir (ör. celebrate → konfeti, run → hız çizgileri, idea → parıltı).
+
+**Altyazı:** koyu kutu içinde, o an söylenen kelime sarı (karaoke). Ayrıca her dil için `.srt` dosyası çıkar.
 
 **Aksesuarlar (`type`):** bigtext, bubble, thought, phone, clock, bulb, brain, book, shoe, mountain, chart_up, check, cross, heart, coin, question, exclaim, zzz, arrow
 - `pos`: center, left, right, top, bottom, hand_r, hand_l, hands, head, ya da `[x, y]` (0–1 arası oran)
