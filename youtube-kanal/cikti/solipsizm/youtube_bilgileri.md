@@ -7,7 +7,7 @@
 
 ## Kapak
 3 seçenek var. YouTube Studio'da **"Test et ve karşılaştır" (Test & Compare)** ile üçünü birden yükle; YouTube en çok tıklananı otomatik seçer.
-Önerim: **A (ONLY YOU EXIST?)**. En kısa ve en net olanı, tek odak noktası var.
+**Seçilen: B (PROVE I'M REAL)**. Ana kapak olarak bunu yükle. İstersen A ve C'yi "Test et ve karşılaştır" için yedek tut.
 Not: YouTube dile göre ayrı kapak desteklemiyor. Kapaklar kısa İngilizce metinle her ülkede çalışacak şekilde tasarlandı.
 
 ---
