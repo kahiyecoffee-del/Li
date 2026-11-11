@@ -1,0 +1,4115 @@
+{
+ "slug": "onay",
+ "format": "long",
+ "theme": "karakalem",
+ "character": "none",
+ "languages": [
+  "en"
+ ],
+ "subtitles": [
+  "tr"
+ ],
+ "voices": {
+  "en": "am_fenrir"
+ },
+ "speech_rate": 0.88,
+ "meta": {
+  "en": {
+   "title": "Why Do We Need Other People's Approval?",
+   "description": "",
+   "tags": []
+  },
+  "tr": {
+   "title": "Neden Başkalarının Onayına Muhtacız?",
+   "description": "",
+   "tags": []
+  }
+ },
+ "subscribe": {
+  "after": 12,
+  "sketch": [
+   {
+    "el": "subscribe",
+    "x": 0.45,
+    "y": 0.45,
+    "s": 1.4
+   },
+   {
+    "el": "arrow",
+    "x": 0.2,
+    "y": 0.75,
+    "x2": 0.33,
+    "y2": 0.55,
+    "color": "red",
+    "s": 1.2
+   }
+  ],
+  "say": {
+   "en": "Quick favor before we start: if this question hits a little close to home, *subscribe*. It genuinely helps the channel.",
+   "tr": "Başlamadan küçük bir rica: Bu soru sana biraz tanıdık geliyorsa *abone ol*. Kanala gerçekten çok yardımı oluyor."
+  }
+ },
+ "scenes": [
+  {
+   "say": {
+    "en": "Almost two thousand years ago, a Roman emperor wrote a strange note to himself.",
+    "tr": "Yaklaşık iki bin yıl önce bir Roma imparatoru kendine tuhaf bir not yazdı."
+   },
+   "image": {
+    "file": "File:Ancient statue of emperor Marcus Aurelius.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Marcus Aurelius · 121–180",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "*\"I have often wondered how it is that every man loves himself more than all the rest of men,*",
+    "tr": "*\"Herkesin kendini başkalarından daha çok sevip de*"
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.3
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "Meditations 12.4",
+     "size": 0.8,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "*and yet sets less value on his own opinion of himself than on the opinion of others.\"*",
+    "tr": "*kendisi hakkındaki kendi görüşüne başkalarının görüşünden daha az değer vermesine sık sık şaşırmışımdır.\"*"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.3,
+     "text": "my opinion",
+     "size": 1.1,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.3,
+     "text": "their opinion",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "line",
+     "x": 0.5,
+     "y": 0.18,
+     "s": 1.0,
+     "x2": 0.5,
+     "y2": 0.62
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.5,
+     "text": "small",
+     "size": 0.8,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.52,
+     "text": "HUGE",
+     "size": 1.6,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The man was *Marcus Aurelius* — the most powerful person in the known world. And even he couldn't stop caring what people thought.",
+    "tr": "Bu adam *Marcus Aurelius*'tu, bilinen dünyanın en güçlü insanı. Ve o bile insanların ne düşündüğünü umursamadan edemiyordu."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.6,
+     "pose": "stand",
+     "face": 1,
+     "hat": "wig"
+    },
+    {
+     "el": "dot",
+     "x": 0.5,
+     "y": 0.12,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.18,
+     "y": 0.35,
+     "text": "?",
+     "size": 1.4,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.35,
+     "text": "?",
+     "size": 1.4,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.25,
+     "y": 0.6,
+     "text": "?",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.6,
+     "text": "?",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Today, we check how many people liked a photo minutes after posting it.",
+    "tr": "Bugün bir fotoğrafı paylaştıktan dakikalar sonra kaç kişinin beğendiğine bakıyoruz."
+   },
+   "sketch": [
+    {
+     "el": "phone",
+     "x": 0.5,
+     "y": 0.48,
+     "s": 1.4,
+     "likes": 3
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.3,
+     "text": "...12?",
+     "size": 1.0,
+     "color": "red",
+     "underline": false,
+     "at": 1.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We replay a single awkward comment for days.",
+    "tr": "Tek bir garip yorumu günlerce kafamızda döndürüyoruz."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.32,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "bubble",
+     "x": 0.66,
+     "y": 0.32,
+     "s": 1.0,
+     "kind": "thought",
+     "tail": [
+      0.4,
+      0.35
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.66,
+     "y": 0.32,
+     "text": "\"...weird.\"",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.66,
+     "y": 0.6,
+     "text": "day 1, 2, 3...",
+     "size": 0.8,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We change our clothes, our words, even our opinions — to fit in.",
+    "tr": "Uyum sağlamak için kıyafetimizi, sözlerimizi, hatta fikirlerimizi değiştiriyoruz."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "mirror",
+     "x": 0.62,
+     "y": 0.42,
+     "s": 0.9
+    },
+    {
+     "el": "figure",
+     "x": 0.38,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "think",
+     "face": 1
+    },
+    {
+     "el": "tshirt",
+     "x": 0.18,
+     "y": 0.4,
+     "s": 0.45
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Why? Why does a creature that loves itself so much need *other people* to tell it that it's okay?",
+    "tr": "Neden? Kendini bu kadar seven bir canlı, iyi olduğunu söylemeleri için neden *başkalarına* ihtiyaç duyar?"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "shrug",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.8,
+     "h": 0.48,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "figure",
+     "x": 0.72,
+     "y": 0.8,
+     "h": 0.46,
+     "pose": "stand",
+     "face": -1,
+     "hat": "dress"
+    },
+    {
+     "el": "figure",
+     "x": 0.84,
+     "y": 0.8,
+     "h": 0.48,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "bubble",
+     "x": 0.72,
+     "y": 0.18,
+     "s": 0.55,
+     "kind": "speech",
+     "tail": [
+      0.72,
+      0.3
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.18,
+     "text": "okay",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "By the end of this video, you'll know what happens in your brain when you're left out,",
+    "tr": "Bu videonun sonunda dışlandığında beyninde ne olduğunu,"
+   },
+   "sketch": [
+    {
+     "el": "brain",
+     "x": 0.5,
+     "y": 0.48,
+     "s": 1.1,
+     "spot": [
+      0.15,
+      -0.35
+     ]
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "why one of history's most famous experiments made people deny what they could see with their own eyes,",
+    "tr": "tarihin en ünlü deneylerinden birinin insanlara kendi gözleriyle gördüklerini neden inkâr ettirdiğini,"
+   },
+   "sketch": [
+    {
+     "el": "asch_card",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "how social media turned approval into a slot machine —",
+    "tr": "sosyal medyanın onayı nasıl bir kumar makinesine çevirdiğini"
+   },
+   "sketch": [
+    {
+     "el": "slot",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.2
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and what *Nietzsche* thought we should do about all of it.",
+    "tr": "ve *Nietzsche*'nin bütün bunlar hakkında ne yapmamız gerektiğini düşündüğünü öğreneceksin."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "mountain",
+     "x": 0.6,
+     "y": 0.8,
+     "s": 0.9
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.25,
+     "y": 0.1,
+     "text": "Nietzsche",
+     "size": 1.1,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Let's start with a simple idea: the need for approval isn't a character flaw. It's *ancient*.",
+    "tr": "Basit bir fikirle başlayalım: Onay ihtiyacı bir karakter kusuru değil. Çok *eski* bir şey."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.3,
+     "text": "character flaw",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.5,
+     "y": 0.3,
+     "s": 0.9,
+     "at": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.58,
+     "text": "ANCIENT",
+     "size": 1.8,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "For most of human history, we lived in small groups — often estimated at around a hundred and fifty people.",
+    "tr": "İnsanlık tarihinin büyük bölümünde küçük gruplar halinde yaşadık. Bu grupların genelde yüz elli kişi civarında olduğu tahmin edilir."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "campfire",
+     "x": 0.5,
+     "y": 0.8,
+     "s": 1.4
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.38,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.38,
+     "pose": "sit",
+     "face": -1
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.36,
+     "pose": "stand",
+     "face": 1,
+     "hat": "dress"
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.8,
+     "h": 0.38,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "≈ 150",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Food, protection, a partner, care when you were sick: all of it came from the group.",
+    "tr": "Yiyecek, korunma, eş, hastayken bakım: Hepsi gruptan geliyordu."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "campfire",
+     "x": 0.5,
+     "y": 0.8,
+     "s": 1.2
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.65,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": -1,
+     "hat": "dress"
+    },
+    {
+     "el": "text",
+     "x": 0.15,
+     "y": 0.2,
+     "text": "food",
+     "size": 0.8,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.15,
+     "y": 0.32,
+     "text": "protection",
+     "size": 0.8,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.85,
+     "y": 0.2,
+     "text": "partner",
+     "size": 0.8,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.85,
+     "y": 0.32,
+     "text": "care",
+     "size": 0.8,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Being pushed out wasn't just lonely. It could be *deadly*. A human alone on the savanna didn't last long.",
+    "tr": "Gruptan atılmak sadece yalnızlık değildi. *Ölümcül* olabilirdi. Savanda tek başına kalan bir insan uzun yaşamazdı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "campfire",
+     "x": 0.2,
+     "y": 0.8,
+     "s": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.13,
+     "y": 0.8,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.27,
+     "y": 0.8,
+     "h": 0.3,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "figure",
+     "x": 0.75,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "arrow",
+     "x": 0.4,
+     "y": 0.55,
+     "x2": 0.62,
+     "y2": 0.55,
+     "bend": 0.0
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.12,
+     "text": "alone",
+     "size": 1.2,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "So evolution gave us an alarm system. An inner voice that constantly asks: *Am I still accepted? Am I still in?*",
+    "tr": "Bu yüzden evrim bize bir alarm sistemi verdi. Sürekli şunu soran bir iç ses: *Hâlâ kabul ediliyor muyum? Hâlâ içeride miyim?*"
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.65
+    },
+    {
+     "el": "bell",
+     "x": 0.68,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.82,
+     "text": "am I still in?",
+     "size": 0.9,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1995, psychologists *Roy Baumeister* and *Mark Leary* reviewed decades of research and argued that the *need to belong* is a fundamental human motivation —",
+    "tr": "1995'te psikologlar *Roy Baumeister* ve *Mark Leary* onlarca yıllık araştırmayı incelediler ve *ait olma ihtiyacının* temel bir insan güdüsü olduğunu savundular;"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "the need to belong",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.6,
+     "text": "Baumeister & Leary · 1995",
+     "size": 0.8,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "almost as basic as hunger. Not a luxury. A *need*.",
+    "tr": "neredeyse açlık kadar temel. Bir lüks değil. Bir *ihtiyaç*."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.4,
+     "text": "hunger",
+     "size": 1.3,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.4,
+     "text": "≈",
+     "size": 1.5,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.4,
+     "text": "belonging",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.65,
+     "text": "a need",
+     "size": 1.0,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And that alarm system is surprisingly physical.",
+    "tr": "Ve bu alarm sistemi şaşırtıcı derecede bedensel."
+   },
+   "sketch": [
+    {
+     "el": "bell",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.3
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 2003, researchers led by *Naomi Eisenberger* put people in a brain scanner and had them play a simple online ball-tossing game called *Cyberball*.",
+    "tr": "2003'te *Naomi Eisenberger* liderliğindeki araştırmacılar insanları beyin tarayıcısına soktu ve onlara *Cyberball* adlı basit bir çevrimiçi top atma oyunu oynattı."
+   },
+   "sketch": [
+    {
+     "el": "screen",
+     "x": 0.5,
+     "y": 0.62,
+     "s": 1.5
+    },
+    {
+     "el": "figure",
+     "x": 0.38,
+     "y": 0.5,
+     "h": 0.14,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.45,
+     "h": 0.14,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.62,
+     "y": 0.5,
+     "h": 0.14,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "marble",
+     "x": 0.44,
+     "y": 0.38,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "Cyberball · 2003",
+     "size": 1.0,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Three players pass a ball. After a while, the other two stop passing it to you. That's it.",
+    "tr": "Üç oyuncu topu birbirine atar. Bir süre sonra diğer ikisi topu sana atmayı bırakır. Hepsi bu."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": -1,
+     "hat": "dress"
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "marble",
+     "x": 0.65,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "arrow",
+     "x": 0.55,
+     "y": 0.4,
+     "x2": 0.75,
+     "y2": 0.4,
+     "color": "blue"
+    },
+    {
+     "el": "arrow",
+     "x": 0.75,
+     "y": 0.5,
+     "x2": 0.55,
+     "y2": 0.5,
+     "color": "blue"
+    },
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.25,
+     "text": "...?",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They weren't real people — just a computer program.",
+    "tr": "Onlar gerçek insanlar değildi, sadece bir bilgisayar programıydı."
+   },
+   "sketch": [
+    {
+     "el": "screen",
+     "x": 0.5,
+     "y": 0.6,
+     "s": 1.5
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.45,
+     "text": "program",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And yet being left out activated parts of the brain that are also involved in the distress of *physical pain*.",
+    "tr": "Yine de dışlanmak, beyinde *fiziksel acının* verdiği sıkıntıyla da ilişkili bölgeleri harekete geçirdi."
+   },
+   "sketch": [
+    {
+     "el": "brain",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.2,
+     "spot": [
+      0.1,
+      -0.35
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "social pain ≈ physical pain?",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Scientists still debate exactly how close social pain and physical pain really are.",
+    "tr": "Bilim insanları sosyal acıyla fiziksel acının tam olarak ne kadar benzediğini hâlâ tartışıyor."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.36,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "point",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.64,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "shrug",
+     "face": -1,
+     "hat": "wig"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.2,
+     "text": "?",
+     "size": 2.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But the basic finding has been repeated many times: being excluded, even by strangers, even in a meaningless game, *hurts*.",
+    "tr": "Ama temel bulgu defalarca tekrarlandı: Dışlanmak, yabancılar tarafından bile, anlamsız bir oyunda bile, *acıtır*."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "think",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "it hurts",
+     "size": 1.6,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Mark Leary also proposed what he called the *sociometer theory*: the idea that self-esteem works like a gauge.",
+    "tr": "Mark Leary ayrıca *sosyometre kuramı* dediği bir fikir ortaya attı: Özsaygı bir gösterge gibi çalışır."
+   },
+   "sketch": [
+    {
+     "el": "gauge",
+     "x": 0.5,
+     "y": 0.65,
+     "s": 1.4,
+     "value": 0.75,
+     "label": "self-esteem"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "sociometer",
+     "size": 1.2,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It isn't really measuring how good you are. It's measuring how accepted you *feel*.",
+    "tr": "Aslında ne kadar iyi olduğunu ölçmez. Ne kadar kabul edildiğini *hissettiğini* ölçer."
+   },
+   "sketch": [
+    {
+     "el": "gauge",
+     "x": 0.5,
+     "y": 0.65,
+     "s": 1.4,
+     "value": 0.6,
+     "label": "accepted?"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "how good you are",
+     "size": 0.9,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.5,
+     "y": 0.12,
+     "s": 0.7,
+     "at": 1.4
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When the needle drops, you feel worthless — even if nothing about you has changed.",
+    "tr": "İbre düştüğünde, sende hiçbir şey değişmemiş olsa bile kendini değersiz hissedersin."
+   },
+   "sketch": [
+    {
+     "el": "gauge",
+     "x": 0.5,
+     "y": 0.65,
+     "s": 1.4,
+     "value": 0.08,
+     "label": "worthless?"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "nothing changed",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "If rejection hurts this much, how far will we go to avoid it?",
+    "tr": "Reddedilmek bu kadar acıtıyorsa, bundan kaçınmak için ne kadar ileri gideriz?"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "think",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.3,
+     "text": "how far?",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In the 1950s, psychologist *Solomon Asch* ran a famous experiment.",
+    "tr": "1950'lerde psikolog *Solomon Asch* ünlü bir deney yaptı."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.4,
+     "text": "Solomon Asch · 1950s",
+     "size": 1.4,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A person sits in a room with several others and is shown a line, then three more lines. The question is simple: which of these three matches the first one?",
+    "tr": "Bir kişi odada birkaç kişiyle oturur ve ona bir çizgi, ardından üç çizgi daha gösterilir. Soru basit: Bu üçünden hangisi ilkiyle aynı uzunlukta?"
+   },
+   "sketch": [
+    {
+     "el": "asch_card",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "which one matches?",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The answer is obvious.",
+    "tr": "Cevap apaçık."
+   },
+   "sketch": [
+    {
+     "el": "asch_card",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.1
+    },
+    {
+     "el": "circle",
+     "x": 0.627,
+     "y": 0.5,
+     "s": 0.9,
+     "rx": 70,
+     "ry": 170,
+     "color": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But everyone else in the room is secretly working with the experimenter — and one by one, they confidently give the *wrong* answer.",
+    "tr": "Ama odadaki diğer herkes gizlice deneyi yapanla birlikte çalışıyor ve teker teker, kendinden emin bir şekilde *yanlış* cevabı veriyorlar."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.15,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.45,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.82,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "sit",
+     "face": -1
+    },
+    {
+     "el": "bubble",
+     "x": 0.15,
+     "y": 0.25,
+     "s": 0.3,
+     "kind": "speech",
+     "tail": null
+    },
+    {
+     "el": "text",
+     "x": 0.15,
+     "y": 0.25,
+     "text": "A",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "bubble",
+     "x": 0.3,
+     "y": 0.25,
+     "s": 0.3,
+     "kind": "speech",
+     "tail": null
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.25,
+     "text": "A",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "bubble",
+     "x": 0.45,
+     "y": 0.25,
+     "s": 0.3,
+     "kind": "speech",
+     "tail": null
+    },
+    {
+     "el": "text",
+     "x": 0.45,
+     "y": 0.25,
+     "text": "A",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "bubble",
+     "x": 0.6,
+     "y": 0.25,
+     "s": 0.3,
+     "kind": "speech",
+     "tail": null
+    },
+    {
+     "el": "text",
+     "x": 0.6,
+     "y": 0.25,
+     "text": "A",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Then it's your turn.",
+    "tr": "Sonra sıra sana geliyor."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "think",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.25,
+     "text": "...",
+     "size": 1.6,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.32,
+     "y": 0.25,
+     "text": "A?  C?",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Across the critical trials, people went along with the group's obviously wrong answer about a third of the time.",
+    "tr": "Kritik denemelerde insanlar grubun açıkça yanlış cevabına yaklaşık üçte bir oranında uydu."
+   },
+   "sketch": [
+    {
+     "el": "dots",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.6,
+     "n": 30,
+     "cols": 10,
+     "highlight": 10
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "≈ 1 in 3 answers",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And around three out of four participants conformed at least once.",
+    "tr": "Katılımcıların yaklaşık dörtte üçü en az bir kez gruba uydu."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.42,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.9
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.42,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.9
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.8,
+     "h": 0.42,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.9
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.8,
+     "h": 0.42,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.3
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "3 out of 4",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Many later said they knew the answer was wrong. They just didn't want to be the one who stood out.",
+    "tr": "Birçoğu daha sonra cevabın yanlış olduğunu bildiklerini söyledi. Sadece sivrilen kişi olmak istememişlerdi."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.78,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.6
+    },
+    {
+     "el": "circle",
+     "x": 0.78,
+     "y": 0.5,
+     "s": 1.0,
+     "rx": 110,
+     "ry": 330
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When Asch gave them a single ally — one other person who answered correctly — conformity dropped sharply.",
+    "tr": "Asch onlara tek bir müttefik verdiğinde, yani doğru cevap veren tek bir kişi daha olduğunda, uyma oranı keskin biçimde düştü."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.62,
+     "y": 0.8,
+     "h": 0.48,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.78,
+     "y": 0.8,
+     "h": 0.48,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "bubble",
+     "x": 0.62,
+     "y": 0.2,
+     "s": 0.35,
+     "kind": "speech",
+     "tail": [
+      0.62,
+      0.3
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.62,
+     "y": 0.2,
+     "text": "C",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "bubble",
+     "x": 0.8,
+     "y": 0.2,
+     "s": 0.35,
+     "kind": "speech",
+     "tail": [
+      0.78,
+      0.3
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.2,
+     "text": "C!",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Sometimes we don't need everyone to agree with us. We just need *one*.",
+    "tr": "Bazen herkesin bize katılmasına ihtiyacımız yok. Sadece *bir kişiye* ihtiyacımız var."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.42,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.58,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": -1,
+     "hat": "dress"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "just one",
+     "size": 1.5,
+     "color": "blue",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "There's one more trap worth knowing about. Psychologists call it the *spotlight effect*.",
+    "tr": "Bilmeye değer bir tuzak daha var. Psikologlar buna *spot ışığı etkisi* der."
+   },
+   "sketch": [
+    {
+     "el": "spotlight",
+     "x": 0.5,
+     "y": 0.8,
+     "s": 1.5
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.15,
+     "text": "spotlight effect",
+     "size": 1.0,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In a 2000 study, *Thomas Gilovich* and colleagues asked college students to walk into a room wearing a T-shirt with a large picture of *Barry Manilow* —",
+    "tr": "2000 yılındaki bir çalışmada *Thomas Gilovich* ve arkadaşları üniversite öğrencilerinden, üzerinde *Barry Manilow*'un büyük bir resmi olan bir tişörtle bir odaya girmelerini istedi."
+   },
+   "sketch": [
+    {
+     "el": "tshirt",
+     "x": 0.5,
+     "y": 0.48,
+     "s": 1.3,
+     "text": "MANILOW"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "Gilovich · 2000",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "a singer the students considered embarrassing to wear.",
+    "tr": "Öğrencilerin üzerinde taşımaktan utandığı bir şarkıcı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "shrug",
+     "face": 1
+    },
+    {
+     "el": "tshirt",
+     "x": 0.5,
+     "y": 0.48,
+     "s": 0.25
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.25,
+     "text": "!!",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The students guessed that about *half* the people in the room would notice the shirt.",
+    "tr": "Öğrenciler odadaki insanların yaklaşık *yarısının* tişörtü fark edeceğini tahmin etti."
+   },
+   "sketch": [
+    {
+     "el": "dots",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.6,
+     "n": 20,
+     "cols": 10,
+     "highlight": 10
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "guess: 50%",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In reality, only about a *quarter* did.",
+    "tr": "Gerçekte ise yalnızca yaklaşık *dörtte biri* fark etti."
+   },
+   "sketch": [
+    {
+     "el": "dots",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.6,
+     "n": 20,
+     "cols": 10,
+     "highlight": 5
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "real: ≈ 25%",
+     "size": 1.2,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We feel like we're standing under a spotlight. But everyone else is standing under their own — busy wondering what *we* think of *them*.",
+    "tr": "Kendimizi bir spot ışığının altında duruyor gibi hissederiz. Ama herkes kendi spot ışığının altında duruyor ve *bizim* onlar hakkında ne düşündüğümüzü merak etmekle meşgul."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "spotlight",
+     "x": 0.25,
+     "y": 0.8,
+     "s": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "spotlight",
+     "x": 0.5,
+     "y": 0.8,
+     "s": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1,
+     "hat": "dress"
+    },
+    {
+     "el": "spotlight",
+     "x": 0.75,
+     "y": 0.8,
+     "s": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.75,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": -1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Approval isn't only about being *in* the group. It's also about where you stand *inside* it.",
+    "tr": "Onay sadece grubun *içinde* olmakla ilgili değil. Aynı zamanda grubun *içinde* nerede durduğunla da ilgili."
+   },
+   "sketch": [
+    {
+     "el": "stairs",
+     "x": 0.18,
+     "y": 0.82,
+     "s": 1.5,
+     "n": 3
+    },
+    {
+     "el": "figure",
+     "x": 0.26,
+     "y": 0.66,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.44,
+     "y": 0.56,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.62,
+     "y": 0.46,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1,
+     "hat": "tricorn"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1967, researchers began following thousands of British civil servants in what became known as the *Whitehall studies*.",
+    "tr": "1967'de araştırmacılar binlerce İngiliz devlet memurunu takip etmeye başladı. Bu çalışmalar *Whitehall araştırmaları* olarak bilinir hale geldi."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.32,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.44,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.56,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.68,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "Whitehall · 1967",
+     "size": 1.1,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "These were all office workers, with jobs, salaries, and access to healthcare.",
+    "tr": "Hepsi ofis çalışanıydı; işleri, maaşları ve sağlık hizmetine erişimleri vardı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.3,
+     "text": "job",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.45,
+     "text": "salary",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.35,
+     "text": "healthcare",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And yet, the lower someone's grade in the hierarchy, the worse their health tended to be — including higher rates of heart disease and earlier death.",
+    "tr": "Yine de bir kişinin hiyerarşideki kademesi ne kadar düşükse sağlığı da o kadar kötü olma eğilimindeydi: daha yüksek kalp hastalığı oranları ve daha erken ölüm dahil."
+   },
+   "sketch": [
+    {
+     "el": "stairs",
+     "x": 0.15,
+     "y": 0.85,
+     "s": 1.4,
+     "n": 3
+    },
+    {
+     "el": "figure",
+     "x": 0.21,
+     "y": 0.7,
+     "h": 0.22,
+     "pose": "think",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.57,
+     "y": 0.5,
+     "h": 0.22,
+     "pose": "stand",
+     "face": 1,
+     "hat": "tricorn"
+    },
+    {
+     "el": "heart",
+     "x": 0.12,
+     "y": 0.35,
+     "s": 0.5
+    },
+    {
+     "el": "graph",
+     "x": 0.78,
+     "y": 0.45,
+     "s": 0.6,
+     "up": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Money and habits explained part of it, but not all of it.",
+    "tr": "Para ve alışkanlıklar bunun bir kısmını açıklıyordu ama tamamını değil."
+   },
+   "sketch": [
+    {
+     "el": "circle",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.0,
+     "rx": 330,
+     "ry": 330,
+     "color": "ink"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "money",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.5,
+     "text": "habits",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.65,
+     "text": "+ ?",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "One idea the researchers emphasized: lower status often means *less control* over your own life — and that kind of chronic stress wears the body down.",
+    "tr": "Araştırmacıların vurguladığı fikirlerden biri: Düşük statü çoğu zaman kendi hayatın üzerinde *daha az kontrol* demek ve bu tür kronik stres bedeni yıpratır."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.45,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "think",
+     "face": 1
+    },
+    {
+     "el": "demon",
+     "x": 0.45,
+     "y": 0.2,
+     "s": 0.5,
+     "strings_to": [
+      [
+       0.43,
+       0.45
+      ],
+      [
+       0.47,
+       0.45
+      ]
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.4,
+     "text": "less control",
+     "size": 1.0,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1954, psychologist *Leon Festinger* added another piece. In his *social comparison theory*, he argued that we often judge ourselves by comparing ourselves to others.",
+    "tr": "1954'te psikolog *Leon Festinger* bir parça daha ekledi. *Sosyal karşılaştırma kuramında* kendimizi çoğu zaman başkalarıyla kıyaslayarak değerlendirdiğimizi savundu."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.48,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.65,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "<",
+     "size": 2.0,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "social comparison · 1954",
+     "size": 1.0,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Not \"Am I doing well?\" — but \"Am I doing well *compared to them*?\"",
+    "tr": "\"İyi gidiyor muyum?\" değil, \"*Onlara kıyasla* iyi gidiyor muyum?\""
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.3,
+     "text": "Am I doing well?",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.5,
+     "y": 0.3,
+     "s": 0.8,
+     "at": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.58,
+     "text": "...compared to them?",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "For most of history, \"them\" meant a few dozen neighbors. Then something changed.",
+    "tr": "Tarihin büyük bölümünde \"onlar\" birkaç düzine komşu demekti. Sonra bir şey değişti."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "house",
+     "x": 0.25,
+     "y": 0.8,
+     "s": 0.6
+    },
+    {
+     "el": "house",
+     "x": 0.5,
+     "y": 0.8,
+     "s": 0.6
+    },
+    {
+     "el": "house",
+     "x": 0.75,
+     "y": 0.8,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "a few dozen",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Social media took that ancient approval system and connected it to *billions* of people — with numbers attached.",
+    "tr": "Sosyal medya bu kadim onay sistemini aldı ve *milyarlarca* insana bağladı; üstelik rakamlarla birlikte."
+   },
+   "sketch": [
+    {
+     "el": "phone",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.3,
+     "likes": "1.2k"
+    },
+    {
+     "el": "dots",
+     "x": 0.15,
+     "y": 0.45,
+     "s": 0.6,
+     "n": 40,
+     "cols": 5,
+     "highlight": 0
+    },
+    {
+     "el": "dots",
+     "x": 0.85,
+     "y": 0.45,
+     "s": 0.6,
+     "n": 40,
+     "cols": 5,
+     "highlight": 0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 2016, a team led by *Lauren Sherman* scanned the brains of teenagers while they looked at photos on an Instagram-like feed.",
+    "tr": "2016'da *Lauren Sherman* liderliğindeki bir ekip, Instagram benzeri bir akışta fotoğraflara bakan gençlerin beyinlerini taradı."
+   },
+   "sketch": [
+    {
+     "el": "phone",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 1.1
+    },
+    {
+     "el": "arrow",
+     "x": 0.42,
+     "y": 0.5,
+     "x2": 0.55,
+     "y2": 0.5,
+     "bend": 0.0
+    },
+    {
+     "el": "brain",
+     "x": 0.74,
+     "y": 0.5,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "Sherman · 2016",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When a photo appeared to have many likes, a region linked to *reward* — the nucleus accumbens — became more active.",
+    "tr": "Bir fotoğraf çok beğeni almış göründüğünde *ödülle* ilişkili bir bölge, nucleus accumbens, daha aktif hale geldi."
+   },
+   "sketch": [
+    {
+     "el": "brain",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.2,
+     "spot": [
+      -0.1,
+      0.25
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "reward",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "heart",
+     "x": 0.85,
+     "y": 0.3,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The teens were also more likely to like a photo themselves when it already had lots of likes.",
+    "tr": "Gençler zaten çok beğeni almış bir fotoğrafı kendileri de beğenmeye daha yatkındı."
+   },
+   "sketch": [
+    {
+     "el": "phone",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 1.1,
+     "likes": 980
+    },
+    {
+     "el": "arrow",
+     "x": 0.5,
+     "y": 0.5,
+     "x2": 0.65,
+     "y2": 0.5,
+     "bend": 0.0
+    },
+    {
+     "el": "heart",
+     "x": 0.78,
+     "y": 0.5,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And the rewards are unpredictable. Sometimes a post does well, sometimes it doesn't.",
+    "tr": "Ve ödüller öngörülemez. Bazen bir paylaşım iyi gider, bazen gitmez."
+   },
+   "sketch": [
+    {
+     "el": "phone",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 1.0,
+     "likes": 842
+    },
+    {
+     "el": "phone",
+     "x": 0.7,
+     "y": 0.5,
+     "s": 1.0,
+     "likes": 4
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "?",
+     "size": 2.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Decades ago, the psychologist *B. F. Skinner* showed that rewards delivered on an unpredictable schedule produce some of the most persistent behavior of all.",
+    "tr": "Onlarca yıl önce psikolog *B. F. Skinner*, öngörülemeyen bir düzende verilen ödüllerin en kalıcı davranışlardan bazılarını ürettiğini gösterdi."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.3,
+     "text": "unpredictable reward",
+     "size": 1.3,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "arrow",
+     "x": 0.5,
+     "y": 0.42,
+     "x2": 0.5,
+     "y2": 0.55,
+     "bend": 0.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.66,
+     "text": "persistent behavior",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "B. F. Skinner",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It's the same principle that keeps people pulling the lever of a slot machine.",
+    "tr": "İnsanların kumar makinesinin kolunu çekmeye devam etmesini sağlayan da aynı ilkedir."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "slot",
+     "x": 0.55,
+     "y": 0.5,
+     "s": 1.1
+    },
+    {
+     "el": "figure",
+     "x": 0.22,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "reach",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 2017, Facebook's founding president, *Sean Parker*, described the platform as *\"a social-validation feedback loop\"* —",
+    "tr": "2017'de Facebook'un kurucu başkanı *Sean Parker* platformu *\"bir sosyal onay geri bildirim döngüsü\"* olarak tanımladı"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "\"a social-validation",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.5,
+     "text": "feedback loop\"",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "arrow",
+     "x": 0.68,
+     "y": 0.62,
+     "s": 1.0,
+     "x2": 0.32,
+     "y2": 0.62,
+     "bend": -0.6,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "Sean Parker · 2017",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and said it exploited *\"a vulnerability in human psychology.\"*",
+    "tr": "ve *\"insan psikolojisindeki bir zaafı\"* istismar ettiğini söyledi."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 0.7
+    },
+    {
+     "el": "circle",
+     "x": 0.38,
+     "y": 0.38,
+     "s": 0.9,
+     "rx": 60,
+     "ry": 60
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.4,
+     "text": "a vulnerability",
+     "size": 1.1,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And now the comparison isn't with a few neighbors. It's with the best moments of thousands of strangers, carefully chosen and filtered.",
+    "tr": "Ve artık kıyaslama birkaç komşuyla değil. Binlerce yabancının özenle seçilmiş ve filtrelenmiş en güzel anlarıyla."
+   },
+   "sketch": [
+    {
+     "el": "phone",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "phone",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "phone",
+     "x": 0.7,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "the best moments of strangers",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 2019, Instagram began testing hiding like counts in several countries. Later, it let users choose whether to see them at all.",
+    "tr": "2019'da Instagram birkaç ülkede beğeni sayılarını gizlemeyi test etmeye başladı. Daha sonra kullanıcıların bu sayıları görüp görmemeyi seçmesine izin verdi."
+   },
+   "sketch": [
+    {
+     "el": "phone",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.4,
+     "likes": "???"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "2019: likes hidden",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Even the platforms seem to know the numbers do something to us.",
+    "tr": "Platformlar bile rakamların bize bir şey yaptığını biliyor gibi görünüyor."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.7
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.3,
+     "text": "1.2k",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.25,
+     "y": 0.3,
+     "text": "4",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.65,
+     "text": "37",
+     "size": 0.8,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "More than a century before social media, a German philosopher was already worried about all of this.",
+    "tr": "Sosyal medyadan bir yüzyıldan fazla önce bir Alman filozof bütün bunlardan zaten endişeleniyordu."
+   },
+   "image": {
+    "file": "File:Nietzsche187a.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Friedrich Nietzsche · 1844–1900",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "*Friedrich Nietzsche* believed that much of what we call morality grew out of what he called the *herd instinct* —",
+    "tr": "*Friedrich Nietzsche*, ahlak dediğimiz şeyin büyük bir kısmının *sürü içgüdüsü* dediği şeyden doğduğuna inanıyordu:"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.15,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.27,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.39,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.51,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.63,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "the herd instinct",
+     "size": 1.3,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "the deep urge to obey, to fit in, to value whatever the group values.",
+    "tr": "itaat etme, uyum sağlama, grubun değer verdiği şeye değer verme yönündeki derin dürtü."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.25,
+     "text": "obey",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "fit in",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.59,
+     "text": "value what they value",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In *Beyond Good and Evil*, published in 1886, he argued that this instinct for obedience had been trained into people for thousands of years.",
+    "tr": "1886'da yayımlanan *İyinin ve Kötünün Ötesinde*'de bu itaat içgüdüsünün binlerce yıldır insanlara aşılandığını savundu."
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.5,
+     "y": 0.7,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.25,
+     "text": "Beyond Good and Evil · 1886",
+     "size": 1.0,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In *Thus Spoke Zarathustra*, he imagined where it all leads: a figure he called *the last man*. Comfortable, cautious, afraid of standing out.",
+    "tr": "*Böyle Buyurdu Zerdüşt*'te her şeyin nereye varacağını hayal etti: *son insan* dediği bir figür. Rahat, temkinli, sivrilmekten korkan."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "the last man",
+     "size": 1.5,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.18,
+     "y": 0.4,
+     "text": "comfortable",
+     "size": 0.8,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.4,
+     "text": "cautious",
+     "size": 0.8,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Zarathustra describes this world in one chilling line:",
+    "tr": "Zerdüşt bu dünyayı ürpertici tek bir cümleyle anlatır:"
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.2,
+     "text": "Zarathustra"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "*\"No shepherd and one herd! Everyone wants the same, everyone is the same;*",
+    "tr": "*\"Çoban yok, tek bir sürü! Herkes aynı şeyi ister, herkes aynıdır;*"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.32,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.44,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.56,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.68,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "everyone is the same",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "*whoever feels differently goes voluntarily into the madhouse.\"*",
+    "tr": "*farklı hisseden kendi isteğiyle tımarhaneye gider.\"*"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.32,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.44,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.56,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.8,
+     "h": 0.38,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "circle",
+     "x": 0.8,
+     "y": 0.62,
+     "s": 0.9,
+     "rx": 90,
+     "ry": 250
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "For Nietzsche, the danger of living for approval wasn't just that it makes you anxious. It's that it makes you *small*.",
+    "tr": "Nietzsche'ye göre onay için yaşamanın tehlikesi sadece seni kaygılı yapması değildi. Seni *küçültmesiydi*."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.6,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "arrow",
+     "x": 0.45,
+     "y": 0.5,
+     "x2": 0.58,
+     "y2": 0.6,
+     "bend": 0.0
+    },
+    {
+     "el": "figure",
+     "x": 0.68,
+     "y": 0.8,
+     "h": 0.22,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "small",
+     "size": 1.4,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "You end up living a life designed by other people's opinions.",
+    "tr": "Başkalarının fikirleriyle tasarlanmış bir hayat yaşarsın."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "demon",
+     "x": 0.5,
+     "y": 0.18,
+     "s": 0.4,
+     "strings_to": [
+      [
+       0.47,
+       0.45
+      ],
+      [
+       0.53,
+       0.45
+      ]
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.15,
+     "y": 0.35,
+     "text": "they said",
+     "size": 0.8,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.85,
+     "y": 0.35,
+     "text": "they like",
+     "size": 0.8,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "So what did Nietzsche want instead?",
+    "tr": "Peki Nietzsche bunun yerine ne istiyordu?"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "think",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.25,
+     "text": "?",
+     "size": 2.0,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In *The Gay Science*, he wrote a short line that became one of his most famous: *\"What does your conscience say? — You shall become the person you are.\"*",
+    "tr": "*Şen Bilim*'de en ünlü sözlerinden biri haline gelen kısa bir cümle yazdı: *\"Vicdanın ne diyor? — Olduğun kişi olmalısın.\"*"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.3,
+     "text": "\"You shall become",
+     "size": 1.4,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.48,
+     "text": "the person you are.\"",
+     "size": 1.4,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.75,
+     "text": "The Gay Science §270",
+     "size": 0.8,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The idea isn't to stop caring about other people. It's to stop handing them the job of deciding what your life is worth.",
+    "tr": "Fikir başkalarını umursamayı bırakmak değil. Hayatının neye değdiğine karar verme işini onlara teslim etmeyi bırakmak."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "hold",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "letter",
+     "x": 0.5,
+     "y": 0.35,
+     "s": 0.5,
+     "text": "your worth"
+    },
+    {
+     "el": "cross",
+     "x": 0.5,
+     "y": 0.35,
+     "s": 0.8,
+     "at": 2.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "To create your own values — and live by them, even when no one is clapping.",
+    "tr": "Kendi değerlerini yaratmak ve kimse alkışlamasa bile onlara göre yaşamak."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "mountain",
+     "x": 0.6,
+     "y": 0.8,
+     "s": 0.9
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.12,
+     "text": "your own values",
+     "size": 1.0,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And here's the twist: Nietzsche lived that way, and it wasn't glamorous. His books barely sold.",
+    "tr": "Ve işin ilginç yanı şu: Nietzsche böyle yaşadı ve bu hiç de göz alıcı değildi. Kitapları neredeyse hiç satmadı."
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.25,
+     "text": "barely sold",
+     "size": 1.4,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The fourth part of *Thus Spoke Zarathustra* was printed at his own expense, in fewer than fifty copies, most of which he kept or gave to friends.",
+    "tr": "*Böyle Buyurdu Zerdüşt*'ün dördüncü kısmı kendi parasıyla, elliden az nüsha olarak basıldı; çoğunu kendine sakladı ya da arkadaşlarına verdi."
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.4,
+     "y": 0.75,
+     "s": 1.0,
+     "n": 3
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.45,
+     "text": "< 50 copies",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "Zarathustra, part IV · 1885",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Near the end of his working life, he wrote an autobiography called *Ecce Homo*,",
+    "tr": "Çalışma hayatının sonlarına doğru *Ecce Homo* adında bir otobiyografi yazdı."
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.2,
+     "text": "Ecce Homo · 1888"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "with chapter titles like *\"Why I Am So Wise\"* and *\"Why I Write Such Good Books.\"*",
+    "tr": "Bölüm başlıkları şöyleydi: *\"Neden Bu Kadar Bilgeyim\"* ve *\"Neden Bu Kadar İyi Kitaplar Yazıyorum.\"*"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.32,
+     "text": "Why I Am So Wise",
+     "size": 1.3,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.52,
+     "text": "Why I Write Such Good Books",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Maybe that was irony. Maybe it was confidence.",
+    "tr": "Belki bu bir ironiydi. Belki özgüvendi."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.42,
+     "text": "irony?",
+     "size": 1.4,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.42,
+     "text": "confidence?",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Or maybe it was a man who had stopped waiting for the world's approval — and decided to give it to himself.",
+    "tr": "Ya da belki dünyanın onayını beklemeyi bırakmış ve onu kendine vermeye karar vermiş bir adamdı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "mountain",
+     "x": 0.55,
+     "y": 0.8,
+     "s": 1.0
+    },
+    {
+     "el": "figure",
+     "x": 0.72,
+     "y": 0.42,
+     "h": 0.28,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "dot",
+     "x": 0.72,
+     "y": 0.15,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Psychology has its own version of Nietzsche's warning.",
+    "tr": "Psikolojinin Nietzsche'nin uyarısına benzeyen kendi versiyonu var."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.42,
+     "text": "Nietzsche",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "≈",
+     "size": 1.4,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.42,
+     "text": "psychology",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The psychologist *Carl Rogers* noticed that many of his clients had grown up with what he called *conditions of worth*:",
+    "tr": "Psikolog *Carl Rogers*, danışanlarının çoğunun *değer koşulları* dediği şeylerle büyüdüğünü fark etti:"
+   },
+   "sketch": [
+    {
+     "el": "portrait_frame",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 1.0,
+     "text": "Carl Rogers"
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.42,
+     "text": "conditions of worth",
+     "size": 1.1,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "the feeling that they were lovable *only if* they were good, successful, quiet, impressive — whatever earned approval at home.",
+    "tr": "ancak iyi, başarılı, sessiz, etkileyici olurlarsa sevilebilecekleri hissi; evde onay getiren her neyse."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.32,
+     "pose": "stand",
+     "face": 1,
+     "child": true
+    },
+    {
+     "el": "tags",
+     "x": 0.66,
+     "y": 0.25,
+     "s": 1.3,
+     "labels": [
+      "if good",
+      "if quiet",
+      "if successful",
+      "if impressive"
+     ]
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "As adults, they carried those conditions inside them. Every rejection felt like proof they had failed the test.",
+    "tr": "Yetişkin olduklarında bu koşulları içlerinde taşıdılar. Her reddedilme, sınavı geçemediklerinin kanıtı gibi geldi."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "tags",
+     "x": 0.66,
+     "y": 0.3,
+     "s": 1.0,
+     "labels": [
+      "if good",
+      "if quiet"
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.66,
+     "y": 0.65,
+     "text": "failed?",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Rogers believed that what helps people heal is *unconditional positive regard* — being accepted as a person, even when your behavior isn't approved of.",
+    "tr": "Rogers insanların iyileşmesine yardım eden şeyin *koşulsuz olumlu kabul* olduğuna inanıyordu: Davranışın onaylanmasa bile bir insan olarak kabul görmek."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": -1,
+     "hat": "dress"
+    },
+    {
+     "el": "heart",
+     "x": 0.5,
+     "y": 0.25,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "unconditional",
+     "size": 1.2,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Once people feel that basic acceptance, he observed, they often become *less* dependent on everyone else's approval, not more.",
+    "tr": "İnsanlar bu temel kabulü hissettiklerinde, diye gözlemledi, herkesin onayına *daha az* bağımlı hale geliyorlar, daha çok değil."
+   },
+   "sketch": [
+    {
+     "el": "gauge",
+     "x": 0.5,
+     "y": 0.65,
+     "s": 1.3,
+     "value": 0.8,
+     "label": "steady"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "less dependent",
+     "size": 1.2,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Let's try something. Think about the last time you changed what you were going to say, because of how people might react.",
+    "tr": "Bir şey deneyelim. İnsanların nasıl tepki vereceğini düşündüğün için söyleyeceğin şeyi değiştirdiğin son anı düşün."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "think",
+     "face": 1
+    },
+    {
+     "el": "bubble",
+     "x": 0.62,
+     "y": 0.28,
+     "s": 0.7,
+     "kind": "speech",
+     "tail": [
+      0.4,
+      0.32
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.62,
+     "y": 0.28,
+     "text": "I think— nevermind",
+     "size": 0.7,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.15,
+     "y": 0.1,
+     "text": "try this",
+     "size": 1.0,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Now ask yourself three questions.",
+    "tr": "Şimdi kendine üç soru sor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "1 · 2 · 3",
+     "size": 2.0,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "First: *whose* approval was I looking for? Not \"people\" — a specific face.",
+    "tr": "Birincisi: *Kimin* onayını arıyordum? \"İnsanlar\" değil, belirli bir yüz."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.15,
+     "y": 0.12,
+     "text": "1.",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "head",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.7
+    },
+    {
+     "el": "circle",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.0,
+     "rx": 260,
+     "ry": 300,
+     "color": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Second: if that person disapproved, what would I actually lose?",
+    "tr": "İkincisi: O kişi onaylamasaydı gerçekte ne kaybederdim?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.15,
+     "y": 0.12,
+     "text": "2.",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.45,
+     "text": "what would I lose?",
+     "size": 1.4,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Be honest. Sometimes the answer is \"a lot.\" Often, it's \"almost nothing.\"",
+    "tr": "Dürüst ol. Bazen cevap \"çok şey\". Çoğu zaman \"neredeyse hiçbir şey\"."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.42,
+     "text": "a lot",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.42,
+     "text": "almost nothing",
+     "size": 1.2,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Third: if no one would ever see it, what would I have done?",
+    "tr": "Üçüncüsü: Kimse asla görmeyecek olsaydı ne yapardım?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.15,
+     "y": 0.12,
+     "text": "3.",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "room",
+     "x": 0.5,
+     "y": 0.8,
+     "s": 1.0
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.78,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "That last answer is a small window into the person Nietzsche told you to become.",
+    "tr": "Bu son cevap, Nietzsche'nin olmanı söylediği kişiye açılan küçük bir pencere."
+   },
+   "sketch": [
+    {
+     "el": "house",
+     "x": 0.5,
+     "y": 0.8,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "the person you are",
+     "size": 1.1,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "So should we stop caring what others think?",
+    "tr": "Peki başkalarının ne düşündüğünü umursamayı bırakmalı mıyız?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "stop caring?",
+     "size": 1.8,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Not quite. In 2010, a large review of nearly a hundred and fifty studies by *Julianne Holt-Lunstad* and colleagues",
+    "tr": "Tam olarak değil. 2010'da *Julianne Holt-Lunstad* ve arkadaşlarının yaklaşık yüz elli çalışmayı inceleyen kapsamlı derlemesi"
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 1.2,
+     "n": 5
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.2,
+     "text": "≈ 150 studies · 2010",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "found that people with stronger social relationships had about a fifty percent greater likelihood of survival over the study periods.",
+    "tr": "güçlü sosyal ilişkileri olan insanların çalışma süreleri boyunca hayatta kalma olasılığının yaklaşık yüzde elli daha yüksek olduğunu buldu."
+   },
+   "sketch": [
+    {
+     "el": "graph",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "+50% survival",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We are built for connection. The goal isn't to need *no one*.",
+    "tr": "Bağ kurmak için yaratıldık. Amaç *kimseye* ihtiyaç duymamak değil."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "campfire",
+     "x": 0.5,
+     "y": 0.8,
+     "s": 1.0
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.42,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.42,
+     "pose": "stand",
+     "face": -1,
+     "hat": "dress"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The difference is between *belonging* and *approval*. Approval is conditional: you get it when you perform. Belonging is being accepted as you are.",
+    "tr": "Fark *aidiyet* ile *onay* arasında. Onay koşulludur: Performans gösterdiğinde alırsın. Aidiyet ise olduğun gibi kabul edilmektir."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.25,
+     "text": "approval",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.42,
+     "text": "if you perform",
+     "size": 0.8,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.25,
+     "text": "belonging",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.42,
+     "text": "as you are",
+     "size": 0.8,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "line",
+     "x": 0.5,
+     "y": 0.15,
+     "s": 1.0,
+     "x2": 0.5,
+     "y2": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Chasing approval can actually push belonging further away — because people can't connect with someone who is always wearing a mask.",
+    "tr": "Onay peşinde koşmak aidiyeti aslında daha da uzaklaştırabilir. Çünkü insanlar sürekli maske takan biriyle bağ kuramaz."
+   },
+   "sketch": [
+    {
+     "el": "mask",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.3
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.85,
+     "text": "always on",
+     "size": 0.9,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Marcus Aurelius was right to be puzzled. We love ourselves more than anyone — and still let strangers decide what we're worth.",
+    "tr": "Marcus Aurelius'un şaşırması boşuna değildi. Kendimizi herkesten çok seviyoruz ama yine de değerimize yabancıların karar vermesine izin veriyoruz."
+   },
+   "image": {
+    "file": "File:Head Marcus Aurelius archmus Heraklion.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Marcus Aurelius",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "Maybe the answer isn't to silence that ancient alarm. It kept our ancestors alive.",
+    "tr": "Belki çözüm o kadim alarmı susturmak değil. O alarm atalarımızı hayatta tuttu."
+   },
+   "sketch": [
+    {
+     "el": "bell",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.3
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "campfire",
+     "x": 0.2,
+     "y": 0.8,
+     "s": 0.7
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Maybe the answer is to notice when it's ringing — and to ask, calmly: *Is this really a threat? Or is it just a like?*",
+    "tr": "Belki çözüm, çaldığında fark etmek ve sakince sormak: *Bu gerçekten bir tehdit mi? Yoksa sadece bir beğeni mi?*"
+   },
+   "sketch": [
+    {
+     "el": "bell",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.32,
+     "text": "a threat?",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.52,
+     "text": "or a like?",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "heart",
+     "x": 0.88,
+     "y": 0.52,
+     "s": 0.4
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Because in the end, the opinion you'll live with the longest... is your own.",
+    "tr": "Çünkü sonunda en uzun süre birlikte yaşayacağın görüş… kendi görüşün."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "mirror",
+     "x": 0.6,
+     "y": 0.42,
+     "s": 0.9
+    },
+    {
+     "el": "figure",
+     "x": 0.38,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  }
+ ]
+}

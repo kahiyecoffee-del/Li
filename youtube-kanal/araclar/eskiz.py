@@ -869,6 +869,205 @@ ELEMENTS_EXTRA = {
 }
 
 
+def el_campfire(x, y, s, seed=0, **_):
+    out = []
+    for k, (dx, ang) in enumerate(((-60, -0.3), (60, 0.3), (0, 0.0))):
+        out.append(Stroke([(x + dx * s - 90 * s * math.cos(ang), y + 10 * s), (x + dx * s + 90 * s * math.cos(ang), y - 20 * s)], 12 * s + 1,
+                          (110, 75, 45), seed=seed + k))
+    flame = [(x - 70 * s, y - 20 * s), (x - 50 * s, y - 110 * s), (x - 15 * s, y - 70 * s), (x, y - 190 * s), (x + 25 * s, y - 80 * s),
+             (x + 55 * s, y - 130 * s), (x + 70 * s, y - 20 * s)]
+    out.append(_blob(flame, tone=0.9, color=(235, 140, 50), seed=seed, smooth=8 * s))
+    inner = [(x - 30 * s, y - 25 * s), (x - 10 * s, y - 90 * s), (x + 15 * s, y - 60 * s), (x + 30 * s, y - 25 * s)]
+    out.append(_blob(inner, tone=0.9, color=(250, 205, 90), seed=seed + 1, smooth=6 * s))
+    return out
+
+
+def el_phone(x, y, s, likes=None, heart=True, seed=0, **_):
+    w, h = 220 * s, 400 * s
+    out = [Stroke([(x - w / 2 + 20 * s, y - h / 2), (x + w / 2 - 20 * s, y - h / 2), (x + w / 2, y - h / 2 + 20 * s), (x + w / 2, y + h / 2 - 20 * s),
+                   (x + w / 2 - 20 * s, y + h / 2), (x - w / 2 + 20 * s, y + h / 2), (x - w / 2, y + h / 2 - 20 * s), (x - w / 2, y - h / 2 + 20 * s),
+                   (x - w / 2 + 20 * s, y - h / 2)], 6 * s + 1, seed=seed),
+           Stroke(_rect(x - w * 0.38, y - h * 0.38, x + w * 0.38, y + h * 0.15), 3 * s + 1, COLORS["grey"], seed=seed + 1)]
+    if heart:
+        out += el_heart(x - w * 0.22, y + h * 0.3, s * 0.35, seed=seed + 2)
+    if likes:
+        out.append(Text(str(likes), x + w * 0.1, y + h * 0.3, 40 * s, RED))
+    return out
+
+
+def el_heart(x, y, s, color="red", seed=0, **_):
+    pts = []
+    for i in range(41):
+        a = i / 40 * 2 * math.pi
+        hx = 16 * math.sin(a) ** 3
+        hy = 13 * math.cos(a) - 5 * math.cos(2 * a) - 2 * math.cos(3 * a) - math.cos(4 * a)
+        pts.append((x + hx * 7 * s, y - hy * 7 * s))
+    return [_blob(pts, tone=0.9, color=COLORS.get(color, RED), seed=seed, smooth=2)]
+
+
+def el_bell(x, y, s, ringing=True, seed=0, **_):
+    out = [Stroke(bez((x - 90 * s, y + 70 * s), (x, y - 230 * s), (x + 90 * s, y + 70 * s), 20), 7 * s + 1, (190, 140, 50), seed=seed),
+           Stroke([(x - 115 * s, y + 70 * s), (x + 115 * s, y + 70 * s)], 7 * s + 1, (190, 140, 50), seed=seed + 1),
+           Stroke(ellipse_pts(x, y + 95 * s, 18 * s, 18 * s, n=14, seed=seed), 5 * s + 1, (190, 140, 50), seed=seed + 2)]
+    if ringing:
+        for side in (-1, 1):
+            for k in range(2):
+                r = (150 + 45 * k) * s
+                out.append(Stroke([(x + side * math.cos(u) * r, y - math.sin(u) * r * 0.6) for u in np.linspace(0.3, 0.9, 8)], 3 * s + 1, RED, 1,
+                                  seed + 5 + k))
+    return out
+
+
+def el_brain(x, y, s, spot=None, seed=0, **_):
+    r = 200 * s
+    out = []
+    pts = []
+    for i in range(41):
+        u = 2 * math.pi * i / 40
+        wob = 1 + 0.06 * math.sin(u * 9 + seed)
+        pts.append((x + math.cos(u) * r * 1.25 * wob, y + math.sin(u) * r * 0.85 * wob))
+    out.append(_blob(pts, tone=0.35, color=(200, 150, 160), seed=seed, smooth=6 * s))
+    out.append(Stroke(pts, 5 * s + 1, seed=seed))
+    for k in range(6):
+        yy = y - r * 0.55 + k * r * 0.22
+        out.append(Stroke([(x - r * 1.0 + 30 * s * (k % 2), yy), (x - r * 0.4, yy + 25 * s), (x + r * 0.2, yy - 15 * s), (x + r * 0.9, yy + 10 * s)],
+                          3 * s, (130, 80, 90), 1, seed + 3 + k))
+    out.append(Stroke([(x, y - r * 0.85), (x - 10 * s, y + r * 0.85)], 3 * s + 1, (130, 80, 90), seed=seed + 20))
+    if spot:
+        sx, sy = x + spot[0] * r, y + spot[1] * r
+        out.append(Stroke(ellipse_pts(sx, sy, 50 * s, 40 * s, n=20, seed=seed), 7 * s + 1, RED, seed=seed + 30))
+        m, o = mask_from(lambda d, T, ss: d.ellipse([T((sx - 40 * s, sy - 32 * s)), T((sx + 40 * s, sy + 32 * s))], fill=255),
+                         (sx - 42 * s, sy - 34 * s, sx + 42 * s, sy + 34 * s))
+        out.append(Fill(m, o, tone=0.6, color=RED, seed=seed, outline=False))
+    return out
+
+
+def el_gauge(x, y, s, value=0.2, label=None, seed=0, **_):
+    r = 220 * s
+    out = [Stroke([(x + math.cos(u) * r, y - math.sin(u) * r) for u in np.linspace(math.pi, 0, 40)], 6 * s + 1, seed=seed)]
+    for k in range(9):
+        u = math.pi - k * math.pi / 8
+        out.append(Stroke([(x + math.cos(u) * r * 0.85, y - math.sin(u) * r * 0.85), (x + math.cos(u) * r, y - math.sin(u) * r)],
+                          3 * s + 1, RED if k < 3 else (INK if k < 6 else (60, 150, 80)), 1, seed + k))
+    u = math.pi - value * math.pi
+    out.append(Stroke([(x, y), (x + math.cos(u) * r * 0.75, y - math.sin(u) * r * 0.75)], 8 * s + 1, RED, seed=seed + 20))
+    out.append(Stroke(ellipse_pts(x, y, 14 * s, 14 * s, n=12), 6 * s + 1, seed=seed + 21))
+    if label:
+        out.append(Text(label, x, y + 70 * s, 48 * s, INK))
+    return out
+
+
+def el_asch_card(x, y, s, seed=0, **_):
+    w, h = 900 * s, 420 * s
+    out = [Stroke(_rect(x - w / 2, y - h / 2, x + w / 2, y + h / 2), 5 * s + 1, seed=seed),
+           Stroke([(x - w * 0.02, y - h / 2), (x - w * 0.02, y + h / 2)], 3 * s, COLORS["grey"], seed=seed + 1)]
+    bx = x - w * 0.27
+    out.append(Stroke([(bx, y + h * 0.35), (bx, y - h * 0.25)], 9 * s + 1, seed=seed + 2))
+    for k, (lab, L) in enumerate((("A", 0.42), ("B", 0.78), ("C", 0.6))):
+        lx = x + w * (0.1 + 0.14 * k)
+        out.append(Stroke([(lx, y + h * 0.35), (lx, y + h * 0.35 - h * L)], 9 * s + 1, seed=seed + 5 + k))
+        out.append(Text(lab, lx, y + h * 0.43, 46 * s, INK))
+    return out
+
+
+def el_slot(x, y, s, seed=0, **_):
+    w, h = 420 * s, 480 * s
+    out = [Stroke(_rect(x - w / 2, y - h / 2, x + w / 2, y + h / 2), 6 * s + 1, seed=seed),
+           Stroke(_rect(x - w * 0.4, y - h * 0.3, x + w * 0.4, y), 4 * s + 1, seed=seed + 1),
+           Stroke([(x + w / 2, y - h * 0.1), (x + w / 2 + 70 * s, y - h * 0.1), (x + w / 2 + 70 * s, y - h * 0.45)], 6 * s + 1, seed=seed + 2),
+           Stroke(ellipse_pts(x + w / 2 + 70 * s, y - h * 0.5, 22 * s, 22 * s, n=14), 5 * s + 1, RED, seed=seed + 3)]
+    for k in range(1, 3):
+        xx = x - w * 0.4 + k * w * 0.8 / 3
+        out.append(Stroke([(xx, y - h * 0.3), (xx, y)], 3 * s, seed=seed + 4 + k))
+    out += el_heart(x - w * 0.27, y - h * 0.15, s * 0.3, seed=seed + 7)
+    out += el_heart(x, y - h * 0.15, s * 0.3, seed=seed + 8)
+    out.append(Text("?", x + w * 0.27, y - h * 0.15, 80 * s, INK))
+    out.append(Stroke(_rect(x - w * 0.3, y + h * 0.18, x + w * 0.3, y + h * 0.3), 3 * s + 1, COLORS["grey"], seed=seed + 9))
+    return out
+
+
+def el_mirror(x, y, s, seed=0, **_):
+    w, h = 300 * s, 520 * s
+    return [Stroke(ellipse_pts(x, y, w / 2, h / 2, n=48, seed=seed), 8 * s + 1, (150, 110, 60), seed=seed),
+            Stroke([(x - w * 0.25, y - h * 0.25), (x - w * 0.05, y - h * 0.35)], 3 * s, (170, 190, 210), 1, seed + 1),
+            Stroke([(x - w * 0.25, y - h * 0.15), (x + w * 0.05, y - h * 0.32)], 3 * s, (170, 190, 210), 1, seed + 2),
+            Stroke([(x, y + h / 2), (x, y + h / 2 + 80 * s)], 8 * s + 1, (150, 110, 60), seed=seed + 3),
+            Stroke([(x - 90 * s, y + h / 2 + 80 * s), (x + 90 * s, y + h / 2 + 80 * s)], 8 * s + 1, (150, 110, 60), seed=seed + 4)]
+
+
+def el_mask(x, y, s, seed=0, **_):
+    w, h = 260 * s, 300 * s
+    pts = [(x + math.cos(u) * w / 2 * (1 - 0.15 * max(0, math.sin(u))), y + math.sin(u) * h / 2) for u in np.linspace(0, 2 * math.pi, 40)]
+    out = [_blob(pts, tone=0.25, color=(230, 225, 210), seed=seed, smooth=4), Stroke(pts, 5 * s + 1, seed=seed)]
+    for side in (-1, 1):
+        out.append(Stroke(ellipse_pts(x + side * w * 0.2, y - h * 0.1, 38 * s, 22 * s, n=18, seed=seed + side), 5 * s + 1, seed=seed + 2))
+    out.append(Stroke(bez((x - w * 0.22, y + h * 0.18), (x, y + h * 0.32), (x + w * 0.22, y + h * 0.18)), 5 * s + 1, seed=seed + 3))
+    out.append(Stroke([(x + w / 2, y - h * 0.05), (x + w / 2 + 90 * s, y - h * 0.15)], 3 * s, COLORS["grey"], seed=seed + 4))
+    return out
+
+
+def el_mountain(x, y, s, seed=0, **_):
+    w = 900 * s
+    out = [Stroke([(x - w / 2, y), (x - w * 0.15, y - 420 * s), (x + 0.02 * w, y - 300 * s), (x + 0.2 * w, y - 520 * s), (x + w / 2, y)],
+                  6 * s + 1, seed=seed),
+           Stroke([(x + 0.2 * w - 60 * s, y - 440 * s), (x + 0.2 * w, y - 520 * s), (x + 0.2 * w + 70 * s, y - 430 * s)], 4 * s + 1, BLUE, seed=seed + 1),
+           Stroke(bez((x - w * 0.42, y - 10 * s), (x - w * 0.05, y - 120 * s), (x + 0.2 * w, y - 500 * s), 24), 3 * s, (150, 110, 60), seed=seed + 2)]
+    return out
+
+
+def el_books(x, y, s, n=4, seed=0, **_):
+    out = []
+    cols = [(130, 40, 45), (45, 55, 95), (60, 100, 70), (150, 110, 50)]
+    for k in range(n):
+        yy = y - k * 46 * s
+        dx = (k % 2) * 20 * s - 10 * s
+        out.append(Stroke(_rect(x - 170 * s + dx, yy - 42 * s, x + 170 * s + dx, yy), 5 * s + 1, cols[k % 4], seed=seed + k))
+    return out
+
+
+def el_graph(x, y, s, up=True, seed=0, **_):
+    w, h = 700 * s, 420 * s
+    out = [Stroke([(x - w / 2, y - h / 2), (x - w / 2, y + h / 2), (x + w / 2, y + h / 2)], 5 * s + 1, seed=seed)]
+    pts = [(x - w / 2 + 40 * s + i * (w - 80 * s) / 8, y + h / 2 - 40 * s - (i / 8 if up else 1 - i / 8) * (h - 100 * s)
+            + 25 * s * math.sin(i * 1.7)) for i in range(9)]
+    out.append(Stroke(pts, 7 * s + 1, (60, 150, 80) if up else RED, seed=seed + 1))
+    return out
+
+
+def el_tshirt(x, y, s, text=None, seed=0, **_):
+    pts = [(x - 170 * s, y - 180 * s), (x - 60 * s, y - 210 * s), (x, y - 175 * s), (x + 60 * s, y - 210 * s), (x + 170 * s, y - 180 * s),
+           (x + 240 * s, y - 90 * s), (x + 165 * s, y - 50 * s), (x + 135 * s, y - 95 * s), (x + 135 * s, y + 200 * s),
+           (x - 135 * s, y + 200 * s), (x - 135 * s, y - 95 * s), (x - 165 * s, y - 50 * s), (x - 240 * s, y - 90 * s)]
+    out = [_blob(pts, tone=0.25, color=(240, 200, 90), seed=seed, smooth=3), Stroke(pts + [pts[0]], 5 * s + 1, seed=seed)]
+    if text:
+        out.append(Text(text, x, y, 50 * s, RED))
+    return out
+
+
+def el_spotlight(x, y, s, seed=0, H=1080, **_):
+    w = 360 * s
+    pts = [(x - 40 * s, 0), (x + 40 * s, 0), (x + w / 2, y), (x - w / 2, y)]
+    m, o = mask_from(lambda d, T, ss: d.polygon([T(p) for p in pts], fill=255), (x - w / 2, 0, x + w / 2, y))
+    return [Fill(m, o, tone=0.25, color=(245, 215, 120), seed=seed, outline=False),
+            Stroke(ellipse_pts(x, y, w / 2, 40 * s, n=30, seed=seed), 3 * s + 1, (200, 160, 60), seed=seed)]
+
+
+def el_tags(x, y, s, labels=(), seed=0, **_):
+    out = []
+    for k, lab in enumerate(labels):
+        yy = y + k * 80 * s
+        out.append(Stroke(_rect(x - 150 * s, yy - 30 * s, x + 150 * s, yy + 30 * s), 4 * s + 1, RED, seed=seed + k))
+        out.append(Text(lab, x, yy, 40 * s, RED))
+    return out
+
+
+ELEMENTS_EXTRA.update({
+    "campfire": el_campfire, "phone": el_phone, "heart": el_heart, "bell": el_bell, "brain": el_brain, "gauge": el_gauge,
+    "asch_card": el_asch_card, "slot": el_slot, "mirror": el_mirror, "mask": el_mask, "mountain": el_mountain, "books": el_books,
+    "graph": el_graph, "tshirt": el_tshirt, "spotlight": el_spotlight, "tags": el_tags,
+})
+
+
 # --------------------------------------------------------------------------- #
 # Sahne: öğeleri sırayla çizer
 # --------------------------------------------------------------------------- #

@@ -1,0 +1,16 @@
+{
+  "cta": "full video on the channel",
+  "cta_scene": {
+    "say": {"en": "The full story is on the channel.", "tr": "Hikâyenin tamamı kanalda."},
+    "sketch": [{"el": "text", "x": 0.5, "y": 0.4, "text": "full video", "size": 1.6, "underline": "red"},
+               {"el": "text", "x": 0.5, "y": 0.62, "text": "on the channel", "size": 1.0, "color": "blue"}]
+  },
+  "shorts": [
+    {"from": 0, "to": 7, "title": "The most powerful man on Earth\nstill cared what people thought"},
+    {"from": 19, "to": 28, "title": "Why being left out\nliterally hurts"},
+    {"from": 29, "to": 39, "title": "They denied what\nthey could see"},
+    {"from": 40, "to": 45, "title": "Nobody is looking at you\n(as much as you think)"},
+    {"from": 55, "to": 66, "title": "Your phone is a slot machine\nfor approval"},
+    {"from": 77, "to": 86, "title": "Nietzsche's books\nbarely sold"}
+  ]
+}
