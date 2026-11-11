@@ -155,3 +155,6 @@ CSS Georgia, Lynx, Veylon, ERTIS. Tüm ilk 40 firmaya fiyatlı takip tamamlandı
 
 ## 10.11 Eray: 'müşteri maillerini at' – yeni listeden 14 mail gönderildi
 PPE-Online, Nexa Safety, Hajajweh & Zeidan, Baku Engineering, Specsiz.kz (RU), ProofLine (RU), Leonis (RU), Makom Treid, Interkoncept, Univers Safety, Textrade, Bansi, Wegmar, SafeU (fiyatlı v3 %10). Atlananlar: ilk listede zaten olanlar (Guardline, SSK, Josiba, EPI Maroc), perakende/şüpheli ve e-postasız olanlar. Ömer BEKLETİLİYOR (Eray sözleşmeyi gönder diyene kadar). Takip: 17.11. Toplam 96 mail.
+
+## 11.11 yeni liste 2. parti gönderildi (8)
+Sertex, Nassguard, Reliable Safety, Petroscope, Safety Albania, Safety Art, Alroks, BAKAT. Önceki yazışma/bounce yoktu. Toplam 104 mail. Ömer hâlâ bekletiliyor.
