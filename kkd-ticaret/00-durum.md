@@ -158,3 +158,6 @@ PPE-Online, Nexa Safety, Hajajweh & Zeidan, Baku Engineering, Specsiz.kz (RU), P
 
 ## 11.11 yeni liste 2. parti gönderildi (8)
 Sertex, Nassguard, Reliable Safety, Petroscope, Safety Albania, Safety Art, Alroks, BAKAT. Önceki yazışma/bounce yoktu. Toplam 104 mail. Ömer hâlâ bekletiliyor.
+
+## 11.11 akşam özeti
+Bounce: Nassguard (info.ksa@nassguard.com, adres yok). Diğer 7'si ve 10.11'deki 14 mailden başka bounce/cevap yok. Toplam 104 mail, 7 bounce, 0 cevap.
