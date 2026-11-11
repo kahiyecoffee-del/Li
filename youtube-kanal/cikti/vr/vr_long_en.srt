@@ -1,0 +1,1184 @@
+1
+00:00:00,200 --> 00:00:03,561
+In 1965, a young computer scientist wrote
+
+2
+00:00:03,561 --> 00:00:06,312
+an essay describing the ultimate
+
+3
+00:00:06,312 --> 00:00:07,228
+display.
+
+4
+00:00:07,878 --> 00:00:10,185
+"A chair displayed in such a room would
+
+5
+00:00:10,185 --> 00:00:12,330
+be good enough to sit in," he wrote.
+
+6
+00:00:12,980 --> 00:00:15,547
+"Handcuffs displayed in such a room would
+
+7
+00:00:15,547 --> 00:00:17,942
+be confining, and a bullet displayed in
+
+8
+00:00:17,942 --> 00:00:19,768
+such a room would be fatal."
+
+9
+00:00:20,418 --> 00:00:22,346
+His name was Ivan Sutherland.
+
+10
+00:00:22,346 --> 00:00:24,670
+Three years later, he built one of the
+
+11
+00:00:24,670 --> 00:00:26,485
+first head-mounted displays —
+
+12
+00:00:27,135 --> 00:00:29,224
+a machine so heavy it had to hang from the
+
+13
+00:00:29,224 --> 00:00:29,735
+ceiling.
+
+14
+00:00:30,385 --> 00:00:32,449
+Today, millions of people wear its
+
+15
+00:00:32,449 --> 00:00:34,123
+descendants on their faces.
+
+16
+00:00:34,773 --> 00:00:37,337
+And they raise a question philosophers
+
+17
+00:00:37,337 --> 00:00:39,900
+have asked for two and a half thousand
+
+18
+00:00:39,900 --> 00:00:42,276
+years: if a world feels completely
+
+19
+00:00:42,276 --> 00:00:43,401
+real... is it?
+
+20
+00:00:44,051 --> 00:00:46,206
+In this video, you'll see why people
+
+21
+00:00:46,206 --> 00:00:48,526
+refuse to step off a virtual ledge they
+
+22
+00:00:48,526 --> 00:00:49,741
+know isn't there,
+
+23
+00:00:50,391 --> 00:00:52,592
+how your brain can adopt a fake hand as
+
+24
+00:00:52,592 --> 00:00:53,168
+its own,
+
+25
+00:00:53,818 --> 00:00:56,091
+how an avatar can quietly change your
+
+26
+00:00:56,091 --> 00:00:57,000
+personality —
+
+27
+00:00:57,650 --> 00:00:59,825
+and why one philosopher's thought
+
+28
+00:00:59,825 --> 00:01:02,483
+experiment suggests that most of us would
+
+29
+00:01:02,483 --> 00:01:05,140
+refuse paradise, if it were made of code.
+
+30
+00:01:05,790 --> 00:01:07,612
+Quick favor before we start:
+
+31
+00:01:07,612 --> 00:01:10,139
+if you like questions about what's real,
+
+32
+00:01:10,139 --> 00:01:12,372
+subscribe. It genuinely helps the
+
+33
+00:01:12,372 --> 00:01:13,018
+channel.
+
+34
+00:01:13,668 --> 00:01:16,328
+The idea of a convincing fake world is
+
+35
+00:01:16,328 --> 00:01:18,210
+much older than computers.
+
+36
+00:01:18,860 --> 00:01:22,247
+Around 375 BC, in The Republic, Plato
+
+37
+00:01:22,247 --> 00:01:25,715
+imagined prisoners chained inside a cave
+
+38
+00:01:25,715 --> 00:01:26,925
+since birth.
+
+39
+00:01:27,575 --> 00:01:30,152
+All they can see are shadows on a wall,
+
+40
+00:01:30,152 --> 00:01:32,546
+cast by objects carried behind them.
+
+41
+00:01:33,196 --> 00:01:34,953
+To them, the shadows are reality.
+
+42
+00:01:35,603 --> 00:01:38,199
+When one prisoner is freed and sees the
+
+43
+00:01:38,199 --> 00:01:40,671
+real world, the light hurts his eyes.
+
+44
+00:01:41,321 --> 00:01:43,315
+And when he returns to tell the others,
+
+45
+00:01:43,315 --> 00:01:44,549
+they don't believe him.
+
+46
+00:01:45,199 --> 00:01:47,798
+The phrase "virtual reality" itself came
+
+47
+00:01:47,798 --> 00:01:49,611
+long before the technology.
+
+48
+00:01:50,261 --> 00:01:53,029
+In 1938, the French playwright Antonin
+
+49
+00:01:53,029 --> 00:01:55,929
+Artaud described theater as "la réalité
+
+50
+00:01:55,929 --> 00:01:58,697
+virtuelle" — a world that becomes real
+
+51
+00:01:58,697 --> 00:02:01,004
+for the audience while it lasts.
+
+52
+00:02:01,654 --> 00:02:03,040
+The machines came later.
+
+53
+00:02:03,690 --> 00:02:06,685
+In 1962, cinematographer Morton Heilig
+
+54
+00:02:06,685 --> 00:02:09,679
+patented the Sensorama — a booth where
+
+55
+00:02:09,679 --> 00:02:12,325
+you sat, looked into a stereoscopic
+
+56
+00:02:12,325 --> 00:02:13,021
+screen,
+
+57
+00:02:13,671 --> 00:02:16,099
+and rode a motorcycle through Brooklyn,
+
+58
+00:02:16,099 --> 00:02:18,642
+with wind on your face, a vibrating seat,
+
+59
+00:02:18,642 --> 00:02:19,740
+and even smells.
+
+60
+00:02:20,390 --> 00:02:23,378
+Then came Sutherland's ceiling-mounted
+
+61
+00:02:23,378 --> 00:02:26,585
+headset in 1968, nicknamed "The Sword of
+
+62
+00:02:26,585 --> 00:02:27,606
+Damocles."
+
+63
+00:02:28,256 --> 00:02:30,999
+In the 1980s, Jaron Lanier and his
+
+64
+00:02:30,999 --> 00:02:34,094
+company VPL popularized the term "virtual
+
+65
+00:02:34,094 --> 00:02:36,908
+reality" and sold gloves that let you
+
+66
+00:02:36,908 --> 00:02:38,948
+reach into digital worlds.
+
+67
+00:02:39,598 --> 00:02:42,465
+In 1995, Nintendo launched the Virtual
+
+68
+00:02:42,465 --> 00:02:45,537
+Boy. It gave many players headaches, sold
+
+69
+00:02:45,537 --> 00:02:48,541
+poorly, and was discontinued in less than
+
+70
+00:02:48,541 --> 00:02:49,223
+a year.
+
+71
+00:02:49,873 --> 00:02:52,208
+For a while, VR seemed like a dream that
+
+72
+00:02:52,208 --> 00:02:53,294
+would never work.
+
+73
+00:02:53,944 --> 00:02:56,576
+Then, in 2012, a young engineer named
+
+74
+00:02:56,576 --> 00:02:59,273
+Palmer Luckey launched a Kickstarter
+
+75
+00:02:59,273 --> 00:03:01,905
+campaign for a headset called Oculus
+
+76
+00:03:01,905 --> 00:03:02,497
+Rift.
+
+77
+00:03:03,147 --> 00:03:05,322
+Two years later, Facebook bought the
+
+78
+00:03:05,322 --> 00:03:07,609
+company for about two billion dollars.
+
+79
+00:03:08,259 --> 00:03:10,704
+The shadows on the cave wall had become
+
+80
+00:03:10,704 --> 00:03:12,160
+very, very convincing.
+
+81
+00:03:12,810 --> 00:03:14,434
+Here's the strange part:
+
+82
+00:03:14,434 --> 00:03:16,901
+your brain is remarkably easy to fool.
+
+83
+00:03:17,551 --> 00:03:19,416
+Researchers call it presence — the
+
+84
+00:03:19,416 --> 00:03:21,185
+feeling of actually being there.
+
+85
+00:03:21,835 --> 00:03:24,509
+In one well-known experiment at the
+
+86
+00:03:24,509 --> 00:03:27,323
+University of North Carolina in 2002,
+
+87
+00:03:27,323 --> 00:03:30,489
+participants walked through a virtual room
+
+88
+00:03:30,489 --> 00:03:32,459
+that ended in a deep pit.
+
+89
+00:03:33,109 --> 00:03:35,337
+A real wooden ledge on the floor matched
+
+90
+00:03:35,337 --> 00:03:36,373
+the virtual edge.
+
+91
+00:03:37,023 --> 00:03:38,892
+Everyone knew the pit wasn't real.
+
+92
+00:03:38,892 --> 00:03:40,458
+They were standing in a lab.
+
+93
+00:03:41,108 --> 00:03:43,383
+And yet their heart rates went up as they
+
+94
+00:03:43,383 --> 00:03:45,657
+approached the edge — and many refused to
+
+95
+00:03:45,657 --> 00:03:46,484
+step forward.
+
+96
+00:03:47,134 --> 00:03:49,864
+In VR labs around the world, a simple
+
+97
+00:03:49,864 --> 00:03:52,458
+version of this demo is still used:
+
+98
+00:03:52,458 --> 00:03:55,051
+a narrow plank over a virtual drop.
+
+99
+00:03:55,701 --> 00:03:58,268
+People who are perfectly calm in a normal
+
+100
+00:03:58,268 --> 00:04:00,893
+room suddenly crouch, hold their arms out,
+
+101
+00:04:00,893 --> 00:04:03,284
+and shuffle like they're on a rooftop.
+
+102
+00:04:03,934 --> 00:04:05,861
+The rational part of you says:
+
+103
+00:04:05,861 --> 00:04:08,198
+it's not real. An older part of you
+
+104
+00:04:08,198 --> 00:04:10,592
+says: don't fall. And the older part
+
+105
+00:04:10,592 --> 00:04:11,527
+usually wins.
+
+106
+00:04:12,177 --> 00:04:14,584
+And your brain isn't only fooled about the
+
+107
+00:04:14,584 --> 00:04:16,991
+world. It can be fooled about your body.
+
+108
+00:04:17,641 --> 00:04:20,609
+In 1998, psychologists Matthew Botvinick
+
+109
+00:04:20,609 --> 00:04:23,379
+and Jonathan Cohen published a simple
+
+110
+00:04:23,379 --> 00:04:25,819
+experiment called the rubber hand
+
+111
+00:04:25,819 --> 00:04:26,677
+illusion.
+
+112
+00:04:27,327 --> 00:04:29,880
+A participant's real hand is hidden behind
+
+113
+00:04:29,880 --> 00:04:32,434
+a screen. A rubber hand is placed in front
+
+114
+00:04:32,434 --> 00:04:33,058
+of them.
+
+115
+00:04:33,708 --> 00:04:36,050
+Then the experimenter strokes both hands
+
+116
+00:04:36,050 --> 00:04:37,847
+with a brush at the same time.
+
+117
+00:04:38,497 --> 00:04:40,733
+After a minute or two, many people start
+
+118
+00:04:40,733 --> 00:04:42,918
+to feel the touch on the rubber hand.
+
+119
+00:04:43,568 --> 00:04:45,553
+Some even flinch when someone threatens
+
+120
+00:04:45,553 --> 00:04:45,837
+it.
+
+121
+00:04:46,487 --> 00:04:48,347
+VR takes this much further.
+
+122
+00:04:48,347 --> 00:04:50,703
+With a headset and motion tracking,
+
+123
+00:04:50,703 --> 00:04:52,935
+researchers have made people feel
+
+124
+00:04:52,935 --> 00:04:55,043
+ownership over virtual bodies —
+
+125
+00:04:55,693 --> 00:04:57,973
+different heights, different ages, even
+
+126
+00:04:57,973 --> 00:05:00,307
+bodies that look nothing like their own.
+
+127
+00:05:00,957 --> 00:05:03,271
+Your sense of "this is me" isn't fixed.
+
+128
+00:05:03,271 --> 00:05:05,640
+It's constantly being built — and it can
+
+129
+00:05:05,640 --> 00:05:06,411
+be rebuilt.
+
+130
+00:05:07,061 --> 00:05:09,483
+If your body can change, can your behavior
+
+131
+00:05:09,483 --> 00:05:10,237
+change too?
+
+132
+00:05:10,887 --> 00:05:14,034
+In 2007, Nick Yee and Jeremy Bailenson
+
+133
+00:05:14,034 --> 00:05:15,923
+at Stanford tested this.
+
+134
+00:05:16,573 --> 00:05:19,215
+They gave people avatars that were more or
+
+135
+00:05:19,215 --> 00:05:21,858
+less attractive, or taller or shorter, and
+
+136
+00:05:21,858 --> 00:05:23,326
+watched what happened.
+
+137
+00:05:23,976 --> 00:05:26,706
+People with more attractive avatars walked
+
+138
+00:05:26,706 --> 00:05:29,134
+closer to others in virtual space and
+
+139
+00:05:29,134 --> 00:05:31,075
+shared more about themselves.
+
+140
+00:05:31,725 --> 00:05:34,471
+People with taller avatars negotiated more
+
+141
+00:05:34,471 --> 00:05:36,912
+aggressively than people with shorter
+
+142
+00:05:36,912 --> 00:05:37,400
+ones.
+
+143
+00:05:38,050 --> 00:05:40,227
+The researchers named it the Proteus
+
+144
+00:05:40,227 --> 00:05:42,676
+effect, after the Greek sea god who could
+
+145
+00:05:42,676 --> 00:05:43,765
+change his shape.
+
+146
+00:05:44,415 --> 00:05:46,240
+We don't just wear our avatars.
+
+147
+00:05:46,240 --> 00:05:48,066
+In a small way, they wear us.
+
+148
+00:05:48,716 --> 00:05:51,021
+And there's one more side of virtual
+
+149
+00:05:51,021 --> 00:05:52,912
+worlds that surprises people:
+
+150
+00:05:52,912 --> 00:05:54,745
+they can be deeply social.
+
+151
+00:05:55,395 --> 00:05:58,143
+On social VR platforms, people meet as
+
+152
+00:05:58,143 --> 00:06:01,159
+avatars — to talk, dance, watch movies, or
+
+153
+00:06:01,159 --> 00:06:03,706
+just sit around a virtual campfire.
+
+154
+00:06:04,356 --> 00:06:06,696
+Researchers have found that people can
+
+155
+00:06:06,696 --> 00:06:09,265
+feel genuine social presence with others
+
+156
+00:06:09,265 --> 00:06:11,606
+in VR — the sense that another mind is
+
+157
+00:06:11,606 --> 00:06:13,033
+really there with you.
+
+158
+00:06:13,683 --> 00:06:15,641
+Some people say they've found their
+
+159
+00:06:15,641 --> 00:06:16,929
+closest friends there.
+
+160
+00:06:16,929 --> 00:06:18,835
+Some have even met their partners.
+
+161
+00:06:19,485 --> 00:06:22,275
+For people who are isolated, disabled, or
+
+162
+00:06:22,275 --> 00:06:24,747
+far from home, these worlds can be a
+
+163
+00:06:24,747 --> 00:06:25,508
+lifeline.
+
+164
+00:06:26,158 --> 00:06:27,862
+Remember the need to belong?
+
+165
+00:06:27,862 --> 00:06:30,170
+It doesn't switch off when the world is
+
+166
+00:06:30,170 --> 00:06:31,160
+made of pixels.
+
+167
+00:06:31,810 --> 00:06:34,222
+That flexibility isn't only a weakness.
+
+168
+00:06:34,222 --> 00:06:36,519
+Doctors have turned it into medicine.
+
+169
+00:06:37,169 --> 00:06:39,280
+At the University of Washington,
+
+170
+00:06:39,280 --> 00:06:41,813
+researchers Hunter Hoffman and David
+
+171
+00:06:41,813 --> 00:06:43,923
+Patterson created a game called
+
+172
+00:06:43,923 --> 00:06:45,914
+SnowWorld for burn patients.
+
+173
+00:06:46,564 --> 00:06:49,315
+During painful wound care, patients threw
+
+174
+00:06:49,315 --> 00:06:51,879
+snowballs at snowmen in an icy canyon.
+
+175
+00:06:52,529 --> 00:06:54,623
+Many reported significantly less pain
+
+176
+00:06:54,623 --> 00:06:55,723
+while they played.
+
+177
+00:06:56,373 --> 00:06:59,089
+VR is also used for exposure therapy.
+
+178
+00:06:59,739 --> 00:07:02,357
+People with a fear of heights, flying, or
+
+179
+00:07:02,357 --> 00:07:04,975
+spiders can face their fear step by step,
+
+180
+00:07:04,975 --> 00:07:07,653
+in a world where nothing can actually hurt
+
+181
+00:07:07,653 --> 00:07:08,129
+them.
+
+182
+00:07:08,779 --> 00:07:11,146
+It has also been used to help some
+
+183
+00:07:11,146 --> 00:07:12,553
+veterans with PTSD.
+
+184
+00:07:13,203 --> 00:07:15,804
+The same trick that makes you afraid of a
+
+185
+00:07:15,804 --> 00:07:18,464
+virtual pit can help you stop being afraid
+
+186
+00:07:18,464 --> 00:07:19,469
+of a real one.
+
+187
+00:07:20,119 --> 00:07:21,198
+But there are costs.
+
+188
+00:07:21,848 --> 00:07:24,295
+Many people feel cybersickness — nausea
+
+189
+00:07:24,295 --> 00:07:25,241
+and dizziness.
+
+190
+00:07:25,891 --> 00:07:28,098
+One common explanation is sensory
+
+191
+00:07:28,098 --> 00:07:30,603
+conflict: your eyes say you're moving,
+
+192
+00:07:30,603 --> 00:07:33,108
+but your inner ear says you're standing
+
+193
+00:07:33,108 --> 00:07:33,645
+still,
+
+194
+00:07:34,295 --> 00:07:35,891
+and your brain doesn't like the
+
+195
+00:07:35,891 --> 00:07:36,643
+disagreement.
+
+196
+00:07:37,293 --> 00:07:39,457
+And some effects are stranger.
+
+197
+00:07:39,457 --> 00:07:42,276
+In a 2010 study, psychologist Frederick
+
+198
+00:07:42,276 --> 00:07:45,227
+Aardema and colleagues found that after a
+
+199
+00:07:45,227 --> 00:07:46,736
+short session in VR,
+
+200
+00:07:47,386 --> 00:07:49,935
+participants reported more dissociative
+
+201
+00:07:49,935 --> 00:07:52,136
+experiences — and a weaker sense of
+
+202
+00:07:52,136 --> 00:07:54,569
+presence in the real world around them.
+
+203
+00:07:55,219 --> 00:07:57,219
+It was a small, temporary effect.
+
+204
+00:07:57,219 --> 00:07:58,830
+But it hints at something:
+
+205
+00:07:59,480 --> 00:08:02,131
+if a world can feel real enough to replace
+
+206
+00:08:02,131 --> 00:08:04,606
+this one for a while, coming back isn't
+
+207
+00:08:04,606 --> 00:08:05,725
+always seamless.
+
+208
+00:08:06,375 --> 00:08:08,567
+And this brings us to the most famous
+
+209
+00:08:08,567 --> 00:08:10,924
+thought experiment about virtual worlds.
+
+210
+00:08:11,574 --> 00:08:14,689
+In 1974, the philosopher Robert Nozick
+
+211
+00:08:14,689 --> 00:08:17,152
+asked his readers to imagine an
+
+212
+00:08:17,152 --> 00:08:18,891
+experience machine.
+
+213
+00:08:19,541 --> 00:08:22,047
+Neuroscientists could plug you in and give
+
+214
+00:08:22,047 --> 00:08:24,553
+you any experiences you wanted — writing a
+
+215
+00:08:24,553 --> 00:08:26,836
+great novel, falling in love, making a
+
+216
+00:08:26,836 --> 00:08:27,393
+friend.
+
+217
+00:08:28,043 --> 00:08:29,690
+It would feel completely real.
+
+218
+00:08:29,690 --> 00:08:31,887
+You'd never know you were in the machine.
+
+219
+00:08:32,537 --> 00:08:34,238
+Would you plug in for the rest of your
+
+220
+00:08:34,238 --> 00:08:34,570
+life?
+
+221
+00:08:35,220 --> 00:08:37,547
+Nozick bet that most people would say
+
+222
+00:08:37,547 --> 00:08:39,874
+no. And when philosophers ask, most
+
+223
+00:08:39,874 --> 00:08:41,037
+people do refuse.
+
+224
+00:08:41,687 --> 00:08:44,134
+We seem to want to actually do things,
+
+225
+00:08:44,134 --> 00:08:46,353
+not just feel like we're doing them.
+
+226
+00:08:46,353 --> 00:08:48,459
+To actually be someone, not just
+
+227
+00:08:48,459 --> 00:08:49,881
+experience being them.
+
+228
+00:08:50,531 --> 00:08:52,122
+But here's the twist.
+
+229
+00:08:52,122 --> 00:08:54,972
+In 2010, philosopher Felipe De Brigard
+
+230
+00:08:54,972 --> 00:08:56,563
+flipped the question.
+
+231
+00:08:57,213 --> 00:08:59,827
+He told people: imagine you discover that
+
+232
+00:08:59,827 --> 00:09:02,026
+you're already in the experience
+
+233
+00:09:02,026 --> 00:09:04,581
+machine. Your whole life so far has been
+
+234
+00:09:04,581 --> 00:09:05,353
+simulated.
+
+235
+00:09:06,003 --> 00:09:08,324
+Do you want to unplug and return to your
+
+236
+00:09:08,324 --> 00:09:10,699
+real life — which you know nothing about?
+
+237
+00:09:11,349 --> 00:09:12,975
+Many people chose to stay.
+
+238
+00:09:13,625 --> 00:09:16,031
+Maybe it isn't reality we're attached to.
+
+239
+00:09:16,031 --> 00:09:18,436
+Maybe it's just the life we already have.
+
+240
+00:09:19,086 --> 00:09:20,740
+So is a virtual world real?
+
+241
+00:09:21,390 --> 00:09:24,768
+In his 2022 book Reality+, philosopher
+
+242
+00:09:24,768 --> 00:09:27,597
+David Chalmers argues something
+
+243
+00:09:27,597 --> 00:09:29,247
+surprising: yes.
+
+244
+00:09:29,897 --> 00:09:32,579
+Not in the sense that a virtual chair is
+
+245
+00:09:32,579 --> 00:09:35,385
+made of wood. But virtual objects are real
+
+246
+00:09:35,385 --> 00:09:36,694
+digital objects.
+
+247
+00:09:37,344 --> 00:09:39,791
+They exist, they have effects, and the
+
+248
+00:09:39,791 --> 00:09:42,476
+experiences you have with them are genuine
+
+249
+00:09:42,476 --> 00:09:43,371
+experiences.
+
+250
+00:09:44,021 --> 00:09:46,513
+In his view, a life in a virtual world
+
+251
+00:09:46,513 --> 00:09:49,006
+could be a meaningful life — with real
+
+252
+00:09:49,006 --> 00:09:51,498
+relationships, real achievements, real
+
+253
+00:09:51,498 --> 00:09:52,167
+choices.
+
+254
+00:09:52,817 --> 00:09:55,198
+Virtual reality, he says, is genuine
+
+255
+00:09:55,198 --> 00:09:55,913
+reality.
+
+256
+00:09:56,563 --> 00:09:57,959
+Not everyone agrees.
+
+257
+00:09:57,959 --> 00:10:00,690
+Critics point out that a world designed by
+
+258
+00:10:00,690 --> 00:10:03,360
+someone else is also a world controlled
+
+259
+00:10:03,360 --> 00:10:04,573
+by someone else —
+
+260
+00:10:05,223 --> 00:10:07,495
+with its owners deciding what you see,
+
+261
+00:10:07,495 --> 00:10:09,600
+what you can do, and what it costs.
+
+262
+00:10:10,250 --> 00:10:12,480
+Which brings us back to Plato's cave.
+
+263
+00:10:12,480 --> 00:10:14,542
+The prisoners weren't only fooled.
+
+264
+00:10:14,542 --> 00:10:16,994
+Someone else was holding the objects that
+
+265
+00:10:16,994 --> 00:10:18,108
+cast the shadows.
+
+266
+00:10:18,758 --> 00:10:20,183
+Let's try something.
+
+267
+00:10:20,183 --> 00:10:21,794
+Imagine three machines.
+
+268
+00:10:22,444 --> 00:10:24,580
+The first gives you a perfect life, but
+
+269
+00:10:24,580 --> 00:10:26,361
+you'll never know it's not real.
+
+270
+00:10:27,011 --> 00:10:29,129
+The second gives you the same perfect
+
+271
+00:10:29,129 --> 00:10:31,247
+life, but you'll always know it's a
+
+272
+00:10:31,247 --> 00:10:31,988
+simulation.
+
+273
+00:10:32,638 --> 00:10:34,943
+The third is just your real life — with
+
+274
+00:10:34,943 --> 00:10:37,302
+all its boredom, failure, and people who
+
+275
+00:10:37,302 --> 00:10:38,839
+sometimes disappoint you.
+
+276
+00:10:39,489 --> 00:10:41,016
+Which would you choose?
+
+277
+00:10:41,016 --> 00:10:43,013
+And here's the harder question:
+
+278
+00:10:43,013 --> 00:10:45,480
+why does your answer change between the
+
+279
+00:10:45,480 --> 00:10:48,005
+first and the second, if the experiences
+
+280
+00:10:48,005 --> 00:10:49,415
+are exactly the same?
+
+281
+00:10:50,065 --> 00:10:52,377
+Whatever you answered tells you what you
+
+282
+00:10:52,377 --> 00:10:54,743
+really value. Not just feeling good — but
+
+283
+00:10:54,743 --> 00:10:56,195
+something about truth.
+
+284
+00:10:56,845 --> 00:10:59,315
+Ivan Sutherland imagined a room where a
+
+285
+00:10:59,315 --> 00:11:01,373
+displayed bullet could be fatal.
+
+286
+00:11:01,373 --> 00:11:02,491
+We're not there.
+
+287
+00:11:03,141 --> 00:11:05,272
+But every year, the shadows on the wall
+
+288
+00:11:05,272 --> 00:11:06,033
+get sharper.
+
+289
+00:11:06,683 --> 00:11:09,088
+Maybe the real question isn't whether
+
+290
+00:11:09,088 --> 00:11:10,831
+virtual worlds will become
+
+291
+00:11:10,831 --> 00:11:12,935
+indistinguishable from this one.
+
+292
+00:11:13,585 --> 00:11:15,725
+Maybe it's whether we'll still remember
+
+293
+00:11:15,725 --> 00:11:18,018
+that we chose to walk in — and that we can
+
+294
+00:11:18,018 --> 00:11:18,884
+walk back out.
+
+295
+00:11:19,534 --> 00:11:21,982
+Because the most important thing about a
+
+296
+00:11:21,982 --> 00:11:24,259
+cave... is knowing where the exit is.
+

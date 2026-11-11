@@ -1,0 +1,1256 @@
+1
+00:00:00,200 --> 00:00:03,631
+1965'te genç bir bilgisayar bilimcisi,
+
+2
+00:00:03,631 --> 00:00:07,228
+nihai ekranı anlatan bir deneme yazdı.
+
+3
+00:00:07,878 --> 00:00:09,857
+"Böyle bir odada gösterilen bir sandalye
+
+4
+00:00:09,857 --> 00:00:11,700
+üzerine oturulacak kadar iyi olurdu,"
+
+5
+00:00:11,700 --> 00:00:12,330
+diye yazdı.
+
+6
+00:00:12,980 --> 00:00:15,243
+"Böyle bir odada gösterilen kelepçeler
+
+7
+00:00:15,243 --> 00:00:17,128
+insanı bağlardı, böyle bir odada
+
+8
+00:00:17,128 --> 00:00:19,121
+gösterilen bir kurşun ise öldürücü
+
+9
+00:00:19,121 --> 00:00:19,768
+olurdu."
+
+10
+00:00:20,418 --> 00:00:22,348
+Adı Ivan Sutherland'dı.
+
+11
+00:00:22,348 --> 00:00:25,382
+Üç yıl sonra ilk başa takılan ekranlardan
+
+12
+00:00:25,382 --> 00:00:26,485
+birini yaptı.
+
+13
+00:00:27,135 --> 00:00:29,063
+Makine o kadar ağırdı ki tavana asılması
+
+14
+00:00:29,063 --> 00:00:29,735
+gerekiyordu.
+
+15
+00:00:30,385 --> 00:00:32,858
+Bugün milyonlarca insan onun torunlarını
+
+16
+00:00:32,858 --> 00:00:34,123
+yüzlerinde taşıyor.
+
+17
+00:00:34,773 --> 00:00:37,008
+Ve bu cihazlar, filozofların iki bin beş
+
+18
+00:00:37,008 --> 00:00:39,087
+yüz yıldır sorduğu bir soruyu yeniden
+
+19
+00:00:39,087 --> 00:00:40,179
+gündeme getiriyor:
+
+20
+00:00:40,179 --> 00:00:42,518
+Bir dünya tamamen gerçek hissettiriyorsa…
+
+21
+00:00:42,518 --> 00:00:43,401
+gerçek midir?
+
+22
+00:00:44,051 --> 00:00:46,153
+Bu videoda insanların orada olmadığını
+
+23
+00:00:46,153 --> 00:00:48,459
+bildikleri sanal bir uçurumun kenarından
+
+24
+00:00:48,459 --> 00:00:49,741
+neden adım atmadığını,
+
+25
+00:00:50,391 --> 00:00:52,354
+beyninin sahte bir eli nasıl kendi eli
+
+26
+00:00:52,354 --> 00:00:53,168
+sanabildiğini,
+
+27
+00:00:53,818 --> 00:00:55,922
+bir avatarın kişiliğini nasıl sessizce
+
+28
+00:00:55,922 --> 00:00:57,000
+değiştirebildiğini
+
+29
+00:00:57,650 --> 00:01:00,321
+ve bir filozofun düşünce deneyine göre
+
+30
+00:01:00,321 --> 00:01:02,926
+çoğumuzun koddan yapılmış bir cenneti
+
+31
+00:01:02,926 --> 00:01:05,140
+neden reddedeceğini göreceksin.
+
+32
+00:01:05,790 --> 00:01:07,298
+Başlamadan küçük bir rica:
+
+33
+00:01:07,298 --> 00:01:09,534
+Neyin gerçek olduğuyla ilgili sorulardan
+
+34
+00:01:09,534 --> 00:01:10,990
+hoşlanıyorsan abone ol.
+
+35
+00:01:10,990 --> 00:01:13,018
+Kanala gerçekten çok yardımı oluyor.
+
+36
+00:01:13,668 --> 00:01:15,972
+İnandırıcı sahte bir dünya fikri
+
+37
+00:01:15,972 --> 00:01:18,210
+bilgisayarlardan çok daha eski.
+
+38
+00:01:18,860 --> 00:01:21,724
+MÖ 375 civarında Platon Devlet'te
+
+39
+00:01:21,724 --> 00:01:25,040
+doğduklarından beri bir mağarada zincirli
+
+40
+00:01:25,040 --> 00:01:26,925
+tutsakları hayal etti.
+
+41
+00:01:27,575 --> 00:01:30,247
+Tek görebildikleri, arkalarından taşınan
+
+42
+00:01:30,247 --> 00:01:32,546
+nesnelerin duvara düşen gölgeleri.
+
+43
+00:01:33,196 --> 00:01:34,531
+Onlar için gölgeler gerçekliğin ta
+
+44
+00:01:34,531 --> 00:01:34,953
+kendisi.
+
+45
+00:01:35,603 --> 00:01:38,166
+Tutsaklardan biri serbest bırakılıp gerçek
+
+46
+00:01:38,166 --> 00:01:40,671
+dünyayı gördüğünde ışık gözlerini acıtır.
+
+47
+00:01:41,321 --> 00:01:43,473
+Diğerlerine anlatmak için geri döndüğünde
+
+48
+00:01:43,473 --> 00:01:44,549
+ise ona inanmazlar.
+
+49
+00:01:45,199 --> 00:01:47,515
+"Sanal gerçeklik" ifadesinin kendisi de
+
+50
+00:01:47,515 --> 00:01:49,611
+teknolojiden çok önce ortaya çıktı.
+
+51
+00:01:50,261 --> 00:01:52,432
+1938'de Fransız oyun yazarı Antonin
+
+52
+00:01:52,432 --> 00:01:54,269
+Artaud tiyatroyu "la réalité
+
+53
+00:01:54,269 --> 00:01:56,662
+virtuelle", yani sanal gerçeklik olarak
+
+54
+00:01:56,662 --> 00:01:59,000
+tanımladı: sürdüğü süre boyunca seyirci
+
+55
+00:01:59,000 --> 00:02:01,004
+için gerçek hale gelen bir dünya.
+
+56
+00:02:01,654 --> 00:02:03,040
+Makineler daha sonra geldi.
+
+57
+00:02:03,690 --> 00:02:06,606
+1962'de görüntü yönetmeni Morton Heilig,
+
+58
+00:02:06,606 --> 00:02:08,809
+Sensorama'nın patentini aldı.
+
+59
+00:02:08,809 --> 00:02:11,725
+Bu bir kabindi: Oturuyor, stereoskopik bir
+
+60
+00:02:11,725 --> 00:02:13,021
+ekrana bakıyordun
+
+61
+00:02:13,671 --> 00:02:16,368
+ve yüzünde rüzgâr, titreyen bir koltuk ve
+
+62
+00:02:16,368 --> 00:02:18,882
+hatta kokularla Brooklyn'de motosiklet
+
+63
+00:02:18,882 --> 00:02:19,740
+sürüyordun.
+
+64
+00:02:20,390 --> 00:02:23,220
+Ardından 1968'de Sutherland'in tavana
+
+65
+00:02:23,220 --> 00:02:24,847
+asılı başlığı geldi.
+
+66
+00:02:24,847 --> 00:02:27,606
+Takma adı "Demokles'in Kılıcı"ydı.
+
+67
+00:02:28,256 --> 00:02:31,362
+1980'lerde Jaron Lanier ve şirketi VPL
+
+68
+00:02:31,362 --> 00:02:34,541
+"sanal gerçeklik" terimini yaygınlaştırdı
+
+69
+00:02:34,541 --> 00:02:37,503
+ve dijital dünyalara uzanmayı sağlayan
+
+70
+00:02:37,503 --> 00:02:38,948
+eldivenler sattı.
+
+71
+00:02:39,598 --> 00:02:42,602
+1995'te Nintendo Virtual Boy'u piyasaya
+
+72
+00:02:42,602 --> 00:02:45,673
+sürdü. Birçok oyuncunun başını ağrıttı, az
+
+73
+00:02:45,673 --> 00:02:48,268
+sattı ve bir yıl dolmadan üretimden
+
+74
+00:02:48,268 --> 00:02:49,223
+kaldırıldı.
+
+75
+00:02:49,873 --> 00:02:52,397
+Bir süre VR asla işe yaramayacak bir hayal
+
+76
+00:02:52,397 --> 00:02:53,294
+gibi göründü.
+
+77
+00:02:53,944 --> 00:02:56,861
+Sonra 2012'de Palmer Luckey adında genç
+
+78
+00:02:56,861 --> 00:02:59,845
+bir mühendis Oculus Rift adlı bir başlık
+
+79
+00:02:59,845 --> 00:03:02,497
+için Kickstarter kampanyası başlattı.
+
+80
+00:03:03,147 --> 00:03:05,679
+İki yıl sonra Facebook şirketi yaklaşık
+
+81
+00:03:05,679 --> 00:03:07,609
+iki milyar dolara satın aldı.
+
+82
+00:03:08,259 --> 00:03:10,529
+Mağara duvarındaki gölgeler çok, çok
+
+83
+00:03:10,529 --> 00:03:12,160
+inandırıcı hale gelmişti.
+
+84
+00:03:12,810 --> 00:03:14,095
+İşin tuhaf yanı şu:
+
+85
+00:03:14,095 --> 00:03:16,375
+Beynini kandırmak şaşırtıcı derecede
+
+86
+00:03:16,375 --> 00:03:16,901
+kolay.
+
+87
+00:03:17,551 --> 00:03:19,013
+Araştırmacılar buna mevcudiyet
+
+88
+00:03:19,013 --> 00:03:19,848
+(presence) diyor:
+
+89
+00:03:19,848 --> 00:03:21,185
+gerçekten orada olma hissi.
+
+90
+00:03:21,835 --> 00:03:25,459
+2002'de Kuzey Carolina Üniversitesi'ndeki
+
+91
+00:03:25,459 --> 00:03:29,165
+bilinen bir deneyde katılımcılar derin bir
+
+92
+00:03:29,165 --> 00:03:32,459
+çukurla biten sanal bir odada yürüdü.
+
+93
+00:03:33,109 --> 00:03:34,948
+Yerdeki gerçek bir tahta kenar, sanal
+
+94
+00:03:34,948 --> 00:03:36,373
+kenarla birebir örtüşüyordu.
+
+95
+00:03:37,023 --> 00:03:38,526
+Herkes çukurun gerçek olmadığını
+
+96
+00:03:38,526 --> 00:03:40,458
+biliyordu. Bir laboratuvarda duruyorlardı.
+
+97
+00:03:41,108 --> 00:03:43,542
+Yine de kenara yaklaştıkça kalp atışları
+
+98
+00:03:43,542 --> 00:03:45,805
+hızlandı ve birçoğu ileri adım atmayı
+
+99
+00:03:45,805 --> 00:03:46,484
+reddetti.
+
+100
+00:03:47,134 --> 00:03:48,865
+Dünyanın dört bir yanındaki VR
+
+101
+00:03:48,865 --> 00:03:51,067
+laboratuvarlarında bu deneyin basit bir
+
+102
+00:03:51,067 --> 00:03:52,692
+versiyonu hâlâ kullanılıyor:
+
+103
+00:03:52,692 --> 00:03:55,051
+sanal bir boşluğun üzerinde dar bir tahta.
+
+104
+00:03:55,701 --> 00:03:58,388
+Normal bir odada gayet sakin olan insanlar
+
+105
+00:03:58,388 --> 00:04:01,015
+birden çömeliyor, kollarını açıyor ve bir
+
+106
+00:04:01,015 --> 00:04:03,284
+çatıdaymış gibi ayaklarını sürüyor.
+
+107
+00:04:03,934 --> 00:04:05,686
+Mantıklı yanın şöyle diyor:
+
+108
+00:04:05,686 --> 00:04:08,314
+Bu gerçek değil. Daha eski bir yanın ise
+
+109
+00:04:08,314 --> 00:04:10,767
+şöyle: Düşme. Ve genellikle eski olan
+
+110
+00:04:10,767 --> 00:04:11,527
+kazanıyor.
+
+111
+00:04:12,177 --> 00:04:13,950
+Ve beynin sadece dünya konusunda
+
+112
+00:04:13,950 --> 00:04:15,977
+kandırılmıyor. Bedenin konusunda da
+
+113
+00:04:15,977 --> 00:04:16,991
+kandırılabiliyor.
+
+114
+00:04:17,641 --> 00:04:20,974
+1998'de psikologlar Matthew Botvinick ve
+
+115
+00:04:20,974 --> 00:04:24,158
+Jonathan Cohen lastik el yanılsaması
+
+116
+00:04:24,158 --> 00:04:26,677
+adlı basit bir deney yayımladı.
+
+117
+00:04:27,327 --> 00:04:29,838
+Katılımcının gerçek eli bir perdenin
+
+118
+00:04:29,838 --> 00:04:31,190
+arkasına gizlenir.
+
+119
+00:04:31,190 --> 00:04:33,058
+Önüne lastik bir el konur.
+
+120
+00:04:33,708 --> 00:04:36,467
+Sonra deneyi yapan kişi iki eli aynı anda
+
+121
+00:04:36,467 --> 00:04:37,847
+bir fırçayla okşar.
+
+122
+00:04:38,497 --> 00:04:40,959
+Bir iki dakika sonra birçok kişi dokunuşu
+
+123
+00:04:40,959 --> 00:04:42,918
+lastik elde hissetmeye başlar.
+
+124
+00:04:43,568 --> 00:04:44,825
+Hatta biri lastik ele zarar verecekmiş
+
+125
+00:04:44,825 --> 00:04:45,837
+gibi yapınca bazıları irkilir.
+
+126
+00:04:46,487 --> 00:04:48,735
+VR bunu çok daha ileri götürüyor.
+
+127
+00:04:48,735 --> 00:04:50,859
+Bir başlık ve hareket takibiyle
+
+128
+00:04:50,859 --> 00:04:53,544
+araştırmacılar insanlara sanal bedenlere
+
+129
+00:04:53,544 --> 00:04:55,043
+sahiplik hissettirdi:
+
+130
+00:04:55,693 --> 00:04:57,970
+farklı boylar, farklı yaşlar, hatta
+
+131
+00:04:57,970 --> 00:05:00,307
+kendilerine hiç benzemeyen bedenler.
+
+132
+00:05:00,957 --> 00:05:03,025
+"Bu benim" hissin sabit değil.
+
+133
+00:05:03,025 --> 00:05:05,533
+Sürekli inşa ediliyor ve yeniden inşa
+
+134
+00:05:05,533 --> 00:05:06,411
+edilebilir.
+
+135
+00:05:07,061 --> 00:05:09,251
+Bedenin değişebiliyorsa davranışın da
+
+136
+00:05:09,251 --> 00:05:10,237
+değişebilir mi?
+
+137
+00:05:10,887 --> 00:05:13,922
+2007'de Stanford'da Nick Yee ve Jeremy
+
+138
+00:05:13,922 --> 00:05:15,923
+Bailenson bunu test etti.
+
+139
+00:05:16,573 --> 00:05:18,748
+İnsanlara daha çekici ya da daha az
+
+140
+00:05:18,748 --> 00:05:20,808
+çekici, daha uzun ya da daha kısa
+
+141
+00:05:20,808 --> 00:05:23,326
+avatarlar verip neler olduğunu izlediler.
+
+142
+00:05:23,976 --> 00:05:26,516
+Daha çekici avatarı olanlar sanal ortamda
+
+143
+00:05:26,516 --> 00:05:29,113
+diğerlerine daha yakın yürüdü ve kendileri
+
+144
+00:05:29,113 --> 00:05:31,075
+hakkında daha çok şey paylaştı.
+
+145
+00:05:31,725 --> 00:05:34,563
+Daha uzun avatarı olanlar, kısa avatarı
+
+146
+00:05:34,563 --> 00:05:37,400
+olanlardan daha agresif pazarlık yaptı.
+
+147
+00:05:38,050 --> 00:05:40,378
+Araştırmacılar buna, şekil değiştirebilen
+
+148
+00:05:40,378 --> 00:05:42,442
+Yunan deniz tanrısının adını vererek
+
+149
+00:05:42,442 --> 00:05:43,765
+Proteus etkisi dedi.
+
+150
+00:05:44,415 --> 00:05:46,075
+Avatarlarımızı sadece biz giymiyoruz.
+
+151
+00:05:46,075 --> 00:05:47,610
+Küçük bir şekilde, onlar da bizi
+
+152
+00:05:47,610 --> 00:05:48,066
+giyiyor.
+
+153
+00:05:48,716 --> 00:05:51,456
+Ve sanal dünyaların insanları şaşırtan bir
+
+154
+00:05:51,456 --> 00:05:53,709
+yanı daha var: Son derece sosyal
+
+155
+00:05:53,709 --> 00:05:54,745
+olabiliyorlar.
+
+156
+00:05:55,395 --> 00:05:57,546
+Sosyal VR platformlarında insanlar avatar
+
+157
+00:05:57,546 --> 00:05:58,523
+olarak buluşuyor:
+
+158
+00:05:58,523 --> 00:06:00,675
+sohbet etmek, dans etmek, film izlemek ya
+
+159
+00:06:00,675 --> 00:06:02,435
+da sadece sanal bir kamp ateşinin
+
+160
+00:06:02,435 --> 00:06:03,706
+etrafında oturmak için.
+
+161
+00:06:04,356 --> 00:06:06,144
+Araştırmacılar insanların VR'da
+
+162
+00:06:06,144 --> 00:06:07,932
+başkalarıyla gerçek bir sosyal
+
+163
+00:06:07,932 --> 00:06:09,930
+mevcudiyet hissedebildiğini buldu:
+
+164
+00:06:09,930 --> 00:06:12,191
+başka bir zihnin gerçekten seninle orada
+
+165
+00:06:12,191 --> 00:06:13,033
+olduğu hissi.
+
+166
+00:06:13,683 --> 00:06:15,568
+Bazı insanlar en yakın arkadaşlarını orada
+
+167
+00:06:15,568 --> 00:06:16,615
+bulduklarını söylüyor.
+
+168
+00:06:16,615 --> 00:06:18,332
+Hatta bazıları hayat arkadaşıyla orada
+
+169
+00:06:18,332 --> 00:06:18,835
+tanışmış.
+
+170
+00:06:19,485 --> 00:06:22,109
+Yalnız kalmış, engelli ya da evinden uzak
+
+171
+00:06:22,109 --> 00:06:24,673
+insanlar için bu dünyalar bir can simidi
+
+172
+00:06:24,673 --> 00:06:25,508
+olabiliyor.
+
+173
+00:06:26,158 --> 00:06:28,512
+Ait olma ihtiyacını hatırlıyor musun?
+
+174
+00:06:28,512 --> 00:06:31,160
+Dünya piksellerden oluştuğunda kapanmıyor.
+
+175
+00:06:31,810 --> 00:06:34,164
+Bu esneklik sadece bir zayıflık değil.
+
+176
+00:06:34,164 --> 00:06:36,519
+Doktorlar onu bir tedaviye dönüştürdü.
+
+177
+00:06:37,169 --> 00:06:39,810
+Washington Üniversitesi'nde araştırmacılar
+
+178
+00:06:39,810 --> 00:06:42,216
+Hunter Hoffman ve David Patterson,
+
+179
+00:06:42,216 --> 00:06:44,799
+yanık hastaları için SnowWorld adlı bir
+
+180
+00:06:44,799 --> 00:06:45,914
+oyun geliştirdi.
+
+181
+00:06:46,564 --> 00:06:48,945
+Acı veren yara bakımı sırasında hastalar
+
+182
+00:06:48,945 --> 00:06:51,436
+buzlu bir kanyonda kardan adamlara kartopu
+
+183
+00:06:51,436 --> 00:06:51,879
+attı.
+
+184
+00:06:52,529 --> 00:06:54,481
+Birçoğu oynarken belirgin şekilde daha az
+
+185
+00:06:54,481 --> 00:06:55,723
+acı hissettiğini söyledi.
+
+186
+00:06:56,373 --> 00:06:58,253
+VR maruz bırakma terapisinde de
+
+187
+00:06:58,253 --> 00:06:59,089
+kullanılıyor.
+
+188
+00:06:59,739 --> 00:07:02,098
+Yükseklik, uçak ya da örümcek korkusu olan
+
+189
+00:07:02,098 --> 00:07:04,248
+insanlar, gerçekte hiçbir şeyin onlara
+
+190
+00:07:04,248 --> 00:07:05,979
+zarar veremeyeceği bir dünyada
+
+191
+00:07:05,979 --> 00:07:08,129
+korkularıyla adım adım yüzleşebiliyor.
+
+192
+00:07:08,779 --> 00:07:10,427
+Bazı gazilerin travma sonrası stres
+
+193
+00:07:10,427 --> 00:07:11,946
+bozukluğuna yardım etmek için de
+
+194
+00:07:11,946 --> 00:07:12,553
+kullanıldı.
+
+195
+00:07:13,203 --> 00:07:15,461
+Seni sanal bir çukurdan korkutan aynı
+
+196
+00:07:15,461 --> 00:07:17,663
+numara, gerçek bir çukurdan korkmayı
+
+197
+00:07:17,663 --> 00:07:19,469
+bırakmana da yardım edebilir.
+
+198
+00:07:20,119 --> 00:07:21,198
+Ama bedelleri de var.
+
+199
+00:07:21,848 --> 00:07:23,707
+Birçok kişi siber hastalık yaşıyor:
+
+200
+00:07:23,707 --> 00:07:25,241
+mide bulantısı ve baş dönmesi.
+
+201
+00:07:25,891 --> 00:07:28,267
+Yaygın açıklamalardan biri duyusal
+
+202
+00:07:28,267 --> 00:07:30,644
+çatışma: Gözlerin hareket ettiğini
+
+203
+00:07:30,644 --> 00:07:32,832
+söylüyor, iç kulağın ise yerinde
+
+204
+00:07:32,832 --> 00:07:33,645
+durduğunu.
+
+205
+00:07:34,295 --> 00:07:36,643
+Beynin de bu anlaşmazlığı sevmiyor.
+
+206
+00:07:37,293 --> 00:07:39,233
+Bazı etkiler daha da tuhaf.
+
+207
+00:07:39,233 --> 00:07:41,497
+2010'daki bir çalışmada psikolog
+
+208
+00:07:41,497 --> 00:07:44,343
+Frederick Aardema ve arkadaşları, VR'da
+
+209
+00:07:44,343 --> 00:07:46,736
+geçirilen kısa bir oturumdan sonra
+
+210
+00:07:47,386 --> 00:07:49,501
+katılımcıların daha fazla dissosiyatif
+
+211
+00:07:49,501 --> 00:07:51,518
+deneyim bildirdiğini ve etraflarındaki
+
+212
+00:07:51,518 --> 00:07:53,437
+gerçek dünyada mevcudiyet hislerinin
+
+213
+00:07:53,437 --> 00:07:54,569
+zayıfladığını buldu.
+
+214
+00:07:55,219 --> 00:07:57,054
+Küçük ve geçici bir etkiydi.
+
+215
+00:07:57,054 --> 00:07:58,830
+Ama bir şeye işaret ediyor:
+
+216
+00:07:59,480 --> 00:08:01,478
+Bir dünya bir süreliğine bunun yerini
+
+217
+00:08:01,478 --> 00:08:03,627
+alacak kadar gerçek hissettirebiliyorsa,
+
+218
+00:08:03,627 --> 00:08:05,725
+geri dönmek her zaman pürüzsüz olmuyor.
+
+219
+00:08:06,375 --> 00:08:09,104
+Ve bu bizi sanal dünyalarla ilgili en ünlü
+
+220
+00:08:09,104 --> 00:08:10,924
+düşünce deneyine getiriyor.
+
+221
+00:08:11,574 --> 00:08:14,087
+1974'te filozof Robert Nozick
+
+222
+00:08:14,087 --> 00:08:17,339
+okurlarından bir deneyim makinesi hayal
+
+223
+00:08:17,339 --> 00:08:18,891
+etmelerini istedi.
+
+224
+00:08:19,541 --> 00:08:21,857
+Sinirbilimciler seni makineye bağlayıp
+
+225
+00:08:21,857 --> 00:08:24,116
+istediğin her deneyimi yaşatabilirdi:
+
+226
+00:08:24,116 --> 00:08:26,320
+harika bir roman yazmak, âşık olmak,
+
+227
+00:08:26,320 --> 00:08:27,393
+arkadaş edinmek.
+
+228
+00:08:28,043 --> 00:08:29,852
+Tamamen gerçek hissettirirdi.
+
+229
+00:08:29,852 --> 00:08:31,887
+Makinede olduğunu asla bilmezdin.
+
+230
+00:08:32,537 --> 00:08:33,892
+Hayatının geri kalanı için makineye
+
+231
+00:08:33,892 --> 00:08:34,570
+bağlanır mıydın?
+
+232
+00:08:35,220 --> 00:08:37,057
+Nozick insanların çoğunun hayır
+
+233
+00:08:37,057 --> 00:08:38,384
+diyeceğine bahse girdi.
+
+234
+00:08:38,384 --> 00:08:40,323
+Filozoflar sorduğunda da çoğu insan
+
+235
+00:08:40,323 --> 00:08:41,037
+reddediyor.
+
+236
+00:08:41,687 --> 00:08:43,713
+Görünen o ki sadece bir şeyleri yapıyormuş
+
+237
+00:08:43,713 --> 00:08:45,649
+gibi hissetmek değil, gerçekten yapmak
+
+238
+00:08:45,649 --> 00:08:47,180
+istiyoruz. Birisi olmayı sadece
+
+239
+00:08:47,180 --> 00:08:48,981
+deneyimlemek değil, gerçekten o kişi
+
+240
+00:08:48,981 --> 00:08:49,881
+olmak istiyoruz.
+
+241
+00:08:50,531 --> 00:08:52,321
+Ama işin ilginç yanı şu:
+
+242
+00:08:52,321 --> 00:08:55,304
+2010'da filozof Felipe De Brigard soruyu
+
+243
+00:08:55,304 --> 00:08:56,563
+tersine çevirdi.
+
+244
+00:08:57,213 --> 00:08:58,609
+İnsanlara şöyle dedi:
+
+245
+00:08:58,609 --> 00:09:00,876
+Zaten deneyim makinesinde olduğunu
+
+246
+00:09:00,876 --> 00:09:02,330
+keşfettiğini hayal et.
+
+247
+00:09:02,330 --> 00:09:04,423
+Şimdiye kadarki bütün hayatın bir
+
+248
+00:09:04,423 --> 00:09:05,353
+simülasyondu.
+
+249
+00:09:06,003 --> 00:09:08,523
+Fişi çekip hakkında hiçbir şey bilmediğin
+
+250
+00:09:08,523 --> 00:09:10,699
+gerçek hayatına dönmek ister misin?
+
+251
+00:09:11,349 --> 00:09:12,975
+Birçok kişi kalmayı seçti.
+
+252
+00:09:13,625 --> 00:09:15,724
+Belki de bağlı olduğumuz şey gerçeklik
+
+253
+00:09:15,724 --> 00:09:17,975
+değil. Belki sadece zaten sahip olduğumuz
+
+254
+00:09:17,975 --> 00:09:18,436
+hayat.
+
+255
+00:09:19,086 --> 00:09:20,740
+Peki sanal bir dünya gerçek midir?
+
+256
+00:09:21,390 --> 00:09:24,471
+Filozof David Chalmers 2022 tarihli
+
+257
+00:09:24,471 --> 00:09:27,629
+Reality+ kitabında şaşırtıcı bir şey
+
+258
+00:09:27,629 --> 00:09:29,247
+savunuyor: Evet.
+
+259
+00:09:29,897 --> 00:09:32,484
+Sanal bir sandalyenin tahtadan yapıldığı
+
+260
+00:09:32,484 --> 00:09:35,191
+anlamında değil. Ama sanal nesneler gerçek
+
+261
+00:09:35,191 --> 00:09:36,694
+dijital nesnelerdir.
+
+262
+00:09:37,344 --> 00:09:40,254
+Var olurlar, etkileri vardır ve onlarla
+
+263
+00:09:40,254 --> 00:09:43,371
+yaşadığın deneyimler gerçek deneyimlerdir.
+
+264
+00:09:44,021 --> 00:09:46,930
+Ona göre sanal bir dünyadaki hayat anlamlı
+
+265
+00:09:46,930 --> 00:09:48,352
+bir hayat olabilir:
+
+266
+00:09:48,352 --> 00:09:51,262
+gerçek ilişkiler, gerçek başarılar, gerçek
+
+267
+00:09:51,262 --> 00:09:52,167
+seçimlerle.
+
+268
+00:09:52,817 --> 00:09:54,881
+Sanal gerçeklik, diyor, hakiki
+
+269
+00:09:54,881 --> 00:09:55,913
+gerçekliktir.
+
+270
+00:09:56,563 --> 00:09:57,861
+Herkes aynı fikirde değil.
+
+271
+00:09:57,861 --> 00:09:59,472
+Eleştirmenler, başkası tarafından
+
+272
+00:09:59,472 --> 00:10:01,217
+tasarlanan bir dünyanın aynı zamanda
+
+273
+00:10:01,217 --> 00:10:03,097
+başkası tarafından kontrol edilen bir
+
+274
+00:10:03,097 --> 00:10:04,573
+dünya olduğuna dikkat çekiyor.
+
+275
+00:10:05,223 --> 00:10:07,138
+Neyi göreceğine, neyi yapabileceğine ve
+
+276
+00:10:07,138 --> 00:10:09,099
+bunun neye mal olacağına sahipleri karar
+
+277
+00:10:09,099 --> 00:10:09,600
+veriyor.
+
+278
+00:10:10,250 --> 00:10:12,409
+Bu da bizi Platon'un mağarasına geri
+
+279
+00:10:12,409 --> 00:10:14,069
+getiriyor. Tutsaklar sadece
+
+280
+00:10:14,069 --> 00:10:16,227
+kandırılmıyordu. Gölgeleri oluşturan
+
+281
+00:10:16,227 --> 00:10:18,108
+nesneleri başka biri tutuyordu.
+
+282
+00:10:18,758 --> 00:10:20,241
+Bir şey deneyelim.
+
+283
+00:10:20,241 --> 00:10:21,794
+Üç makine hayal et.
+
+284
+00:10:22,444 --> 00:10:24,402
+Birincisi sana kusursuz bir hayat veriyor
+
+285
+00:10:24,402 --> 00:10:26,361
+ama gerçek olmadığını asla bilmeyeceksin.
+
+286
+00:10:27,011 --> 00:10:29,292
+İkincisi aynı kusursuz hayatı veriyor ama
+
+287
+00:10:29,292 --> 00:10:31,262
+bir simülasyon olduğunu her zaman
+
+288
+00:10:31,262 --> 00:10:31,988
+bileceksin.
+
+289
+00:10:32,638 --> 00:10:34,489
+Üçüncüsü sadece senin gerçek hayatın:
+
+290
+00:10:34,489 --> 00:10:36,571
+bütün sıkıntısı, başarısızlıkları ve bazen
+
+291
+00:10:36,571 --> 00:10:38,099
+seni hayal kırıklığına uğratan
+
+292
+00:10:38,099 --> 00:10:38,839
+insanlarıyla.
+
+293
+00:10:39,489 --> 00:10:41,195
+Hangisini seçerdin?
+
+294
+00:10:41,195 --> 00:10:42,746
+Daha zor soru şu:
+
+295
+00:10:42,746 --> 00:10:45,693
+Deneyimler tamamen aynıysa, cevabın
+
+296
+00:10:45,693 --> 00:10:48,407
+birinci ve ikinci arasında neden
+
+297
+00:10:48,407 --> 00:10:49,415
+değişiyor?
+
+298
+00:10:50,065 --> 00:10:52,124
+Verdiğin cevap sana gerçekten neye değer
+
+299
+00:10:52,124 --> 00:10:53,178
+verdiğini söylüyor.
+
+300
+00:10:53,178 --> 00:10:55,141
+Sadece iyi hissetmeye değil, hakikat
+
+301
+00:10:55,141 --> 00:10:56,195
+dediğimiz bir şeye.
+
+302
+00:10:56,845 --> 00:10:59,012
+Ivan Sutherland, gösterilen bir kurşunun
+
+303
+00:10:59,012 --> 00:11:00,878
+öldürücü olabileceği bir oda hayal
+
+304
+00:11:00,878 --> 00:11:02,491
+etmişti. Henüz orada değiliz.
+
+305
+00:11:03,141 --> 00:11:05,227
+Ama her yıl duvardaki gölgeler biraz daha
+
+306
+00:11:05,227 --> 00:11:06,033
+keskinleşiyor.
+
+307
+00:11:06,683 --> 00:11:09,197
+Belki asıl soru, sanal dünyaların bu
+
+308
+00:11:09,197 --> 00:11:11,581
+dünyadan ayırt edilemez hale gelip
+
+309
+00:11:11,581 --> 00:11:12,935
+gelmeyeceği değil.
+
+310
+00:11:13,585 --> 00:11:15,695
+Belki de içeri girmeyi bizim seçtiğimizi
+
+311
+00:11:15,695 --> 00:11:17,805
+ve geri çıkabileceğimizi hâlâ hatırlayıp
+
+312
+00:11:17,805 --> 00:11:18,884
+hatırlamayacağımız.
+
+313
+00:11:19,534 --> 00:11:22,101
+Çünkü bir mağarayla ilgili en önemli şey…
+
+314
+00:11:22,101 --> 00:11:24,259
+çıkışın nerede olduğunu bilmektir.
+
