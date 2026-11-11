@@ -25,22 +25,22 @@ Solipsism is the idea that only your own mind is certain. From Gorgias and Zhuan
 
 ⏱ Chapters
 0:00 The only thing you can be sure of
-1:12 What solipsism actually claims
-2:01 Ancient roots: Gorgias & Zhuangzi
-3:00 Eastern philosophy: Vasubandhu & Shankara
-4:22 Descartes and the evil demon
-5:49 The trap
-6:32 Berkeley & the kicked stone
-7:41 The problem of other minds
-9:07 Try it yourself
-9:59 Psychology: you were born a solipsist
-11:12 When reality slips
-12:07 The logician who was a solipsist
-13:01 Wittgenstein's answer
-13:59 Brains in vats & simulations
-15:02 Solipsism on screen
-15:45 Why almost nobody is a solipsist
-16:43 A choice, not a proof
+1:01 What solipsism actually claims
+1:42 Ancient roots: Gorgias & Zhuangzi
+2:34 Eastern philosophy: Vasubandhu & Shankara
+3:44 Descartes and the evil demon
+4:57 The trap
+5:31 Berkeley & the kicked stone
+6:31 The problem of other minds
+7:44 Try it yourself
+8:27 Psychology: you were born a solipsist
+9:31 When reality slips
+10:17 The logician who was a solipsist
+11:04 Wittgenstein's answer
+11:54 Brains in vats & simulations
+12:49 Solipsism on screen
+13:26 Why almost nobody is a solipsist
+14:16 A choice, not a proof
 
 📚 Sources
 Descartes, Meditations (1641) · Berkeley, Principles of Human Knowledge (1710) · Boswell, Life of Johnson (6 Aug 1763) · J. S. Mill, An Examination of Sir William Hamilton's Philosophy (1865) · Chalmers, The Conscious Mind (1996) · Wimmer & Perner (1983); Baron-Cohen, Leslie & Frith (1985) · Gold & Gold, Cognitive Neuropsychiatry (2012) · Russell, Human Knowledge (1948) · Wittgenstein, Tractatus 5.62 (1921), Philosophical Investigations §243ff (1953) · Putnam, Reason, Truth and History (1981) · Bostrom, "Are You Living in a Computer Simulation?" (2003) · Hume, Treatise 1.4.7 · Vasubandhu, Twenty Verses · Zhuangzi, ch. 2
@@ -67,22 +67,22 @@ Solipsizm, yalnızca kendi zihninin kesin olduğu fikridir. Gorgias'tan ve Zhuan
 
 ⏱ Bölümler
 0:00 Emin olabileceğin tek şey
-1:12 Solipsizm aslında ne diyor?
-2:01 Antik kökler: Gorgias ve Zhuangzi
-3:00 Doğu felsefesi: Vasubandhu ve Şankara
-4:22 Descartes ve kötü iblis
-5:49 Tuzak
-6:32 Berkeley ve tekmelenen taş
-7:41 Başka zihinler sorunu
-9:07 Kendin dene
-9:59 Psikoloji: solipsist doğdun
-11:12 Gerçeklik hissi kayınca
-12:07 Solipsist olan mantıkçı
-13:01 Wittgenstein'ın cevabı
-13:59 Fıçıdaki beyin ve simülasyon
-15:02 Ekrandaki solipsizm
-15:45 Neden neredeyse kimse solipsist değil?
-16:43 Kanıt değil, bir seçim
+1:01 Solipsizm aslında ne diyor?
+1:42 Antik kökler: Gorgias ve Zhuangzi
+2:34 Doğu felsefesi: Vasubandhu ve Şankara
+3:44 Descartes ve kötü iblis
+4:57 Tuzak
+5:31 Berkeley ve tekmelenen taş
+6:31 Başka zihinler sorunu
+7:44 Kendin dene
+8:27 Psikoloji: solipsist doğdun
+9:31 Gerçeklik hissi kayınca
+10:17 Solipsist olan mantıkçı
+11:04 Wittgenstein'ın cevabı
+11:54 Fıçıdaki beyin ve simülasyon
+12:49 Ekrandaki solipsizm
+13:26 Neden neredeyse kimse solipsist değil?
+14:16 Kanıt değil, bir seçim
 
 📚 Kaynaklar
 Descartes, Meditations (1641) · Berkeley, Principles of Human Knowledge (1710) · Boswell, Life of Johnson (6 Aug 1763) · J. S. Mill, An Examination of Sir William Hamilton's Philosophy (1865) · Chalmers, The Conscious Mind (1996) · Wimmer & Perner (1983); Baron-Cohen, Leslie & Frith (1985) · Gold & Gold, Cognitive Neuropsychiatry (2012) · Russell, Human Knowledge (1948) · Wittgenstein, Tractatus 5.62 (1921), Philosophical Investigations §243ff (1953) · Putnam, Reason, Truth and History (1981) · Bostrom, "Are You Living in a Computer Simulation?" (2003) · Hume, Treatise 1.4.7 · Vasubandhu, Twenty Verses · Zhuangzi, ch. 2
