@@ -293,6 +293,10 @@ def figure(x, y, h, pose="stand", face=1, child=False, hat=None, tone=0.88, seed
         elif hat == "bun":
             dr.ellipse([hc[0] - rr * 0.5 - face * rr * 0.9, hc[1] - rr * 1.3, hc[0] + rr * 0.5 - face * rr * 0.9, hc[1] - rr * 0.4],
                        fill=255)
+        elif hat == "vr":
+            dr.rounded_rectangle([T((head_c[0] - head_r * 0.6 + face * head_r * 0.25, head_c[1] - head_r * 0.45)),
+                                  T((head_c[0] + head_r * 0.6 + face * head_r * 0.75, head_c[1] + head_r * 0.25))], radius=int(head_r * 0.2 * ss),
+                                 fill=255)
         elif hat == "dress":
             sk = [T((x - h * 0.08, hip_y - h * 0.05)), T((x + h * 0.08, hip_y - h * 0.05)), T((x + h * 0.17, y - h * 0.08)),
                   T((x - h * 0.17, y - h * 0.08))]
@@ -320,6 +324,14 @@ def figure(x, y, h, pose="stand", face=1, child=False, hat=None, tone=0.88, seed
                            (x - h * 0.24, y - h * 0.03, x + h * 0.28, y + h * 0.03))
         items.append(Fill(gm, go, tone=0.5, style="hatch", seed=seed + 50, outline=False))
     items.append(Fill(m, o, tone=tone, seed=seed))
+    if hat == "vr":  # görünür VR gözlüğü (açık renk, kayışlı)
+        gx0, gx1 = head_c[0] - head_r * 0.55 + face * head_r * 0.3, head_c[0] + head_r * 0.55 + face * head_r * 0.75
+        gy0, gy1 = head_c[1] - head_r * 0.45, head_c[1] + head_r * 0.22
+        vm, vo = mask_from(lambda d, T, ss: d.rounded_rectangle([T((gx0, gy0)), T((gx1, gy1))], radius=int(head_r * 0.18 * ss), fill=255),
+                           (gx0 - 2, gy0 - 2, gx1 + 2, gy1 + 2))
+        items.append(Fill(vm, vo, tone=0.95, color=(90, 130, 200), seed=seed + 7))
+        items.append(Stroke([(gx0, head_c[1] - head_r * 0.1), (head_c[0] - face * head_r * 0.85, head_c[1] - head_r * 0.25)], max(2, head_r * 0.12),
+                            (90, 130, 200), 1, seed + 8))
     return items, {"hand_l": parts[0] if parts else (x, y), "hand_r": parts[1] if len(parts) > 1 else (x, y),
                    "head": head_c, "head_r": head_r}
 
@@ -1065,6 +1077,147 @@ ELEMENTS_EXTRA.update({
     "campfire": el_campfire, "phone": el_phone, "heart": el_heart, "bell": el_bell, "brain": el_brain, "gauge": el_gauge,
     "asch_card": el_asch_card, "slot": el_slot, "mirror": el_mirror, "mask": el_mask, "mountain": el_mountain, "books": el_books,
     "graph": el_graph, "tshirt": el_tshirt, "spotlight": el_spotlight, "tags": el_tags,
+})
+
+
+def el_cave(x, y, s, fire=True, seed=0, W=1920, H=1080, **_):
+    """Mağara: kavisli tavan, arkada ateş, duvarda gölgeler."""
+    out = [Stroke([(0.05 * W, y), (0.05 * W, 0.25 * H), (0.3 * W, 0.08 * H), (0.7 * W, 0.08 * H), (0.95 * W, 0.25 * H), (0.95 * W, y)],
+                  6 * s + 1, (110, 90, 70), seed=seed)]
+    m, o = mask_from(lambda d, T, ss: d.polygon([T((0.05 * W, 0.25 * H)), T((0.3 * W, 0.08 * H)), T((0.7 * W, 0.08 * H)), T((0.95 * W, 0.25 * H)),
+                                                 T((0.95 * W, 0.12 * H)), T((0.05 * W, 0.12 * H))], fill=255), (0, 0, W, 0.3 * H))
+    out.append(Fill(m, o, tone=0.35, style="hatch", seed=seed, outline=False))
+    if fire:
+        out += el_campfire(0.8 * W, y, s * 0.8, seed=seed + 3)
+    for k, (gx, gh) in enumerate(((0.2, 0.28), (0.32, 0.22), (0.44, 0.3))):  # duvardaki gölgeler
+        it, _ = figure(gx * W, 0.55 * H, gh * H, "stand", 1, tone=0.35, seed=seed + 10 + k)
+        out += it
+    return out
+
+
+def el_plank(x, y, s, seed=0, **_):
+    w = 700 * s
+    out = [Stroke(_rect(x - w / 2, y - 18 * s, x + w / 2, y + 18 * s), 5 * s + 1, (120, 80, 50), seed=seed)]
+    for k in range(5):
+        xx = x - w / 2 + (k + 0.5) * w / 5
+        out.append(Stroke([(xx, y - 18 * s), (xx + 20 * s, y + 18 * s)], 2, (150, 110, 70), 1, seed + k))
+    for k in range(6):  # aşağıdaki derinlik çizgileri
+        yy = y + 60 * s + k * 50 * s
+        out.append(Stroke([(x - w * (0.7 - k * 0.08), yy), (x + w * (0.7 - k * 0.08), yy)], 2, COLORS["grey"], 1, seed + 20 + k))
+    for side in (-1, 1):
+        out.append(Stroke([(x + side * w * 0.8, y + 20 * s), (x + side * w * 0.35, y + 380 * s)], 3 * s, COLORS["grey"], seed=seed + 40 + side))
+    return out
+
+
+def el_hand(x, y, s, face=1, color="ink", tone=0.85, seed=0, **_):
+    """Avuç içi aşağıda, masada duran el silüeti."""
+    pts = [(x - 120 * s * face, y), (x - 120 * s * face, y - 70 * s), (x - 40 * s * face, y - 95 * s)]
+    for k in range(4):
+        fx = x - 10 * s * face + k * 38 * s * face
+        pts += [(fx, y - 95 * s), (fx + 6 * s * face, y - 185 * s + k * 12 * s), (fx + 28 * s * face, y - 185 * s + k * 12 * s), (fx + 32 * s * face, y - 95 * s)]
+    pts += [(x + 150 * s * face, y - 60 * s), (x + 200 * s * face, y - 110 * s), (x + 215 * s * face, y - 85 * s), (x + 160 * s * face, y)]
+    c = COLORS.get(color, INK) if isinstance(color, str) else color
+    return [_blob(pts, tone=tone, color=c, seed=seed, smooth=6 * s)]
+
+
+def el_brush(x, y, s, seed=0, **_):
+    return [Stroke([(x, y), (x + 160 * s, y - 120 * s)], 9 * s + 1, (140, 95, 50), seed=seed),
+            _blob([(x - 10 * s, y + 5 * s), (x - 60 * s, y + 40 * s), (x - 40 * s, y + 55 * s), (x + 12 * s, y + 18 * s)], tone=0.7, seed=seed + 1)]
+
+
+def el_snowman(x, y, s, seed=0, **_):
+    out = []
+    for k, r in enumerate((110, 80, 55)):
+        cy = y - sum((110, 80, 55)[:k]) * 2 * s - r * s
+        out.append(Stroke(ellipse_pts(x, cy, r * s, r * s, n=30, seed=seed + k), 5 * s + 1, seed=seed + k))
+    hy = y - (220 + 160) * s - 55 * s
+    out.append(Stroke([(x, hy), (x + 55 * s, hy + 6 * s)], 7 * s, (230, 130, 40), seed=seed + 5))
+    for side in (-1, 1):
+        out.append(Stroke(ellipse_pts(x + side * 20 * s - 10 * s, hy - 18 * s, 5 * s, 5 * s, n=8), 4 * s, seed=seed + 6))
+    return out
+
+
+def el_spider(x, y, s, seed=0, **_):
+    out = [_blob([(x + math.cos(u) * 45 * s, y + math.sin(u) * 35 * s) for u in np.linspace(0, 2 * math.pi, 20)], tone=0.9, seed=seed)]
+    for side in (-1, 1):
+        for k in range(4):
+            a = -0.9 + k * 0.6
+            out.append(Stroke([(x + side * 30 * s, y), (x + side * 90 * s, y - 50 * s + k * 30 * s),
+                               (x + side * 130 * s, y + 10 * s + k * 25 * s)], 4 * s + 1, seed=seed + k + side * 10))
+    out.append(Stroke([(x, y - 35 * s), (x, 0)], 2, COLORS["grey"], 1, seed + 30))
+    return out
+
+
+def el_ear(x, y, s, seed=0, **_):
+    return [Stroke(bez((x - 40 * s, y + 120 * s), (x - 160 * s, y - 160 * s), (x + 60 * s, y - 130 * s), 20) +
+                   bez((x + 60 * s, y - 130 * s), (x + 150 * s, y + 20 * s), (x, y + 140 * s), 16), 6 * s + 1, seed=seed),
+            Stroke(bez((x - 30 * s, y - 40 * s), (x + 40 * s, y - 80 * s), (x + 30 * s, y + 20 * s), 12), 4 * s + 1, seed=seed + 1)]
+
+
+def el_machine(x, y, s, seed=0, **_):
+    """Deneyim makinesi: kasklı koltuk ve kablolar."""
+    out = [Stroke([(x - 150 * s, y), (x - 150 * s, y - 180 * s), (x + 150 * s, y - 180 * s), (x + 150 * s, y)], 7 * s + 1, seed=seed),
+           Stroke([(x - 150 * s, y - 180 * s), (x - 170 * s, y - 470 * s), (x - 60 * s, y - 470 * s), (x - 40 * s, y - 180 * s)], 7 * s + 1, seed=seed + 1),
+           Stroke(bez((x - 200 * s, y - 520 * s), (x - 110 * s, y - 640 * s), (x - 20 * s, y - 520 * s), 16), 7 * s + 1, BLUE, seed=seed + 2)]
+    for k in range(3):
+        out.append(Stroke(bez((x - 110 * s + k * 30 * s, y - 600 * s), (x + 150 * s, y - 760 * s), (x + 330 * s, y - 400 * s + k * 60 * s), 16),
+                          3 * s + 1, seed=seed + 5 + k))
+    out.append(Stroke(_rect(x + 300 * s, y - 470 * s, x + 470 * s, y - 220 * s), 5 * s + 1, seed=seed + 9))
+    for k in range(3):
+        out.append(Stroke(ellipse_pts(x + 345 * s + k * 40 * s, y - 400 * s, 12 * s, 12 * s, n=10), 3 * s, RED if k == 1 else INK, 1, seed + 12 + k))
+    return out
+
+
+def el_door(x, y, s, label=None, open_=False, seed=0, **_):
+    w, h = 200 * s, 380 * s
+    out = [Stroke(_rect(x - w / 2, y - h, x + w / 2, y), 6 * s + 1, (120, 80, 50), seed=seed),
+           Stroke(ellipse_pts(x + w * 0.32, y - h * 0.5, 10 * s, 10 * s, n=10), 4 * s, seed=seed + 1)]
+    if open_:
+        m, o = mask_from(lambda d, T, ss: d.rectangle([T((x - w / 2 + 6, y - h + 6)), T((x + w / 2 - 6, y - 6))], fill=255),
+                         (x - w / 2, y - h, x + w / 2, y))
+        out.append(Fill(m, o, tone=0.6, color=(245, 215, 120), seed=seed, outline=False))
+    if label:
+        out.append(Text(label, x, y - h - 50 * s, 60 * s, INK))
+    return out
+
+
+def el_plug(x, y, s, seed=0, **_):
+    out = [Stroke(_rect(x - 60 * s, y - 50 * s, x + 60 * s, y + 50 * s), 6 * s + 1, seed=seed),
+           Stroke([(x - 25 * s, y - 50 * s), (x - 25 * s, y - 120 * s)], 9 * s + 1, seed=seed + 1),
+           Stroke([(x + 25 * s, y - 50 * s), (x + 25 * s, y - 120 * s)], 9 * s + 1, seed=seed + 2),
+           Stroke(bez((x, y + 50 * s), (x + 30 * s, y + 200 * s), (x + 220 * s, y + 240 * s), 16), 7 * s + 1, seed=seed + 3)]
+    return out
+
+
+def el_booth(x, y, s, seed=0, **_):
+    """Sensorama: kabin, dürbün gibi ekran, oturan figür."""
+    out = [Stroke(_rect(x - 100 * s, y - 520 * s, x + 220 * s, y), 6 * s + 1, (120, 80, 50), seed=seed),
+           Stroke(_rect(x - 100 * s, y - 520 * s, x - 10 * s, y - 380 * s), 5 * s + 1, seed=seed + 1),
+           Stroke([(x - 260 * s, y), (x - 260 * s, y - 150 * s), (x - 120 * s, y - 150 * s)], 6 * s + 1, seed=seed + 2)]
+    for k in range(3):
+        out.append(Stroke([(x - 340 * s + k * 15 * s, y - 520 * s + k * 40 * s), (x - 200 * s + k * 15 * s, y - 520 * s + k * 40 * s)],
+                          3 * s, BLUE, 1, seed + 5 + k))
+    it, _ = figure(x - 200 * s, y, 380 * s, "sit", 1, seed=seed + 9)
+    return out + it
+
+
+def el_sword(x, y, s, seed=0, H=1080, **_):
+    out = [Stroke([(x, 0), (x, y - 260 * s)], 2, COLORS["grey"], 1, seed),
+           Stroke([(x, y - 260 * s), (x, y + 40 * s)], 10 * s + 1, (150, 150, 160), seed=seed + 1),
+           Stroke([(x - 60 * s, y - 200 * s), (x + 60 * s, y - 200 * s)], 10 * s + 1, (110, 80, 50), seed=seed + 2)]
+    return out
+
+
+def el_money(x, y, s, text="$2B", seed=0, **_):
+    pts = [(x - 120 * s, y), (x - 140 * s, y - 120 * s), (x - 60 * s, y - 200 * s), (x - 40 * s, y - 240 * s), (x + 40 * s, y - 240 * s),
+           (x + 60 * s, y - 200 * s), (x + 140 * s, y - 120 * s), (x + 120 * s, y)]
+    return [_blob(pts, tone=0.3, color=(190, 150, 80), seed=seed, smooth=6 * s), Stroke(pts + [pts[0]], 5 * s + 1, (140, 100, 50), seed=seed),
+            Text(text, x, y - 90 * s, 70 * s, (140, 100, 50))]
+
+
+ELEMENTS_EXTRA.update({
+    "cave": el_cave, "plank": el_plank, "hand": el_hand, "brush": el_brush, "snowman": el_snowman, "spider": el_spider, "ear": el_ear,
+    "machine": el_machine, "door": el_door, "plug": el_plug, "booth": el_booth, "sword": el_sword, "money": el_money,
 })
 
 

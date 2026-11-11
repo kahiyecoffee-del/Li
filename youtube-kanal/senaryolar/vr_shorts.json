@@ -1,0 +1,15 @@
+{
+  "cta": "full video on the channel",
+  "cta_scene": {
+    "say": {"en": "The full story is on the channel.", "tr": "Hikâyenin tamamı kanalda."},
+    "sketch": [{"el": "text", "x": 0.5, "y": 0.4, "text": "full video", "size": 1.6, "underline": "red"},
+               {"el": "text", "x": 0.5, "y": 0.62, "text": "on the channel", "size": 1.0, "color": "blue"}]
+  },
+  "shorts": [
+    {"from": 0, "to": 6, "title": "In 1965, he imagined a room\nwhere a fake bullet could kill"},
+    {"from": 29, "to": 37, "title": "They knew it wasn't real.\nThey still wouldn't step."},
+    {"from": 38, "to": 46, "title": "Your brain can adopt\na fake hand"},
+    {"from": 47, "to": 53, "title": "Your avatar changes\nyour personality"},
+    {"from": 76, "to": 87, "title": "Would you plug into\nthe experience machine?"}
+  ]
+}

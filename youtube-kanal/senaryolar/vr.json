@@ -1,0 +1,3317 @@
+{
+ "slug": "vr",
+ "format": "long",
+ "theme": "karakalem",
+ "character": "none",
+ "languages": [
+  "en"
+ ],
+ "subtitles": [
+  "tr"
+ ],
+ "voices": {
+  "en": "am_fenrir"
+ },
+ "speech_rate": 0.88,
+ "meta": {
+  "en": {
+   "title": "Would You Plug Into the Experience Machine?",
+   "description": "",
+   "tags": []
+  },
+  "tr": {
+   "title": "Deneyim Makinesine Bağlanır mıydın?",
+   "description": "",
+   "tags": []
+  }
+ },
+ "subscribe": {
+  "after": 11,
+  "sketch": [
+   {
+    "el": "subscribe",
+    "x": 0.45,
+    "y": 0.45,
+    "s": 1.4
+   },
+   {
+    "el": "arrow",
+    "x": 0.2,
+    "y": 0.75,
+    "x2": 0.33,
+    "y2": 0.55,
+    "color": "red",
+    "s": 1.2
+   }
+  ],
+  "say": {
+   "en": "Quick favor before we start: if you like questions about what's real, *subscribe*. It genuinely helps the channel.",
+   "tr": "Başlamadan küçük bir rica: Neyin gerçek olduğuyla ilgili sorulardan hoşlanıyorsan *abone ol*. Kanala gerçekten çok yardımı oluyor."
+  }
+ },
+ "scenes": [
+  {
+   "say": {
+    "en": "In 1965, a young computer scientist wrote an essay describing the *ultimate display*.",
+    "tr": "1965'te genç bir bilgisayar bilimcisi, *nihai ekranı* anlatan bir deneme yazdı."
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.2,
+     "text": "The Ultimate Display · 1965"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "*\"A chair displayed in such a room would be good enough to sit in,\"* he wrote.",
+    "tr": "*\"Böyle bir odada gösterilen bir sandalye üzerine oturulacak kadar iyi olurdu,\"* diye yazdı."
+   },
+   "sketch": [
+    {
+     "el": "room",
+     "x": 0.5,
+     "y": 0.82,
+     "s": 1.2
+    },
+    {
+     "el": "chair",
+     "x": 0.5,
+     "y": 0.78,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "*\"Handcuffs displayed in such a room would be confining, and a bullet displayed in such a room would be fatal.\"*",
+    "tr": "*\"Böyle bir odada gösterilen kelepçeler insanı bağlardı, böyle bir odada gösterilen bir kurşun ise öldürücü olurdu.\"*"
+   },
+   "sketch": [
+    {
+     "el": "room",
+     "x": 0.5,
+     "y": 0.82,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.55,
+     "text": "fatal",
+     "size": 1.6,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "His name was *Ivan Sutherland*. Three years later, he built one of the first head-mounted displays —",
+    "tr": "Adı *Ivan Sutherland*'dı. Üç yıl sonra ilk başa takılan ekranlardan birini yaptı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "Ivan Sutherland · 1968",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "a machine so heavy it had to hang from the ceiling.",
+    "tr": "Makine o kadar ağırdı ki tavana asılması gerekiyordu."
+   },
+   "sketch": [
+    {
+     "el": "sword",
+     "x": 0.5,
+     "y": 0.42,
+     "s": 1.1
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.9,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.9,
+     "h": 0.42,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.2,
+     "text": "Sword of Damocles",
+     "size": 0.9,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Today, millions of people wear its descendants on their faces.",
+    "tr": "Bugün milyonlarca insan onun torunlarını yüzlerinde taşıyor."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.15,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.42,
+     "pose": "point",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "figure",
+     "x": 0.45,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": -1,
+     "hat": "vr"
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.8,
+     "h": 0.42,
+     "pose": "shrug",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "figure",
+     "x": 0.75,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "figure",
+     "x": 0.88,
+     "y": 0.8,
+     "h": 0.3,
+     "pose": "stand",
+     "face": -1,
+     "child": true,
+     "hat": "vr"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And they raise a question philosophers have asked for two and a half thousand years: *if a world feels completely real... is it?*",
+    "tr": "Ve bu cihazlar, filozofların iki bin beş yüz yıldır sorduğu bir soruyu yeniden gündeme getiriyor: *Bir dünya tamamen gerçek hissettiriyorsa… gerçek midir?*"
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.32,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "globe",
+     "x": 0.7,
+     "y": 0.45,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.85,
+     "text": "real?",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In this video, you'll see why people refuse to step off a virtual ledge they *know* isn't there,",
+    "tr": "Bu videoda insanların orada olmadığını *bildikleri* sanal bir uçurumun kenarından neden adım atmadığını,"
+   },
+   "sketch": [
+    {
+     "el": "plank",
+     "x": 0.5,
+     "y": 0.55,
+     "s": 1.0
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.53,
+     "h": 0.4,
+     "pose": "shrug",
+     "face": 1,
+     "hat": "vr"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "how your brain can adopt a fake hand as its own,",
+    "tr": "beyninin sahte bir eli nasıl kendi eli sanabildiğini,"
+   },
+   "sketch": [
+    {
+     "el": "hand",
+     "x": 0.3,
+     "y": 0.7,
+     "s": 1.0
+    },
+    {
+     "el": "line",
+     "x": 0.47,
+     "y": 0.3,
+     "s": 1.0,
+     "x2": 0.47,
+     "y2": 0.75
+    },
+    {
+     "el": "hand",
+     "x": 0.65,
+     "y": 0.7,
+     "s": 1.0,
+     "color": [
+      205,
+      150,
+      140
+     ],
+     "tone": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "how an avatar can quietly change your personality —",
+    "tr": "bir avatarın kişiliğini nasıl sessizce değiştirebildiğini"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "arrow",
+     "x": 0.45,
+     "y": 0.5,
+     "x2": 0.58,
+     "y2": 0.45,
+     "bend": 0.0
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.62,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and why one philosopher's thought experiment suggests that most of us would refuse paradise, if it were made of code.",
+    "tr": "ve bir filozofun düşünce deneyine göre çoğumuzun koddan yapılmış bir cenneti neden reddedeceğini göreceksin."
+   },
+   "sketch": [
+    {
+     "el": "machine",
+     "x": 0.4,
+     "y": 0.85,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.15,
+     "text": "paradise?",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The idea of a convincing fake world is much older than computers.",
+    "tr": "İnandırıcı sahte bir dünya fikri bilgisayarlardan çok daha eski."
+   },
+   "sketch": [
+    {
+     "el": "hourglass",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "2,400 years",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Around 375 BC, in *The Republic*, Plato imagined prisoners chained inside a cave since birth.",
+    "tr": "MÖ 375 civarında Platon *Devlet*'te doğduklarından beri bir mağarada zincirli tutsakları hayal etti."
+   },
+   "image": {
+    "file": "File:Plato Silanion Musei Capitolini MC1377.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Plato · c. 428–348 BC",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "All they can see are shadows on a wall, cast by objects carried behind them.",
+    "tr": "Tek görebildikleri, arkalarından taşınan nesnelerin duvara düşen gölgeleri."
+   },
+   "sketch": [
+    {
+     "el": "cave",
+     "x": 0.5,
+     "y": 0.85,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "To them, the shadows *are* reality.",
+    "tr": "Onlar için gölgeler *gerçekliğin ta kendisi*."
+   },
+   "sketch": [
+    {
+     "el": "cave",
+     "x": 0.5,
+     "y": 0.85,
+     "s": 1.0,
+     "fire": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.75,
+     "text": "reality?",
+     "size": 1.2,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When one prisoner is freed and sees the real world, the light hurts his eyes.",
+    "tr": "Tutsaklardan biri serbest bırakılıp gerçek dünyayı gördüğünde ışık gözlerini acıtır."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "shrug",
+     "face": 1
+    },
+    {
+     "el": "dot",
+     "x": 0.75,
+     "y": 0.25,
+     "s": 2.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And when he returns to tell the others, they don't believe him.",
+    "tr": "Diğerlerine anlatmak için geri döndüğünde ise ona inanmazlar."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "point",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.55,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "figure",
+     "x": 0.85,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.2,
+     "text": "no.",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The phrase \"virtual reality\" itself came long before the technology.",
+    "tr": "\"Sanal gerçeklik\" ifadesinin kendisi de teknolojiden çok önce ortaya çıktı."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "\"virtual reality\"",
+     "size": 1.8,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1938, the French playwright *Antonin Artaud* described theater as *\"la réalité virtuelle\"* — a world that becomes real for the audience while it lasts.",
+    "tr": "1938'de Fransız oyun yazarı *Antonin Artaud* tiyatroyu *\"la réalité virtuelle\"*, yani sanal gerçeklik olarak tanımladı: sürdüğü süre boyunca seyirci için gerçek hale gelen bir dünya."
+   },
+   "sketch": [
+    {
+     "el": "line",
+     "x": 0.1,
+     "y": 0.2,
+     "s": 1.0,
+     "x2": 0.9,
+     "y2": 0.2,
+     "w": 1.5
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.62,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.62,
+     "h": 0.3,
+     "pose": "point",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.62,
+     "h": 0.3,
+     "pose": "stand",
+     "face": -1,
+     "hat": "dress"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.82,
+     "text": "la réalité virtuelle · 1938",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The machines came later.",
+    "tr": "Makineler daha sonra geldi."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "the machines",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1962, cinematographer *Morton Heilig* patented the *Sensorama* — a booth where you sat, looked into a stereoscopic screen,",
+    "tr": "1962'de görüntü yönetmeni *Morton Heilig*, *Sensorama*'nın patentini aldı. Bu bir kabindi: Oturuyor, stereoskopik bir ekrana bakıyordun"
+   },
+   "sketch": [
+    {
+     "el": "booth",
+     "x": 0.6,
+     "y": 0.85,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and rode a motorcycle through Brooklyn, with wind on your face, a vibrating seat, and even smells.",
+    "tr": "ve yüzünde rüzgâr, titreyen bir koltuk ve hatta kokularla Brooklyn'de motosiklet sürüyordun."
+   },
+   "sketch": [
+    {
+     "el": "booth",
+     "x": 0.55,
+     "y": 0.85,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.15,
+     "y": 0.2,
+     "text": "wind",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.15,
+     "y": 0.35,
+     "text": "vibration",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.15,
+     "y": 0.5,
+     "text": "smells",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Then came Sutherland's ceiling-mounted headset in 1968, nicknamed *\"The Sword of Damocles.\"*",
+    "tr": "Ardından 1968'de Sutherland'in tavana asılı başlığı geldi. Takma adı *\"Demokles'in Kılıcı\"*ydı."
+   },
+   "sketch": [
+    {
+     "el": "sword",
+     "x": 0.5,
+     "y": 0.42,
+     "s": 1.1
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.9,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.9,
+     "h": 0.42,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.2,
+     "text": "1968",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In the 1980s, *Jaron Lanier* and his company VPL popularized the term \"virtual reality\" and sold gloves that let you reach into digital worlds.",
+    "tr": "1980'lerde *Jaron Lanier* ve şirketi VPL \"sanal gerçeklik\" terimini yaygınlaştırdı ve dijital dünyalara uzanmayı sağlayan eldivenler sattı."
+   },
+   "sketch": [
+    {
+     "el": "hand",
+     "x": 0.35,
+     "y": 0.65,
+     "s": 1.2,
+     "color": [
+      90,
+      130,
+      200
+     ],
+     "tone": 0.7
+    },
+    {
+     "el": "arrow",
+     "x": 0.5,
+     "y": 0.5,
+     "x2": 0.62,
+     "y2": 0.5,
+     "bend": 0.0
+    },
+    {
+     "el": "screen",
+     "x": 0.75,
+     "y": 0.6,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "VPL · 1980s",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1995, Nintendo launched the *Virtual Boy*. It gave many players headaches, sold poorly, and was discontinued in less than a year.",
+    "tr": "1995'te Nintendo *Virtual Boy*'u piyasaya sürdü. Birçok oyuncunun başını ağrıttı, az sattı ve bir yıl dolmadan üretimden kaldırıldı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "think",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "text",
+     "x": 0.4,
+     "y": 0.15,
+     "text": "ouch",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "graph",
+     "x": 0.75,
+     "y": 0.45,
+     "s": 0.6,
+     "up": false
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.82,
+     "text": "1995",
+     "size": 0.9,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "For a while, VR seemed like a dream that would never work.",
+    "tr": "Bir süre VR asla işe yaramayacak bir hayal gibi göründü."
+   },
+   "sketch": [
+    {
+     "el": "bed",
+     "x": 0.45,
+     "y": 0.82,
+     "s": 1.2
+    },
+    {
+     "el": "figure",
+     "x": 0.52,
+     "y": 0.68,
+     "h": 0.4,
+     "pose": "lie",
+     "face": -1
+    },
+    {
+     "el": "bubble",
+     "x": 0.68,
+     "y": 0.3,
+     "s": 0.8,
+     "kind": "thought",
+     "tail": [
+      0.45,
+      0.58
+     ]
+    },
+    {
+     "el": "figure",
+     "x": 0.68,
+     "y": 0.4,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Then, in 2012, a young engineer named *Palmer Luckey* launched a Kickstarter campaign for a headset called *Oculus Rift*.",
+    "tr": "Sonra 2012'de *Palmer Luckey* adında genç bir mühendis *Oculus Rift* adlı bir başlık için Kickstarter kampanyası başlattı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "point",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "graph",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.12,
+     "text": "2012",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Two years later, Facebook bought the company for about two billion dollars.",
+    "tr": "İki yıl sonra Facebook şirketi yaklaşık iki milyar dolara satın aldı."
+   },
+   "sketch": [
+    {
+     "el": "money",
+     "x": 0.5,
+     "y": 0.7,
+     "s": 1.3
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "2014",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The shadows on the cave wall had become very, very convincing.",
+    "tr": "Mağara duvarındaki gölgeler çok, çok inandırıcı hale gelmişti."
+   },
+   "sketch": [
+    {
+     "el": "cave",
+     "x": 0.5,
+     "y": 0.85,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Here's the strange part: your brain is remarkably easy to fool.",
+    "tr": "İşin tuhaf yanı şu: Beynini kandırmak şaşırtıcı derecede kolay."
+   },
+   "sketch": [
+    {
+     "el": "brain",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "easy to fool",
+     "size": 1.2,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Researchers call it *presence* — the feeling of actually *being there*.",
+    "tr": "Araştırmacılar buna *mevcudiyet* (presence) diyor: gerçekten *orada olma* hissi."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "presence",
+     "size": 2.0,
+     "color": "ink",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.62,
+     "text": "= being there",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In one well-known experiment at the University of North Carolina in 2002, participants walked through a virtual room that ended in a deep pit.",
+    "tr": "2002'de Kuzey Carolina Üniversitesi'ndeki bilinen bir deneyde katılımcılar derin bir çukurla biten sanal bir odada yürüdü."
+   },
+   "sketch": [
+    {
+     "el": "pit",
+     "x": 0.6,
+     "y": 0.85,
+     "s": 1.0,
+     "figure_in": false
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.52,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.52,
+     "h": 0.4,
+     "pose": "walk",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "UNC · 2002",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A real wooden ledge on the floor matched the virtual edge.",
+    "tr": "Yerdeki gerçek bir tahta kenar, sanal kenarla birebir örtüşüyordu."
+   },
+   "sketch": [
+    {
+     "el": "plank",
+     "x": 0.5,
+     "y": 0.55,
+     "s": 1.0
+    },
+    {
+     "el": "circle",
+     "x": 0.32,
+     "y": 0.55,
+     "s": 1.0,
+     "rx": 120,
+     "ry": 60,
+     "color": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Everyone knew the pit wasn't real. They were standing in a lab.",
+    "tr": "Herkes çukurun gerçek olmadığını biliyordu. Bir laboratuvarda duruyorlardı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.3,
+     "text": "not real",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.3,
+     "text": "a lab",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And yet their heart rates went up as they approached the edge — and many refused to step forward.",
+    "tr": "Yine de kenara yaklaştıkça kalp atışları hızlandı ve birçoğu ileri adım atmayı reddetti."
+   },
+   "sketch": [
+    {
+     "el": "plank",
+     "x": 0.42,
+     "y": 0.55,
+     "s": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.53,
+     "h": 0.38,
+     "pose": "shrug",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "heart",
+     "x": 0.82,
+     "y": 0.25,
+     "s": 0.8
+    },
+    {
+     "el": "graph",
+     "x": 0.8,
+     "y": 0.62,
+     "s": 0.45
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In VR labs around the world, a simple version of this demo is still used: a narrow plank over a virtual drop.",
+    "tr": "Dünyanın dört bir yanındaki VR laboratuvarlarında bu deneyin basit bir versiyonu hâlâ kullanılıyor: sanal bir boşluğun üzerinde dar bir tahta."
+   },
+   "sketch": [
+    {
+     "el": "plank",
+     "x": 0.5,
+     "y": 0.55,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "People who are perfectly calm in a normal room suddenly crouch, hold their arms out, and shuffle like they're on a rooftop.",
+    "tr": "Normal bir odada gayet sakin olan insanlar birden çömeliyor, kollarını açıyor ve bir çatıdaymış gibi ayaklarını sürüyor."
+   },
+   "sketch": [
+    {
+     "el": "plank",
+     "x": 0.5,
+     "y": 0.55,
+     "s": 1.0
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.53,
+     "h": 0.36,
+     "pose": "shrug",
+     "face": 1,
+     "hat": "vr"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The rational part of you says: *it's not real.* An older part of you says: *don't fall.* And the older part usually wins.",
+    "tr": "Mantıklı yanın şöyle diyor: *Bu gerçek değil.* Daha eski bir yanın ise şöyle: *Düşme.* Ve genellikle eski olan kazanıyor."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "bubble",
+     "x": 0.6,
+     "y": 0.25,
+     "s": 0.55,
+     "kind": "speech",
+     "tail": null
+    },
+    {
+     "el": "text",
+     "x": 0.6,
+     "y": 0.25,
+     "text": "it's not real",
+     "size": 0.8,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "bubble",
+     "x": 0.75,
+     "y": 0.6,
+     "s": 0.55,
+     "kind": "speech",
+     "tail": null
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.6,
+     "text": "DON'T FALL",
+     "size": 0.9,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And your brain isn't only fooled about the world. It can be fooled about your *body*.",
+    "tr": "Ve beynin sadece dünya konusunda kandırılmıyor. *Bedenin* konusunda da kandırılabiliyor."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.6,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "circle",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.0,
+     "rx": 180,
+     "ry": 330
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1998, psychologists *Matthew Botvinick* and *Jonathan Cohen* published a simple experiment called the *rubber hand illusion*.",
+    "tr": "1998'de psikologlar *Matthew Botvinick* ve *Jonathan Cohen* *lastik el yanılsaması* adlı basit bir deney yayımladı."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "the rubber hand illusion",
+     "size": 1.4,
+     "color": "ink",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.58,
+     "text": "Botvinick & Cohen · 1998",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A participant's real hand is hidden behind a screen. A rubber hand is placed in front of them.",
+    "tr": "Katılımcının gerçek eli bir perdenin arkasına gizlenir. Önüne lastik bir el konur."
+   },
+   "sketch": [
+    {
+     "el": "hand",
+     "x": 0.27,
+     "y": 0.7,
+     "s": 1.0
+    },
+    {
+     "el": "line",
+     "x": 0.45,
+     "y": 0.25,
+     "s": 1.0,
+     "x2": 0.45,
+     "y2": 0.78,
+     "w": 1.6
+    },
+    {
+     "el": "hand",
+     "x": 0.65,
+     "y": 0.7,
+     "s": 1.0,
+     "color": [
+      205,
+      150,
+      140
+     ],
+     "tone": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.27,
+     "y": 0.35,
+     "text": "real",
+     "size": 0.9,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.65,
+     "y": 0.35,
+     "text": "rubber",
+     "size": 0.9,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Then the experimenter strokes both hands with a brush at the same time.",
+    "tr": "Sonra deneyi yapan kişi iki eli aynı anda bir fırçayla okşar."
+   },
+   "sketch": [
+    {
+     "el": "hand",
+     "x": 0.27,
+     "y": 0.7,
+     "s": 1.0
+    },
+    {
+     "el": "line",
+     "x": 0.45,
+     "y": 0.25,
+     "s": 1.0,
+     "x2": 0.45,
+     "y2": 0.78,
+     "w": 1.6
+    },
+    {
+     "el": "hand",
+     "x": 0.65,
+     "y": 0.7,
+     "s": 1.0,
+     "color": [
+      205,
+      150,
+      140
+     ],
+     "tone": 0.6
+    },
+    {
+     "el": "brush",
+     "x": 0.3,
+     "y": 0.52,
+     "s": 0.8
+    },
+    {
+     "el": "brush",
+     "x": 0.68,
+     "y": 0.52,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "After a minute or two, many people start to feel the touch *on the rubber hand*.",
+    "tr": "Bir iki dakika sonra birçok kişi dokunuşu *lastik elde* hissetmeye başlar."
+   },
+   "sketch": [
+    {
+     "el": "hand",
+     "x": 0.65,
+     "y": 0.7,
+     "s": 1.2,
+     "color": [
+      205,
+      150,
+      140
+     ],
+     "tone": 0.6
+    },
+    {
+     "el": "circle",
+     "x": 0.65,
+     "y": 0.6,
+     "s": 1.0,
+     "rx": 260,
+     "ry": 180
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.4,
+     "text": "mine?",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Some even flinch when someone threatens it.",
+    "tr": "Hatta biri lastik ele zarar verecekmiş gibi yapınca bazıları irkilir."
+   },
+   "sketch": [
+    {
+     "el": "hand",
+     "x": 0.6,
+     "y": 0.75,
+     "s": 1.0,
+     "color": [
+      205,
+      150,
+      140
+     ],
+     "tone": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.6,
+     "y": 0.35,
+     "text": "!",
+     "size": 3.0,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "shrug",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "VR takes this much further. With a headset and motion tracking, researchers have made people feel ownership over virtual bodies —",
+    "tr": "VR bunu çok daha ileri götürüyor. Bir başlık ve hareket takibiyle araştırmacılar insanlara sanal bedenlere sahiplik hissettirdi:"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "mirror",
+     "x": 0.68,
+     "y": 0.42,
+     "s": 0.9
+    },
+    {
+     "el": "figure",
+     "x": 0.68,
+     "y": 0.55,
+     "h": 0.32,
+     "pose": "stand",
+     "face": -1,
+     "hat": "dress"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "different heights, different ages, even bodies that look nothing like their own.",
+    "tr": "farklı boylar, farklı yaşlar, hatta kendilerine hiç benzemeyen bedenler."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1,
+     "child": true
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.6,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1,
+     "hat": "dress"
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "think",
+     "face": 1,
+     "hat": "wig"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Your sense of \"this is me\" isn't fixed. It's constantly being built — and it can be rebuilt.",
+    "tr": "\"Bu benim\" hissin sabit değil. Sürekli inşa ediliyor ve yeniden inşa edilebilir."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 0.7
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.42,
+     "text": "\"me\"",
+     "size": 1.6,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "If your body can change, can your behavior change too?",
+    "tr": "Bedenin değişebiliyorsa davranışın da değişebilir mi?"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "text",
+     "x": 0.65,
+     "y": 0.4,
+     "text": "behavior?",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 2007, *Nick Yee* and *Jeremy Bailenson* at Stanford tested this.",
+    "tr": "2007'de Stanford'da *Nick Yee* ve *Jeremy Bailenson* bunu test etti."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "Yee & Bailenson · 2007",
+     "size": 1.3,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They gave people avatars that were more or less attractive, or taller or shorter, and watched what happened.",
+    "tr": "İnsanlara daha çekici ya da daha az çekici, daha uzun ya da daha kısa avatarlar verip neler olduğunu izlediler."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.65,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1,
+     "hat": "dress"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "People with more attractive avatars walked closer to others in virtual space and shared more about themselves.",
+    "tr": "Daha çekici avatarı olanlar sanal ortamda diğerlerine daha yakın yürüdü ve kendileri hakkında daha çok şey paylaştı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.42,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "point",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.58,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": -1,
+     "hat": "dress"
+    },
+    {
+     "el": "bubble",
+     "x": 0.38,
+     "y": 0.18,
+     "s": 0.4,
+     "kind": "speech",
+     "tail": [
+      0.41,
+      0.3
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.38,
+     "y": 0.18,
+     "text": "so, I...",
+     "size": 0.7,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "People with taller avatars negotiated more aggressively than people with shorter ones.",
+    "tr": "Daha uzun avatarı olanlar, kısa avatarı olanlardan daha agresif pazarlık yaptı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.68,
+     "pose": "point",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.42,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "money",
+     "x": 0.5,
+     "y": 0.8,
+     "s": 0.4,
+     "text": "$"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The researchers named it the *Proteus effect*, after the Greek sea god who could change his shape.",
+    "tr": "Araştırmacılar buna, şekil değiştirebilen Yunan deniz tanrısının adını vererek *Proteus etkisi* dedi."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "the Proteus effect",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.58,
+     "text": "~ ~ ~ shape-shifter ~ ~ ~",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We don't just wear our avatars. In a small way, they wear *us*.",
+    "tr": "Avatarlarımızı sadece biz giymiyoruz. Küçük bir şekilde, onlar da *bizi* giyiyor."
+   },
+   "sketch": [
+    {
+     "el": "mask",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.3
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And there's one more side of virtual worlds that surprises people: they can be deeply *social*.",
+    "tr": "Ve sanal dünyaların insanları şaşırtan bir yanı daha var: Son derece *sosyal* olabiliyorlar."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": -1,
+     "hat": "vr"
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": -1,
+     "hat": "vr"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "social VR",
+     "size": 1.2,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "On social VR platforms, people meet as avatars — to talk, dance, watch movies, or just sit around a virtual campfire.",
+    "tr": "Sosyal VR platformlarında insanlar avatar olarak buluşuyor: sohbet etmek, dans etmek, film izlemek ya da sadece sanal bir kamp ateşinin etrafında oturmak için."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "campfire",
+     "x": 0.5,
+     "y": 0.8,
+     "s": 1.2
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.38,
+     "pose": "sit",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.38,
+     "pose": "sit",
+     "face": -1,
+     "hat": "vr"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Researchers have found that people can feel genuine *social presence* with others in VR — the sense that another mind is really there with you.",
+    "tr": "Araştırmacılar insanların VR'da başkalarıyla gerçek bir *sosyal mevcudiyet* hissedebildiğini buldu: başka bir zihnin gerçekten seninle orada olduğu hissi."
+   },
+   "sketch": [
+    {
+     "el": "heads",
+     "x": 0.5,
+     "y": 0.55,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "social presence",
+     "size": 1.2,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Some people say they've found their closest friends there. Some have even met their partners.",
+    "tr": "Bazı insanlar en yakın arkadaşlarını orada bulduklarını söylüyor. Hatta bazıları hayat arkadaşıyla orada tanışmış."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.42,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "figure",
+     "x": 0.58,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": -1,
+     "hat": "vr"
+    },
+    {
+     "el": "heart",
+     "x": 0.5,
+     "y": 0.2,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "For people who are isolated, disabled, or far from home, these worlds can be a lifeline.",
+    "tr": "Yalnız kalmış, engelli ya da evinden uzak insanlar için bu dünyalar bir can simidi olabiliyor."
+   },
+   "sketch": [
+    {
+     "el": "house",
+     "x": 0.25,
+     "y": 0.8,
+     "s": 0.6
+    },
+    {
+     "el": "arrow",
+     "x": 0.35,
+     "y": 0.55,
+     "x2": 0.6,
+     "y2": 0.45
+    },
+    {
+     "el": "figure",
+     "x": 0.75,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Remember the need to belong? It doesn't switch off when the world is made of pixels.",
+    "tr": "Ait olma ihtiyacını hatırlıyor musun? Dünya piksellerden oluştuğunda kapanmıyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "the need to belong",
+     "size": 1.5,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "That flexibility isn't only a weakness. Doctors have turned it into medicine.",
+    "tr": "Bu esneklik sadece bir zayıflık değil. Doktorlar onu bir tedaviye dönüştürdü."
+   },
+   "sketch": [
+    {
+     "el": "heart",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.82,
+     "text": "medicine",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "At the University of Washington, researchers *Hunter Hoffman* and *David Patterson* created a game called *SnowWorld* for burn patients.",
+    "tr": "Washington Üniversitesi'nde araştırmacılar *Hunter Hoffman* ve *David Patterson*, yanık hastaları için *SnowWorld* adlı bir oyun geliştirdi."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "snowman",
+     "x": 0.7,
+     "y": 0.8,
+     "s": 0.9
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "SnowWorld",
+     "size": 1.3,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "During painful wound care, patients threw snowballs at snowmen in an icy canyon.",
+    "tr": "Acı veren yara bakımı sırasında hastalar buzlu bir kanyonda kardan adamlara kartopu attı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "snowman",
+     "x": 0.75,
+     "y": 0.8,
+     "s": 0.9
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "point",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "marble",
+     "x": 0.52,
+     "y": 0.42,
+     "s": 1.2,
+     "color": "ink"
+    },
+    {
+     "el": "arrow",
+     "x": 0.38,
+     "y": 0.4,
+     "x2": 0.62,
+     "y2": 0.45,
+     "color": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Many reported significantly less pain while they played.",
+    "tr": "Birçoğu oynarken belirgin şekilde daha az acı hissettiğini söyledi."
+   },
+   "sketch": [
+    {
+     "el": "gauge",
+     "x": 0.5,
+     "y": 0.65,
+     "s": 1.3,
+     "value": 0.2,
+     "label": "pain"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "VR is also used for *exposure therapy*.",
+    "tr": "VR *maruz bırakma terapisinde* de kullanılıyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "exposure therapy",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "People with a fear of heights, flying, or spiders can face their fear step by step, in a world where nothing can actually hurt them.",
+    "tr": "Yükseklik, uçak ya da örümcek korkusu olan insanlar, gerçekte hiçbir şeyin onlara zarar veremeyeceği bir dünyada korkularıyla adım adım yüzleşebiliyor."
+   },
+   "sketch": [
+    {
+     "el": "spider",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "think",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "stairs",
+     "x": 0.4,
+     "y": 0.95,
+     "s": 0.5,
+     "n": 3
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It has also been used to help some veterans with PTSD.",
+    "tr": "Bazı gazilerin travma sonrası stres bozukluğuna yardım etmek için de kullanıldı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.45,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "think",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "heart",
+     "x": 0.7,
+     "y": 0.3,
+     "s": 0.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The same trick that makes you afraid of a virtual pit can help you stop being afraid of a real one.",
+    "tr": "Seni sanal bir çukurdan korkutan aynı numara, gerçek bir çukurdan korkmayı bırakmana da yardım edebilir."
+   },
+   "sketch": [
+    {
+     "el": "plank",
+     "x": 0.5,
+     "y": 0.55,
+     "s": 1.0
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.53,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "gauge",
+     "x": 0.85,
+     "y": 0.3,
+     "s": 0.5,
+     "value": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But there are costs.",
+    "tr": "Ama bedelleri de var."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "the costs",
+     "size": 1.8,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Many people feel *cybersickness* — nausea and dizziness.",
+    "tr": "Birçok kişi *siber hastalık* yaşıyor: mide bulantısı ve baş dönmesi."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.45,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "think",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.3,
+     "text": "@ # ~",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "One common explanation is *sensory conflict*: your eyes say you're moving, but your inner ear says you're standing still,",
+    "tr": "Yaygın açıklamalardan biri *duyusal çatışma*: Gözlerin hareket ettiğini söylüyor, iç kulağın ise yerinde durduğunu."
+   },
+   "sketch": [
+    {
+     "el": "eye",
+     "x": 0.27,
+     "y": 0.4,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.27,
+     "y": 0.6,
+     "text": "moving!",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "ear",
+     "x": 0.72,
+     "y": 0.42,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.68,
+     "text": "standing still",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and your brain doesn't like the disagreement.",
+    "tr": "Beynin de bu anlaşmazlığı sevmiyor."
+   },
+   "sketch": [
+    {
+     "el": "brain",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "?!",
+     "size": 2.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And some effects are stranger. In a 2010 study, psychologist *Frederick Aardema* and colleagues found that after a short session in VR,",
+    "tr": "Bazı etkiler daha da tuhaf. 2010'daki bir çalışmada psikolog *Frederick Aardema* ve arkadaşları, VR'da geçirilen kısa bir oturumdan sonra"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "Aardema · 2010",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "participants reported more *dissociative* experiences — and a weaker sense of presence in the real world around them.",
+    "tr": "katılımcıların daha fazla *dissosiyatif* deneyim bildirdiğini ve etraflarındaki gerçek dünyada mevcudiyet hislerinin zayıfladığını buldu."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "think",
+     "face": 1
+    },
+    {
+     "el": "house",
+     "x": 0.2,
+     "y": 0.8,
+     "s": 0.5
+    },
+    {
+     "el": "globe",
+     "x": 0.82,
+     "y": 0.45,
+     "s": 0.5
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "not quite here",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It was a small, temporary effect. But it hints at something:",
+    "tr": "Küçük ve geçici bir etkiydi. Ama bir şeye işaret ediyor:"
+   },
+   "sketch": [
+    {
+     "el": "gauge",
+     "x": 0.5,
+     "y": 0.65,
+     "s": 1.2,
+     "value": 0.4,
+     "label": "temporary"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "if a world can feel real enough to replace this one for a while, coming back isn't always seamless.",
+    "tr": "Bir dünya bir süreliğine bunun yerini alacak kadar gerçek hissettirebiliyorsa, geri dönmek her zaman pürüzsüz olmuyor."
+   },
+   "sketch": [
+    {
+     "el": "door",
+     "x": 0.5,
+     "y": 0.8,
+     "s": 1.2,
+     "open_": true
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "walk",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And this brings us to the most famous thought experiment about virtual worlds.",
+    "tr": "Ve bu bizi sanal dünyalarla ilgili en ünlü düşünce deneyine getiriyor."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.7,
+     "glow": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1974, the philosopher *Robert Nozick* asked his readers to imagine an *experience machine*.",
+    "tr": "1974'te filozof *Robert Nozick* okurlarından bir *deneyim makinesi* hayal etmelerini istedi."
+   },
+   "sketch": [
+    {
+     "el": "machine",
+     "x": 0.4,
+     "y": 0.85,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.1,
+     "text": "Nozick · 1974",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Neuroscientists could plug you in and give you any experiences you wanted — writing a great novel, falling in love, making a friend.",
+    "tr": "Sinirbilimciler seni makineye bağlayıp istediğin her deneyimi yaşatabilirdi: harika bir roman yazmak, âşık olmak, arkadaş edinmek."
+   },
+   "sketch": [
+    {
+     "el": "machine",
+     "x": 0.3,
+     "y": 0.85,
+     "s": 0.8
+    },
+    {
+     "el": "bubble",
+     "x": 0.72,
+     "y": 0.35,
+     "s": 1.0,
+     "kind": "thought",
+     "tail": null
+    },
+    {
+     "el": "books",
+     "x": 0.66,
+     "y": 0.42,
+     "s": 0.4
+    },
+    {
+     "el": "heart",
+     "x": 0.78,
+     "y": 0.3,
+     "s": 0.4
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It would feel completely real. You'd never know you were in the machine.",
+    "tr": "Tamamen gerçek hissettirirdi. Makinede olduğunu asla bilmezdin."
+   },
+   "sketch": [
+    {
+     "el": "machine",
+     "x": 0.4,
+     "y": 0.85,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.5,
+     "text": "100% real",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Would you plug in for the rest of your life?",
+    "tr": "Hayatının geri kalanı için makineye bağlanır mıydın?"
+   },
+   "sketch": [
+    {
+     "el": "plug",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.3
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.25,
+     "text": "?",
+     "size": 3.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Nozick bet that most people would say *no*. And when philosophers ask, most people do refuse.",
+    "tr": "Nozick insanların çoğunun *hayır* diyeceğine bahse girdi. Filozoflar sorduğunda da çoğu insan reddediyor."
+   },
+   "sketch": [
+    {
+     "el": "machine",
+     "x": 0.35,
+     "y": 0.85,
+     "s": 0.8
+    },
+    {
+     "el": "cross",
+     "x": 0.35,
+     "y": 0.6,
+     "s": 1.4,
+     "at": 1.5
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.4,
+     "text": "no",
+     "size": 2.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We seem to want to actually *do* things, not just feel like we're doing them. To actually *be* someone, not just experience being them.",
+    "tr": "Görünen o ki sadece bir şeyleri yapıyormuş gibi hissetmek değil, gerçekten *yapmak* istiyoruz. Birisi olmayı sadece deneyimlemek değil, gerçekten *o kişi olmak* istiyoruz."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.35,
+     "text": "feel",
+     "size": 1.3,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.3,
+     "y": 0.35,
+     "s": 0.6,
+     "at": 1.5
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.35,
+     "text": "DO",
+     "size": 1.6,
+     "color": "blue",
+     "underline": "blue"
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.6,
+     "text": "BE",
+     "size": 1.6,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But here's the twist. In 2010, philosopher *Felipe De Brigard* flipped the question.",
+    "tr": "Ama işin ilginç yanı şu: 2010'da filozof *Felipe De Brigard* soruyu tersine çevirdi."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "flip it",
+     "size": 1.8,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.65,
+     "text": "De Brigard · 2010",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "He told people: imagine you discover that you're *already* in the experience machine. Your whole life so far has been simulated.",
+    "tr": "İnsanlara şöyle dedi: *Zaten* deneyim makinesinde olduğunu keşfettiğini hayal et. Şimdiye kadarki bütün hayatın bir simülasyondu."
+   },
+   "sketch": [
+    {
+     "el": "machine",
+     "x": 0.4,
+     "y": 0.85,
+     "s": 1.0
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.86,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.33,
+     "y": 0.68,
+     "h": 0.35,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.12,
+     "text": "already?",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Do you want to unplug and return to your real life — which you know nothing about?",
+    "tr": "Fişi çekip hakkında hiçbir şey bilmediğin gerçek hayatına dönmek ister misin?"
+   },
+   "sketch": [
+    {
+     "el": "plug",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "door",
+     "x": 0.72,
+     "y": 0.8,
+     "s": 1.1
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.12,
+     "text": "???",
+     "size": 1.3,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Many people chose to *stay*.",
+    "tr": "Birçok kişi *kalmayı* seçti."
+   },
+   "sketch": [
+    {
+     "el": "machine",
+     "x": 0.4,
+     "y": 0.85,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.45,
+     "text": "stay",
+     "size": 2.0,
+     "color": "blue",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Maybe it isn't reality we're attached to. Maybe it's just the life we already have.",
+    "tr": "Belki de bağlı olduğumuz şey gerçeklik değil. Belki sadece zaten sahip olduğumuz hayat."
+   },
+   "sketch": [
+    {
+     "el": "house",
+     "x": 0.5,
+     "y": 0.8,
+     "s": 1.2
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "So is a virtual world real?",
+    "tr": "Peki sanal bir dünya gerçek midir?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "real?",
+     "size": 2.4,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In his 2022 book *Reality+*, philosopher *David Chalmers* argues something surprising: *yes*.",
+    "tr": "Filozof *David Chalmers* 2022 tarihli *Reality+* kitabında şaşırtıcı bir şey savunuyor: *Evet*."
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.3,
+     "y": 0.75,
+     "s": 1.0,
+     "n": 2
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.3,
+     "text": "Reality+",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.42,
+     "text": "YES",
+     "size": 2.4,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Not in the sense that a virtual chair is made of wood. But virtual objects are real *digital* objects.",
+    "tr": "Sanal bir sandalyenin tahtadan yapıldığı anlamında değil. Ama sanal nesneler gerçek *dijital* nesnelerdir."
+   },
+   "sketch": [
+    {
+     "el": "chair",
+     "x": 0.35,
+     "y": 0.78,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.4,
+     "text": "wood",
+     "size": 1.1,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.7,
+     "y": 0.4,
+     "s": 0.6,
+     "at": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.6,
+     "text": "digital",
+     "size": 1.2,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They exist, they have effects, and the experiences you have with them are genuine experiences.",
+    "tr": "Var olurlar, etkileri vardır ve onlarla yaşadığın deneyimler gerçek deneyimlerdir."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "sit",
+     "face": 1,
+     "hat": "vr"
+    },
+    {
+     "el": "chair",
+     "x": 0.62,
+     "y": 0.8,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In his view, a life in a virtual world could be a meaningful life — with real relationships, real achievements, real choices.",
+    "tr": "Ona göre sanal bir dünyadaki hayat anlamlı bir hayat olabilir: gerçek ilişkiler, gerçek başarılar, gerçek seçimlerle."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.25,
+     "text": "relationships",
+     "size": 1.1,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "achievements",
+     "size": 1.1,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.59,
+     "text": "choices",
+     "size": 1.1,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Virtual reality, he says, is *genuine reality*.",
+    "tr": "Sanal gerçeklik, diyor, *hakiki gerçekliktir*."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "genuine reality",
+     "size": 1.8,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Not everyone agrees. Critics point out that a world designed by someone else is also a world *controlled* by someone else —",
+    "tr": "Herkes aynı fikirde değil. Eleştirmenler, başkası tarafından tasarlanan bir dünyanın aynı zamanda başkası tarafından *kontrol edilen* bir dünya olduğuna dikkat çekiyor."
+   },
+   "sketch": [
+    {
+     "el": "demon",
+     "x": 0.5,
+     "y": 0.25,
+     "s": 0.6,
+     "strings_to": [
+      [
+       0.45,
+       0.55
+      ],
+      [
+       0.55,
+       0.55
+      ]
+     ]
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1,
+     "hat": "vr"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "with its owners deciding what you see, what you can do, and what it costs.",
+    "tr": "Neyi göreceğine, neyi yapabileceğine ve bunun neye mal olacağına sahipleri karar veriyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.25,
+     "text": "what you see",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "what you can do",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.59,
+     "text": "what it costs",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Which brings us back to Plato's cave. The prisoners weren't only fooled. Someone else was holding the objects that cast the shadows.",
+    "tr": "Bu da bizi Platon'un mağarasına geri getiriyor. Tutsaklar sadece kandırılmıyordu. Gölgeleri oluşturan nesneleri başka biri tutuyordu."
+   },
+   "sketch": [
+    {
+     "el": "cave",
+     "x": 0.5,
+     "y": 0.85,
+     "s": 1.0
+    },
+    {
+     "el": "figure",
+     "x": 0.68,
+     "y": 0.85,
+     "h": 0.35,
+     "pose": "reach",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Let's try something. Imagine three machines.",
+    "tr": "Bir şey deneyelim. Üç makine hayal et."
+   },
+   "sketch": [
+    {
+     "el": "door",
+     "x": 0.3,
+     "y": 0.8,
+     "s": 1.0,
+     "label": "1"
+    },
+    {
+     "el": "door",
+     "x": 0.5,
+     "y": 0.8,
+     "s": 1.0,
+     "label": "2"
+    },
+    {
+     "el": "door",
+     "x": 0.7,
+     "y": 0.8,
+     "s": 1.0,
+     "label": "3"
+    },
+    {
+     "el": "text",
+     "x": 0.1,
+     "y": 0.1,
+     "text": "try this",
+     "size": 1.0,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The first gives you a perfect life, but you'll never know it's not real.",
+    "tr": "Birincisi sana kusursuz bir hayat veriyor ama gerçek olmadığını asla bilmeyeceksin."
+   },
+   "sketch": [
+    {
+     "el": "door",
+     "x": 0.3,
+     "y": 0.8,
+     "s": 1.2,
+     "label": "1",
+     "open_": true
+    },
+    {
+     "el": "text",
+     "x": 0.65,
+     "y": 0.45,
+     "text": "never know",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The second gives you the same perfect life, but you'll *always* know it's a simulation.",
+    "tr": "İkincisi aynı kusursuz hayatı veriyor ama bir simülasyon olduğunu *her zaman* bileceksin."
+   },
+   "sketch": [
+    {
+     "el": "door",
+     "x": 0.3,
+     "y": 0.8,
+     "s": 1.2,
+     "label": "2",
+     "open_": true
+    },
+    {
+     "el": "text",
+     "x": 0.65,
+     "y": 0.45,
+     "text": "always know",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The third is just your real life — with all its boredom, failure, and people who sometimes disappoint you.",
+    "tr": "Üçüncüsü sadece senin gerçek hayatın: bütün sıkıntısı, başarısızlıkları ve bazen seni hayal kırıklığına uğratan insanlarıyla."
+   },
+   "sketch": [
+    {
+     "el": "door",
+     "x": 0.3,
+     "y": 0.8,
+     "s": 1.2,
+     "label": "3"
+    },
+    {
+     "el": "house",
+     "x": 0.68,
+     "y": 0.8,
+     "s": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.86,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Which would you choose? And here's the harder question: why does your answer change between the first and the second, if the experiences are exactly the same?",
+    "tr": "Hangisini seçerdin? Daha zor soru şu: Deneyimler tamamen aynıysa, cevabın birinci ve ikinci arasında neden değişiyor?"
+   },
+   "sketch": [
+    {
+     "el": "door",
+     "x": 0.35,
+     "y": 0.8,
+     "s": 1.0,
+     "label": "1"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.5,
+     "text": "≠",
+     "size": 2.0,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "door",
+     "x": 0.65,
+     "y": 0.8,
+     "s": 1.0,
+     "label": "2"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Whatever you answered tells you what you really value. Not just feeling good — but something about *truth*.",
+    "tr": "Verdiğin cevap sana gerçekten neye değer verdiğini söylüyor. Sadece iyi hissetmeye değil, *hakikat* dediğimiz bir şeye."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "feeling good",
+     "size": 1.1,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.58,
+     "text": "TRUTH",
+     "size": 2.0,
+     "color": "blue",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Ivan Sutherland imagined a room where a displayed bullet could be fatal. We're not there.",
+    "tr": "Ivan Sutherland, gösterilen bir kurşunun öldürücü olabileceği bir oda hayal etmişti. Henüz orada değiliz."
+   },
+   "sketch": [
+    {
+     "el": "room",
+     "x": 0.5,
+     "y": 0.82,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.5,
+     "text": "not yet",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But every year, the shadows on the wall get sharper.",
+    "tr": "Ama her yıl duvardaki gölgeler biraz daha keskinleşiyor."
+   },
+   "sketch": [
+    {
+     "el": "cave",
+     "x": 0.5,
+     "y": 0.85,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Maybe the real question isn't whether virtual worlds will become indistinguishable from this one.",
+    "tr": "Belki asıl soru, sanal dünyaların bu dünyadan ayırt edilemez hale gelip gelmeyeceği değil."
+   },
+   "sketch": [
+    {
+     "el": "globe",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.45,
+     "text": "=",
+     "size": 2.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "screen",
+     "x": 0.72,
+     "y": 0.55,
+     "s": 0.9
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Maybe it's whether we'll still remember that we chose to walk in — and that we can walk back out.",
+    "tr": "Belki de içeri girmeyi bizim seçtiğimizi ve geri çıkabileceğimizi hâlâ hatırlayıp hatırlamayacağımız."
+   },
+   "sketch": [
+    {
+     "el": "door",
+     "x": 0.6,
+     "y": 0.8,
+     "s": 1.2,
+     "open_": true
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "walk",
+     "face": 1,
+     "hat": "vr"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Because the most important thing about a cave... is knowing where the exit is.",
+    "tr": "Çünkü bir mağarayla ilgili en önemli şey… çıkışın nerede olduğunu bilmektir."
+   },
+   "sketch": [
+    {
+     "el": "cave",
+     "x": 0.5,
+     "y": 0.85,
+     "s": 1.0,
+     "fire": false
+    },
+    {
+     "el": "dot",
+     "x": 0.92,
+     "y": 0.4,
+     "s": 1.4
+    },
+    {
+     "el": "figure",
+     "x": 0.82,
+     "y": 0.85,
+     "h": 0.38,
+     "pose": "walk",
+     "face": 1
+    }
+   ]
+  }
+ ]
+}
