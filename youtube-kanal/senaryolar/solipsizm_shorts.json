@@ -1,0 +1,15 @@
+{
+  "cta": "full video on the channel",
+  "cta_scene": {
+    "say": {"en": "The full story is on the channel.", "tr": "Hikâyenin tamamı kanalda."},
+    "sketch": [{"el": "text", "x": 0.5, "y": 0.4, "text": "full video", "size": 1.6, "underline": "red"},
+               {"el": "text", "x": 0.5, "y": 0.62, "text": "on the channel", "size": 1.0, "color": "blue"}]
+  },
+  "shorts": [
+    {"from": 0, "to": 11, "title": "The only thing\nyou can be sure exists"},
+    {"from": 60, "to": 69, "title": "He refuted a philosopher\nby kicking a rock"},
+    {"from": 90, "to": 100, "title": "You were born\na solipsist"},
+    {"from": 107, "to": 114, "title": "\"I'm surprised\nthere are no others\""},
+    {"from": 137, "to": 146, "title": "The cure for radical doubt?\nBackgammon."}
+  ]
+}

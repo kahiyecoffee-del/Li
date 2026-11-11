@@ -1384,7 +1384,7 @@ def main():
     def srt_for(spans, lang):
         out = []
         for (sc, au), (st, _) in zip(timeline, spans):
-            out += [(a, b, plain(x)) for a, b, x in timed_chunks(sc["say"][lang], st, len(au[lang]) / SR, 42)]
+            out += [(a, b, plain(x)) for a, b, x in timed_chunks(sc["say"][lang], st, len(au[lang]) / SR, data.get("srt_chars", 42))]
         return out
 
     if args.mod == "ayri":

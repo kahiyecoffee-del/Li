@@ -513,7 +513,7 @@ meta = {
 }
 
 out = dict(slug="solipsizm", format="long", theme="karakalem", character="none", languages=["en"], subtitles=["tr"],
-           voices=deneme.get("voices", {"en": "bm_george"}), speech_rate=0.88, meta=meta, subscribe=deneme["subscribe"], scenes=scenes)
+           voices={"en": "am_fenrir"}, speech_rate=0.88, meta=meta, subscribe=deneme["subscribe"], scenes=scenes)
 json.dump(out, open(os.path.join(HERE, "solipsizm.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 words = sum(len(s["say"]["en"].split()) for s in scenes) + len(deneme["subscribe"]["say"]["en"].split())
 print(f"{len(scenes)} sahne, {words} kelime (~{words / 130:.1f} dk, yavaş okumayla)")
