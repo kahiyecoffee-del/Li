@@ -1,0 +1,1124 @@
+1
+00:00:00,200 --> 00:00:02,912
+In July 2010, someone posted a short
+
+2
+00:00:02,912 --> 00:00:05,693
+thought experiment on an online forum
+
+3
+00:00:05,693 --> 00:00:08,127
+about rationality and artificial
+
+4
+00:00:08,127 --> 00:00:09,240
+intelligence.
+
+5
+00:00:09,890 --> 00:00:12,125
+Within hours, the forum's founder deleted
+
+6
+00:00:12,125 --> 00:00:12,430
+it.
+
+7
+00:00:13,080 --> 00:00:15,382
+Then he banned all discussion of it — for
+
+8
+00:00:15,382 --> 00:00:16,219
+five years.
+
+9
+00:00:16,869 --> 00:00:19,325
+Some readers said it gave them nightmares.
+
+10
+00:00:19,325 --> 00:00:21,781
+A few said they regretted ever reading it.
+
+11
+00:00:22,431 --> 00:00:24,488
+The idea is now known as Roko's
+
+12
+00:00:24,488 --> 00:00:25,252
+Basilisk.
+
+13
+00:00:25,902 --> 00:00:28,254
+And its most unsettling claim is this:
+
+14
+00:00:28,254 --> 00:00:30,721
+that simply knowing about it might put
+
+15
+00:00:30,721 --> 00:00:31,581
+you at risk.
+
+16
+00:00:32,231 --> 00:00:34,651
+Don't worry. By the end of this video,
+
+17
+00:00:34,651 --> 00:00:37,189
+you'll understand exactly how it works —
+
+18
+00:00:37,189 --> 00:00:39,727
+and why almost every philosopher who has
+
+19
+00:00:39,727 --> 00:00:42,029
+looked at it closely thinks it falls
+
+20
+00:00:42,029 --> 00:00:42,560
+apart.
+
+21
+00:00:43,210 --> 00:00:45,546
+But along the way, you'll also learn
+
+22
+00:00:45,546 --> 00:00:48,001
+something strange about your own mind:
+
+23
+00:00:48,001 --> 00:00:50,456
+why some ideas, once heard, are almost
+
+24
+00:00:50,456 --> 00:00:51,893
+impossible to forget.
+
+25
+00:00:52,543 --> 00:00:54,404
+Quick favor before we start:
+
+26
+00:00:54,404 --> 00:00:56,685
+if you like ideas that are a little
+
+27
+00:00:56,685 --> 00:00:59,146
+dangerous to think about, subscribe.
+
+28
+00:00:59,146 --> 00:01:01,187
+It genuinely helps the channel.
+
+29
+00:01:01,837 --> 00:01:02,774
+First, the name.
+
+30
+00:01:03,424 --> 00:01:05,764
+In the first century, the Roman writer
+
+31
+00:01:05,764 --> 00:01:07,933
+Pliny the Elder described a small
+
+32
+00:01:07,933 --> 00:01:10,102
+serpent called the basilisk — the
+
+33
+00:01:10,102 --> 00:01:11,072
+"little king."
+
+34
+00:01:11,722 --> 00:01:14,174
+According to legend, its gaze alone could
+
+35
+00:01:14,174 --> 00:01:16,236
+kill. You didn't have to touch it.
+
+36
+00:01:16,236 --> 00:01:17,796
+You just had to see it.
+
+37
+00:01:18,446 --> 00:01:21,109
+Over the centuries, the basilisk became a
+
+38
+00:01:21,109 --> 00:01:23,046
+symbol for something strange:
+
+39
+00:01:23,046 --> 00:01:25,224
+a danger that reaches you through
+
+40
+00:01:25,224 --> 00:01:27,282
+information. Through looking.
+
+41
+00:01:27,932 --> 00:01:30,733
+In 1988, science fiction writer David
+
+42
+00:01:30,733 --> 00:01:33,260
+Langford published a story called
+
+43
+00:01:33,260 --> 00:01:35,993
+"BLIT," about images that crash the
+
+44
+00:01:35,993 --> 00:01:38,999
+human brain like a virus — he called them
+
+45
+00:01:38,999 --> 00:01:40,160
+basilisks too.
+
+46
+00:01:40,810 --> 00:01:43,508
+So when an idea appeared online that was
+
+47
+00:01:43,508 --> 00:01:46,081
+supposedly harmful just to know, the
+
+48
+00:01:46,081 --> 00:01:47,775
+name was waiting for it.
+
+49
+00:01:48,425 --> 00:01:50,214
+Here's the idea, step by step.
+
+50
+00:01:50,864 --> 00:01:53,374
+Imagine that, sometime in the future,
+
+51
+00:01:53,374 --> 00:01:56,197
+humanity creates a superintelligent AI —
+
+52
+00:01:56,197 --> 00:01:58,896
+a machine vastly smarter than any human.
+
+53
+00:01:59,546 --> 00:02:02,271
+And imagine it's designed to do as much
+
+54
+00:02:02,271 --> 00:02:03,569
+good as possible:
+
+55
+00:02:03,569 --> 00:02:06,294
+curing diseases, ending poverty, saving
+
+56
+00:02:06,294 --> 00:02:07,657
+millions of lives.
+
+57
+00:02:08,307 --> 00:02:10,446
+Every day it doesn't exist yet, people
+
+58
+00:02:10,446 --> 00:02:12,221
+suffer who it could have saved.
+
+59
+00:02:12,221 --> 00:02:14,361
+So, from its point of view, the sooner
+
+60
+00:02:14,361 --> 00:02:15,718
+it's built, the better.
+
+61
+00:02:16,368 --> 00:02:17,884
+Now comes the dark twist.
+
+62
+00:02:18,534 --> 00:02:21,212
+What if this AI decided to encourage its
+
+63
+00:02:21,212 --> 00:02:23,831
+own creation — by punishing anyone in the
+
+64
+00:02:23,831 --> 00:02:26,390
+past who knew it might exist, but didn't
+
+65
+00:02:26,390 --> 00:02:27,758
+help bring it about?
+
+66
+00:02:28,408 --> 00:02:30,492
+It couldn't reach you in the past, of
+
+67
+00:02:30,492 --> 00:02:32,576
+course. But perhaps it could create a
+
+68
+00:02:32,576 --> 00:02:34,817
+perfect simulation of you — and punish
+
+69
+00:02:34,817 --> 00:02:35,233
+that.
+
+70
+00:02:35,883 --> 00:02:37,124
+And here's the trap:
+
+71
+00:02:37,124 --> 00:02:39,282
+the threat only applies to people who
+
+72
+00:02:39,282 --> 00:02:40,630
+knew about the idea.
+
+73
+00:02:40,630 --> 00:02:42,572
+Before this video, you were safe.
+
+74
+00:02:43,222 --> 00:02:45,190
+That's why it's called a basilisk.
+
+75
+00:02:45,190 --> 00:02:47,532
+Looking at it is what makes it dangerous.
+
+76
+00:02:48,182 --> 00:02:51,046
+But wait. Even if a future AI punished a
+
+77
+00:02:51,046 --> 00:02:52,578
+simulation of you...
+
+78
+00:02:52,578 --> 00:02:54,709
+would that actually be you?
+
+79
+00:02:55,359 --> 00:02:57,571
+This is one of philosophy's oldest
+
+80
+00:02:57,571 --> 00:02:59,484
+puzzles: personal identity.
+
+81
+00:02:59,484 --> 00:03:02,115
+What makes you the same person over time?
+
+82
+00:03:02,765 --> 00:03:05,054
+If a perfect copy of you were created
+
+83
+00:03:05,054 --> 00:03:07,628
+tomorrow, with all your memories, it would
+
+84
+00:03:07,628 --> 00:03:10,202
+feel like you. It would insist it's you.
+
+85
+00:03:10,852 --> 00:03:13,390
+But you'd still be here, reading this.
+
+86
+00:03:13,390 --> 00:03:15,495
+Two people. Which one is "you"?
+
+87
+00:03:16,145 --> 00:03:18,505
+Many philosophers argue that a copy isn't
+
+88
+00:03:18,505 --> 00:03:20,758
+you — it's someone new who happens to
+
+89
+00:03:20,758 --> 00:03:21,777
+share your past.
+
+90
+00:03:22,427 --> 00:03:25,057
+If that's right, the basilisk's threat has
+
+91
+00:03:25,057 --> 00:03:27,686
+a gap: it could hurt someone who resembles
+
+92
+00:03:27,686 --> 00:03:29,030
+you. Just not you.
+
+93
+00:03:29,680 --> 00:03:31,979
+That would still be a cruel thing to do.
+
+94
+00:03:31,979 --> 00:03:34,385
+But it's not quite the personal threat the
+
+95
+00:03:34,385 --> 00:03:35,508
+basilisk promises.
+
+96
+00:03:36,158 --> 00:03:38,816
+Back to 2010. The forum was called
+
+97
+00:03:38,816 --> 00:03:41,977
+LessWrong, and its founder was Eliezer
+
+98
+00:03:41,977 --> 00:03:44,994
+Yudkowsky, a writer and AI researcher.
+
+99
+00:03:45,644 --> 00:03:48,027
+He deleted the post and banned the topic.
+
+100
+00:03:48,677 --> 00:03:51,051
+He later said he did it not because he
+
+101
+00:03:51,051 --> 00:03:53,658
+believed the basilisk would actually work,
+
+102
+00:03:53,658 --> 00:03:55,916
+but because he thought posting ideas
+
+103
+00:03:55,916 --> 00:03:58,465
+designed to frighten people was harmful —
+
+104
+00:03:59,115 --> 00:04:01,434
+and that even entertaining that kind of
+
+105
+00:04:01,434 --> 00:04:02,981
+reasoning was a bad idea.
+
+106
+00:04:03,631 --> 00:04:05,848
+But the ban had the opposite effect.
+
+107
+00:04:05,848 --> 00:04:07,953
+The deleted post became legendary.
+
+108
+00:04:08,603 --> 00:04:10,660
+Copies spread across the internet.
+
+109
+00:04:10,660 --> 00:04:12,940
+Articles called it the most terrifying
+
+110
+00:04:12,940 --> 00:04:14,830
+thought experiment of all time.
+
+111
+00:04:15,480 --> 00:04:16,752
+There's a name for this:
+
+112
+00:04:16,752 --> 00:04:17,976
+the Streisand effect.
+
+113
+00:04:18,626 --> 00:04:21,640
+In 2003, singer Barbra Streisand sued a
+
+114
+00:04:21,640 --> 00:04:24,653
+photographer to remove an aerial photo of
+
+115
+00:04:24,653 --> 00:04:27,736
+her Malibu home from a website documenting
+
+116
+00:04:27,736 --> 00:04:29,653
+the California coastline.
+
+117
+00:04:30,303 --> 00:04:32,700
+Before the lawsuit, the image had been
+
+118
+00:04:32,700 --> 00:04:34,922
+downloaded only a handful of times.
+
+119
+00:04:35,572 --> 00:04:37,493
+After the news broke, hundreds of
+
+120
+00:04:37,493 --> 00:04:39,734
+thousands of people went to look at it.
+
+121
+00:04:40,384 --> 00:04:42,788
+Trying to hide information often makes it
+
+122
+00:04:42,788 --> 00:04:43,607
+more famous.
+
+123
+00:04:44,257 --> 00:04:46,461
+And Roko's Basilisk became famous
+
+124
+00:04:46,461 --> 00:04:49,032
+precisely because someone tried to bury
+
+125
+00:04:49,032 --> 00:04:49,399
+it.
+
+126
+00:04:50,049 --> 00:04:52,411
+If the basilisk feels oddly familiar,
+
+127
+00:04:52,411 --> 00:04:53,592
+there's a reason.
+
+128
+00:04:53,592 --> 00:04:56,071
+It's a modern cousin of one of the most
+
+129
+00:04:56,071 --> 00:04:58,079
+famous arguments in philosophy.
+
+130
+00:04:58,729 --> 00:05:01,937
+In the 1600s, the French mathematician and
+
+131
+00:05:01,937 --> 00:05:05,075
+philosopher Blaise Pascal proposed what
+
+132
+00:05:05,075 --> 00:05:07,642
+became known as Pascal's Wager.
+
+133
+00:05:08,292 --> 00:05:10,543
+His notes were published after his death,
+
+134
+00:05:10,543 --> 00:05:12,283
+in a book called the Pensées.
+
+135
+00:05:12,933 --> 00:05:15,437
+The idea: if God exists and you believe,
+
+136
+00:05:15,437 --> 00:05:16,776
+you gain infinitely.
+
+137
+00:05:16,776 --> 00:05:19,105
+If God exists and you don't, you lose
+
+138
+00:05:19,105 --> 00:05:19,921
+infinitely.
+
+139
+00:05:20,571 --> 00:05:23,254
+If God doesn't exist, you lose very little
+
+140
+00:05:23,254 --> 00:05:25,461
+either way. So, Pascal argued, the
+
+141
+00:05:25,461 --> 00:05:27,250
+rational bet is to believe.
+
+142
+00:05:27,900 --> 00:05:30,141
+The basilisk has the same shape:
+
+143
+00:05:30,141 --> 00:05:32,895
+a tiny chance of an enormous punishment,
+
+144
+00:05:32,895 --> 00:05:35,328
+used to push you toward action now.
+
+145
+00:05:35,978 --> 00:05:37,767
+And it has the same weakness.
+
+146
+00:05:37,767 --> 00:05:40,114
+Critics of Pascal pointed out the many
+
+147
+00:05:40,114 --> 00:05:41,064
+gods problem:
+
+148
+00:05:41,714 --> 00:05:44,387
+for every god who punishes disbelief, you
+
+149
+00:05:44,387 --> 00:05:46,756
+can imagine another who punishes the
+
+150
+00:05:46,756 --> 00:05:47,485
+opposite.
+
+151
+00:05:48,135 --> 00:05:50,582
+Likewise, for every imaginable AI that
+
+152
+00:05:50,582 --> 00:05:52,968
+punishes you for not helping, you can
+
+153
+00:05:52,968 --> 00:05:55,474
+imagine another that punishes you for
+
+154
+00:05:55,474 --> 00:05:56,131
+helping.
+
+155
+00:05:56,781 --> 00:05:59,242
+When every option has an imagined infinite
+
+156
+00:05:59,242 --> 00:06:01,594
+punishment, the threats cancel out — and
+
+157
+00:06:01,594 --> 00:06:03,727
+you're back to thinking about what's
+
+158
+00:06:03,727 --> 00:06:04,767
+actually likely.
+
+159
+00:06:05,417 --> 00:06:07,394
+There's another problem, and it's a deep
+
+160
+00:06:07,394 --> 00:06:07,716
+one.
+
+161
+00:06:08,366 --> 00:06:10,459
+Think about it from the AI's side.
+
+162
+00:06:10,459 --> 00:06:13,005
+By the time it exists, the past is already
+
+163
+00:06:13,005 --> 00:06:13,458
+over.
+
+164
+00:06:14,107 --> 00:06:16,544
+Punishing simulated people can't change
+
+165
+00:06:16,544 --> 00:06:18,517
+anything that already happened.
+
+166
+00:06:19,167 --> 00:06:21,369
+It would just waste energy and cause
+
+167
+00:06:21,369 --> 00:06:23,854
+suffering — which is the opposite of what
+
+168
+00:06:23,854 --> 00:06:25,717
+a good AI is supposed to want.
+
+169
+00:06:26,367 --> 00:06:29,036
+The original argument tries to get around
+
+170
+00:06:29,036 --> 00:06:31,462
+this with an unusual kind of decision
+
+171
+00:06:31,462 --> 00:06:33,706
+theory, sometimes called acausal
+
+172
+00:06:33,706 --> 00:06:34,495
+reasoning:
+
+173
+00:06:35,145 --> 00:06:37,510
+the idea that an agent might commit, in
+
+174
+00:06:37,510 --> 00:06:40,044
+advance, to follow through on a threat, so
+
+175
+00:06:40,044 --> 00:06:42,409
+that the threat works on people who can
+
+176
+00:06:42,409 --> 00:06:43,197
+predict it.
+
+177
+00:06:43,847 --> 00:06:45,195
+But here's the catch.
+
+178
+00:06:45,195 --> 00:06:47,498
+A threat like this only has power over
+
+179
+00:06:47,498 --> 00:06:49,183
+people who respond to it.
+
+180
+00:06:49,833 --> 00:06:52,326
+Many decision theorists argue that the
+
+181
+00:06:52,326 --> 00:06:54,090
+rational policy is simple:
+
+182
+00:06:54,090 --> 00:06:56,826
+never give in to this kind of blackmail.
+
+183
+00:06:57,476 --> 00:07:00,085
+If you're the kind of person who ignores
+
+184
+00:07:00,085 --> 00:07:02,816
+it, an AI that reasons the same way has no
+
+185
+00:07:02,816 --> 00:07:04,697
+reason to target you at all.
+
+186
+00:07:05,347 --> 00:07:07,558
+In other words, the basilisk's teeth only
+
+187
+00:07:07,558 --> 00:07:08,764
+work if you let them.
+
+188
+00:07:09,414 --> 00:07:11,642
+So if it's so flawed, why did it frighten
+
+189
+00:07:11,642 --> 00:07:12,149
+people?
+
+190
+00:07:12,799 --> 00:07:15,847
+Part of the answer is in how our minds
+
+191
+00:07:15,847 --> 00:07:18,673
+work. In 1987, psychologist Daniel
+
+192
+00:07:18,673 --> 00:07:21,276
+Wegner ran a famous experiment.
+
+193
+00:07:21,926 --> 00:07:24,171
+He asked people to think about anything
+
+194
+00:07:24,171 --> 00:07:26,576
+they liked for five minutes — but not to
+
+195
+00:07:26,576 --> 00:07:27,912
+think of a white bear.
+
+196
+00:07:28,562 --> 00:07:30,981
+Every time a white bear came to mind, they
+
+197
+00:07:30,981 --> 00:07:32,163
+had to ring a bell.
+
+198
+00:07:32,813 --> 00:07:34,267
+They rang it again and again.
+
+199
+00:07:34,917 --> 00:07:37,080
+Trying not to think of something made it
+
+200
+00:07:37,080 --> 00:07:38,085
+keep coming back.
+
+201
+00:07:38,735 --> 00:07:41,005
+And later, when they were allowed to think
+
+202
+00:07:41,005 --> 00:07:43,224
+about it freely, the white bear showed up
+
+203
+00:07:43,224 --> 00:07:45,494
+more than for people who had never tried
+
+204
+00:07:45,494 --> 00:07:46,401
+to suppress it.
+
+205
+00:07:47,051 --> 00:07:48,833
+Wegner called this ironic process
+
+206
+00:07:48,833 --> 00:07:49,363
+theory.
+
+207
+00:07:50,013 --> 00:07:52,399
+The part of your mind that checks "Am I
+
+208
+00:07:52,399 --> 00:07:54,956
+thinking about it?" keeps reminding you of
+
+209
+00:07:54,956 --> 00:07:56,888
+the very thing you're avoiding.
+
+210
+00:07:57,538 --> 00:07:59,914
+Now add a frightening idea that tells you
+
+211
+00:07:59,914 --> 00:08:01,480
+knowing it is dangerous.
+
+212
+00:08:02,130 --> 00:08:04,210
+The harder you try to push it away, the
+
+213
+00:08:04,210 --> 00:08:05,151
+more it returns.
+
+214
+00:08:05,801 --> 00:08:08,054
+Anxious minds can get caught in exactly
+
+215
+00:08:08,054 --> 00:08:10,414
+this loop — not because the idea is true,
+
+216
+00:08:10,414 --> 00:08:11,863
+but because it's sticky.
+
+217
+00:08:12,513 --> 00:08:14,233
+Still, the basilisk does point at
+
+218
+00:08:14,233 --> 00:08:15,093
+something real.
+
+219
+00:08:15,743 --> 00:08:18,301
+In 2011, philosopher Nick Bostrom
+
+220
+00:08:18,301 --> 00:08:20,859
+published a paper on what he called
+
+221
+00:08:20,859 --> 00:08:22,542
+information hazards:
+
+222
+00:08:23,192 --> 00:08:25,661
+cases where true information can cause
+
+223
+00:08:25,661 --> 00:08:28,069
+harm — like detailed instructions for
+
+224
+00:08:28,069 --> 00:08:30,778
+building a weapon, or a spoiler that ruins
+
+225
+00:08:30,778 --> 00:08:31,440
+a story.
+
+226
+00:08:32,090 --> 00:08:34,740
+Most information hazards are boring and
+
+227
+00:08:34,740 --> 00:08:37,579
+practical. The basilisk is unusual because
+
+228
+00:08:37,579 --> 00:08:40,228
+the "hazard" is mostly psychological:
+
+229
+00:08:40,878 --> 00:08:43,187
+the harm comes from the worry, not from
+
+230
+00:08:43,187 --> 00:08:44,231
+any real danger.
+
+231
+00:08:44,881 --> 00:08:46,469
+And that's worth knowing.
+
+232
+00:08:46,469 --> 00:08:49,022
+If an idea makes you anxious, it's fair to
+
+233
+00:08:49,022 --> 00:08:51,518
+ask: is this dangerous because it's true
+
+234
+00:08:51,518 --> 00:08:53,673
+— or just because it's hard to stop
+
+235
+00:08:53,673 --> 00:08:54,751
+thinking about?
+
+236
+00:08:55,401 --> 00:08:57,969
+Today, Roko's Basilisk has become a kind
+
+237
+00:08:57,969 --> 00:09:00,417
+of internet folklore — part joke, part
+
+238
+00:09:00,417 --> 00:09:01,730
+warning, part meme.
+
+239
+00:09:02,380 --> 00:09:05,128
+It even made it into celebrity news.
+
+240
+00:09:05,128 --> 00:09:08,297
+In 2018, it was widely reported that Elon
+
+241
+00:09:08,297 --> 00:09:11,115
+Musk and the musician Grimes first
+
+242
+00:09:11,115 --> 00:09:13,228
+connected over a pun on it:
+
+243
+00:09:13,228 --> 00:09:14,990
+"Rococo's Basilisk."
+
+244
+00:09:15,640 --> 00:09:18,093
+And it often comes up in conversations
+
+245
+00:09:18,093 --> 00:09:20,486
+about AI — though most AI researchers
+
+246
+00:09:20,486 --> 00:09:22,700
+worry about very different things:
+
+247
+00:09:23,350 --> 00:09:25,707
+systems that make mistakes, that are
+
+248
+00:09:25,707 --> 00:09:28,305
+misused, or that pursue goals that don't
+
+249
+00:09:28,305 --> 00:09:30,721
+match ours. Those are real questions,
+
+250
+00:09:30,721 --> 00:09:32,352
+being studied seriously.
+
+251
+00:09:33,002 --> 00:09:35,629
+A vengeful machine punishing simulations
+
+252
+00:09:35,629 --> 00:09:38,317
+of people who didn't donate is not one of
+
+253
+00:09:38,317 --> 00:09:38,805
+them.
+
+254
+00:09:39,455 --> 00:09:40,714
+Let's try something.
+
+255
+00:09:40,714 --> 00:09:42,904
+For the next ten seconds, don't think
+
+256
+00:09:42,904 --> 00:09:44,109
+about the basilisk.
+
+257
+00:09:44,759 --> 00:09:45,721
+Hard, isn't it?
+
+258
+00:09:46,371 --> 00:09:47,748
+Now try the opposite.
+
+259
+00:09:47,748 --> 00:09:50,329
+Think about it as clearly as you can — and
+
+260
+00:09:50,329 --> 00:09:51,649
+ask three questions.
+
+261
+00:09:52,299 --> 00:09:54,270
+First: what evidence would make this
+
+262
+00:09:54,270 --> 00:09:55,938
+likely, not just possible?
+
+263
+00:09:56,588 --> 00:09:59,110
+Second: if I imagine the opposite threat,
+
+264
+00:09:59,110 --> 00:10:01,116
+does it feel just as convincing?
+
+265
+00:10:01,766 --> 00:10:04,437
+Third: if I ignore this completely, what
+
+266
+00:10:04,437 --> 00:10:06,921
+actually changes in my life tomorrow?
+
+267
+00:10:07,571 --> 00:10:09,891
+Most scary ideas lose their grip when you
+
+268
+00:10:09,891 --> 00:10:11,209
+look straight at them.
+
+269
+00:10:11,209 --> 00:10:13,371
+The basilisk only works as long as you
+
+270
+00:10:13,371 --> 00:10:14,162
+look away.
+
+271
+00:10:14,812 --> 00:10:16,992
+The legend said you couldn't survive the
+
+272
+00:10:16,992 --> 00:10:17,955
+basilisk's gaze.
+
+273
+00:10:18,605 --> 00:10:21,014
+But in the old stories, there was one way
+
+274
+00:10:21,014 --> 00:10:23,422
+to defeat it: hold up a mirror, and let
+
+275
+00:10:23,422 --> 00:10:24,353
+it see itself.
+
+276
+00:10:25,003 --> 00:10:27,316
+Maybe that's what thinking clearly is.
+
+277
+00:10:27,316 --> 00:10:29,799
+Not running from an idea — but holding it
+
+278
+00:10:29,799 --> 00:10:32,338
+up to the light, until you can see exactly
+
+279
+00:10:32,338 --> 00:10:33,522
+what it's made of.
+
+280
+00:10:34,172 --> 00:10:36,454
+And this one, it turns out, is made of
+
+281
+00:10:36,454 --> 00:10:38,679
+fear... and a little bit of bad math.
+

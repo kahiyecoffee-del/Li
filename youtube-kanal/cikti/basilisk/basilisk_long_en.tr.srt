@@ -1,0 +1,1136 @@
+1
+00:00:00,200 --> 00:00:03,640
+Temmuz 2010'da biri rasyonellik ve yapay
+
+2
+00:00:03,640 --> 00:00:07,000
+zekâ üzerine bir internet forumuna kısa
+
+3
+00:00:07,000 --> 00:00:09,240
+bir düşünce deneyi yazdı.
+
+4
+00:00:09,890 --> 00:00:12,007
+Birkaç saat içinde forumun kurucusu yazıyı
+
+5
+00:00:12,007 --> 00:00:12,430
+sildi.
+
+6
+00:00:13,080 --> 00:00:14,897
+Sonra konuyla ilgili her türlü tartışmayı
+
+7
+00:00:14,897 --> 00:00:16,219
+yasakladı: beş yıl boyunca.
+
+8
+00:00:16,869 --> 00:00:18,638
+Bazı okurlar yazının onlara kâbus
+
+9
+00:00:18,638 --> 00:00:19,817
+gördürdüğünü söyledi.
+
+10
+00:00:19,817 --> 00:00:21,781
+Birkaçı okuduklarına pişman olduğunu.
+
+11
+00:00:22,431 --> 00:00:24,620
+Bu fikir bugün Roko'nun Basiliski olarak
+
+12
+00:00:24,620 --> 00:00:25,252
+biliniyor.
+
+13
+00:00:25,902 --> 00:00:28,063
+Ve en rahatsız edici iddiası şu:
+
+14
+00:00:28,063 --> 00:00:30,779
+Sadece onu bilmek bile seni risk altına
+
+15
+00:00:30,779 --> 00:00:31,581
+sokabilir.
+
+16
+00:00:32,231 --> 00:00:34,880
+Merak etme. Bu videonun sonunda nasıl
+
+17
+00:00:34,880 --> 00:00:37,859
+işlediğini ve ona yakından bakan neredeyse
+
+18
+00:00:37,859 --> 00:00:40,773
+her filozofun neden çöktüğünü düşündüğünü
+
+19
+00:00:40,773 --> 00:00:42,560
+tam olarak anlayacaksın.
+
+20
+00:00:43,210 --> 00:00:45,446
+Ama yol boyunca kendi zihnin hakkında da
+
+21
+00:00:45,446 --> 00:00:47,006
+tuhaf bir şey öğreneceksin:
+
+22
+00:00:47,006 --> 00:00:49,190
+Bazı fikirler bir kez duyulduktan sonra
+
+23
+00:00:49,190 --> 00:00:51,425
+neden unutulması neredeyse imkânsız hale
+
+24
+00:00:51,425 --> 00:00:51,893
+gelir.
+
+25
+00:00:52,543 --> 00:00:54,457
+Başlamadan küçük bir rica:
+
+26
+00:00:54,457 --> 00:00:56,964
+Düşünmesi biraz tehlikeli fikirleri
+
+27
+00:00:56,964 --> 00:00:58,614
+seviyorsan abone ol.
+
+28
+00:00:58,614 --> 00:01:01,187
+Kanala gerçekten çok yardımı oluyor.
+
+29
+00:01:01,837 --> 00:01:02,774
+Önce isim.
+
+30
+00:01:03,424 --> 00:01:05,952
+Birinci yüzyılda Romalı yazar Yaşlı
+
+31
+00:01:05,952 --> 00:01:08,674
+Plinius, basilisk, yani "küçük kral"
+
+32
+00:01:08,674 --> 00:01:11,072
+denen küçük bir yılandan söz etti.
+
+33
+00:01:11,722 --> 00:01:13,676
+Efsaneye göre yalnızca bakışı bile
+
+34
+00:01:13,676 --> 00:01:16,000
+öldürebilirdi. Ona dokunman gerekmiyordu.
+
+35
+00:01:16,000 --> 00:01:17,796
+Sadece onu görmen yeterliydi.
+
+36
+00:01:18,446 --> 00:01:21,633
+Yüzyıllar içinde basilisk tuhaf bir şeyin
+
+37
+00:01:21,633 --> 00:01:23,371
+sembolü haline geldi:
+
+38
+00:01:23,371 --> 00:01:26,485
+sana bilgi yoluyla, bakarak ulaşan bir
+
+39
+00:01:26,485 --> 00:01:27,282
+tehlike.
+
+40
+00:01:27,932 --> 00:01:30,310
+1988'de bilimkurgu yazarı David
+
+41
+00:01:30,310 --> 00:01:33,163
+Langford, insan beynini bir virüs gibi
+
+42
+00:01:33,163 --> 00:01:36,220
+çökerten görüntüler hakkında "BLIT" adlı
+
+43
+00:01:36,220 --> 00:01:39,141
+bir öykü yayımladı ve onlara da basilisk
+
+44
+00:01:39,141 --> 00:01:40,160
+adını verdi.
+
+45
+00:01:40,810 --> 00:01:43,621
+Yani bilmesi bile zararlı olduğu söylenen
+
+46
+00:01:43,621 --> 00:01:46,305
+bir fikir internette ortaya çıktığında,
+
+47
+00:01:46,305 --> 00:01:47,775
+ismi onu bekliyordu.
+
+48
+00:01:48,425 --> 00:01:50,214
+Fikir adım adım şöyle.
+
+49
+00:01:50,864 --> 00:01:53,422
+Gelecekte bir gün insanlığın süper zeki
+
+50
+00:01:53,422 --> 00:01:55,802
+bir yapay zekâ yarattığını hayal et:
+
+51
+00:01:55,802 --> 00:01:58,301
+herhangi bir insandan çok daha zeki bir
+
+52
+00:01:58,301 --> 00:01:58,896
+makine.
+
+53
+00:01:59,546 --> 00:02:01,738
+Ve mümkün olduğunca çok iyilik yapmak
+
+54
+00:02:01,738 --> 00:02:03,382
+üzere tasarlandığını düşün:
+
+55
+00:02:03,382 --> 00:02:05,519
+hastalıkları iyileştiren, yoksulluğu
+
+56
+00:02:05,519 --> 00:02:07,657
+bitiren, milyonlarca hayat kurtaran.
+
+57
+00:02:08,307 --> 00:02:09,941
+Henüz var olmadığı her gün,
+
+58
+00:02:09,941 --> 00:02:12,121
+kurtarabileceği insanlar acı çekiyor.
+
+59
+00:02:12,121 --> 00:02:14,410
+Yani onun açısından ne kadar erken inşa
+
+60
+00:02:14,410 --> 00:02:15,718
+edilirse o kadar iyi.
+
+61
+00:02:16,368 --> 00:02:17,884
+Şimdi karanlık dönemece geliyoruz.
+
+62
+00:02:18,534 --> 00:02:20,578
+Ya bu yapay zekâ kendi yaratılmasını
+
+63
+00:02:20,578 --> 00:02:22,308
+teşvik etmeye karar verirse?
+
+64
+00:02:22,308 --> 00:02:24,614
+Geçmişte onun var olabileceğini bilen ama
+
+65
+00:02:24,614 --> 00:02:26,815
+ortaya çıkmasına yardım etmeyen herkesi
+
+66
+00:02:26,815 --> 00:02:27,758
+cezalandırarak.
+
+67
+00:02:28,408 --> 00:02:30,473
+Elbette sana geçmişte ulaşamazdı.
+
+68
+00:02:30,473 --> 00:02:32,251
+Ama belki senin kusursuz bir
+
+69
+00:02:32,251 --> 00:02:33,972
+simülasyonunu yaratıp onu
+
+70
+00:02:33,972 --> 00:02:35,233
+cezalandırabilirdi.
+
+71
+00:02:35,883 --> 00:02:38,251
+Ve tuzak şu: Tehdit yalnızca fikirden
+
+72
+00:02:38,251 --> 00:02:40,678
+haberdar olan insanlar için geçerli.
+
+73
+00:02:40,678 --> 00:02:42,572
+Bu videodan önce güvendeydin.
+
+74
+00:02:43,222 --> 00:02:44,640
+Bu yüzden adı basilisk.
+
+75
+00:02:44,640 --> 00:02:46,931
+Ona bakmak onu tehlikeli yapan şeyin ta
+
+76
+00:02:46,931 --> 00:02:47,532
+kendisi.
+
+77
+00:02:48,182 --> 00:02:50,394
+Ama bekle. Gelecekteki bir yapay zekâ
+
+78
+00:02:50,394 --> 00:02:52,883
+senin bir simülasyonunu cezalandırsa bile…
+
+79
+00:02:52,883 --> 00:02:54,709
+bu gerçekten sen olur muydu?
+
+80
+00:02:55,359 --> 00:02:57,877
+Bu, felsefenin en eski bulmacalarından
+
+81
+00:02:57,877 --> 00:02:59,474
+biri: kişisel kimlik.
+
+82
+00:02:59,474 --> 00:03:02,115
+Seni zaman içinde aynı kişi yapan nedir?
+
+83
+00:03:02,765 --> 00:03:05,075
+Yarın tüm anılarına sahip kusursuz bir
+
+84
+00:03:05,075 --> 00:03:07,441
+kopyan yaratılsa, o kopya kendini sen
+
+85
+00:03:07,441 --> 00:03:09,639
+gibi hissederdi. Sen olduğunda ısrar
+
+86
+00:03:09,639 --> 00:03:10,202
+ederdi.
+
+87
+00:03:10,852 --> 00:03:13,729
+Ama sen hâlâ burada, bunu okuyor olurdun.
+
+88
+00:03:13,729 --> 00:03:15,495
+İki kişi. Hangisi "sen"?
+
+89
+00:03:16,145 --> 00:03:18,830
+Birçok filozof kopyanın sen olmadığını
+
+90
+00:03:18,830 --> 00:03:21,777
+savunuyor: Geçmişini paylaşan yeni biri.
+
+91
+00:03:22,427 --> 00:03:24,785
+Bu doğruysa basiliskin tehdidinde bir
+
+92
+00:03:24,785 --> 00:03:27,203
+boşluk var: Sana benzeyen birine zarar
+
+93
+00:03:27,203 --> 00:03:29,030
+verebilir. Ama sana değil.
+
+94
+00:03:29,680 --> 00:03:31,754
+Bu yine de zalimce bir şey olurdu.
+
+95
+00:03:31,754 --> 00:03:34,219
+Ama basiliskin vaat ettiği kişisel tehdit
+
+96
+00:03:34,219 --> 00:03:35,508
+tam olarak bu değil.
+
+97
+00:03:36,158 --> 00:03:38,367
+2010'a dönelim. Forumun adı
+
+98
+00:03:38,367 --> 00:03:41,312
+LessWrong'du, kurucusu ise yazar ve
+
+99
+00:03:41,312 --> 00:03:43,963
+yapay zekâ araştırmacısı Eliezer
+
+100
+00:03:43,963 --> 00:03:44,994
+Yudkowsky.
+
+101
+00:03:45,644 --> 00:03:48,027
+Yazıyı sildi ve konuyu yasakladı.
+
+102
+00:03:48,677 --> 00:03:50,824
+Daha sonra bunu basiliskin gerçekten işe
+
+103
+00:03:50,824 --> 00:03:52,622
+yarayacağına inandığı için değil,
+
+104
+00:03:52,622 --> 00:03:54,619
+insanları korkutmak üzere tasarlanmış
+
+105
+00:03:54,619 --> 00:03:56,667
+fikirleri paylaşmanın zararlı olduğunu
+
+106
+00:03:56,667 --> 00:03:58,465
+düşündüğü için yaptığını söyledi.
+
+107
+00:03:59,115 --> 00:04:01,023
+Ve bu tür bir akıl yürütmeyi ciddiye
+
+108
+00:04:01,023 --> 00:04:02,981
+almanın bile kötü bir fikir olduğunu.
+
+109
+00:04:03,631 --> 00:04:06,173
+Ama yasak tam tersi bir etki yarattı.
+
+110
+00:04:06,173 --> 00:04:07,953
+Silinen yazı efsaneleşti.
+
+111
+00:04:08,603 --> 00:04:10,441
+Kopyaları internete yayıldı.
+
+112
+00:04:10,441 --> 00:04:13,051
+Makaleler onu tüm zamanların en korkutucu
+
+113
+00:04:13,051 --> 00:04:14,830
+düşünce deneyi olarak andı.
+
+114
+00:04:15,480 --> 00:04:16,699
+Bunun bir adı var:
+
+115
+00:04:16,699 --> 00:04:17,976
+Streisand etkisi.
+
+116
+00:04:18,626 --> 00:04:20,808
+2003'te şarkıcı Barbra Streisand,
+
+117
+00:04:20,808 --> 00:04:23,106
+Kaliforniya kıyılarını belgeleyen bir
+
+118
+00:04:23,106 --> 00:04:25,690
+sitede yer alan Malibu'daki evinin havadan
+
+119
+00:04:25,690 --> 00:04:28,160
+çekilmiş fotoğrafını kaldırtmak için bir
+
+120
+00:04:28,160 --> 00:04:29,653
+fotoğrafçıya dava açtı.
+
+121
+00:04:30,303 --> 00:04:33,690
+Davadan önce fotoğraf yalnızca birkaç kez
+
+122
+00:04:33,690 --> 00:04:34,922
+indirilmişti.
+
+123
+00:04:35,572 --> 00:04:37,950
+Haber duyulunca yüz binlerce kişi
+
+124
+00:04:37,950 --> 00:04:39,734
+fotoğrafa bakmaya gitti.
+
+125
+00:04:40,384 --> 00:04:42,533
+Bilgiyi saklamaya çalışmak çoğu zaman onu
+
+126
+00:04:42,533 --> 00:04:43,607
+daha da ünlü yapar.
+
+127
+00:04:44,257 --> 00:04:47,158
+Roko'nun Basiliski de tam olarak biri onu
+
+128
+00:04:47,158 --> 00:04:49,399
+gömmeye çalıştığı için ünlendi.
+
+129
+00:04:50,049 --> 00:04:52,260
+Basilisk sana tuhaf biçimde tanıdık
+
+130
+00:04:52,260 --> 00:04:54,238
+geliyorsa bunun bir sebebi var.
+
+131
+00:04:54,238 --> 00:04:56,857
+Felsefenin en ünlü argümanlarından birinin
+
+132
+00:04:56,857 --> 00:04:58,079
+modern bir kuzeni.
+
+133
+00:04:58,729 --> 00:05:01,655
+1600'lerde Fransız matematikçi ve filozof
+
+134
+00:05:01,655 --> 00:05:04,249
+Blaise Pascal, sonradan Pascal'ın
+
+135
+00:05:04,249 --> 00:05:07,110
+Bahsi olarak bilinecek bir fikir ortaya
+
+136
+00:05:07,110 --> 00:05:07,642
+attı.
+
+137
+00:05:08,292 --> 00:05:10,237
+Notları ölümünden sonra Düşünceler
+
+138
+00:05:10,237 --> 00:05:12,283
+(Pensées) adlı bir kitapta yayımlandı.
+
+139
+00:05:12,933 --> 00:05:15,844
+Fikir şu: Tanrı varsa ve inanırsan, sonsuz
+
+140
+00:05:15,844 --> 00:05:18,497
+kazanırsın. Tanrı varsa ve inanmazsan,
+
+141
+00:05:18,497 --> 00:05:19,921
+sonsuz kaybedersin.
+
+142
+00:05:20,571 --> 00:05:23,337
+Tanrı yoksa, her iki durumda da çok az
+
+143
+00:05:23,337 --> 00:05:26,306
+kaybedersin. Pascal'a göre rasyonel bahis
+
+144
+00:05:26,306 --> 00:05:27,250
+inanmaktır.
+
+145
+00:05:27,900 --> 00:05:29,551
+Basiliskin şekli de aynı:
+
+146
+00:05:29,551 --> 00:05:31,673
+Muazzam bir cezanın çok küçük bir
+
+147
+00:05:31,673 --> 00:05:34,090
+ihtimali, seni şimdi harekete geçirmek
+
+148
+00:05:34,090 --> 00:05:35,328
+için kullanılıyor.
+
+149
+00:05:35,978 --> 00:05:37,439
+Ve aynı zayıflığa sahip.
+
+150
+00:05:37,439 --> 00:05:39,711
+Pascal'ın eleştirmenleri birçok tanrı
+
+151
+00:05:39,711 --> 00:05:41,064
+sorununa dikkat çekti:
+
+152
+00:05:41,714 --> 00:05:44,001
+İnanmamayı cezalandıran her tanrı için,
+
+153
+00:05:44,001 --> 00:05:46,342
+tam tersini cezalandıran başka bir tanrı
+
+154
+00:05:46,342 --> 00:05:47,485
+hayal edebilirsin.
+
+155
+00:05:48,135 --> 00:05:50,245
+Aynı şekilde, yardım etmediğin için seni
+
+156
+00:05:50,245 --> 00:05:52,354
+cezalandıran her yapay zekâ için, yardım
+
+157
+00:05:52,354 --> 00:05:54,561
+ettiğin için seni cezalandıran başka bir
+
+158
+00:05:54,561 --> 00:05:56,131
+yapay zekâ hayal edebilirsin.
+
+159
+00:05:56,781 --> 00:05:58,907
+Her seçeneğin hayali sonsuz bir cezası
+
+160
+00:05:58,907 --> 00:06:01,137
+olduğunda tehditler birbirini götürür ve
+
+161
+00:06:01,137 --> 00:06:03,159
+sen yeniden neyin gerçekten muhtemel
+
+162
+00:06:03,159 --> 00:06:04,767
+olduğunu düşünmeye dönersin.
+
+163
+00:06:05,417 --> 00:06:07,716
+Bir sorun daha var ve derin bir sorun.
+
+164
+00:06:08,366 --> 00:06:10,452
+Yapay zekânın tarafından düşün.
+
+165
+00:06:10,452 --> 00:06:12,844
+O var olduğunda geçmiş çoktan bitmiş
+
+166
+00:06:12,844 --> 00:06:13,457
+olacak.
+
+167
+00:06:14,107 --> 00:06:16,339
+Simüle edilmiş insanları cezalandırmak
+
+168
+00:06:16,339 --> 00:06:18,517
+zaten olmuş hiçbir şeyi değiştiremez.
+
+169
+00:06:19,167 --> 00:06:21,736
+Sadece enerji israf eder ve acıya yol
+
+170
+00:06:21,736 --> 00:06:24,240
+açar; iyi bir yapay zekânın istemesi
+
+171
+00:06:24,240 --> 00:06:25,717
+gerekenin tam tersi.
+
+172
+00:06:26,367 --> 00:06:28,823
+Asıl argüman bunu alışılmadık bir karar
+
+173
+00:06:28,823 --> 00:06:30,636
+teorisiyle aşmaya çalışıyor.
+
+174
+00:06:30,636 --> 00:06:33,091
+Buna bazen nedensel olmayan (acausal)
+
+175
+00:06:33,091 --> 00:06:34,495
+akıl yürütme deniyor:
+
+176
+00:06:35,145 --> 00:06:37,893
+Bir aracının bir tehdidi önceden taahhüt
+
+177
+00:06:37,893 --> 00:06:40,641
+etmesi, böylece tehdidin onu öngörebilen
+
+178
+00:06:40,641 --> 00:06:43,197
+insanlar üzerinde işe yaraması fikri.
+
+179
+00:06:43,847 --> 00:06:45,194
+Ama işin püf noktası şu:
+
+180
+00:06:45,194 --> 00:06:47,438
+Böyle bir tehdit yalnızca ona boyun eğen
+
+181
+00:06:47,438 --> 00:06:49,183
+insanlar üzerinde güç sahibidir.
+
+182
+00:06:49,833 --> 00:06:51,961
+Birçok karar teorisyeni rasyonel
+
+183
+00:06:51,961 --> 00:06:54,394
+politikanın basit olduğunu savunuyor:
+
+184
+00:06:54,394 --> 00:06:56,826
+Bu tür bir şantaja asla boyun eğme.
+
+185
+00:06:57,476 --> 00:07:00,207
+Onu görmezden gelen biriysen, aynı şekilde
+
+186
+00:07:00,207 --> 00:07:02,937
+düşünen bir yapay zekânın seni hedef almak
+
+187
+00:07:02,937 --> 00:07:04,697
+için hiçbir sebebi yoktur.
+
+188
+00:07:05,347 --> 00:07:07,122
+Başka bir deyişle, basiliskin dişleri
+
+189
+00:07:07,122 --> 00:07:08,764
+ancak sen izin verirsen işe yarar.
+
+190
+00:07:09,414 --> 00:07:11,563
+Peki bu kadar kusurluysa, insanları neden
+
+191
+00:07:11,563 --> 00:07:12,149
+korkuttu?
+
+192
+00:07:12,799 --> 00:07:15,650
+Cevabın bir kısmı zihnimizin nasıl
+
+193
+00:07:15,650 --> 00:07:18,810
+çalıştığında. 1987'de psikolog Daniel
+
+194
+00:07:18,810 --> 00:07:21,275
+Wegner ünlü bir deney yaptı.
+
+195
+00:07:21,926 --> 00:07:24,189
+İnsanlardan beş dakika boyunca istedikleri
+
+196
+00:07:24,189 --> 00:07:26,353
+her şeyi düşünmelerini istedi; ama beyaz
+
+197
+00:07:26,353 --> 00:07:27,912
+bir ayıyı düşünmemelerini.
+
+198
+00:07:28,562 --> 00:07:30,693
+Akıllarına her beyaz ayı geldiğinde bir
+
+199
+00:07:30,693 --> 00:07:32,163
+zil çalmaları gerekiyordu.
+
+200
+00:07:32,813 --> 00:07:34,267
+Zili tekrar tekrar çaldılar.
+
+201
+00:07:34,917 --> 00:07:37,029
+Bir şeyi düşünmemeye çalışmak onun geri
+
+202
+00:07:37,029 --> 00:07:38,085
+gelmesini sağladı.
+
+203
+00:07:38,735 --> 00:07:41,003
+Daha sonra serbestçe düşünmelerine izin
+
+204
+00:07:41,003 --> 00:07:43,432
+verildiğinde, beyaz ayı onu hiç bastırmaya
+
+205
+00:07:43,432 --> 00:07:45,538
+çalışmamış insanlara göre daha sık
+
+206
+00:07:45,538 --> 00:07:46,401
+aklına geldi.
+
+207
+00:07:47,051 --> 00:07:49,363
+Wegner buna ironik süreç kuramı dedi.
+
+208
+00:07:50,013 --> 00:07:52,591
+Zihninin "Onu düşünüyor muyum?" diye
+
+209
+00:07:52,591 --> 00:07:55,434
+kontrol eden kısmı, kaçındığın şeyi sana
+
+210
+00:07:55,434 --> 00:07:56,888
+sürekli hatırlatır.
+
+211
+00:07:57,538 --> 00:07:59,657
+Şimdi buna bilmenin tehlikeli olduğunu
+
+212
+00:07:59,657 --> 00:08:01,480
+söyleyen korkutucu bir fikir ekle.
+
+213
+00:08:02,130 --> 00:08:04,159
+Onu uzaklaştırmaya ne kadar çok çalışırsan
+
+214
+00:08:04,159 --> 00:08:05,151
+o kadar geri gelir.
+
+215
+00:08:05,801 --> 00:08:08,040
+Kaygılı zihinler tam olarak bu döngüye
+
+216
+00:08:08,040 --> 00:08:10,170
+takılabilir; fikir doğru olduğu için
+
+217
+00:08:10,170 --> 00:08:11,863
+değil, yapışkan olduğu için.
+
+218
+00:08:12,513 --> 00:08:14,597
+Yine de basilisk gerçek bir şeye işaret
+
+219
+00:08:14,597 --> 00:08:15,093
+ediyor.
+
+220
+00:08:15,743 --> 00:08:18,559
+2011'de filozof Nick Bostrom, bilgi
+
+221
+00:08:18,559 --> 00:08:21,649
+tehlikeleri dediği şey üzerine bir makale
+
+222
+00:08:21,649 --> 00:08:22,542
+yayımladı:
+
+223
+00:08:23,192 --> 00:08:25,602
+Doğru bilginin zarar verebildiği durumlar;
+
+224
+00:08:25,602 --> 00:08:27,638
+bir silahın nasıl yapılacağına dair
+
+225
+00:08:27,638 --> 00:08:29,887
+ayrıntılı talimatlar ya da bir hikâyeyi
+
+226
+00:08:29,887 --> 00:08:31,440
+mahveden bir spoiler gibi.
+
+227
+00:08:32,090 --> 00:08:34,803
+Bilgi tehlikelerinin çoğu sıkıcı ve
+
+228
+00:08:34,803 --> 00:08:37,587
+pratiktir. Basilisk sıra dışı, çünkü
+
+229
+00:08:37,587 --> 00:08:40,228
+"tehlike" çoğunlukla psikolojik:
+
+230
+00:08:40,878 --> 00:08:43,017
+Zarar gerçek bir tehlikeden değil,
+
+231
+00:08:43,017 --> 00:08:44,231
+endişeden geliyor.
+
+232
+00:08:44,881 --> 00:08:46,291
+Ve bunu bilmeye değer.
+
+233
+00:08:46,291 --> 00:08:48,547
+Bir fikir seni kaygılandırıyorsa şunu
+
+234
+00:08:48,547 --> 00:08:50,916
+sormak hakkın: Bu doğru olduğu için mi
+
+235
+00:08:50,916 --> 00:08:53,454
+tehlikeli, yoksa sadece düşünmeyi bırakmak
+
+236
+00:08:53,454 --> 00:08:54,751
+zor olduğu için mi?
+
+237
+00:08:55,401 --> 00:08:58,079
+Bugün Roko'nun Basiliski bir tür internet
+
+238
+00:08:58,079 --> 00:08:59,418
+folkloruna dönüştü:
+
+239
+00:08:59,418 --> 00:09:01,730
+Biraz şaka, biraz uyarı, biraz mim.
+
+240
+00:09:02,380 --> 00:09:04,118
+Ünlü haberlerine bile girdi.
+
+241
+00:09:04,118 --> 00:09:06,079
+2018'de Elon Musk ile müzisyen
+
+242
+00:09:06,079 --> 00:09:08,433
+Grimes'ın ilk olarak bu fikir üzerine
+
+243
+00:09:08,433 --> 00:09:10,618
+yapılmış bir kelime oyunu üzerinden,
+
+244
+00:09:10,618 --> 00:09:12,524
+"Rococo's Basilisk" sayesinde
+
+245
+00:09:12,524 --> 00:09:14,990
+tanıştıkları yaygın olarak haber yapıldı.
+
+246
+00:09:15,640 --> 00:09:17,726
+Ve yapay zekâ konuşmalarında sık sık
+
+247
+00:09:17,726 --> 00:09:19,812
+gündeme geliyor. Ama çoğu yapay zekâ
+
+248
+00:09:19,812 --> 00:09:22,166
+araştırmacısı çok farklı şeylerden endişe
+
+249
+00:09:22,166 --> 00:09:22,700
+ediyor:
+
+250
+00:09:23,350 --> 00:09:25,646
+hata yapan, kötüye kullanılan ya da
+
+251
+00:09:25,646 --> 00:09:28,244
+bizimkilerle örtüşmeyen hedefler peşinde
+
+252
+00:09:28,244 --> 00:09:30,661
+koşan sistemler. Bunlar ciddi biçimde
+
+253
+00:09:30,661 --> 00:09:32,352
+incelenen gerçek sorular.
+
+254
+00:09:33,002 --> 00:09:35,489
+Bağış yapmayan insanların simülasyonlarını
+
+255
+00:09:35,489 --> 00:09:37,479
+cezalandıran intikamcı bir makine
+
+256
+00:09:37,479 --> 00:09:38,805
+bunlardan biri değil.
+
+257
+00:09:39,455 --> 00:09:40,794
+Bir şey deneyelim.
+
+258
+00:09:40,794 --> 00:09:43,407
+Önümüzdeki on saniye boyunca basiliski
+
+259
+00:09:43,407 --> 00:09:44,109
+düşünme.
+
+260
+00:09:44,759 --> 00:09:45,721
+Zor, değil mi?
+
+261
+00:09:46,371 --> 00:09:48,029
+Şimdi tersini dene.
+
+262
+00:09:48,029 --> 00:09:51,121
+Onu olabildiğince net düşün ve üç soru
+
+263
+00:09:51,121 --> 00:09:51,649
+sor.
+
+264
+00:09:52,299 --> 00:09:54,187
+Birincisi: Bunu sadece mümkün değil,
+
+265
+00:09:54,187 --> 00:09:55,938
+muhtemel yapacak kanıt ne olurdu?
+
+266
+00:09:56,588 --> 00:09:58,878
+İkincisi: Tam tersi tehdidi hayal edersem,
+
+267
+00:09:58,878 --> 00:10:01,116
+o da aynı derecede ikna edici geliyor mu?
+
+268
+00:10:01,766 --> 00:10:04,528
+Üçüncüsü: Bunu tamamen görmezden gelirsem,
+
+269
+00:10:04,528 --> 00:10:06,921
+yarın hayatımda gerçekte ne değişir?
+
+270
+00:10:07,571 --> 00:10:09,720
+Korkutucu fikirlerin çoğu, onlara doğrudan
+
+271
+00:10:09,720 --> 00:10:11,249
+baktığında etkisini kaybeder.
+
+272
+00:10:11,249 --> 00:10:13,207
+Basilisk ancak sen gözünü kaçırdığın
+
+273
+00:10:13,207 --> 00:10:14,162
+sürece işe yarar.
+
+274
+00:10:14,812 --> 00:10:16,984
+Efsaneye göre basiliskin bakışından
+
+275
+00:10:16,984 --> 00:10:17,955
+kurtulamazdın.
+
+276
+00:10:18,605 --> 00:10:21,218
+Ama eski hikâyelerde onu yenmenin bir yolu
+
+277
+00:10:21,218 --> 00:10:23,830
+vardı: Bir ayna tut ve kendini görmesini
+
+278
+00:10:23,830 --> 00:10:24,353
+sağla.
+
+279
+00:10:25,003 --> 00:10:27,275
+Belki açık düşünmek de budur.
+
+280
+00:10:27,275 --> 00:10:30,399
+Bir fikirden kaçmak değil; ne yapıldığını
+
+281
+00:10:30,399 --> 00:10:33,522
+tam olarak görene kadar onu ışığa tutmak.
+
+282
+00:10:34,172 --> 00:10:36,161
+Ve bu fikrin, anlaşılan o ki, korkudan… ve
+
+283
+00:10:36,161 --> 00:10:37,884
+biraz da kötü matematikten yapıldığı
+
+284
+00:10:37,884 --> 00:10:38,679
+ortaya çıkıyor.
+
