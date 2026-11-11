@@ -24,14 +24,22 @@ def norm(t):
 
 
 def chapters(srt, defs):
+    """Altyazıları tek bir metin akışına çevirip her bölümün ilk cümlesini sırayla arar."""
     items = parse_srt(srt)
-    out = []
+    stream, owners = "", []
+    for k, (ts, txt) in enumerate(items):
+        piece = norm(txt) + " "
+        stream += piece
+        owners += [k] * len(piece)
+    out, pos = [], 0
     for d in defs:
         key = norm(d["start"])
-        t = next((ts for ts, txt in items if norm(txt).startswith(key[:len(norm(txt))]) and key.startswith(norm(txt)[:min(len(key), 25)])), None)
-        if t is None:
+        idx = stream.find(key, pos)
+        if idx < 0:
             raise SystemExit(f"Bölüm bulunamadı: {d['start']}")
+        t = items[owners[idx]][0]
         out.append((0.0 if not out else t, d))
+        pos = idx + len(key)
     return out
 
 
