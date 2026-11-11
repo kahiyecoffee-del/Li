@@ -1221,6 +1221,160 @@ ELEMENTS_EXTRA.update({
 })
 
 
+def el_basilisk(x, y, s, toothless=False, faded=False, seed=0, **_):
+    """Taçlı yılan (basilisk): kıvrımlı gövde, taç, göz."""
+    tone = 0.3 if faded else 0.9
+    pts = []
+    for i in range(60):
+        u = i / 59
+        pts.append((x - 380 * s + u * 760 * s, y + 70 * s * math.sin(u * 2.6 * math.pi) * (1 - 0.3 * u)))
+    hx, hy = pts[-1]
+    m, o = mask_from(lambda d, T, ss: d.line([T(p) for p in pts], fill=255, width=int(48 * s * ss), joint="curve"),
+                     (x - 420 * s, y - 120 * s, x + 420 * s, y + 120 * s), smooth=6 * s)
+    out = [Fill(m, o, tone=tone, color=(60, 90, 60), seed=seed)]
+    head = [(hx - 30 * s, hy - 40 * s), (hx + 80 * s, hy - 30 * s), (hx + 110 * s, hy), (hx + 80 * s, hy + 30 * s), (hx - 30 * s, hy + 35 * s)]
+    out.append(_blob(head, tone=tone, color=(60, 90, 60), seed=seed + 1, smooth=4 * s))
+    crown = [(hx - 10 * s, hy - 40 * s), (hx, hy - 95 * s), (hx + 20 * s, hy - 55 * s), (hx + 40 * s, hy - 100 * s), (hx + 55 * s, hy - 52 * s),
+             (hx + 75 * s, hy - 90 * s), (hx + 80 * s, hy - 35 * s)]
+    out.append(_blob(crown, tone=0.9 if not faded else 0.3, color=(220, 175, 60), seed=seed + 2, smooth=2))
+    out.append(Stroke(ellipse_pts(hx + 50 * s, hy - 8 * s, 12 * s, 10 * s, n=12), 5 * s, RED, seed=seed + 3))
+    if not toothless:
+        for k in range(3):
+            tx = hx + 70 * s + k * 12 * s
+            out.append(Stroke([(tx, hy + 12 * s), (tx + 5 * s, hy + 32 * s)], 3 * s + 1, (240, 240, 240), 1, seed + 4 + k))
+    return out
+
+
+def el_bear(x, y, s, seed=0, **_):
+    """Beyaz ayı (kontur)."""
+    body = ellipse_pts(x, y, 210 * s, 120 * s, n=40, seed=seed)
+    out = [Stroke(body, 6 * s + 1, seed=seed),
+           Stroke(ellipse_pts(x + 230 * s, y - 70 * s, 85 * s, 70 * s, n=30, seed=seed + 1), 6 * s + 1, seed=seed + 1)]
+    for ex in (x + 185 * s, x + 255 * s):
+        out.append(Stroke(ellipse_pts(ex, y - 135 * s, 22 * s, 20 * s, n=14), 5 * s, seed=seed + 2))
+    out.append(Stroke(ellipse_pts(x + 300 * s, y - 60 * s, 12 * s, 10 * s, n=10), 5 * s, seed=seed + 3))
+    out.append(Stroke(ellipse_pts(x + 250 * s, y - 85 * s, 5 * s, 5 * s, n=8), 4 * s, seed=seed + 4))
+    for lx in (x - 140 * s, x - 60 * s, x + 60 * s, x + 140 * s):
+        out.append(Stroke([(lx, y + 90 * s), (lx, y + 190 * s), (lx + 30 * s, y + 190 * s)], 6 * s + 1, seed=seed + 5))
+    return out
+
+
+def el_post(x, y, s, deleted=False, title="Roko · 2010", seed=0, **_):
+    w, h = 620 * s, 380 * s
+    out = [Stroke(_rect(x - w / 2, y - h / 2, x + w / 2, y + h / 2), 5 * s + 1, seed=seed),
+           Stroke(ellipse_pts(x - w / 2 + 45 * s, y - h / 2 + 45 * s, 22 * s, 22 * s, n=14), 4 * s, seed=seed + 1),
+           Text(title, x - w / 2 + 180 * s, y - h / 2 + 45 * s, 34 * s, INK)]
+    for k in range(5):
+        yy = y - h / 2 + 110 * s + k * 48 * s
+        out.append(Stroke([(x - w / 2 + 30 * s, yy), (x + w / 2 - 30 * s - (k % 2) * 90 * s, yy)], 3 * s, COLORS["grey"], 1, seed + 2 + k))
+    if deleted:
+        out += el_cross(x, y, s * 1.8, seed=seed + 9)
+        out.append(Text("DELETED", x, y + h / 2 + 60 * s, 70 * s, RED))
+    return out
+
+
+def el_lock(x, y, s, text=None, seed=0, **_):
+    out = el_padlock(x, y, s * 1.2, seed=seed)
+    if text:
+        out.append(Text(text, x, y + 200 * s, 60 * s, RED))
+    return out
+
+
+def el_balance(x, y, s, tilt=0.0, left=None, right=None, seed=0, **_):
+    out = [Stroke([(x, y + 260 * s), (x, y - 160 * s)], 7 * s + 1, seed=seed),
+           Stroke([(x - 120 * s, y + 260 * s), (x + 120 * s, y + 260 * s)], 7 * s + 1, seed=seed + 1)]
+    lx, ly = x - 300 * s, y - 160 * s + tilt * 120 * s
+    rx, ry = x + 300 * s, y - 160 * s - tilt * 120 * s
+    out.append(Stroke([(lx, ly), (rx, ry)], 6 * s + 1, seed=seed + 2))
+    for k, (px, py, lab) in enumerate(((lx, ly, left), (rx, ry, right))):
+        out.append(Stroke([(px, py), (px - 90 * s, py + 150 * s)], 2, COLORS["grey"], 1, seed + 5 + k))
+        out.append(Stroke([(px, py), (px + 90 * s, py + 150 * s)], 2, COLORS["grey"], 1, seed + 7 + k))
+        out.append(Stroke(bez((px - 110 * s, py + 150 * s), (px, py + 230 * s), (px + 110 * s, py + 150 * s), 14), 5 * s + 1, (190, 140, 50), seed=seed + 9 + k))
+        if lab:
+            out.append(Text(lab, px, py + 95 * s, 70 * s, RED if k == 0 else BLUE))
+    return out
+
+
+def el_ai(x, y, s, seed=0, **_):
+    """Yapay zekâ çekirdeği: parlayan daire, devre çizgileri."""
+    out = []
+    m, o = mask_from(lambda d, T, ss: d.ellipse([T((x - 110 * s, y - 110 * s)), T((x + 110 * s, y + 110 * s))], fill=255),
+                     (x - 112 * s, y - 112 * s, x + 112 * s, y + 112 * s), smooth=3)
+    out.append(Fill(m, o, tone=0.85, color=(90, 130, 200), seed=seed))
+    out.append(Stroke(ellipse_pts(x, y, 60 * s, 60 * s, n=24, seed=seed), 5 * s, (240, 240, 250), 1, seed + 1))
+    for k in range(8):
+        a = k * math.pi / 4
+        p0 = (x + math.cos(a) * 130 * s, y + math.sin(a) * 130 * s)
+        p1 = (x + math.cos(a) * 220 * s, y + math.sin(a) * 220 * s)
+        p2 = (p1[0] + (40 * s if k % 2 else 0), p1[1] + (0 if k % 2 else 40 * s))
+        out.append(Stroke([p0, p1, p2], 4 * s, (90, 130, 200), 1, seed + 2 + k))
+        out.append(Stroke(ellipse_pts(p2[0], p2[1], 10 * s, 10 * s, n=10), 4 * s, (90, 130, 200), 1, seed + 12 + k))
+    return out
+
+
+def el_timeline(x, y, s, left="now", right="future", seed=0, W=1920, **_):
+    x0, x1 = 0.1 * W, 0.9 * W
+    out = [Stroke([(x0, y), (x1, y)], 6 * s + 1, seed=seed),
+           Stroke([(x1 - 30 * s, y - 20 * s), (x1, y), (x1 - 30 * s, y + 20 * s)], 6 * s + 1, seed=seed + 1)]
+    for k in range(7):
+        xx = x0 + k * (x1 - x0) / 7
+        out.append(Stroke([(xx, y - 15 * s), (xx, y + 15 * s)], 3 * s, seed=seed + 2 + k))
+    out.append(Text(left, x0 + 60 * s, y + 60 * s, 50 * s, INK))
+    out.append(Text(right, x1 - 80 * s, y + 60 * s, 50 * s, BLUE))
+    return out
+
+
+def el_film(x, y, s, text="SPOILER", seed=0, **_):
+    w, h = 600 * s, 200 * s
+    out = [Stroke(_rect(x - w / 2, y - h / 2, x + w / 2, y + h / 2), 5 * s + 1, seed=seed)]
+    for k in range(8):
+        xx = x - w / 2 + 30 * s + k * 75 * s
+        out.append(Stroke(_rect(xx, y - h / 2 + 12 * s, xx + 30 * s, y - h / 2 + 32 * s), 3 * s, seed=seed + k))
+        out.append(Stroke(_rect(xx, y + h / 2 - 32 * s, xx + 30 * s, y + h / 2 - 12 * s), 3 * s, seed=seed + 10 + k))
+    out.append(Text(text, x, y, 70 * s, RED))
+    return out
+
+
+def el_magnifier(x, y, s, seed=0, **_):
+    return [Stroke(ellipse_pts(x, y, 110 * s, 110 * s, n=36, seed=seed), 9 * s + 1, seed=seed),
+            Stroke([(x + 80 * s, y + 80 * s), (x + 230 * s, y + 230 * s)], 18 * s + 1, (120, 80, 50), seed=seed + 1),
+            Stroke([(x - 50 * s, y - 40 * s), (x - 20 * s, y - 70 * s)], 4 * s, (170, 190, 210), 1, seed + 2)]
+
+
+def el_calendar(x, y, s, text="tomorrow", seed=0, **_):
+    w, h = 320 * s, 300 * s
+    out = [Stroke(_rect(x - w / 2, y - h / 2, x + w / 2, y + h / 2), 6 * s + 1, seed=seed),
+           Stroke([(x - w / 2, y - h / 2 + 70 * s), (x + w / 2, y - h / 2 + 70 * s)], 5 * s, RED, seed=seed + 1)]
+    for k in range(3):
+        for j in range(4):
+            cx, cy = x - w / 2 + 50 * s + j * 75 * s, y - h / 2 + 115 * s + k * 55 * s
+            out.append(Stroke(_rect(cx - 15 * s, cy - 15 * s, cx + 15 * s, cy + 15 * s), 2, COLORS["grey"], 1, seed + 3 + k * 4 + j))
+    out.append(Text(text, x, y + h / 2 + 50 * s, 46 * s, BLUE))
+    return out
+
+
+def el_warning(x, y, s, seed=0, **_):
+    out = [Stroke([(x, y - 170 * s), (x + 190 * s, y + 140 * s), (x - 190 * s, y + 140 * s), (x, y - 170 * s)], 10 * s + 1, RED, seed=seed),
+           Stroke([(x, y - 60 * s), (x, y + 50 * s)], 14 * s + 1, RED, seed=seed + 1),
+           Stroke(ellipse_pts(x, y + 95 * s, 10 * s, 10 * s, n=10), 10 * s, RED, seed=seed + 2)]
+    return out
+
+
+def el_countdown(x, y, s, n=10, seed=0, **_):
+    out = [Stroke(ellipse_pts(x, y, 200 * s, 200 * s, n=40, seed=seed), 7 * s + 1, seed=seed)]
+    for k in range(12):
+        a = k * math.pi / 6
+        out.append(Stroke([(x + math.cos(a) * 170 * s, y + math.sin(a) * 170 * s), (x + math.cos(a) * 195 * s, y + math.sin(a) * 195 * s)], 3 * s, seed=seed + k))
+    out.append(Text(str(n), x, y, 150 * s, RED))
+    return out
+
+
+ELEMENTS_EXTRA.update({
+    "basilisk": el_basilisk, "bear": el_bear, "post": el_post, "lock": el_lock, "balance": el_balance, "ai": el_ai, "timeline": el_timeline,
+    "film": el_film, "magnifier": el_magnifier, "calendar": el_calendar, "warning": el_warning, "countdown": el_countdown,
+})
+
+
 # --------------------------------------------------------------------------- #
 # Sahne: öğeleri sırayla çizer
 # --------------------------------------------------------------------------- #

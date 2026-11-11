@@ -1,0 +1,2626 @@
+{
+ "slug": "basilisk",
+ "format": "long",
+ "theme": "karakalem",
+ "character": "none",
+ "languages": [
+  "en"
+ ],
+ "subtitles": [
+  "tr"
+ ],
+ "voices": {
+  "en": "am_fenrir"
+ },
+ "speech_rate": 0.88,
+ "meta": {
+  "en": {
+   "title": "Roko's Basilisk",
+   "description": "",
+   "tags": []
+  },
+  "tr": {
+   "title": "Roko'nun Basiliski",
+   "description": "",
+   "tags": []
+  }
+ },
+ "subscribe": {
+  "after": 8,
+  "sketch": [
+   {
+    "el": "subscribe",
+    "x": 0.45,
+    "y": 0.45,
+    "s": 1.4
+   },
+   {
+    "el": "arrow",
+    "x": 0.2,
+    "y": 0.75,
+    "x2": 0.33,
+    "y2": 0.55,
+    "color": "red",
+    "s": 1.2
+   }
+  ],
+  "say": {
+   "en": "Quick favor before we start: if you like ideas that are a little dangerous to think about, *subscribe*. It genuinely helps the channel.",
+   "tr": "Başlamadan küçük bir rica: Düşünmesi biraz tehlikeli fikirleri seviyorsan *abone ol*. Kanala gerçekten çok yardımı oluyor."
+  }
+ },
+ "scenes": [
+  {
+   "say": {
+    "en": "In July 2010, someone posted a short thought experiment on an online forum about rationality and artificial intelligence.",
+    "tr": "Temmuz 2010'da biri rasyonellik ve yapay zekâ üzerine bir internet forumuna kısa bir düşünce deneyi yazdı."
+   },
+   "sketch": [
+    {
+     "el": "post",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.3
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "July 2010",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Within hours, the forum's founder deleted it.",
+    "tr": "Birkaç saat içinde forumun kurucusu yazıyı sildi."
+   },
+   "sketch": [
+    {
+     "el": "post",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.3,
+     "deleted": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Then he banned all discussion of it — for *five years*.",
+    "tr": "Sonra konuyla ilgili her türlü tartışmayı yasakladı: *beş yıl* boyunca."
+   },
+   "sketch": [
+    {
+     "el": "lock",
+     "x": 0.5,
+     "y": 0.38,
+     "s": 1.5,
+     "text": "5 years"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Some readers said it gave them nightmares. A few said they regretted ever reading it.",
+    "tr": "Bazı okurlar yazının onlara kâbus gördürdüğünü söyledi. Birkaçı okuduklarına pişman olduğunu."
+   },
+   "sketch": [
+    {
+     "el": "moon",
+     "x": 0.82,
+     "y": 0.15,
+     "s": 0.9
+    },
+    {
+     "el": "bed",
+     "x": 0.42,
+     "y": 0.82,
+     "s": 1.2
+    },
+    {
+     "el": "figure",
+     "x": 0.42,
+     "y": 0.72,
+     "h": 0.42,
+     "pose": "sitbed",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.62,
+     "y": 0.25,
+     "text": "!",
+     "size": 2.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The idea is now known as *Roko's Basilisk*.",
+    "tr": "Bu fikir bugün *Roko'nun Basiliski* olarak biliniyor."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.6
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "Roko's Basilisk",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And its most unsettling claim is this: that simply *knowing about it* might put you at risk.",
+    "tr": "Ve en rahatsız edici iddiası şu: Sadece onu *bilmek* bile seni risk altına sokabilir."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 0.65
+    },
+    {
+     "el": "warning",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Don't worry. By the end of this video, you'll understand exactly how it works — and why almost every philosopher who has looked at it closely thinks it falls apart.",
+    "tr": "Merak etme. Bu videonun sonunda nasıl işlediğini ve ona yakından bakan neredeyse her filozofun neden çöktüğünü düşündüğünü tam olarak anlayacaksın."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.4,
+     "toothless": true
+    },
+    {
+     "el": "magnifier",
+     "x": 0.75,
+     "y": 0.35,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But along the way, you'll also learn something strange about your own mind: why some ideas, once heard, are almost impossible to forget.",
+    "tr": "Ama yol boyunca kendi zihnin hakkında da tuhaf bir şey öğreneceksin: Bazı fikirler bir kez duyulduktan sonra neden unutulması neredeyse imkânsız hale gelir."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 0.65
+    },
+    {
+     "el": "bubble",
+     "x": 0.68,
+     "y": 0.3,
+     "s": 0.9,
+     "kind": "thought",
+     "tail": [
+      0.42,
+      0.35
+     ]
+    },
+    {
+     "el": "bear",
+     "x": 0.63,
+     "y": 0.32,
+     "s": 0.4
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "First, the name.",
+    "tr": "Önce isim."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "basilisk",
+     "size": 2.2,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In the first century, the Roman writer *Pliny the Elder* described a small serpent called the *basilisk* — the \"little king.\"",
+    "tr": "Birinci yüzyılda Romalı yazar *Yaşlı Plinius*, *basilisk*, yani \"küçük kral\" denen küçük bir yılandan söz etti."
+   },
+   "image": {
+    "file": "File:Basilisk (1640).png",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "the basilisk · Renaissance woodcut",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "According to legend, its gaze alone could kill. You didn't have to touch it. You just had to *see* it.",
+    "tr": "Efsaneye göre yalnızca bakışı bile öldürebilirdi. Ona dokunman gerekmiyordu. Sadece onu *görmen* yeterliydi."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "arrow",
+     "x": 0.48,
+     "y": 0.42,
+     "x2": 0.7,
+     "y2": 0.5,
+     "color": "red",
+     "bend": 0.0
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "lie",
+     "face": -1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Over the centuries, the basilisk became a symbol for something strange: a danger that reaches you through *information*. Through looking.",
+    "tr": "Yüzyıllar içinde basilisk tuhaf bir şeyin sembolü haline geldi: sana *bilgi* yoluyla, bakarak ulaşan bir tehlike."
+   },
+   "sketch": [
+    {
+     "el": "eye",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 1.1
+    },
+    {
+     "el": "arrow",
+     "x": 0.5,
+     "y": 0.45,
+     "x2": 0.65,
+     "y2": 0.45,
+     "bend": 0.0
+    },
+    {
+     "el": "warning",
+     "x": 0.78,
+     "y": 0.45,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1988, science fiction writer *David Langford* published a story called *\"BLIT,\"* about images that crash the human brain like a virus — he called them basilisks too.",
+    "tr": "1988'de bilimkurgu yazarı *David Langford*, insan beynini bir virüs gibi çökerten görüntüler hakkında *\"BLIT\"* adlı bir öykü yayımladı ve onlara da basilisk adını verdi."
+   },
+   "sketch": [
+    {
+     "el": "screen",
+     "x": 0.3,
+     "y": 0.6,
+     "s": 1.0
+    },
+    {
+     "el": "arrow",
+     "x": 0.45,
+     "y": 0.45,
+     "x2": 0.6,
+     "y2": 0.45,
+     "bend": 0.0,
+     "color": "red"
+    },
+    {
+     "el": "brain",
+     "x": 0.75,
+     "y": 0.45,
+     "s": 0.8,
+     "spot": [
+      0,
+      -0.2
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "BLIT · 1988",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "So when an idea appeared online that was supposedly harmful just to *know*, the name was waiting for it.",
+    "tr": "Yani bilmesi bile zararlı olduğu söylenen bir fikir internette ortaya çıktığında, ismi onu bekliyordu."
+   },
+   "sketch": [
+    {
+     "el": "post",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "a basilisk",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Here's the idea, step by step.",
+    "tr": "Fikir adım adım şöyle."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "step by step",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Imagine that, sometime in the future, humanity creates a *superintelligent AI* — a machine vastly smarter than any human.",
+    "tr": "Gelecekte bir gün insanlığın *süper zeki bir yapay zekâ* yarattığını hayal et: herhangi bir insandan çok daha zeki bir makine."
+   },
+   "sketch": [
+    {
+     "el": "ai",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.3
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "superintelligence",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And imagine it's designed to do as much good as possible: curing diseases, ending poverty, saving millions of lives.",
+    "tr": "Ve mümkün olduğunca çok iyilik yapmak üzere tasarlandığını düşün: hastalıkları iyileştiren, yoksulluğu bitiren, milyonlarca hayat kurtaran."
+   },
+   "sketch": [
+    {
+     "el": "ai",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.9
+    },
+    {
+     "el": "heart",
+     "x": 0.65,
+     "y": 0.3,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.55,
+     "text": "cures",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.7,
+     "text": "saves lives",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Every day it doesn't exist yet, people suffer who it could have saved. So, from its point of view, the sooner it's built, the better.",
+    "tr": "Henüz var olmadığı her gün, kurtarabileceği insanlar acı çekiyor. Yani onun açısından ne kadar erken inşa edilirse o kadar iyi."
+   },
+   "sketch": [
+    {
+     "el": "timeline",
+     "x": 0.5,
+     "y": 0.7,
+     "s": 1.0
+    },
+    {
+     "el": "ai",
+     "x": 0.85,
+     "y": 0.35,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.4,
+     "y": 0.35,
+     "text": "sooner = better",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Now comes the dark twist.",
+    "tr": "Şimdi karanlık dönemece geliyoruz."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "What if this AI decided to *encourage* its own creation — by punishing anyone in the past who knew it might exist, but didn't help bring it about?",
+    "tr": "Ya bu yapay zekâ kendi yaratılmasını *teşvik etmeye* karar verirse? Geçmişte onun var olabileceğini bilen ama ortaya çıkmasına yardım etmeyen herkesi cezalandırarak."
+   },
+   "sketch": [
+    {
+     "el": "timeline",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 1.0
+    },
+    {
+     "el": "ai",
+     "x": 0.85,
+     "y": 0.35,
+     "s": 0.6
+    },
+    {
+     "el": "arrow",
+     "x": 0.75,
+     "y": 0.4,
+     "x2": 0.3,
+     "y2": 0.5,
+     "color": "red",
+     "bend": 0.3
+    },
+    {
+     "el": "figure",
+     "x": 0.22,
+     "y": 0.7,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It couldn't reach you in the past, of course. But perhaps it could create a perfect *simulation* of you — and punish that.",
+    "tr": "Elbette sana geçmişte ulaşamazdı. Ama belki senin kusursuz bir *simülasyonunu* yaratıp onu cezalandırabilirdi."
+   },
+   "sketch": [
+    {
+     "el": "screen",
+     "x": 0.5,
+     "y": 0.62,
+     "s": 1.6
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.55,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "a simulation of you",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And here's the trap: the threat only applies to people who *knew* about the idea. Before this video, you were safe.",
+    "tr": "Ve tuzak şu: Tehdit yalnızca fikirden *haberdar olan* insanlar için geçerli. Bu videodan önce güvendeydin."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "now you know",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "That's why it's called a basilisk. Looking at it is what makes it dangerous.",
+    "tr": "Bu yüzden adı basilisk. Ona bakmak onu tehlikeli yapan şeyin ta kendisi."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 1.3
+    },
+    {
+     "el": "eye",
+     "x": 0.82,
+     "y": 0.45,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But wait. Even if a future AI punished a simulation of you... would that actually be *you*?",
+    "tr": "Ama bekle. Gelecekteki bir yapay zekâ senin bir simülasyonunu cezalandırsa bile… bu gerçekten *sen* olur muydu?"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "screen",
+     "x": 0.72,
+     "y": 0.55,
+     "s": 0.9
+    },
+    {
+     "el": "figure",
+     "x": 0.72,
+     "y": 0.5,
+     "h": 0.15,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "you?",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "This is one of philosophy's oldest puzzles: *personal identity*. What makes you the same person over time?",
+    "tr": "Bu, felsefenin en eski bulmacalarından biri: *kişisel kimlik*. Seni zaman içinde aynı kişi yapan nedir?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "personal identity",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.25,
+     "pose": "stand",
+     "face": 1,
+     "child": true
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "think",
+     "face": 1,
+     "hat": "wig"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "If a perfect copy of you were created tomorrow, with all your memories, it would *feel* like you. It would insist it's you.",
+    "tr": "Yarın tüm anılarına sahip kusursuz bir kopyan yaratılsa, o kopya *kendini* sen gibi hissederdi. Sen olduğunda ısrar ederdi."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.38,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.62,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": -1,
+     "tone": 0.6
+    },
+    {
+     "el": "bubble",
+     "x": 0.68,
+     "y": 0.2,
+     "s": 0.5,
+     "kind": "speech",
+     "tail": [
+      0.63,
+      0.3
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.2,
+     "text": "I'm you!",
+     "size": 0.8,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But you'd still be here, reading this. Two people. Which one is \"you\"?",
+    "tr": "Ama sen hâlâ burada, bunu okuyor olurdun. İki kişi. Hangisi \"sen\"?"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.38,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.62,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": -1,
+     "tone": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.38,
+     "y": 0.2,
+     "text": "me?",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.62,
+     "y": 0.2,
+     "text": "me?",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Many philosophers argue that a copy isn't you — it's someone *new* who happens to share your past.",
+    "tr": "Birçok filozof kopyanın sen olmadığını savunuyor: Geçmişini paylaşan *yeni* biri."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.38,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.62,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": -1,
+     "tone": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.62,
+     "y": 0.15,
+     "text": "someone new",
+     "size": 1.0,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "If that's right, the basilisk's threat has a gap: it could hurt someone who resembles you. Just not *you*.",
+    "tr": "Bu doğruysa basiliskin tehdidinde bir boşluk var: Sana benzeyen birine zarar verebilir. Ama *sana* değil."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.42,
+     "text": "not you",
+     "size": 1.5,
+     "color": "blue",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "That would still be a cruel thing to do. But it's not quite the personal threat the basilisk promises.",
+    "tr": "Bu yine de zalimce bir şey olurdu. Ama basiliskin vaat ettiği kişisel tehdit tam olarak bu değil."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.2
+    },
+    {
+     "el": "circle",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.0,
+     "rx": 520,
+     "ry": 200,
+     "color": "ink"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Back to 2010. The forum was called *LessWrong*, and its founder was *Eliezer Yudkowsky*, a writer and AI researcher.",
+    "tr": "2010'a dönelim. Forumun adı *LessWrong*'du, kurucusu ise yazar ve yapay zekâ araştırmacısı *Eliezer Yudkowsky*."
+   },
+   "sketch": [
+    {
+     "el": "post",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.2,
+     "title": "LessWrong · 2010"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "He deleted the post and banned the topic.",
+    "tr": "Yazıyı sildi ve konuyu yasakladı."
+   },
+   "sketch": [
+    {
+     "el": "post",
+     "x": 0.38,
+     "y": 0.45,
+     "s": 1.0,
+     "deleted": true
+    },
+    {
+     "el": "lock",
+     "x": 0.8,
+     "y": 0.35,
+     "s": 0.9
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "He later said he did it not because he believed the basilisk would actually work, but because he thought posting ideas designed to frighten people was harmful —",
+    "tr": "Daha sonra bunu basiliskin gerçekten işe yarayacağına inandığı için değil, insanları korkutmak üzere tasarlanmış fikirleri paylaşmanın zararlı olduğunu düşündüğü için yaptığını söyledi."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.3,
+     "text": "\"it won't work\"",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.52,
+     "text": "\"but don't spread fear\"",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and that even entertaining that kind of reasoning was a bad idea.",
+    "tr": "Ve bu tür bir akıl yürütmeyi ciddiye almanın bile kötü bir fikir olduğunu."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 0.65
+    },
+    {
+     "el": "cross",
+     "x": 0.4,
+     "y": 0.45,
+     "s": 1.0,
+     "at": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But the ban had the opposite effect. The deleted post became legendary.",
+    "tr": "Ama yasak tam tersi bir etki yarattı. Silinen yazı efsaneleşti."
+   },
+   "sketch": [
+    {
+     "el": "post",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.2,
+     "deleted": true
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "legendary",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Copies spread across the internet. Articles called it the most terrifying thought experiment of all time.",
+    "tr": "Kopyaları internete yayıldı. Makaleler onu tüm zamanların en korkutucu düşünce deneyi olarak andı."
+   },
+   "sketch": [
+    {
+     "el": "post",
+     "x": 0.25,
+     "y": 0.3,
+     "s": 0.6
+    },
+    {
+     "el": "post",
+     "x": 0.5,
+     "y": 0.3,
+     "s": 0.6
+    },
+    {
+     "el": "post",
+     "x": 0.75,
+     "y": 0.3,
+     "s": 0.6
+    },
+    {
+     "el": "post",
+     "x": 0.38,
+     "y": 0.68,
+     "s": 0.6
+    },
+    {
+     "el": "post",
+     "x": 0.62,
+     "y": 0.68,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "There's a name for this: the *Streisand effect*.",
+    "tr": "Bunun bir adı var: *Streisand etkisi*."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "the Streisand effect",
+     "size": 1.8,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 2003, singer *Barbra Streisand* sued a photographer to remove an aerial photo of her Malibu home from a website documenting the California coastline.",
+    "tr": "2003'te şarkıcı *Barbra Streisand*, Kaliforniya kıyılarını belgeleyen bir sitede yer alan Malibu'daki evinin havadan çekilmiş fotoğrafını kaldırtmak için bir fotoğrafçıya dava açtı."
+   },
+   "sketch": [
+    {
+     "el": "house",
+     "x": 0.42,
+     "y": 0.75,
+     "s": 1.0
+    },
+    {
+     "el": "camera",
+     "x": 0.82,
+     "y": 0.25,
+     "s": 0.7
+    },
+    {
+     "el": "text",
+     "x": 0.15,
+     "y": 0.12,
+     "text": "2003",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Before the lawsuit, the image had been downloaded only a handful of times.",
+    "tr": "Davadan önce fotoğraf yalnızca birkaç kez indirilmişti."
+   },
+   "sketch": [
+    {
+     "el": "house",
+     "x": 0.35,
+     "y": 0.75,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.4,
+     "text": "6 downloads",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "After the news broke, hundreds of thousands of people went to look at it.",
+    "tr": "Haber duyulunca yüz binlerce kişi fotoğrafa bakmaya gitti."
+   },
+   "sketch": [
+    {
+     "el": "house",
+     "x": 0.35,
+     "y": 0.75,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.4,
+     "text": "420,000+",
+     "size": 1.6,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "graph",
+     "x": 0.75,
+     "y": 0.68,
+     "s": 0.45
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Trying to hide information often makes it more famous.",
+    "tr": "Bilgiyi saklamaya çalışmak çoğu zaman onu daha da ünlü yapar."
+   },
+   "sketch": [
+    {
+     "el": "lock",
+     "x": 0.3,
+     "y": 0.4,
+     "s": 0.9
+    },
+    {
+     "el": "arrow",
+     "x": 0.42,
+     "y": 0.45,
+     "x2": 0.58,
+     "y2": 0.45,
+     "bend": 0.0
+    },
+    {
+     "el": "dots",
+     "x": 0.78,
+     "y": 0.45,
+     "s": 0.8,
+     "n": 40,
+     "cols": 8,
+     "highlight": 40
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And Roko's Basilisk became famous precisely because someone tried to bury it.",
+    "tr": "Roko'nun Basiliski de tam olarak biri onu gömmeye çalıştığı için ünlendi."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.5
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "famous",
+     "size": 1.4,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "If the basilisk feels oddly familiar, there's a reason. It's a modern cousin of one of the most famous arguments in philosophy.",
+    "tr": "Basilisk sana tuhaf biçimde tanıdık geliyorsa bunun bir sebebi var. Felsefenin en ünlü argümanlarından birinin modern bir kuzeni."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.45,
+     "text": "≈",
+     "size": 2.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "scroll",
+     "x": 0.78,
+     "y": 0.45,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In the 1600s, the French mathematician and philosopher *Blaise Pascal* proposed what became known as *Pascal's Wager*.",
+    "tr": "1600'lerde Fransız matematikçi ve filozof *Blaise Pascal*, sonradan *Pascal'ın Bahsi* olarak bilinecek bir fikir ortaya attı."
+   },
+   "sketch": [
+    {
+     "el": "portrait_frame",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.3,
+     "text": "Blaise Pascal"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "His notes were published after his death, in a book called the *Pensées*.",
+    "tr": "Notları ölümünden sonra *Düşünceler* (Pensées) adlı bir kitapta yayımlandı."
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.5,
+     "y": 0.72,
+     "s": 1.1,
+     "n": 3
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.3,
+     "text": "Pensées · 1670",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The idea: if God exists and you believe, you gain infinitely. If God exists and you don't, you lose infinitely.",
+    "tr": "Fikir şu: Tanrı varsa ve inanırsan, sonsuz kazanırsın. Tanrı varsa ve inanmazsan, sonsuz kaybedersin."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.25,
+     "text": "believe: +∞",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.5,
+     "text": "don't: −∞",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "If God doesn't exist, you lose very little either way. So, Pascal argued, the rational bet is to believe.",
+    "tr": "Tanrı yoksa, her iki durumda da çok az kaybedersin. Pascal'a göre rasyonel bahis inanmaktır."
+   },
+   "sketch": [
+    {
+     "el": "balance",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.0,
+     "tilt": 0.6,
+     "left": "∞",
+     "right": "0"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The basilisk has the same shape: a tiny chance of an enormous punishment, used to push you toward action now.",
+    "tr": "Basiliskin şekli de aynı: Muazzam bir cezanın çok küçük bir ihtimali, seni şimdi harekete geçirmek için kullanılıyor."
+   },
+   "sketch": [
+    {
+     "el": "balance",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.0,
+     "tilt": 0.6,
+     "left": "∞",
+     "right": "0"
+    },
+    {
+     "el": "basilisk",
+     "x": 0.22,
+     "y": 0.15,
+     "s": 0.4
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And it has the same weakness. Critics of Pascal pointed out the *many gods* problem:",
+    "tr": "Ve aynı zayıflığa sahip. Pascal'ın eleştirmenleri *birçok tanrı* sorununa dikkat çekti:"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "the many gods problem",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "for every god who punishes disbelief, you can imagine another who punishes the opposite.",
+    "tr": "İnanmamayı cezalandıran her tanrı için, tam tersini cezalandıran başka bir tanrı hayal edebilirsin."
+   },
+   "sketch": [
+    {
+     "el": "dot",
+     "x": 0.3,
+     "y": 0.3,
+     "s": 1.2
+    },
+    {
+     "el": "dot",
+     "x": 0.7,
+     "y": 0.3,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.6,
+     "text": "punishes A",
+     "size": 0.9,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.6,
+     "text": "punishes B",
+     "size": 0.9,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Likewise, for every imaginable AI that punishes you for not helping, you can imagine another that punishes you *for* helping.",
+    "tr": "Aynı şekilde, yardım etmediğin için seni cezalandıran her yapay zekâ için, yardım *ettiğin için* seni cezalandıran başka bir yapay zekâ hayal edebilirsin."
+   },
+   "sketch": [
+    {
+     "el": "ai",
+     "x": 0.28,
+     "y": 0.42,
+     "s": 0.8
+    },
+    {
+     "el": "ai",
+     "x": 0.72,
+     "y": 0.42,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.28,
+     "y": 0.8,
+     "text": "didn't help?",
+     "size": 0.9,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.8,
+     "text": "helped?",
+     "size": 0.9,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When every option has an imagined infinite punishment, the threats cancel out — and you're back to thinking about what's actually likely.",
+    "tr": "Her seçeneğin hayali sonsuz bir cezası olduğunda tehditler birbirini götürür ve sen yeniden neyin gerçekten muhtemel olduğunu düşünmeye dönersin."
+   },
+   "sketch": [
+    {
+     "el": "balance",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.0,
+     "tilt": 0.0,
+     "left": "∞",
+     "right": "∞"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "they cancel out",
+     "size": 1.2,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "There's another problem, and it's a deep one.",
+    "tr": "Bir sorun daha var ve derin bir sorun."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "problem #2",
+     "size": 1.6,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Think about it from the AI's side. By the time it exists, the past is already over.",
+    "tr": "Yapay zekânın tarafından düşün. O var olduğunda geçmiş çoktan bitmiş olacak."
+   },
+   "sketch": [
+    {
+     "el": "timeline",
+     "x": 0.5,
+     "y": 0.7,
+     "s": 1.0
+    },
+    {
+     "el": "ai",
+     "x": 0.85,
+     "y": 0.35,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.4,
+     "text": "already over",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Punishing simulated people can't change anything that already happened.",
+    "tr": "Simüle edilmiş insanları cezalandırmak zaten olmuş hiçbir şeyi değiştiremez."
+   },
+   "sketch": [
+    {
+     "el": "timeline",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 1.0
+    },
+    {
+     "el": "arrow",
+     "x": 0.75,
+     "y": 0.4,
+     "x2": 0.3,
+     "y2": 0.5,
+     "color": "red",
+     "bend": 0.3
+    },
+    {
+     "el": "cross",
+     "x": 0.52,
+     "y": 0.4,
+     "s": 0.9,
+     "at": 1.4
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It would just waste energy and cause suffering — which is the opposite of what a good AI is supposed to want.",
+    "tr": "Sadece enerji israf eder ve acıya yol açar; iyi bir yapay zekânın istemesi gerekenin tam tersi."
+   },
+   "sketch": [
+    {
+     "el": "gauge",
+     "x": 0.5,
+     "y": 0.65,
+     "s": 1.3,
+     "value": 0.1,
+     "label": "waste"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The original argument tries to get around this with an unusual kind of decision theory, sometimes called *acausal* reasoning:",
+    "tr": "Asıl argüman bunu alışılmadık bir karar teorisiyle aşmaya çalışıyor. Buna bazen *nedensel olmayan* (acausal) akıl yürütme deniyor:"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "acausal reasoning",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "the idea that an agent might commit, in advance, to follow through on a threat, so that the threat works on people who can predict it.",
+    "tr": "Bir aracının bir tehdidi önceden taahhüt etmesi, böylece tehdidin onu öngörebilen insanlar üzerinde işe yaraması fikri."
+   },
+   "sketch": [
+    {
+     "el": "ai",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.8
+    },
+    {
+     "el": "letter",
+     "x": 0.68,
+     "y": 0.45,
+     "s": 0.9,
+     "text": "a promised threat"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But here's the catch. A threat like this only has power over people who *respond* to it.",
+    "tr": "Ama işin püf noktası şu: Böyle bir tehdit yalnızca ona *boyun eğen* insanlar üzerinde güç sahibidir."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "shrug",
+     "face": 1
+    },
+    {
+     "el": "letter",
+     "x": 0.7,
+     "y": 0.4,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Many decision theorists argue that the rational policy is simple: *never give in to this kind of blackmail.*",
+    "tr": "Birçok karar teorisyeni rasyonel politikanın basit olduğunu savunuyor: *Bu tür bir şantaja asla boyun eğme.*"
+   },
+   "sketch": [
+    {
+     "el": "letter",
+     "x": 0.5,
+     "y": 0.42,
+     "s": 1.2
+    },
+    {
+     "el": "cross",
+     "x": 0.5,
+     "y": 0.42,
+     "s": 1.2,
+     "at": 1.6
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.85,
+     "text": "never give in",
+     "size": 1.2,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "If you're the kind of person who ignores it, an AI that reasons the same way has no reason to target you at all.",
+    "tr": "Onu görmezden gelen biriysen, aynı şekilde düşünen bir yapay zekânın seni hedef almak için hiçbir sebebi yoktur."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "ai",
+     "x": 0.75,
+     "y": 0.4,
+     "s": 0.7
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.75,
+     "text": "no reason",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In other words, the basilisk's teeth only work if you let them.",
+    "tr": "Başka bir deyişle, basiliskin dişleri ancak sen izin verirsen işe yarar."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.5,
+     "toothless": true
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "no teeth",
+     "size": 1.4,
+     "color": "blue",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "So if it's so flawed, why did it frighten people?",
+    "tr": "Peki bu kadar kusurluysa, insanları neden korkuttu?"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "think",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.3,
+     "text": "why?",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Part of the answer is in how our minds work. In 1987, psychologist *Daniel Wegner* ran a famous experiment.",
+    "tr": "Cevabın bir kısmı zihnimizin nasıl çalıştığında. 1987'de psikolog *Daniel Wegner* ünlü bir deney yaptı."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "Wegner · 1987",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "He asked people to think about anything they liked for five minutes — but *not* to think of a white bear.",
+    "tr": "İnsanlardan beş dakika boyunca istedikleri her şeyi düşünmelerini istedi; ama beyaz bir ayıyı *düşünmemelerini*."
+   },
+   "sketch": [
+    {
+     "el": "bear",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.2
+    },
+    {
+     "el": "cross",
+     "x": 0.53,
+     "y": 0.45,
+     "s": 1.6,
+     "at": 1.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Every time a white bear came to mind, they had to ring a bell.",
+    "tr": "Akıllarına her beyaz ayı geldiğinde bir zil çalmaları gerekiyordu."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "bell",
+     "x": 0.6,
+     "y": 0.55,
+     "s": 0.6
+    },
+    {
+     "el": "bubble",
+     "x": 0.4,
+     "y": 0.2,
+     "s": 0.7,
+     "kind": "thought",
+     "tail": [
+      0.32,
+      0.32
+     ]
+    },
+    {
+     "el": "bear",
+     "x": 0.36,
+     "y": 0.22,
+     "s": 0.3
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They rang it again and again.",
+    "tr": "Zili tekrar tekrar çaldılar."
+   },
+   "sketch": [
+    {
+     "el": "bell",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.3,
+     "text": "ding",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.3,
+     "text": "ding",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.25,
+     "y": 0.7,
+     "text": "ding",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.7,
+     "text": "ding",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Trying not to think of something made it keep coming back.",
+    "tr": "Bir şeyi düşünmemeye çalışmak onun geri gelmesini sağladı."
+   },
+   "sketch": [
+    {
+     "el": "bear",
+     "x": 0.2,
+     "y": 0.35,
+     "s": 0.45
+    },
+    {
+     "el": "bear",
+     "x": 0.55,
+     "y": 0.3,
+     "s": 0.45
+    },
+    {
+     "el": "bear",
+     "x": 0.35,
+     "y": 0.72,
+     "s": 0.45
+    },
+    {
+     "el": "bear",
+     "x": 0.7,
+     "y": 0.7,
+     "s": 0.45
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And later, when they were allowed to think about it freely, the white bear showed up *more* than for people who had never tried to suppress it.",
+    "tr": "Daha sonra serbestçe düşünmelerine izin verildiğinde, beyaz ayı onu hiç bastırmaya çalışmamış insanlara göre *daha sık* aklına geldi."
+   },
+   "sketch": [
+    {
+     "el": "graph",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.1
+    },
+    {
+     "el": "bear",
+     "x": 0.82,
+     "y": 0.2,
+     "s": 0.3
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Wegner called this *ironic process theory*.",
+    "tr": "Wegner buna *ironik süreç kuramı* dedi."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "ironic process theory",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The part of your mind that checks \"Am I thinking about it?\" keeps reminding you of the very thing you're avoiding.",
+    "tr": "Zihninin \"Onu düşünüyor muyum?\" diye kontrol eden kısmı, kaçındığın şeyi sana sürekli hatırlatır."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 0.65
+    },
+    {
+     "el": "bubble",
+     "x": 0.68,
+     "y": 0.3,
+     "s": 0.7,
+     "kind": "speech",
+     "tail": null
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.3,
+     "text": "am I thinking of it?",
+     "size": 0.7,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "arrow",
+     "x": 0.68,
+     "y": 0.48,
+     "s": 1.0,
+     "x2": 0.45,
+     "y2": 0.45,
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Now add a frightening idea that tells you *knowing it is dangerous*.",
+    "tr": "Şimdi buna *bilmenin tehlikeli olduğunu* söyleyen korkutucu bir fikir ekle."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 0.65
+    },
+    {
+     "el": "warning",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The harder you try to push it away, the more it returns.",
+    "tr": "Onu uzaklaştırmaya ne kadar çok çalışırsan o kadar geri gelir."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 0.65
+    },
+    {
+     "el": "arrow",
+     "x": 0.5,
+     "y": 0.35,
+     "s": 1.0,
+     "x2": 0.8,
+     "y2": 0.35,
+     "color": "blue"
+    },
+    {
+     "el": "arrow",
+     "x": 0.8,
+     "y": 0.6,
+     "s": 1.0,
+     "x2": 0.5,
+     "y2": 0.6,
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Anxious minds can get caught in exactly this loop — not because the idea is true, but because it's sticky.",
+    "tr": "Kaygılı zihinler tam olarak bu döngüye takılabilir; fikir doğru olduğu için değil, yapışkan olduğu için."
+   },
+   "sketch": [
+    {
+     "el": "circle",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.0,
+     "rx": 300,
+     "ry": 200,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.45,
+     "text": "sticky, not true",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Still, the basilisk does point at something real.",
+    "tr": "Yine de basilisk gerçek bir şeye işaret ediyor."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.3
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 2011, philosopher *Nick Bostrom* published a paper on what he called *information hazards*:",
+    "tr": "2011'de filozof *Nick Bostrom*, *bilgi tehlikeleri* dediği şey üzerine bir makale yayımladı:"
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.3,
+     "y": 0.72,
+     "s": 0.9,
+     "n": 2
+    },
+    {
+     "el": "warning",
+     "x": 0.7,
+     "y": 0.45,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "information hazards · 2011",
+     "size": 1.0,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "cases where true information can cause harm — like detailed instructions for building a weapon, or a spoiler that ruins a story.",
+    "tr": "Doğru bilginin zarar verebildiği durumlar; bir silahın nasıl yapılacağına dair ayrıntılı talimatlar ya da bir hikâyeyi mahveden bir spoiler gibi."
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.27,
+     "y": 0.45,
+     "s": 0.8,
+     "text": "instructions"
+    },
+    {
+     "el": "film",
+     "x": 0.7,
+     "y": 0.45,
+     "s": 0.9
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Most information hazards are boring and practical. The basilisk is unusual because the \"hazard\" is mostly *psychological*:",
+    "tr": "Bilgi tehlikelerinin çoğu sıkıcı ve pratiktir. Basilisk sıra dışı, çünkü \"tehlike\" çoğunlukla *psikolojik*:"
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.7
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "psychological",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "the harm comes from the worry, not from any real danger.",
+    "tr": "Zarar gerçek bir tehlikeden değil, endişeden geliyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.42,
+     "text": "worry",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.42,
+     "text": "danger",
+     "size": 1.5,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.7,
+     "y": 0.42,
+     "s": 0.7,
+     "at": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And that's worth knowing. If an idea makes you anxious, it's fair to ask: *is this dangerous because it's true — or just because it's hard to stop thinking about?*",
+    "tr": "Ve bunu bilmeye değer. Bir fikir seni kaygılandırıyorsa şunu sormak hakkın: *Bu doğru olduğu için mi tehlikeli, yoksa sadece düşünmeyi bırakmak zor olduğu için mi?*"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.3,
+     "text": "true?",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.55,
+     "text": "or just sticky?",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Today, Roko's Basilisk has become a kind of internet folklore — part joke, part warning, part meme.",
+    "tr": "Bugün Roko'nun Basiliski bir tür internet folkloruna dönüştü: Biraz şaka, biraz uyarı, biraz mim."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.45,
+     "y": 0.45,
+     "s": 1.1
+    },
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.8,
+     "text": "joke",
+     "size": 0.9,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.8,
+     "text": "warning",
+     "size": 0.9,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.8,
+     "text": "meme",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It even made it into celebrity news. In 2018, it was widely reported that *Elon Musk* and the musician *Grimes* first connected over a pun on it: *\"Rococo's Basilisk.\"*",
+    "tr": "Ünlü haberlerine bile girdi. 2018'de *Elon Musk* ile müzisyen *Grimes*'ın ilk olarak bu fikir üzerine yapılmış bir kelime oyunu üzerinden, *\"Rococo's Basilisk\"* sayesinde tanıştıkları yaygın olarak haber yapıldı."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "\"Rococo's Basilisk\"",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "heart",
+     "x": 0.82,
+     "y": 0.3,
+     "s": 0.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And it often comes up in conversations about AI — though most AI researchers worry about very different things:",
+    "tr": "Ve yapay zekâ konuşmalarında sık sık gündeme geliyor. Ama çoğu yapay zekâ araştırmacısı çok farklı şeylerden endişe ediyor:"
+   },
+   "sketch": [
+    {
+     "el": "ai",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "systems that make mistakes, that are misused, or that pursue goals that don't match ours. Those are real questions, being studied seriously.",
+    "tr": "hata yapan, kötüye kullanılan ya da bizimkilerle örtüşmeyen hedefler peşinde koşan sistemler. Bunlar ciddi biçimde incelenen gerçek sorular."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.25,
+     "text": "mistakes",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "misuse",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.59,
+     "text": "the wrong goals",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.82,
+     "text": "real questions",
+     "size": 1.0,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A vengeful machine punishing simulations of people who didn't donate is not one of them.",
+    "tr": "Bağış yapmayan insanların simülasyonlarını cezalandıran intikamcı bir makine bunlardan biri değil."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.2,
+     "faded": true
+    },
+    {
+     "el": "cross",
+     "x": 0.45,
+     "y": 0.45,
+     "s": 1.4,
+     "at": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Let's try something. For the next ten seconds, don't think about the basilisk.",
+    "tr": "Bir şey deneyelim. Önümüzdeki on saniye boyunca basiliski düşünme."
+   },
+   "sketch": [
+    {
+     "el": "countdown",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.1,
+     "text": "try this",
+     "size": 1.0,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Hard, isn't it?",
+    "tr": "Zor, değil mi?"
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.3,
+     "text": "?",
+     "size": 2.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Now try the opposite. Think about it as clearly as you can — and ask three questions.",
+    "tr": "Şimdi tersini dene. Onu olabildiğince net düşün ve üç soru sor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "1 · 2 · 3",
+     "size": 2.0,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "First: what evidence would make this *likely*, not just *possible*?",
+    "tr": "Birincisi: Bunu sadece *mümkün* değil, *muhtemel* yapacak kanıt ne olurdu?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.12,
+     "text": "1.",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "magnifier",
+     "x": 0.45,
+     "y": 0.42,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.42,
+     "text": "likely?",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Second: if I imagine the opposite threat, does it feel just as convincing?",
+    "tr": "İkincisi: Tam tersi tehdidi hayal edersem, o da aynı derecede ikna edici geliyor mu?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.12,
+     "text": "2.",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "balance",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.9,
+     "tilt": 0.0,
+     "left": "A",
+     "right": "B"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Third: if I ignore this completely, what actually changes in my life tomorrow?",
+    "tr": "Üçüncüsü: Bunu tamamen görmezden gelirsem, yarın hayatımda gerçekte ne değişir?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.12,
+     "text": "3.",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "calendar",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Most scary ideas lose their grip when you look straight at them. The basilisk only works as long as you look *away*.",
+    "tr": "Korkutucu fikirlerin çoğu, onlara doğrudan baktığında etkisini kaybeder. Basilisk ancak sen gözünü *kaçırdığın* sürece işe yarar."
+   },
+   "sketch": [
+    {
+     "el": "eye",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.9
+    },
+    {
+     "el": "arrow",
+     "x": 0.43,
+     "y": 0.45,
+     "x2": 0.55,
+     "y2": 0.45,
+     "bend": 0.0
+    },
+    {
+     "el": "basilisk",
+     "x": 0.75,
+     "y": 0.5,
+     "s": 0.7,
+     "faded": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The legend said you couldn't survive the basilisk's gaze.",
+    "tr": "Efsaneye göre basiliskin bakışından kurtulamazdın."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But in the old stories, there was one way to defeat it: hold up a *mirror*, and let it see itself.",
+    "tr": "Ama eski hikâyelerde onu yenmenin bir yolu vardı: Bir *ayna* tut ve kendini görmesini sağla."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.3,
+     "y": 0.55,
+     "s": 0.9
+    },
+    {
+     "el": "mirror",
+     "x": 0.75,
+     "y": 0.42,
+     "s": 0.9
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Maybe that's what thinking clearly is. Not running from an idea — but holding it up to the light, until you can see exactly what it's made of.",
+    "tr": "Belki açık düşünmek de budur. Bir fikirden kaçmak değil; ne yapıldığını tam olarak görene kadar onu ışığa tutmak."
+   },
+   "sketch": [
+    {
+     "el": "basilisk",
+     "x": 0.3,
+     "y": 0.55,
+     "s": 0.9,
+     "faded": true
+    },
+    {
+     "el": "mirror",
+     "x": 0.75,
+     "y": 0.42,
+     "s": 0.9
+    },
+    {
+     "el": "dot",
+     "x": 0.75,
+     "y": 0.12,
+     "s": 1.2
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And this one, it turns out, is made of fear... and a little bit of bad math.",
+    "tr": "Ve bu fikrin, anlaşılan o ki, korkudan… ve biraz da kötü matematikten yapıldığı ortaya çıkıyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.32,
+     "text": "fear",
+     "size": 1.6,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.55,
+     "text": "+ bad math",
+     "size": 1.4,
+     "color": "blue",
+     "underline": "red"
+    }
+   ]
+  }
+ ]
+}

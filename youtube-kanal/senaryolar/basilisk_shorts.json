@@ -1,0 +1,14 @@
+{
+  "cta": "full video on the channel",
+  "cta_scene": {
+    "say": {"en": "The full story is on the channel.", "tr": "Hikâyenin tamamı kanalda."},
+    "sketch": [{"el": "text", "x": 0.5, "y": 0.4, "text": "full video", "size": 1.6, "underline": "red"},
+               {"el": "text", "x": 0.5, "y": 0.62, "text": "on the channel", "size": 1.0, "color": "blue"}]
+  },
+  "shorts": [
+    {"from": 0, "to": 7, "title": "This thought experiment\nwas banned for 5 years"},
+    {"from": 30, "to": 41, "title": "How a deleted post\nbecame a legend"},
+    {"from": 42, "to": 51, "title": "Roko's Basilisk is just\nPascal's Wager with a robot"},
+    {"from": 62, "to": 73, "title": "Don't think of\na white bear"}
+  ]
+}
