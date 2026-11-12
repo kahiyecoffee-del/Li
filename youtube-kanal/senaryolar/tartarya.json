@@ -1,0 +1,2453 @@
+{
+ "slug": "tartarya",
+ "format": "long",
+ "theme": "karakalem",
+ "character": "none",
+ "languages": [
+  "en"
+ ],
+ "subtitles": [
+  "tr"
+ ],
+ "voices": {
+  "en": "am_fenrir"
+ },
+ "speech_rate": 0.88,
+ "meta": {
+  "en": {
+   "title": "Tartaria",
+   "description": "",
+   "tags": []
+  },
+  "tr": {
+   "title": "Tartarya",
+   "description": "",
+   "tags": []
+  }
+ },
+ "subscribe": {
+  "after": 7,
+  "sketch": [
+   {
+    "el": "subscribe",
+    "x": 0.45,
+    "y": 0.45,
+    "s": 1.4
+   },
+   {
+    "el": "arrow",
+    "x": 0.2,
+    "y": 0.75,
+    "x2": 0.33,
+    "y2": 0.55,
+    "color": "red",
+    "s": 1.2
+   }
+  ],
+  "say": {
+   "en": "If you love a good mystery, and finding out what's really behind it, *subscribe*. It genuinely helps the channel.",
+   "tr": "İyi bir gizemi ve arkasında gerçekte ne olduğunu bulmayı seviyorsan *abone ol*. Kanala gerçekten çok yardımı oluyor."
+  }
+ },
+ "scenes": [
+  {
+   "say": {
+    "en": "What if everything you learned about the last three hundred years was a lie?",
+    "tr": "Ya son üç yüz yıl hakkında öğrendiğin her şey bir yalansa?"
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 1.0,
+     "text": "history"
+    },
+    {
+     "el": "cross",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 1.0,
+     "at": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.42,
+     "text": "a lie?",
+     "size": 1.8,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "What if, not long ago, there was an empire so vast it covered much of the Earth,",
+    "tr": "Ya çok uzun olmayan bir süre önce, dünyanın büyük kısmını kaplayan devasa bir imparatorluk varsa?"
+   },
+   "sketch": [
+    {
+     "el": "globe",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.3
+    },
+    {
+     "el": "circle",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.0,
+     "rx": 260,
+     "ry": 260,
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "with domed palaces, star-shaped citadels, and towers that drew energy from the sky?",
+    "tr": "Kubbeli sarayları, yıldız biçimli kaleleri ve gökyüzünden enerji çeken kuleleri olan?"
+   },
+   "sketch": [
+    {
+     "el": "palace",
+     "x": 0.25,
+     "y": 0.85,
+     "s": 0.55
+    },
+    {
+     "el": "starfort",
+     "x": 0.55,
+     "y": 0.5,
+     "s": 0.5
+    },
+    {
+     "el": "spire",
+     "x": 0.85,
+     "y": 0.92,
+     "s": 0.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And what if it was wiped from history so completely that today, almost no one has heard its name?",
+    "tr": "Ve ya tarihten öyle bir silindiyse ki bugün neredeyse kimse adını bile duymamışsa?"
+   },
+   "sketch": [
+    {
+     "el": "oldmap",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.1,
+     "label": "TARTARIA",
+     "faded": true
+    },
+    {
+     "el": "cross",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.9,
+     "at": 1.4
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Its name, they say, was *Tartaria*.",
+    "tr": "İddiaya göre adı *Tartarya*ydı."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "TARTARIA",
+     "size": 3.0,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Millions of people have watched videos about it. Some are convinced it's the greatest cover-up ever.",
+    "tr": "Milyonlarca insan onunla ilgili videolar izledi. Bazıları bunun gelmiş geçmiş en büyük örtbas olduğuna inanıyor."
+   },
+   "sketch": [
+    {
+     "el": "phone",
+     "x": 0.25,
+     "y": 0.45,
+     "s": 0.8
+    },
+    {
+     "el": "screen",
+     "x": 0.5,
+     "y": 0.6,
+     "s": 0.8
+    },
+    {
+     "el": "phone",
+     "x": 0.75,
+     "y": 0.45,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "millions of views",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Tonight, we'll follow the clues, all of them, and see where they lead.",
+    "tr": "Bu gece ipuçlarını, hepsini, takip edeceğiz ve bizi nereye götürdüklerine bakacağız."
+   },
+   "sketch": [
+    {
+     "el": "pinboard",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "magnifier",
+     "x": 0.85,
+     "y": 0.3,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The first clue is real, and you can check it yourself.",
+    "tr": "İlk ipucu gerçek ve kendin kontrol edebilirsin."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.1,
+     "text": "clue 1",
+     "size": 1.2,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "magnifier",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.2
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Open old European maps from the 1500s to the 1700s, and you'll find a huge territory across Asia labeled *Tartaria*, or *Great Tartary*.",
+    "tr": "1500'lerden 1700'lere kadar eski Avrupa haritalarını aç; Asya boyunca *Tartaria* ya da *Büyük Tartarya* yazan devasa bir toprak bulursun."
+   },
+   "sketch": [
+    {
+     "el": "oldmap",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.4,
+     "label": "TARTARIA"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "An eighteenth-century encyclopedia even describes Tartary as \"a vast country in the northern parts of Asia.\"",
+    "tr": "On sekizinci yüzyıldan bir ansiklopedi bile Tartarya'yı \"Asya'nın kuzeyinde uçsuz bucaksız bir ülke\" diye tanımlıyor."
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.3,
+     "y": 0.72,
+     "s": 1.0,
+     "n": 3
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.38,
+     "text": "\"a vast country\"",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.58,
+     "text": "1700s encyclopedia",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "So believers ask: if Tartary was on the maps, and in the encyclopedias, *where did it go*?",
+    "tr": "İnananlar soruyor: Tartarya haritalardaysa, ansiklopedilerdeyse *nereye gitti*?"
+   },
+   "sketch": [
+    {
+     "el": "oldmap",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 1.0,
+     "label": "TARTARIA"
+    },
+    {
+     "el": "text",
+     "x": 0.85,
+     "y": 0.42,
+     "text": "?",
+     "size": 3.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Why don't schools teach it? Why does it simply vanish from maps in the 1800s?",
+    "tr": "Okullar neden öğretmiyor? 1800'lerde neden haritalardan öylece kayboluyor?"
+   },
+   "sketch": [
+    {
+     "el": "oldmap",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 1.0,
+     "label": "TARTARIA",
+     "faded": true
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.35,
+     "text": "1800s",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.55,
+     "text": "gone?",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The second clue is under our feet.",
+    "tr": "İkinci ipucu ayaklarımızın altında."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.1,
+     "text": "clue 2",
+     "size": 1.2,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.7,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.7,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "arrow",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 1.0,
+     "x2": 0.5,
+     "y2": 0.92,
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "All over the world, there are old buildings whose ground-floor windows sit *below* the street,",
+    "tr": "Dünyanın her yerinde zemin kat pencereleri sokağın *altında* kalmış eski binalar var,"
+   },
+   "sketch": [
+    {
+     "el": "buried",
+     "x": 0.45,
+     "y": 0.72,
+     "s": 0.9
+    },
+    {
+     "el": "circle",
+     "x": 0.45,
+     "y": 0.8,
+     "s": 0.8,
+     "rx": 300,
+     "ry": 80,
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "half-buried, as if the earth rose up and swallowed them.",
+    "tr": "sanki toprak yükselip onları yutmuş gibi yarı gömülü."
+   },
+   "sketch": [
+    {
+     "el": "buried",
+     "x": 0.45,
+     "y": 0.72,
+     "s": 0.9
+    },
+    {
+     "el": "arrow",
+     "x": 0.85,
+     "y": 0.95,
+     "x2": 0.85,
+     "y2": 0.75,
+     "bend": 0.0,
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Believers call it the *mud flood*: a global catastrophe in the 1800s that buried Tartarian cities under meters of mud.",
+    "tr": "İnananlar buna *çamur seli* diyor: 1800'lerde Tartarya şehirlerini metrelerce çamurun altına gömen küresel bir felaket."
+   },
+   "sketch": [
+    {
+     "el": "palace",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 0.9,
+     "faded": true
+    },
+    {
+     "el": "mudwave",
+     "x": 0.5,
+     "y": 0.82,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "MUD FLOOD",
+     "size": 1.8,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The survivors, they say, simply built on top and forgot.",
+    "tr": "Hayatta kalanlar da diyorlar, üstüne inşa edip unuttu."
+   },
+   "sketch": [
+    {
+     "el": "mudwave",
+     "x": 0.5,
+     "y": 0.9,
+     "s": 1.0
+    },
+    {
+     "el": "house",
+     "x": 0.35,
+     "y": 0.72,
+     "s": 0.7
+    },
+    {
+     "el": "house",
+     "x": 0.65,
+     "y": 0.72,
+     "s": 0.7
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The third clue can only be seen from above.",
+    "tr": "Üçüncü ipucu ancak yukarıdan görülebiliyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.1,
+     "text": "clue 3",
+     "size": 1.2,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "eye",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.2
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Star-shaped fortresses, with perfect geometric points, appear in Europe, the Americas, Africa and Asia.",
+    "tr": "Kusursuz geometrik uçlara sahip yıldız biçimli kaleler Avrupa'da, Amerika'da, Afrika'da ve Asya'da karşımıza çıkıyor."
+   },
+   "image": {
+    "file": "File:Luchtfoto - Bourtange - 20036957 - RCE.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Bourtange, Netherlands · aerial view",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "Some believers say they're too advanced, too similar, too widespread to be a coincidence.",
+    "tr": "Bazı inananlar bunların tesadüf olamayacak kadar gelişmiş, benzer ve yaygın olduğunu söylüyor."
+   },
+   "sketch": [
+    {
+     "el": "starfort",
+     "x": 0.2,
+     "y": 0.4,
+     "s": 0.35
+    },
+    {
+     "el": "starfort",
+     "x": 0.5,
+     "y": 0.35,
+     "s": 0.35
+    },
+    {
+     "el": "starfort",
+     "x": 0.8,
+     "y": 0.4,
+     "s": 0.35
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.82,
+     "text": "coincidence?",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A few go further: maybe they weren't forts at all, but *machines*, built to harness some forgotten form of energy.",
+    "tr": "Bazıları daha da ileri gidiyor: Belki bunlar hiç kale değildi, unutulmuş bir enerji türünü kullanmak için yapılmış *makinelerdi*."
+   },
+   "sketch": [
+    {
+     "el": "starfort",
+     "x": 0.45,
+     "y": 0.55,
+     "s": 1.0,
+     "glow": true
+    },
+    {
+     "el": "text",
+     "x": 0.85,
+     "y": 0.3,
+     "text": "machines?",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The fourth clue points to the sky.",
+    "tr": "Dördüncü ipucu gökyüzünü gösteriyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.1,
+     "text": "clue 4",
+     "size": 1.2,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "spire",
+     "x": 0.5,
+     "y": 0.95,
+     "s": 0.9,
+     "bolt": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Look closely at old palaces, churches and exhibition halls, and you'll see spires, domes topped with metal points, and towers crowned with what look like antennas.",
+    "tr": "Eski saraylara, kiliselere ve sergi salonlarına dikkatlice bak; sivri kuleler, tepesinde metal uçlar olan kubbeler ve anten gibi görünen şeylerle taçlanmış kuleler görürsün."
+   },
+   "sketch": [
+    {
+     "el": "palace",
+     "x": 0.35,
+     "y": 0.88,
+     "s": 0.75
+    },
+    {
+     "el": "spire",
+     "x": 0.8,
+     "y": 0.95,
+     "s": 0.7,
+     "bolt": false
+    },
+    {
+     "el": "circle",
+     "x": 0.8,
+     "y": 0.25,
+     "s": 0.5,
+     "rx": 120,
+     "ry": 120,
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Some believers say these weren't decorations at all.",
+    "tr": "Bazı inananlar bunların hiç süs olmadığını söylüyor."
+   },
+   "sketch": [
+    {
+     "el": "spire",
+     "x": 0.5,
+     "y": 0.95,
+     "s": 0.8,
+     "bolt": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.4,
+     "text": "decoration?",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.8,
+     "y": 0.4,
+     "s": 0.5,
+     "at": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They say Tartarian buildings were connected to a worldwide grid of *free energy*, pulling electricity straight out of the atmosphere,",
+    "tr": "Onlara göre Tartarya binaları, elektriği doğrudan atmosferden çeken küresel bir *bedava enerji* ağına bağlıydı;"
+   },
+   "sketch": [
+    {
+     "el": "spire",
+     "x": 0.2,
+     "y": 0.95,
+     "s": 0.5
+    },
+    {
+     "el": "spire",
+     "x": 0.5,
+     "y": 0.95,
+     "s": 0.5
+    },
+    {
+     "el": "spire",
+     "x": 0.8,
+     "y": 0.95,
+     "s": 0.5
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "FREE ENERGY?",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "technology later hidden so people would have to pay for power.",
+    "tr": "bu teknoloji de insanlar elektriğe para ödesin diye sonradan saklandı."
+   },
+   "sketch": [
+    {
+     "el": "plug",
+     "x": 0.3,
+     "y": 0.55,
+     "s": 1.0
+    },
+    {
+     "el": "money",
+     "x": 0.72,
+     "y": 0.6,
+     "s": 0.9,
+     "text": "$"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They often point to the inventor *Nikola Tesla*, who really did dream of sending electricity through the air without wires.",
+    "tr": "Sık sık mucit *Nikola Tesla*'yı gösteriyorlar; Tesla gerçekten de elektriği kablosuz olarak havadan iletmeyi hayal etmişti."
+   },
+   "image": {
+    "file": "File:Tesla Broadcast Tower 1904.jpeg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Tesla's Wardenclyffe Tower · c. 1904",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "The fifth clue is in old photographs.",
+    "tr": "Beşinci ipucu eski fotoğraflarda."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.1,
+     "text": "clue 5",
+     "size": 1.2,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "camera",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.2
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1893, Chicago hosted a World's Fair. Photos show a dazzling \"White City\": palaces, domes and columns, gleaming like marble.",
+    "tr": "1893'te Chicago bir Dünya Fuarı'na ev sahipliği yaptı. Fotoğraflar göz kamaştırıcı bir \"Beyaz Şehir\" gösteriyor: mermer gibi parıldayan saraylar, kubbeler, sütunlar."
+   },
+   "image": {
+    "file": "File:Court Of Honor From Administration Building — Official Views Of The World's Columbian Exposition — 115.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "World's Columbian Exposition · Chicago, 1893",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "Then, within a couple of years, almost all of it was *gone*.",
+    "tr": "Sonra birkaç yıl içinde neredeyse hepsi *yok oldu*."
+   },
+   "sketch": [
+    {
+     "el": "palace",
+     "x": 0.5,
+     "y": 0.85,
+     "s": 1.1,
+     "faded": true
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.15,
+     "text": "gone",
+     "size": 2.0,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "How, believers ask, could anyone build such wonders so quickly? And why would they destroy them?",
+    "tr": "İnananlar soruyor: Biri böyle harikaları nasıl bu kadar hızlı inşa edebilir? Ve neden yok etsin?"
+   },
+   "sketch": [
+    {
+     "el": "hourglass",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.35,
+     "text": "so fast?",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.55,
+     "text": "destroyed?",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Unless, they say, the buildings were never built for the fair at all, but *found*.",
+    "tr": "Meğer ki, diyorlar, binalar fuar için hiç inşa edilmemişti; *bulunmuştu*."
+   },
+   "sketch": [
+    {
+     "el": "palace",
+     "x": 0.4,
+     "y": 0.85,
+     "s": 0.8
+    },
+    {
+     "el": "magnifier",
+     "x": 0.82,
+     "y": 0.3,
+     "s": 0.7
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.7,
+     "text": "found?",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And the sixth clue is the darkest.",
+    "tr": "Ve altıncı ipucu en karanlığı."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "clue 6",
+     "size": 2.2,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Between 1854 and 1929, trains carried around two hundred thousand children from crowded eastern American cities to new homes in the West.",
+    "tr": "1854 ile 1929 arasında trenler, kalabalık doğu Amerika şehirlerinden yaklaşık iki yüz bin çocuğu batıdaki yeni evlerine taşıdı."
+   },
+   "sketch": [
+    {
+     "el": "train",
+     "x": 0.5,
+     "y": 0.7,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "1854–1929 · ≈200,000",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "History calls them the *orphan trains*.",
+    "tr": "Tarih bunlara *yetim trenleri* diyor."
+   },
+   "sketch": [
+    {
+     "el": "train",
+     "x": 0.5,
+     "y": 0.7,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "orphan trains",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Some Tartaria believers have a chilling explanation: these children, they claim, were used to *repopulate* the world after the mud flood,",
+    "tr": "Bazı Tartarya inananlarının ürpertici bir açıklaması var: İddiaya göre bu çocuklar çamur selinden sonra dünyayı *yeniden nüfuslandırmak* için kullanıldı"
+   },
+   "sketch": [
+    {
+     "el": "mudwave",
+     "x": 0.3,
+     "y": 0.85,
+     "s": 0.5
+    },
+    {
+     "el": "arrow",
+     "x": 0.5,
+     "y": 0.6,
+     "x2": 0.62,
+     "y2": 0.6,
+     "bend": 0.0
+    },
+    {
+     "el": "train",
+     "x": 0.8,
+     "y": 0.7,
+     "s": 0.5
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.15,
+     "text": "repopulate?",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and to raise a new generation that would never know the truth.",
+    "tr": "ve gerçeği hiç bilmeyecek yeni bir nesil yetiştirmek için."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1,
+     "child": true
+    },
+    {
+     "el": "figure",
+     "x": 0.42,
+     "y": 0.8,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1,
+     "child": true
+    },
+    {
+     "el": "figure",
+     "x": 0.54,
+     "y": 0.8,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1,
+     "child": true
+    },
+    {
+     "el": "padlock",
+     "x": 0.8,
+     "y": 0.45,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Maps. Mud. Stars. Spires. White cities. Trains full of children.",
+    "tr": "Haritalar. Çamur. Yıldızlar. Kuleler. Beyaz şehirler. Çocuk dolu trenler."
+   },
+   "sketch": [
+    {
+     "el": "pinboard",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.2,
+     "n": 6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It sounds like a perfect puzzle. So now, let's do what every good detective does: check the records.",
+    "tr": "Kusursuz bir yapboz gibi görünüyor. O zaman şimdi her iyi dedektifin yaptığını yapalım: kayıtlara bakalım."
+   },
+   "sketch": [
+    {
+     "el": "magnifier",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "books",
+     "x": 0.72,
+     "y": 0.72,
+     "s": 1.0,
+     "n": 4
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.25,
+     "text": "the records",
+     "size": 1.3,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Start with the maps. \"Tartary\" was never one country.",
+    "tr": "Haritalarla başlayalım. \"Tartarya\" hiçbir zaman tek bir ülke olmadı."
+   },
+   "sketch": [
+    {
+     "el": "oldmap",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 1.0,
+     "label": "TARTARIA"
+    },
+    {
+     "el": "text",
+     "x": 0.85,
+     "y": 0.42,
+     "text": "not a\ncountry",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It was what Europeans called the huge part of Asia they knew little about,",
+    "tr": "Avrupalıların pek tanımadıkları devasa Asya topraklarına verdikleri addı:"
+   },
+   "sketch": [
+    {
+     "el": "oldmap",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.1,
+     "label": "?"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "\"lands we don't know\"",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "the lands of the *Tatars*, a loose name for many Turkic and Mongol peoples.",
+    "tr": "*Tatarların* toprakları. Tatar da birçok Türk ve Moğol halkı için kullanılan gevşek bir isimdi."
+   },
+   "sketch": [
+    {
+     "el": "chariot",
+     "x": 0.4,
+     "y": 0.65,
+     "s": 0.8,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.35,
+     "text": "Tatars",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.55,
+     "text": "Turkic · Mongol",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Medieval writers even linked \"Tatar\" to *Tartarus*, the Greek underworld, as if the Mongol riders had come from hell.",
+    "tr": "Ortaçağ yazarları \"Tatar\"ı Yunan yeraltı dünyası *Tartaros* ile bile ilişkilendirdi; sanki Moğol atlıları cehennemden gelmişti."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.25,
+     "y": 0.42,
+     "text": "Tatar",
+     "size": 1.6,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "arrow",
+     "x": 0.38,
+     "y": 0.42,
+     "x2": 0.6,
+     "y2": 0.42,
+     "bend": -0.2,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.42,
+     "text": "Tartarus",
+     "size": 1.6,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "campfire",
+     "x": 0.78,
+     "y": 0.8,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "As explorers and empires mapped Asia in detail, the vague label was replaced with real names: Siberia, Kazakhstan, Mongolia.",
+    "tr": "Kâşifler ve imparatorluklar Asya'yı ayrıntılı haritalandırdıkça bu belirsiz etiketin yerini gerçek isimler aldı: Sibirya, Kazakistan, Moğolistan."
+   },
+   "sketch": [
+    {
+     "el": "oldmap",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.2,
+     "label": null
+    },
+    {
+     "el": "text",
+     "x": 0.4,
+     "y": 0.38,
+     "text": "Siberia",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.35,
+     "y": 0.58,
+     "text": "Kazakhstan",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.62,
+     "y": 0.55,
+     "text": "Mongolia",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Tartary didn't vanish. The *blank spot* did.",
+    "tr": "Tartarya kaybolmadı. *Boş nokta* kayboldu."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "Tartary didn't vanish",
+     "size": 1.3,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.58,
+     "text": "the blank spot did",
+     "size": 1.5,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The \"mud flood\" buildings have well-recorded explanations.",
+    "tr": "\"Çamur seli\" binalarının iyi kayıt altına alınmış açıklamaları var."
+   },
+   "sketch": [
+    {
+     "el": "buried",
+     "x": 0.4,
+     "y": 0.72,
+     "s": 0.8
+    },
+    {
+     "el": "books",
+     "x": 0.8,
+     "y": 0.72,
+     "s": 0.7,
+     "n": 3
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "After the Great Seattle Fire of 1889, Seattle rebuilt its streets one to two stories *higher* to fix flooding and drainage.",
+    "tr": "1889'daki Büyük Seattle Yangını'ndan sonra Seattle, su baskını ve drenaj sorunlarını çözmek için sokaklarını bir iki kat *yukarıda* yeniden yaptı."
+   },
+   "image": {
+    "file": "File:Seattle Underground 03080.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Seattle Underground · old storefronts below today's street",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "Old ground floors became basements. You can tour the *Seattle Underground* today.",
+    "tr": "Eski zemin katlar bodrum oldu. Bugün *Seattle Yeraltı*'nı gezebilirsin."
+   },
+   "sketch": [
+    {
+     "el": "buried",
+     "x": 0.4,
+     "y": 0.72,
+     "s": 0.9
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.72,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.82,
+     "y": 0.72,
+     "h": 0.35,
+     "pose": "walk",
+     "face": -1
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.88,
+     "text": "tours today",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In the 1850s and 60s, Chicago used thousands of jackscrews to *lift entire buildings* to install a sewer system,",
+    "tr": "1850'ler ve 60'larda Chicago, kanalizasyon sistemi kurmak için binlerce kriko kullanarak *koca binaları kaldırdı*;"
+   },
+   "image": {
+    "file": "File:Briggs house.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Raising the Briggs House · Chicago, 1860s",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "sometimes while people kept working inside.",
+    "tr": "bazen insanlar içeride çalışmaya devam ederken."
+   },
+   "sketch": [
+    {
+     "el": "jacks",
+     "x": 0.4,
+     "y": 0.8,
+     "s": 1.0
+    },
+    {
+     "el": "figure",
+     "x": 0.42,
+     "y": 0.45,
+     "h": 0.18,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.35,
+     "text": "still open",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And everywhere else, streets simply rise over centuries, as new paving and rubble pile up.",
+    "tr": "Geri kalan her yerde de sokaklar, yüzyıllar boyunca biriken yeni kaldırım ve molozla kendiliğinden yükselir."
+   },
+   "sketch": [
+    {
+     "el": "buried",
+     "x": 0.4,
+     "y": 0.72,
+     "s": 0.8
+    },
+    {
+     "el": "arrow",
+     "x": 0.85,
+     "y": 0.95,
+     "x2": 0.85,
+     "y2": 0.65,
+     "bend": 0.0,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "street level rises over centuries",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Star forts were a response to the *cannon*.",
+    "tr": "Yıldız kaleler *topa* verilmiş bir cevaptı."
+   },
+   "sketch": [
+    {
+     "el": "starfort",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 0.8
+    },
+    {
+     "el": "dot",
+     "x": 0.8,
+     "y": 0.45,
+     "s": 1.4,
+     "color": "ink"
+    },
+    {
+     "el": "arrow",
+     "x": 0.75,
+     "y": 0.45,
+     "x2": 0.55,
+     "y2": 0.45,
+     "bend": 0.0,
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In Italy in the late 1400s and 1500s, engineers learned that tall walls shattered under cannon fire,",
+    "tr": "1400'lerin sonu ve 1500'lerde İtalya'da mühendisler yüksek surların top atışıyla parçalandığını öğrendi;"
+   },
+   "sketch": [
+    {
+     "el": "door",
+     "x": 0.35,
+     "y": 0.8,
+     "s": 1.2
+    },
+    {
+     "el": "cross",
+     "x": 0.35,
+     "y": 0.55,
+     "s": 1.0,
+     "at": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.4,
+     "text": "tall walls",
+     "size": 1.3,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.6,
+     "text": "shatter",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "while low, thick, angled walls survived, and pointed bastions left no blind spots.",
+    "tr": "alçak, kalın, açılı surlar ise ayakta kalıyordu; sivri burçlar da kör nokta bırakmıyordu."
+   },
+   "sketch": [
+    {
+     "el": "starfort",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.85,
+     "y": 0.42,
+     "text": "no blind\nspots",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They wrote books full of diagrams. France's *Vauban* built or rebuilt more than a hundred.",
+    "tr": "Çizimlerle dolu kitaplar yazdılar. Fransa'nın ünlü mühendisi *Vauban* yüzden fazlasını inşa etti ya da yeniden yaptı."
+   },
+   "image": {
+    "file": "File:Aerial image of Palmanova (view from the northwest).jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Palmanova, Italy (1593) · aerial view",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "They look alike for the same reason airports look alike: same problem, same solution.",
+    "tr": "Birbirlerine benzemelerinin sebebi havalimanlarının birbirine benzemesiyle aynı: aynı sorun, aynı çözüm."
+   },
+   "sketch": [
+    {
+     "el": "starfort",
+     "x": 0.25,
+     "y": 0.45,
+     "s": 0.4
+    },
+    {
+     "el": "starfort",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 0.4
+    },
+    {
+     "el": "starfort",
+     "x": 0.75,
+     "y": 0.45,
+     "s": 0.4
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.85,
+     "text": "same problem · same solution",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And the White City? Most of its buildings were *temporary*:",
+    "tr": "Peki Beyaz Şehir? Binalarının çoğu *geçiciydi*:"
+   },
+   "sketch": [
+    {
+     "el": "palace",
+     "x": 0.45,
+     "y": 0.85,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "temporary",
+     "size": 1.6,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "frames covered in *staff*, a cheap mix of plaster and fibers, painted to look like marble.",
+    "tr": "Mermer gibi görünsün diye boyanmış, alçı ve lif karışımı ucuz bir malzeme olan *staff* ile kaplı iskeletler."
+   },
+   "sketch": [
+    {
+     "el": "palace",
+     "x": 0.3,
+     "y": 0.85,
+     "s": 0.7
+    },
+    {
+     "el": "ladder",
+     "x": 0.75,
+     "y": 0.75,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.15,
+     "text": "staff = plaster + fiber",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They were built to last one summer. A fire in 1894 destroyed much of what remained.",
+    "tr": "Tek bir yaz dayanmak için yapılmışlardı. 1894'teki bir yangın kalanların çoğunu yok etti."
+   },
+   "sketch": [
+    {
+     "el": "calendar",
+     "x": 0.25,
+     "y": 0.45,
+     "s": 0.8,
+     "text": "1 summer"
+    },
+    {
+     "el": "palace",
+     "x": 0.68,
+     "y": 0.85,
+     "s": 0.7
+    },
+    {
+     "el": "campfire",
+     "x": 0.68,
+     "y": 0.55,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.1,
+     "text": "1894",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "One building was rebuilt in stone, and it's now Chicago's Museum of Science and Industry.",
+    "tr": "Bir bina taşla yeniden inşa edildi ve bugün Chicago'nun Bilim ve Sanayi Müzesi."
+   },
+   "sketch": [
+    {
+     "el": "palace",
+     "x": 0.5,
+     "y": 0.85,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "Museum of Science and Industry",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The spires? Many are simply architecture: bell towers, flagpoles and decoration.",
+    "tr": "Kuleler mi? Birçoğu sadece mimari: çan kuleleri, bayrak direkleri ve süslemeler."
+   },
+   "sketch": [
+    {
+     "el": "spire",
+     "x": 0.3,
+     "y": 0.95,
+     "s": 0.6,
+     "bolt": false
+    },
+    {
+     "el": "bell",
+     "x": 0.7,
+     "y": 0.45,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And the metal points on top are often *lightning rods*, invented by *Benjamin Franklin* in the 1750s,",
+    "tr": "Tepedeki metal uçlar da çoğu zaman *paratoner*; *Benjamin Franklin* tarafından 1750'lerde icat edildi"
+   },
+   "sketch": [
+    {
+     "el": "spire",
+     "x": 0.4,
+     "y": 0.95,
+     "s": 0.7,
+     "bolt": true,
+     "rod": true
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.4,
+     "text": "Franklin · 1750s",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "to carry lightning safely into the ground, not to pull free energy out of the sky.",
+    "tr": "ve yıldırımı güvenle toprağa iletmek içindi, gökyüzünden bedava enerji çekmek için değil."
+   },
+   "sketch": [
+    {
+     "el": "spire",
+     "x": 0.4,
+     "y": 0.95,
+     "s": 0.7,
+     "bolt": true,
+     "rod": true
+    },
+    {
+     "el": "arrow",
+     "x": 0.6,
+     "y": 0.85,
+     "x2": 0.6,
+     "y2": 0.97,
+     "bend": 0.0,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.4,
+     "text": "into the ground",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "As for Tesla, his famous wireless power tower at *Wardenclyffe* was never finished.",
+    "tr": "Tesla'ya gelince, *Wardenclyffe*'teki ünlü kablosuz enerji kulesi hiçbir zaman bitirilemedi."
+   },
+   "sketch": [
+    {
+     "el": "spire",
+     "x": 0.35,
+     "y": 0.95,
+     "s": 0.7,
+     "bolt": false
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.42,
+     "text": "never finished",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "His investors pulled out, and the tower was demolished in 1917. A real story of ambition and failure, not a hidden grid.",
+    "tr": "Yatırımcıları çekildi ve kule 1917'de yıkıldı. Gizli bir şebeke değil, gerçek bir hırs ve başarısızlık hikâyesi."
+   },
+   "sketch": [
+    {
+     "el": "money",
+     "x": 0.25,
+     "y": 0.6,
+     "s": 0.8,
+     "text": "$"
+    },
+    {
+     "el": "arrow",
+     "x": 0.35,
+     "y": 0.5,
+     "x2": 0.15,
+     "y2": 0.3,
+     "bend": 0.0
+    },
+    {
+     "el": "spire",
+     "x": 0.65,
+     "y": 0.95,
+     "s": 0.6,
+     "bolt": false
+    },
+    {
+     "el": "cross",
+     "x": 0.65,
+     "y": 0.6,
+     "s": 0.8,
+     "at": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.85,
+     "y": 0.2,
+     "text": "1917",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And the orphan trains are among the best-documented chapters of American social history.",
+    "tr": "Yetim trenleri de Amerikan sosyal tarihinin en iyi belgelenmiş bölümlerinden biri."
+   },
+   "sketch": [
+    {
+     "el": "train",
+     "x": 0.45,
+     "y": 0.7,
+     "s": 0.8
+    },
+    {
+     "el": "books",
+     "x": 0.88,
+     "y": 0.72,
+     "s": 0.5,
+     "n": 3
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The children had names, birth records and families. Many told their own stories as adults, and historians have collected their letters and interviews.",
+    "tr": "Çocukların isimleri, doğum kayıtları ve aileleri vardı. Birçoğu yetişkin olunca kendi hikâyesini anlattı; tarihçiler mektuplarını ve röportajlarını derledi."
+   },
+   "sketch": [
+    {
+     "el": "letter",
+     "x": 0.25,
+     "y": 0.45,
+     "s": 0.8,
+     "text": "name · birth · family"
+    },
+    {
+     "el": "letter",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.8,
+     "text": "\"my story\""
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The real story is about poverty and a controversial child welfare system, not a secret reset of humanity.",
+    "tr": "Gerçek hikâye yoksulluk ve tartışmalı bir çocuk refahı sistemiyle ilgili, insanlığın gizlice sıfırlanmasıyla değil."
+   },
+   "sketch": [
+    {
+     "el": "pinboard",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.0,
+     "n": 6
+    },
+    {
+     "el": "cross",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.4,
+     "at": 1.2
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "So why does Tartaria feel so convincing?",
+    "tr": "Peki Tartarya neden bu kadar inandırıcı geliyor?"
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 0.7
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.42,
+     "text": "why?",
+     "size": 1.8,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Psychologist *Karen Douglas* and her colleagues suggest conspiracy theories meet three needs:",
+    "tr": "Psikolog *Karen Douglas* ve meslektaşları, komplo teorilerinin üç ihtiyacı karşıladığını öne sürüyor:"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "3 needs",
+     "size": 2.0,
+     "color": "ink",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.6,
+     "text": "Douglas et al. · 2017",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "to *understand* a confusing world, to feel *safe and in control*, and to feel *special*, to know something others don't.",
+    "tr": "kafa karıştırıcı bir dünyayı *anlamak*, kendini *güvende ve kontrol sahibi* hissetmek ve kendini *özel* hissetmek, yani başkalarının bilmediği bir şeyi bilmek."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.42,
+     "text": "understand",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "safe",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.42,
+     "text": "special",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "There's also *proportionality bias*: we feel that something magnificent must have a magnificent cause.",
+    "tr": "Bir de *orantılılık yanlılığı* var: Muhteşem bir şeyin muhteşem bir sebebi olması gerektiğini hissederiz."
+   },
+   "sketch": [
+    {
+     "el": "balance",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 0.9,
+     "tilt": 0.6,
+     "left": "big",
+     "right": "small"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.92,
+     "text": "proportionality bias",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Ordinary workers with ordinary tools feel like too small an answer.",
+    "tr": "Sıradan aletlerle çalışan sıradan işçiler fazla küçük bir cevap gibi gelir."
+   },
+   "sketch": [
+    {
+     "el": "palace",
+     "x": 0.35,
+     "y": 0.85,
+     "s": 0.7
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.85,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.82,
+     "y": 0.85,
+     "h": 0.25,
+     "pose": "hold",
+     "face": -1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But notice what the theory quietly does: it takes the real achievements of real people, architects, stonemasons, laborers,",
+    "tr": "Ama teorinin sessizce ne yaptığına dikkat et: Gerçek insanların, mimarların, taş ustalarının, işçilerin gerçek başarılarını alıp"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "hold",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.32,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "hold",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.44,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "hold",
+     "face": 1
+    },
+    {
+     "el": "palace",
+     "x": 0.75,
+     "y": 0.85,
+     "s": 0.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and gives them to an empire that never existed.",
+    "tr": "hiç var olmamış bir imparatorluğa veriyor."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.4
+    },
+    {
+     "el": "palace",
+     "x": 0.6,
+     "y": 0.85,
+     "s": 0.5
+    },
+    {
+     "el": "arrow",
+     "x": 0.7,
+     "y": 0.5,
+     "x2": 0.85,
+     "y2": 0.5,
+     "bend": 0.0,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.88,
+     "y": 0.35,
+     "text": "?",
+     "size": 2.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And here's the twist. The *real* lands of \"Tartary\" had a history more spectacular than any myth.",
+    "tr": "Ve işte büyük dönemeç: \"Tartarya\"nın *gerçek* topraklarının tarihi her efsaneden daha görkemliydi."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "the real Tartary",
+     "size": 1.8,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In the 1200s, the *Mongol Empire* became the largest contiguous land empire in history, from Korea to Eastern Europe.",
+    "tr": "1200'lerde *Moğol İmparatorluğu*, Kore'den Doğu Avrupa'ya uzanarak tarihin en büyük bitişik kara imparatorluğu oldu."
+   },
+   "sketch": [
+    {
+     "el": "globe",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "chariot",
+     "x": 0.75,
+     "y": 0.65,
+     "s": 0.6,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "Mongol Empire · 1200s",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "After it, the *Golden Horde*, largely Turkic-speaking, ruled the western steppe for more than two centuries.",
+    "tr": "Ardından büyük ölçüde Türkçe konuşan *Altın Orda*, batı bozkırına iki yüzyıldan uzun süre hükmetti."
+   },
+   "sketch": [
+    {
+     "el": "flag",
+     "x": 0.35,
+     "y": 0.85,
+     "s": 1.2,
+     "color": [
+      210,
+      160,
+      50
+     ],
+     "text": "ALTIN ORDA"
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.15,
+     "text": "Golden Horde",
+     "size": 1.3,
+     "color": "gold",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Its descendants include today's Tatars, Kazakhs and many others. And through these lands ran the *Silk Road*.",
+    "tr": "Torunları arasında bugünün Tatarları, Kazakları ve daha birçok halk var. Bu topraklardan da *İpek Yolu* geçiyordu."
+   },
+   "sketch": [
+    {
+     "el": "line",
+     "x": 0.1,
+     "y": 0.6,
+     "s": 1.0,
+     "x2": 0.9,
+     "y2": 0.55,
+     "color": "gold",
+     "w": 2.0
+    },
+    {
+     "el": "antelope",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 0.4,
+     "horns": false
+    },
+    {
+     "el": "antelope",
+     "x": 0.55,
+     "y": 0.48,
+     "s": 0.4,
+     "horns": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "Silk Road",
+     "size": 1.4,
+     "color": "gold",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A real giant empire existed. We just don't need to invent one.",
+    "tr": "Gerçek bir dev imparatorluk vardı. Sadece bir tane uydurmamıza gerek yok."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "real · giant · documented",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.58,
+     "text": "no invention needed",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Next time you meet a \"hidden history,\" ask three questions.",
+    "tr": "Bir dahaki sefere bir \"gizli tarih\"le karşılaştığında üç soru sor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.1,
+     "text": "try this",
+     "size": 1.0,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "magnifier",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Is there a simpler explanation that's already written down?",
+    "tr": "Zaten yazıya geçirilmiş daha basit bir açıklama var mı?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.15,
+     "text": "1.",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "books",
+     "x": 0.5,
+     "y": 0.7,
+     "s": 1.0,
+     "n": 3
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "If this were true, what else would we expect to find, and do we find it?",
+    "tr": "Bu doğru olsaydı başka neler bulmayı beklerdik ve bunları buluyor muyuz?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.15,
+     "text": "2.",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "letter",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "skull",
+     "x": 0.55,
+     "y": 0.5,
+     "s": 0.5,
+     "marks": false
+    },
+    {
+     "el": "spear",
+     "x": 0.8,
+     "y": 0.5,
+     "s": 0.4
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And who gains if I believe it?",
+    "tr": "Ve buna inanırsam kim kazanç sağlar?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.15,
+     "text": "3.",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "money",
+     "x": 0.4,
+     "y": 0.6,
+     "s": 0.9,
+     "text": "$"
+    },
+    {
+     "el": "phone",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Tartaria is a story about a lost empire.",
+    "tr": "Tartarya kayıp bir imparatorluğun hikâyesi."
+   },
+   "sketch": [
+    {
+     "el": "oldmap",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.2,
+     "label": "TARTARIA",
+     "faded": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But maybe what's really lost is our trust that ordinary people, with simple tools and enormous effort, built extraordinary things.",
+    "tr": "Ama belki gerçekten kaybolan şey, sıradan insanların basit aletler ve muazzam bir emekle olağanüstü şeyler inşa ettiğine olan inancımız."
+   },
+   "sketch": [
+    {
+     "el": "ladder",
+     "x": 0.3,
+     "y": 0.75,
+     "s": 1.0
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.6,
+     "h": 0.25,
+     "pose": "climb",
+     "face": 1
+    },
+    {
+     "el": "palace",
+     "x": 0.72,
+     "y": 0.85,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They did. We know their names.",
+    "tr": "İnşa ettiler. İsimlerini biliyoruz."
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.0,
+     "text": "names · plans · workers"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The truth didn't erase a civilization. It *is* the civilization.",
+    "tr": "Gerçek bir uygarlığı silmedi. Uygarlığın *ta kendisi* o."
+   },
+   "sketch": [
+    {
+     "el": "starfort",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 0.8
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.88,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.88,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.88,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.88,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  }
+ ]
+}

@@ -2025,6 +2025,152 @@ ELEMENTS_EXTRA.update({
 })
 
 
+# ----------------------------------------------------------- Tartarya videosu
+PARCH = (215, 195, 150)
+
+
+def el_oldmap(x, y, s, label="TARTARIA", faded=False, seed=0, **_):
+    w, h = 760 * s, 480 * s
+    rnd = random.Random(seed)
+    edge = [(x - w / 2 + rnd.uniform(-8, 8) * s, y - h / 2), (x + w / 2, y - h / 2 + rnd.uniform(-8, 8) * s), (x + w / 2 + rnd.uniform(-8, 8) * s, y + h / 2),
+            (x - w / 2, y + h / 2 + rnd.uniform(-8, 8) * s)]
+    out = [_blob(edge, tone=0.45, color=PARCH, seed=seed, smooth=3), Stroke(edge + [edge[0]], 4 * s + 1, (120, 90, 50), seed=seed + 1)]
+    coast = [(x - w * 0.42, y - h * 0.1), (x - w * 0.25, y - h * 0.3), (x, y - h * 0.32), (x + w * 0.25, y - h * 0.25), (x + w * 0.4, y - h * 0.05),
+             (x + w * 0.3, y + h * 0.25), (x + w * 0.05, y + h * 0.3), (x - w * 0.2, y + h * 0.22), (x - w * 0.4, y + h * 0.15)]
+    out.append(Stroke(coast + [coast[0]], 4 * s, (110, 80, 45), seed=seed + 2))
+    if label:
+        out.append(Text(label, x, y, 70 * s, (140, 50, 40) if not faded else (190, 170, 140)))
+    for k in range(4):
+        a = k * math.pi / 2
+        out.append(Stroke([(x + w * 0.38, y + h * 0.35), (x + w * 0.38 + math.cos(a) * 40 * s, y + h * 0.35 + math.sin(a) * 40 * s)], 3 * s, (110, 80, 45), seed=seed + 5 + k))
+    return out
+
+
+def el_starfort(x, y, s, n=5, glow=False, seed=0, **_):
+    R, r = 330 * s, 200 * s
+    pts = []
+    for k in range(n * 2):
+        a = -math.pi / 2 + k * math.pi / n
+        rr = R if k % 2 == 0 else r
+        pts.append((x + math.cos(a) * rr, y + math.sin(a) * rr))
+    out = [_blob(pts, tone=0.35, color=(120, 150, 90), seed=seed, smooth=2), Stroke(pts + [pts[0]], 6 * s + 1, seed=seed + 1)]
+    inner = [(x + (px - x) * 0.55, y + (py - y) * 0.55) for px, py in pts]
+    out.append(Stroke(inner + [inner[0]], 3 * s, seed=seed + 2))
+    big = [(x + (px - x) * 1.15, y + (py - y) * 1.15) for px, py in pts]
+    out.append(Stroke(big + [big[0]], 3 * s, (70, 110, 170), seed=seed + 3))
+    if glow:
+        out.append(Stroke([(x, y), (x - 30 * s, y - 120 * s), (x + 20 * s, y - 160 * s), (x - 10 * s, y - 300 * s)], 9 * s, (230, 180, 40), seed=seed + 4))
+    return out
+
+
+def el_pinboard(x, y, s, n=5, seed=0, **_):
+    w, h = 800 * s, 480 * s
+    out = [_blob([(x - w / 2, y - h / 2), (x + w / 2, y - h / 2), (x + w / 2, y + h / 2), (x - w / 2, y + h / 2)], tone=0.55, color=(170, 130, 85), seed=seed),
+           Stroke(_rect(x - w / 2, y - h / 2, x + w / 2, y + h / 2), 7 * s + 1, (110, 75, 45), seed=seed + 1)]
+    rnd = random.Random(seed)
+    pins = []
+    for k in range(n):
+        px = x - w / 2 + 100 * s + (k % 3) * 280 * s + rnd.uniform(-30, 30) * s
+        py = y - h / 2 + 110 * s + (k // 3) * 220 * s + rnd.uniform(-20, 20) * s
+        out.append(_blob([(px - 70 * s, py - 50 * s), (px + 70 * s, py - 50 * s), (px + 70 * s, py + 50 * s), (px - 70 * s, py + 50 * s)], tone=0.15, color=(245, 240, 230), seed=seed + 5 + k))
+        out.append(Stroke(_rect(px - 70 * s, py - 50 * s, px + 70 * s, py + 50 * s), 2, COLORS["grey"], 1, seed + 20 + k))
+        pins.append((px, py - 50 * s))
+    for k in range(len(pins) - 1):
+        out.append(Stroke([pins[k], pins[k + 1]], 3 * s + 1, RED, 1, seed + 40 + k))
+    if len(pins) > 2:
+        out.append(Stroke([pins[0], pins[-1]], 3 * s + 1, RED, 1, seed + 60))
+    for p in pins:
+        out.append(Stroke(ellipse_pts(p[0], p[1], 9 * s, 9 * s, n=8), 7 * s, RED, seed=seed + 70))
+    return out
+
+
+def el_train(x, y, s, kids=True, seed=0, **_):
+    out = [Stroke([(x - 520 * s, y), (x + 420 * s, y)], 5 * s + 1, (110, 80, 50), seed=seed)]
+    eng = [(x + 120 * s, y - 40 * s), (x + 120 * s, y - 200 * s), (x + 260 * s, y - 200 * s), (x + 260 * s, y - 130 * s), (x + 400 * s, y - 130 * s), (x + 400 * s, y - 40 * s)]
+    out.append(_blob(eng, tone=0.9, color=(50, 50, 55), seed=seed + 1))
+    out.append(Stroke(_rect(x + 330 * s, y - 230 * s, x + 370 * s, y - 130 * s), 6 * s + 1, seed=seed + 2))
+    for k in range(3):
+        out.append(Stroke(ellipse_pts(x + 360 * s + k * 45 * s, y - 280 * s - k * 50 * s, (35 + k * 12) * s, (25 + k * 8) * s, n=16), 4 * s, COLORS["grey"], 1, seed + 3 + k))
+    for c in range(2):
+        cx0 = x - 480 * s + c * 300 * s
+        out.append(Stroke(_rect(cx0, y - 190 * s, cx0 + 260 * s, y - 40 * s), 6 * s + 1, (140, 60, 40), seed=seed + 10 + c))
+        for wdw in range(3):
+            wx = cx0 + 25 * s + wdw * 80 * s
+            out.append(Stroke(_rect(wx, y - 160 * s, wx + 55 * s, y - 100 * s), 3 * s, seed=seed + 20 + c * 3 + wdw))
+            if kids:
+                m, o = mask_from(lambda d, T, ss, wx=wx: d.ellipse([T((wx + 15 * s, y - 150 * s)), T((wx + 40 * s, y - 120 * s))], fill=255),
+                                 (wx + 13 * s, y - 152 * s, wx + 42 * s, y - 118 * s))
+                out.append(Fill(m, o, tone=0.85, seed=seed + 40 + c * 3 + wdw, outline=False))
+    for k in range(6):
+        out.append(Stroke(ellipse_pts(x - 430 * s + k * 160 * s, y - 25 * s, 25 * s, 25 * s, n=12), 5 * s, seed=seed + 60 + k))
+    return out
+
+
+def el_palace(x, y, s, faded=False, seed=0, **_):
+    col = INK if not faded else (170, 165, 160)
+    out = [Stroke([(x - 420 * s, y), (x + 420 * s, y)], 6 * s + 1, col, seed=seed),
+           Stroke(_rect(x - 380 * s, y - 220 * s, x + 380 * s, y), 5 * s + 1, col, seed=seed + 1)]
+    for k in range(11):
+        xx = x - 340 * s + k * 68 * s
+        out.append(Stroke([(xx, y - 200 * s), (xx, y - 10 * s)], 4 * s, col, seed=seed + 2 + k))
+    out.append(Stroke(_rect(x - 140 * s, y - 300 * s, x + 140 * s, y - 220 * s), 5 * s, col, seed=seed + 15))
+    out.append(Stroke(bez((x - 130 * s, y - 300 * s), (x, y - 560 * s), (x + 130 * s, y - 300 * s), 24), 6 * s + 1, col, seed=seed + 16))
+    out.append(Stroke([(x, y - 430 * s), (x, y - 520 * s)], 5 * s, col, seed=seed + 17))
+    for f in (-1, 1):
+        out.append(Stroke(bez((x + f * 330 * s, y - 220 * s), (x + f * 280 * s, y - 360 * s), (x + f * 230 * s, y - 220 * s), 14), 5 * s, col, seed=seed + 18))
+    return out
+
+
+def el_spire(x, y, s, bolt=True, rod=False, seed=0, **_):
+    out = [Stroke([(x - 90 * s, y), (x - 90 * s, y - 260 * s), (x + 90 * s, y - 260 * s), (x + 90 * s, y)], 6 * s + 1, seed=seed),
+           Stroke([(x - 110 * s, y - 260 * s), (x, y - 560 * s), (x + 110 * s, y - 260 * s)], 6 * s + 1, seed=seed + 1),
+           Stroke([(x, y - 560 * s), (x, y - 680 * s)], 6 * s, (150, 150, 160), seed=seed + 2)]
+    if bolt:
+        out.append(Stroke([(x + 120 * s, y - 900 * s), (x + 40 * s, y - 800 * s), (x + 90 * s, y - 780 * s), (x + 5 * s, y - 690 * s)], 9 * s + 1, (230, 180, 40), seed=seed + 3))
+    if rod:
+        out.append(Stroke([(x + 5 * s, y - 680 * s), (x + 120 * s, y - 500 * s), (x + 130 * s, y + 20 * s)], 4 * s, (200, 120, 50), seed=seed + 4))
+        out.append(Stroke([(x + 100 * s, y + 30 * s), (x + 160 * s, y + 30 * s)], 6 * s, (120, 90, 60), seed=seed + 5))
+    return out
+
+
+def el_buried(x, y, s, street=True, seed=0, **_):
+    """Zemin kat pencereleri sokak seviyesinin altında kalmış bina cephesi."""
+    out = [Stroke(_rect(x - 300 * s, y - 520 * s, x + 300 * s, y + 160 * s), 6 * s + 1, seed=seed)]
+    for r in range(3):
+        for c in range(4):
+            wx, wy = x - 240 * s + c * 140 * s, y - 470 * s + r * 220 * s
+            out.append(Stroke(_rect(wx, wy, wx + 80 * s, wy + 130 * s), 4 * s, seed=seed + 2 + r * 4 + c))
+    if street:
+        ground = [(x - 420 * s, y), (x + 420 * s, y), (x + 420 * s, y + 220 * s), (x - 420 * s, y + 220 * s)]
+        out.append(_blob(ground, tone=0.85, color=(120, 95, 70), seed=seed + 30))
+        out.append(Stroke([(x - 420 * s, y), (x + 420 * s, y)], 7 * s + 1, (80, 60, 40), seed=seed + 31))
+    return out
+
+
+def el_jacks(x, y, s, seed=0, **_):
+    out = el_buried(x, y - 120 * s, s * 0.8, street=False, seed=seed)
+    for k in range(7):
+        jx = x - 220 * s + k * 73 * s
+        out.append(Stroke([(jx, y + 10 * s), (jx, y - 120 * s * 0.8 + 130 * s)], 9 * s, (100, 100, 110), seed=seed + 50 + k))
+        out.append(Stroke(_rect(jx - 18 * s, y + 10 * s, jx + 18 * s, y + 40 * s), 4 * s, seed=seed + 60 + k))
+    out.append(Stroke([(x - 320 * s, y + 40 * s), (x + 320 * s, y + 40 * s)], 6 * s + 1, (110, 80, 50), seed=seed + 70))
+    return out
+
+
+def el_mudwave(x, y, s, seed=0, W=1920, **_):
+    pts = [(x - 600 * s, y + 200 * s), (x - 600 * s, y - 60 * s)]
+    for k in range(13):
+        pts.append((x - 600 * s + k * 100 * s, y - 60 * s - 120 * s * math.sin(k * 0.6) * (1 if k % 2 else 0.6)))
+    pts += [(x + 600 * s, y + 200 * s)]
+    return [_blob(pts, tone=0.85, color=(110, 85, 60), seed=seed, smooth=8 * s)]
+
+
+ELEMENTS_EXTRA.update({
+    "oldmap": el_oldmap, "starfort": el_starfort, "pinboard": el_pinboard, "train": el_train, "palace": el_palace, "spire": el_spire,
+    "buried": el_buried, "jacks": el_jacks, "mudwave": el_mudwave,
+})
+
+
 # --------------------------------------------------------------------------- #
 # Sahne: öğeleri sırayla çizer
 # --------------------------------------------------------------------------- #

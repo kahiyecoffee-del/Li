@@ -1,0 +1,96 @@
+{
+ "cta": "the answer · full video on the channel",
+ "cta_scene": {
+  "say": {
+   "en": "The full story, and the real answer, is in the video on the channel. Subscribe for more mysteries.",
+   "tr": "Hikâyenin tamamı ve gerçek cevap kanaldaki videoda. Daha fazla gizem için abone ol."
+  },
+  "sketch": [
+   {
+    "el": "subscribe",
+    "x": 0.5,
+    "y": 0.4,
+    "s": 1.3
+   },
+   {
+    "el": "arrow",
+    "x": 0.25,
+    "y": 0.78,
+    "x2": 0.37,
+    "y2": 0.55,
+    "color": "red",
+    "s": 1.2
+   },
+   {
+    "el": "text",
+    "x": 0.5,
+    "y": 0.85,
+    "text": "the answer: full video",
+    "size": 0.9,
+    "color": "blue"
+   }
+  ]
+ },
+ "shorts": [
+  {
+   "from": 0,
+   "to": 6,
+   "title": "The empire erased\nfrom history?"
+  },
+  {
+   "from": 7,
+   "to": 11,
+   "title": "Why do old maps\nsay \"Tartaria\"?"
+  },
+  {
+   "from": 12,
+   "to": 16,
+   "title": "Why are these windows\nunderground?"
+  },
+  {
+   "from": 17,
+   "to": 20,
+   "title": "Star forts:\nweapons or machines?"
+  },
+  {
+   "from": 21,
+   "to": 26,
+   "title": "Free energy towers\non old buildings?"
+  },
+  {
+   "from": 27,
+   "to": 31,
+   "title": "The city that vanished\nin two years"
+  },
+  {
+   "from": 32,
+   "to": 37,
+   "title": "The darkest\nTartaria theory"
+  },
+  {
+   "from": 39,
+   "to": 44,
+   "title": "Tartaria on old maps:\nsolved"
+  },
+  {
+   "from": 45,
+   "to": 50,
+   "title": "The \"mud flood\": solved\n(Chicago lifted buildings)"
+  },
+  {
+   "from": 51,
+   "to": 59,
+   "title": "Star forts & the White City:\nsolved"
+  },
+  {
+   "from": 68,
+   "to": 74,
+   "title": "Why conspiracy theories\nfeel so convincing"
+  },
+  {
+   "from": 75,
+   "to": 79,
+   "title": "The REAL Tartaria\nwas even bigger"
+  }
+ ]
+}
