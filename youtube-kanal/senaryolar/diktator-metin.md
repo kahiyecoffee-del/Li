@@ -2,7 +2,7 @@
 
 **Türkçe başlık önerisi:** Diktatörlere Neden İzin Veriyoruz?
 
-- **Süre:** ~9 dakika (~1.290 İngilizce kelime). Araya reklam (mid-roll) için 8 dakikanın üstünde.
+- **Süre:** ~9 dakika (~1.250 İngilizce kelime). Araya reklam (mid-roll) için 8 dakikanın üstünde.
 - **Seslendirme:** İngilizce, Fenrir
 - **Altyazı:** EN gömülü, TR SRT
 - **Yaklaşım:** Tarih, psikoloji ve felsefe. Bugünün siyasetçilerini ve ülkelerini isimle anmıyoruz; tarihsel örnekler ve bilimsel bulgular üzerinden genel mekanizmayı anlatıyoruz. Böylece video tarafsız kalır, her ülkeden izleyiciye hitap eder ve YouTube açısından da güvenli olur.
