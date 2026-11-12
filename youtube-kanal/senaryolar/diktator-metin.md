@@ -2,11 +2,11 @@
 
 **Türkçe başlık önerisi:** Diktatörlere Neden İzin Veriyoruz?
 
-- **Süre:** ~9,5 dakika (~1.380 İngilizce kelime). Araya reklam (mid-roll) için 8 dakikanın üstünde.
+- **Süre:** ~9 dakika (~1.290 İngilizce kelime). Araya reklam (mid-roll) için 8 dakikanın üstünde.
 - **Seslendirme:** İngilizce, Fenrir
 - **Altyazı:** EN gömülü, TR SRT
 - **Yaklaşım:** Tarih, psikoloji ve felsefe. Bugünün siyasetçilerini ve ülkelerini isimle anmıyoruz; tarihsel örnekler ve bilimsel bulgular üzerinden genel mekanizmayı anlatıyoruz. Böylece video tarafsız kalır, her ülkeden izleyiciye hitap eder ve YouTube açısından da güvenli olur.
-- **Shorts:** 12 adet. Hepsinin sonunda abone ol hatırlatması var.
+- **Shorts:** 13 adet. Hepsinin sonunda abone ol hatırlatması var.
 
 > ✂ işaretli bölümler Shorts olarak kesilecek.
 
@@ -78,7 +78,20 @@ Korku otoriterliğin sadece bir yan etkisi değil. Çoğu zaman yakıtıdır.
 
 *Görsel:* Uyuyan bir figür; üstünde "dormant". Uyarı işareti, figür uyanıyor. Kalabalık ve karşısında bir gölge "the enemy". Ateşe yakıt dökülen çizim: "fear = fuel".
 
-## 5:10 · Bölüm 4: Sıradan insanlar ✂ SHORT
+## 4:40 · Bölüm 4: Tekrar edilen yalan ✂ SHORT
+**EN:** Fear opens the door. *Repetition* keeps it open.
+In 1977, psychologists *Lynn Hasher*, *David Goldstein* and *Thomas Toppino* asked people to rate whether statements were true or false. Some statements appeared more than once over several weeks.
+The result: people rated *repeated* statements as more likely to be true, whether they were actually true or not. Psychologists call this the *illusory truth effect*. A familiar claim feels easier to process, and our brains mistake "easy" for "true."
+Every authoritarian regime has understood this instinctively. Control the newspapers, the radio, the screens, repeat the same few messages everywhere, and over time they stop feeling like opinions. They start feeling like reality.
+
+**TR:** Korku kapıyı açar. *Tekrar* onu açık tutar.
+1977'de psikologlar *Lynn Hasher*, *David Goldstein* ve *Thomas Toppino*, insanlardan bazı ifadelerin doğru mu yanlış mı olduğunu değerlendirmelerini istedi. Bazı ifadeler birkaç hafta boyunca birden fazla kez karşılarına çıktı.
+Sonuç: İnsanlar *tekrarlanan* ifadeleri, gerçekte doğru olsun ya da olmasın, daha büyük ihtimalle doğru diye değerlendirdi. Psikologlar buna *yanıltıcı doğruluk etkisi* diyor. Tanıdık bir iddiayı işlemek daha kolay gelir ve beynimiz "kolay"ı "doğru" sanır.
+Her otoriter rejim bunu içgüdüsel olarak anlamıştır. Gazeteleri, radyoyu, ekranları kontrol et, aynı birkaç mesajı her yerde tekrarla; zamanla bunlar fikir gibi gelmeyi bırakır. Gerçeklik gibi gelmeye başlar.
+
+*Görsel:* Aynı cümle ("X is true") önce bir kez, sonra üç kez, sonra her yerde: duvarlarda, radyoda, ekranlarda. Grafik: tekrar arttıkça "true?" çizgisi yükseliyor. Beyin: "easy = true?".
+
+## 5:45 · Bölüm 5: Sıradan insanlar ✂ SHORT
 **EN:** But dictators don't just need followers. They need *ordinary people* willing to carry out orders.
 In 1961, at Yale University, psychologist *Stanley Milgram* ran one of the most famous experiments in history. Volunteers were told to give electric shocks to a "learner" in another room whenever he made a mistake, increasing the voltage each time.
 The shocks were fake, and the learner was an actor. But the volunteers didn't know that. They heard him shout, complain about his heart, and then go silent.
@@ -93,7 +106,7 @@ Sonraki araştırmacılar Milgram'ın yöntemlerinin bazı kısımlarını sorgu
 
 *Görsel:* Şok makinesi, düğmeler "15V … 450V", ok sona doğru ilerliyor. Duvarın arkasında ses balonları. Önlüklü figür: "please continue". "≈ 2/3". Kalabalık sıradan figürler, ellerinde evrak.
 
-## 6:30 · Bölüm 5: Yavaş yavaş ✂ SHORT
+## 7:05 · Bölüm 6: Yavaş yavaş ✂ SHORT
 **EN:** Here's what surprises most people: many dictatorships don't begin with tanks in the street.
 In January 1933, Adolf Hitler was legally appointed Chancellor of Germany. Two months later, the parliament passed the *Enabling Act*, giving his government the power to make laws without parliament. It was voted through, under intimidation, but through a vote.
 In their 2018 book *How Democracies Die*, political scientists *Steven Levitsky* and *Daniel Ziblatt* argue that this is the common pattern today: democracies are more often eroded step by step, by elected leaders, than overthrown in a single coup.
@@ -108,7 +121,7 @@ Yavaşça ısınan sudaki kurbağanın dışarı zıplamayacağını duymuşsund
 
 *Görsel:* Tank çizimi, üstü çizili. Oy sandığı ve kâğıt "Enabling Act · 1933". Merdiven: her basamakta küçük bir adım (mahkeme, gazete, seçim kuralı, olağanüstü hâl), en altta "legal", en üstte "?". Tencere ve dışarı zıplayan kurbağa.
 
-## 7:50 · Bölüm 6: Herkes susuyorsa
+## 8:25 · Bölüm 7: Herkes susuyorsa
 **EN:** And once a dictatorship is in place, why do people stay quiet, even when most of them are unhappy?
 Economist *Timur Kuran* called it *preference falsification*: people hide what they really think, because speaking up is dangerous. And because everyone hides, everyone believes they're alone.
 On December 21, 1989, Romania's dictator *Nicolae Ceaușescu* gave a speech to a huge crowd in Bucharest. Partway through, some people began to boo. On live television, you can see his face freeze.
@@ -123,7 +136,7 @@ Diktatörlükler, aniden yıkılana kadar çoğu zaman yıkılmaz görünür.
 
 *Görsel:* Maskeler takmış kalabalık; maskelerin arkasında düşünce balonlarında "no". Balkonda konuşan figür, kalabalıktan yükselen tek bir "BOO", sonra her yerde "BOO". Takvim: "Dec 21 → Dec 22, 1989", helikopter. Çatlayan heykel.
 
-## 8:55 · Bölüm 7: Gücün sırrı
+## 9:30 · Bölüm 8: Gücün sırrı
 **EN:** Which brings us back to La Boétie's answer from 1548.
 He argued that tyranny doesn't need to be defeated by force. It only needs to lose the cooperation it depends on. "Resolve to serve no more," he wrote, "and you are at once freed."
 Modern research points in a similar direction. Political scientist *Erica Chenoweth* studied hundreds of campaigns against governments in the twentieth century and found that nonviolent mass movements succeeded more often than violent ones, largely because they could draw in far more participants.
@@ -136,7 +149,7 @@ Güç, sonunda bir ilişkidir. Ne kadar güçlü görünürse görünsün her re
 
 *Görsel:* Taht, altındaki insan figürleri tek tek çekiliyor, taht sallanıyor. Alıntı parşömende. Kalabalık, el ele. Taht boş.
 
-## 9:40 · Kendin dene ✂ SHORT
+## 10:15 · Kendin dene ✂ SHORT
 **EN:** Try this. Think of a time you went along with something you didn't agree with, at school, at work, in a group, because everyone else seemed to.
 Ask yourself: did I actually know what the others thought? Or did I just assume?
 Very often, the silence around you is made of people who feel exactly like you.
@@ -147,7 +160,7 @@ Kendine sor: Diğerlerinin ne düşündüğünü gerçekten biliyor muydum? Yoks
 
 *Görsel:* Toplantı masası, herkes başını sallıyor; her birinin düşünce balonunda "?". Bir kişi elini kaldırıyor, diğerlerinin balonları "me too" oluyor.
 
-## 10:10 · Kapanış
+## 10:45 · Kapanış
 **EN:** We don't let dictators rise because we're evil, or stupid. We let them rise because we're afraid, because we're tired, because we trust authority, and because we think we're alone.
 Those are human weaknesses. But they come with a human strength: the power was always ours to give, and ours to take back.
 
@@ -158,7 +171,7 @@ Bunlar insani zayıflıklar. Ama beraberlerinde insani bir güç de getiriyorlar
 
 ---
 
-## Shorts listesi (12 adet, hepsinin sonunda abone ol hatırlatması)
+## Shorts listesi (13 adet, hepsinin sonunda abone ol hatırlatması)
 | # | Bölüm | Kanca başlığı |
 |---|---|---|
 | 1 | 0:00 | A tyrant has only two hands |
@@ -167,12 +180,13 @@ Bunlar insani zayıflıklar. Ama beraberlerinde insani bir güç de getiriyorlar
 | 4 | 2:35 | Why freedom feels like a burden |
 | 5 | 3:30 | Hobbes: we trade freedom for safety |
 | 6 | 4:05 | Fear is the fuel of authoritarianism |
-| 7 | 5:10 | The Milgram experiment: 2/3 went all the way |
-| 8 | 6:30 | Most dictatorships don't start with tanks |
-| 9 | 7:20 | The boiling frog is a myth (we're the problem) |
-| 10 | 7:50 | The moment a dictator lost his crowd |
-| 11 | 8:55 | "Resolve to serve no more" |
-| 12 | 9:40 | Try this: is the silence real? |
+| 7 | 4:40 | Repeat a lie often enough (illusory truth effect) |
+| 8 | 5:45 | The Milgram experiment: 2/3 went all the way |
+| 9 | 7:05 | Most dictatorships don't start with tanks |
+| 10 | 7:55 | The boiling frog is a myth (we're the problem) |
+| 11 | 8:25 | The moment a dictator lost his crowd |
+| 12 | 9:30 | "Resolve to serve no more" |
+| 13 | 10:15 | Try this: is the silence real? |
 
 ## Kaynaklar
 - Étienne de La Boétie, *Discours de la servitude volontaire* (yaklaşık 1548, yay. 1576)
@@ -180,6 +194,7 @@ Bunlar insani zayıflıklar. Ama beraberlerinde insani bir güç de getiriyorlar
 - Erich Fromm, *Escape from Freedom* (1941)
 - Thomas Hobbes, *Leviathan* (1651), Bölüm XIII
 - Karen Stenner, *The Authoritarian Dynamic* (2005)
+- Hasher, Goldstein & Toppino (1977), *Journal of Verbal Learning and Verbal Behavior*: yanıltıcı doğruluk etkisi
 - Milgram (1963), *Journal of Abnormal and Social Psychology*; eleştiriler: Perry, *Behind the Shock Machine* (2012); Burger (2009) kısmi replikasyon
 - Weimar Almanyası: 30 Ocak 1933 atama; Yetki Yasası (23 Mart 1933)
 - Levitsky & Ziblatt, *How Democracies Die* (2018)
