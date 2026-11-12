@@ -2,7 +2,7 @@
 
 **Türkçe başlık önerisi:** Spor İzlemek Bize Neden Bu Kadar Keyif Veriyor?
 
-- **Süre:** ~10–11 dakika (~1.450 İngilizce kelime)
+- **Süre:** ~8 dakika (~1.130 İngilizce kelime)
 - **Seslendirme:** İngilizce, Fenrir
 - **Altyazı:** EN gömülü, TR SRT
 - **Ana fikir:** Sahaya hiç çıkmadığımız bir maçta neden "biz kazandık" deriz? Beyin, kimlik, belirsizlik ve kabile: Spor, güvenli bir savaş ve sonu bilinmeyen bir hikâye.
