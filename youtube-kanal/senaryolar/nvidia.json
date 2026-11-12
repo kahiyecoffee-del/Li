@@ -1,0 +1,2981 @@
+{
+ "slug": "nvidia",
+ "format": "long",
+ "theme": "karakalem",
+ "character": "none",
+ "languages": [
+  "en"
+ ],
+ "subtitles": [
+  "tr"
+ ],
+ "voices": {
+  "en": "am_fenrir"
+ },
+ "speech_rate": 0.88,
+ "meta": {
+  "en": {
+   "title": "Jensen Huang & NVIDIA",
+   "description": "",
+   "tags": []
+  },
+  "tr": {
+   "title": "Jensen Huang ve NVIDIA",
+   "description": "",
+   "tags": []
+  }
+ },
+ "subscribe": {
+  "after": 7,
+  "sketch": [
+   {
+    "el": "subscribe",
+    "x": 0.45,
+    "y": 0.45,
+    "s": 1.4
+   },
+   {
+    "el": "arrow",
+    "x": 0.2,
+    "y": 0.75,
+    "x2": 0.33,
+    "y2": 0.55,
+    "color": "red",
+    "s": 1.2
+   }
+  ],
+  "say": {
+   "en": "Quick favor before we start: if you like stories about the people and ideas shaping our world, *subscribe*. It genuinely helps the channel.",
+   "tr": "Başlamadan küçük bir rica: Dünyamızı şekillendiren insanlar ve fikirlerle ilgili hikâyeleri seviyorsan *abone ol*. Kanala gerçekten çok yardımı oluyor."
+  }
+ },
+ "scenes": [
+  {
+   "say": {
+    "en": "As a teenager, he washed dishes and bussed tables at a Denny's restaurant.",
+    "tr": "Gençken bir Denny's restoranında bulaşık yıkadı ve masa topladı."
+   },
+   "sketch": [
+    {
+     "el": "sink",
+     "x": 0.45,
+     "y": 0.6,
+     "s": 1.3
+    },
+    {
+     "el": "figure",
+     "x": 0.78,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": -1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Decades later, the company he co-founded at a Denny's booth became the first in history to be worth *five trillion dollars*",
+    "tr": "On yıllar sonra, bir Denny's masasında kurmaya yardım ettiği şirket tarihte *beş trilyon dolar* değere ulaşan ilk şirket oldu."
+   },
+   "sketch": [
+    {
+     "el": "table",
+     "x": 0.3,
+     "y": 0.6,
+     "s": 0.9
+    },
+    {
+     "el": "graph",
+     "x": 0.72,
+     "y": 0.5,
+     "s": 0.7
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.12,
+     "text": "$5,000,000,000,000",
+     "size": 1.1,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "— more than the entire economy of almost every country on Earth.",
+    "tr": "Dünyadaki neredeyse her ülkenin bütün ekonomisinden daha büyük."
+   },
+   "sketch": [
+    {
+     "el": "globe",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 1.1
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.42,
+     "text": "$5T",
+     "size": 2.2,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.65,
+     "text": "> most economies",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "His name is *Jensen Huang*. His company, *NVIDIA*, makes the chips that power most of the world's artificial intelligence.",
+    "tr": "Adı *Jensen Huang*. Şirketi *NVIDIA*, dünyadaki yapay zekânın büyük bölümünü çalıştıran çipleri üretiyor."
+   },
+   "image": {
+    "file": "File:Jensen huang stanford 2026-04-30 007.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Jensen Huang · Stanford, 2026",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "And this week, according to multiple reports, his own board was discussing whether to remove him.",
+    "tr": "Ve bu hafta, birçok habere göre, kendi yönetim kurulu onu görevden alıp almamayı tartışıyordu."
+   },
+   "sketch": [
+    {
+     "el": "table",
+     "x": 0.5,
+     "y": 0.7,
+     "s": 1.4
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.72,
+     "h": 0.4,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.75,
+     "y": 0.72,
+     "h": 0.4,
+     "pose": "sit",
+     "face": -1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "the board",
+     "size": 1.2,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "This is the story of how one company — and, for a while, one man — became something engineers fear most:",
+    "tr": "Bu, bir şirketin ve bir dönem tek bir adamın, mühendislerin en çok korktuğu şeye nasıl dönüştüğünün hikâyesi:"
+   },
+   "sketch": [
+    {
+     "el": "network",
+     "x": 0.5,
+     "y": 0.48,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "a *single point of failure*. For an entire technological age.",
+    "tr": "koca bir teknoloji çağı için *tek hata noktası*."
+   },
+   "sketch": [
+    {
+     "el": "network",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "single point of failure",
+     "size": 1.4,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "circle",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.6,
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Jensen Huang was born in 1963 in Tainan, Taiwan.",
+    "tr": "Jensen Huang 1963'te Tayvan'ın Tainan şehrinde doğdu."
+   },
+   "sketch": [
+    {
+     "el": "globe",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "dot",
+     "x": 0.4,
+     "y": 0.42,
+     "s": 0.8,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.42,
+     "text": "Tainan · 1963",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "As a child, he and his older brother were sent to the United States to live with an uncle.",
+    "tr": "Çocukken o ve ağabeyi bir amcanın yanında yaşamak üzere Amerika'ya gönderildi."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.15,
+     "y": 0.3,
+     "text": "Taiwan",
+     "size": 1.1,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "arrow",
+     "x": 0.25,
+     "y": 0.35,
+     "x2": 0.75,
+     "y2": 0.35,
+     "bend": -0.25,
+     "color": "blue"
+    },
+    {
+     "el": "text",
+     "x": 0.85,
+     "y": 0.3,
+     "text": "USA",
+     "size": 1.1,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.85,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.42,
+     "y": 0.85,
+     "h": 0.28,
+     "pose": "stand",
+     "face": 1,
+     "child": true
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.85,
+     "h": 0.33,
+     "pose": "stand",
+     "face": 1,
+     "child": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The uncle enrolled them at a school in rural Kentucky that he thought was a prestigious boarding school.",
+    "tr": "Amca onları Kentucky kırsalında prestijli bir yatılı okul sandığı bir okula yazdırdı."
+   },
+   "sketch": [
+    {
+     "el": "house",
+     "x": 0.4,
+     "y": 0.82,
+     "s": 1.3,
+     "lit": false
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.25,
+     "text": "boarding school?",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It turned out to be a religious academy for troubled youth.",
+    "tr": "Okul aslında sorunlu gençler için dinî bir akademi çıktı."
+   },
+   "sketch": [
+    {
+     "el": "house",
+     "x": 0.4,
+     "y": 0.82,
+     "s": 1.3,
+     "lit": false
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.25,
+     "text": "boarding school?",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.75,
+     "y": 0.25,
+     "s": 0.9,
+     "at": 0.4
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.5,
+     "text": "troubled youth",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Later, as a teenager in Oregon, Huang worked at Denny's — washing dishes, bussing tables, and waiting on customers.",
+    "tr": "Daha sonra Oregon'da bir gençken Huang, Denny's'te çalıştı: bulaşık yıkadı, masa topladı, müşterilere servis yaptı."
+   },
+   "image": {
+    "file": "File:Denny's Restaurant (Sherman Way).jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "a Denny's restaurant",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "He has often said those jobs taught him humility and hard work.",
+    "tr": "Bu işlerin ona alçakgönüllülüğü ve çalışkanlığı öğrettiğini sık sık söyledi."
+   },
+   "sketch": [
+    {
+     "el": "sink",
+     "x": 0.3,
+     "y": 0.6,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.35,
+     "text": "humility",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.55,
+     "text": "hard work",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "He studied electrical engineering, worked as a chip designer,",
+    "tr": "Elektrik mühendisliği okudu, çip tasarımcısı olarak çalıştı"
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.8,
+     "text": "B.S. · M.S."
+    },
+    {
+     "el": "chip",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.9
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and by his late twenties he had an idea about where computing was going.",
+    "tr": "ve yirmilerinin sonunda bilgisayarların nereye gittiğine dair bir fikri vardı."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 0.65,
+     "glow": true
+    },
+    {
+     "el": "screen",
+     "x": 0.75,
+     "y": 0.6,
+     "s": 0.9
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1993, Huang and two engineers, *Chris Malachowsky* and *Curtis Priem*, met at a Denny's in San Jose and decided to start a company.",
+    "tr": "1993'te Huang ve iki mühendis, *Chris Malachowsky* ve *Curtis Priem*, San Jose'deki bir Denny's'te buluşup bir şirket kurmaya karar verdi."
+   },
+   "sketch": [
+    {
+     "el": "table",
+     "x": 0.5,
+     "y": 0.65,
+     "s": 1.3
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.75,
+     "h": 0.45,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.75,
+     "h": 0.45,
+     "pose": "sit",
+     "face": -1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "San Jose · 1993",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They called it NVIDIA.",
+    "tr": "Adını NVIDIA koydular."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "NVIDIA",
+     "size": 2.4,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Their bet: video games would need special chips to draw 3D graphics —",
+    "tr": "Bahisleri şuydu: Video oyunları 3 boyutlu grafik çizmek için özel çiplere ihtiyaç duyacaktı;"
+   },
+   "sketch": [
+    {
+     "el": "screen",
+     "x": 0.38,
+     "y": 0.62,
+     "s": 1.4
+    },
+    {
+     "el": "box",
+     "x": 0.38,
+     "y": 0.45,
+     "s": 0.6
+    },
+    {
+     "el": "chip",
+     "x": 0.78,
+     "y": 0.45,
+     "s": 0.7
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "chips that could do thousands of simple calculations at the same time.",
+    "tr": "aynı anda binlerce basit hesap yapabilen çiplere."
+   },
+   "sketch": [
+    {
+     "el": "chip",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.8
+    },
+    {
+     "el": "dots",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.9,
+     "n": 60,
+     "cols": 12,
+     "highlight": 60
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The early years were brutal. Their first product struggled, and the company came close to running out of money.",
+    "tr": "İlk yıllar çok zorlu geçti. İlk ürünleri tutmadı ve şirketin parası bitmek üzereydi."
+   },
+   "sketch": [
+    {
+     "el": "graph",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 0.9,
+     "up": false
+    },
+    {
+     "el": "piggy",
+     "x": 0.8,
+     "y": 0.55,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "For years afterward, Huang reportedly opened staff meetings with a line that became company legend:",
+    "tr": "Sonraki yıllarda Huang'ın personel toplantılarını şirket efsanesine dönüşen bir cümleyle açtığı anlatılır:"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "point",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "figure",
+     "x": 0.72,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "figure",
+     "x": 0.84,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": -1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "*\"Our company is thirty days from going out of business.\"*",
+    "tr": "*\"Şirketimizin batmasına otuz gün var.\"*"
+   },
+   "sketch": [
+    {
+     "el": "calendar",
+     "x": 0.5,
+     "y": 0.42,
+     "s": 1.3,
+     "text": "30 days"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "\"30 days from going out of business\"",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1999, NVIDIA launched the *GeForce 256* and marketed it as the world's first *GPU* — a graphics processing unit.",
+    "tr": "1999'da NVIDIA *GeForce 256*'yı piyasaya sürdü ve onu dünyanın ilk *GPU*'su, yani grafik işlem birimi olarak tanıttı."
+   },
+   "image": {
+    "file": "File:KL NVIDIA Geforce 256.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "GeForce 256 · 1999",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "Gamers loved it. But the most important thing about the GPU wasn't graphics at all.",
+    "tr": "Oyuncular bayıldı. Ama GPU'nun en önemli yanı aslında grafik değildi."
+   },
+   "sketch": [
+    {
+     "el": "gpu",
+     "x": 0.4,
+     "y": 0.45,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.45,
+     "text": "?",
+     "size": 3.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A normal processor, a *CPU*, is like a few brilliant workers doing complex tasks one after another.",
+    "tr": "Normal bir işlemci, yani *CPU*, karmaşık işleri sırayla yapan birkaç dâhi işçi gibidir."
+   },
+   "sketch": [
+    {
+     "el": "workers",
+     "x": 0.5,
+     "y": 0.82,
+     "s": 1.2,
+     "n": 3
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "CPU",
+     "size": 1.6,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A GPU is like thousands of simple workers doing small tasks all at once.",
+    "tr": "GPU ise küçük işleri aynı anda yapan binlerce basit işçi gibidir."
+   },
+   "sketch": [
+    {
+     "el": "workers",
+     "x": 0.5,
+     "y": 0.85,
+     "s": 1.3,
+     "n": 48,
+     "small": true
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "GPU",
+     "size": 1.6,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "That turned out to be exactly what another field needed: the kind of math used to train neural networks.",
+    "tr": "Bu, başka bir alanın tam olarak ihtiyaç duyduğu şey çıktı: yapay sinir ağlarını eğitmek için kullanılan türden matematik."
+   },
+   "sketch": [
+    {
+     "el": "brain",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "arrow",
+     "x": 0.55,
+     "y": 0.45,
+     "x2": 0.68,
+     "y2": 0.45,
+     "bend": 0.0
+    },
+    {
+     "el": "gpu",
+     "x": 0.82,
+     "y": 0.45,
+     "s": 0.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 2006, NVIDIA released *CUDA*, software that let scientists use GPUs for general computing, not just graphics.",
+    "tr": "2006'da NVIDIA, bilim insanlarının GPU'ları sadece grafik için değil genel hesaplama için kullanmasını sağlayan *CUDA* yazılımını çıkardı."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.25,
+     "text": "CUDA · 2006",
+     "size": 1.8,
+     "color": "ink",
+     "underline": "red"
+    },
+    {
+     "el": "screen",
+     "x": 0.3,
+     "y": 0.8,
+     "s": 0.8
+    },
+    {
+     "el": "gpu",
+     "x": 0.72,
+     "y": 0.65,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It cost a lot to build, and for years many investors didn't see the point.",
+    "tr": "Geliştirmesi çok pahalıydı ve yıllarca birçok yatırımcı ne işe yarayacağını anlamadı."
+   },
+   "sketch": [
+    {
+     "el": "money",
+     "x": 0.3,
+     "y": 0.6,
+     "s": 1.0,
+     "text": "$$$"
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "shrug",
+     "face": -1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Then, in 2012, a small team at the University of Toronto — *Alex Krizhevsky*, *Ilya Sutskever* and *Geoffrey Hinton* —",
+    "tr": "Sonra 2012'de Toronto Üniversitesi'nden küçük bir ekip, *Alex Krizhevsky*, *Ilya Sutskever* ve *Geoffrey Hinton*,"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "think",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "Toronto · 2012",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "trained a neural network called *AlexNet* on two NVIDIA gaming graphics cards.",
+    "tr": "*AlexNet* adlı bir sinir ağını iki NVIDIA oyun ekran kartında eğitti."
+   },
+   "image": {
+    "file": "File:NVIDIA@40nm@Fermi@GF110@GeForce GTX 580@UA10B338 1041A1 N2Y540.000 GF110-375-A1 DSC06447 (28114556341).jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "GeForce GTX 580 chip",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "It crushed the competition in a major image recognition contest.",
+    "tr": "Büyük bir görüntü tanıma yarışmasında rakiplerini ezdi geçti."
+   },
+   "sketch": [
+    {
+     "el": "eye",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.9
+    },
+    {
+     "el": "stairs",
+     "x": 0.72,
+     "y": 0.8,
+     "s": 0.9,
+     "n": 3
+    },
+    {
+     "el": "text",
+     "x": 0.85,
+     "y": 0.2,
+     "text": "#1",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Two gaming cards had helped kick off the deep learning revolution.",
+    "tr": "İki oyun kartı derin öğrenme devriminin başlamasına yardım etmişti."
+   },
+   "sketch": [
+    {
+     "el": "gpu",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "gpu",
+     "x": 0.3,
+     "y": 0.75,
+     "s": 0.6
+    },
+    {
+     "el": "arrow",
+     "x": 0.47,
+     "y": 0.6,
+     "x2": 0.62,
+     "y2": 0.5,
+     "bend": 0.0,
+     "color": "red"
+    },
+    {
+     "el": "brain",
+     "x": 0.8,
+     "y": 0.45,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And NVIDIA was already holding the shovels.",
+    "tr": "Ve NVIDIA kürekleri çoktan elinde tutuyordu."
+   },
+   "sketch": [
+    {
+     "el": "shovel",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.2
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "There's an old saying about gold rushes: the people who got rich weren't always the miners — they were the ones selling shovels.",
+    "tr": "Altına hücumla ilgili eski bir söz vardır: Zengin olanlar her zaman madenciler değildi; kürek satanlardı."
+   },
+   "sketch": [
+    {
+     "el": "mountain",
+     "x": 0.3,
+     "y": 0.85,
+     "s": 0.7
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.85,
+     "h": 0.25,
+     "pose": "kick",
+     "face": 1
+    },
+    {
+     "el": "shovel",
+     "x": 0.68,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "shovel",
+     "x": 0.78,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "shovel",
+     "x": 0.88,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.12,
+     "text": "$",
+     "size": 2.0,
+     "color": "gold",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When *ChatGPT* launched in late 2022, the AI gold rush began.",
+    "tr": "*ChatGPT* 2022 sonunda çıktığında yapay zekâ altına hücumu başladı."
+   },
+   "sketch": [
+    {
+     "el": "screen",
+     "x": 0.4,
+     "y": 0.62,
+     "s": 1.4
+    },
+    {
+     "el": "bubble",
+     "x": 0.4,
+     "y": 0.4,
+     "s": 0.5,
+     "kind": "speech",
+     "tail": null
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.3,
+     "text": "late 2022",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Every major tech company suddenly needed enormous numbers of advanced chips to train and run AI models.",
+    "tr": "Her büyük teknoloji şirketi yapay zekâ modellerini eğitmek ve çalıştırmak için aniden muazzam sayıda gelişmiş çipe ihtiyaç duydu."
+   },
+   "sketch": [
+    {
+     "el": "chip",
+     "x": 0.2,
+     "y": 0.3,
+     "s": 0.45
+    },
+    {
+     "el": "chip",
+     "x": 0.4,
+     "y": 0.3,
+     "s": 0.45
+    },
+    {
+     "el": "chip",
+     "x": 0.6,
+     "y": 0.3,
+     "s": 0.45
+    },
+    {
+     "el": "chip",
+     "x": 0.8,
+     "y": 0.3,
+     "s": 0.45
+    },
+    {
+     "el": "chip",
+     "x": 0.3,
+     "y": 0.7,
+     "s": 0.45
+    },
+    {
+     "el": "chip",
+     "x": 0.5,
+     "y": 0.7,
+     "s": 0.45
+    },
+    {
+     "el": "chip",
+     "x": 0.7,
+     "y": 0.7,
+     "s": 0.45
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And NVIDIA made the best ones.",
+    "tr": "Ve en iyilerini NVIDIA yapıyordu."
+   },
+   "sketch": [
+    {
+     "el": "chip",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.2,
+     "glow": true
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "the best ones",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Data centers filled with its chips began appearing all over the world.",
+    "tr": "Onun çipleriyle dolu veri merkezleri dünyanın her yerinde ortaya çıkmaya başladı."
+   },
+   "image": {
+    "file": "File:Datacenter Server Racks (22370909788).jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "data center server racks",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "In 2023, NVIDIA's value passed one trillion dollars.",
+    "tr": "2023'te NVIDIA'nın değeri bir trilyon doları geçti."
+   },
+   "sketch": [
+    {
+     "el": "graph",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "$1T · 2023",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "On October 29, 2025, it became the first company in history to pass five trillion.",
+    "tr": "29 Ekim 2025'te beş trilyonu geçen tarihteki ilk şirket oldu."
+   },
+   "sketch": [
+    {
+     "el": "graph",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "$5T · Oct 29, 2025",
+     "size": 1.4,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Huang, in his signature black leather jacket, became one of the most recognizable executives on Earth — and one of the richest.",
+    "tr": "İmzası olan siyah deri ceketiyle Huang, dünyanın en tanınan ve en zengin yöneticilerinden biri oldu."
+   },
+   "image": {
+    "file": "File:Jensen huang stanford 2026-04-30 010.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Jensen Huang · Stanford, 2026",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "So how does one chip company shape the world? In at least four ways.",
+    "tr": "Peki tek bir çip şirketi dünyayı nasıl şekillendiriyor? En az dört şekilde."
+   },
+   "sketch": [
+    {
+     "el": "chip",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.8
+    },
+    {
+     "el": "arrow",
+     "x": 0.45,
+     "y": 0.45,
+     "x2": 0.6,
+     "y2": 0.45,
+     "bend": 0.0
+    },
+    {
+     "el": "globe",
+     "x": 0.75,
+     "y": 0.48,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "4 ways",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "*First, AI itself.* A huge share of the world's most advanced AI is trained on NVIDIA hardware.",
+    "tr": "*Birincisi, yapay zekânın kendisi.* Dünyanın en gelişmiş yapay zekâ sistemlerinin büyük bir kısmı NVIDIA donanımı üzerinde eğitiliyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.1,
+     "y": 0.1,
+     "text": "1.",
+     "size": 1.6,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "ai",
+     "x": 0.5,
+     "y": 0.48,
+     "s": 1.1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When NVIDIA can't make chips fast enough, AI progress slows down everywhere.",
+    "tr": "NVIDIA yeterince hızlı çip üretemediğinde yapay zekâ ilerlemesi her yerde yavaşlıyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.1,
+     "y": 0.1,
+     "text": "1.",
+     "size": 1.6,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "chip",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.6
+    },
+    {
+     "el": "hourglass",
+     "x": 0.55,
+     "y": 0.45,
+     "s": 0.8
+    },
+    {
+     "el": "ai",
+     "x": 0.8,
+     "y": 0.45,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "*Second, money.* NVIDIA became one of the largest companies in the stock market.",
+    "tr": "*İkincisi, para.* NVIDIA borsadaki en büyük şirketlerden biri oldu."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.1,
+     "y": 0.1,
+     "text": "2.",
+     "size": 1.6,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "graph",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Millions of people's retirement savings move up and down with its share price — often without them knowing it.",
+    "tr": "Milyonlarca insanın emeklilik birikimi, çoğu zaman haberleri bile olmadan, onun hisse fiyatıyla inip çıkıyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.1,
+     "y": 0.1,
+     "text": "2.",
+     "size": 1.6,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "piggy",
+     "x": 0.32,
+     "y": 0.5,
+     "s": 0.9
+    },
+    {
+     "el": "arrow",
+     "x": 0.55,
+     "y": 0.5,
+     "x2": 0.68,
+     "y2": 0.5,
+     "bend": 0.0
+    },
+    {
+     "el": "graph",
+     "x": 0.82,
+     "y": 0.5,
+     "s": 0.45
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "*Third, geopolitics.* Since 2022, the United States has restricted exports of the most advanced AI chips to China,",
+    "tr": "*Üçüncüsü, jeopolitik.* ABD 2022'den beri en gelişmiş yapay zekâ çiplerinin Çin'e ihracatını kısıtlıyor"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.1,
+     "y": 0.1,
+     "text": "3.",
+     "size": 1.6,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.45,
+     "text": "USA",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "chip",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.45,
+     "text": "China",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "padlock",
+     "x": 0.5,
+     "y": 0.78,
+     "s": 0.7
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and NVIDIA has had to design special, weaker versions for that market.",
+    "tr": "ve NVIDIA o pazar için daha zayıf özel versiyonlar tasarlamak zorunda kaldı."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.1,
+     "y": 0.1,
+     "text": "3.",
+     "size": 1.6,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "chip",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.9
+    },
+    {
+     "el": "arrow",
+     "x": 0.47,
+     "y": 0.45,
+     "x2": 0.6,
+     "y2": 0.45,
+     "bend": 0.0
+    },
+    {
+     "el": "chip",
+     "x": 0.75,
+     "y": 0.48,
+     "s": 0.5
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.8,
+     "text": "H20 · H800",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "At the same time, its chips are manufactured mostly in Taiwan.",
+    "tr": "Aynı zamanda çipleri ağırlıklı olarak Tayvan'da üretiliyor."
+   },
+   "image": {
+    "file": "File:TSMC Fab 12A 01.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "TSMC fab · Taiwan",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "A single company sits right on the fault line between the world's two largest economies.",
+    "tr": "Tek bir şirket, dünyanın en büyük iki ekonomisi arasındaki fay hattının tam üzerinde duruyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.3,
+     "text": "USA",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.3,
+     "text": "China",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "chip",
+     "x": 0.5,
+     "y": 0.42,
+     "s": 0.6
+    },
+    {
+     "el": "line",
+     "x": 0.1,
+     "y": 0.72,
+     "s": 1.0,
+     "x2": 0.9,
+     "y2": 0.68,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "the fault line",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "*Fourth, energy.* The data centers filled with these chips use vast amounts of electricity.",
+    "tr": "*Dördüncüsü, enerji.* Bu çiplerle dolu veri merkezleri muazzam miktarda elektrik tüketiyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.1,
+     "y": 0.1,
+     "text": "4.",
+     "size": 1.6,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "factory",
+     "x": 0.5,
+     "y": 0.88,
+     "s": 1.1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The International Energy Agency has projected that global data center electricity use could roughly double by 2030, driven largely by AI.",
+    "tr": "Uluslararası Enerji Ajansı, küresel veri merkezi elektrik tüketiminin büyük ölçüde yapay zekâ nedeniyle 2030'a kadar yaklaşık iki katına çıkabileceğini öngördü."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.1,
+     "y": 0.1,
+     "text": "4.",
+     "size": 1.6,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "graph",
+     "x": 0.45,
+     "y": 0.55,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.4,
+     "text": "×2",
+     "size": 2.2,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.62,
+     "text": "by 2030",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Chips are not just products anymore. They are *power* — in every sense of the word.",
+    "tr": "Çipler artık sadece ürün değil. Kelimenin her anlamında *güç*."
+   },
+   "sketch": [
+    {
+     "el": "chip",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.3,
+     "glow": true
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "power",
+     "size": 1.6,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When a company becomes this important, something interesting happens in our heads: we start to see it as *one person*.",
+    "tr": "Bir şirket bu kadar önemli hale geldiğinde kafamızda ilginç bir şey olur: Onu *tek bir insan* olarak görmeye başlarız."
+   },
+   "sketch": [
+    {
+     "el": "house",
+     "x": 0.3,
+     "y": 0.82,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.5,
+     "text": "=",
+     "size": 2.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.75,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1840, the Scottish writer *Thomas Carlyle* argued that *\"the history of the world is but the biography of great men.\"*",
+    "tr": "1840'ta İskoç yazar *Thomas Carlyle* *\"dünya tarihi, büyük adamların biyografisinden başka bir şey değildir\"* diye yazdı."
+   },
+   "sketch": [
+    {
+     "el": "portrait_frame",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 1.0,
+     "text": "Thomas Carlyle"
+    },
+    {
+     "el": "scroll",
+     "x": 0.75,
+     "y": 0.45,
+     "s": 0.8,
+     "text": "1840"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "This became known as the *Great Man theory* of history.",
+    "tr": "Bu, tarihe dair *Büyük Adam kuramı* olarak bilinir hale geldi."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.9,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.9,
+     "h": 0.62,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.9,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.9,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.9,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.9,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "the Great Man theory",
+     "size": 1.3,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Critics, like the philosopher *Herbert Spencer*, pushed back: great people are products of their societies.",
+    "tr": "Filozof *Herbert Spencer* gibi eleştirmenler buna karşı çıktı: Büyük insanlar toplumlarının ürünüdür."
+   },
+   "sketch": [
+    {
+     "el": "portrait_frame",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 1.0,
+     "text": "Herbert Spencer"
+    },
+    {
+     "el": "workers",
+     "x": 0.75,
+     "y": 0.8,
+     "s": 0.8,
+     "n": 24,
+     "small": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Without the right conditions, no single person changes anything.",
+    "tr": "Doğru koşullar olmadan hiçbir tek kişi bir şey değiştiremez."
+   },
+   "sketch": [
+    {
+     "el": "workers",
+     "x": 0.5,
+     "y": 0.88,
+     "s": 1.2,
+     "n": 36,
+     "small": true
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.56,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "on the shoulders of many",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Psychology adds another twist. In 1920, psychologist *Edward Thorndike* described the *halo effect*:",
+    "tr": "Psikoloji bir dönemeç daha ekliyor. 1920'de psikolog *Edward Thorndike* *hale etkisini* tanımladı:"
+   },
+   "image": {
+    "file": "File:PSM V80 D211 Edward Lee Thorndike.png",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Edward Thorndike · 1874–1949",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "when we see one impressive quality in a person, we tend to assume they're impressive in other ways too —",
+    "tr": "Bir insanda etkileyici bir özellik gördüğümüzde, başka açılardan da etkileyici olduğunu varsayma eğilimindeyiz:"
+   },
+   "sketch": [
+    {
+     "el": "halo",
+     "x": 0.4,
+     "y": 0.2,
+     "s": 0.8
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.4,
+     "text": "brilliant",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "smarter, more trustworthy, more moral.",
+    "tr": "daha zeki, daha güvenilir, daha ahlaklı."
+   },
+   "sketch": [
+    {
+     "el": "halo",
+     "x": 0.4,
+     "y": 0.2,
+     "s": 0.8
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.3,
+     "text": "smarter",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.47,
+     "text": "trustworthy",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.64,
+     "text": "moral",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A brilliant engineer and visionary CEO starts to look like someone who can't make mistakes.",
+    "tr": "Parlak bir mühendis ve vizyoner bir CEO, hata yapamayacak biri gibi görünmeye başlar."
+   },
+   "sketch": [
+    {
+     "el": "halo",
+     "x": 0.5,
+     "y": 0.2,
+     "s": 0.9
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.58,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.98
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.92,
+     "text": "no mistakes?",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And investors, employees and governments begin to rely on that one person far more than is safe.",
+    "tr": "Ve yatırımcılar, çalışanlar ve hükümetler o tek kişiye güvenli olandan çok daha fazla yaslanmaya başlar."
+   },
+   "sketch": [
+    {
+     "el": "seesaw",
+     "x": 0.5,
+     "y": 0.82,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In early November 2026, that halo cracked.",
+    "tr": "Kasım 2026'nın başında o hale çatladı."
+   },
+   "sketch": [
+    {
+     "el": "halo",
+     "x": 0.5,
+     "y": 0.4,
+     "s": 1.4,
+     "cracked": true
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.85,
+     "text": "November 2026",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "On November 8, Huang sent a note to NVIDIA staff admitting that he had been unfaithful to his wife.",
+    "tr": "8 Kasım'da Huang, NVIDIA çalışanlarına gönderdiği bir notta eşini aldattığını itiraf etti."
+   },
+   "sketch": [
+    {
+     "el": "letter",
+     "x": 0.45,
+     "y": 0.45,
+     "s": 1.2,
+     "text": "to all staff"
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.15,
+     "text": "Nov 8",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "On its own, that would have been a private matter.",
+    "tr": "Tek başına bu özel bir mesele olurdu."
+   },
+   "sketch": [
+    {
+     "el": "door",
+     "x": 0.5,
+     "y": 0.8,
+     "s": 1.0,
+     "label": "private"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But several U.S. outlets reported something far more serious:",
+    "tr": "Ama birkaç ABD medya kuruluşu çok daha ciddi bir şey bildirdi:"
+   },
+   "sketch": [
+    {
+     "el": "newspaper",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.8,
+     "head": "REPORT"
+    },
+    {
+     "el": "newspaper",
+     "x": 0.7,
+     "y": 0.5,
+     "s": 0.8,
+     "head": "REPORT"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "that the woman involved was suspected by American officials of having ties to Chinese intelligence —",
+    "tr": "Söz konusu kadının ABD'li yetkililer tarafından Çin istihbaratıyla bağlantılı olduğundan şüphelenildiğini"
+   },
+   "sketch": [
+    {
+     "el": "magnifier",
+     "x": 0.35,
+     "y": 0.42,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.4,
+     "text": "suspected",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.6,
+     "text": "(not charged)",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and that a company linked to her had bought billions of dollars of NVIDIA chips,",
+    "tr": "ve ona bağlı bir şirketin milyarlarca dolarlık NVIDIA çipi satın aldığını,"
+   },
+   "sketch": [
+    {
+     "el": "money",
+     "x": 0.3,
+     "y": 0.6,
+     "s": 1.0,
+     "text": "$4.8B"
+    },
+    {
+     "el": "arrow",
+     "x": 0.45,
+     "y": 0.45,
+     "x2": 0.6,
+     "y2": 0.45,
+     "bend": 0.0
+    },
+    {
+     "el": "chip",
+     "x": 0.78,
+     "y": 0.45,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "reported",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "amid long-running concerns about advanced chips being smuggled into China.",
+    "tr": "gelişmiş çiplerin Çin'e kaçırıldığına dair uzun süredir devam eden endişeler sürerken."
+   },
+   "sketch": [
+    {
+     "el": "box",
+     "x": 0.4,
+     "y": 0.55,
+     "s": 1.0
+    },
+    {
+     "el": "chip",
+     "x": 0.4,
+     "y": 0.4,
+     "s": 0.35
+    },
+    {
+     "el": "arrow",
+     "x": 0.55,
+     "y": 0.5,
+     "x2": 0.75,
+     "y2": 0.5,
+     "bend": -0.2,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.85,
+     "y": 0.5,
+     "text": "China",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "She has not been charged, and the company linked to her has denied wrongdoing.",
+    "tr": "Kadın hakkında herhangi bir suçlama yapılmadı ve ona bağlı şirket herhangi bir yanlışı reddetti."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.32,
+     "text": "not charged",
+     "size": 1.5,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.55,
+     "text": "denies wrongdoing",
+     "size": 1.5,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "NVIDIA's board launched an independent investigation, led by a committee of independent directors with outside lawyers.",
+    "tr": "NVIDIA'nın yönetim kurulu, bağımsız yöneticilerden oluşan bir komite ve dışarıdan avukatlarla bağımsız bir soruşturma başlattı."
+   },
+   "sketch": [
+    {
+     "el": "table",
+     "x": 0.4,
+     "y": 0.7,
+     "s": 1.2
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.72,
+     "h": 0.38,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.72,
+     "h": 0.38,
+     "pose": "sit",
+     "face": -1
+    },
+    {
+     "el": "magnifier",
+     "x": 0.82,
+     "y": 0.3,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "independent investigation",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The company said it had no reason to believe that national security or NVIDIA's secrets had been compromised.",
+    "tr": "Şirket, ulusal güvenliğin ya da NVIDIA'nın sırlarının tehlikeye girdiğine inanmak için bir sebep olmadığını açıkladı."
+   },
+   "sketch": [
+    {
+     "el": "padlock",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.35,
+     "text": "\"no reason to believe",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.52,
+     "text": "secrets were compromised\"",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Still, the reaction was fast. Lawmakers called on Huang to testify before Congress.",
+    "tr": "Yine de tepki hızlı geldi. Milletvekilleri Huang'ı Kongre'de ifade vermeye çağırdı."
+   },
+   "sketch": [
+    {
+     "el": "capitol",
+     "x": 0.45,
+     "y": 0.85,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.2,
+     "text": "testify?",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A shareholder lawsuit was filed.",
+    "tr": "Bir hissedar davası açıldı."
+   },
+   "sketch": [
+    {
+     "el": "balance",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "lawsuit",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And on November 11, *The Wall Street Journal* reported that the board was preparing to remove him as CEO, citing people familiar with the matter.",
+    "tr": "Ve 11 Kasım'da *The Wall Street Journal*, konuya yakın kaynaklara dayanarak yönetim kurulunun onu CEO'luktan almaya hazırlandığını bildirdi."
+   },
+   "sketch": [
+    {
+     "el": "newspaper",
+     "x": 0.38,
+     "y": 0.45,
+     "s": 1.0,
+     "head": "WSJ · Nov 11"
+    },
+    {
+     "el": "chair",
+     "x": 0.8,
+     "y": 0.75,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.3,
+     "text": "?",
+     "size": 2.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Further reports described a separate relationship with an NVIDIA employee.",
+    "tr": "Başka haberler NVIDIA'dan bir çalışanla ayrı bir ilişkiyi de aktardı."
+   },
+   "sketch": [
+    {
+     "el": "newspaper",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 0.9,
+     "head": "REPORT"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "NVIDIA's stock, which had already been sliding, fell sharply.",
+    "tr": "Zaten düşüşte olan NVIDIA hissesi sert biçimde düştü."
+   },
+   "sketch": [
+    {
+     "el": "graph",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.1,
+     "up": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In after-hours trading on November 11, it stood roughly a third below its October high.",
+    "tr": "11 Kasım'da mesai sonrası işlemlerde ekim zirvesinin yaklaşık üçte bir altındaydı."
+   },
+   "sketch": [
+    {
+     "el": "graph",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.0,
+     "up": false
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.45,
+     "text": "-33%",
+     "size": 1.8,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "As of this recording, no final decision has been announced.",
+    "tr": "Bu kaydın yapıldığı an itibarıyla nihai bir karar açıklanmadı."
+   },
+   "sketch": [
+    {
+     "el": "chair",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 1.3
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "as of Nov 12, 2026",
+     "size": 1.2,
+     "color": "blue",
+     "underline": "blue"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.9,
+     "text": "no decision yet",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Engineers have a name for a part of a system that, if it fails, brings everything down: a *single point of failure*.",
+    "tr": "Mühendislerin, bir sistemde bozulduğunda her şeyi çökerten parçaya verdiği bir isim var: *tek hata noktası*."
+   },
+   "sketch": [
+    {
+     "el": "bridge",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.9,
+     "cracked": true
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "single point of failure",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Good systems are designed to avoid them.",
+    "tr": "İyi sistemler bunlardan kaçınacak şekilde tasarlanır."
+   },
+   "sketch": [
+    {
+     "el": "network",
+     "x": 0.5,
+     "y": 0.48,
+     "s": 0.9,
+     "extra": true
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.9,
+     "text": "backups",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Investors have a similar idea: *key person risk* — when a company's value depends heavily on one individual.",
+    "tr": "Yatırımcıların da benzer bir kavramı var: *kilit kişi riski*, yani bir şirketin değerinin büyük ölçüde tek bir kişiye bağlı olması."
+   },
+   "sketch": [
+    {
+     "el": "seesaw",
+     "x": 0.5,
+     "y": 0.82,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "key person risk",
+     "size": 1.4,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "For years, NVIDIA's story was told as Jensen Huang's story. His vision, his bets, his jacket.",
+    "tr": "Yıllarca NVIDIA'nın hikâyesi Jensen Huang'ın hikâyesi olarak anlatıldı. Onun vizyonu, onun bahisleri, onun ceketi."
+   },
+   "sketch": [
+    {
+     "el": "spotlight",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.98
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.3,
+     "text": "vision",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.47,
+     "text": "bets",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.64,
+     "text": "jacket",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "That story helped build one of the most valuable companies in history.",
+    "tr": "Bu hikâye tarihin en değerli şirketlerinden birini inşa etmeye yardım etti."
+   },
+   "image": {
+    "file": "File:NVIDIA Headquarters.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "NVIDIA headquarters · Santa Clara",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "But it also meant that a crisis in one person's life could shake markets, worry governments,",
+    "tr": "Ama aynı zamanda tek bir insanın hayatındaki bir krizin piyasaları sarsabileceği, hükümetleri endişelendirebileceği"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "arrow",
+     "x": 0.3,
+     "y": 0.45,
+     "x2": 0.45,
+     "y2": 0.45,
+     "bend": 0.0,
+     "color": "red"
+    },
+    {
+     "el": "graph",
+     "x": 0.6,
+     "y": 0.45,
+     "s": 0.4,
+     "up": false
+    },
+    {
+     "el": "capitol",
+     "x": 0.85,
+     "y": 0.75,
+     "s": 0.45
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and raise questions about the security of the technology the whole AI industry runs on.",
+    "tr": "ve bütün yapay zekâ sektörünün üzerinde çalıştığı teknolojinin güvenliği hakkında sorular doğurabileceği anlamına da geliyordu."
+   },
+   "sketch": [
+    {
+     "el": "chip",
+     "x": 0.4,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "warning",
+     "x": 0.75,
+     "y": 0.42,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Whatever the board decides, the lesson is bigger than one man.",
+    "tr": "Yönetim kurulu ne karar verirse versin, ders tek bir adamdan büyük."
+   },
+   "sketch": [
+    {
+     "el": "chair",
+     "x": 0.3,
+     "y": 0.75,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.42,
+     "text": "bigger than\none man",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When a society builds its future on a single company — and a single company on a single person —",
+    "tr": "Bir toplum geleceğini tek bir şirketin, tek bir şirket de tek bir insanın üzerine kurduğunda,"
+   },
+   "sketch": [
+    {
+     "el": "globe",
+     "x": 0.5,
+     "y": 0.25,
+     "s": 0.6
+    },
+    {
+     "el": "house",
+     "x": 0.5,
+     "y": 0.65,
+     "s": 0.7
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.92,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.92,
+     "h": 0.18,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "it isn't only betting on their genius. It's betting on their every decision.",
+    "tr": "sadece onların dehasına bahse girmiyor. Her bir kararlarına bahse giriyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.32,
+     "text": "genius",
+     "size": 1.5,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.58,
+     "text": "+ every decision",
+     "size": 1.5,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Let's try something. Think about something you depend on every day — your job, a team, a family, a project.",
+    "tr": "Bir şey deneyelim. Her gün bağlı olduğun bir şeyi düşün: işin, bir ekip, ailen, bir proje."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.1,
+     "text": "try this",
+     "size": 1.0,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "head",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "bubble",
+     "x": 0.7,
+     "y": 0.4,
+     "s": 1.2,
+     "kind": "thought",
+     "tail": [
+      0.42,
+      0.35
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.4,
+     "text": "job · team · family",
+     "size": 0.6,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Now ask: is there one person, or one thing, that if it suddenly disappeared, everything would stop?",
+    "tr": "Şimdi sor: Aniden ortadan kalksa her şeyi durduracak tek bir kişi ya da tek bir şey var mı?"
+   },
+   "sketch": [
+    {
+     "el": "network",
+     "x": 0.5,
+     "y": 0.48,
+     "s": 0.9
+    },
+    {
+     "el": "circle",
+     "x": 0.5,
+     "y": 0.48,
+     "s": 0.6,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.92,
+     "text": "if it disappeared?",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "If the answer is yes, you've found your single point of failure.",
+    "tr": "Cevap evetse, kendi tek hata noktanı buldun."
+   },
+   "sketch": [
+    {
+     "el": "network",
+     "x": 0.5,
+     "y": 0.48,
+     "s": 0.9
+    },
+    {
+     "el": "cross",
+     "x": 0.5,
+     "y": 0.48,
+     "s": 0.5,
+     "at": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And the fix is usually the same for companies and for people: share knowledge, build backups,",
+    "tr": "Ve çözüm şirketler için de insanlar için de genellikle aynı: bilgiyi paylaş, yedekler kur"
+   },
+   "sketch": [
+    {
+     "el": "network",
+     "x": 0.5,
+     "y": 0.48,
+     "s": 0.9,
+     "extra": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and don't confuse one person's brilliance with a system's strength.",
+    "tr": "ve bir kişinin parlaklığını bir sistemin gücüyle karıştırma."
+   },
+   "sketch": [
+    {
+     "el": "halo",
+     "x": 0.28,
+     "y": 0.25,
+     "s": 0.6
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.85,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.28,
+     "y": 0.85,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.5,
+     "text": "≠",
+     "size": 2.0,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "network",
+     "x": 0.75,
+     "y": 0.5,
+     "s": 0.55,
+     "extra": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A dishwasher from Denny's helped build the machine at the center of the AI age.",
+    "tr": "Denny's'ten bir bulaşıkçı, yapay zekâ çağının merkezindeki makineyi inşa etmeye yardım etti."
+   },
+   "sketch": [
+    {
+     "el": "sink",
+     "x": 0.22,
+     "y": 0.6,
+     "s": 0.6
+    },
+    {
+     "el": "arrow",
+     "x": 0.36,
+     "y": 0.5,
+     "x2": 0.45,
+     "y2": 0.5,
+     "bend": 0.0
+    },
+    {
+     "el": "chip",
+     "x": 0.55,
+     "y": 0.5,
+     "s": 0.55
+    },
+    {
+     "el": "arrow",
+     "x": 0.66,
+     "y": 0.5,
+     "x2": 0.74,
+     "y2": 0.5,
+     "bend": 0.0
+    },
+    {
+     "el": "globe",
+     "x": 0.85,
+     "y": 0.5,
+     "s": 0.55
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "That part of the story is real, and remarkable.",
+    "tr": "Hikâyenin bu kısmı gerçek ve olağanüstü."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "real & remarkable",
+     "size": 1.6,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But the most important chapter may be the one being written right now —",
+    "tr": "Ama en önemli bölüm belki şu anda yazılan bölüm:"
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.1,
+     "text": "next chapter?"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "not about how one man rose, but about whether the systems around him are strong enough to survive without him.",
+    "tr": "Bir adamın nasıl yükseldiği değil, etrafındaki sistemlerin onsuz ayakta kalacak kadar güçlü olup olmadığı."
+   },
+   "sketch": [
+    {
+     "el": "bridge",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "strong enough?",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Because in the end, the most powerful technology in the world still runs on something very old and very fragile:",
+    "tr": "Çünkü sonunda dünyanın en güçlü teknolojisi hâlâ çok eski ve çok kırılgan bir şeyle çalışıyor:"
+   },
+   "sketch": [
+    {
+     "el": "chip",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.0,
+     "glow": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "*human beings*.",
+    "tr": "*insanlarla*."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.6,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "chip",
+     "x": 0.58,
+     "y": 0.48,
+     "s": 0.2,
+     "glow": true
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "human beings",
+     "size": 1.6,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+  "cta": "full video on the channel",
+  "cta_scene": {
+    "say": {"en": "The full story is on the channel.", "tr": "Hikâyenin tamamı kanalda."},
+    "sketch": [{"el": "text", "x": 0.5, "y": 0.4, "text": "full video", "size": 1.6, "underline": "red"},
+               {"el": "text", "x": 0.5, "y": 0.62, "text": "on the channel", "size": 1.0, "color": "blue"}]
+  },
+  "shorts": [
+    {"from": 0, "to": 6, "title": "From Denny's dishwasher\nto a $5 trillion company"},
+    {"from": 15, "to": 23, "title": "\"Our company is 30 days\nfrom going out of business\""},
+    {"from": 24, "to": 33, "title": "Two gaming cards started\nthe AI revolution"},
+    {"from": 54, "to": 63, "title": "Why we turn CEOs\ninto gods"}
+  ]
+}

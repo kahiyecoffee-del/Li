@@ -1375,6 +1375,210 @@ ELEMENTS_EXTRA.update({
 })
 
 
+# ----------------------------------------------------------- NVIDIA videosu
+GREEN = (90, 150, 50)
+
+
+def el_sink(x, y, s, seed=0, **_):
+    """Lavabo ve tabak yığını."""
+    out = [Stroke([(x - 300 * s, y), (x + 300 * s, y)], 7 * s + 1, seed=seed),
+           Stroke(bez((x - 220 * s, y), (x, y + 220 * s), (x + 220 * s, y), 20), 6 * s + 1, seed=seed + 1),
+           Stroke([(x + 160 * s, y), (x + 160 * s, y - 170 * s), (x + 60 * s, y - 170 * s), (x + 60 * s, y - 120 * s)], 7 * s + 1, (130, 130, 140), seed=seed + 2)]
+    for k in range(6):
+        yy = y - 20 * s - k * 26 * s
+        out.append(Stroke(ellipse_pts(x - 120 * s + (k % 2) * 10 * s, yy, 110 * s, 16 * s, n=24, seed=seed + k), 4 * s + 1, BLUE if k % 2 else INK, seed=seed + 3 + k))
+    for k in range(3):
+        out.append(Stroke(ellipse_pts(x + 110 * s + k * 30 * s, y - 230 * s - k * 40 * s, 12 * s, 12 * s, n=10), 3 * s, (150, 180, 210), 1, seed + 12 + k))
+    return out
+
+
+def el_gpu(x, y, s, label=None, seed=0, **_):
+    """Ekran kartı: kart, fan(lar), konnektör."""
+    w, h = 620 * s, 260 * s
+    out = [_blob([(x - w / 2, y - h / 2), (x + w / 2, y - h / 2), (x + w / 2, y + h / 2), (x - w / 2, y + h / 2)], tone=0.35, color=GREEN, seed=seed),
+           Stroke(_rect(x - w / 2, y - h / 2, x + w / 2, y + h / 2), 6 * s + 1, seed=seed + 1)]
+    for k, fx in enumerate((x - 140 * s, x + 140 * s)):
+        out.append(Stroke(ellipse_pts(fx, y, 95 * s, 95 * s, n=32, seed=seed + k), 5 * s + 1, seed=seed + 2 + k))
+        for j in range(5):
+            a = j * 2 * math.pi / 5
+            out.append(Stroke(bez((fx, y), (fx + math.cos(a) * 60 * s, y + math.sin(a) * 30 * s), (fx + math.cos(a + 0.6) * 85 * s, y + math.sin(a + 0.6) * 85 * s), 8),
+                              3 * s, seed=seed + 5 + j))
+    for k in range(10):
+        xx = x - w / 2 + 40 * s + k * 26 * s
+        out.append(Stroke([(xx, y + h / 2), (xx, y + h / 2 + 30 * s)], 4 * s, (190, 150, 60), 1, seed + 20 + k))
+    if label:
+        out.append(Text(label, x, y - h / 2 - 55 * s, 56 * s, INK))
+    return out
+
+
+def el_chip(x, y, s, glow=False, seed=0, **_):
+    r = 150 * s
+    out = []
+    if glow:
+        m, o = mask_from(lambda d, T, ss: d.ellipse([T((x - r * 1.8, y - r * 1.8)), T((x + r * 1.8, y + r * 1.8))], fill=255),
+                         (x - r * 1.8, y - r * 1.8, x + r * 1.8, y + r * 1.8), smooth=r * 0.3)
+        out.append(Fill(m, o, tone=0.35, color=(245, 205, 110), seed=seed, outline=False))
+    out += [_blob([(x - r, y - r), (x + r, y - r), (x + r, y + r), (x - r, y + r)], tone=0.9, color=(50, 55, 60), seed=seed + 1),
+            Stroke(_rect(x - r * 0.55, y - r * 0.55, x + r * 0.55, y + r * 0.55), 4 * s + 1, GREEN, seed=seed + 2)]
+    for k in range(6):
+        d = -r * 0.8 + k * r * 0.32
+        for (a, b) in (((x + d, y - r), (x + d, y - r - 45 * s)), ((x + d, y + r), (x + d, y + r + 45 * s)),
+                       ((x - r, y + d), (x - r - 45 * s, y + d)), ((x + r, y + d), (x + r + 45 * s, y + d))):
+            out.append(Stroke([a, b], 6 * s, (170, 170, 175), 1, seed + 3 + k))
+    return out
+
+
+def el_shovel(x, y, s, seed=0, **_):
+    out = [Stroke([(x, y - 330 * s), (x, y + 80 * s)], 12 * s + 1, (130, 90, 55), seed=seed),
+           Stroke([(x - 50 * s, y - 330 * s), (x + 50 * s, y - 330 * s)], 12 * s + 1, (130, 90, 55), seed=seed + 1)]
+    blade = [(x - 80 * s, y + 80 * s), (x + 80 * s, y + 80 * s), (x + 70 * s, y + 220 * s), (x, y + 270 * s), (x - 70 * s, y + 220 * s)]
+    out += [_blob(blade, tone=0.6, color=(130, 130, 140), seed=seed + 2), Stroke(blade + [blade[0]], 5 * s + 1, seed=seed + 3)]
+    return out
+
+
+def el_network(x, y, s, extra=False, seed=0, **_):
+    """Tek düğümlü ağ (yıldız); extra: düğümler arasında yedek bağlantılar."""
+    rnd = random.Random(seed)
+    nodes = [(x + math.cos(k * math.pi / 4) * 380 * s * (0.8 + 0.2 * rnd.random()), y + math.sin(k * math.pi / 4) * 260 * s) for k in range(8)]
+    out = []
+    for i, p in enumerate(nodes):
+        out.append(Stroke([(x, y), p], 4 * s + 1, seed=seed + i))
+    if extra:
+        for i in range(8):
+            out.append(Stroke([nodes[i], nodes[(i + 1) % 8]], 5 * s + 1, BLUE, seed=seed + 20 + i))
+    for i, p in enumerate(nodes):
+        out.append(Stroke(ellipse_pts(p[0], p[1], 26 * s, 26 * s, n=14), 6 * s, seed=seed + 40 + i))
+    m, o = mask_from(lambda d, T, ss: d.ellipse([T((x - 60 * s, y - 60 * s)), T((x + 60 * s, y + 60 * s))], fill=255),
+                     (x - 62 * s, y - 62 * s, x + 62 * s, y + 62 * s))
+    out.append(Fill(m, o, tone=0.9, color=RED, seed=seed + 60))
+    return out
+
+
+def el_capitol(x, y, s, seed=0, **_):
+    """Kongre binası: kubbe, sütunlar, basamaklar."""
+    out = [Stroke([(x - 380 * s, y), (x + 380 * s, y)], 7 * s + 1, seed=seed),
+           Stroke(_rect(x - 330 * s, y - 230 * s, x + 330 * s, y - 30 * s), 5 * s + 1, seed=seed + 1),
+           Stroke([(x - 360 * s, y - 15 * s), (x + 360 * s, y - 15 * s)], 4 * s, seed=seed + 2)]
+    for k in range(9):
+        xx = x - 280 * s + k * 70 * s
+        out.append(Stroke([(xx, y - 210 * s), (xx, y - 30 * s)], 5 * s, seed=seed + 3 + k))
+    out.append(Stroke(_rect(x - 160 * s, y - 300 * s, x + 160 * s, y - 230 * s), 5 * s + 1, seed=seed + 15))
+    out.append(Stroke(bez((x - 140 * s, y - 300 * s), (x, y - 560 * s), (x + 140 * s, y - 300 * s), 24), 6 * s + 1, seed=seed + 16))
+    out.append(Stroke([(x, y - 430 * s), (x, y - 500 * s)], 6 * s + 1, seed=seed + 17))
+    return out
+
+
+def el_newspaper(x, y, s, head="REPORT", seed=0, **_):
+    w, h = 560 * s, 420 * s
+    out = [_blob([(x - w / 2, y - h / 2), (x + w / 2, y - h / 2), (x + w / 2, y + h / 2), (x - w / 2, y + h / 2)], tone=0.15, color=(200, 195, 180), seed=seed),
+           Stroke(_rect(x - w / 2, y - h / 2, x + w / 2, y + h / 2), 5 * s + 1, seed=seed + 1),
+           Text(head, x, y - h / 2 + 70 * s, 64 * s, INK),
+           Stroke([(x - w / 2 + 30 * s, y - h / 2 + 120 * s), (x + w / 2 - 30 * s, y - h / 2 + 120 * s)], 4 * s, seed=seed + 2)]
+    for c in range(2):
+        for k in range(5):
+            yy = y - h / 2 + 160 * s + k * 42 * s
+            x0 = x - w / 2 + 30 * s + c * (w / 2)
+            out.append(Stroke([(x0, yy), (x0 + w / 2 - 60 * s - (k % 3) * 30 * s, yy)], 3 * s, COLORS["grey"], 1, seed + 3 + c * 5 + k))
+    return out
+
+
+def el_halo(x, y, s, cracked=False, seed=0, **_):
+    out = [Stroke(ellipse_pts(x, y, 170 * s, 45 * s, n=40, seed=seed), 12 * s + 1, (225, 180, 70), seed=seed)]
+    if cracked:
+        out.append(Stroke([(x + 20 * s, y - 60 * s), (x - 10 * s, y - 10 * s), (x + 30 * s, y + 15 * s), (x - 5 * s, y + 70 * s)], 6 * s + 1, INK, seed=seed + 1))
+    return out
+
+
+def el_bridge(x, y, s, cracked=False, seed=0, W=1920, **_):
+    out = [Stroke([(x - 700 * s, y), (x + 700 * s, y)], 9 * s + 1, seed=seed),
+           Stroke(bez((x - 700 * s, y), (x, y - 330 * s), (x + 700 * s, y), 30), 5 * s + 1, seed=seed + 1)]
+    for k in range(5):
+        px = x - 560 * s + k * 280 * s
+        tilt = 40 * s if (cracked and k == 2) else 0
+        out.append(Stroke([(px, y), (px + tilt, y + 260 * s)], 14 * s + 1, seed=seed + 2 + k))
+    for k in range(13):
+        px = x - 600 * s + k * 100 * s
+        u = (px - (x - 700 * s)) / (1400 * s)
+        top = y - 4 * u * (1 - u) * 165 * s
+        out.append(Stroke([(px, top), (px, y)], 2 * s + 1, COLORS["grey"], 1, seed + 10 + k))
+    if cracked:
+        cx = x
+        out.append(Stroke([(cx - 20 * s, y + 40 * s), (cx + 15 * s, y + 100 * s), (cx - 10 * s, y + 160 * s), (cx + 20 * s, y + 230 * s)], 6 * s, RED, seed=seed + 30))
+    return out
+
+
+def el_seesaw(x, y, s, seed=0, **_):
+    out = [Stroke([(x - 90 * s, y), (x, y - 120 * s), (x + 90 * s, y), (x - 90 * s, y)], 6 * s + 1, seed=seed),
+           Stroke([(x - 560 * s, y - 40 * s), (x + 560 * s, y - 200 * s)], 9 * s + 1, (130, 90, 55), seed=seed + 1)]
+    it, _ = figure(x - 470 * s, y - 50 * s, 240 * s, "stand", 1, seed=seed + 3)
+    out += it
+    for k in range(6):
+        bx = x + 230 * s + k * 55 * s
+        by = y - 170 * s - (bx - x) * 0.143
+        hgt = (80 + (k * 37) % 90) * s
+        out.append(Stroke(_rect(bx, by - hgt, bx + 45 * s, by), 4 * s + 1, BLUE, seed=seed + 10 + k))
+    return out
+
+
+def el_factory(x, y, s, seed=0, **_):
+    out = [Stroke([(x - 300 * s, y), (x - 300 * s, y - 200 * s), (x - 180 * s, y - 280 * s), (x - 180 * s, y - 200 * s), (x - 60 * s, y - 280 * s),
+                   (x - 60 * s, y - 200 * s), (x + 60 * s, y - 280 * s), (x + 60 * s, y - 200 * s), (x + 300 * s, y - 200 * s), (x + 300 * s, y), (x - 300 * s, y)], 6 * s + 1, seed=seed),
+           Stroke(_rect(x + 150 * s, y - 460 * s, x + 220 * s, y - 200 * s), 6 * s + 1, seed=seed + 1)]
+    for k in range(3):
+        cx, cy = x + 185 * s + k * 50 * s, y - 520 * s - k * 60 * s
+        out.append(Stroke(ellipse_pts(cx, cy, (40 + k * 15) * s, (28 + k * 10) * s, n=20, seed=seed + k), 4 * s, COLORS["grey"], 1, seed + 2 + k))
+    bolt = [(x - 30 * s, y - 470 * s), (x - 110 * s, y - 330 * s), (x - 40 * s, y - 330 * s), (x - 100 * s, y - 200 * s)]
+    out.append(Stroke(bolt, 10 * s + 1, (230, 180, 40), seed=seed + 8))
+    return out
+
+
+def el_piggy(x, y, s, seed=0, **_):
+    body = ellipse_pts(x, y, 200 * s, 140 * s, n=40, seed=seed)
+    out = [_blob(body, tone=0.35, color=(220, 140, 150), seed=seed), Stroke(body, 6 * s + 1, seed=seed + 1),
+           Stroke(ellipse_pts(x + 200 * s, y - 10 * s, 35 * s, 45 * s, n=16), 5 * s + 1, seed=seed + 2),
+           Stroke([(x - 50 * s, y - 145 * s), (x + 50 * s, y - 145 * s)], 8 * s + 1, seed=seed + 3)]
+    for lx in (x - 110 * s, x + 100 * s):
+        out.append(Stroke([(lx, y + 120 * s), (lx, y + 190 * s)], 12 * s + 1, seed=seed + 4))
+    out.append(Stroke(ellipse_pts(x + 120 * s, y - 50 * s, 8 * s, 8 * s, n=8), 6 * s, seed=seed + 5))
+    return out
+
+
+def el_workers(x, y, s, n=3, small=False, seed=0, **_):
+    """n figür yan yana (CPU = 3 iri, GPU = çok sayıda küçük)."""
+    out = []
+    if small:
+        cols = 12
+        for k in range(n):
+            r, c = divmod(k, cols)
+            it, _ = figure(x - 330 * s + c * 60 * s, y - r * 110 * s, 100 * s, "stand", 1, seed=seed + k)
+            out += it
+    else:
+        for k in range(n):
+            it, _ = figure(x - 220 * s + k * 220 * s, y, 360 * s, "think" if k == 1 else "stand", 1, seed=seed + k)
+            out += it
+    return out
+
+
+def el_table(x, y, s, seed=0, **_):
+    """Restoran masası, üç kahve fincanı, peçetede çip çizimi."""
+    out = [Stroke([(x - 340 * s, y), (x + 340 * s, y)], 9 * s + 1, (130, 90, 55), seed=seed),
+           Stroke([(x - 260 * s, y), (x - 260 * s, y + 220 * s)], 8 * s + 1, (130, 90, 55), seed=seed + 1),
+           Stroke([(x + 260 * s, y), (x + 260 * s, y + 220 * s)], 8 * s + 1, (130, 90, 55), seed=seed + 2)]
+    for k, cx in enumerate((x - 230 * s, x + 200 * s, x + 280 * s)):
+        out.append(Stroke([(cx - 30 * s, y - 70 * s), (cx - 25 * s, y), (cx + 25 * s, y), (cx + 30 * s, y - 70 * s)], 5 * s + 1, seed=seed + 3 + k))
+        out.append(Stroke(bez((cx + 30 * s, y - 55 * s), (cx + 60 * s, y - 40 * s), (cx + 28 * s, y - 20 * s), 8), 4 * s, seed=seed + 6 + k))
+    out.append(Stroke([(x - 120 * s, y - 8 * s), (x - 90 * s, y - 70 * s), (x + 110 * s, y - 70 * s), (x + 80 * s, y - 8 * s), (x - 120 * s, y - 8 * s)], 4 * s, seed=seed + 9))
+    out.append(Stroke(_rect(x - 30 * s, y - 58 * s, x + 30 * s, y - 20 * s), 3 * s + 1, GREEN, seed=seed + 10))
+    return out
+
+
+ELEMENTS_EXTRA.update({
+    "sink": el_sink, "gpu": el_gpu, "chip": el_chip, "shovel": el_shovel, "network": el_network, "capitol": el_capitol,
+    "newspaper": el_newspaper, "halo": el_halo, "bridge": el_bridge, "seesaw": el_seesaw, "factory": el_factory, "piggy": el_piggy,
+    "workers": el_workers, "table": el_table,
+})
+
+
 # --------------------------------------------------------------------------- #
 # Sahne: öğeleri sırayla çizer
 # --------------------------------------------------------------------------- #
