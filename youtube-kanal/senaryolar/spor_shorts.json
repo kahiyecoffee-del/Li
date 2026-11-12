@@ -1,0 +1,81 @@
+{
+ "cta": "subscribe for more  ·  full video on the channel",
+ "cta_scene": {
+  "say": {
+   "en": "Subscribe for more stories like this. The full video is on the channel.",
+   "tr": "Bunun gibi daha fazla hikâye için abone ol. Videonun tamamı kanalda."
+  },
+  "sketch": [
+   {
+    "el": "subscribe",
+    "x": 0.5,
+    "y": 0.4,
+    "s": 1.3
+   },
+   {
+    "el": "arrow",
+    "x": 0.25,
+    "y": 0.78,
+    "x2": 0.37,
+    "y2": 0.55,
+    "color": "red",
+    "s": 1.2
+   },
+   {
+    "el": "text",
+    "x": 0.5,
+    "y": 0.85,
+    "text": "full video on the channel",
+    "size": 0.9,
+    "color": "blue"
+   }
+  ]
+ },
+ "shorts": [
+  {
+   "from": 0,
+   "to": 7,
+   "title": "Watching football can\nliterally break your heart"
+  },
+  {
+   "from": 8,
+   "to": 17,
+   "title": "Sports fans almost\ndestroyed an empire"
+  },
+  {
+   "from": 18,
+   "to": 28,
+   "title": "Your brain plays\nthe game too"
+  },
+  {
+   "from": 29,
+   "to": 39,
+   "title": "Why a last-minute goal\nfeels like an explosion"
+  },
+  {
+   "from": 40,
+   "to": 49,
+   "title": "\"We won.\"\n\"They lost.\""
+  },
+  {
+   "from": 50,
+   "to": 63,
+   "title": "Your brain picks a team\nin seconds"
+  },
+  {
+   "from": 64,
+   "to": 71,
+   "title": "Why every fan thinks the\nreferee hates their team"
+  },
+  {
+   "from": 72,
+   "to": 79,
+   "title": "Sport is a safe war"
+  },
+  {
+   "from": 80,
+   "to": 83,
+   "title": "Try this during\nyour next match"
+  }
+ ]
+}

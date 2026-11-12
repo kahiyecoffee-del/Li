@@ -1,0 +1,2744 @@
+{
+ "slug": "spor",
+ "format": "long",
+ "theme": "karakalem",
+ "character": "none",
+ "languages": [
+  "en"
+ ],
+ "subtitles": [
+  "tr"
+ ],
+ "voices": {
+  "en": "am_fenrir"
+ },
+ "speech_rate": 0.88,
+ "meta": {
+  "en": {
+   "title": "Why Do We Love Watching Sports?",
+   "description": "",
+   "tags": []
+  },
+  "tr": {
+   "title": "Spor İzlemek Neden Keyif Veriyor?",
+   "description": "",
+   "tags": []
+  }
+ },
+ "subscribe": {
+  "after": 8,
+  "sketch": [
+   {
+    "el": "subscribe",
+    "x": 0.45,
+    "y": 0.45,
+    "s": 1.4
+   },
+   {
+    "el": "arrow",
+    "x": 0.2,
+    "y": 0.75,
+    "x2": 0.33,
+    "y2": 0.55,
+    "color": "red",
+    "s": 1.2
+   }
+  ],
+  "say": {
+   "en": "If you like finding out why we do the strange things we do, *subscribe*. It genuinely helps the channel.",
+   "tr": "Yaptığımız tuhaf şeyleri neden yaptığımızı keşfetmeyi seviyorsan *abone ol*. Kanala gerçekten çok yardımı oluyor."
+  }
+ },
+ "scenes": [
+  {
+   "say": {
+    "en": "In the summer of 2006, during the World Cup in Germany, doctors in Munich noticed something strange.",
+    "tr": "2006 yazında, Almanya'daki Dünya Kupası sırasında Münihli doktorlar tuhaf bir şey fark etti."
+   },
+   "sketch": [
+    {
+     "el": "ball",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 1.6
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.35,
+     "text": "World Cup 2006",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.55,
+     "text": "Munich",
+     "size": 1.1,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "On days when the German national team played, cardiac emergencies among local fans were more than *two and a half times* higher than normal.",
+    "tr": "Alman milli takımının oynadığı günlerde, yerel taraftarlar arasındaki kalp acilleri normalin *iki buçuk katından* fazlaydı."
+   },
+   "sketch": [
+    {
+     "el": "heart",
+     "x": 0.25,
+     "y": 0.4,
+     "s": 1.0
+    },
+    {
+     "el": "ekg",
+     "x": 0.62,
+     "y": 0.45,
+     "s": 0.7,
+     "spike": 1.4
+    },
+    {
+     "el": "text",
+     "x": 0.62,
+     "y": 0.8,
+     "text": "×2.66",
+     "size": 1.8,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "People weren't running. They weren't playing. They were *watching*.",
+    "tr": "İnsanlar koşmuyordu. Oynamıyordu. *İzliyordu*."
+   },
+   "sketch": [
+    {
+     "el": "tv",
+     "x": 0.62,
+     "y": 0.45,
+     "s": 1.0,
+     "text": "LIVE"
+    },
+    {
+     "el": "figure",
+     "x": 0.22,
+     "y": 0.78,
+     "h": 0.45,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "chair",
+     "x": 0.22,
+     "y": 0.78,
+     "s": 0.9
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And watching was enough to push their hearts to the limit.",
+    "tr": "Ve izlemek kalplerini sınıra dayamaya yetiyordu."
+   },
+   "sketch": [
+    {
+     "el": "heart",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 1.3
+    },
+    {
+     "el": "gauge",
+     "x": 0.72,
+     "y": 0.6,
+     "s": 0.9,
+     "value": 0.95,
+     "label": "limit"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Every weekend, billions of people do something that makes very little sense on paper:",
+    "tr": "Her hafta sonu milyarlarca insan kâğıt üzerinde pek anlamlı olmayan bir şey yapıyor:"
+   },
+   "sketch": [
+    {
+     "el": "globe",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "calendar",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.9,
+     "text": "every weekend"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "they spend hours watching strangers chase a ball —",
+    "tr": "Saatlerce bir topun peşinden koşan yabancıları izliyor"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.55,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.55,
+     "h": 0.2,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.45,
+     "y": 0.55,
+     "h": 0.2,
+     "pose": "walk",
+     "face": -1
+    },
+    {
+     "el": "ball",
+     "x": 0.38,
+     "y": 0.5,
+     "s": 0.3
+    },
+    {
+     "el": "stands",
+     "x": 0.5,
+     "y": 0.95,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and feel joy, rage and heartbreak as if their own lives depended on it.",
+    "tr": "ve sanki kendi hayatları buna bağlıymış gibi sevinç, öfke ve hayal kırıklığı yaşıyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.42,
+     "text": "joy",
+     "size": 1.5,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "rage",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.42,
+     "text": "heartbreak",
+     "size": 1.3,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Why?",
+    "tr": "Neden?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "Why?",
+     "size": 3.0,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Watching sports is not a modern habit.",
+    "tr": "Spor izlemek modern bir alışkanlık değil."
+   },
+   "sketch": [
+    {
+     "el": "hourglass",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.3
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The ancient Olympic Games began in Greece, traditionally dated to 776 BC.",
+    "tr": "Antik Olimpiyat Oyunları Yunanistan'da, geleneksel olarak MÖ 776'da başladı."
+   },
+   "image": {
+    "file": "File:Olympia - Stadium - 4.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Stadium of ancient Olympia, Greece",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "Crowds traveled for days to watch.",
+    "tr": "Kalabalıklar izlemek için günlerce yol yürüdü."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.35,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.38,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.33,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "arrow",
+     "x": 0.5,
+     "y": 0.55,
+     "x2": 0.8,
+     "y2": 0.55,
+     "bend": 0.0
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.4,
+     "text": "Olympia",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In Rome, the Circus Maximus could hold well over a hundred thousand spectators for chariot races.",
+    "tr": "Roma'da Circus Maximus, araba yarışları için yüz binden fazla seyirci alabiliyordu."
+   },
+   "image": {
+    "file": "File:CircusMaximus.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Circus Maximus, Rome (reconstruction)",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "And in Constantinople, today's Istanbul,",
+    "tr": "Ve bugünkü İstanbul olan Konstantinopolis'te"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.32,
+     "text": "Constantinople",
+     "size": 1.5,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.55,
+     "text": "= Istanbul",
+     "size": 1.4,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "chariot-racing fans were divided into teams named after colors: the *Blues* and the *Greens*.",
+    "tr": "araba yarışı taraftarları renklerle anılan takımlara ayrılmıştı: *Maviler* ve *Yeşiller*."
+   },
+   "sketch": [
+    {
+     "el": "flag",
+     "x": 0.25,
+     "y": 0.8,
+     "s": 1.0,
+     "color": "blue",
+     "text": "BLUES"
+    },
+    {
+     "el": "flag",
+     "x": 0.65,
+     "y": 0.8,
+     "s": 1.0,
+     "color": [
+      70,
+      140,
+      70
+     ],
+     "text": "GREENS"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In the year 532, the rival fans did something unthinkable: they united against the emperor.",
+    "tr": "532 yılında iki rakip taraftar grubu akıl almaz bir şey yaptı: İmparatora karşı birleştiler."
+   },
+   "image": {
+    "file": "File:Obelisk of Theodosius, Hippodrome of Constantinople, Istanbul, Turkey (Ank Kumar) 02.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Hippodrome of Constantinople · Istanbul",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "The *Nika riots* burned much of the city.",
+    "tr": "*Nika ayaklanması* şehrin büyük kısmını yaktı."
+   },
+   "sketch": [
+    {
+     "el": "house",
+     "x": 0.3,
+     "y": 0.8,
+     "s": 0.9
+    },
+    {
+     "el": "campfire",
+     "x": 0.3,
+     "y": 0.6,
+     "s": 1.0
+    },
+    {
+     "el": "house",
+     "x": 0.7,
+     "y": 0.8,
+     "s": 0.9
+    },
+    {
+     "el": "campfire",
+     "x": 0.7,
+     "y": 0.6,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "Nika · 532",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "According to the historian Procopius, around thirty thousand people were killed when the uprising was crushed in the Hippodrome.",
+    "tr": "Tarihçi Prokopios'a göre ayaklanma Hipodrom'da bastırıldığında yaklaşık otuz bin kişi öldürüldü."
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.9,
+     "text": "Procopius"
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.45,
+     "text": "≈ 30,000",
+     "size": 1.8,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Sports fandom almost toppled one of the most powerful empires in history.",
+    "tr": "Spor taraftarlığı tarihin en güçlü imparatorluklarından birini neredeyse devirmişti."
+   },
+   "sketch": [
+    {
+     "el": "dome",
+     "x": 0.5,
+     "y": 0.65,
+     "s": 1.3
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "fans vs. an empire",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "So what happens inside us when we watch?",
+    "tr": "Peki izlerken içimizde ne oluyor?"
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 0.7
+    },
+    {
+     "el": "tv",
+     "x": 0.78,
+     "y": 0.45,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In the 1990s, Italian scientists studying monkeys found neurons that fired both when a monkey grabbed a peanut",
+    "tr": "1990'larda maymunlar üzerinde çalışan İtalyan bilim insanları, bir maymun fıstık aldığında da"
+   },
+   "sketch": [
+    {
+     "el": "ape",
+     "x": 0.35,
+     "y": 0.6,
+     "s": 1.0
+    },
+    {
+     "el": "dot",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 0.6,
+     "color": "gold"
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.3,
+     "text": "1990s · Italy",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and when it simply *watched* someone else grab one.",
+    "tr": "başka birinin fıstık aldığını sadece *izlediğinde* de ateşlenen nöronlar buldu."
+   },
+   "sketch": [
+    {
+     "el": "ape",
+     "x": 0.25,
+     "y": 0.6,
+     "s": 0.9
+    },
+    {
+     "el": "eye",
+     "x": 0.45,
+     "y": 0.35,
+     "s": 0.5
+    },
+    {
+     "el": "figure",
+     "x": 0.75,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "reach",
+     "face": -1
+    },
+    {
+     "el": "dot",
+     "x": 0.62,
+     "y": 0.45,
+     "s": 0.5,
+     "color": "gold"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They called them *mirror neurons*.",
+    "tr": "Onlara *ayna nöronlar* dediler."
+   },
+   "sketch": [
+    {
+     "el": "brain",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 1.0,
+     "spot": [
+      0.1,
+      -0.1
+     ]
+    },
+    {
+     "el": "mirror",
+     "x": 0.75,
+     "y": 0.42,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "mirror neurons",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "How exactly this works in humans is still debated.",
+    "tr": "Bunun insanlarda tam olarak nasıl işlediği hâlâ tartışılıyor."
+   },
+   "sketch": [
+    {
+     "el": "brain",
+     "x": 0.4,
+     "y": 0.45,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.4,
+     "text": "?",
+     "size": 2.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But brain scans show that watching an action activates some of the same areas we use to perform it.",
+    "tr": "Ama beyin taramaları, bir hareketi izlemenin onu yaparken kullandığımız bölgelerin bir kısmını etkinleştirdiğini gösteriyor."
+   },
+   "sketch": [
+    {
+     "el": "brain",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.8,
+     "spot": [
+      0.1,
+      -0.1
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.45,
+     "text": "=",
+     "size": 1.8,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "brain",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.8,
+     "spot": [
+      0.1,
+      -0.1
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.85,
+     "text": "watching",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.85,
+     "text": "doing",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And expertise makes it stronger.",
+    "tr": "Ve uzmanlık bunu güçlendiriyor."
+   },
+   "sketch": [
+    {
+     "el": "graph",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In one study, professional basketball players watched short clips of free throws.",
+    "tr": "Bir çalışmada profesyonel basketbolcular serbest atışların kısa kliplerini izledi."
+   },
+   "sketch": [
+    {
+     "el": "hoop",
+     "x": 0.7,
+     "y": 0.35,
+     "s": 0.8
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.85,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.85,
+     "h": 0.5,
+     "pose": "reach",
+     "face": 1
+    },
+    {
+     "el": "bball",
+     "x": 0.42,
+     "y": 0.25,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They could predict whether the ball would go in — *before it left the shooter's hand* —",
+    "tr": "Topun girip girmeyeceğini, *top atıcının elinden çıkmadan önce*,"
+   },
+   "sketch": [
+    {
+     "el": "hoop",
+     "x": 0.75,
+     "y": 0.35,
+     "s": 0.8
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.85,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.85,
+     "h": 0.5,
+     "pose": "reach",
+     "face": 1
+    },
+    {
+     "el": "bball",
+     "x": 0.34,
+     "y": 0.33,
+     "s": 0.5
+    },
+    {
+     "el": "text",
+     "x": 0.55,
+     "y": 0.15,
+     "text": "in or out?",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "far better than coaches or sports journalists.",
+    "tr": "antrenörlerden ve spor gazetecilerinden çok daha iyi tahmin ettiler."
+   },
+   "sketch": [
+    {
+     "el": "bars",
+     "x": 0.5,
+     "y": 0.78,
+     "s": 0.9,
+     "values": [
+      [
+       "players",
+       60,
+       "blue"
+      ],
+      [
+       "coaches",
+       40,
+       "red"
+      ],
+      [
+       "journalists",
+       38,
+       "red"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When you watch a striker shoot, a small part of your brain is shooting too.",
+    "tr": "Bir golcünün şut çektiğini izlediğinde beyninin küçük bir parçası da şut çekiyor."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.6,
+     "glow": true
+    },
+    {
+     "el": "goal",
+     "x": 0.72,
+     "y": 0.65,
+     "s": 0.7,
+     "scored": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But mirroring alone doesn't explain the obsession.",
+    "tr": "Ama sadece ayna etkisi bu tutkuyu açıklamıyor."
+   },
+   "sketch": [
+    {
+     "el": "mirror",
+     "x": 0.35,
+     "y": 0.42,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.42,
+     "text": "not enough",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The real hook is something else: *we don't know how it ends*.",
+    "tr": "Asıl kanca başka bir şey: *Nasıl biteceğini bilmiyoruz*."
+   },
+   "sketch": [
+    {
+     "el": "score",
+     "x": 0.5,
+     "y": 0.42,
+     "s": 1.2,
+     "a": "?",
+     "b": "?"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.85,
+     "text": "unknown ending",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Neuroscientist *Wolfram Schultz* found that dopamine neurons don't simply fire when we get a reward.",
+    "tr": "Sinirbilimci *Wolfram Schultz*, dopamin nöronlarının bir ödül aldığımızda öylece ateşlenmediğini buldu."
+   },
+   "sketch": [
+    {
+     "el": "brain",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.9,
+     "spot": [
+      0.0,
+      0.1
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.4,
+     "text": "dopamine",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.6,
+     "text": "Schultz · 1997",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They fire most strongly when something is *better than we expected*.",
+    "tr": "En güçlü tepkiyi bir şey *beklediğimizden iyi* olduğunda veriyorlar."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.3,
+     "text": "expected",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "line",
+     "x": 0.1,
+     "y": 0.55,
+     "s": 1.0,
+     "x2": 0.45,
+     "y2": 0.55,
+     "color": "grey"
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.3,
+     "text": "better!",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "ekg",
+     "x": 0.72,
+     "y": 0.6,
+     "s": 0.45,
+     "spike": 2.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When a reward is completely predictable, the response fades.",
+    "tr": "Bir ödül tamamen tahmin edilebilir olduğunda tepki sönüyor."
+   },
+   "sketch": [
+    {
+     "el": "ekg",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.8,
+     "spike": 0.15,
+     "color": "grey"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.15,
+     "text": "predictable = flat",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "That's why a recorded match whose result you already know feels flat.",
+    "tr": "Bu yüzden sonucunu zaten bildiğin kayıtlı bir maç yavan gelir."
+   },
+   "sketch": [
+    {
+     "el": "tv",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 0.9,
+     "text": "REPLAY"
+    },
+    {
+     "el": "ekg",
+     "x": 0.78,
+     "y": 0.5,
+     "s": 0.35,
+     "spike": 0.15,
+     "color": "grey"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And it's why a last-minute goal feels like an explosion.",
+    "tr": "Ve bu yüzden son dakika golü bir patlama gibi hissettirir."
+   },
+   "sketch": [
+    {
+     "el": "score",
+     "x": 0.3,
+     "y": 0.4,
+     "s": 0.8,
+     "a": "2",
+     "b": "1",
+     "time": "90+3'"
+    },
+    {
+     "el": "goal",
+     "x": 0.72,
+     "y": 0.7,
+     "s": 0.7,
+     "scored": true
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.15,
+     "text": "GOAL!",
+     "size": 1.8,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Economists noticed this too. In 1956, *Simon Rottenberg* argued that fans want competition to be *uncertain*.",
+    "tr": "Ekonomistler de bunu fark etti. 1956'da *Simon Rottenberg*, taraftarların rekabetin *belirsiz* olmasını istediğini savundu."
+   },
+   "sketch": [
+    {
+     "el": "balance",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 0.9,
+     "tilt": 0.0,
+     "left": "A",
+     "right": "B"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.92,
+     "text": "Rottenberg · 1956",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "If one team always wins, people stop watching.",
+    "tr": "Bir takım hep kazanırsa insanlar izlemeyi bırakır."
+   },
+   "sketch": [
+    {
+     "el": "trophy",
+     "x": 0.3,
+     "y": 0.75,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.12,
+     "text": "always",
+     "size": 1.1,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "tv",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.7
+    },
+    {
+     "el": "cross",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.7,
+     "at": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "That's why many leagues use drafts, salary caps and revenue sharing: to keep the ending unknown.",
+    "tr": "Bu yüzden birçok lig draft, maaş sınırı ve gelir paylaşımı kullanıyor: sonu bilinmez tutmak için."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.25,
+     "text": "drafts",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "salary caps",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.59,
+     "text": "revenue sharing",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.85,
+     "text": "keep it uncertain",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Sport is one of the few places left where nobody — not even the richest person on Earth — can buy the ending in advance.",
+    "tr": "Spor, kimsenin, dünyanın en zengin insanının bile sonu önceden satın alamadığı az sayıdaki yerden biri."
+   },
+   "sketch": [
+    {
+     "el": "money",
+     "x": 0.3,
+     "y": 0.6,
+     "s": 1.0,
+     "text": "$$$"
+    },
+    {
+     "el": "arrow",
+     "x": 0.43,
+     "y": 0.5,
+     "x2": 0.58,
+     "y2": 0.5,
+     "bend": 0.0
+    },
+    {
+     "el": "score",
+     "x": 0.75,
+     "y": 0.45,
+     "s": 0.7,
+     "a": "?",
+     "b": "?"
+    },
+    {
+     "el": "cross",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.5,
+     "at": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Now here's the strangest part. Listen to how fans talk.",
+    "tr": "Şimdi en tuhaf kısma geldik. Taraftarların nasıl konuştuğunu dinle."
+   },
+   "sketch": [
+    {
+     "el": "ear",
+     "x": 0.4,
+     "y": 0.45,
+     "s": 2.2
+    },
+    {
+     "el": "stands",
+     "x": 0.7,
+     "y": 0.9,
+     "s": 0.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When their team wins, they say *\"we won.\"*",
+    "tr": "Takımları kazandığında *\"kazandık\"* derler."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "reach",
+     "face": 1
+    },
+    {
+     "el": "bubble",
+     "x": 0.64,
+     "y": 0.28,
+     "s": 1.1,
+     "kind": "speech",
+     "tail": [
+      0.4,
+      0.38
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.62,
+     "y": 0.3,
+     "text": "WE won!",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When it loses, they often say *\"they lost.\"*",
+    "tr": "Kaybettiğinde ise çoğu zaman *\"kaybettiler\"*."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "shrug",
+     "face": 1
+    },
+    {
+     "el": "bubble",
+     "x": 0.64,
+     "y": 0.28,
+     "s": 1.1,
+     "kind": "speech",
+     "tail": [
+      0.4,
+      0.38
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.62,
+     "y": 0.3,
+     "text": "THEY lost.",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1976, psychologist *Robert Cialdini* and his colleagues counted how many students at American universities wore their school's clothing on Mondays after football games.",
+    "tr": "1976'da psikolog *Robert Cialdini* ve meslektaşları, Amerikan üniversitelerinde maçlardan sonraki pazartesi günleri kaç öğrencinin okulunun kıyafetini giydiğini saydı."
+   },
+   "sketch": [
+    {
+     "el": "tshirt",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.9,
+     "text": "U"
+    },
+    {
+     "el": "calendar",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.8,
+     "text": "Monday"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "Cialdini · 1976",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "After a win, significantly more students wore school colors.",
+    "tr": "Bir galibiyetten sonra okul renklerini giyen öğrenci sayısı belirgin şekilde arttı."
+   },
+   "sketch": [
+    {
+     "el": "bars",
+     "x": 0.5,
+     "y": 0.78,
+     "s": 0.9,
+     "values": [
+      [
+       "after a loss",
+       30,
+       "red"
+      ],
+      [
+       "after a win",
+       55,
+       "blue"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Asked to describe the game, they were more likely to say \"we\" after a victory, and \"they\" after a defeat.",
+    "tr": "Maçı anlatmaları istendiğinde galibiyetten sonra \"biz\", yenilgiden sonra \"onlar\" deme olasılıkları daha yüksekti."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.35,
+     "text": "win: \"we\"",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.55,
+     "text": "loss: \"they\"",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Cialdini called it *basking in reflected glory*.",
+    "tr": "Cialdini buna *yansıyan şanın tadını çıkarmak* dedi."
+   },
+   "sketch": [
+    {
+     "el": "sun",
+     "x": 0.3,
+     "y": 0.35,
+     "s": 0.8
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "reach",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "basking in reflected glory",
+     "size": 1.1,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Later researchers named the opposite *cutting off reflected failure*.",
+    "tr": "Sonraki araştırmacılar tersine *yansıyan başarısızlıktan uzaklaşmak* adını verdi."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "walk",
+     "face": -1
+    },
+    {
+     "el": "trophy",
+     "x": 0.75,
+     "y": 0.78,
+     "s": 0.6
+    },
+    {
+     "el": "cross",
+     "x": 0.75,
+     "y": 0.6,
+     "s": 0.5,
+     "at": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "cutting off reflected failure",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We borrow a little of the winners' success, and quietly step away from the losers.",
+    "tr": "Kazananların başarısından biraz ödünç alıyoruz, kaybedenlerden sessizce uzaklaşıyoruz."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "arrow",
+     "x": 0.45,
+     "y": 0.4,
+     "x2": 0.25,
+     "y2": 0.4,
+     "bend": -0.2,
+     "color": "blue"
+    },
+    {
+     "el": "arrow",
+     "x": 0.55,
+     "y": 0.6,
+     "x2": 0.8,
+     "y2": 0.6,
+     "bend": 0.2,
+     "color": "red"
+    },
+    {
+     "el": "trophy",
+     "x": 0.15,
+     "y": 0.6,
+     "s": 0.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We didn't kick a single ball. But our self-esteem rises and falls with the score.",
+    "tr": "Tek bir topa vurmadık. Ama özgüvenimiz skorla birlikte inip çıkıyor."
+   },
+   "sketch": [
+    {
+     "el": "score",
+     "x": 0.3,
+     "y": 0.42,
+     "s": 0.7,
+     "a": "1",
+     "b": "0"
+    },
+    {
+     "el": "gauge",
+     "x": 0.72,
+     "y": 0.6,
+     "s": 0.9,
+     "value": 0.8,
+     "label": "self-esteem"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Why would our self-esteem be tied to a team at all?",
+    "tr": "Peki özgüvenimiz neden bir takıma bağlı olsun ki?"
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "line",
+     "x": 0.45,
+     "y": 0.45,
+     "s": 1.0,
+     "x2": 0.62,
+     "y2": 0.45,
+     "color": "red"
+    },
+    {
+     "el": "flag",
+     "x": 0.7,
+     "y": 0.75,
+     "s": 0.8,
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In the early 1970s, psychologist *Henri Tajfel* ran a famous experiment.",
+    "tr": "1970'lerin başında psikolog *Henri Tajfel* ünlü bir deney yaptı."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "Tajfel · 1970s",
+     "size": 1.8,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "He divided boys into two groups based on something trivial, like which abstract painter they supposedly preferred,",
+    "tr": "Erkek çocukları önemsiz bir şeye göre iki gruba ayırdı: Örneğin güya hangi soyut ressamı tercih ettiklerine göre,"
+   },
+   "image": {
+    "file": "File:Garten-Plan, Paul Klee (1922).jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Paul Klee · Garden Plan (1922)",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "*Klee* or *Kandinsky*.",
+    "tr": "*Klee* mi *Kandinsky* mi."
+   },
+   "image": {
+    "file": "File:Kandinsky - Composition 8, July 1923.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Wassily Kandinsky · Composition VIII (1923)",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "They never met their group. There was no history, no rivalry, nothing at stake.",
+    "tr": "Gruplarıyla hiç tanışmadılar. Ortada geçmiş yoktu, rekabet yoktu, kaybedilecek bir şey yoktu."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1,
+     "child": true
+    },
+    {
+     "el": "figure",
+     "x": 0.32,
+     "y": 0.8,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1,
+     "child": true
+    },
+    {
+     "el": "figure",
+     "x": 0.68,
+     "y": 0.8,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1,
+     "child": true
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.8,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1,
+     "child": true
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.25,
+     "text": "nothing at stake",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And yet, when asked to share out rewards, the boys favored their own group,",
+    "tr": "Yine de ödülleri paylaştırmaları istendiğinde çocuklar kendi gruplarını kayırdı;"
+   },
+   "sketch": [
+    {
+     "el": "money",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 0.8,
+     "text": "$"
+    },
+    {
+     "el": "arrow",
+     "x": 0.42,
+     "y": 0.5,
+     "x2": 0.2,
+     "y2": 0.55,
+     "bend": -0.2,
+     "color": "red"
+    },
+    {
+     "el": "flag",
+     "x": 0.15,
+     "y": 0.85,
+     "s": 0.6,
+     "color": "red"
+    },
+    {
+     "el": "flag",
+     "x": 0.82,
+     "y": 0.85,
+     "s": 0.6,
+     "color": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "often even if it meant everyone got less overall, just so their group could come out ahead.",
+    "tr": "çoğu zaman sırf kendi grupları öne geçsin diye herkesin toplamda daha az alması pahasına bile."
+   },
+   "sketch": [
+    {
+     "el": "bars",
+     "x": 0.5,
+     "y": 0.78,
+     "s": 0.9,
+     "values": [
+      [
+       "us",
+       30,
+       "red"
+      ],
+      [
+       "them",
+       20,
+       "blue"
+      ]
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "less for all, but ahead",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Tajfel and *John Turner* developed *social identity theory*:",
+    "tr": "Tajfel ve *John Turner*, *sosyal kimlik kuramını* geliştirdi:"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "social identity theory",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "part of who we are comes from the groups we belong to. Our minds are built for tribes.",
+    "tr": "Kim olduğumuzun bir kısmı ait olduğumuz gruplardan gelir. Zihnimiz kabileler için yapılmış."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "heads",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.5,
+     "n": 3
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "For most of human history, belonging to a group meant survival.",
+    "tr": "İnsanlık tarihinin büyük bölümünde bir gruba ait olmak hayatta kalmak demekti."
+   },
+   "sketch": [
+    {
+     "el": "campfire",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 1.0
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.78,
+     "h": 0.38,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.78,
+     "h": 0.38,
+     "pose": "sit",
+     "face": -1
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.62,
+     "h": 0.3,
+     "pose": "sit",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Sports gives that ancient instinct a home: colors, chants, rivals, and a reason to feel like part of something bigger.",
+    "tr": "Spor bu kadim içgüdüye bir yuva veriyor: renkler, tezahüratlar, rakipler ve kendini büyük bir şeyin parçası hissetmek için bir sebep."
+   },
+   "sketch": [
+    {
+     "el": "stands",
+     "x": 0.5,
+     "y": 0.9,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "colors · chants · rivals",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And it's not just in our heads.",
+    "tr": "Ve bu sadece kafamızda değil."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.7
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A 1998 study found that fans' testosterone levels *rose* after their team won, and *fell* after a loss,",
+    "tr": "1998'de yapılan bir çalışma, takımları kazandığında taraftarların testosteron seviyesinin *yükseldiğini*, kaybettiğinde *düştüğünü* buldu;"
+   },
+   "sketch": [
+    {
+     "el": "graph",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.15,
+     "text": "win",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "graph",
+     "x": 0.72,
+     "y": 0.5,
+     "s": 0.6,
+     "up": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.15,
+     "text": "loss",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "almost as if they had fought the battle themselves.",
+    "tr": "sanki savaşı kendileri vermiş gibi."
+   },
+   "sketch": [
+    {
+     "el": "sword",
+     "x": 0.5,
+     "y": 0.6,
+     "s": 1.2
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Tribes don't just feel differently. They *see* differently.",
+    "tr": "Kabileler sadece farklı hissetmez. Farklı *görür*."
+   },
+   "sketch": [
+    {
+     "el": "eye",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.9
+    },
+    {
+     "el": "eye",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.85,
+     "text": "see differently",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1951, Princeton and Dartmouth played a brutal American football game. Players were injured on both sides.",
+    "tr": "1951'de Princeton ve Dartmouth sert bir Amerikan futbolu maçı oynadı. İki taraftan da oyuncular sakatlandı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "kick",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "lie",
+     "face": -1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "Princeton vs Dartmouth · 1951",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Psychologists *Albert Hastorf* and *Hadley Cantril* showed a film of the game to students from both universities",
+    "tr": "Psikologlar *Albert Hastorf* ve *Hadley Cantril*, maçın filmini iki üniversiteden öğrencilere izletti"
+   },
+   "sketch": [
+    {
+     "el": "film",
+     "x": 0.5,
+     "y": 0.35,
+     "s": 1.0,
+     "text": "1951"
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.9,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.9,
+     "h": 0.3,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.9,
+     "h": 0.3,
+     "pose": "sit",
+     "face": -1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and asked them to count the rule violations.",
+    "tr": "ve kural ihlallerini saymalarını istedi."
+   },
+   "sketch": [
+    {
+     "el": "film",
+     "x": 0.5,
+     "y": 0.35,
+     "s": 1.0,
+     "text": "fouls?"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.75,
+     "text": "count the fouls",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Princeton students saw Dartmouth commit about twice as many fouls as Dartmouth students did.",
+    "tr": "Princeton öğrencileri, Dartmouth'un yaptığı faulleri Dartmouth öğrencilerinin gördüğünün yaklaşık iki katı kadar gördü."
+   },
+   "sketch": [
+    {
+     "el": "bars",
+     "x": 0.5,
+     "y": 0.78,
+     "s": 0.9,
+     "values": [
+      [
+       "Princeton saw",
+       58,
+       "red"
+      ],
+      [
+       "Dartmouth saw",
+       26,
+       "blue"
+      ]
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "Dartmouth fouls: 9.8 vs 4.3",
+     "size": 1.1,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Same film. Same plays. Two completely different games.",
+    "tr": "Aynı film. Aynı pozisyonlar. Tamamen farklı iki maç."
+   },
+   "sketch": [
+    {
+     "el": "film",
+     "x": 0.5,
+     "y": 0.3,
+     "s": 0.9,
+     "text": "same film"
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.7,
+     "text": "game A",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.7,
+     "text": "game B",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Their paper was called *\"They Saw a Game.\"*",
+    "tr": "Makalelerinin adı *\"Bir Maç Gördüler\"*di."
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.5,
+     "y": 0.7,
+     "s": 1.0,
+     "n": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "\"They Saw a Game\"",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It's one of the reasons every fan is absolutely certain the referee is biased against *their* team.",
+    "tr": "Her taraftarın hakemin *kendi* takımına karşı taraflı olduğundan kesinlikle emin olmasının sebeplerinden biri bu."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "point",
+     "face": 1
+    },
+    {
+     "el": "bubble",
+     "x": 0.2,
+     "y": 0.25,
+     "s": 0.6,
+     "kind": "speech",
+     "tail": null
+    },
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.25,
+     "text": "biased!",
+     "size": 0.9,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "bubble",
+     "x": 0.82,
+     "y": 0.25,
+     "s": 0.6,
+     "kind": "speech",
+     "tail": null
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.25,
+     "text": "biased!",
+     "size": 0.9,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Sociologists *Norbert Elias* and *Eric Dunning* had a theory about why all of this matters so much in the modern world.",
+    "tr": "Sosyologlar *Norbert Elias* ve *Eric Dunning*'in tüm bunların modern dünyada neden bu kadar önemli olduğuna dair bir kuramı vardı."
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.3,
+     "y": 0.72,
+     "s": 0.9,
+     "n": 2
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.4,
+     "text": "Quest for Excitement",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.58,
+     "text": "Elias & Dunning",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Modern life, they argued, asks us to control our emotions almost all the time: at work, in traffic, in public.",
+    "tr": "Onlara göre modern hayat, duygularımızı neredeyse her zaman kontrol etmemizi istiyor: işte, trafikte, toplum içinde."
+   },
+   "sketch": [
+    {
+     "el": "screen",
+     "x": 0.25,
+     "y": 0.6,
+     "s": 0.8
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.55,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.5
+    },
+    {
+     "el": "padlock",
+     "x": 0.8,
+     "y": 0.45,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We rarely get to scream, hug strangers, or cry openly.",
+    "tr": "Bağırmaya, yabancılara sarılmaya ya da açıkça ağlamaya pek fırsatımız olmuyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.25,
+     "y": 0.35,
+     "text": "scream",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.55,
+     "text": "hug",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.35,
+     "text": "cry",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.2,
+     "at": 1.2
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Sport creates a protected space where intense emotion is allowed: a *controlled loss of control*.",
+    "tr": "Spor, yoğun duyguların serbest olduğu korunaklı bir alan yaratıyor: *kontrollü bir kontrol kaybı*."
+   },
+   "sketch": [
+    {
+     "el": "stands",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 0.9
+    },
+    {
+     "el": "circle",
+     "x": 0.5,
+     "y": 0.65,
+     "s": 1.0,
+     "rx": 520,
+     "ry": 200,
+     "color": "blue"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "controlled loss of control",
+     "size": 1.2,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The danger is pretend. The feelings are real.",
+    "tr": "Tehlike sahte. Duygular gerçek."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.42,
+     "text": "danger: pretend",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.42,
+     "text": "feelings: real",
+     "size": 1.2,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A match is a story with heroes and villains, a beginning, a middle and an end,",
+    "tr": "Bir maç kahramanları ve kötüleri, başı, ortası ve sonu olan bir hikâye;"
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 1.0,
+     "n": 1
+    },
+    {
+     "el": "text",
+     "x": 0.25,
+     "y": 0.3,
+     "text": "hero",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.3,
+     "text": "villain",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "played out live, with nobody knowing the final page.",
+    "tr": "canlı oynanıyor ve son sayfayı kimse bilmiyor."
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.0,
+     "text": "the end: ???"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It's a safe war, between tribes that go home afterward.",
+    "tr": "Ardından herkesin evine döndüğü kabileler arasında güvenli bir savaş."
+   },
+   "sketch": [
+    {
+     "el": "flag",
+     "x": 0.2,
+     "y": 0.85,
+     "s": 0.7,
+     "color": "red"
+    },
+    {
+     "el": "ball",
+     "x": 0.5,
+     "y": 0.6,
+     "s": 0.8
+    },
+    {
+     "el": "flag",
+     "x": 0.75,
+     "y": 0.85,
+     "s": 0.7,
+     "color": "blue"
+    },
+    {
+     "el": "house",
+     "x": 0.12,
+     "y": 0.88,
+     "s": 0.4
+    },
+    {
+     "el": "house",
+     "x": 0.9,
+     "y": 0.88,
+     "s": 0.4
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Try this. Next time you watch a match, pay attention to one tiny word: *\"we.\"*",
+    "tr": "Şunu dene. Bir dahaki maç izleyişinde küçücük bir kelimeye dikkat et: *\"biz\"*."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.1,
+     "text": "try this",
+     "size": 1.0,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "tv",
+     "x": 0.62,
+     "y": 0.45,
+     "s": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.22,
+     "y": 0.78,
+     "h": 0.4,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.35,
+     "y": 0.25,
+     "text": "\"we\"",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Notice when you say it, and when you stop saying it.",
+    "tr": "Onu ne zaman söylediğini ve ne zaman söylemeyi bıraktığını fark et."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.42,
+     "text": "we",
+     "size": 1.8,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "arrow",
+     "x": 0.42,
+     "y": 0.42,
+     "x2": 0.58,
+     "y2": 0.42,
+     "bend": 0.0
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.42,
+     "text": "they",
+     "size": 1.8,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Notice how you feel about the referee. Notice your heart rate in the last five minutes.",
+    "tr": "Hakem hakkında ne hissettiğini fark et. Son beş dakikada kalp atışını fark et."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.85,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.85,
+     "h": 0.45,
+     "pose": "point",
+     "face": 1
+    },
+    {
+     "el": "ekg",
+     "x": 0.68,
+     "y": 0.45,
+     "s": 0.5,
+     "spike": 1.5
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.75,
+     "text": "last 5 minutes",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "You'll be watching two games at once: the one on the field, and the one inside your own head.",
+    "tr": "Aynı anda iki maç izliyor olacaksın: biri sahada, biri kendi kafanın içinde."
+   },
+   "sketch": [
+    {
+     "el": "tv",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.7
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.45,
+     "text": "+",
+     "size": 2.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "head",
+     "x": 0.75,
+     "y": 0.5,
+     "s": 0.55,
+     "glow": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We love sport not because it matters, but because it *doesn't*,",
+    "tr": "Sporu önemli olduğu için değil, *önemsiz* olduğu halde"
+   },
+   "sketch": [
+    {
+     "el": "ball",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and yet it lets us feel everything as if it did.",
+    "tr": "her şeyi önemliymiş gibi hissettirdiği için seviyoruz."
+   },
+   "sketch": [
+    {
+     "el": "heart",
+     "x": 0.5,
+     "y": 0.42,
+     "s": 1.3
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It gives us a tribe without a war, a story without a script, and a reason to hug a stranger.",
+    "tr": "Bize savaşsız bir kabile, senaryosuz bir hikâye ve bir yabancıya sarılmak için bir sebep veriyor."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.42,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "hold",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.58,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "hold",
+     "face": -1
+    },
+    {
+     "el": "line",
+     "x": 0.3,
+     "y": 0.42,
+     "s": 1.0,
+     "x2": 0.45,
+     "y2": 0.42,
+     "color": "red",
+     "w": 2.0
+    },
+    {
+     "el": "line",
+     "x": 0.55,
+     "y": 0.42,
+     "s": 1.0,
+     "x2": 0.7,
+     "y2": 0.42,
+     "color": "blue",
+     "w": 2.0
+    },
+    {
+     "el": "heart",
+     "x": 0.5,
+     "y": 0.15,
+     "s": 0.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Maybe that's why, three thousand years after Olympia, we're still watching.",
+    "tr": "Belki de bu yüzden, Olimpia'dan üç bin yıl sonra hâlâ izliyoruz."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.6,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.15,
+     "y": 0.6,
+     "h": 0.2,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.6,
+     "h": 0.2,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "arrow",
+     "x": 0.35,
+     "y": 0.5,
+     "x2": 0.5,
+     "y2": 0.5,
+     "bend": 0.0
+    },
+    {
+     "el": "stands",
+     "x": 0.75,
+     "y": 0.9,
+     "s": 0.7
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "3,000 years later",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  }
+ ]
+}
