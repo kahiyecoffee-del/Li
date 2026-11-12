@@ -1,7 +1,16 @@
 # DEAD QUOTA: Sanat Yönetimi Rehberi (DEĞİŞTİRİLEMEZ)
 
 > Bu belge projenin görsel stil anayasasıdır. Bütün karakter, mekân, storyboard ve kare üretimleri buna bağlıdır.
-> **Referans görsel:** _(kullanıcıdan bekleniyor; gelince `cikti/dizi/referans/` klasörüne konacak ve tüm tarifler ona göre güncellenecek)_
+> **Referans görsel:** Kullanıcının gönderdiği referans (yetişkin süper kahraman animasyonundan bir kare; telifli olduğu için repoya eklenmedi). Referans yalnızca **stil** içindir; o yapımın karakterleri, kostümleri ve logoları kullanılmaz. Tariflerde yapımın adı geçmez, stil özellikleri tarif edilir.
+
+## 0. Referanstan çıkarılan stil özellikleri (bağlayıcı)
+- **Kontur:** Koyu kahve-siyah (#1E1814), orta kalınlıkta, neredeyse sabit kalınlıkta, temiz ve tek geçişli çizgi. Uç incelmesi çok az. İç detay çizgileri dış konturdan daha ince.
+- **Cel shading:** Tek gölge tonu: aynı rengin daha koyu ve hafif soğuk versiyonu, sert kenarlı, büyük ve sade gölge şekilleri. Yüzde çene altı, burun yanı, göz çukuru ve saç altı gölgeleri. Parlama (highlight) neredeyse yok; sadece gözlük ve metal gibi yansıtıcı yüzeylerde beyaz düz şekil.
+- **Yüz yapısı:** Gerçekçi oranlar, sade özellikler. Burun, bir çizgi ve bir gölge şekliyle; ağız kısa tek çizgiyle; gözler küçük ve sade. Kaşlar düz şekiller. Abartılı anime gözü yok.
+- **Renk:** Karakterlerde düz, doygun renkler (ana kostüm renkleri parlak), ten tonlarında 2 ton (ışık ve gölge).
+- **Arka planlar:** Karakterlerden farklı olarak daha **boyalı ve dokulu**, detaylı, hafif sisli, atmosferik perspektif. Genellikle soğuk ve daha az doygun tonlar; karakterler arka plandan net ayrılıyor.
+- **Işık ve grade:** Sahne ışığı genel renk tonunu belirliyor (gece = mavi-camgöbeği ton). Hafif atmosferik pus, buhar ve duman efektleri yumuşak ve yarı saydam.
+- **Kompozisyon:** TV dizisi karesi gibi; karakter kadrajı net, sinematik derinlik.
 
 ## 1. Temel görsel kimlik
 - Yüksek kaliteli Amerikan yetişkin animasyonu. 2D çizgi roman estetiği.
@@ -39,12 +48,12 @@ Anime, 3D render görünümü, plastik cilt, aşırı basit çocuk estetiği, su
 
 ## [STYLE] Sabit stil bloğu (her tarifin başına, değiştirmeden)
 ```
-High-quality American adult animated TV series frame, 2D comic book aesthetic, realistic human anatomy and proportions, bold clean controlled ink outlines with confident line weight, cel shading with crisp hard-edged shadows, flat saturated colors, cinematic lighting, detailed background with strong perspective, professional television animation quality, 16:9 frame.
+Frame from a high-end American adult animated TV series. 2D hand-drawn animation look with realistic human proportions. Clean, confident dark brown-black outlines of medium, almost uniform weight; thinner interior detail lines. Flat saturated base colors with a single hard-edged cel-shading tone per color (a darker, slightly cooler version of the base), large simple shadow shapes under the jaw, beside the nose, in the eye sockets and under the hair; almost no highlights except small flat white shapes on glasses and metal. Simple, realistic facial features: small eyes, nose drawn with one line and one shadow shape, short single-line mouth. Background is more painterly and textured than the characters, detailed with atmospheric perspective and slight haze, cooler and less saturated so the characters pop. Cinematic lighting that tints the whole frame. 16:9 TV frame.
 ```
 
 ## Negatif blok (aracın desteklediği yerde)
 ```
-anime, manga, chibi, Pixar, Disney, 3D render, CGI, plastic skin, photorealistic, photograph, watercolor, pastel, sketchy thin lines, children's cartoon, simplified kids style, inconsistent face, extra fingers, text artifacts, watermark
+anime, manga, chibi, big anime eyes, Pixar, Disney, 3D render, CGI, soft gradient shading, airbrush, glossy highlights on skin, plastic skin, photorealistic, photograph, watercolor, pastel, sketchy thin lines, children's cartoon, simplified kids style, superhero costume, mask, inconsistent face, extra fingers, text artifacts, watermark
 ```
 
 ---
