@@ -2,7 +2,7 @@
 
 **Türkçe başlık önerisi:** Tartarya: Tarihten Silinen Dev İmparatorluk mu?
 
-- **Süre:** ~9,5 dakika (~1.380 İngilizce kelime). Araya reklam (mid-roll) için 8 dakikanın üstünde.
+- **Süre:** ~9 dakika (~1.270 İngilizce kelime). Araya reklam (mid-roll) için 8 dakikanın üstünde.
 - **Seslendirme:** İngilizce, Fenrir
 - **Altyazı:** EN gömülü, TR SRT
 - **Kurgu (gizemli anlatım):**
@@ -10,7 +10,7 @@
   - **2. Perde:** "Peki kayıtlar ne diyor?" diye dönüyoruz ve kanıtlar tek tek açılıyor.
   - **3. Perde:** Neden inanıyoruz, gerçek Tartarya ve kapanış.
   - Görsel tonu ilk perdede daha karanlık: kırmızı ipler, gölgeler, soru işaretleri.
-- **Shorts:** 11 adet. Gizem Shorts'ları "cevap uzun videoda" kancasıyla bitiyor. Hepsinin sonunda abone ol hatırlatması var.
+- **Shorts:** 12 adet. Gizem Shorts'ları "cevap uzun videoda" kancasıyla bitiyor. Hepsinin sonunda abone ol hatırlatması var.
 
 > ✂ işaretli bölümler Shorts olarak kesilecek.
 
@@ -85,20 +85,33 @@ Sonra birkaç yıl içinde neredeyse hepsi *yok oldu*.
 
 *Görsel:* "White City" fotoğrafı (Wikimedia, 1893, karakalem). Sonra boş arazi, "gone". Soru işaretleri.
 
-## 4:20 · İpucu 5: Yetim trenleri ✂ SHORT
-**EN:** And the fifth clue is the darkest.
+## 4:00 · İpucu 5: Gökyüzüne uzanan kuleler ✂ SHORT
+**EN:** The fifth clue points to the sky.
+Look closely at old palaces, churches and exhibition halls, and you'll see spires, domes topped with metal points, and towers crowned with what look like antennas.
+Some believers say these weren't decorations at all. They say Tartarian buildings were connected to a worldwide grid of *free energy*, pulling electricity straight out of the atmosphere, technology later hidden so people would have to pay for power.
+They often point to the inventor *Nikola Tesla*, who really did dream of sending electricity through the air without wires.
+
+**TR:** Beşinci ipucu gökyüzünü gösteriyor.
+Eski saraylara, kiliselere ve sergi salonlarına dikkatlice bak; sivri kuleler, tepesinde metal uçlar olan kubbeler ve anten gibi görünen şeylerle taçlanmış kuleler görürsün.
+Bazı inananlar bunların hiç süs olmadığını söylüyor. Onlara göre Tartarya binaları, elektriği doğrudan atmosferden çeken küresel bir *bedava enerji* ağına bağlıydı; bu teknoloji de insanlar elektriğe para ödesin diye sonradan saklandı.
+Sık sık mucit *Nikola Tesla*'yı gösteriyorlar; Tesla gerçekten de elektriği kablosuz olarak havadan iletmeyi hayal etmişti.
+
+*Görsel:* Kubbe ve kule siluetleri, tepelerinde metal uçlar; aralarında şimşek ağı. "FREE ENERGY?". Tesla'nın kulesi (Wardenclyffe, Wikimedia fotoğrafı, karakalem).
+
+## 4:45 · İpucu 6: Yetim trenleri ✂ SHORT
+**EN:** And the sixth clue is the darkest.
 Between 1854 and 1929, trains carried around two hundred thousand children from crowded eastern American cities to new homes in the West. History calls them the *orphan trains*.
 Some Tartaria believers have a chilling explanation: these children, they claim, were used to *repopulate* the world after the mud flood, and to raise a new generation that would never know the truth.
-Maps. Mud. Stars. White cities. Trains full of children.
+Maps. Mud. Stars. Spires. White cities. Trains full of children.
 It sounds like a perfect puzzle. So now, let's do what every good detective does: check the records.
 
-**TR:** Ve beşinci ipucu en karanlığı.
+**TR:** Ve altıncı ipucu en karanlığı.
 1854 ile 1929 arasında trenler, kalabalık doğu Amerika şehirlerinden yaklaşık iki yüz bin çocuğu batıdaki yeni evlerine taşıdı. Tarih bunlara *yetim trenleri* diyor.
 Bazı Tartarya inananlarının ürpertici bir açıklaması var: İddiaya göre bu çocuklar çamur selinden sonra dünyayı *yeniden nüfuslandırmak* ve gerçeği hiç bilmeyecek yeni bir nesil yetiştirmek için kullanıldı.
-Haritalar. Çamur. Yıldızlar. Beyaz şehirler. Çocuk dolu trenler.
+Haritalar. Çamur. Yıldızlar. Kuleler. Beyaz şehirler. Çocuk dolu trenler.
 Kusursuz bir yapboz gibi görünüyor. O zaman şimdi her iyi dedektifin yaptığını yapalım: kayıtlara bakalım.
 
-*Görsel:* Buharlı tren, pencerelerde çocuk figürleri, "1854–1929". Pinboard: beş ipucu, kırmızı ipler. Dedektif büyüteci, arşiv kutuları.
+*Görsel:* Buharlı tren, pencerelerde çocuk figürleri, "1854–1929". Pinboard: altı ipucu, kırmızı ipler. Dedektif büyüteci, arşiv kutuları.
 
 # 2. PERDE: KAYITLAR NE DİYOR?
 
@@ -135,7 +148,16 @@ Peki Beyaz Şehir? Binalarının çoğu *geçiciydi*: Mermer gibi görünsün di
 
 *Görsel:* Top güllesi: yüksek sur çöker, alçak açılı sur sektirir; burçtan görüş çizgileri. Kitap sayfası. Kesit: beyaz cephe arkasında ahşap iskelet, "staff". Takvim "1 summer", alevler "1894". Müze binası.
 
-## 7:55 · Trenlerin sırrı
+## 8:10 · Kulelerin sırrı
+**EN:** The spires? Many are simply architecture: bell towers, flagpoles and decoration. And the metal points on top are often *lightning rods*, invented by *Benjamin Franklin* in the 1750s, to carry lightning safely into the ground, not to pull free energy out of the sky.
+As for Tesla, his famous wireless power tower at *Wardenclyffe* was never finished. His investors pulled out, and the tower was demolished in 1917. A real story of ambition and failure, not a hidden grid.
+
+**TR:** Kuleler mi? Birçoğu sadece mimari: çan kuleleri, bayrak direkleri ve süslemeler. Tepedeki metal uçlar da çoğu zaman *paratoner*; *Benjamin Franklin* tarafından 1750'lerde icat edildi ve yıldırımı güvenle toprağa iletmek içindi, gökyüzünden bedava enerji çekmek için değil.
+Tesla'ya gelince, *Wardenclyffe*'teki ünlü kablosuz enerji kulesi hiçbir zaman bitirilemedi. Yatırımcıları çekildi ve kule 1917'de yıkıldı. Gizli bir şebeke değil, gerçek bir hırs ve başarısızlık hikâyesi.
+
+*Görsel:* Kule tepesinde paratoner, yıldırım toprağa iniyor. "Franklin · 1750s". Wardenclyffe kulesi, yarım kalmış; para çantası uzaklaşıyor; "1917".
+
+## 8:50 · Trenlerin sırrı
 **EN:** And the orphan trains are among the best-documented chapters of American social history. The children had names, birth records and families. Many told their own stories as adults, and historians have collected their letters and interviews.
 The real story is about poverty and a controversial child welfare system, not a secret reset of humanity.
 
@@ -146,7 +168,7 @@ Gerçek hikâye yoksulluk ve tartışmalı bir çocuk refahı sistemiyle ilgili,
 
 # 3. PERDE: NEDEN İNANIYORUZ?
 
-## 8:25 · Psikoloji ✂ SHORT
+## 9:20 · Psikoloji ✂ SHORT
 **EN:** So why does Tartaria feel so convincing?
 Psychologist *Karen Douglas* and her colleagues suggest conspiracy theories meet three needs: to *understand* a confusing world, to feel *safe and in control*, and to feel *special*, to know something others don't.
 There's also *proportionality bias*: we feel that something magnificent must have a magnificent cause. Ordinary workers with ordinary tools feel like too small an answer.
@@ -159,7 +181,7 @@ Ama teorinin sessizce ne yaptığına dikkat et: Gerçek insanların, mimarları
 
 *Görsel:* Üç kutu: "understand · safe · special". Dengesiz terazi: büyük bina ↔ küçük sebep. Taş oyan usta; eseri bir gölgeye geçiyor.
 
-## 9:05 · Gerçek Tartarya ✂ SHORT
+## 10:00 · Gerçek Tartarya ✂ SHORT
 **EN:** And here's the twist. The *real* lands of "Tartary" had a history more spectacular than any myth.
 In the 1200s, the *Mongol Empire* became the largest contiguous land empire in history, from Korea to Eastern Europe. After it, the *Golden Horde*, largely Turkic-speaking, ruled the western steppe for more than two centuries. Its descendants include today's Tatars, Kazakhs and many others. And through these lands ran the *Silk Road*.
 A real giant empire existed. We just don't need to invent one.
@@ -170,14 +192,14 @@ Gerçek bir dev imparatorluk vardı. Sadece bir tane uydurmamıza gerek yok.
 
 *Görsel:* Moğol İmparatorluğu haritası, Kore'den Avrupa'ya ok. Altın Orda çadır şehri. İpek Yolu kervanı.
 
-## 9:40 · Kendin dene
+## 10:35 · Kendin dene
 **EN:** Next time you meet a "hidden history," ask three questions. Is there a simpler explanation that's already written down? If this were true, what else would we expect to find, and do we find it? And who gains if I believe it?
 
 **TR:** Bir dahaki sefere bir "gizli tarih"le karşılaştığında üç soru sor: Zaten yazıya geçirilmiş daha basit bir açıklama var mı? Bu doğru olsaydı başka neler bulmayı beklerdik ve bunları buluyor muyuz? Ve buna inanırsam kim kazanç sağlar?
 
 *Görsel:* Büyüteç, 1-2-3 ikonları.
 
-## 10:00 · Kapanış
+## 10:55 · Kapanış
 **EN:** Tartaria is a story about a lost empire. But maybe what's really lost is our trust that ordinary people, with simple tools and enormous effort, built extraordinary things.
 They did. We know their names.
 The truth didn't erase a civilization. It *is* the civilization.
@@ -190,7 +212,7 @@ Gerçek bir uygarlığı silmedi. Uygarlığın *ta kendisi* o.
 
 ---
 
-## Shorts listesi (11 adet, hepsinin sonunda abone ol hatırlatması)
+## Shorts listesi (12 adet, hepsinin sonunda abone ol hatırlatması)
 | # | Bölüm | Kanca başlığı |
 |---|---|---|
 | 1 | 0:00 | The empire erased from history? |
@@ -198,12 +220,13 @@ Gerçek bir uygarlığı silmedi. Uygarlığın *ta kendisi* o.
 | 3 | 2:05 | Why are these windows underground? |
 | 4 | 2:50 | Star forts: weapons or machines? |
 | 5 | 3:35 | The city that vanished in two years |
-| 6 | 4:20 | The darkest Tartaria theory |
-| 7 | 5:15 | Tartaria on old maps: solved |
-| 8 | 6:10 | The "mud flood": solved (Chicago lifted buildings) |
-| 9 | 7:00 | Star forts & the White City: solved |
-| 10 | 8:25 | Why conspiracy theories feel so convincing |
-| 11 | 9:05 | The REAL Tartaria was even bigger |
+| 6 | 4:00 | Free energy towers on old buildings? |
+| 7 | 4:45 | The darkest Tartaria theory |
+| 8 | 5:15 | Tartaria on old maps: solved |
+| 9 | 6:10 | The "mud flood": solved (Chicago lifted buildings) |
+| 10 | 7:00 | Star forts & the White City: solved |
+| 11 | 9:20 | Why conspiracy theories feel so convincing |
+| 12 | 10:00 | The REAL Tartaria was even bigger |
 
 ## Kaynaklar
 - Avrupa haritacılığında "Tartaria" (Ortelius, *Theatrum Orbis Terrarum*, 1570 vb.); Encyclopaedia Britannica, 1. baskı (1768–71), "Tartary"
@@ -213,6 +236,7 @@ Gerçek bir uygarlığı silmedi. Uygarlığın *ta kendisi* o.
 - Chicago'nun yükseltilmesi (1850'ler–60'lar): *Encyclopedia of Chicago*, "Raising Chicago"
 - Duffy, *Siege Warfare* (1979); Vauban tahkimatları (UNESCO)
 - 1893 World's Columbian Exposition: "staff" malzemesi, 1894 yangını; Museum of Science and Industry
+- Franklin, paratoner (1750'ler); Wardenclyffe Kulesi (1901–1917)
 - Orphan Train Movement (1854–1929): National Orphan Train Complex; Holt, *The Orphan Trains* (1992)
 - Douglas, Sutton & Cichocka (2017), *Current Directions in Psychological Science*; Leman & Cinnirella (2007)
 - Moğol İmparatorluğu, Altın Orda, İpek Yolu
