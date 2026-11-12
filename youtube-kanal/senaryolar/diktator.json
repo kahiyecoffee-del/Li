@@ -399,13 +399,22 @@
     "en": "The legend of *Cincinnatus* says he was called from his farm to save Rome, won the war,",
     "tr": "*Cincinnatus* efsanesine göre çiftliğinden Roma'yı kurtarmaya çağrıldı, savaşı kazandı"
    },
-   "image": {
-    "file": "File:Cincinato abandona el arado para dictar leyes a Roma, c.1806 de Juan Antonio Ribera.jpg",
-    "style": "sketch",
-    "fit": "contain",
-    "label": "Cincinnatus leaves the plough · J. A. Ribera (c. 1806)",
-    "tint": 0.3
-   }
+   "sketch": [
+    {
+     "el": "plow",
+     "x": 0.45,
+     "y": 0.7,
+     "s": 1.0
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.75,
+     "h": 0.4,
+     "pose": "hold",
+     "face": 1
+    }
+   ]
   },
   {
    "say": {
@@ -739,13 +748,24 @@
     "en": "Centuries earlier, the philosopher *Thomas Hobbes* had argued something similar in *Leviathan*:",
     "tr": "Yüzyıllar önce filozof *Thomas Hobbes* da *Leviathan*'da benzer bir şey savunmuştu:"
    },
-   "image": {
-    "file": "File:Leviathan frontispiece.jpg",
-    "style": "sketch",
-    "fit": "contain",
-    "label": "Leviathan · frontispiece by Abraham Bosse (1651)",
-    "tint": 0.3
-   }
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.3,
+     "y": 0.72,
+     "s": 1.0,
+     "n": 1
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.42,
+     "text": "Leviathan · 1651",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    }
+   ]
   },
   {
    "say": {
