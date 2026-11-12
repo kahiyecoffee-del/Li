@@ -1,0 +1,1092 @@
+1
+00:00:00,200 --> 00:00:02,958
+Gençken bir Denny's restoranında bulaşık
+
+2
+00:00:02,958 --> 00:00:04,626
+yıkadı ve masa topladı.
+
+3
+00:00:05,276 --> 00:00:07,618
+On yıllar sonra, bir Denny's masasında
+
+4
+00:00:07,618 --> 00:00:10,132
+kurmaya yardım ettiği şirket tarihte beş
+
+5
+00:00:10,132 --> 00:00:12,531
+trilyon dolar değere ulaşan ilk şirket
+
+6
+00:00:12,531 --> 00:00:12,989
+oldu.
+
+7
+00:00:13,638 --> 00:00:16,286
+Dünyadaki neredeyse her ülkenin bütün
+
+8
+00:00:16,286 --> 00:00:18,140
+ekonomisinden daha büyük.
+
+9
+00:00:18,790 --> 00:00:20,343
+Adı Jensen Huang.
+
+10
+00:00:20,343 --> 00:00:23,449
+Şirketi NVIDIA, dünyadaki yapay zekânın
+
+11
+00:00:23,449 --> 00:00:25,991
+büyük bölümünü çalıştıran çipleri
+
+12
+00:00:25,991 --> 00:00:26,838
+üretiyor.
+
+13
+00:00:27,488 --> 00:00:29,982
+Ve bu hafta, birçok habere göre, kendi
+
+14
+00:00:29,982 --> 00:00:32,658
+yönetim kurulu onu görevden alıp almamayı
+
+15
+00:00:32,658 --> 00:00:33,631
+tartışıyordu.
+
+16
+00:00:34,281 --> 00:00:36,430
+Bu, bir şirketin ve bir dönem tek bir
+
+17
+00:00:36,430 --> 00:00:38,847
+adamın, mühendislerin en çok korktuğu şeye
+
+18
+00:00:38,847 --> 00:00:40,513
+nasıl dönüştüğünün hikâyesi:
+
+19
+00:00:41,163 --> 00:00:44,280
+koca bir teknoloji çağı için tek hata
+
+20
+00:00:44,280 --> 00:00:45,192
+noktası.
+
+21
+00:00:45,842 --> 00:00:47,458
+Başlamadan küçük bir rica:
+
+22
+00:00:47,458 --> 00:00:49,575
+Dünyamızı şekillendiren insanlar ve
+
+23
+00:00:49,575 --> 00:00:51,915
+fikirlerle ilgili hikâyeleri seviyorsan
+
+24
+00:00:51,915 --> 00:00:54,311
+abone ol. Kanala gerçekten çok yardımı
+
+25
+00:00:54,311 --> 00:00:54,868
+oluyor.
+
+26
+00:00:55,518 --> 00:00:58,861
+Jensen Huang 1963'te Tayvan'ın Tainan
+
+27
+00:00:58,861 --> 00:01:00,365
+şehrinde doğdu.
+
+28
+00:01:01,015 --> 00:01:03,836
+Çocukken o ve ağabeyi bir amcanın yanında
+
+29
+00:01:03,836 --> 00:01:06,336
+yaşamak üzere Amerika'ya gönderildi.
+
+30
+00:01:06,986 --> 00:01:09,947
+Amca onları Kentucky kırsalında prestijli
+
+31
+00:01:09,947 --> 00:01:12,369
+bir yatılı okul sandığı bir okula
+
+32
+00:01:12,369 --> 00:01:13,176
+yazdırdı.
+
+33
+00:01:13,826 --> 00:01:16,301
+Okul aslında sorunlu gençler için dinî bir
+
+34
+00:01:16,301 --> 00:01:17,236
+akademi çıktı.
+
+35
+00:01:17,886 --> 00:01:20,361
+Daha sonra Oregon'da bir gençken Huang,
+
+36
+00:01:20,361 --> 00:01:21,658
+Denny's'te çalıştı:
+
+37
+00:01:21,658 --> 00:01:24,251
+bulaşık yıkadı, masa topladı, müşterilere
+
+38
+00:01:24,251 --> 00:01:25,194
+servis yaptı.
+
+39
+00:01:25,844 --> 00:01:27,746
+Bu işlerin ona alçakgönüllülüğü ve
+
+40
+00:01:27,746 --> 00:01:30,008
+çalışkanlığı öğrettiğini sık sık söyledi.
+
+41
+00:01:30,658 --> 00:01:32,721
+Elektrik mühendisliği okudu, çip
+
+42
+00:01:32,721 --> 00:01:34,430
+tasarımcısı olarak çalıştı
+
+43
+00:01:35,080 --> 00:01:37,400
+ve yirmilerinin sonunda bilgisayarların
+
+44
+00:01:37,400 --> 00:01:39,664
+nereye gittiğine dair bir fikri vardı.
+
+45
+00:01:40,314 --> 00:01:43,039
+1993'te Huang ve iki mühendis, Chris
+
+46
+00:01:43,039 --> 00:01:45,628
+Malachowsky ve Curtis Priem, San
+
+47
+00:01:45,628 --> 00:01:48,285
+Jose'deki bir Denny's'te buluşup bir
+
+48
+00:01:48,285 --> 00:01:50,329
+şirket kurmaya karar verdi.
+
+49
+00:01:50,979 --> 00:01:52,386
+Adını NVIDIA koydular.
+
+50
+00:01:53,036 --> 00:01:55,047
+Bahisleri şuydu: Video oyunları 3 boyutlu
+
+51
+00:01:55,047 --> 00:01:56,967
+grafik çizmek için özel çiplere ihtiyaç
+
+52
+00:01:56,967 --> 00:01:57,561
+duyacaktı;
+
+53
+00:01:58,212 --> 00:02:01,733
+aynı anda binlerce basit hesap yapabilen
+
+54
+00:02:01,733 --> 00:02:02,634
+çiplere.
+
+55
+00:02:03,284 --> 00:02:05,397
+İlk yıllar çok zorlu geçti.
+
+56
+00:02:05,397 --> 00:02:08,356
+İlk ürünleri tutmadı ve şirketin parası
+
+57
+00:02:08,356 --> 00:02:09,695
+bitmek üzereydi.
+
+58
+00:02:10,345 --> 00:02:12,375
+Sonraki yıllarda Huang'ın personel
+
+59
+00:02:12,375 --> 00:02:14,735
+toplantılarını şirket efsanesine dönüşen
+
+60
+00:02:14,735 --> 00:02:16,546
+bir cümleyle açtığı anlatılır:
+
+61
+00:02:17,196 --> 00:02:20,406
+"Şirketimizin batmasına otuz gün var."
+
+62
+00:02:21,056 --> 00:02:24,484
+1999'da NVIDIA GeForce 256'yı piyasaya
+
+63
+00:02:24,484 --> 00:02:27,912
+sürdü ve onu dünyanın ilk GPU'su, yani
+
+64
+00:02:27,912 --> 00:02:30,941
+grafik işlem birimi olarak tanıttı.
+
+65
+00:02:31,591 --> 00:02:33,185
+Oyuncular bayıldı.
+
+66
+00:02:33,185 --> 00:02:36,526
+Ama GPU'nun en önemli yanı aslında grafik
+
+67
+00:02:36,526 --> 00:02:37,362
+değildi.
+
+68
+00:02:38,012 --> 00:02:41,430
+Normal bir işlemci, yani CPU, karmaşık
+
+69
+00:02:41,430 --> 00:02:44,609
+işleri sırayla yapan birkaç dâhi işçi
+
+70
+00:02:44,609 --> 00:02:45,484
+gibidir.
+
+71
+00:02:46,134 --> 00:02:49,185
+GPU ise küçük işleri aynı anda yapan
+
+72
+00:02:49,185 --> 00:02:51,610
+binlerce basit işçi gibidir.
+
+73
+00:02:52,260 --> 00:02:54,351
+Bu, başka bir alanın tam olarak ihtiyaç
+
+74
+00:02:54,351 --> 00:02:55,396
+duyduğu şey çıktı:
+
+75
+00:02:55,396 --> 00:02:57,188
+yapay sinir ağlarını eğitmek için
+
+76
+00:02:57,188 --> 00:02:58,730
+kullanılan türden matematik.
+
+77
+00:02:59,380 --> 00:03:01,598
+2006'da NVIDIA, bilim insanlarının
+
+78
+00:03:01,598 --> 00:03:04,115
+GPU'ları sadece grafik için değil genel
+
+79
+00:03:04,115 --> 00:03:06,452
+hesaplama için kullanmasını sağlayan
+
+80
+00:03:06,452 --> 00:03:08,190
+CUDA yazılımını çıkardı.
+
+81
+00:03:08,840 --> 00:03:10,951
+Geliştirmesi çok pahalıydı ve yıllarca
+
+82
+00:03:10,951 --> 00:03:12,960
+birçok yatırımcı ne işe yarayacağını
+
+83
+00:03:12,960 --> 00:03:13,578
+anlamadı.
+
+84
+00:03:14,228 --> 00:03:17,157
+Sonra 2012'de Toronto Üniversitesi'nden
+
+85
+00:03:17,157 --> 00:03:20,156
+küçük bir ekip, Alex Krizhevsky, Ilya
+
+86
+00:03:20,156 --> 00:03:22,597
+Sutskever ve Geoffrey Hinton,
+
+87
+00:03:23,247 --> 00:03:26,412
+AlexNet adlı bir sinir ağını iki NVIDIA
+
+88
+00:03:26,412 --> 00:03:28,570
+oyun ekran kartında eğitti.
+
+89
+00:03:29,220 --> 00:03:31,838
+Büyük bir görüntü tanıma yarışmasında
+
+90
+00:03:31,838 --> 00:03:33,539
+rakiplerini ezdi geçti.
+
+91
+00:03:34,189 --> 00:03:36,428
+İki oyun kartı derin öğrenme devriminin
+
+92
+00:03:36,428 --> 00:03:38,027
+başlamasına yardım etmişti.
+
+93
+00:03:38,677 --> 00:03:40,578
+Ve NVIDIA kürekleri çoktan elinde
+
+94
+00:03:40,578 --> 00:03:41,265
+tutuyordu.
+
+95
+00:03:41,915 --> 00:03:44,926
+Altına hücumla ilgili eski bir söz vardır:
+
+96
+00:03:44,926 --> 00:03:47,469
+Zengin olanlar her zaman madenciler
+
+97
+00:03:47,469 --> 00:03:49,409
+değildi; kürek satanlardı.
+
+98
+00:03:50,059 --> 00:03:53,665
+ChatGPT 2022 sonunda çıktığında yapay
+
+99
+00:03:53,665 --> 00:03:56,241
+zekâ altına hücumu başladı.
+
+100
+00:03:56,891 --> 00:03:59,102
+Her büyük teknoloji şirketi yapay zekâ
+
+101
+00:03:59,102 --> 00:04:01,367
+modellerini eğitmek ve çalıştırmak için
+
+102
+00:04:01,367 --> 00:04:03,416
+aniden muazzam sayıda gelişmiş çipe
+
+103
+00:04:03,416 --> 00:04:04,332
+ihtiyaç duydu.
+
+104
+00:04:04,982 --> 00:04:06,678
+Ve en iyilerini NVIDIA yapıyordu.
+
+105
+00:04:07,328 --> 00:04:09,209
+Onun çipleriyle dolu veri merkezleri
+
+106
+00:04:09,209 --> 00:04:11,042
+dünyanın her yerinde ortaya çıkmaya
+
+107
+00:04:11,042 --> 00:04:11,573
+başladı.
+
+108
+00:04:12,223 --> 00:04:15,597
+2023'te NVIDIA'nın değeri bir trilyon
+
+109
+00:04:15,597 --> 00:04:16,947
+doları geçti.
+
+110
+00:04:17,597 --> 00:04:21,591
+29 Ekim 2025'te beş trilyonu geçen
+
+111
+00:04:21,591 --> 00:04:24,722
+tarihteki ilk şirket oldu.
+
+112
+00:04:25,372 --> 00:04:28,507
+İmzası olan siyah deri ceketiyle Huang,
+
+113
+00:04:28,507 --> 00:04:31,120
+dünyanın en tanınan ve en zengin
+
+114
+00:04:31,120 --> 00:04:33,359
+yöneticilerinden biri oldu.
+
+115
+00:04:34,009 --> 00:04:36,248
+Peki tek bir çip şirketi dünyayı nasıl
+
+116
+00:04:36,248 --> 00:04:38,376
+şekillendiriyor? En az dört şekilde.
+
+117
+00:04:39,026 --> 00:04:40,869
+Birincisi, yapay zekânın kendisi.
+
+118
+00:04:40,869 --> 00:04:42,518
+Dünyanın en gelişmiş yapay zekâ
+
+119
+00:04:42,518 --> 00:04:44,409
+sistemlerinin büyük bir kısmı NVIDIA
+
+120
+00:04:44,409 --> 00:04:45,961
+donanımı üzerinde eğitiliyor.
+
+121
+00:04:46,611 --> 00:04:49,078
+NVIDIA yeterince hızlı çip üretemediğinde
+
+122
+00:04:49,078 --> 00:04:50,984
+yapay zekâ ilerlemesi her yerde
+
+123
+00:04:50,984 --> 00:04:51,769
+yavaşlıyor.
+
+124
+00:04:52,419 --> 00:04:55,327
+İkincisi, para. NVIDIA borsadaki en
+
+125
+00:04:55,327 --> 00:04:57,654
+büyük şirketlerden biri oldu.
+
+126
+00:04:58,304 --> 00:05:00,623
+Milyonlarca insanın emeklilik birikimi,
+
+127
+00:05:00,623 --> 00:05:02,943
+çoğu zaman haberleri bile olmadan, onun
+
+128
+00:05:02,943 --> 00:05:04,710
+hisse fiyatıyla inip çıkıyor.
+
+129
+00:05:05,360 --> 00:05:09,022
+Üçüncüsü, jeopolitik. ABD 2022'den beri
+
+130
+00:05:09,022 --> 00:05:12,518
+en gelişmiş yapay zekâ çiplerinin Çin'e
+
+131
+00:05:12,518 --> 00:05:14,516
+ihracatını kısıtlıyor
+
+132
+00:05:15,166 --> 00:05:17,483
+ve NVIDIA o pazar için daha zayıf özel
+
+133
+00:05:17,483 --> 00:05:19,744
+versiyonlar tasarlamak zorunda kaldı.
+
+134
+00:05:20,394 --> 00:05:22,916
+Aynı zamanda çipleri ağırlıklı olarak
+
+135
+00:05:22,916 --> 00:05:24,429
+Tayvan'da üretiliyor.
+
+136
+00:05:25,079 --> 00:05:27,322
+Tek bir şirket, dünyanın en büyük iki
+
+137
+00:05:27,322 --> 00:05:29,565
+ekonomisi arasındaki fay hattının tam
+
+138
+00:05:29,565 --> 00:05:30,687
+üzerinde duruyor.
+
+139
+00:05:31,337 --> 00:05:33,889
+Dördüncüsü, enerji. Bu çiplerle dolu
+
+140
+00:05:33,889 --> 00:05:36,628
+veri merkezleri muazzam miktarda elektrik
+
+141
+00:05:36,628 --> 00:05:37,437
+tüketiyor.
+
+142
+00:05:38,087 --> 00:05:40,815
+Uluslararası Enerji Ajansı, küresel veri
+
+143
+00:05:40,815 --> 00:05:43,606
+merkezi elektrik tüketiminin büyük ölçüde
+
+144
+00:05:43,606 --> 00:05:46,460
+yapay zekâ nedeniyle 2030'a kadar yaklaşık
+
+145
+00:05:46,460 --> 00:05:48,807
+iki katına çıkabileceğini öngördü.
+
+146
+00:05:49,457 --> 00:05:51,962
+Çipler artık sadece ürün değil.
+
+147
+00:05:51,962 --> 00:05:54,393
+Kelimenin her anlamında güç.
+
+148
+00:05:55,043 --> 00:05:57,557
+Bir şirket bu kadar önemli hale geldiğinde
+
+149
+00:05:57,557 --> 00:05:59,400
+kafamızda ilginç bir şey olur:
+
+150
+00:05:59,400 --> 00:06:01,467
+Onu tek bir insan olarak görmeye
+
+151
+00:06:01,467 --> 00:06:02,137
+başlarız.
+
+152
+00:06:02,787 --> 00:06:05,523
+1840'ta İskoç yazar Thomas Carlyle
+
+153
+00:06:05,523 --> 00:06:07,909
+"dünya tarihi, büyük adamların
+
+154
+00:06:07,909 --> 00:06:10,926
+biyografisinden başka bir şey değildir"
+
+155
+00:06:10,926 --> 00:06:11,908
+diye yazdı.
+
+156
+00:06:12,558 --> 00:06:14,638
+Bu, tarihe dair Büyük Adam kuramı olarak
+
+157
+00:06:14,638 --> 00:06:15,655
+bilinir hale geldi.
+
+158
+00:06:16,305 --> 00:06:18,235
+Filozof Herbert Spencer gibi
+
+159
+00:06:18,235 --> 00:06:20,224
+eleştirmenler buna karşı çıktı:
+
+160
+00:06:20,224 --> 00:06:22,622
+Büyük insanlar toplumlarının ürünüdür.
+
+161
+00:06:23,272 --> 00:06:26,084
+Doğru koşullar olmadan hiçbir tek kişi bir
+
+162
+00:06:26,084 --> 00:06:27,334
+şey değiştiremez.
+
+163
+00:06:27,984 --> 00:06:30,823
+Psikoloji bir dönemeç daha ekliyor.
+
+164
+00:06:30,823 --> 00:06:34,111
+1920'de psikolog Edward Thorndike hale
+
+165
+00:06:34,111 --> 00:06:35,830
+etkisini tanımladı:
+
+166
+00:06:36,480 --> 00:06:38,388
+Bir insanda etkileyici bir özellik
+
+167
+00:06:38,388 --> 00:06:40,194
+gördüğümüzde, başka açılardan da
+
+168
+00:06:40,194 --> 00:06:41,793
+etkileyici olduğunu varsayma
+
+169
+00:06:41,793 --> 00:06:42,670
+eğilimindeyiz:
+
+170
+00:06:43,320 --> 00:06:45,304
+daha zeki, daha güvenilir, daha ahlaklı.
+
+171
+00:06:45,954 --> 00:06:48,745
+Parlak bir mühendis ve vizyoner bir CEO,
+
+172
+00:06:48,745 --> 00:06:51,277
+hata yapamayacak biri gibi görünmeye
+
+173
+00:06:51,277 --> 00:06:51,926
+başlar.
+
+174
+00:06:52,576 --> 00:06:55,047
+Ve yatırımcılar, çalışanlar ve hükümetler
+
+175
+00:06:55,047 --> 00:06:57,293
+o tek kişiye güvenli olandan çok daha
+
+176
+00:06:57,293 --> 00:06:58,809
+fazla yaslanmaya başlar.
+
+177
+00:06:59,459 --> 00:07:03,172
+Kasım 2026'nın başında o hale çatladı.
+
+178
+00:07:03,822 --> 00:07:06,511
+8 Kasım'da Huang, NVIDIA çalışanlarına
+
+179
+00:07:06,511 --> 00:07:09,201
+gönderdiği bir notta eşini aldattığını
+
+180
+00:07:09,201 --> 00:07:10,185
+itiraf etti.
+
+181
+00:07:10,835 --> 00:07:13,196
+Tek başına bu özel bir mesele olurdu.
+
+182
+00:07:13,846 --> 00:07:16,424
+Ama birkaç ABD medya kuruluşu çok daha
+
+183
+00:07:16,424 --> 00:07:18,059
+ciddi bir şey bildirdi:
+
+184
+00:07:18,709 --> 00:07:20,939
+Söz konusu kadının ABD'li yetkililer
+
+185
+00:07:20,939 --> 00:07:23,398
+tarafından Çin istihbaratıyla bağlantılı
+
+186
+00:07:23,398 --> 00:07:25,114
+olduğundan şüphelenildiğini
+
+187
+00:07:25,764 --> 00:07:28,242
+ve ona bağlı bir şirketin milyarlarca
+
+188
+00:07:28,242 --> 00:07:30,658
+dolarlık NVIDIA çipi satın aldığını,
+
+189
+00:07:31,308 --> 00:07:33,529
+gelişmiş çiplerin Çin'e kaçırıldığına dair
+
+190
+00:07:33,529 --> 00:07:35,306
+uzun süredir devam eden endişeler
+
+191
+00:07:35,306 --> 00:07:35,898
+sürerken.
+
+192
+00:07:36,548 --> 00:07:38,205
+Kadın hakkında herhangi bir suçlama
+
+193
+00:07:38,205 --> 00:07:40,168
+yapılmadı ve ona bağlı şirket herhangi bir
+
+194
+00:07:40,168 --> 00:07:41,040
+yanlışı reddetti.
+
+195
+00:07:41,690 --> 00:07:44,054
+NVIDIA'nın yönetim kurulu, bağımsız
+
+196
+00:07:44,054 --> 00:07:46,419
+yöneticilerden oluşan bir komite ve
+
+197
+00:07:46,419 --> 00:07:48,721
+dışarıdan avukatlarla bağımsız bir
+
+198
+00:07:48,721 --> 00:07:50,152
+soruşturma başlattı.
+
+199
+00:07:50,802 --> 00:07:53,443
+Şirket, ulusal güvenliğin ya da NVIDIA'nın
+
+200
+00:07:53,443 --> 00:07:55,849
+sırlarının tehlikeye girdiğine inanmak
+
+201
+00:07:55,849 --> 00:07:58,079
+için bir sebep olmadığını açıkladı.
+
+202
+00:07:58,729 --> 00:08:00,419
+Yine de tepki hızlı geldi.
+
+203
+00:08:00,419 --> 00:08:02,867
+Milletvekilleri Huang'ı Kongre'de ifade
+
+204
+00:08:02,867 --> 00:08:03,975
+vermeye çağırdı.
+
+205
+00:08:04,625 --> 00:08:06,428
+Bir hissedar davası açıldı.
+
+206
+00:08:07,078 --> 00:08:09,918
+Ve 11 Kasım'da The Wall Street Journal,
+
+207
+00:08:09,918 --> 00:08:12,757
+konuya yakın kaynaklara dayanarak yönetim
+
+208
+00:08:12,757 --> 00:08:14,951
+kurulunun onu CEO'luktan almaya
+
+209
+00:08:14,951 --> 00:08:16,694
+hazırlandığını bildirdi.
+
+210
+00:08:17,344 --> 00:08:20,024
+Başka haberler NVIDIA'dan bir çalışanla
+
+211
+00:08:20,024 --> 00:08:22,066
+ayrı bir ilişkiyi de aktardı.
+
+212
+00:08:22,716 --> 00:08:25,225
+Zaten düşüşte olan NVIDIA hissesi sert
+
+213
+00:08:25,225 --> 00:08:26,266
+biçimde düştü.
+
+214
+00:08:26,916 --> 00:08:30,070
+11 Kasım'da mesai sonrası işlemlerde ekim
+
+215
+00:08:30,070 --> 00:08:33,152
+zirvesinin yaklaşık üçte bir altındaydı.
+
+216
+00:08:33,802 --> 00:08:36,049
+Bu kaydın yapıldığı an itibarıyla nihai
+
+217
+00:08:36,049 --> 00:08:37,387
+bir karar açıklanmadı.
+
+218
+00:08:38,037 --> 00:08:40,836
+Mühendislerin, bir sistemde bozulduğunda
+
+219
+00:08:40,836 --> 00:08:43,765
+her şeyi çökerten parçaya verdiği bir isim
+
+220
+00:08:43,765 --> 00:08:45,523
+var: tek hata noktası.
+
+221
+00:08:46,173 --> 00:08:47,836
+İyi sistemler bunlardan kaçınacak şekilde
+
+222
+00:08:47,836 --> 00:08:48,366
+tasarlanır.
+
+223
+00:08:49,016 --> 00:08:51,283
+Yatırımcıların da benzer bir kavramı var:
+
+224
+00:08:51,283 --> 00:08:53,345
+kilit kişi riski, yani bir şirketin
+
+225
+00:08:53,345 --> 00:08:55,407
+değerinin büyük ölçüde tek bir kişiye
+
+226
+00:08:55,407 --> 00:08:56,232
+bağlı olması.
+
+227
+00:08:56,882 --> 00:08:58,835
+Yıllarca NVIDIA'nın hikâyesi Jensen
+
+228
+00:08:58,835 --> 00:09:00,789
+Huang'ın hikâyesi olarak anlatıldı.
+
+229
+00:09:00,789 --> 00:09:03,103
+Onun vizyonu, onun bahisleri, onun ceketi.
+
+230
+00:09:03,753 --> 00:09:05,315
+Bu hikâye tarihin en değerli
+
+231
+00:09:05,315 --> 00:09:07,481
+şirketlerinden birini inşa etmeye yardım
+
+232
+00:09:07,481 --> 00:09:07,885
+etti.
+
+233
+00:09:08,535 --> 00:09:10,168
+Ama aynı zamanda tek bir insanın
+
+234
+00:09:10,168 --> 00:09:11,848
+hayatındaki bir krizin piyasaları
+
+235
+00:09:11,848 --> 00:09:13,201
+sarsabileceği, hükümetleri
+
+236
+00:09:13,201 --> 00:09:14,321
+endişelendirebileceği
+
+237
+00:09:14,971 --> 00:09:16,909
+ve bütün yapay zekâ sektörünün üzerinde
+
+238
+00:09:16,909 --> 00:09:18,939
+çalıştığı teknolojinin güvenliği hakkında
+
+239
+00:09:18,939 --> 00:09:20,646
+sorular doğurabileceği anlamına da
+
+240
+00:09:20,646 --> 00:09:21,246
+geliyordu.
+
+241
+00:09:21,896 --> 00:09:23,926
+Yönetim kurulu ne karar verirse versin,
+
+242
+00:09:23,926 --> 00:09:25,377
+ders tek bir adamdan büyük.
+
+243
+00:09:26,027 --> 00:09:28,540
+Bir toplum geleceğini tek bir şirketin,
+
+244
+00:09:28,540 --> 00:09:31,173
+tek bir şirket de tek bir insanın üzerine
+
+245
+00:09:31,173 --> 00:09:32,010
+kurduğunda,
+
+246
+00:09:32,660 --> 00:09:34,986
+sadece onların dehasına bahse girmiyor.
+
+247
+00:09:34,986 --> 00:09:37,035
+Her bir kararlarına bahse giriyor.
+
+248
+00:09:37,685 --> 00:09:39,142
+Bir şey deneyelim.
+
+249
+00:09:39,142 --> 00:09:41,919
+Her gün bağlı olduğun bir şeyi düşün:
+
+250
+00:09:41,919 --> 00:09:44,417
+işin, bir ekip, ailen, bir proje.
+
+251
+00:09:45,067 --> 00:09:47,770
+Şimdi sor: Aniden ortadan kalksa her şeyi
+
+252
+00:09:47,770 --> 00:09:50,473
+durduracak tek bir kişi ya da tek bir şey
+
+253
+00:09:50,473 --> 00:09:51,087
+var mı?
+
+254
+00:09:51,737 --> 00:09:54,543
+Cevap evetse, kendi tek hata noktanı
+
+255
+00:09:54,543 --> 00:09:55,263
+buldun.
+
+256
+00:09:55,913 --> 00:09:58,521
+Ve çözüm şirketler için de insanlar için
+
+257
+00:09:58,521 --> 00:09:59,855
+de genellikle aynı:
+
+258
+00:09:59,855 --> 00:10:01,736
+bilgiyi paylaş, yedekler kur
+
+259
+00:10:02,386 --> 00:10:04,906
+ve bir kişinin parlaklığını bir sistemin
+
+260
+00:10:04,906 --> 00:10:06,196
+gücüyle karıştırma.
+
+261
+00:10:06,846 --> 00:10:08,787
+Denny's'ten bir bulaşıkçı, yapay zekâ
+
+262
+00:10:08,787 --> 00:10:10,922
+çağının merkezindeki makineyi inşa etmeye
+
+263
+00:10:10,922 --> 00:10:11,650
+yardım etti.
+
+264
+00:10:12,300 --> 00:10:14,868
+Hikâyenin bu kısmı gerçek ve olağanüstü.
+
+265
+00:10:15,518 --> 00:10:18,901
+Ama en önemli bölüm belki şu anda yazılan
+
+266
+00:10:18,901 --> 00:10:19,593
+bölüm:
+
+267
+00:10:20,243 --> 00:10:22,483
+Bir adamın nasıl yükseldiği değil,
+
+268
+00:10:22,483 --> 00:10:24,844
+etrafındaki sistemlerin onsuz ayakta
+
+269
+00:10:24,844 --> 00:10:27,084
+kalacak kadar güçlü olup olmadığı.
+
+270
+00:10:27,734 --> 00:10:30,149
+Çünkü sonunda dünyanın en güçlü
+
+271
+00:10:30,149 --> 00:10:33,275
+teknolojisi hâlâ çok eski ve çok kırılgan
+
+272
+00:10:33,275 --> 00:10:34,909
+bir şeyle çalışıyor:
+
+273
+00:10:35,559 --> 00:10:36,602
+insanlarla.
+

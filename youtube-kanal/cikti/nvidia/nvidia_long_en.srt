@@ -1,0 +1,1060 @@
+1
+00:00:00,200 --> 00:00:02,721
+As a teenager, he washed dishes and bussed
+
+2
+00:00:02,721 --> 00:00:04,626
+tables at a Denny's restaurant.
+
+3
+00:00:05,276 --> 00:00:07,788
+Decades later, the company he co-founded
+
+4
+00:00:07,788 --> 00:00:10,184
+at a Denny's booth became the first in
+
+5
+00:00:10,184 --> 00:00:12,346
+history to be worth five trillion
+
+6
+00:00:12,346 --> 00:00:12,989
+dollars
+
+7
+00:00:13,638 --> 00:00:16,444
+— more than the entire economy of almost
+
+8
+00:00:16,444 --> 00:00:18,140
+every country on Earth.
+
+9
+00:00:18,790 --> 00:00:20,633
+His name is Jensen Huang.
+
+10
+00:00:20,633 --> 00:00:23,152
+His company, NVIDIA, makes the chips
+
+11
+00:00:23,152 --> 00:00:25,855
+that power most of the world's artificial
+
+12
+00:00:25,855 --> 00:00:26,838
+intelligence.
+
+13
+00:00:27,488 --> 00:00:29,792
+And this week, according to multiple
+
+14
+00:00:29,792 --> 00:00:32,155
+reports, his own board was discussing
+
+15
+00:00:32,155 --> 00:00:33,631
+whether to remove him.
+
+16
+00:00:34,281 --> 00:00:36,583
+This is the story of how one company —
+
+17
+00:00:36,583 --> 00:00:38,660
+and, for a while, one man — became
+
+18
+00:00:38,660 --> 00:00:40,513
+something engineers fear most:
+
+19
+00:00:41,163 --> 00:00:43,055
+a single point of failure.
+
+20
+00:00:43,055 --> 00:00:45,192
+For an entire technological age.
+
+21
+00:00:45,842 --> 00:00:47,733
+Quick favor before we start:
+
+22
+00:00:47,733 --> 00:00:50,355
+if you like stories about the people and
+
+23
+00:00:50,355 --> 00:00:52,794
+ideas shaping our world, subscribe.
+
+24
+00:00:52,794 --> 00:00:54,868
+It genuinely helps the channel.
+
+25
+00:00:55,518 --> 00:00:59,451
+Jensen Huang was born in 1963 in Tainan,
+
+26
+00:00:59,451 --> 00:01:00,365
+Taiwan.
+
+27
+00:01:01,015 --> 00:01:03,429
+As a child, he and his older brother were
+
+28
+00:01:03,429 --> 00:01:05,842
+sent to the United States to live with an
+
+29
+00:01:05,842 --> 00:01:06,336
+uncle.
+
+30
+00:01:06,986 --> 00:01:09,272
+The uncle enrolled them at a school in
+
+31
+00:01:09,272 --> 00:01:11,448
+rural Kentucky that he thought was a
+
+32
+00:01:11,448 --> 00:01:13,176
+prestigious boarding school.
+
+33
+00:01:13,826 --> 00:01:16,064
+It turned out to be a religious academy
+
+34
+00:01:16,064 --> 00:01:17,236
+for troubled youth.
+
+35
+00:01:17,886 --> 00:01:20,282
+Later, as a teenager in Oregon, Huang
+
+36
+00:01:20,282 --> 00:01:22,559
+worked at Denny's — washing dishes,
+
+37
+00:01:22,559 --> 00:01:25,194
+bussing tables, and waiting on customers.
+
+38
+00:01:25,844 --> 00:01:28,416
+He has often said those jobs taught him
+
+39
+00:01:28,416 --> 00:01:30,008
+humility and hard work.
+
+40
+00:01:30,658 --> 00:01:33,173
+He studied electrical engineering, worked
+
+41
+00:01:33,173 --> 00:01:34,430
+as a chip designer,
+
+42
+00:01:35,080 --> 00:01:37,580
+and by his late twenties he had an idea
+
+43
+00:01:37,580 --> 00:01:39,664
+about where computing was going.
+
+44
+00:01:40,314 --> 00:01:43,325
+In 1993, Huang and two engineers, Chris
+
+45
+00:01:43,325 --> 00:01:46,407
+Malachowsky and Curtis Priem, met at a
+
+46
+00:01:46,407 --> 00:01:49,558
+Denny's in San Jose and decided to start a
+
+47
+00:01:49,558 --> 00:01:50,329
+company.
+
+48
+00:01:50,979 --> 00:01:52,386
+They called it NVIDIA.
+
+49
+00:01:53,036 --> 00:01:55,727
+Their bet: video games would need special
+
+50
+00:01:55,727 --> 00:01:57,562
+chips to draw 3D graphics —
+
+51
+00:01:58,212 --> 00:02:00,688
+chips that could do thousands of simple
+
+52
+00:02:00,688 --> 00:02:02,634
+calculations at the same time.
+
+53
+00:02:03,284 --> 00:02:04,940
+The early years were brutal.
+
+54
+00:02:04,940 --> 00:02:07,130
+Their first product struggled, and the
+
+55
+00:02:07,130 --> 00:02:09,214
+company came close to running out of
+
+56
+00:02:09,214 --> 00:02:09,695
+money.
+
+57
+00:02:10,345 --> 00:02:12,685
+For years afterward, Huang reportedly
+
+58
+00:02:12,685 --> 00:02:15,083
+opened staff meetings with a line that
+
+59
+00:02:15,083 --> 00:02:16,546
+became company legend:
+
+60
+00:02:17,196 --> 00:02:19,336
+"Our company is thirty days from going
+
+61
+00:02:19,336 --> 00:02:20,406
+out of business."
+
+62
+00:02:21,056 --> 00:02:24,702
+In 1999, NVIDIA launched the GeForce 256
+
+63
+00:02:24,702 --> 00:02:28,348
+and marketed it as the world's first GPU
+
+64
+00:02:28,348 --> 00:02:30,941
+— a graphics processing unit.
+
+65
+00:02:31,591 --> 00:02:34,284
+Gamers loved it. But the most important
+
+66
+00:02:34,284 --> 00:02:36,913
+thing about the GPU wasn't graphics at
+
+67
+00:02:36,913 --> 00:02:37,362
+all.
+
+68
+00:02:38,012 --> 00:02:41,184
+A normal processor, a CPU, is like a few
+
+69
+00:02:41,184 --> 00:02:44,285
+brilliant workers doing complex tasks one
+
+70
+00:02:44,285 --> 00:02:45,484
+after another.
+
+71
+00:02:46,134 --> 00:02:49,263
+A GPU is like thousands of simple workers
+
+72
+00:02:49,263 --> 00:02:51,610
+doing small tasks all at once.
+
+73
+00:02:52,260 --> 00:02:54,883
+That turned out to be exactly what another
+
+74
+00:02:54,883 --> 00:02:57,273
+field needed: the kind of math used to
+
+75
+00:02:57,273 --> 00:02:58,730
+train neural networks.
+
+76
+00:02:59,380 --> 00:03:02,638
+In 2006, NVIDIA released CUDA, software
+
+77
+00:03:02,638 --> 00:03:05,821
+that let scientists use GPUs for general
+
+78
+00:03:05,821 --> 00:03:08,190
+computing, not just graphics.
+
+79
+00:03:08,840 --> 00:03:11,539
+It cost a lot to build, and for years many
+
+80
+00:03:11,539 --> 00:03:13,578
+investors didn't see the point.
+
+81
+00:03:14,228 --> 00:03:16,706
+Then, in 2012, a small team at the
+
+82
+00:03:16,706 --> 00:03:19,718
+University of Toronto — Alex Krizhevsky,
+
+83
+00:03:19,718 --> 00:03:22,597
+Ilya Sutskever and Geoffrey Hinton —
+
+84
+00:03:23,247 --> 00:03:26,069
+trained a neural network called AlexNet
+
+85
+00:03:26,069 --> 00:03:28,570
+on two NVIDIA gaming graphics cards.
+
+86
+00:03:29,220 --> 00:03:31,724
+It crushed the competition in a major
+
+87
+00:03:31,724 --> 00:03:33,539
+image recognition contest.
+
+88
+00:03:34,189 --> 00:03:36,513
+Two gaming cards had helped kick off the
+
+89
+00:03:36,513 --> 00:03:38,027
+deep learning revolution.
+
+90
+00:03:38,677 --> 00:03:40,672
+And NVIDIA was already holding the
+
+91
+00:03:40,672 --> 00:03:41,265
+shovels.
+
+92
+00:03:41,915 --> 00:03:44,267
+There's an old saying about gold rushes:
+
+93
+00:03:44,267 --> 00:03:46,729
+the people who got rich weren't always the
+
+94
+00:03:46,729 --> 00:03:48,808
+miners — they were the ones selling
+
+95
+00:03:48,808 --> 00:03:49,409
+shovels.
+
+96
+00:03:50,059 --> 00:03:54,180
+When ChatGPT launched in late 2022, the
+
+97
+00:03:54,180 --> 00:03:56,241
+AI gold rush began.
+
+98
+00:03:56,891 --> 00:03:59,800
+Every major tech company suddenly needed
+
+99
+00:03:59,800 --> 00:04:02,506
+enormous numbers of advanced chips to
+
+100
+00:04:02,506 --> 00:04:04,332
+train and run AI models.
+
+101
+00:04:04,982 --> 00:04:06,678
+And NVIDIA made the best ones.
+
+102
+00:04:07,328 --> 00:04:09,762
+Data centers filled with its chips began
+
+103
+00:04:09,762 --> 00:04:11,573
+appearing all over the world.
+
+104
+00:04:12,223 --> 00:04:15,289
+In 2023, NVIDIA's value passed one
+
+105
+00:04:15,289 --> 00:04:16,947
+trillion dollars.
+
+106
+00:04:17,597 --> 00:04:21,118
+On October 29, 2025, it became the first
+
+107
+00:04:21,118 --> 00:04:24,722
+company in history to pass five trillion.
+
+108
+00:04:25,372 --> 00:04:27,721
+Huang, in his signature black leather
+
+109
+00:04:27,721 --> 00:04:29,659
+jacket, became one of the most
+
+110
+00:04:29,659 --> 00:04:32,302
+recognizable executives on Earth — and one
+
+111
+00:04:32,302 --> 00:04:33,359
+of the richest.
+
+112
+00:04:34,009 --> 00:04:36,462
+So how does one chip company shape the
+
+113
+00:04:36,462 --> 00:04:38,376
+world? In at least four ways.
+
+114
+00:04:39,026 --> 00:04:41,882
+First, AI itself. A huge share of the
+
+115
+00:04:41,882 --> 00:04:44,669
+world's most advanced AI is trained on
+
+116
+00:04:44,669 --> 00:04:45,961
+NVIDIA hardware.
+
+117
+00:04:46,611 --> 00:04:49,413
+When NVIDIA can't make chips fast enough,
+
+118
+00:04:49,413 --> 00:04:51,769
+AI progress slows down everywhere.
+
+119
+00:04:52,419 --> 00:04:55,129
+Second, money. NVIDIA became one of the
+
+120
+00:04:55,129 --> 00:04:57,654
+largest companies in the stock market.
+
+121
+00:04:58,304 --> 00:05:00,603
+Millions of people's retirement savings
+
+122
+00:05:00,603 --> 00:05:02,903
+move up and down with its share price —
+
+123
+00:05:02,903 --> 00:05:04,710
+often without them knowing it.
+
+124
+00:05:05,360 --> 00:05:08,387
+Third, geopolitics. Since 2022, the
+
+125
+00:05:08,387 --> 00:05:11,565
+United States has restricted exports of
+
+126
+00:05:11,565 --> 00:05:14,516
+the most advanced AI chips to China,
+
+127
+00:05:15,166 --> 00:05:17,607
+and NVIDIA has had to design special,
+
+128
+00:05:17,607 --> 00:05:19,744
+weaker versions for that market.
+
+129
+00:05:20,394 --> 00:05:22,441
+At the same time, its chips are
+
+130
+00:05:22,441 --> 00:05:24,429
+manufactured mostly in Taiwan.
+
+131
+00:05:25,079 --> 00:05:27,617
+A single company sits right on the fault
+
+132
+00:05:27,617 --> 00:05:29,920
+line between the world's two largest
+
+133
+00:05:29,920 --> 00:05:30,687
+economies.
+
+134
+00:05:31,337 --> 00:05:34,076
+Fourth, energy. The data centers filled
+
+135
+00:05:34,076 --> 00:05:36,504
+with these chips use vast amounts of
+
+136
+00:05:36,504 --> 00:05:37,437
+electricity.
+
+137
+00:05:38,087 --> 00:05:40,877
+The International Energy Agency has
+
+138
+00:05:40,877 --> 00:05:43,521
+projected that global data center
+
+139
+00:05:43,521 --> 00:05:46,605
+electricity use could roughly double by
+
+140
+00:05:46,605 --> 00:05:48,807
+2030, driven largely by AI.
+
+141
+00:05:49,457 --> 00:05:51,596
+Chips are not just products anymore.
+
+142
+00:05:51,596 --> 00:05:53,954
+They are power — in every sense of the
+
+143
+00:05:53,954 --> 00:05:54,393
+word.
+
+144
+00:05:55,043 --> 00:05:57,370
+When a company becomes this important,
+
+145
+00:05:57,370 --> 00:05:59,583
+something interesting happens in our
+
+146
+00:05:59,583 --> 00:06:02,137
+heads: we start to see it as one person.
+
+147
+00:06:02,787 --> 00:06:05,566
+In 1840, the Scottish writer Thomas
+
+148
+00:06:05,566 --> 00:06:08,701
+Carlyle argued that "the history of the
+
+149
+00:06:08,701 --> 00:06:11,908
+world is but the biography of great men."
+
+150
+00:06:12,558 --> 00:06:14,520
+This became known as the Great Man
+
+151
+00:06:14,520 --> 00:06:15,655
+theory of history.
+
+152
+00:06:16,305 --> 00:06:18,538
+Critics, like the philosopher Herbert
+
+153
+00:06:18,538 --> 00:06:19,899
+Spencer, pushed back:
+
+154
+00:06:19,899 --> 00:06:21,914
+great people are products of their
+
+155
+00:06:21,914 --> 00:06:22,622
+societies.
+
+156
+00:06:23,272 --> 00:06:25,744
+Without the right conditions, no single
+
+157
+00:06:25,744 --> 00:06:27,334
+person changes anything.
+
+158
+00:06:27,984 --> 00:06:30,404
+Psychology adds another twist.
+
+159
+00:06:30,404 --> 00:06:33,557
+In 1920, psychologist Edward Thorndike
+
+160
+00:06:33,557 --> 00:06:35,830
+described the halo effect:
+
+161
+00:06:36,480 --> 00:06:38,822
+when we see one impressive quality in a
+
+162
+00:06:38,822 --> 00:06:40,830
+person, we tend to assume they're
+
+163
+00:06:40,830 --> 00:06:42,670
+impressive in other ways too —
+
+164
+00:06:43,320 --> 00:06:45,304
+smarter, more trustworthy, more moral.
+
+165
+00:06:45,954 --> 00:06:48,453
+A brilliant engineer and visionary CEO
+
+166
+00:06:48,453 --> 00:06:51,195
+starts to look like someone who can't make
+
+167
+00:06:51,195 --> 00:06:51,926
+mistakes.
+
+168
+00:06:52,576 --> 00:06:55,178
+And investors, employees and governments
+
+169
+00:06:55,178 --> 00:06:57,841
+begin to rely on that one person far more
+
+170
+00:06:57,841 --> 00:06:58,809
+than is safe.
+
+171
+00:06:59,459 --> 00:07:03,172
+In early November 2026, that halo cracked.
+
+172
+00:07:03,822 --> 00:07:06,523
+On November 8, Huang sent a note to NVIDIA
+
+173
+00:07:06,523 --> 00:07:08,624
+staff admitting that he had been
+
+174
+00:07:08,624 --> 00:07:10,185
+unfaithful to his wife.
+
+175
+00:07:10,835 --> 00:07:12,767
+On its own, that would have been a private
+
+176
+00:07:12,767 --> 00:07:13,196
+matter.
+
+177
+00:07:13,846 --> 00:07:16,144
+But several U.S. outlets reported
+
+178
+00:07:16,144 --> 00:07:18,059
+something far more serious:
+
+179
+00:07:18,709 --> 00:07:21,283
+that the woman involved was suspected by
+
+180
+00:07:21,283 --> 00:07:23,617
+American officials of having ties to
+
+181
+00:07:23,617 --> 00:07:25,114
+Chinese intelligence —
+
+182
+00:07:25,764 --> 00:07:27,958
+and that a company linked to her had
+
+183
+00:07:27,958 --> 00:07:30,152
+bought billions of dollars of NVIDIA
+
+184
+00:07:30,152 --> 00:07:30,658
+chips,
+
+185
+00:07:31,308 --> 00:07:33,864
+amid long-running concerns about advanced
+
+186
+00:07:33,864 --> 00:07:35,898
+chips being smuggled into China.
+
+187
+00:07:36,548 --> 00:07:38,929
+She has not been charged, and the company
+
+188
+00:07:38,929 --> 00:07:41,040
+linked to her has denied wrongdoing.
+
+189
+00:07:41,690 --> 00:07:44,400
+NVIDIA's board launched an independent
+
+190
+00:07:44,400 --> 00:07:46,978
+investigation, led by a committee of
+
+191
+00:07:46,978 --> 00:07:49,424
+independent directors with outside
+
+192
+00:07:49,424 --> 00:07:50,152
+lawyers.
+
+193
+00:07:50,802 --> 00:07:53,248
+The company said it had no reason to
+
+194
+00:07:53,248 --> 00:07:56,072
+believe that national security or NVIDIA's
+
+195
+00:07:56,072 --> 00:07:58,079
+secrets had been compromised.
+
+196
+00:07:58,729 --> 00:08:00,594
+Still, the reaction was fast.
+
+197
+00:08:00,594 --> 00:08:02,867
+Lawmakers called on Huang to testify
+
+198
+00:08:02,867 --> 00:08:03,975
+before Congress.
+
+199
+00:08:04,625 --> 00:08:06,428
+A shareholder lawsuit was filed.
+
+200
+00:08:07,078 --> 00:08:09,513
+And on November 11, The Wall Street
+
+201
+00:08:09,513 --> 00:08:11,948
+Journal reported that the board was
+
+202
+00:08:11,948 --> 00:08:14,508
+preparing to remove him as CEO, citing
+
+203
+00:08:14,508 --> 00:08:16,694
+people familiar with the matter.
+
+204
+00:08:17,344 --> 00:08:19,675
+Further reports described a separate
+
+205
+00:08:19,675 --> 00:08:22,066
+relationship with an NVIDIA employee.
+
+206
+00:08:22,716 --> 00:08:24,921
+NVIDIA's stock, which had already been
+
+207
+00:08:24,921 --> 00:08:26,266
+sliding, fell sharply.
+
+208
+00:08:26,916 --> 00:08:29,835
+In after-hours trading on November 11, it
+
+209
+00:08:29,835 --> 00:08:32,622
+stood roughly a third below its October
+
+210
+00:08:32,622 --> 00:08:33,152
+high.
+
+211
+00:08:33,802 --> 00:08:36,155
+As of this recording, no final decision
+
+212
+00:08:36,155 --> 00:08:37,387
+has been announced.
+
+213
+00:08:38,037 --> 00:08:40,432
+Engineers have a name for a part of a
+
+214
+00:08:40,432 --> 00:08:42,528
+system that, if it fails, brings
+
+215
+00:08:42,528 --> 00:08:44,804
+everything down: a single point of
+
+216
+00:08:44,804 --> 00:08:45,523
+failure.
+
+217
+00:08:46,173 --> 00:08:48,366
+Good systems are designed to avoid them.
+
+218
+00:08:49,016 --> 00:08:51,086
+Investors have a similar idea:
+
+219
+00:08:51,086 --> 00:08:53,910
+key person risk — when a company's value
+
+220
+00:08:53,910 --> 00:08:56,232
+depends heavily on one individual.
+
+221
+00:08:56,882 --> 00:08:59,370
+For years, NVIDIA's story was told as
+
+222
+00:08:59,370 --> 00:09:00,863
+Jensen Huang's story.
+
+223
+00:09:00,863 --> 00:09:03,103
+His vision, his bets, his jacket.
+
+224
+00:09:03,753 --> 00:09:06,066
+That story helped build one of the most
+
+225
+00:09:06,066 --> 00:09:07,885
+valuable companies in history.
+
+226
+00:09:08,535 --> 00:09:10,931
+But it also meant that a crisis in one
+
+227
+00:09:10,931 --> 00:09:13,444
+person's life could shake markets, worry
+
+228
+00:09:13,444 --> 00:09:14,321
+governments,
+
+229
+00:09:14,971 --> 00:09:17,908
+and raise questions about the security of
+
+230
+00:09:17,908 --> 00:09:20,846
+the technology the whole AI industry runs
+
+231
+00:09:20,846 --> 00:09:21,246
+on.
+
+232
+00:09:21,896 --> 00:09:24,182
+Whatever the board decides, the lesson is
+
+233
+00:09:24,182 --> 00:09:25,377
+bigger than one man.
+
+234
+00:09:26,027 --> 00:09:28,350
+When a society builds its future on a
+
+235
+00:09:28,350 --> 00:09:30,965
+single company — and a single company on a
+
+236
+00:09:30,965 --> 00:09:32,010
+single person —
+
+237
+00:09:32,660 --> 00:09:34,875
+it isn't only betting on their genius.
+
+238
+00:09:34,875 --> 00:09:37,035
+It's betting on their every decision.
+
+239
+00:09:37,685 --> 00:09:39,020
+Let's try something.
+
+240
+00:09:39,020 --> 00:09:41,573
+Think about something you depend on every
+
+241
+00:09:41,573 --> 00:09:43,779
+day — your job, a team, a family, a
+
+242
+00:09:43,779 --> 00:09:44,417
+project.
+
+243
+00:09:45,067 --> 00:09:47,282
+Now ask: is there one person, or one
+
+244
+00:09:47,282 --> 00:09:49,668
+thing, that if it suddenly disappeared,
+
+245
+00:09:49,668 --> 00:09:51,087
+everything would stop?
+
+246
+00:09:51,737 --> 00:09:53,883
+If the answer is yes, you've found your
+
+247
+00:09:53,883 --> 00:09:55,263
+single point of failure.
+
+248
+00:09:55,913 --> 00:09:58,125
+And the fix is usually the same for
+
+249
+00:09:58,125 --> 00:09:59,756
+companies and for people:
+
+250
+00:09:59,756 --> 00:10:01,736
+share knowledge, build backups,
+
+251
+00:10:02,386 --> 00:10:04,714
+and don't confuse one person's brilliance
+
+252
+00:10:04,714 --> 00:10:06,196
+with a system's strength.
+
+253
+00:10:06,846 --> 00:10:09,420
+A dishwasher from Denny's helped build the
+
+254
+00:10:09,420 --> 00:10:11,650
+machine at the center of the AI age.
+
+255
+00:10:12,300 --> 00:10:14,176
+That part of the story is real, and
+
+256
+00:10:14,176 --> 00:10:14,868
+remarkable.
+
+257
+00:10:15,518 --> 00:10:17,877
+But the most important chapter may be the
+
+258
+00:10:17,877 --> 00:10:19,593
+one being written right now —
+
+259
+00:10:20,243 --> 00:10:22,581
+not about how one man rose, but about
+
+260
+00:10:22,581 --> 00:10:25,154
+whether the systems around him are strong
+
+261
+00:10:25,154 --> 00:10:27,084
+enough to survive without him.
+
+262
+00:10:27,734 --> 00:10:30,146
+Because in the end, the most powerful
+
+263
+00:10:30,146 --> 00:10:32,558
+technology in the world still runs on
+
+264
+00:10:32,558 --> 00:10:34,909
+something very old and very fragile:
+
+265
+00:10:35,559 --> 00:10:36,602
+human beings.
+
