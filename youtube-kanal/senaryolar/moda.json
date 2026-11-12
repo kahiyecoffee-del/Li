@@ -1,0 +1,2964 @@
+{
+ "slug": "moda",
+ "format": "long",
+ "theme": "karakalem",
+ "character": "none",
+ "languages": [
+  "en"
+ ],
+ "subtitles": [
+  "tr"
+ ],
+ "voices": {
+  "en": "am_fenrir"
+ },
+ "speech_rate": 0.88,
+ "meta": {
+  "en": {
+   "title": "Why Did Humans Invent Fashion?",
+   "description": "",
+   "tags": []
+  },
+  "tr": {
+   "title": "Modayı Neden İcat Ettik?",
+   "description": "",
+   "tags": []
+  }
+ },
+ "subscribe": {
+  "after": 11,
+  "sketch": [
+   {
+    "el": "subscribe",
+    "x": 0.45,
+    "y": 0.45,
+    "s": 1.4
+   },
+   {
+    "el": "arrow",
+    "x": 0.2,
+    "y": 0.75,
+    "x2": 0.33,
+    "y2": 0.55,
+    "color": "red",
+    "s": 1.2
+   }
+  ],
+  "say": {
+   "en": "If you like finding out why we do the strange things we do, *subscribe*. It genuinely helps the channel.",
+   "tr": "Yaptığımız tuhaf şeyleri neden yaptığımızı keşfetmeyi seviyorsan *abone ol*. Kanala gerçekten çok yardımı oluyor."
+  }
+ },
+ "scenes": [
+  {
+   "say": {
+    "en": "Scientists who want to know when humans started wearing clothes have found an unexpected witness: *lice*.",
+    "tr": "İnsanların ne zaman giysi giymeye başladığını bilmek isteyen bilim insanları beklenmedik bir tanık buldu: *bitler*."
+   },
+   "sketch": [
+    {
+     "el": "magnifier",
+     "x": 0.3,
+     "y": 0.42,
+     "s": 1.0
+    },
+    {
+     "el": "louse",
+     "x": 0.7,
+     "y": 0.5,
+     "s": 1.1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Head lice live in your hair. Body lice live in clothing.",
+    "tr": "Baş bitleri saçında yaşar. Vücut bitleri ise giysilerde."
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.25,
+     "y": 0.5,
+     "s": 0.55
+    },
+    {
+     "el": "louse",
+     "x": 0.32,
+     "y": 0.22,
+     "s": 0.35
+    },
+    {
+     "el": "tshirt",
+     "x": 0.72,
+     "y": 0.5,
+     "s": 0.8
+    },
+    {
+     "el": "louse",
+     "x": 0.72,
+     "y": 0.5,
+     "s": 0.35
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And by comparing their DNA, researchers estimated that body lice split off from head lice roughly 170,000 years ago,",
+    "tr": "Araştırmacılar DNA'larını karşılaştırarak vücut bitlerinin baş bitlerinden kabaca 170.000 yıl önce ayrıldığını hesapladı."
+   },
+   "sketch": [
+    {
+     "el": "line",
+     "x": 0.15,
+     "y": 0.5,
+     "s": 1.0,
+     "x2": 0.45,
+     "y2": 0.5,
+     "w": 1.5
+    },
+    {
+     "el": "line",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.0,
+     "x2": 0.85,
+     "y2": 0.3,
+     "color": "blue",
+     "w": 1.5
+    },
+    {
+     "el": "line",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.0,
+     "x2": 0.85,
+     "y2": 0.7,
+     "color": "red",
+     "w": 1.5
+    },
+    {
+     "el": "text",
+     "x": 0.45,
+     "y": 0.85,
+     "text": "≈ 170,000 years ago",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "which suggests that's around when our ancestors started regularly wearing clothes.",
+    "tr": "Bu da atalarımızın düzenli olarak giysi giymeye yaklaşık o sıralarda başladığını gösteriyor."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.75
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "the first clothes",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "That makes sense. Clothes kept us warm as we spread into colder lands.",
+    "tr": "Mantıklı. Daha soğuk topraklara yayılırken giysiler bizi sıcak tuttu."
+   },
+   "sketch": [
+    {
+     "el": "stars",
+     "x": 0.5,
+     "y": 0.3,
+     "s": 1.0,
+     "n": 30,
+     "h": 0.4
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.45,
+     "y": 0.8,
+     "h": 0.42,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.4,
+     "text": "cold",
+     "size": 1.5,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But here's the puzzle. Somewhere along the way, clothing stopped being only about warmth.",
+    "tr": "Ama bulmaca şu: Bir yerlerde giysi sadece sıcaklıkla ilgili olmaktan çıktı."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "?",
+     "size": 4.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Today, people pay thousands for a bag that holds the same things as a cheap one.",
+    "tr": "Bugün insanlar, ucuz bir çantayla aynı şeyleri taşıyan bir çantaya binlerce dolar ödüyor."
+   },
+   "sketch": [
+    {
+     "el": "bag",
+     "x": 0.28,
+     "y": 0.55,
+     "s": 0.8,
+     "logo": "$$$$"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.5,
+     "text": "=",
+     "size": 2.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "bag",
+     "x": 0.72,
+     "y": 0.55,
+     "s": 0.8,
+     "logo": "$"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They wear shoes that hurt.",
+    "tr": "Ayaklarını acıtan ayakkabılar giyiyor."
+   },
+   "sketch": [
+    {
+     "el": "heel",
+     "x": 0.45,
+     "y": 0.55,
+     "s": 1.4
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.35,
+     "text": "ouch",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They throw away clothes that still work, because they're \"out of style.\"",
+    "tr": "Hâlâ işe yarayan kıyafetleri \"modası geçti\" diye atıyor."
+   },
+   "sketch": [
+    {
+     "el": "pile",
+     "x": 0.4,
+     "y": 0.8,
+     "s": 1.1
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.3,
+     "text": "\"out of style\"",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Warmth explains clothing. It doesn't explain *fashion*.",
+    "tr": "Sıcaklık giysiyi açıklıyor. *Modayı* açıklamıyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.35,
+     "text": "clothing",
+     "size": 1.5,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.35,
+     "text": "fashion",
+     "size": 1.5,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.6,
+     "text": "warmth",
+     "size": 1.1,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.6,
+     "text": "?",
+     "size": 1.6,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "So why did we invent it?",
+    "tr": "Peki onu neden icat ettik?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "Why fashion?",
+     "size": 2.0,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The first clue is surprising: we may have decorated ourselves *before* we were fully dressed.",
+    "tr": "İlk ipucu şaşırtıcı: Tam olarak giyinmeden *önce* kendimizi süslemiş olabiliriz."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.8
+    },
+    {
+     "el": "beads",
+     "x": 0.35,
+     "y": 0.36,
+     "s": 0.3
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.4,
+     "text": "decoration first?",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In caves in Morocco, archaeologists found tiny sea shells with holes drilled through them, strung like beads.",
+    "tr": "Fas'taki mağaralarda arkeologlar, delinip boncuk gibi dizilmiş küçük deniz kabukları buldu."
+   },
+   "sketch": [
+    {
+     "el": "cave",
+     "x": 0.3,
+     "y": 0.6,
+     "s": 0.6,
+     "fire": false
+    },
+    {
+     "el": "beads",
+     "x": 0.7,
+     "y": 0.45,
+     "s": 0.9
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They're about 150,000 years old.",
+    "tr": "Yaklaşık 150.000 yıllıklar."
+   },
+   "sketch": [
+    {
+     "el": "beads",
+     "x": 0.5,
+     "y": 0.4,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.85,
+     "text": "≈ 150,000 years",
+     "size": 1.5,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In South Africa's Blombos Cave, similar shell beads are around 75,000 years old.",
+    "tr": "Güney Afrika'daki Blombos Mağarası'nda benzer kabuk boncuklar yaklaşık 75.000 yıllık."
+   },
+   "sketch": [
+    {
+     "el": "cave",
+     "x": 0.3,
+     "y": 0.6,
+     "s": 0.6,
+     "fire": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.4,
+     "text": "Blombos",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.6,
+     "text": "75,000 years",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Beads don't keep you warm. They don't protect you from anything.",
+    "tr": "Boncuklar seni sıcak tutmaz. Hiçbir şeyden korumaz."
+   },
+   "sketch": [
+    {
+     "el": "beads",
+     "x": 0.5,
+     "y": 0.4,
+     "s": 1.0
+    },
+    {
+     "el": "cross",
+     "x": 0.25,
+     "y": 0.75,
+     "s": 0.4,
+     "at": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.4,
+     "y": 0.75,
+     "text": "warm",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.62,
+     "y": 0.75,
+     "s": 0.4,
+     "at": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.77,
+     "y": 0.75,
+     "text": "protect",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Their only job is to be *seen*.",
+    "tr": "Tek işleri *görülmek*."
+   },
+   "sketch": [
+    {
+     "el": "eye",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "beads",
+     "x": 0.72,
+     "y": 0.4,
+     "s": 0.7
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Archaeologists think they carried messages: who you are, which group you belong to, maybe whether you're married or important.",
+    "tr": "Arkeologlar bunların mesaj taşıdığını düşünüyor: Kim olduğun, hangi gruba ait olduğun, belki evli ya da önemli biri olup olmadığın."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "beads",
+     "x": 0.25,
+     "y": 0.38,
+     "s": 0.25
+    },
+    {
+     "el": "figure",
+     "x": 0.55,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": -1
+    },
+    {
+     "el": "beads",
+     "x": 0.55,
+     "y": 0.38,
+     "s": 0.25
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.25,
+     "text": "who?",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.42,
+     "text": "which group?",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.59,
+     "text": "married?",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In other words, long before writing, humans had already invented a way to wear information on their bodies.",
+    "tr": "Yani yazıdan çok önce insanlar bilgiyi bedenlerinde taşımanın bir yolunu çoktan icat etmişti."
+   },
+   "sketch": [
+    {
+     "el": "beads",
+     "x": 0.3,
+     "y": 0.4,
+     "s": 0.7
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.42,
+     "text": "information\nyou can wear",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Jump forward to about 5,300 years ago.",
+    "tr": "Yaklaşık 5.300 yıl önceye atlayalım."
+   },
+   "sketch": [
+    {
+     "el": "hourglass",
+     "x": 0.4,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.45,
+     "text": "5,300 years ago",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1991, hikers in the Alps found a frozen man in the ice. Scientists named him *Ötzi*.",
+    "tr": "1991'de Alplerde yürüyüşçüler buzun içinde donmuş bir adam buldu. Bilim insanları ona *Ötzi* adını verdi."
+   },
+   "sketch": [
+    {
+     "el": "mountain",
+     "x": 0.5,
+     "y": 0.85,
+     "s": 1.0
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.9,
+     "h": 0.25,
+     "pose": "lie",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "Ötzi · 1991",
+     "size": 1.4,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "His clothes survived, and in 2016, researchers analyzed their DNA.",
+    "tr": "Kıyafetleri günümüze kaldı ve 2016'da araştırmacılar DNA'larını inceledi."
+   },
+   "image": {
+    "file": "File:Archeoparc - Museum Ötzi Kleidung.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Ötzi's clothing · reconstruction",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "His coat was made from sheep and goat leather, stitched in alternating strips.",
+    "tr": "Ceketi koyun ve keçi derisinden, şeritler halinde dönüşümlü dikilmişti."
+   },
+   "sketch": [
+    {
+     "el": "tshirt",
+     "x": 0.38,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.35,
+     "text": "sheep",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.55,
+     "text": "+ goat",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.9,
+     "text": "alternating strips",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "His hat was brown bear fur. His leggings were goat. His shoelaces, cattle.",
+    "tr": "Şapkası boz ayı kürküydü. Tozlukları keçi. Ayakkabı bağları sığır."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.92,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.92,
+     "h": 0.7,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.2,
+     "text": "hat: bear",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.45,
+     "text": "leggings: goat",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.7,
+     "text": "laces: cattle",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It was practical. But it was also *chosen*. The striped coat looks almost like a design.",
+    "tr": "Pratikti. Ama aynı zamanda *seçilmişti*. Çizgili ceket neredeyse bir tasarım gibi görünüyor."
+   },
+   "sketch": [
+    {
+     "el": "tshirt",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.42,
+     "text": "design?",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And Ötzi had more than sixty tattoos on his skin.",
+    "tr": "Ve Ötzi'nin derisinde altmıştan fazla dövme vardı."
+   },
+   "sketch": [
+    {
+     "el": "hand",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 1.4
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.42,
+     "text": "61 tattoos",
+     "size": 1.5,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Even a man walking alone through the mountains five thousand years ago was, in some way, dressed to be seen.",
+    "tr": "Beş bin yıl önce dağlarda tek başına yürüyen bir adam bile bir şekilde görülmek için giyinmişti."
+   },
+   "sketch": [
+    {
+     "el": "mountain",
+     "x": 0.4,
+     "y": 0.85,
+     "s": 0.9
+    },
+    {
+     "el": "figure",
+     "x": 0.75,
+     "y": 0.85,
+     "h": 0.35,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "eye",
+     "x": 0.85,
+     "y": 0.2,
+     "s": 0.4
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Once clothing carried messages, it became a tool of *power*.",
+    "tr": "Kıyafet mesaj taşımaya başlayınca bir *güç* aracına dönüştü."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "power",
+     "size": 2.4,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In the ancient Mediterranean, the most prestigious color was *Tyrian purple*.",
+    "tr": "Antik Akdeniz'de en prestijli renk *Sur moru*ydu."
+   },
+   "image": {
+    "file": "File:Bolinus brandaris 01.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Murex sea snail · source of Tyrian purple",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "It came from sea snails, and it took thousands of them to make a single gram of dye.",
+    "tr": "Deniz salyangozlarından elde ediliyordu ve tek bir gram boya için binlercesi gerekiyordu."
+   },
+   "sketch": [
+    {
+     "el": "snail",
+     "x": 0.2,
+     "y": 0.3,
+     "s": 0.4
+    },
+    {
+     "el": "snail",
+     "x": 0.2,
+     "y": 0.55,
+     "s": 0.4
+    },
+    {
+     "el": "snail",
+     "x": 0.2,
+     "y": 0.8,
+     "s": 0.4
+    },
+    {
+     "el": "arrow",
+     "x": 0.42,
+     "y": 0.55,
+     "x2": 0.58,
+     "y2": 0.55,
+     "bend": 0.0
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.45,
+     "text": "1 gram =",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.62,
+     "text": "thousands",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Purple became the color of emperors.",
+    "tr": "Mor imparatorların rengi oldu."
+   },
+   "image": {
+    "file": "File:Justinian mosaic, San Vitale, consecrated 547, Ravenna, Italy.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Emperor Justinian in purple · San Vitale, Ravenna (547)",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "In Rome, wearing too much of it could get you in serious trouble.",
+    "tr": "Roma'da ondan fazla giymek başını ciddi derde sokabilirdi."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "warning",
+     "x": 0.75,
+     "y": 0.4,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "For centuries, many societies passed *sumptuary laws*: rules about who was allowed to wear what.",
+    "tr": "Yüzyıllar boyunca birçok toplum *kılık kıyafet kanunları* çıkardı: Kimin neyi giyebileceğine dair kurallar."
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 1.0,
+     "text": "who may wear what"
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.42,
+     "text": "sumptuary laws",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In Elizabethan England, laws restricted certain silks, furs and colors to the nobility.",
+    "tr": "Elizabeth dönemi İngiltere'sinde yasalar bazı ipekleri, kürkleri ve renkleri soylulara ayırdı."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.15,
+     "text": "England · 1574",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.45,
+     "text": "silk",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.45,
+     "text": "fur",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.45,
+     "text": "purple",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.75,
+     "text": "nobles only",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In the Ottoman Empire, headgear and colors signaled rank and community.",
+    "tr": "Osmanlı İmparatorluğu'nda başlıklar ve renkler rütbeyi ve topluluğu gösteriyordu."
+   },
+   "sketch": [
+    {
+     "el": "turban",
+     "x": 0.3,
+     "y": 0.7,
+     "s": 1.0
+    },
+    {
+     "el": "turban",
+     "x": 0.55,
+     "y": 0.7,
+     "s": 0.8
+    },
+    {
+     "el": "turban",
+     "x": 0.78,
+     "y": 0.7,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.15,
+     "text": "rank you can see",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And when rulers wanted to change society, they changed hats.",
+    "tr": "Hükümdarlar toplumu değiştirmek istediğinde şapkaları değiştirdi."
+   },
+   "sketch": [
+    {
+     "el": "turban",
+     "x": 0.25,
+     "y": 0.65,
+     "s": 0.8
+    },
+    {
+     "el": "arrow",
+     "x": 0.37,
+     "y": 0.5,
+     "x2": 0.45,
+     "y2": 0.5,
+     "bend": 0.0
+    },
+    {
+     "el": "fez",
+     "x": 0.55,
+     "y": 0.65,
+     "s": 0.8
+    },
+    {
+     "el": "arrow",
+     "x": 0.65,
+     "y": 0.5,
+     "x2": 0.73,
+     "y2": 0.5,
+     "bend": 0.0
+    },
+    {
+     "el": "hat",
+     "x": 0.85,
+     "y": 0.65,
+     "s": 0.7
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1829, Sultan *Mahmud II* introduced the *fez* for officials.",
+    "tr": "1829'da Sultan *II. Mahmud* memurlar için *fesi* getirdi."
+   },
+   "image": {
+    "file": "File:Mahmud II.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Sultan Mahmud II, wearing the fez",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "Less than a century later, in 1925, the Turkish Republic's *Hat Law* replaced the fez with the brimmed hat.",
+    "tr": "Bir asır bile geçmeden, 1925'te Türkiye Cumhuriyeti'nin *Şapka Kanunu* fesin yerine şapkayı koydu."
+   },
+   "sketch": [
+    {
+     "el": "fez",
+     "x": 0.28,
+     "y": 0.65,
+     "s": 0.9
+    },
+    {
+     "el": "cross",
+     "x": 0.28,
+     "y": 0.55,
+     "s": 0.6,
+     "at": 1.0
+    },
+    {
+     "el": "arrow",
+     "x": 0.42,
+     "y": 0.55,
+     "x2": 0.56,
+     "y2": 0.55,
+     "bend": 0.0
+    },
+    {
+     "el": "hat",
+     "x": 0.72,
+     "y": 0.65,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "1925 · Hat Law",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Clothing laws show something important: if governments bother to control what you wear, it's because clothes *say* something.",
+    "tr": "Kıyafet yasaları önemli bir şey gösteriyor: Devletler ne giydiğini denetlemeye uğraşıyorsa bunun sebebi kıyafetlerin bir şey *söylemesidir*."
+   },
+   "sketch": [
+    {
+     "el": "tshirt",
+     "x": 0.35,
+     "y": 0.55,
+     "s": 0.9
+    },
+    {
+     "el": "bubble",
+     "x": 0.7,
+     "y": 0.32,
+     "s": 0.9,
+     "kind": "speech",
+     "tail": [
+      0.45,
+      0.4
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.32,
+     "text": "...",
+     "size": 1.6,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Here's a fashion story that surprises most people: high heels were originally worn by *men*.",
+    "tr": "İnsanların çoğunu şaşırtan bir moda hikâyesi: Topuklu ayakkabıları ilk giyenler *erkeklerdi*."
+   },
+   "sketch": [
+    {
+     "el": "heel",
+     "x": 0.35,
+     "y": 0.55,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.42,
+     "text": "for men?",
+     "size": 1.6,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Historians trace them to Persian horsemen, who used heeled boots to keep their feet steady in the stirrups.",
+    "tr": "Tarihçiler onların izini, ayaklarını üzengide sabit tutmak için topuklu çizme kullanan İranlı süvarilere kadar sürüyor."
+   },
+   "sketch": [
+    {
+     "el": "chariot",
+     "x": 0.45,
+     "y": 0.65,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "Persian riders",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In the 1600s, European aristocrats adopted heels as a symbol of masculine, military style.",
+    "tr": "1600'lerde Avrupalı aristokratlar topuğu erkeksi, askerî bir tarzın simgesi olarak benimsedi."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1,
+     "hat": "wig"
+    },
+    {
+     "el": "heel",
+     "x": 0.72,
+     "y": 0.6,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "1600s",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "France's *Louis XIV* loved them. His heels were often red, and red heels became a sign of belonging at his court.",
+    "tr": "Fransa Kralı *XIV. Louis* onlara bayılıyordu. Topukları çoğu zaman kırmızıydı ve kırmızı topuklar onun sarayına ait olmanın işareti oldu."
+   },
+   "image": {
+    "file": "File:Louis XIV Rigaud Condé Chantilly.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Louis XIV · Hyacinthe Rigaud",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "Then something interesting happened. As heels spread to ordinary people, the elite moved on,",
+    "tr": "Sonra ilginç bir şey oldu. Topuklar sıradan insanlara yayılınca seçkinler başka şeylere geçti"
+   },
+   "sketch": [
+    {
+     "el": "stairs",
+     "x": 0.15,
+     "y": 0.85,
+     "s": 1.2,
+     "n": 3
+    },
+    {
+     "el": "figure",
+     "x": 0.75,
+     "y": 0.46,
+     "h": 0.25,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.33,
+     "y": 0.73,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.62,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and over time heels became associated mainly with women's fashion.",
+    "tr": "ve zamanla topuklu ayakkabılar daha çok kadın modasıyla anılır oldu."
+   },
+   "sketch": [
+    {
+     "el": "heel",
+     "x": 0.35,
+     "y": 0.55,
+     "s": 1.0
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.72,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1,
+     "hat": "dress"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "That pattern — the elite adopt something, others copy it, and the elite move on — turns out to be one of the engines of fashion itself.",
+    "tr": "Bu döngü, yani seçkinlerin bir şeyi benimsemesi, diğerlerinin onu taklit etmesi ve seçkinlerin başka bir şeye geçmesi, modanın kendisinin motorlarından biri."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "1. elite adopt",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.84,
+     "y": 0.5,
+     "text": "2. others copy",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "3. elite move on",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "circle",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.0,
+     "rx": 220,
+     "ry": 150,
+     "color": "ink"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1904, the German sociologist *Georg Simmel* wrote a famous essay about fashion.",
+    "tr": "1904'te Alman sosyolog *Georg Simmel* moda üzerine ünlü bir deneme yazdı."
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 0.9,
+     "text": "Fashion · 1904"
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.45,
+     "text": "Simmel",
+     "size": 1.5,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "He said fashion satisfies two opposite desires at the same time.",
+    "tr": "Modanın aynı anda iki zıt arzuyu tatmin ettiğini söyledi."
+   },
+   "sketch": [
+    {
+     "el": "arrow",
+     "x": 0.48,
+     "y": 0.45,
+     "x2": 0.2,
+     "y2": 0.45,
+     "bend": 0.0,
+     "color": "blue"
+    },
+    {
+     "el": "arrow",
+     "x": 0.52,
+     "y": 0.45,
+     "x2": 0.8,
+     "y2": 0.45,
+     "bend": 0.0,
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The first is *imitation*: we want to fit in, to belong, to look like the people we admire.",
+    "tr": "Birincisi *taklit*: Uyum sağlamak, ait olmak, hayran olduğumuz insanlara benzemek isteriz."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.55,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.15,
+     "text": "imitation",
+     "size": 1.6,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The second is *distinction*: we want to stand out, to be individual, to be different from the crowd.",
+    "tr": "İkincisi *farklılaşma*: Öne çıkmak, birey olmak, kalabalıktan farklı olmak isteriz."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.5
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.5
+    },
+    {
+     "el": "figure",
+     "x": 0.55,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.5
+    },
+    {
+     "el": "figure",
+     "x": 0.78,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "reach",
+     "face": 1
+    },
+    {
+     "el": "dot",
+     "x": 0.78,
+     "y": 0.2,
+     "s": 0.6,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "distinction",
+     "size": 1.6,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Fashion lets us do both.",
+    "tr": "Moda ikisini birden yapmamıza izin veriyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.42,
+     "text": "imitation",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "+",
+     "size": 1.6,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.42,
+     "text": "distinction",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "You follow a trend to belong to a group, and by following it, you separate yourself from everyone who doesn't.",
+    "tr": "Bir gruba ait olmak için bir akımı takip edersin ve onu takip ederek takip etmeyen herkesten ayrılırsın."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.32,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "hat",
+     "x": 0.2,
+     "y": 0.42,
+     "s": 0.25
+    },
+    {
+     "el": "hat",
+     "x": 0.32,
+     "y": 0.42,
+     "s": 0.25
+    },
+    {
+     "el": "line",
+     "x": 0.5,
+     "y": 0.3,
+     "s": 1.0,
+     "x2": 0.5,
+     "y2": 0.85,
+     "color": "red"
+    },
+    {
+     "el": "figure",
+     "x": 0.68,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.5
+    },
+    {
+     "el": "figure",
+     "x": 0.82,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But this creates a never-ending cycle.",
+    "tr": "Ama bu bitmeyen bir döngü yaratıyor."
+   },
+   "sketch": [
+    {
+     "el": "circle",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.0,
+     "rx": 260,
+     "ry": 200,
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Once everyone has copied a style, it can no longer make anyone stand out. So the people at the front move on.",
+    "tr": "Herkes bir tarzı kopyaladığında artık o tarz kimseyi öne çıkaramaz. Bu yüzden öndekiler yola devam eder."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.15,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.27,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.39,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.51,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.82,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "arrow",
+     "x": 0.62,
+     "y": 0.3,
+     "x2": 0.75,
+     "y2": 0.3,
+     "bend": 0.0,
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And the race begins again.",
+    "tr": "Ve yarış yeniden başlar."
+   },
+   "sketch": [
+    {
+     "el": "circle",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.0,
+     "rx": 260,
+     "ry": 200,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.45,
+     "text": "again",
+     "size": 1.4,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "That's why fashion *has* to change. A style that everyone wears stops saying anything.",
+    "tr": "Bu yüzden moda *değişmek zorunda*. Herkesin giydiği bir tarz artık hiçbir şey söylemez."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "fashion has to change",
+     "size": 1.5,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.6,
+     "text": "everyone = no message",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Clothes don't only send messages to other people. They may also send messages to *us*.",
+    "tr": "Kıyafetler sadece başkalarına mesaj göndermez. Belki *bize* de mesaj gönderir."
+   },
+   "sketch": [
+    {
+     "el": "tshirt",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.8
+    },
+    {
+     "el": "arrow",
+     "x": 0.45,
+     "y": 0.45,
+     "x2": 0.62,
+     "y2": 0.45,
+     "bend": 0.0
+    },
+    {
+     "el": "head",
+     "x": 0.75,
+     "y": 0.5,
+     "s": 0.55
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 2012, psychologists *Hajo Adam* and *Adam Galinsky* gave people a white coat to wear.",
+    "tr": "2012'de psikologlar *Hajo Adam* ve *Adam Galinsky* insanlara giymeleri için beyaz bir önlük verdi."
+   },
+   "sketch": [
+    {
+     "el": "coat",
+     "x": 0.45,
+     "y": 0.48,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.4,
+     "text": "2012",
+     "size": 1.5,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Some were told it was a *doctor's* lab coat. Others were told it was a *painter's* coat. It was the exact same coat.",
+    "tr": "Bazılarına bunun bir *doktor* önlüğü olduğu söylendi. Diğerlerine bir *ressam* önlüğü olduğu. Tıpatıp aynı önlüktü."
+   },
+   "sketch": [
+    {
+     "el": "coat",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.8,
+     "label": "doctor"
+    },
+    {
+     "el": "coat",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.8,
+     "label": "painter"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.45,
+     "text": "=",
+     "size": 2.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Then everyone did a test that required careful attention.",
+    "tr": "Sonra herkes dikkatli olmayı gerektiren bir test yaptı."
+   },
+   "sketch": [
+    {
+     "el": "letter",
+     "x": 0.45,
+     "y": 0.45,
+     "s": 1.0,
+     "text": "attention test"
+    },
+    {
+     "el": "hourglass",
+     "x": 0.8,
+     "y": 0.45,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In their study, people who believed they were wearing a doctor's coat made fewer mistakes than those who thought it was a painter's coat.",
+    "tr": "Çalışmalarında doktor önlüğü giydiğine inananlar, ressam önlüğü sananlardan daha az hata yaptı."
+   },
+   "sketch": [
+    {
+     "el": "bars",
+     "x": 0.5,
+     "y": 0.78,
+     "s": 0.9,
+     "values": [
+      [
+       "\"doctor\"",
+       25,
+       "blue"
+      ],
+      [
+       "\"painter\"",
+       45,
+       "red"
+      ]
+     ],
+     "pct": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "fewer mistakes",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The researchers called this *enclothed cognition*: clothes can affect how we think, depending on what they *mean* to us.",
+    "tr": "Araştırmacılar buna *giyinik biliş* dedi: Kıyafetler, bizim için ne *anlam* taşıdıklarına bağlı olarak nasıl düşündüğümüzü etkileyebilir."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "enclothed cognition",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    },
+    {
+     "el": "head",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 0.35,
+     "glow": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Later studies have had mixed results, so the effect may be smaller than first claimed.",
+    "tr": "Sonraki çalışmalar karışık sonuçlar verdi, yani etki ilk iddia edildiğinden küçük olabilir."
+   },
+   "sketch": [
+    {
+     "el": "balance",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 0.9,
+     "tilt": 0.1,
+     "left": "?",
+     "right": "?"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.9,
+     "text": "mixed results",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But the idea is familiar to anyone who has ever put on a uniform, a suit, or a favorite jacket, and felt like a slightly different person.",
+    "tr": "Ama bu fikir, bir üniforma, takım elbise ya da en sevdiği ceketi giyip kendini biraz farklı biri gibi hisseden herkese tanıdık gelir."
+   },
+   "sketch": [
+    {
+     "el": "mirror",
+     "x": 0.65,
+     "y": 0.42,
+     "s": 0.9
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.65,
+     "y": 0.6,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "There's another reason fashion is often *expensive* and *impractical*.",
+    "tr": "Modanın çoğu zaman *pahalı* ve *kullanışsız* olmasının bir sebebi daha var."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.42,
+     "text": "expensive",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.42,
+     "text": "impractical",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1899, the economist *Thorstein Veblen* coined the term *conspicuous consumption*:",
+    "tr": "1899'da ekonomist *Thorstein Veblen*, *gösterişçi tüketim* kavramını ortaya attı:"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "conspicuous consumption",
+     "size": 1.5,
+     "color": "ink",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.58,
+     "text": "Veblen · 1899",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "spending money in ways that others can see, to show your status.",
+    "tr": "Statünü göstermek için başkalarının görebileceği şekilde para harcamak."
+   },
+   "sketch": [
+    {
+     "el": "money",
+     "x": 0.3,
+     "y": 0.6,
+     "s": 0.9,
+     "text": "$"
+    },
+    {
+     "el": "eye",
+     "x": 0.72,
+     "y": 0.42,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "He noticed that wealthy people often wore clothes that made physical work impossible: long sleeves, delicate fabrics, spotless white.",
+    "tr": "Varlıklı insanların çoğu zaman bedensel işi imkânsız kılan kıyafetler giydiğini fark etti: uzun kollar, narin kumaşlar, lekesiz beyazlar."
+   },
+   "sketch": [
+    {
+     "el": "coat",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.25,
+     "text": "long sleeves",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.42,
+     "text": "delicate",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.59,
+     "text": "spotless white",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The message was clear: *I don't need to work with my hands.*",
+    "tr": "Mesaj açıktı: *Elimle çalışmama gerek yok.*"
+   },
+   "sketch": [
+    {
+     "el": "hand",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.42,
+     "text": "no work",
+     "size": 1.5,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Biologists have a similar idea. In 1975, *Amotz Zahavi* proposed the *handicap principle*:",
+    "tr": "Biyologların da benzer bir fikri var. 1975'te *Amotz Zahavi*, *handikap ilkesini* önerdi:"
+   },
+   "image": {
+    "file": "File:Majestic Peacock Display at Pench National Park, India.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Indian peafowl display · Pench National Park",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "a peacock's enormous tail is a burden, and that's exactly why it's impressive. Only a strong bird can afford it.",
+    "tr": "Bir tavus kuşunun devasa kuyruğu bir yüktür ve tam da bu yüzden etkileyicidir. Ancak güçlü bir kuş onu taşıyabilir."
+   },
+   "sketch": [
+    {
+     "el": "peacock",
+     "x": 0.4,
+     "y": 0.62,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.3,
+     "text": "burden",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.5,
+     "text": "= proof",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A designer logo works the same way. Its message isn't \"this is a good bag.\"",
+    "tr": "Bir tasarımcı logosu da aynı şekilde çalışır. Mesajı \"bu iyi bir çanta\" değildir."
+   },
+   "sketch": [
+    {
+     "el": "bag",
+     "x": 0.35,
+     "y": 0.55,
+     "s": 1.0,
+     "logo": "LOGO"
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.42,
+     "text": "\"a good bag\"",
+     "size": 1.1,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.75,
+     "y": 0.42,
+     "s": 0.6,
+     "at": 1.2
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Its message is \"I can afford to waste money on a bag.\"",
+    "tr": "Mesajı \"bir çantaya para saçabilecek durumdayım\"dır."
+   },
+   "sketch": [
+    {
+     "el": "bag",
+     "x": 0.3,
+     "y": 0.55,
+     "s": 0.9,
+     "logo": "LOGO"
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.42,
+     "text": "\"I can afford\nto waste money\"",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And when everyone can buy logos, the very rich switch to \"quiet luxury\": no logos at all, just expensive simplicity that only insiders recognize.",
+    "tr": "Herkes logo alabilir hale gelince de çok zenginler \"sessiz lükse\" geçer: hiç logo yok, sadece içeridekilerin tanıyabildiği pahalı bir sadelik."
+   },
+   "sketch": [
+    {
+     "el": "bag",
+     "x": 0.25,
+     "y": 0.55,
+     "s": 0.7,
+     "logo": "LOGO"
+    },
+    {
+     "el": "arrow",
+     "x": 0.4,
+     "y": 0.5,
+     "x2": 0.55,
+     "y2": 0.5,
+     "bend": 0.0
+    },
+    {
+     "el": "tshirt",
+     "x": 0.72,
+     "y": 0.5,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.12,
+     "text": "quiet luxury",
+     "size": 1.3,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "For most of history, the fashion cycle moved slowly, because clothes were expensive and took weeks to make.",
+    "tr": "Tarihin büyük kısmında moda döngüsü yavaş ilerledi, çünkü kıyafetler pahalıydı ve yapımı haftalar sürüyordu."
+   },
+   "sketch": [
+    {
+     "el": "sewing",
+     "x": 0.35,
+     "y": 0.7,
+     "s": 1.0
+    },
+    {
+     "el": "calendar",
+     "x": 0.78,
+     "y": 0.45,
+     "s": 0.7,
+     "text": "weeks"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Today, the cycle runs at the speed of the internet.",
+    "tr": "Bugün döngü internet hızında dönüyor."
+   },
+   "sketch": [
+    {
+     "el": "phone",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "circle",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.8,
+     "rx": 150,
+     "ry": 150,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.45,
+     "text": "fast",
+     "size": 1.2,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "According to the Ellen MacArthur Foundation, global clothing production roughly *doubled* between 2000 and 2014,",
+    "tr": "Ellen MacArthur Vakfı'na göre küresel giysi üretimi 2000 ile 2014 arasında kabaca *iki katına* çıktı."
+   },
+   "sketch": [
+    {
+     "el": "bars",
+     "x": 0.5,
+     "y": 0.78,
+     "s": 0.9,
+     "values": [
+      [
+       "2000",
+       25,
+       "blue"
+      ],
+      [
+       "2014",
+       50,
+       "red"
+      ]
+     ],
+     "pct": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "production ×2",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "while the average number of times a garment was worn before being thrown away *fell* by about a third.",
+    "tr": "Bir giysinin atılmadan önce giyildiği ortalama sayı ise yaklaşık üçte bir *azaldı*."
+   },
+   "sketch": [
+    {
+     "el": "tshirt",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.8
+    },
+    {
+     "el": "graph",
+     "x": 0.72,
+     "y": 0.5,
+     "s": 0.6,
+     "up": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.12,
+     "text": "times worn: −36%",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The ancient desire to signal \"I belong, but I'm also unique\" now plays out every week, on every phone.",
+    "tr": "\"Aitim ama aynı zamanda eşsizim\" demeye yönelik kadim arzu artık her hafta, her telefonda yaşanıyor."
+   },
+   "sketch": [
+    {
+     "el": "beads",
+     "x": 0.25,
+     "y": 0.4,
+     "s": 0.5
+    },
+    {
+     "el": "arrow",
+     "x": 0.38,
+     "y": 0.45,
+     "x2": 0.55,
+     "y2": 0.45,
+     "bend": 0.0
+    },
+    {
+     "el": "phone",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.9
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The price is paid by the planet, and often by the workers who make the clothes.",
+    "tr": "Bedelini ise gezegen ve çoğu zaman kıyafetleri diken işçiler ödüyor."
+   },
+   "sketch": [
+    {
+     "el": "pile",
+     "x": 0.3,
+     "y": 0.85,
+     "s": 1.0
+    },
+    {
+     "el": "globe",
+     "x": 0.75,
+     "y": 0.45,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 2013, the *Rana Plaza* factory building in Bangladesh collapsed, killing more than 1,100 garment workers.",
+    "tr": "2013'te Bangladeş'teki *Rana Plaza* fabrika binası çöktü ve 1.100'den fazla konfeksiyon işçisi hayatını kaybetti."
+   },
+   "sketch": [
+    {
+     "el": "factory",
+     "x": 0.4,
+     "y": 0.85,
+     "s": 1.0
+    },
+    {
+     "el": "cross",
+     "x": 0.4,
+     "y": 0.6,
+     "s": 1.0,
+     "at": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.35,
+     "text": "Rana Plaza",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.52,
+     "text": "2013",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Many of them had been making clothes for well-known Western brands.",
+    "tr": "Birçoğu tanınmış Batılı markalar için kıyafet dikiyordu."
+   },
+   "sketch": [
+    {
+     "el": "sewing",
+     "x": 0.3,
+     "y": 0.7,
+     "s": 0.9
+    },
+    {
+     "el": "arrow",
+     "x": 0.48,
+     "y": 0.5,
+     "x2": 0.62,
+     "y2": 0.5,
+     "bend": 0.0
+    },
+    {
+     "el": "bag",
+     "x": 0.78,
+     "y": 0.55,
+     "s": 0.7,
+     "logo": "BRAND"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Try this. Look at what you're wearing right now.",
+    "tr": "Şunu dene. Şu an üzerinde ne olduğuna bak."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.1,
+     "text": "try this",
+     "size": 1.0,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "mirror",
+     "x": 0.65,
+     "y": 0.42,
+     "s": 1.0
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Ask yourself three questions. What does it say about which group I belong to?",
+    "tr": "Kendine üç soru sor: Bu, hangi gruba ait olduğum hakkında ne söylüyor?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.12,
+     "text": "1.",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "heads",
+     "x": 0.55,
+     "y": 0.45,
+     "s": 0.7,
+     "n": 3
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "What does it say about how I'm different?",
+    "tr": "Nasıl farklı olduğum hakkında ne söylüyor?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.12,
+     "text": "2.",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.5
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.5
+    },
+    {
+     "el": "figure",
+     "x": 0.72,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "dot",
+     "x": 0.72,
+     "y": 0.2,
+     "s": 0.5,
+     "color": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And who, exactly, am I dressing for?",
+    "tr": "Ve ben tam olarak kimin için giyiniyorum?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.12,
+     "text": "3.",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "eye",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.82,
+     "text": "for whom?",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Even if you think you \"don't care about fashion,\" that's a message too.",
+    "tr": "\"Modayı umursamıyorum\" diye düşünsen bile bu da bir mesaj."
+   },
+   "sketch": [
+    {
+     "el": "tshirt",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.8
+    },
+    {
+     "el": "bubble",
+     "x": 0.7,
+     "y": 0.35,
+     "s": 0.9,
+     "kind": "speech",
+     "tail": [
+      0.42,
+      0.4
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.35,
+     "text": "\"I don't care\"",
+     "size": 0.9,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Choosing not to play is still a move in the game.",
+    "tr": "Oynamamayı seçmek de oyunda bir hamle."
+   },
+   "sketch": [
+    {
+     "el": "backgammon",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We invented clothing to survive the cold.",
+    "tr": "Giysiyi soğuktan korunmak için icat ettik."
+   },
+   "sketch": [
+    {
+     "el": "stars",
+     "x": 0.5,
+     "y": 0.15,
+     "s": 1.0,
+     "n": 30,
+     "h": 0.2
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1,
+     "tone": 0.75
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But we invented *fashion* to talk:",
+    "tr": "Ama *modayı* konuşmak için icat ettik:"
+   },
+   "sketch": [
+    {
+     "el": "tshirt",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 0.8
+    },
+    {
+     "el": "bubble",
+     "x": 0.7,
+     "y": 0.35,
+     "s": 0.9,
+     "kind": "speech",
+     "tail": [
+      0.45,
+      0.4
+     ]
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "to say who we are, who we're with, and who we're not, without saying a single word.",
+    "tr": "Tek bir kelime söylemeden kim olduğumuzu, kimlerle olduğumuzu ve kim olmadığımızı söylemek için."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.25,
+     "text": "who we are",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.45,
+     "text": "who we're with",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.65,
+     "text": "who we're not",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A hundred and fifty thousand years after the first shell beads, we're still doing it.",
+    "tr": "İlk kabuk boncuklardan yüz elli bin yıl sonra hâlâ bunu yapıyoruz."
+   },
+   "sketch": [
+    {
+     "el": "beads",
+     "x": 0.3,
+     "y": 0.4,
+     "s": 0.7
+    },
+    {
+     "el": "arrow",
+     "x": 0.48,
+     "y": 0.45,
+     "x2": 0.6,
+     "y2": 0.45,
+     "bend": 0.0
+    },
+    {
+     "el": "bag",
+     "x": 0.75,
+     "y": 0.55,
+     "s": 0.7
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Every morning, in front of the mirror, we choose what to say.",
+    "tr": "Her sabah ayna karşısında ne söyleyeceğimizi seçiyoruz."
+   },
+   "sketch": [
+    {
+     "el": "mirror",
+     "x": 0.6,
+     "y": 0.42,
+     "s": 1.0
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.32,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "bubble",
+     "x": 0.85,
+     "y": 0.2,
+     "s": 0.5,
+     "kind": "speech",
+     "tail": [
+      0.68,
+      0.3
+     ]
+    }
+   ]
+  }
+ ]
+}

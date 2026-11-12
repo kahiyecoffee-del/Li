@@ -1,0 +1,91 @@
+{
+ "cta": "subscribe for more  ·  full video on the channel",
+ "cta_scene": {
+  "say": {
+   "en": "Subscribe for more stories like this. The full video is on the channel.",
+   "tr": "Bunun gibi daha fazla hikâye için abone ol. Videonun tamamı kanalda."
+  },
+  "sketch": [
+   {
+    "el": "subscribe",
+    "x": 0.5,
+    "y": 0.4,
+    "s": 1.3
+   },
+   {
+    "el": "arrow",
+    "x": 0.25,
+    "y": 0.78,
+    "x2": 0.37,
+    "y2": 0.55,
+    "color": "red",
+    "s": 1.2
+   },
+   {
+    "el": "text",
+    "x": 0.5,
+    "y": 0.85,
+    "text": "full video on the channel",
+    "size": 0.9,
+    "color": "blue"
+   }
+  ]
+ },
+ "shorts": [
+  {
+   "from": 0,
+   "to": 10,
+   "title": "Lice tell us when humans\nstarted wearing clothes"
+  },
+  {
+   "from": 11,
+   "to": 18,
+   "title": "We wore jewelry before\nwe wore clothes?"
+  },
+  {
+   "from": 19,
+   "to": 26,
+   "title": "What a 5,300-year-old\nman wore"
+  },
+  {
+   "from": 27,
+   "to": 33,
+   "title": "Purple was illegal\n(for you)"
+  },
+  {
+   "from": 34,
+   "to": 38,
+   "title": "The fez, the hat,\nand the law"
+  },
+  {
+   "from": 39,
+   "to": 45,
+   "title": "High heels were\ninvented for men"
+  },
+  {
+   "from": 46,
+   "to": 55,
+   "title": "Why fashion HAS\nto change"
+  },
+  {
+   "from": 56,
+   "to": 63,
+   "title": "Can a lab coat change\nhow you think?"
+  },
+  {
+   "from": 64,
+   "to": 73,
+   "title": "Why logos exist\n(the peacock principle)"
+  },
+  {
+   "from": 74,
+   "to": 81,
+   "title": "The real cost of\nfast fashion"
+  },
+  {
+   "from": 82,
+   "to": 87,
+   "title": "Try this: what is\nyour outfit saying?"
+  }
+ ]
+}

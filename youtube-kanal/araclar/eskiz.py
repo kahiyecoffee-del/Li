@@ -1711,7 +1711,7 @@ def el_pillar(x, y, s, carved=True, seed=0, **_):
     return out
 
 
-def el_bars(x, y, s, values=(("wild", 4, "green"), ("humans", 36, "blue"), ("livestock", 60, "red")), seed=0, **_):
+def el_bars(x, y, s, values=(("wild", 4, "green"), ("humans", 36, "blue"), ("livestock", 60, "red")), pct=True, seed=0, **_):
     out = [Stroke([(x - 380 * s, y), (x + 380 * s, y)], 5 * s + 1, seed=seed)]
     cols = {"green": (70, 140, 70), "blue": BLUE, "red": RED}
     n = len(values)
@@ -1720,7 +1720,8 @@ def el_bars(x, y, s, values=(("wild", 4, "green"), ("humans", 36, "blue"), ("liv
         h = v / 60 * 420 * s
         col = cols.get(c, INK)
         out.append(_blob([(cx - 70 * s, y), (cx - 70 * s, y - h), (cx + 70 * s, y - h), (cx + 70 * s, y)], tone=0.6, color=col, seed=seed + k))
-        out.append(Text(f"{v}%", cx, y - h - 45 * s, 60 * s, col))
+        if pct:
+            out.append(Text(f"{v}%", cx, y - h - 45 * s, 60 * s, col))
         out.append(Text(lab, cx, y + 50 * s, 46 * s, INK))
     return out
 
@@ -1892,6 +1893,135 @@ def el_painting(x, y, s, style="klee", seed=0, **_):
 ELEMENTS_EXTRA.update({
     "ball": el_ball, "goal": el_goal, "stands": el_stands, "tv": el_tv, "ekg": el_ekg, "hoop": el_hoop, "bball": el_bball,
     "flag": el_flag, "chariot": el_chariot, "trophy": el_trophy, "score": el_score, "painting": el_painting,
+})
+
+
+# ----------------------------------------------------------- Moda videosu
+def el_louse(x, y, s, seed=0, **_):
+    body = ellipse_pts(x, y, 70 * s, 110 * s, n=28, seed=seed)
+    out = [_blob(body, tone=0.6, color=(150, 120, 90), seed=seed, smooth=3), Stroke(body, 4 * s + 1, seed=seed + 1),
+           Stroke(ellipse_pts(x, y - 140 * s, 40 * s, 35 * s, n=16), 4 * s + 1, seed=seed + 2)]
+    for k in range(3):
+        yy = y - 50 * s + k * 50 * s
+        for f in (-1, 1):
+            out.append(Stroke([(x + f * 65 * s, yy), (x + f * 130 * s, yy - 20 * s), (x + f * 150 * s, yy + 30 * s)], 4 * s + 1, seed=seed + 3 + k))
+    out.append(Stroke([(x - 20 * s, y - 170 * s), (x - 50 * s, y - 230 * s)], 3 * s, seed=seed + 9))
+    out.append(Stroke([(x + 20 * s, y - 170 * s), (x + 50 * s, y - 230 * s)], 3 * s, seed=seed + 10))
+    return out
+
+
+def el_beads(x, y, s, n=11, seed=0, **_):
+    out = [Stroke(bez((x - 300 * s, y - 120 * s), (x, y + 200 * s), (x + 300 * s, y - 120 * s), 30), 3 * s, (120, 90, 60), seed=seed)]
+    for k in range(n):
+        u = (k + 0.5) / n
+        bx = (1 - u) ** 2 * (x - 300 * s) + 2 * (1 - u) * u * x + u ** 2 * (x + 300 * s)
+        by = (1 - u) ** 2 * (y - 120 * s) + 2 * (1 - u) * u * (y + 200 * s) + u ** 2 * (y - 120 * s)
+        sh = ellipse_pts(bx, by, 26 * s, 34 * s, n=14, extra=0)
+        out.append(_blob(sh, tone=0.35, color=(220, 200, 170), seed=seed + k))
+        out.append(Stroke(sh + [sh[0]], 3 * s, (120, 90, 60), seed=seed + 20 + k))
+        out.append(Stroke(ellipse_pts(bx, by - 10 * s, 6 * s, 6 * s, n=8), 3 * s, INK, 1, seed + 40 + k))
+    return out
+
+
+def el_snail(x, y, s, seed=0, **_):
+    """Murex (mor boya salyangozu): dikenli kabuk ve mor damla."""
+    shell = [(x - 150 * s, y), (x - 60 * s, y - 120 * s), (x + 60 * s, y - 110 * s), (x + 130 * s, y - 30 * s), (x + 260 * s, y + 10 * s),
+             (x + 100 * s, y + 60 * s), (x - 100 * s, y + 60 * s)]
+    out = [_blob(shell, tone=0.55, color=(200, 180, 150), seed=seed, smooth=5 * s), Stroke(shell + [shell[0]], 5 * s + 1, seed=seed + 1)]
+    for k in range(6):
+        sx = x - 110 * s + k * 50 * s
+        out.append(Stroke([(sx, y - 90 * s + abs(k - 2) * 15 * s), (sx - 10 * s, y - 150 * s + abs(k - 2) * 15 * s)], 5 * s, seed=seed + 2 + k))
+    drop = [(x + 330 * s, y - 60 * s), (x + 360 * s, y + 10 * s), (x + 330 * s, y + 40 * s), (x + 300 * s, y + 10 * s)]
+    out.append(_blob(drop, tone=0.9, color=(110, 40, 120), seed=seed + 10, smooth=4 * s))
+    return out
+
+
+def el_heel(x, y, s, color="red", seed=0, **_):
+    c = COLORS.get(color, RED)
+    sole = [(x - 220 * s, y - 120 * s), (x - 120 * s, y - 140 * s), (x + 60 * s, y - 40 * s), (x + 200 * s, y - 10 * s), (x + 220 * s, y + 10 * s),
+            (x + 60 * s, y + 10 * s), (x - 140 * s, y - 80 * s)]
+    out = [_blob(sole, tone=0.85, color=(40, 40, 45), seed=seed, smooth=4 * s), Stroke(sole + [sole[0]], 4 * s + 1, seed=seed + 1),
+           _blob([(x - 210 * s, y - 100 * s), (x - 170 * s, y - 100 * s), (x - 180 * s, y + 10 * s), (x - 200 * s, y + 10 * s)], tone=0.9, color=c, seed=seed + 2)]
+    return out
+
+
+def el_fez(x, y, s, seed=0, **_):
+    pts = [(x - 110 * s, y), (x - 85 * s, y - 190 * s), (x + 85 * s, y - 190 * s), (x + 110 * s, y)]
+    return [_blob(pts, tone=0.9, color=(170, 35, 35), seed=seed, smooth=3), Stroke(pts + [pts[0]], 4 * s + 1, seed=seed + 1),
+            Stroke([(x, y - 190 * s), (x + 60 * s, y - 140 * s), (x + 70 * s, y - 60 * s)], 5 * s, INK, seed=seed + 2)]
+
+
+def el_hat(x, y, s, seed=0, **_):
+    crown = [(x - 100 * s, y - 20 * s), (x - 90 * s, y - 170 * s), (x + 90 * s, y - 170 * s), (x + 100 * s, y - 20 * s)]
+    return [_blob(crown, tone=0.9, color=(60, 55, 55), seed=seed, smooth=3),
+            Stroke(bez((x - 210 * s, y - 10 * s), (x, y + 30 * s), (x + 210 * s, y - 10 * s), 16), 14 * s + 1, (60, 55, 55), seed=seed + 1),
+            Stroke([(x - 95 * s, y - 50 * s), (x + 95 * s, y - 50 * s)], 10 * s, (150, 40, 40), seed=seed + 2)]
+
+
+def el_turban(x, y, s, seed=0, **_):
+    out = []
+    for k in range(4):
+        out.append(Stroke(ellipse_pts(x, y - 50 * s - k * 40 * s, 140 * s - k * 15 * s, 55 * s, n=30, extra=0.0, seed=seed + k), 18 * s + 1, (215, 200, 165), seed=seed + k))
+        out.append(Stroke(ellipse_pts(x, y - 50 * s - k * 40 * s, 140 * s - k * 15 * s, 55 * s, n=30, extra=0.0, seed=seed + k), 4 * s, (100, 85, 60), 1, seed + 10 + k))
+    return out
+
+
+def el_bag(x, y, s, logo=None, seed=0, **_):
+    body = [(x - 170 * s, y - 120 * s), (x + 170 * s, y - 120 * s), (x + 200 * s, y + 120 * s), (x - 200 * s, y + 120 * s)]
+    out = [_blob(body, tone=0.75, color=(150, 100, 60), seed=seed, smooth=4 * s), Stroke(body + [body[0]], 5 * s + 1, seed=seed + 1),
+           Stroke(bez((x - 100 * s, y - 120 * s), (x, y - 300 * s), (x + 100 * s, y - 120 * s), 16), 8 * s + 1, (110, 70, 40), seed=seed + 2)]
+    if logo:
+        out.append(Text(logo, x, y, 70 * s, (240, 210, 120)))
+    return out
+
+
+def el_coat(x, y, s, label=None, seed=0, **_):
+    pts = [(x - 90 * s, y - 220 * s), (x, y - 180 * s), (x + 90 * s, y - 220 * s), (x + 190 * s, y - 160 * s), (x + 210 * s, y + 40 * s), (x + 150 * s, y + 40 * s),
+           (x + 140 * s, y - 60 * s), (x + 140 * s, y + 230 * s), (x - 140 * s, y + 230 * s), (x - 140 * s, y - 60 * s), (x - 150 * s, y + 40 * s),
+           (x - 210 * s, y + 40 * s), (x - 190 * s, y - 160 * s)]
+    out = [_blob(pts, tone=0.08, color=(250, 250, 250), seed=seed, smooth=3), Stroke(pts + [pts[0]], 5 * s + 1, seed=seed + 1),
+           Stroke([(x, y - 180 * s), (x, y + 230 * s)], 3 * s, seed=seed + 2)]
+    if label:
+        out.append(Text(label, x, y + 300 * s, 54 * s, BLUE))
+    return out
+
+
+def el_peacock(x, y, s, seed=0, **_):
+    out = []
+    for k in range(15):
+        a = math.pi + k * math.pi / 14
+        ex, ey = x + math.cos(a) * 330 * s, y + math.sin(a) * 300 * s
+        out.append(Stroke([(x, y), (ex, ey)], 4 * s, (60, 120, 90), seed=seed + k))
+        out.append(_blob(ellipse_pts(ex, ey, 30 * s, 38 * s, n=12, extra=0), tone=0.8, color=(40, 110, 150), seed=seed + 20 + k, smooth=2))
+        out.append(_blob(ellipse_pts(ex, ey, 12 * s, 15 * s, n=10, extra=0), tone=0.9, color=(220, 180, 60), seed=seed + 40 + k, smooth=1))
+    body = ellipse_pts(x, y + 30 * s, 50 * s, 80 * s, n=20, extra=0)
+    out.append(_blob(body, tone=0.9, color=(30, 80, 150), seed=seed + 60, smooth=3))
+    out.append(Stroke([(x, y - 40 * s), (x + 10 * s, y - 120 * s)], 14 * s, (30, 80, 150), seed=seed + 61))
+    return out
+
+
+def el_sewing(x, y, s, seed=0, **_):
+    out = [Stroke([(x - 260 * s, y), (x + 260 * s, y)], 8 * s + 1, seed=seed),
+           Stroke([(x + 180 * s, y), (x + 180 * s, y - 220 * s), (x - 140 * s, y - 220 * s), (x - 140 * s, y - 80 * s)], 14 * s + 1, (60, 60, 65), seed=seed + 1),
+           Stroke([(x - 140 * s, y - 80 * s), (x - 140 * s, y - 20 * s)], 4 * s, (150, 150, 160), seed=seed + 2),
+           Stroke(ellipse_pts(x + 230 * s, y - 150 * s, 30 * s, 50 * s, n=14), 6 * s, seed=seed + 3)]
+    return out
+
+
+def el_pile(x, y, s, seed=0, **_):
+    rnd = random.Random(seed)
+    cols = [(176, 48, 38), (48, 86, 168), (220, 180, 80), (90, 140, 90), (150, 150, 155)]
+    out = []
+    for k in range(14):
+        cx, cy = x + rnd.uniform(-260, 260) * s * (1 - k / 20), y - k * 22 * s
+        pts = [(cx - 90 * s, cy), (cx - 60 * s, cy - 50 * s), (cx + 70 * s, cy - 45 * s), (cx + 95 * s, cy + 5 * s)]
+        out.append(_blob(pts, tone=0.7, color=cols[k % 5], seed=seed + k, smooth=4 * s))
+    return out
+
+
+ELEMENTS_EXTRA.update({
+    "louse": el_louse, "beads": el_beads, "snail": el_snail, "heel": el_heel, "fez": el_fez, "hat": el_hat, "turban": el_turban,
+    "bag": el_bag, "coat": el_coat, "peacock": el_peacock, "sewing": el_sewing, "pile": el_pile,
 })
 
 
