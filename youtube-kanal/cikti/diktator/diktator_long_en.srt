@@ -1,0 +1,920 @@
+1
+00:00:00,200 --> 00:00:03,591
+In 1548, a young French law student named
+
+2
+00:00:03,591 --> 00:00:06,828
+Étienne de La Boétie asked a question
+
+3
+00:00:06,828 --> 00:00:09,911
+that still has no comfortable answer.
+
+4
+00:00:10,561 --> 00:00:13,319
+How is it, he wrote, that so many people,
+
+5
+00:00:13,319 --> 00:00:16,077
+so many towns, so many nations, sometimes
+
+6
+00:00:16,077 --> 00:00:17,957
+put up with a single ruler,
+
+7
+00:00:18,607 --> 00:00:20,519
+who has no power except the power they
+
+8
+00:00:20,519 --> 00:00:21,171
+give him?
+
+9
+00:00:21,821 --> 00:00:24,537
+A tyrant has only two eyes, two hands and
+
+10
+00:00:24,537 --> 00:00:27,315
+one body. He can't arrest a million people
+
+11
+00:00:27,315 --> 00:00:28,179
+by himself.
+
+12
+00:00:28,829 --> 00:00:31,475
+He needs police, soldiers, clerks, and the
+
+13
+00:00:31,475 --> 00:00:33,592
+quiet obedience of everyone else.
+
+14
+00:00:34,242 --> 00:00:35,535
+So why do we give it?
+
+15
+00:00:36,185 --> 00:00:38,810
+This isn't a question about one country or
+
+16
+00:00:38,810 --> 00:00:41,376
+one century. It's a question about human
+
+17
+00:00:41,376 --> 00:00:42,018
+nature.
+
+18
+00:00:42,668 --> 00:00:45,169
+And psychology, history and philosophy
+
+19
+00:00:45,169 --> 00:00:47,304
+have some uncomfortable answers.
+
+20
+00:00:47,954 --> 00:00:50,270
+If you like big questions about human
+
+21
+00:00:50,270 --> 00:00:51,601
+nature, subscribe.
+
+22
+00:00:51,601 --> 00:00:53,569
+It genuinely helps the channel.
+
+23
+00:00:54,219 --> 00:00:56,253
+The word dictator didn't start as an
+
+24
+00:00:56,253 --> 00:00:56,749
+insult.
+
+25
+00:00:57,399 --> 00:00:59,945
+In the Roman Republic, a dictator was an
+
+26
+00:00:59,945 --> 00:01:01,077
+emergency office.
+
+27
+00:01:01,727 --> 00:01:04,302
+In a crisis, like a war, the Senate could
+
+28
+00:01:04,302 --> 00:01:06,643
+appoint one person with extraordinary
+
+29
+00:01:06,643 --> 00:01:07,228
+powers,
+
+30
+00:01:07,878 --> 00:01:10,154
+but only for a maximum of six months.
+
+31
+00:01:10,804 --> 00:01:13,278
+The legend of Cincinnatus says he was
+
+32
+00:01:13,278 --> 00:01:15,930
+called from his farm to save Rome, won the
+
+33
+00:01:15,930 --> 00:01:16,342
+war,
+
+34
+00:01:16,992 --> 00:01:19,463
+and gave his power back within days, then
+
+35
+00:01:19,463 --> 00:01:21,260
+went home to plow his fields.
+
+36
+00:01:21,910 --> 00:01:23,677
+For centuries, the system worked.
+
+37
+00:01:24,327 --> 00:01:26,947
+Then, in the first century BC, generals
+
+38
+00:01:26,947 --> 00:01:28,819
+began to stretch the rules.
+
+39
+00:01:29,469 --> 00:01:32,328
+In 44 BC, Julius Caesar was named
+
+40
+00:01:32,328 --> 00:01:34,059
+dictator for life.
+
+41
+00:01:34,709 --> 00:01:37,271
+A month later, he was assassinated, but
+
+42
+00:01:37,271 --> 00:01:39,590
+the Republic never truly recovered.
+
+43
+00:01:40,240 --> 00:01:42,468
+The lesson Rome learned too late:
+
+44
+00:01:42,468 --> 00:01:45,068
+emergency powers have a way of becoming
+
+45
+00:01:45,068 --> 00:01:45,873
+permanent.
+
+46
+00:01:46,523 --> 00:01:48,350
+Why would people want to give power
+
+47
+00:01:48,350 --> 00:01:48,716
+away?
+
+48
+00:01:49,366 --> 00:01:52,284
+In 1941, in the middle of the Second World
+
+49
+00:01:52,284 --> 00:01:54,878
+War, the psychologist and philosopher
+
+50
+00:01:54,878 --> 00:01:57,472
+Erich Fromm published a book called
+
+51
+00:01:57,472 --> 00:01:59,093
+Escape from Freedom.
+
+52
+00:01:59,743 --> 00:02:01,438
+His idea was surprising:
+
+53
+00:02:01,438 --> 00:02:03,258
+freedom isn't only a gift.
+
+54
+00:02:03,258 --> 00:02:04,765
+It's also a burden.
+
+55
+00:02:05,415 --> 00:02:07,882
+When you're free, you have to choose, take
+
+56
+00:02:07,882 --> 00:02:10,350
+responsibility, and live with uncertainty.
+
+57
+00:02:11,000 --> 00:02:13,841
+In times of crisis, unemployment and fear,
+
+58
+00:02:13,841 --> 00:02:16,050
+that burden can feel unbearable.
+
+59
+00:02:16,700 --> 00:02:18,866
+And a strong leader offers an escape:
+
+60
+00:02:18,866 --> 00:02:20,924
+don't worry, I'll decide for you.
+
+61
+00:02:21,574 --> 00:02:24,030
+Centuries earlier, the philosopher Thomas
+
+62
+00:02:24,030 --> 00:02:26,323
+Hobbes had argued something similar in
+
+63
+00:02:26,323 --> 00:02:27,141
+Leviathan:
+
+64
+00:02:27,791 --> 00:02:30,093
+people accept an all-powerful ruler
+
+65
+00:02:30,093 --> 00:02:32,395
+because, without one, life would be
+
+66
+00:02:32,395 --> 00:02:34,273
+"nasty, brutish, and short."
+
+67
+00:02:34,923 --> 00:02:37,139
+Security, in exchange for freedom.
+
+68
+00:02:37,789 --> 00:02:39,958
+It's a deal that looks reasonable when
+
+69
+00:02:39,958 --> 00:02:42,339
+you're afraid. The problem is what happens
+
+70
+00:02:42,339 --> 00:02:43,662
+after the fear passes.
+
+71
+00:02:44,312 --> 00:02:46,644
+Political psychologist Karen Stenner
+
+72
+00:02:46,644 --> 00:02:49,090
+found something important about how this
+
+73
+00:02:49,090 --> 00:02:49,602
+works.
+
+74
+00:02:50,252 --> 00:02:52,653
+She argued that some people have an
+
+75
+00:02:52,653 --> 00:02:54,801
+authoritarian predisposition:
+
+76
+00:02:54,801 --> 00:02:57,581
+a stronger preference for sameness, order
+
+77
+00:02:57,581 --> 00:02:58,656
+and obedience.
+
+78
+00:02:59,306 --> 00:03:00,513
+But here's the key:
+
+79
+00:03:00,513 --> 00:03:02,598
+this tendency often lies dormant.
+
+80
+00:03:03,248 --> 00:03:05,500
+What activates it is a feeling of
+
+81
+00:03:05,500 --> 00:03:07,879
+threat, especially the sense that
+
+82
+00:03:07,879 --> 00:03:10,507
+society is falling apart, or that "our"
+
+83
+00:03:10,507 --> 00:03:12,447
+way of life is under attack.
+
+84
+00:03:13,097 --> 00:03:15,534
+When people feel threatened, they become
+
+85
+00:03:15,534 --> 00:03:17,858
+more willing to accept strong leaders,
+
+86
+00:03:17,858 --> 00:03:20,409
+harsh rules and limits on others' freedom.
+
+87
+00:03:21,059 --> 00:03:23,757
+That's why would-be authoritarians so
+
+88
+00:03:23,757 --> 00:03:25,443
+often need an enemy:
+
+89
+00:03:25,443 --> 00:03:28,411
+a crisis, a scapegoat, a danger that only
+
+90
+00:03:28,411 --> 00:03:29,558
+they can stop.
+
+91
+00:03:30,208 --> 00:03:32,367
+Fear isn't just a side effect of
+
+92
+00:03:32,367 --> 00:03:33,600
+authoritarianism.
+
+93
+00:03:33,600 --> 00:03:35,080
+Often, it's the fuel.
+
+94
+00:03:35,730 --> 00:03:37,153
+Fear opens the door.
+
+95
+00:03:37,153 --> 00:03:39,009
+Repetition keeps it open.
+
+96
+00:03:39,659 --> 00:03:42,429
+In 1977, psychologists Lynn Hasher,
+
+97
+00:03:42,429 --> 00:03:45,267
+David Goldstein and Thomas Toppino
+
+98
+00:03:45,267 --> 00:03:48,175
+asked people to rate whether statements
+
+99
+00:03:48,175 --> 00:03:49,698
+were true or false.
+
+100
+00:03:50,348 --> 00:03:52,436
+Some statements appeared more than once
+
+101
+00:03:52,436 --> 00:03:53,530
+over several weeks.
+
+102
+00:03:54,180 --> 00:03:56,382
+The result: people rated repeated
+
+103
+00:03:56,382 --> 00:03:58,700
+statements as more likely to be true,
+
+104
+00:03:58,700 --> 00:04:01,134
+whether they were actually true or not.
+
+105
+00:04:01,784 --> 00:04:04,172
+Psychologists call this the illusory
+
+106
+00:04:04,172 --> 00:04:06,560
+truth effect. A familiar claim feels
+
+107
+00:04:06,560 --> 00:04:09,187
+easier to process, and our brains mistake
+
+108
+00:04:09,187 --> 00:04:10,440
+"easy" for "true."
+
+109
+00:04:11,090 --> 00:04:13,695
+Every authoritarian regime has understood
+
+110
+00:04:13,695 --> 00:04:14,998
+this instinctively.
+
+111
+00:04:14,998 --> 00:04:17,425
+Control the newspapers, the radio, the
+
+112
+00:04:17,425 --> 00:04:18,076
+screens,
+
+113
+00:04:18,726 --> 00:04:21,396
+repeat the same few messages everywhere,
+
+114
+00:04:21,396 --> 00:04:23,817
+and over time they stop feeling like
+
+115
+00:04:23,817 --> 00:04:26,611
+opinions. They start feeling like reality.
+
+116
+00:04:27,261 --> 00:04:29,721
+But dictators don't just need followers.
+
+117
+00:04:29,721 --> 00:04:32,066
+They need ordinary people willing to
+
+118
+00:04:32,066 --> 00:04:33,210
+carry out orders.
+
+119
+00:04:33,860 --> 00:04:37,166
+In 1961, at Yale University, psychologist
+
+120
+00:04:37,166 --> 00:04:40,172
+Stanley Milgram ran one of the most
+
+121
+00:04:40,172 --> 00:04:42,651
+famous experiments in history.
+
+122
+00:04:43,301 --> 00:04:45,698
+Volunteers were told to give electric
+
+123
+00:04:45,698 --> 00:04:48,095
+shocks to a "learner" in another room
+
+124
+00:04:48,095 --> 00:04:50,791
+whenever he made a mistake, increasing the
+
+125
+00:04:50,791 --> 00:04:52,050
+voltage each time.
+
+126
+00:04:52,700 --> 00:04:54,976
+The shocks were fake, and the learner was
+
+127
+00:04:54,976 --> 00:04:57,201
+an actor. But the volunteers didn't know
+
+128
+00:04:57,201 --> 00:04:57,614
+that.
+
+129
+00:04:58,264 --> 00:05:00,483
+They heard him shout, complain about his
+
+130
+00:05:00,483 --> 00:05:01,980
+heart, and then go silent.
+
+131
+00:05:02,630 --> 00:05:04,989
+In the best-known version, about
+
+132
+00:05:04,989 --> 00:05:07,819
+two-thirds of participants kept going
+
+133
+00:05:07,819 --> 00:05:09,841
+all the way to the maximum:
+
+134
+00:05:09,841 --> 00:05:10,718
+450 volts.
+
+135
+00:05:11,367 --> 00:05:14,066
+Not because they were cruel, but because a
+
+136
+00:05:14,066 --> 00:05:16,705
+calm man in a lab coat kept saying, "The
+
+137
+00:05:16,705 --> 00:05:19,284
+experiment requires that you continue."
+
+138
+00:05:19,934 --> 00:05:22,467
+Later researchers have questioned parts of
+
+139
+00:05:22,467 --> 00:05:23,649
+Milgram's methods.
+
+140
+00:05:24,299 --> 00:05:27,016
+But the core finding has been repeated in
+
+141
+00:05:27,016 --> 00:05:29,363
+many forms: ordinary people will do
+
+142
+00:05:29,363 --> 00:05:32,081
+surprising things when an authority takes
+
+143
+00:05:32,081 --> 00:05:33,748
+responsibility for them.
+
+144
+00:05:34,398 --> 00:05:36,529
+Here's what surprises most people:
+
+145
+00:05:36,529 --> 00:05:39,062
+many dictatorships don't begin with tanks
+
+146
+00:05:39,062 --> 00:05:40,041
+in the street.
+
+147
+00:05:40,691 --> 00:05:44,405
+In January 1933, Adolf Hitler was legally
+
+148
+00:05:44,405 --> 00:05:47,359
+appointed Chancellor of Germany.
+
+149
+00:05:48,009 --> 00:05:50,270
+Two months later, the parliament passed
+
+150
+00:05:50,270 --> 00:05:52,638
+the Enabling Act, giving his government
+
+151
+00:05:52,638 --> 00:05:55,060
+the power to make laws without parliament.
+
+152
+00:05:55,710 --> 00:05:58,007
+It was voted through, under intimidation,
+
+153
+00:05:58,007 --> 00:05:59,156
+but through a vote.
+
+154
+00:05:59,806 --> 00:06:02,729
+In their 2018 book How Democracies Die,
+
+155
+00:06:02,729 --> 00:06:05,718
+political scientists Steven Levitsky and
+
+156
+00:06:05,718 --> 00:06:08,508
+Daniel Ziblatt argue that this is the
+
+157
+00:06:08,508 --> 00:06:10,102
+common pattern today:
+
+158
+00:06:10,752 --> 00:06:13,647
+democracies are more often eroded step by
+
+159
+00:06:13,647 --> 00:06:16,543
+step, by elected leaders, than overthrown
+
+160
+00:06:16,543 --> 00:06:17,859
+in a single coup.
+
+161
+00:06:18,509 --> 00:06:20,840
+Each step looks small and legal on its
+
+162
+00:06:20,840 --> 00:06:23,113
+own: a court packed here, a newspaper
+
+163
+00:06:23,113 --> 00:06:24,193
+pressured there,
+
+164
+00:06:24,843 --> 00:06:27,474
+an election rule changed, an "emergency"
+
+165
+00:06:27,474 --> 00:06:28,209
+extended.
+
+166
+00:06:28,859 --> 00:06:31,218
+You may have heard that a frog in slowly
+
+167
+00:06:31,218 --> 00:06:32,973
+heating water won't jump out.
+
+168
+00:06:33,623 --> 00:06:35,743
+In reality, frogs do jump out.
+
+169
+00:06:35,743 --> 00:06:38,346
+It's people who are bad at noticing slow
+
+170
+00:06:38,346 --> 00:06:38,951
+change.
+
+171
+00:06:39,601 --> 00:06:42,232
+And once a dictatorship is in place, why
+
+172
+00:06:42,232 --> 00:06:44,801
+do people stay quiet, even when most of
+
+173
+00:06:44,801 --> 00:06:46,024
+them are unhappy?
+
+174
+00:06:46,674 --> 00:06:48,809
+Economist Timur Kuran called it
+
+175
+00:06:48,809 --> 00:06:50,588
+preference falsification:
+
+176
+00:06:50,588 --> 00:06:52,842
+people hide what they really think,
+
+177
+00:06:52,842 --> 00:06:54,976
+because speaking up is dangerous.
+
+178
+00:06:55,626 --> 00:06:57,736
+And because everyone hides, everyone
+
+179
+00:06:57,736 --> 00:06:59,142
+believes they're alone.
+
+180
+00:06:59,792 --> 00:07:03,370
+On December 21, 1989, Romania's dictator
+
+181
+00:07:03,370 --> 00:07:06,782
+Nicolae Ceaușescu gave a speech to a
+
+182
+00:07:06,782 --> 00:07:09,028
+huge crowd in Bucharest.
+
+183
+00:07:09,678 --> 00:07:12,266
+Partway through, some people began to boo.
+
+184
+00:07:12,266 --> 00:07:14,738
+On live television, you can see his face
+
+185
+00:07:14,738 --> 00:07:15,313
+freeze.
+
+186
+00:07:15,963 --> 00:07:17,855
+In that moment, thousands of people
+
+187
+00:07:17,855 --> 00:07:19,747
+discovered that they weren't alone.
+
+188
+00:07:20,397 --> 00:07:22,996
+The very next day, he fled the capital by
+
+189
+00:07:22,996 --> 00:07:25,358
+helicopter, and his regime collapsed.
+
+190
+00:07:26,008 --> 00:07:28,695
+Dictatorships often look unbreakable right
+
+191
+00:07:28,695 --> 00:07:31,322
+up until the moment they suddenly aren't.
+
+192
+00:07:31,972 --> 00:07:35,942
+Which brings us back to La Boétie's answer
+
+193
+00:07:35,942 --> 00:07:37,089
+from 1548.
+
+194
+00:07:37,739 --> 00:07:40,407
+He argued that tyranny doesn't need to be
+
+195
+00:07:40,407 --> 00:07:41,681
+defeated by force.
+
+196
+00:07:41,681 --> 00:07:44,288
+It only needs to lose the cooperation it
+
+197
+00:07:44,288 --> 00:07:45,137
+depends on.
+
+198
+00:07:45,787 --> 00:07:48,233
+"Resolve to serve no more," he wrote, "and
+
+199
+00:07:48,233 --> 00:07:49,646
+you are at once freed."
+
+200
+00:07:50,296 --> 00:07:52,164
+Modern research points in a similar
+
+201
+00:07:52,164 --> 00:07:52,804
+direction.
+
+202
+00:07:53,454 --> 00:07:55,786
+Political scientist Erica Chenoweth
+
+203
+00:07:55,786 --> 00:07:58,118
+studied hundreds of campaigns against
+
+204
+00:07:58,118 --> 00:08:00,392
+governments in the twentieth century
+
+205
+00:08:01,042 --> 00:08:03,697
+and found that nonviolent mass movements
+
+206
+00:08:03,697 --> 00:08:06,290
+succeeded more often than violent ones,
+
+207
+00:08:06,290 --> 00:08:08,821
+largely because they could draw in far
+
+208
+00:08:08,821 --> 00:08:10,117
+more participants.
+
+209
+00:08:10,767 --> 00:08:13,201
+Power, in the end, is a relationship.
+
+210
+00:08:13,201 --> 00:08:15,695
+Every regime, however strong it looks,
+
+211
+00:08:15,695 --> 00:08:18,128
+runs on the daily choices of ordinary
+
+212
+00:08:18,128 --> 00:08:18,737
+people.
+
+213
+00:08:19,387 --> 00:08:21,827
+Try this. Think of a time you went along
+
+214
+00:08:21,827 --> 00:08:24,267
+with something you didn't agree with, at
+
+215
+00:08:24,267 --> 00:08:26,481
+school, at work, in a group, because
+
+216
+00:08:26,481 --> 00:08:28,013
+everyone else seemed to.
+
+217
+00:08:28,663 --> 00:08:31,234
+Ask yourself: did I actually know what the
+
+218
+00:08:31,234 --> 00:08:33,520
+others thought? Or did I just assume?
+
+219
+00:08:34,170 --> 00:08:36,844
+Very often, the silence around you is made
+
+220
+00:08:36,844 --> 00:08:39,161
+of people who feel exactly like you.
+
+221
+00:08:39,811 --> 00:08:42,271
+We don't let dictators rise because we're
+
+222
+00:08:42,271 --> 00:08:43,333
+evil, or stupid.
+
+223
+00:08:43,983 --> 00:08:46,242
+We let them rise because we're afraid,
+
+224
+00:08:46,242 --> 00:08:48,446
+because we're tired, because we trust
+
+225
+00:08:48,446 --> 00:08:50,650
+authority, and because we think we're
+
+226
+00:08:50,650 --> 00:08:51,146
+alone.
+
+227
+00:08:51,796 --> 00:08:53,369
+Those are human weaknesses.
+
+228
+00:08:53,369 --> 00:08:55,415
+But they come with a human strength:
+
+229
+00:08:56,065 --> 00:08:58,535
+the power was always ours to give, and
+
+230
+00:08:58,535 --> 00:08:59,801
+ours to take back.
+
