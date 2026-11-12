@@ -2171,6 +2171,129 @@ ELEMENTS_EXTRA.update({
 })
 
 
+# ----------------------------------------------------------- Diktatörlük videosu
+GOLD = (200, 160, 60)
+
+
+def el_throne(x, y, s, empty=True, shaky=False, seed=0, **_):
+    back = [(x - 120 * s, y - 120 * s), (x - 120 * s, y - 480 * s), (x - 60 * s, y - 540 * s), (x, y - 500 * s), (x + 60 * s, y - 540 * s),
+            (x + 120 * s, y - 480 * s), (x + 120 * s, y - 120 * s)]
+    out = [_blob(back, tone=0.8, color=(150, 40, 40), seed=seed, smooth=3), Stroke(back, 6 * s + 1, GOLD, seed=seed + 1),
+           Stroke(_rect(x - 160 * s, y - 140 * s, x + 160 * s, y - 90 * s), 8 * s + 1, GOLD, seed=seed + 2)]
+    for f in (-1, 1):
+        out.append(Stroke([(x + f * 140 * s, y - 90 * s), (x + f * (150 if not shaky else 190) * s, y)], 9 * s + 1, GOLD, seed=seed + 3))
+    if not empty:
+        it, _ = figure(x, y - 90 * s, 320 * s, "sit", 1, seed=seed + 9)
+        out += it
+    return out
+
+
+def el_shockbox(x, y, s, level=0.9, seed=0, **_):
+    w, h = 700 * s, 260 * s
+    out = [_blob([(x - w / 2, y - h / 2), (x + w / 2, y - h / 2), (x + w / 2, y + h / 2), (x - w / 2, y + h / 2)], tone=0.85, color=(70, 70, 75), seed=seed),
+           Stroke(_rect(x - w / 2, y - h / 2, x + w / 2, y + h / 2), 5 * s + 1, seed=seed + 1)]
+    n = 10
+    for k in range(n):
+        bx = x - w / 2 + 45 * s + k * (w - 90 * s) / (n - 1)
+        col = (220, 60, 50) if k / (n - 1) <= level else (200, 200, 200)
+        out.append(Stroke(ellipse_pts(bx, y + 20 * s, 18 * s, 18 * s, n=10), 8 * s, col, seed=seed + 2 + k))
+    out.append(Text("15V", x - w / 2 + 45 * s, y - 60 * s, 34 * s, (240, 240, 240)))
+    out.append(Text("450V", x + w / 2 - 55 * s, y - 60 * s, 34 * s, (250, 120, 100)))
+    return out
+
+
+def el_ballot(x, y, s, seed=0, **_):
+    out = [Stroke(_rect(x - 160 * s, y - 220 * s, x + 160 * s, y), 6 * s + 1, seed=seed),
+           Stroke([(x - 70 * s, y - 220 * s), (x + 70 * s, y - 220 * s)], 10 * s, (40, 40, 45), seed=seed + 1),
+           Stroke(_rect(x - 50 * s, y - 330 * s, x + 50 * s, y - 210 * s), 4 * s + 1, BLUE, seed=seed + 2),
+           Stroke([(x - 25 * s, y - 280 * s), (x - 5 * s, y - 255 * s), (x + 30 * s, y - 300 * s)], 5 * s, BLUE, seed=seed + 3)]
+    return out
+
+
+def el_plow(x, y, s, seed=0, **_):
+    return [Stroke([(x - 260 * s, y - 220 * s), (x + 60 * s, y - 20 * s)], 10 * s + 1, (130, 90, 55), seed=seed),
+            Stroke([(x + 60 * s, y - 20 * s), (x + 200 * s, y + 10 * s), (x + 80 * s, y + 40 * s)], 9 * s + 1, (120, 120, 130), seed=seed + 1),
+            Stroke([(x - 260 * s, y - 220 * s), (x - 320 * s, y - 260 * s)], 8 * s + 1, (130, 90, 55), seed=seed + 2),
+            Stroke([(x - 400 * s, y + 50 * s), (x + 400 * s, y + 50 * s)], 4 * s, (110, 85, 60), seed=seed + 3)]
+
+
+def el_maskface(x, y, s, thought=None, seed=0, **_):
+    it, _ = figure(x, y, 420 * s, "stand", 1, seed=seed)
+    face = ellipse_pts(x, y - 370 * s, 42 * s, 48 * s, n=16, extra=0)
+    out = it + [_blob(face, tone=0.2, color=(245, 240, 230), seed=seed + 1, smooth=2), Stroke(face + [face[0]], 3 * s, seed=seed + 2),
+                Stroke(bez((x - 18 * s, y - 350 * s), (x, y - 335 * s), (x + 18 * s, y - 350 * s), 8), 3 * s, seed=seed + 3)]
+    if thought:
+        out += el_bubble(x + 150 * s, y - 560 * s, s * 0.75, kind="thought", tail=None, seed=seed + 4)
+        out.append(Text(thought, x + 150 * s, y - 560 * s, 80 * s, RED))
+    return out
+
+
+def el_heli(x, y, s, seed=0, **_):
+    body = ellipse_pts(x, y, 160 * s, 80 * s, n=28, extra=0)
+    return [_blob(body, tone=0.85, color=(70, 80, 70), seed=seed, smooth=3),
+            Stroke([(x + 150 * s, y - 10 * s), (x + 380 * s, y - 30 * s)], 14 * s + 1, (70, 80, 70), seed=seed + 1),
+            Stroke([(x + 380 * s, y - 80 * s), (x + 380 * s, y + 20 * s)], 6 * s, seed=seed + 2),
+            Stroke([(x, y - 80 * s), (x, y - 120 * s)], 6 * s, seed=seed + 3),
+            Stroke([(x - 300 * s, y - 120 * s), (x + 300 * s, y - 120 * s)], 6 * s, seed=seed + 4),
+            Stroke([(x - 120 * s, y + 100 * s), (x + 120 * s, y + 100 * s)], 6 * s, seed=seed + 5),
+            Stroke(ellipse_pts(x - 60 * s, y - 15 * s, 50 * s, 35 * s, n=14), 4 * s, (170, 200, 220), seed=seed + 6)]
+
+
+def el_radio(x, y, s, text=None, seed=0, **_):
+    out = [_blob([(x - 220 * s, y - 140 * s), (x + 220 * s, y - 140 * s), (x + 220 * s, y + 140 * s), (x - 220 * s, y + 140 * s)], tone=0.6, color=(150, 105, 60), seed=seed),
+           Stroke(_rect(x - 220 * s, y - 140 * s, x + 220 * s, y + 140 * s), 6 * s + 1, seed=seed + 1),
+           Stroke(ellipse_pts(x - 80 * s, y, 85 * s, 85 * s, n=24), 5 * s, seed=seed + 2),
+           Stroke(ellipse_pts(x + 130 * s, y + 40 * s, 30 * s, 30 * s, n=12), 5 * s, seed=seed + 3),
+           Stroke([(x + 100 * s, y - 140 * s), (x + 200 * s, y - 300 * s)], 4 * s, seed=seed + 4)]
+    for k in range(3):
+        out.append(Stroke(bez((x + 250 * s + k * 40 * s, y - 80 * s - k * 20 * s), (x + 290 * s + k * 50 * s, y), (x + 250 * s + k * 40 * s, y + 80 * s + k * 20 * s), 10),
+                          4 * s, RED, 1, seed + 5 + k))
+    if text:
+        out.append(Text(text, x, y - 200 * s, 50 * s, RED))
+    return out
+
+
+def el_tank(x, y, s, seed=0, **_):
+    body = [(x - 260 * s, y - 40 * s), (x + 260 * s, y - 40 * s), (x + 300 * s, y + 60 * s), (x - 300 * s, y + 60 * s)]
+    turret = [(x - 120 * s, y - 40 * s), (x - 90 * s, y - 140 * s), (x + 90 * s, y - 140 * s), (x + 120 * s, y - 40 * s)]
+    out = [_blob(body, tone=0.85, color=(80, 90, 70), seed=seed), _blob(turret, tone=0.85, color=(80, 90, 70), seed=seed + 1),
+           Stroke([(x + 90 * s, y - 100 * s), (x + 380 * s, y - 120 * s)], 16 * s + 1, (80, 90, 70), seed=seed + 2)]
+    for k in range(6):
+        out.append(Stroke(ellipse_pts(x - 230 * s + k * 92 * s, y + 70 * s, 34 * s, 34 * s, n=12), 5 * s, seed=seed + 3 + k))
+    return out
+
+
+def el_frog(x, y, s, jump=True, seed=0, **_):
+    pot = [(x - 220 * s, y - 200 * s), (x - 200 * s, y), (x + 200 * s, y), (x + 220 * s, y - 200 * s)]
+    out = [Stroke(pot, 7 * s + 1, (90, 90, 95), seed=seed), Stroke([(x - 260 * s, y - 200 * s), (x + 260 * s, y - 200 * s)], 7 * s + 1, (90, 90, 95), seed=seed + 1)]
+    for k in range(3):
+        out.append(Stroke(bez((x - 120 * s + k * 120 * s, y + 70 * s), (x - 90 * s + k * 120 * s, y + 30 * s), (x - 120 * s + k * 120 * s, y + 10 * s), 8),
+                          6 * s, (230, 120, 40), seed=seed + 2 + k))
+    fx, fy = (x + 320 * s, y - 320 * s) if jump else (x, y - 220 * s)
+    fb = ellipse_pts(fx, fy, 70 * s, 45 * s, n=18, extra=0)
+    out.append(_blob(fb, tone=0.85, color=(80, 150, 70), seed=seed + 6, smooth=2))
+    for ex in (fx - 30 * s, fx + 30 * s):
+        out.append(Stroke(ellipse_pts(ex, fy - 45 * s, 14 * s, 14 * s, n=10), 5 * s, seed=seed + 7))
+    if jump:
+        out.append(Stroke(bez((x + 60 * s, y - 220 * s), (x + 200 * s, y - 420 * s), (fx - 40 * s, fy + 20 * s), 14), 3 * s, COLORS["grey"], 1, seed + 9))
+    return out
+
+
+def el_sack(x, y, s, label=None, seed=0, **_):
+    it, _ = figure(x, y, 420 * s, "walk", 1, tone=0.85, seed=seed)
+    sack = ellipse_pts(x - 40 * s, y - 330 * s, 110 * s, 80 * s, n=20, extra=0)
+    out = it + [_blob(sack, tone=0.7, color=(160, 130, 90), seed=seed + 1, smooth=3), Stroke(sack + [sack[0]], 4 * s, seed=seed + 2)]
+    if label:
+        out.append(Text(label, x - 40 * s, y - 330 * s, 40 * s, INK))
+    return out
+
+
+ELEMENTS_EXTRA.update({
+    "throne": el_throne, "shockbox": el_shockbox, "ballot": el_ballot, "plow": el_plow, "maskface": el_maskface, "heli": el_heli,
+    "radio": el_radio, "tank": el_tank, "frog": el_frog, "sack": el_sack,
+})
+
+
 # --------------------------------------------------------------------------- #
 # Sahne: öğeleri sırayla çizer
 # --------------------------------------------------------------------------- #

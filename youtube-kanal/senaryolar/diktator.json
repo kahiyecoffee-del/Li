@@ -1,0 +1,2578 @@
+{
+ "slug": "diktator",
+ "format": "long",
+ "theme": "karakalem",
+ "character": "none",
+ "languages": [
+  "en"
+ ],
+ "subtitles": [
+  "tr"
+ ],
+ "voices": {
+  "en": "am_fenrir"
+ },
+ "speech_rate": 0.88,
+ "meta": {
+  "en": {
+   "title": "Why Do We Let Dictators Rise?",
+   "description": "",
+   "tags": []
+  },
+  "tr": {
+   "title": "Diktatörlere Neden İzin Veriyoruz?",
+   "description": "",
+   "tags": []
+  }
+ },
+ "subscribe": {
+  "after": 8,
+  "sketch": [
+   {
+    "el": "subscribe",
+    "x": 0.45,
+    "y": 0.45,
+    "s": 1.4
+   },
+   {
+    "el": "arrow",
+    "x": 0.2,
+    "y": 0.75,
+    "x2": 0.33,
+    "y2": 0.55,
+    "color": "red",
+    "s": 1.2
+   }
+  ],
+  "say": {
+   "en": "If you like big questions about human nature, *subscribe*. It genuinely helps the channel.",
+   "tr": "İnsan doğasıyla ilgili büyük soruları seviyorsan *abone ol*. Kanala gerçekten çok yardımı oluyor."
+  }
+ },
+ "scenes": [
+  {
+   "say": {
+    "en": "In 1548, a young French law student named *Étienne de La Boétie* asked a question that still has no comfortable answer.",
+    "tr": "1548'de *Étienne de La Boétie* adında genç bir Fransız hukuk öğrencisi, hâlâ rahat bir cevabı olmayan bir soru sordu."
+   },
+   "image": {
+    "file": "File:Gravure de Montaigne et de la Boétie.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Montaigne and La Boétie · engraving",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "How is it, he wrote, that so many people, so many towns, so many nations, sometimes put up with a single ruler,",
+    "tr": "Nasıl oluyor da, diye yazdı, bu kadar çok insan, bu kadar çok kasaba, bu kadar çok ulus bazen tek bir yöneticiye katlanıyor?"
+   },
+   "sketch": [
+    {
+     "el": "throne",
+     "x": 0.5,
+     "y": 0.55,
+     "s": 0.6,
+     "empty": false
+    },
+    {
+     "el": "stands",
+     "x": 0.5,
+     "y": 0.98,
+     "s": 0.9
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "who has no power except the power they *give* him?",
+    "tr": "Hem de onların ona *verdiği* güçten başka hiçbir gücü olmayan birine?"
+   },
+   "sketch": [
+    {
+     "el": "throne",
+     "x": 0.5,
+     "y": 0.55,
+     "s": 0.6,
+     "empty": false
+    },
+    {
+     "el": "arrow",
+     "x": 0.2,
+     "y": 0.85,
+     "x2": 0.42,
+     "y2": 0.45,
+     "bend": 0.2,
+     "color": "red"
+    },
+    {
+     "el": "arrow",
+     "x": 0.8,
+     "y": 0.85,
+     "x2": 0.58,
+     "y2": 0.45,
+     "bend": -0.2,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.92,
+     "text": "the power they give",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A tyrant has only two eyes, two hands and one body. He can't arrest a million people by himself.",
+    "tr": "Bir tiranın yalnızca iki gözü, iki eli ve tek bir bedeni vardır. Bir milyon insanı tek başına tutuklayamaz."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.65,
+     "y": 0.3,
+     "text": "2 eyes · 2 hands",
+     "size": 1.3,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.65,
+     "y": 0.5,
+     "text": "1 body",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "He needs police, soldiers, clerks, and the quiet obedience of everyone else.",
+    "tr": "Polise, askerlere, memurlara ve geri kalan herkesin sessiz itaatine ihtiyacı vardır."
+   },
+   "sketch": [
+    {
+     "el": "throne",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 0.5,
+     "empty": false
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.92,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.92,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.92,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.92,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.65,
+     "y": 0.92,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.92,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "So why do we give it?",
+    "tr": "Peki biz bunu neden veriyoruz?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "Why do we give it?",
+     "size": 2.0,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "This isn't a question about one country or one century. It's a question about *human nature*.",
+    "tr": "Bu bir ülkeyle ya da bir yüzyılla ilgili bir soru değil. *İnsan doğasıyla* ilgili bir soru."
+   },
+   "sketch": [
+    {
+     "el": "globe",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.9
+    },
+    {
+     "el": "arrow",
+     "x": 0.45,
+     "y": 0.5,
+     "x2": 0.58,
+     "y2": 0.5,
+     "bend": 0.0
+    },
+    {
+     "el": "head",
+     "x": 0.72,
+     "y": 0.5,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And psychology, history and philosophy have some uncomfortable answers.",
+    "tr": "Ve psikolojinin, tarihin ve felsefenin bazı rahatsız edici cevapları var."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.42,
+     "text": "psychology",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "history",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.42,
+     "text": "philosophy",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The word *dictator* didn't start as an insult.",
+    "tr": "*Diktatör* kelimesi bir hakaret olarak başlamadı."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "dictator",
+     "size": 2.4,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In the Roman Republic, a *dictator* was an emergency office.",
+    "tr": "Roma Cumhuriyeti'nde *diktatör* bir olağanüstü hâl makamıydı."
+   },
+   "image": {
+    "file": "File:Cicero Denounces Catiline in the Roman Senate by Cesare Maccari.png",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "The Roman Senate · Cesare Maccari (1888)",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "In a crisis, like a war, the Senate could appoint one person with extraordinary powers,",
+    "tr": "Savaş gibi bir krizde Senato bir kişiyi olağanüstü yetkilerle atayabilirdi;"
+   },
+   "sketch": [
+    {
+     "el": "sword",
+     "x": 0.25,
+     "y": 0.55,
+     "s": 1.0
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.8,
+     "h": 0.6,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "halo",
+     "x": 0.6,
+     "y": 0.2,
+     "s": 0.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "but only for a maximum of *six months*.",
+    "tr": "ama en fazla *altı aylığına*."
+   },
+   "sketch": [
+    {
+     "el": "hourglass",
+     "x": 0.4,
+     "y": 0.45,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.42,
+     "text": "6 months",
+     "size": 1.8,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The legend of *Cincinnatus* says he was called from his farm to save Rome, won the war,",
+    "tr": "*Cincinnatus* efsanesine göre çiftliğinden Roma'yı kurtarmaya çağrıldı, savaşı kazandı"
+   },
+   "image": {
+    "file": "File:Cincinato abandona el arado para dictar leyes a Roma, c.1806 de Juan Antonio Ribera.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Cincinnatus leaves the plough · J. A. Ribera (c. 1806)",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "and gave his power back within days, then went home to plow his fields.",
+    "tr": "ve birkaç gün içinde gücünü geri verip tarlasını sürmeye döndü."
+   },
+   "sketch": [
+    {
+     "el": "sword",
+     "x": 0.2,
+     "y": 0.55,
+     "s": 0.8
+    },
+    {
+     "el": "arrow",
+     "x": 0.3,
+     "y": 0.45,
+     "x2": 0.48,
+     "y2": 0.45,
+     "bend": 0.0
+    },
+    {
+     "el": "plow",
+     "x": 0.72,
+     "y": 0.7,
+     "s": 0.9
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "For centuries, the system worked.",
+    "tr": "Yüzyıllar boyunca sistem işledi."
+   },
+   "sketch": [
+    {
+     "el": "balance",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.92,
+     "text": "centuries",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Then, in the first century BC, generals began to stretch the rules.",
+    "tr": "Sonra MÖ birinci yüzyılda generaller kuralları esnetmeye başladı."
+   },
+   "sketch": [
+    {
+     "el": "hourglass",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "arrow",
+     "x": 0.5,
+     "y": 0.45,
+     "x2": 0.75,
+     "y2": 0.45,
+     "bend": -0.3,
+     "color": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.3,
+     "text": "6 months... ?",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 44 BC, *Julius Caesar* was named *dictator for life*.",
+    "tr": "MÖ 44'te *Jül Sezar* *ömür boyu diktatör* ilan edildi."
+   },
+   "image": {
+    "file": "File:Head of Julius Caesar from Tusculum MAntTorino 2089 n01.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Julius Caesar · Tusculum portrait",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "A month later, he was assassinated, but the Republic never truly recovered.",
+    "tr": "Bir ay sonra suikaste kurban gitti, ama Cumhuriyet bir daha asla tam olarak toparlanamadı."
+   },
+   "sketch": [
+    {
+     "el": "throne",
+     "x": 0.4,
+     "y": 0.85,
+     "s": 0.8
+    },
+    {
+     "el": "sword",
+     "x": 0.75,
+     "y": 0.6,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "44 BC",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The lesson Rome learned too late: emergency powers have a way of becoming permanent.",
+    "tr": "Roma'nın çok geç öğrendiği ders: Olağanüstü yetkilerin kalıcı hale gelmek gibi bir huyu vardır."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "emergency",
+     "size": 1.5,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "arrow",
+     "x": 0.5,
+     "y": 0.45,
+     "x2": 0.5,
+     "y2": 0.58,
+     "bend": 0.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.68,
+     "text": "permanent",
+     "size": 1.6,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Why would people *want* to give power away?",
+    "tr": "İnsanlar gücü neden *vermek isteyebilir* ki?"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "hold",
+     "face": 1
+    },
+    {
+     "el": "throne",
+     "x": 0.75,
+     "y": 0.85,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1941, in the middle of the Second World War, the psychologist and philosopher *Erich Fromm* published a book called *Escape from Freedom*.",
+    "tr": "1941'de, İkinci Dünya Savaşı'nın ortasında, psikolog ve filozof *Erich Fromm* *Özgürlükten Kaçış* adlı bir kitap yayımladı."
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.3,
+     "y": 0.72,
+     "s": 1.0,
+     "n": 1
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.4,
+     "text": "Escape from Freedom",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.6,
+     "text": "Fromm · 1941",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "His idea was surprising: freedom isn't only a gift. It's also a *burden*.",
+    "tr": "Fikri şaşırtıcıydı: Özgürlük sadece bir armağan değil. Aynı zamanda bir *yük*."
+   },
+   "sketch": [
+    {
+     "el": "sack",
+     "x": 0.5,
+     "y": 0.9,
+     "s": 1.0,
+     "label": "freedom"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When you're free, you have to choose, take responsibility, and live with uncertainty.",
+    "tr": "Özgür olduğunda seçmen, sorumluluk alman ve belirsizlikle yaşaman gerekir."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.25,
+     "text": "choose",
+     "size": 1.3,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.45,
+     "text": "responsibility",
+     "size": 1.3,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.65,
+     "text": "uncertainty",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In times of crisis, unemployment and fear, that burden can feel unbearable.",
+    "tr": "Kriz, işsizlik ve korku zamanlarında bu yük dayanılmaz hissettirebilir."
+   },
+   "sketch": [
+    {
+     "el": "sack",
+     "x": 0.5,
+     "y": 0.9,
+     "s": 1.3,
+     "label": "freedom"
+    },
+    {
+     "el": "graph",
+     "x": 0.85,
+     "y": 0.35,
+     "s": 0.35,
+     "up": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And a strong leader offers an escape: *don't worry, I'll decide for you.*",
+    "tr": "Güçlü bir lider de bir kaçış yolu sunar: *Merak etme, senin yerine ben karar veririm.*"
+   },
+   "sketch": [
+    {
+     "el": "throne",
+     "x": 0.3,
+     "y": 0.85,
+     "s": 0.7,
+     "empty": false
+    },
+    {
+     "el": "bubble",
+     "x": 0.68,
+     "y": 0.3,
+     "s": 1.1,
+     "kind": "speech",
+     "tail": [
+      0.4,
+      0.45
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.3,
+     "text": "I'll decide\nfor you",
+     "size": 0.9,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Centuries earlier, the philosopher *Thomas Hobbes* had argued something similar in *Leviathan*:",
+    "tr": "Yüzyıllar önce filozof *Thomas Hobbes* da *Leviathan*'da benzer bir şey savunmuştu:"
+   },
+   "image": {
+    "file": "File:Leviathan frontispiece.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Leviathan · frontispiece by Abraham Bosse (1651)",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "people accept an all-powerful ruler because, without one, life would be \"nasty, brutish, and short.\"",
+    "tr": "İnsanlar her şeye kadir bir yöneticiyi kabul eder, çünkü o olmadan hayat \"kötü, vahşi ve kısa\" olurdu."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "\"nasty, brutish, and short\"",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Security, in exchange for freedom.",
+    "tr": "Özgürlük karşılığında güvenlik."
+   },
+   "sketch": [
+    {
+     "el": "balance",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 0.9,
+     "tilt": 0.4,
+     "left": "safety",
+     "right": "freedom"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It's a deal that looks reasonable when you're afraid. The problem is what happens after the fear passes.",
+    "tr": "Korktuğunda makul görünen bir anlaşma. Sorun, korku geçtikten sonra ne olduğu."
+   },
+   "sketch": [
+    {
+     "el": "letter",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 0.9,
+     "text": "the deal"
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.42,
+     "text": "and after?",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Political psychologist *Karen Stenner* found something important about how this works.",
+    "tr": "Siyaset psikoloğu *Karen Stenner* bunun nasıl işlediğine dair önemli bir şey buldu."
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.3,
+     "y": 0.72,
+     "s": 1.0,
+     "n": 1
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.42,
+     "text": "Stenner · 2005",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "She argued that some people have an *authoritarian predisposition*: a stronger preference for sameness, order and obedience.",
+    "tr": "Bazı insanların *otoriter bir yatkınlığı* olduğunu öne sürdü: aynılığa, düzene ve itaate daha güçlü bir tercih."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.25,
+     "text": "authoritarian predisposition",
+     "size": 1.3,
+     "color": "ink",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.5,
+     "text": "sameness · order · obedience",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But here's the key: this tendency often lies *dormant*.",
+    "tr": "Ama asıl önemli nokta şu: Bu eğilim çoğu zaman *uykudadır*."
+   },
+   "sketch": [
+    {
+     "el": "bed",
+     "x": 0.45,
+     "y": 0.8,
+     "s": 1.1
+    },
+    {
+     "el": "figure",
+     "x": 0.45,
+     "y": 0.7,
+     "h": 0.2,
+     "pose": "lie",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.3,
+     "text": "Zzz",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "What activates it is a feeling of *threat*, especially the sense that society is falling apart, or that \"our\" way of life is under attack.",
+    "tr": "Onu uyandıran şey bir *tehdit* hissidir; özellikle toplumun dağıldığı ya da \"bizim\" yaşam tarzımızın saldırı altında olduğu duygusu."
+   },
+   "sketch": [
+    {
+     "el": "warning",
+     "x": 0.3,
+     "y": 0.42,
+     "s": 0.9
+    },
+    {
+     "el": "arrow",
+     "x": 0.45,
+     "y": 0.45,
+     "x2": 0.58,
+     "y2": 0.45,
+     "bend": 0.0
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.75,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "hold",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When people feel threatened, they become more willing to accept strong leaders, harsh rules and limits on others' freedom.",
+    "tr": "İnsanlar tehdit altında hissettiğinde güçlü liderleri, sert kuralları ve başkalarının özgürlüğüne getirilen sınırları kabul etmeye daha istekli hale gelir."
+   },
+   "sketch": [
+    {
+     "el": "warning",
+     "x": 0.2,
+     "y": 0.4,
+     "s": 0.6
+    },
+    {
+     "el": "throne",
+     "x": 0.5,
+     "y": 0.85,
+     "s": 0.6,
+     "empty": false
+    },
+    {
+     "el": "padlock",
+     "x": 0.82,
+     "y": 0.45,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "That's why would-be authoritarians so often need an *enemy*: a crisis, a scapegoat, a danger that only they can stop.",
+    "tr": "Bu yüzden otoriter olmaya heveslenenler çoğu zaman bir *düşmana* ihtiyaç duyar: bir kriz, bir günah keçisi, sadece onların durdurabileceği bir tehlike."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "point",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.75,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": -1,
+     "tone": 0.4
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.15,
+     "text": "the enemy",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Fear isn't just a side effect of authoritarianism. Often, it's the fuel.",
+    "tr": "Korku otoriterliğin sadece bir yan etkisi değil. Çoğu zaman yakıtıdır."
+   },
+   "sketch": [
+    {
+     "el": "campfire",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 1.5
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.15,
+     "text": "fear = fuel",
+     "size": 1.6,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Fear opens the door. *Repetition* keeps it open.",
+    "tr": "Korku kapıyı açar. *Tekrar* onu açık tutar."
+   },
+   "sketch": [
+    {
+     "el": "door",
+     "x": 0.35,
+     "y": 0.8,
+     "s": 1.0,
+     "open_": true
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.42,
+     "text": "repetition",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1977, psychologists *Lynn Hasher*, *David Goldstein* and *Thomas Toppino* asked people to rate whether statements were true or false.",
+    "tr": "1977'de psikologlar *Lynn Hasher*, *David Goldstein* ve *Thomas Toppino*, insanlardan bazı ifadelerin doğru mu yanlış mı olduğunu değerlendirmelerini istedi."
+   },
+   "sketch": [
+    {
+     "el": "letter",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 1.0,
+     "text": "true or false?"
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.42,
+     "text": "1977",
+     "size": 1.6,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Some statements appeared more than once over several weeks.",
+    "tr": "Bazı ifadeler birkaç hafta boyunca birden fazla kez karşılarına çıktı."
+   },
+   "sketch": [
+    {
+     "el": "calendar",
+     "x": 0.25,
+     "y": 0.45,
+     "s": 0.7,
+     "text": "week 1"
+    },
+    {
+     "el": "calendar",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 0.7,
+     "text": "week 2"
+    },
+    {
+     "el": "calendar",
+     "x": 0.75,
+     "y": 0.45,
+     "s": 0.7,
+     "text": "week 3"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The result: people rated *repeated* statements as more likely to be true, whether they were actually true or not.",
+    "tr": "Sonuç: İnsanlar *tekrarlanan* ifadeleri, gerçekte doğru olsun ya da olmasın, daha büyük ihtimalle doğru diye değerlendirdi."
+   },
+   "sketch": [
+    {
+     "el": "graph",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "repeated = \"true\"",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Psychologists call this the *illusory truth effect*. A familiar claim feels easier to process, and our brains mistake \"easy\" for \"true.\"",
+    "tr": "Psikologlar buna *yanıltıcı doğruluk etkisi* diyor. Tanıdık bir iddiayı işlemek daha kolay gelir ve beynimiz \"kolay\"ı \"doğru\" sanır."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.3,
+     "text": "illusory truth effect",
+     "size": 1.5,
+     "color": "ink",
+     "underline": "red"
+    },
+    {
+     "el": "brain",
+     "x": 0.3,
+     "y": 0.7,
+     "s": 0.5
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.7,
+     "text": "easy = true?",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Every authoritarian regime has understood this instinctively. Control the newspapers, the radio, the screens,",
+    "tr": "Her otoriter rejim bunu içgüdüsel olarak anlamıştır. Gazeteleri, radyoyu, ekranları kontrol et,"
+   },
+   "sketch": [
+    {
+     "el": "newspaper",
+     "x": 0.2,
+     "y": 0.45,
+     "s": 0.5
+    },
+    {
+     "el": "radio",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "tv",
+     "x": 0.82,
+     "y": 0.45,
+     "s": 0.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "repeat the same few messages everywhere, and over time they stop feeling like opinions. They start feeling like reality.",
+    "tr": "aynı birkaç mesajı her yerde tekrarla; zamanla bunlar fikir gibi gelmeyi bırakır. Gerçeklik gibi gelmeye başlar."
+   },
+   "sketch": [
+    {
+     "el": "radio",
+     "x": 0.25,
+     "y": 0.5,
+     "s": 0.5,
+     "text": "X"
+    },
+    {
+     "el": "tv",
+     "x": 0.55,
+     "y": 0.45,
+     "s": 0.4,
+     "text": "X"
+    },
+    {
+     "el": "newspaper",
+     "x": 0.82,
+     "y": 0.45,
+     "s": 0.4,
+     "head": "X"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "opinion = reality?",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But dictators don't just need followers. They need *ordinary people* willing to carry out orders.",
+    "tr": "Ama diktatörlerin sadece takipçiye ihtiyacı yok. Emirleri uygulamaya istekli *sıradan insanlara* ihtiyaçları var."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.65,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "ordinary people",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1961, at Yale University, psychologist *Stanley Milgram* ran one of the most famous experiments in history.",
+    "tr": "1961'de Yale Üniversitesi'nde psikolog *Stanley Milgram* tarihin en ünlü deneylerinden birini yaptı."
+   },
+   "image": {
+    "file": "File:Milgram Experiment advertising.png",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Milgram experiment · recruitment ad (1961)",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "Volunteers were told to give electric shocks to a \"learner\" in another room whenever he made a mistake, increasing the voltage each time.",
+    "tr": "Gönüllülere, başka bir odadaki \"öğrenci\" her hata yaptığında ona elektrik şoku vermeleri ve voltajı her seferinde artırmaları söylendi."
+   },
+   "sketch": [
+    {
+     "el": "shockbox",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 0.7,
+     "level": 0.3
+    },
+    {
+     "el": "line",
+     "x": 0.62,
+     "y": 0.15,
+     "s": 1.0,
+     "x2": 0.62,
+     "y2": 0.85,
+     "w": 1.5
+    },
+    {
+     "el": "figure",
+     "x": 0.82,
+     "y": 0.75,
+     "h": 0.4,
+     "pose": "sit",
+     "face": -1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The shocks were fake, and the learner was an actor. But the volunteers didn't know that.",
+    "tr": "Şoklar sahteydi, öğrenci de bir aktördü. Ama gönüllüler bunu bilmiyordu."
+   },
+   "sketch": [
+    {
+     "el": "mask",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.35,
+     "text": "fake shocks",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.55,
+     "text": "an actor",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They heard him shout, complain about his heart, and then go silent.",
+    "tr": "Onun bağırdığını, kalbinden şikâyet ettiğini ve sonra sustuğunu duydular."
+   },
+   "sketch": [
+    {
+     "el": "line",
+     "x": 0.5,
+     "y": 0.1,
+     "s": 1.0,
+     "x2": 0.5,
+     "y2": 0.9,
+     "w": 1.5
+    },
+    {
+     "el": "bubble",
+     "x": 0.75,
+     "y": 0.3,
+     "s": 0.6,
+     "kind": "speech",
+     "tail": null
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.3,
+     "text": "stop!",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "heart",
+     "x": 0.75,
+     "y": 0.62,
+     "s": 0.5
+    },
+    {
+     "el": "ear",
+     "x": 0.25,
+     "y": 0.45,
+     "s": 1.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In the best-known version, about *two-thirds* of participants kept going all the way to the maximum: 450 volts.",
+    "tr": "En bilinen versiyonda katılımcıların yaklaşık *üçte ikisi* sonuna kadar, en yüksek seviye olan 450 volta kadar devam etti."
+   },
+   "sketch": [
+    {
+     "el": "shockbox",
+     "x": 0.5,
+     "y": 0.42,
+     "s": 1.0,
+     "level": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.82,
+     "text": "≈ 2/3 went to 450V",
+     "size": 1.4,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Not because they were cruel, but because a calm man in a lab coat kept saying, *\"The experiment requires that you continue.\"*",
+    "tr": "Zalim oldukları için değil; önlüklü sakin bir adam sürekli *\"Deney devam etmenizi gerektiriyor\"* dediği için."
+   },
+   "sketch": [
+    {
+     "el": "coat",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.8
+    },
+    {
+     "el": "bubble",
+     "x": 0.7,
+     "y": 0.3,
+     "s": 1.2,
+     "kind": "speech",
+     "tail": [
+      0.4,
+      0.3
+     ]
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.3,
+     "text": "please\ncontinue",
+     "size": 1.0,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Later researchers have questioned parts of Milgram's methods.",
+    "tr": "Sonraki araştırmacılar Milgram'ın yöntemlerinin bazı kısımlarını sorguladı."
+   },
+   "sketch": [
+    {
+     "el": "magnifier",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "letter",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.8,
+     "text": "methods?"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But the core finding has been repeated in many forms: ordinary people will do surprising things when an authority takes responsibility for them.",
+    "tr": "Ama temel bulgu pek çok biçimde tekrarlandı: Bir otorite sorumluluğu üstlendiğinde sıradan insanlar şaşırtıcı şeyler yapabilir."
+   },
+   "sketch": [
+    {
+     "el": "coat",
+     "x": 0.25,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "arrow",
+     "x": 0.38,
+     "y": 0.45,
+     "x2": 0.55,
+     "y2": 0.45,
+     "bend": 0.0
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.72,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.12,
+     "text": "\"not my responsibility\"",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Here's what surprises most people: many dictatorships don't begin with tanks in the street.",
+    "tr": "İnsanların çoğunu şaşırtan şey şu: Birçok diktatörlük sokaklarda tanklarla başlamaz."
+   },
+   "sketch": [
+    {
+     "el": "tank",
+     "x": 0.5,
+     "y": 0.55,
+     "s": 1.1
+    },
+    {
+     "el": "cross",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.0,
+     "at": 1.2
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In January 1933, Adolf Hitler was legally appointed Chancellor of Germany.",
+    "tr": "Ocak 1933'te Adolf Hitler yasal olarak Almanya Şansölyesi'ne atandı."
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 1.0,
+     "text": "appointed"
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.42,
+     "text": "January 1933",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Two months later, the parliament passed the *Enabling Act*, giving his government the power to make laws without parliament.",
+    "tr": "İki ay sonra meclis, hükümetine meclis olmadan yasa yapma yetkisi veren *Yetki Yasası*'nı kabul etti."
+   },
+   "sketch": [
+    {
+     "el": "ballot",
+     "x": 0.3,
+     "y": 0.8,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.35,
+     "text": "Enabling Act",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.55,
+     "text": "March 1933",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It was voted through, under intimidation, but through a vote.",
+    "tr": "Yıldırma altında ama bir oylamayla geçti."
+   },
+   "sketch": [
+    {
+     "el": "ballot",
+     "x": 0.4,
+     "y": 0.8,
+     "s": 1.0
+    },
+    {
+     "el": "warning",
+     "x": 0.75,
+     "y": 0.4,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "a vote",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In their 2018 book *How Democracies Die*, political scientists *Steven Levitsky* and *Daniel Ziblatt* argue that this is the common pattern today:",
+    "tr": "Siyaset bilimciler *Steven Levitsky* ve *Daniel Ziblatt*, 2018'de yayımlanan *Demokrasiler Nasıl Ölür* kitabında bugün yaygın örüntünün bu olduğunu savunuyor:"
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.3,
+     "y": 0.72,
+     "s": 1.0,
+     "n": 1
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.4,
+     "text": "How Democracies Die",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.6,
+     "text": "2018",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "democracies are more often eroded step by step, by elected leaders, than overthrown in a single coup.",
+    "tr": "Demokrasiler tek bir darbeyle devrilmekten çok, seçilmiş liderler tarafından adım adım aşındırılıyor."
+   },
+   "sketch": [
+    {
+     "el": "stairs",
+     "x": 0.12,
+     "y": 0.88,
+     "s": 1.5,
+     "n": 4
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "step by step",
+     "size": 1.5,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Each step looks small and legal on its own: a court packed here, a newspaper pressured there,",
+    "tr": "Her adım tek başına küçük ve yasal görünür: burada mahkemeye yeni atamalar, orada baskı altına alınan bir gazete,"
+   },
+   "sketch": [
+    {
+     "el": "balance",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 0.7,
+     "tilt": 0.5
+    },
+    {
+     "el": "newspaper",
+     "x": 0.75,
+     "y": 0.45,
+     "s": 0.6,
+     "head": "NEWS"
+    },
+    {
+     "el": "padlock",
+     "x": 0.75,
+     "y": 0.75,
+     "s": 0.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "an election rule changed, an \"emergency\" extended.",
+    "tr": "değiştirilen bir seçim kuralı, uzatılan bir \"olağanüstü hâl\"."
+   },
+   "sketch": [
+    {
+     "el": "ballot",
+     "x": 0.3,
+     "y": 0.8,
+     "s": 0.8
+    },
+    {
+     "el": "hourglass",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.85,
+     "text": "extended",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "You may have heard that a frog in slowly heating water won't jump out.",
+    "tr": "Yavaşça ısınan sudaki kurbağanın dışarı zıplamayacağını duymuşsundur."
+   },
+   "sketch": [
+    {
+     "el": "frog",
+     "x": 0.45,
+     "y": 0.8,
+     "s": 1.0,
+     "jump": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In reality, frogs *do* jump out. It's people who are bad at noticing slow change.",
+    "tr": "Gerçekte kurbağalar *zıplıyor*. Yavaş değişimi fark etmekte kötü olan insanlar."
+   },
+   "sketch": [
+    {
+     "el": "frog",
+     "x": 0.35,
+     "y": 0.8,
+     "s": 0.9,
+     "jump": true
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.25,
+     "text": "frogs jump",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.78,
+     "y": 0.45,
+     "text": "people don't",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And once a dictatorship is in place, why do people stay quiet, even when most of them are unhappy?",
+    "tr": "Peki bir diktatörlük kurulduktan sonra, çoğu mutsuz olsa bile insanlar neden sessiz kalıyor?"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.95,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.95,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.95,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.95,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.65,
+     "y": 0.95,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.95,
+     "h": 0.35,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.15,
+     "text": "silence",
+     "size": 1.6,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Economist *Timur Kuran* called it *preference falsification*: people hide what they really think, because speaking up is dangerous.",
+    "tr": "Ekonomist *Timur Kuran* buna *tercih gizleme* dedi: İnsanlar gerçekte ne düşündüklerini saklar, çünkü konuşmak tehlikelidir."
+   },
+   "sketch": [
+    {
+     "el": "maskface",
+     "x": 0.3,
+     "y": 0.92,
+     "s": 0.9,
+     "thought": "no"
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.35,
+     "text": "preference",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.52,
+     "text": "falsification",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And because everyone hides, everyone believes they're alone.",
+    "tr": "Herkes sakladığı için de herkes yalnız olduğuna inanır."
+   },
+   "sketch": [
+    {
+     "el": "maskface",
+     "x": 0.2,
+     "y": 0.92,
+     "s": 0.6,
+     "thought": "no"
+    },
+    {
+     "el": "maskface",
+     "x": 0.5,
+     "y": 0.92,
+     "s": 0.6,
+     "thought": "no"
+    },
+    {
+     "el": "maskface",
+     "x": 0.8,
+     "y": 0.92,
+     "s": 0.6,
+     "thought": "no"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "On December 21, 1989, Romania's dictator *Nicolae Ceaușescu* gave a speech to a huge crowd in Bucharest.",
+    "tr": "21 Aralık 1989'da Romanya diktatörü *Nicolae Çavuşesku*, Bükreş'te devasa bir kalabalığa konuşma yaptı."
+   },
+   "sketch": [
+    {
+     "el": "palace",
+     "x": 0.5,
+     "y": 0.6,
+     "s": 0.7
+    },
+    {
+     "el": "stands",
+     "x": 0.5,
+     "y": 0.98,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "Bucharest · Dec 21, 1989",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Partway through, some people began to boo. On live television, you can see his face freeze.",
+    "tr": "Konuşmanın ortasında bazı insanlar yuhalamaya başladı. Canlı yayında yüzünün donduğunu görebilirsin."
+   },
+   "sketch": [
+    {
+     "el": "tv",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 0.9,
+     "text": "LIVE"
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.3,
+     "text": "BOO",
+     "size": 1.8,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.55,
+     "text": "boo",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In that moment, thousands of people discovered that they weren't alone.",
+    "tr": "O anda binlerce insan yalnız olmadığını keşfetti."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.25,
+     "text": "BOO",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.2,
+     "text": "BOO",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.25,
+     "text": "BOO",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "stands",
+     "x": 0.5,
+     "y": 0.95,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The very next day, he fled the capital by helicopter, and his regime collapsed.",
+    "tr": "Hemen ertesi gün helikopterle başkentten kaçtı ve rejimi çöktü."
+   },
+   "sketch": [
+    {
+     "el": "heli",
+     "x": 0.6,
+     "y": 0.35,
+     "s": 0.9
+    },
+    {
+     "el": "throne",
+     "x": 0.3,
+     "y": 0.9,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.75,
+     "text": "Dec 22, 1989",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Dictatorships often look unbreakable right up until the moment they suddenly aren't.",
+    "tr": "Diktatörlükler, aniden yıkılana kadar çoğu zaman yıkılmaz görünür."
+   },
+   "sketch": [
+    {
+     "el": "throne",
+     "x": 0.5,
+     "y": 0.85,
+     "s": 0.9,
+     "shaky": true
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "unbreakable... until",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Which brings us back to La Boétie's answer from 1548.",
+    "tr": "Bu da bizi La Boétie'nin 1548'deki cevabına geri getiriyor."
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.1,
+     "text": "1548"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "He argued that tyranny doesn't need to be defeated by force. It only needs to lose the cooperation it depends on.",
+    "tr": "Tiranlığın zorla yenilmesi gerekmediğini savundu. Sadece dayandığı iş birliğini kaybetmesi yeterliydi."
+   },
+   "sketch": [
+    {
+     "el": "throne",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.92,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.92,
+     "h": 0.3,
+     "pose": "walk",
+     "face": -1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.92,
+     "h": 0.3,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "no cooperation",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "\"Resolve to serve no more,\" he wrote, \"and you are at once freed.\"",
+    "tr": "\"Artık hizmet etmemeye karar verin,\" diye yazdı, \"ve anında özgür olursunuz.\""
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "\"Resolve to serve no more,",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.55,
+     "text": "and you are at once freed.\"",
+     "size": 1.4,
+     "color": "blue",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Modern research points in a similar direction.",
+    "tr": "Modern araştırmalar da benzer bir yönü gösteriyor."
+   },
+   "sketch": [
+    {
+     "el": "magnifier",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Political scientist *Erica Chenoweth* studied hundreds of campaigns against governments in the twentieth century",
+    "tr": "Siyaset bilimci *Erica Chenoweth*, yirminci yüzyılda hükümetlere karşı yürütülen yüzlerce kampanyayı inceledi"
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.3,
+     "y": 0.72,
+     "s": 1.0,
+     "n": 3
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.42,
+     "text": "Chenoweth",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and found that nonviolent mass movements succeeded more often than violent ones, largely because they could draw in far more participants.",
+    "tr": "ve şiddet içermeyen kitlesel hareketlerin şiddet içerenlerden daha sık başarılı olduğunu buldu; büyük ölçüde çok daha fazla insanı dahil edebildikleri için."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.9,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.15,
+     "y": 0.9,
+     "h": 0.25,
+     "pose": "hold",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.28,
+     "y": 0.9,
+     "h": 0.25,
+     "pose": "hold",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.41,
+     "y": 0.9,
+     "h": 0.25,
+     "pose": "hold",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.54,
+     "y": 0.9,
+     "h": 0.25,
+     "pose": "hold",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.67,
+     "y": 0.9,
+     "h": 0.25,
+     "pose": "hold",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.9,
+     "h": 0.25,
+     "pose": "hold",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.15,
+     "text": "nonviolent · many people",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Power, in the end, is a relationship. Every regime, however strong it looks, runs on the daily choices of ordinary people.",
+    "tr": "Güç, sonunda bir ilişkidir. Ne kadar güçlü görünürse görünsün her rejim, sıradan insanların günlük seçimleriyle ayakta durur."
+   },
+   "sketch": [
+    {
+     "el": "throne",
+     "x": 0.5,
+     "y": 0.55,
+     "s": 0.6
+    },
+    {
+     "el": "line",
+     "x": 0.42,
+     "y": 0.62,
+     "s": 1.0,
+     "x2": 0.25,
+     "y2": 0.88
+    },
+    {
+     "el": "line",
+     "x": 0.58,
+     "y": 0.62,
+     "s": 1.0,
+     "x2": 0.75,
+     "y2": 0.88
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.92,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.92,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.75,
+     "y": 0.92,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Try this. Think of a time you went along with something you didn't agree with, at school, at work, in a group, because everyone else seemed to.",
+    "tr": "Şunu dene. Okulda, işte ya da bir grupta, herkes kabul ediyor gibi göründüğü için katılmadığın bir şeye uyduğun bir anı düşün."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.1,
+     "text": "try this",
+     "size": 1.0,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "table",
+     "x": 0.5,
+     "y": 0.72,
+     "s": 1.3
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.75,
+     "h": 0.4,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.75,
+     "y": 0.75,
+     "h": 0.4,
+     "pose": "sit",
+     "face": -1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Ask yourself: did I actually know what the others thought? Or did I just assume?",
+    "tr": "Kendine sor: Diğerlerinin ne düşündüğünü gerçekten biliyor muydum? Yoksa sadece varsaydım mı?"
+   },
+   "sketch": [
+    {
+     "el": "head",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.35,
+     "text": "know?",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.55,
+     "text": "or assume?",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Very often, the silence around you is made of people who feel exactly like you.",
+    "tr": "Çoğu zaman etrafındaki sessizlik, tam olarak senin gibi hisseden insanlardan oluşur."
+   },
+   "sketch": [
+    {
+     "el": "maskface",
+     "x": 0.2,
+     "y": 0.92,
+     "s": 0.55,
+     "thought": "me too"
+    },
+    {
+     "el": "maskface",
+     "x": 0.5,
+     "y": 0.92,
+     "s": 0.55,
+     "thought": "me too"
+    },
+    {
+     "el": "maskface",
+     "x": 0.8,
+     "y": 0.92,
+     "s": 0.55,
+     "thought": "me too"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We don't let dictators rise because we're evil, or stupid.",
+    "tr": "Diktatörlerin yükselmesine kötü ya da aptal olduğumuz için izin vermiyoruz."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.42,
+     "text": "evil",
+     "size": 1.5,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.3,
+     "y": 0.42,
+     "s": 0.5,
+     "at": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.42,
+     "text": "stupid",
+     "size": 1.5,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.7,
+     "y": 0.42,
+     "s": 0.5,
+     "at": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We let them rise because we're afraid, because we're tired, because we trust authority, and because we think we're alone.",
+    "tr": "Korktuğumuz için, yorgun olduğumuz için, otoriteye güvendiğimiz için ve yalnız olduğumuzu düşündüğümüz için izin veriyoruz."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.25,
+     "y": 0.3,
+     "text": "afraid",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.3,
+     "text": "tired",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.25,
+     "y": 0.6,
+     "text": "trust authority",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.6,
+     "text": "alone",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Those are human weaknesses. But they come with a human strength:",
+    "tr": "Bunlar insani zayıflıklar. Ama beraberlerinde insani bir güç de getiriyorlar:"
+   },
+   "sketch": [
+    {
+     "el": "heads",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.0,
+     "n": 3
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "the power was always ours to give, and ours to take back.",
+    "tr": "Güç her zaman vermesi de geri alması da bize ait olan bir şeydi."
+   },
+   "sketch": [
+    {
+     "el": "throne",
+     "x": 0.5,
+     "y": 0.6,
+     "s": 0.45
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.92,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.15,
+     "y": 0.92,
+     "h": 0.3,
+     "pose": "hold",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.92,
+     "h": 0.3,
+     "pose": "hold",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.92,
+     "h": 0.3,
+     "pose": "hold",
+     "face": -1
+    },
+    {
+     "el": "figure",
+     "x": 0.85,
+     "y": 0.92,
+     "h": 0.3,
+     "pose": "hold",
+     "face": -1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "ours to take back",
+     "size": 1.4,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,101 @@
+{
+ "cta": "subscribe for more  ·  full video on the channel",
+ "cta_scene": {
+  "say": {
+   "en": "Subscribe for more stories like this. The full video is on the channel.",
+   "tr": "Bunun gibi daha fazla hikâye için abone ol. Videonun tamamı kanalda."
+  },
+  "sketch": [
+   {
+    "el": "subscribe",
+    "x": 0.5,
+    "y": 0.4,
+    "s": 1.3
+   },
+   {
+    "el": "arrow",
+    "x": 0.25,
+    "y": 0.78,
+    "x2": 0.37,
+    "y2": 0.55,
+    "color": "red",
+    "s": 1.2
+   },
+   {
+    "el": "text",
+    "x": 0.5,
+    "y": 0.85,
+    "text": "full video on the channel",
+    "size": 0.9,
+    "color": "blue"
+   }
+  ]
+ },
+ "shorts": [
+  {
+   "from": 0,
+   "to": 7,
+   "title": "A tyrant has\nonly two hands"
+  },
+  {
+   "from": 8,
+   "to": 14,
+   "title": "\"Dictator\" was a\n6-month job in Rome"
+  },
+  {
+   "from": 14,
+   "to": 18,
+   "title": "How Rome lost\nits Republic"
+  },
+  {
+   "from": 19,
+   "to": 24,
+   "title": "Why freedom feels\nlike a burden"
+  },
+  {
+   "from": 25,
+   "to": 28,
+   "title": "Hobbes: we trade\nfreedom for safety"
+  },
+  {
+   "from": 29,
+   "to": 35,
+   "title": "Fear is the fuel\nof dictators"
+  },
+  {
+   "from": 36,
+   "to": 42,
+   "title": "Repeat a lie\noften enough..."
+  },
+  {
+   "from": 43,
+   "to": 51,
+   "title": "The Milgram experiment:\n2/3 went all the way"
+  },
+  {
+   "from": 52,
+   "to": 59,
+   "title": "Most dictatorships don't\nstart with tanks"
+  },
+  {
+   "from": 60,
+   "to": 61,
+   "title": "The boiling frog\nis a myth"
+  },
+  {
+   "from": 62,
+   "to": 69,
+   "title": "The moment a dictator\nlost his crowd"
+  },
+  {
+   "from": 70,
+   "to": 76,
+   "title": "\"Resolve to\nserve no more\""
+  },
+  {
+   "from": 77,
+   "to": 79,
+   "title": "Try this:\nis the silence real?"
+  }
+ ]
+}
