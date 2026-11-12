@@ -6,7 +6,7 @@
 - **Seslendirme:** İngilizce, Fenrir
 - **Altyazı:** EN gömülü, TR SRT
 - **Yaklaşım:** Önce teoriyi merak uyandırarak anlatıyoruz. Sonra iddiaları tek tek gerçek tarihle karşılaştırıyoruz. Son olarak bu teorinin neden bu kadar çekici geldiğini psikolojiyle açıklıyoruz. Kapanışta gerçek "Tartarya"nın, yani Moğol ve Türk bozkır imparatorluklarının, uydurma olandan daha etkileyici olduğunu gösteriyoruz.
-- **Shorts:** 10 adet. Hepsinin sonunda abone ol hatırlatması var.
+- **Shorts:** 11 adet. Hepsinin sonunda abone ol hatırlatması var.
 
 > ✂ işaretli bölümler Shorts olarak kesilecek.
 
@@ -114,7 +114,22 @@ Kayıp bir imparatorluk değildi. Bir şehir büyüklüğünde bir film platosuy
 
 *Görsel:* "White City" fotoğrafı (Wikimedia, 1893, karakalem). Kesit: dışta beyaz cephe, içte ahşap iskelet, "staff = plaster + fiber". Takvim "1 summer". Alevler, "1894". Müze binası. Film platosu: önden saray, arkadan destek çubukları.
 
-## 7:40 · Bölüm 6: Neden inanıyoruz? ✂ SHORT
+## 7:10 · Bölüm 6: Yetim trenleri ✂ SHORT
+**EN:** Claim number four is darker: the *orphan trains*.
+Between 1854 and 1929, charities in the United States put around two hundred thousand children from crowded eastern cities on trains heading west, to be placed with families in farming communities.
+Some Tartaria believers claim these children were "grown" or created to repopulate the world after the mud flood.
+But the orphan trains are extremely well documented: the children had names, birth records and families, and many of them told their own stories as adults. Historians have collected their letters and interviews.
+The real story is about poverty, crowded cities, and a controversial child welfare system, not a secret reset of humanity.
+
+**TR:** Dördüncü iddia daha karanlık: *yetim trenleri*.
+1854 ile 1929 arasında ABD'deki hayır kurumları, kalabalık doğu şehirlerinden yaklaşık iki yüz bin çocuğu batıya giden trenlere bindirdi; tarım bölgelerindeki ailelerin yanına yerleştirmek için.
+Bazı Tartarya inananları bu çocukların çamur selinden sonra dünyayı yeniden doldurmak için "yetiştirildiğini" ya da yaratıldığını iddia ediyor.
+Ama yetim trenleri son derece iyi belgelenmiş: Çocukların isimleri, doğum kayıtları ve aileleri vardı, birçoğu yetişkin olunca kendi hikâyesini anlattı. Tarihçiler mektuplarını ve röportajlarını derledi.
+Gerçek hikâye yoksulluk, kalabalık şehirler ve tartışmalı bir çocuk refahı sistemiyle ilgili; insanlığın gizlice sıfırlanmasıyla değil.
+
+*Görsel:* Buharlı tren, pencerelerde çocuk figürleri, "1854–1929", "≈200,000". Batıya ok, çiftlik evi. Mektup ve fotoğraf albümü, isim etiketleri.
+
+## 8:10 · Bölüm 7: Neden inanıyoruz? ✂ SHORT
 **EN:** If the evidence is so clear, why is Tartaria so convincing to so many people?
 Psychologists *Karen Douglas* and her colleagues suggest that conspiracy theories appeal to three kinds of needs: the need to *understand* a confusing world, the need to feel *safe and in control*, and the need to feel *special*, to know something others don't.
 There's also *proportionality bias*: we tend to feel that big, impressive things must have big, dramatic causes. A magnificent building made by ordinary workers with ordinary tools feels less satisfying than one made by a lost super-civilization.
@@ -129,7 +144,7 @@ Ama teorinin ne yaptığına dikkat et: Gerçek insanların, mimarların, taş u
 
 *Görsel:* Üç kutu: "understand · safe · special". Terazi: büyük bina ↔ küçük sebep (dengesiz), "proportionality bias". Süslü eski cephe ve düz modern bina. Taş oyan usta figürü; elindeki eser bir gölgeye geçiyor.
 
-## 8:50 · Bölüm 7: Gerçek Tartarya
+## 9:20 · Bölüm 8: Gerçek Tartarya
 **EN:** And here's the irony. The *real* lands Europeans called Tartary had history more spectacular than any myth.
 In the 1200s, the *Mongol Empire* became the largest contiguous land empire in history, stretching from Korea to Eastern Europe.
 After it split, the *Golden Horde* ruled the western steppe for more than two centuries. Its people were largely Turkic-speaking, and their descendants include today's Tatars, Kazakhs and many others.
@@ -172,7 +187,7 @@ Gerçek bir uygarlığı silmedi. Uygarlığın *ta kendisi* o.
 
 ---
 
-## Shorts listesi (10 adet, hepsinin sonunda abone ol hatırlatması)
+## Shorts listesi (11 adet, hepsinin sonunda abone ol hatırlatması)
 | # | Bölüm | Kanca başlığı |
 |---|---|---|
 | 1 | 0:00 | The empire that was "erased from history" |
@@ -182,9 +197,10 @@ Gerçek bir uygarlığı silmedi. Uygarlığın *ta kendisi* o.
 | 5 | 4:00 | Chicago lifted entire buildings |
 | 6 | 4:50 | Why star forts are shaped like stars |
 | 7 | 6:20 | The White City was fake (on purpose) |
-| 8 | 7:40 | Why conspiracy theories feel so convincing |
-| 9 | 8:50 | The REAL Tartaria was even bigger |
-| 10 | 9:40 | 3 questions to test any "hidden history" |
+| 8 | 7:10 | The orphan trains were real (the conspiracy isn't) |
+| 9 | 8:10 | Why conspiracy theories feel so convincing |
+| 10 | 9:20 | The REAL Tartaria was even bigger |
+| 11 | 10:10 | 3 questions to test any "hidden history" |
 
 ## Kaynaklar
 - Encyclopaedia Britannica: "Tartary"; Avrupa haritacılığında "Tartaria" (Ortelius, *Theatrum Orbis Terrarum*, 1570 vb.)
@@ -194,6 +210,7 @@ Gerçek bir uygarlığı silmedi. Uygarlığın *ta kendisi* o.
 - Chicago'nun yükseltilmesi (1850'ler–60'lar): *Encyclopedia of Chicago*, "Raising Chicago"
 - Duffy, *Siege Warfare: The Fortress in the Early Modern World 1494–1660* (1979); Vauban'ın tahkimatları (UNESCO)
 - 1893 World's Columbian Exposition: "staff" malzemesi, 1894 yangını; Museum of Science and Industry, Chicago
+- Orphan Train Movement (1854–1929): National Orphan Train Complex; Holt, *The Orphan Trains* (1992)
 - Douglas, Sutton & Cichocka (2017), *Current Directions in Psychological Science*, "The Psychology of Conspiracy Theories"
 - Leman & Cinnirella (2007): orantılılık yanlılığı
 - Moğol İmparatorluğu (13. yy), Altın Orda (yaklaşık 1240'lar–1500'ler), İpek Yolu
