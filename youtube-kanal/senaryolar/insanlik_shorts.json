@@ -1,0 +1,21 @@
+{
+  "cta": "subscribe for more  ·  full video on the channel",
+  "cta_scene": {
+    "say": {"en": "Subscribe for more stories like this. The full video is on the channel.",
+            "tr": "Bunun gibi daha fazla hikâye için abone ol. Videonun tamamı kanalda."},
+    "sketch": [{"el": "subscribe", "x": 0.5, "y": 0.4, "s": 1.3},
+               {"el": "arrow", "x": 0.25, "y": 0.78, "x2": 0.37, "y2": 0.55, "color": "red", "s": 1.2},
+               {"el": "text", "x": 0.5, "y": 0.85, "text": "full video on the channel", "size": 0.9, "color": "blue"}]
+  },
+  "shorts": [
+    {"from": 0, "to": 11, "title": "Humans are NOT at the top\nof the food chain"},
+    {"from": 12, "to": 18, "title": "On paper, humans are\nterribly designed"},
+    {"from": 19, "to": 28, "title": "Fire made us human"},
+    {"from": 29, "to": 40, "title": "We hunted by running\nanimals to death"},
+    {"from": 45, "to": 57, "title": "They had money and maps.\nThey still starved."},
+    {"from": 58, "to": 67, "title": "Why kids copy useless steps\n(and chimps don't)"},
+    {"from": 68, "to": 78, "title": "Built before farming:\nGöbekli Tepe"},
+    {"from": 79, "to": 85, "title": "Only 4% of mammals\non Earth are wild"},
+    {"from": 86, "to": 91, "title": "Try this: count what you\ncould make yourself"}
+  ]
+}

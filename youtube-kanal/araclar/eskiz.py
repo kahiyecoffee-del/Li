@@ -1579,6 +1579,171 @@ ELEMENTS_EXTRA.update({
 })
 
 
+# ----------------------------------------------------------- İnsanlık videosu
+def _quad(x, y, s, body, head, legs, tail=None, color=INK, tone=0.85, seed=0, extra=()):
+    """Dört ayaklı silüet: body (poligon, göreli), head (poligon), legs [(x0,y0,x1,y1)], tail (çizgi)."""
+    P = lambda pts: [(x + px * s, y + py * s) for px, py in pts]
+    out = [_blob(P(body), tone=tone, color=color, seed=seed, smooth=6 * s), _blob(P(head), tone=tone, color=color, seed=seed + 1, smooth=4 * s)]
+    for k, (a, b, c, d) in enumerate(legs):
+        out.append(Stroke([(x + a * s, y + b * s), (x + c * s, y + d * s)], 16 * s + 2, color, seed=seed + 2 + k))
+    if tail:
+        out.append(Stroke(P(tail), 7 * s + 1, color, seed=seed + 9))
+    for e in extra:
+        out.append(e)
+    return out
+
+
+def el_leopard(x, y, s, face=1, seed=0, **_):
+    f = face
+    body = [(-150 * f, -40), (-60 * f, -70), (90 * f, -65), (150 * f, -40), (140 * f, 30), (-140 * f, 35)]
+    head = [(140 * f, -60), (215 * f, -85), (250 * f, -55), (235 * f, -20), (160 * f, -10)]
+    legs = [(-120 * f, 20, -130 * f, 140), (-80 * f, 25, -60 * f, 140), (90 * f, 20, 80 * f, 140), (130 * f, 20, 150 * f, 140)]
+    tail = [(-145 * f, -30), (-230 * f, 0), (-260 * f, 80), (-230 * f, 110)]
+    out = _quad(x, y, s, body, head, legs, tail, color=(170, 120, 50), tone=0.75, seed=seed)
+    rnd = random.Random(seed)
+    for k in range(14):
+        sx, sy = x + rnd.uniform(-130, 130) * s, y + rnd.uniform(-55, 20) * s
+        out.append(Stroke(ellipse_pts(sx, sy, 9 * s, 8 * s, n=8), 4 * s, INK, 1, seed + 20 + k))
+    return out
+
+
+def el_antelope(x, y, s, face=1, tired=False, seed=0, **_):
+    f = face
+    body = [(-130 * f, -30), (110 * f, -40), (140 * f, 10), (-120 * f, 25)]
+    head = [(110 * f, -40), (150 * f, -130), (200 * f, -120), (165 * f, -30)] if not tired else [(120 * f, -10), (200 * f, 30), (210 * f, 60), (150 * f, 40)]
+    legs = [(-110 * f, 10, -115 * f, 150), (-80 * f, 15, -70 * f, 150), (90 * f, 10, 95 * f, 150), (120 * f, 10, 130 * f, 150)]
+    horns = (150 * f, -130, 140 * f, -230) if not tired else (200 * f, 30, 260 * f, -20)
+    out = _quad(x, y, s, body, head, legs, color=(150, 105, 60), tone=0.7, seed=seed)
+    out.append(Stroke([(x + horns[0] * s, y + horns[1] * s), (x + horns[2] * s, y + horns[3] * s)], 6 * s + 1, seed=seed + 30))
+    return out
+
+
+def el_mammoth(x, y, s, faded=False, seed=0, **_):
+    tone = 0.3 if faded else 0.85
+    body = [(-200, -60), (-120, -180), (60, -190), (170, -120), (190, 40), (-190, 50)]
+    head = [(150, -170), (250, -150), (270, -60), (210, 0), (160, -40)]
+    legs = [(-150, 30, -150, 200), (-90, 30, -90, 200), (100, 30, 100, 200), (160, 30, 160, 200)]
+    out = _quad(x, y, s, body, head, legs, color=(110, 80, 60), tone=tone, seed=seed)
+    out.append(Stroke(bez((x + 250 * s, y - 60 * s), (x + 300 * s, y + 100 * s), (x + 250 * s, y + 160 * s), 14), 18 * s + 1, (110, 80, 60), seed=seed + 31))
+    out.append(Stroke(bez((x + 230 * s, y - 20 * s), (x + 360 * s, y + 20 * s), (x + 340 * s, y - 110 * s), 14), 9 * s + 1, (235, 225, 200), seed=seed + 32))
+    return out
+
+
+def el_spear(x, y, s, angle=-0.35, seed=0, **_):
+    L = 520 * s
+    dx, dy = math.cos(angle) * L / 2, math.sin(angle) * L / 2
+    tip = [(x + dx, y + dy), (x + dx * 1.18, y + dy * 1.18)]
+    return [Stroke([(x - dx, y - dy), (x + dx, y + dy)], 8 * s + 1, (130, 90, 55), seed=seed),
+            Stroke(tip, 16 * s + 1, (120, 120, 130), seed=seed + 1)]
+
+
+def el_fish(x, y, s, label=None, color="ink", seed=0, **_):
+    c = COLORS.get(color, INK)
+    body = ellipse_pts(x, y, 120 * s, 45 * s, n=30, seed=seed)
+    out = [Stroke(body, 5 * s + 1, c, seed=seed),
+           Stroke([(x - 115 * s, y), (x - 190 * s, y - 50 * s), (x - 190 * s, y + 50 * s), (x - 115 * s, y)], 5 * s + 1, c, seed=seed + 1),
+           Stroke(ellipse_pts(x + 70 * s, y - 10 * s, 6 * s, 6 * s, n=8), 5 * s, c, seed=seed + 2)]
+    if label:
+        out.append(Text(label, x, y + 100 * s, 50 * s, c))
+    return out
+
+
+def el_skull(x, y, s, marks=True, seed=0, **_):
+    out = [Stroke(ellipse_pts(x, y - 30 * s, 120 * s, 110 * s, n=36, seed=seed), 6 * s + 1, seed=seed),
+           Stroke([(x - 70 * s, y + 60 * s), (x - 60 * s, y + 130 * s), (x + 60 * s, y + 130 * s), (x + 70 * s, y + 60 * s)], 6 * s + 1, seed=seed + 1)]
+    for ex in (x - 45 * s, x + 45 * s):
+        m, o = mask_from(lambda d, T, ss, ex=ex: d.ellipse([T((ex - 30 * s, y - 40 * s)), T((ex + 30 * s, y + 15 * s))], fill=255),
+                         (ex - 32 * s, y - 42 * s, ex + 32 * s, y + 17 * s))
+        out.append(Fill(m, o, tone=0.9, seed=seed + 2))
+    if marks:
+        for k in range(2):
+            mx = x - 25 * s + k * 50 * s
+            out.append(Stroke(ellipse_pts(mx, y - 110 * s, 10 * s, 10 * s, n=10), 6 * s, RED, seed=seed + 5 + k))
+    return out
+
+
+def el_sun(x, y, s, seed=0, **_):
+    m, o = mask_from(lambda d, T, ss: d.ellipse([T((x - 80 * s, y - 80 * s)), T((x + 80 * s, y + 80 * s))], fill=255),
+                     (x - 82 * s, y - 82 * s, x + 82 * s, y + 82 * s))
+    out = [Fill(m, o, tone=0.9, color=(240, 190, 60), seed=seed)]
+    for k in range(12):
+        a = k * math.pi / 6
+        out.append(Stroke([(x + math.cos(a) * 110 * s, y + math.sin(a) * 110 * s), (x + math.cos(a) * 160 * s, y + math.sin(a) * 160 * s)], 6 * s, (230, 170, 40), seed=seed + k))
+    return out
+
+
+def el_meat(x, y, s, cooked=False, seed=0, **_):
+    col = (150, 90, 50) if cooked else (200, 80, 80)
+    pts = [(x - 130 * s, y - 40 * s), (x - 40 * s, y - 100 * s), (x + 90 * s, y - 80 * s), (x + 130 * s, y), (x + 60 * s, y + 70 * s), (x - 100 * s, y + 50 * s)]
+    out = [_blob(pts, tone=0.8, color=col, seed=seed, smooth=8 * s),
+           Stroke([(x + 110 * s, y + 10 * s), (x + 220 * s, y + 60 * s)], 18 * s + 1, (235, 225, 205), seed=seed + 1)]
+    if cooked:
+        for k in range(3):
+            out.append(Stroke(bez((x - 40 * s + k * 50 * s, y - 120 * s), (x - 10 * s + k * 50 * s, y - 170 * s), (x - 40 * s + k * 50 * s, y - 230 * s), 8),
+                              4 * s, COLORS["grey"], 1, seed + 2 + k))
+    return out
+
+
+def el_plant(x, y, s, seed=0, **_):
+    """Nardoo: dört yapraklı (yonca benzeri) su eğreltisi."""
+    out = [Stroke([(x, y), (x, y - 220 * s)], 6 * s + 1, (70, 120, 60), seed=seed)]
+    for k in range(4):
+        a = k * math.pi / 2 + math.pi / 4
+        cx, cy = x + math.cos(a) * 60 * s, y - 220 * s + math.sin(a) * 60 * s
+        out.append(_blob(ellipse_pts(cx, cy, 55 * s, 55 * s, n=16, extra=0), tone=0.7, color=(80, 140, 70), seed=seed + 1 + k, smooth=3))
+    for k in range(5):
+        out.append(Stroke(ellipse_pts(x - 100 * s + k * 50 * s, y + 20 * s, 14 * s, 10 * s, n=10), 4 * s, (120, 90, 60), seed=seed + 8 + k))
+    return out
+
+
+def el_pillar(x, y, s, carved=True, seed=0, **_):
+    """Göbeklitepe T-sütunu."""
+    out = [_blob([(x - 70 * s, y), (x - 70 * s, y - 380 * s), (x + 70 * s, y - 380 * s), (x + 70 * s, y)], tone=0.35, color=(190, 175, 150), seed=seed),
+           Stroke(_rect(x - 70 * s, y - 380 * s, x + 70 * s, y), 5 * s + 1, seed=seed + 1),
+           _blob([(x - 170 * s, y - 380 * s), (x - 170 * s, y - 470 * s), (x + 130 * s, y - 470 * s), (x + 130 * s, y - 380 * s)], tone=0.35, color=(190, 175, 150), seed=seed + 2),
+           Stroke(_rect(x - 170 * s, y - 470 * s, x + 130 * s, y - 380 * s), 5 * s + 1, seed=seed + 3)]
+    if carved:
+        out.append(Stroke([(x - 40 * s, y - 330 * s), (x - 40 * s, y - 150 * s), (x - 10 * s, y - 120 * s)], 4 * s, seed=seed + 4))
+        out.append(Stroke(bez((x - 20 * s, y - 280 * s), (x + 50 * s, y - 250 * s), (x + 10 * s, y - 210 * s), 10), 4 * s, seed=seed + 5))
+    return out
+
+
+def el_bars(x, y, s, values=(("wild", 4, "green"), ("humans", 36, "blue"), ("livestock", 60, "red")), seed=0, **_):
+    out = [Stroke([(x - 380 * s, y), (x + 380 * s, y)], 5 * s + 1, seed=seed)]
+    cols = {"green": (70, 140, 70), "blue": BLUE, "red": RED}
+    n = len(values)
+    for k, (lab, v, c) in enumerate(values):
+        cx = x - 260 * s + k * 520 * s / max(n - 1, 1)
+        h = v / 60 * 420 * s
+        col = cols.get(c, INK)
+        out.append(_blob([(cx - 70 * s, y), (cx - 70 * s, y - h), (cx + 70 * s, y - h), (cx + 70 * s, y)], tone=0.6, color=col, seed=seed + k))
+        out.append(Text(f"{v}%", cx, y - h - 45 * s, 60 * s, col))
+        out.append(Text(lab, cx, y + 50 * s, 46 * s, INK))
+    return out
+
+
+def el_ape(x, y, s, face=1, seed=0, **_):
+    """Kambur, uzun kollu maymun silüeti."""
+    f = face
+    body = [(-60 * f, -40), (40 * f, -170), (110 * f, -160), (90 * f, 0), (-70 * f, 20)]
+    head = [(90 * f, -230), (150 * f, -225), (160 * f, -170), (100 * f, -160)]
+    legs = [(-50 * f, 10, -80 * f, 150), (60 * f, 0, 30 * f, 150), (100 * f, -140, 150 * f, 120), (50 * f, -140, 0 * f, 130)]
+    return _quad(x, y, s, body, head, legs, color=(60, 55, 55), tone=0.88, seed=seed)
+
+
+def el_australia(x, y, s, seed=0, **_):
+    pts = [(-300, -60), (-220, -150), (-120, -140), (-60, -220), (20, -180), (60, -260), (120, -150), (220, -60), (290, 40), (240, 170), (130, 220),
+           (40, 160), (-60, 150), (-180, 190), (-280, 120), (-320, 20)]
+    P = [(x + a * s, y + b * s) for a, b in pts]
+    return [_blob(P, tone=0.2, color=(200, 160, 100), seed=seed, smooth=4 * s), Stroke(P + [P[0]], 5 * s + 1, seed=seed + 1)]
+
+
+ELEMENTS_EXTRA.update({
+    "leopard": el_leopard, "antelope": el_antelope, "mammoth": el_mammoth, "spear": el_spear, "fish": el_fish, "skull": el_skull,
+    "sun": el_sun, "meat": el_meat, "plant": el_plant, "pillar": el_pillar, "bars": el_bars, "ape": el_ape, "australia": el_australia,
+})
+
+
 # --------------------------------------------------------------------------- #
 # Sahne: öğeleri sırayla çizer
 # --------------------------------------------------------------------------- #

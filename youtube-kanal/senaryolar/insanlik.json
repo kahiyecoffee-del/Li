@@ -1,0 +1,3037 @@
+{
+ "slug": "insanlik",
+ "format": "long",
+ "theme": "karakalem",
+ "character": "none",
+ "languages": [
+  "en"
+ ],
+ "subtitles": [
+  "tr"
+ ],
+ "voices": {
+  "en": "am_fenrir"
+ },
+ "speech_rate": 0.88,
+ "meta": {
+  "en": {
+   "title": "How Did Humans Get to the Top?",
+   "description": "",
+   "tags": []
+  },
+  "tr": {
+   "title": "İnsanlık Neden Başarılı?",
+   "description": "",
+   "tags": []
+  }
+ },
+ "subscribe": {
+  "after": 12,
+  "sketch": [
+   {
+    "el": "subscribe",
+    "x": 0.45,
+    "y": 0.45,
+    "s": 1.4
+   },
+   {
+    "el": "arrow",
+    "x": 0.2,
+    "y": 0.75,
+    "x2": 0.33,
+    "y2": 0.55,
+    "color": "red",
+    "s": 1.2
+   }
+  ],
+  "say": {
+   "en": "If you like big questions about who we are and how we got here, *subscribe*. It genuinely helps the channel.",
+   "tr": "Kim olduğumuz ve buraya nasıl geldiğimizle ilgili büyük soruları seviyorsan *abone ol*. Kanala gerçekten çok yardımı oluyor."
+  }
+ },
+ "scenes": [
+  {
+   "say": {
+    "en": "Two million years ago, our ancestors were not hunters. They were often the hunted.",
+    "tr": "İki milyon yıl önce atalarımız avcı değildi. Çoğu zaman av olan onlardı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "walk",
+     "face": -1
+    },
+    {
+     "el": "leopard",
+     "x": 0.68,
+     "y": 0.62,
+     "s": 0.9,
+     "face": -1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Leopards dragged them into caves; their bones have been found with tooth marks.",
+    "tr": "Leoparlar onları mağaralara sürüklüyordu; kemikleri diş izleriyle bulundu."
+   },
+   "sketch": [
+    {
+     "el": "cave",
+     "x": 0.3,
+     "y": 0.55,
+     "s": 0.7,
+     "fire": false
+    },
+    {
+     "el": "skull",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.85,
+     "text": "tooth marks",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Today, there are about eight billion of us.",
+    "tr": "Bugün yaklaşık sekiz milyarız."
+   },
+   "sketch": [
+    {
+     "el": "globe",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 1.1
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.45,
+     "text": "8,000,000,000",
+     "size": 1.2,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We live on every continent, we've walked on the Moon, and we've changed the planet itself.",
+    "tr": "Her kıtada yaşıyoruz, Ay'da yürüdük ve gezegenin kendisini değiştirdik."
+   },
+   "sketch": [
+    {
+     "el": "globe",
+     "x": 0.3,
+     "y": 0.55,
+     "s": 0.9
+    },
+    {
+     "el": "moon",
+     "x": 0.75,
+     "y": 0.3,
+     "s": 1.0
+    },
+    {
+     "el": "figure",
+     "x": 0.75,
+     "y": 0.48,
+     "h": 0.15,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "So here's a strange fact: according to scientists, we are *not* at the top of the food chain.",
+    "tr": "İşte tuhaf bir gerçek: Bilim insanlarına göre besin zincirinin tepesinde *değiliz*."
+   },
+   "sketch": [
+    {
+     "el": "stairs",
+     "x": 0.165,
+     "y": 0.85,
+     "s": 1.4,
+     "n": 4
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.71,
+     "h": 0.22,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "not at the top?",
+     "size": 1.4,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 2013, a team of researchers calculated humanity's average \"trophic level\" — where we sit in the food chain — from what people actually eat around the world.",
+    "tr": "2013'te bir araştırma ekibi, dünyada insanların gerçekte ne yediğine bakarak insanlığın ortalama \"trofik seviyesini\", yani besin zincirindeki yerimizi hesapladı."
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.3,
+     "y": 0.75,
+     "s": 0.9,
+     "n": 2
+    },
+    {
+     "el": "magnifier",
+     "x": 0.3,
+     "y": 0.38,
+     "s": 0.7
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.4,
+     "text": "trophic level",
+     "size": 1.3,
+     "color": "ink",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.6,
+     "text": "2013",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The answer: about *2.2*.",
+    "tr": "Cevap: yaklaşık *2,2*."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "2.2",
+     "size": 3.5,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "That's roughly the same as an *anchovy*.",
+    "tr": "Bu kabaca bir *hamsiyle* aynı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.5,
+     "text": "=",
+     "size": 2.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "fish",
+     "x": 0.75,
+     "y": 0.45,
+     "s": 1.2,
+     "label": "anchovy · 2.2",
+     "color": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A polar bear or a killer whale sits near 5.",
+    "tr": "Bir kutup ayısı ya da katil balina 5'e yakın."
+   },
+   "sketch": [
+    {
+     "el": "bear",
+     "x": 0.3,
+     "y": 0.5,
+     "s": 0.8
+    },
+    {
+     "el": "fish",
+     "x": 0.75,
+     "y": 0.45,
+     "s": 1.8
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "≈ 5",
+     "size": 1.8,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We're not the strongest predator. We're not even close.",
+    "tr": "En güçlü avcı değiliz. Yakınından bile geçmiyoruz."
+   },
+   "sketch": [
+    {
+     "el": "leopard",
+     "x": 0.35,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "shrug",
+     "face": -1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And yet we rule the planet.",
+    "tr": "Yine de gezegene hükmediyoruz."
+   },
+   "sketch": [
+    {
+     "el": "globe",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.2
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.26,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "How?",
+    "tr": "Nasıl?"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "How?",
+     "size": 3.0,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Look at the human body as a zoologist would.",
+    "tr": "İnsan bedenine bir zoolog gibi bak."
+   },
+   "sketch": [
+    {
+     "el": "magnifier",
+     "x": 0.3,
+     "y": 0.4,
+     "s": 1.0
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "No claws. Small teeth. Thin skin.",
+    "tr": "Pençe yok. Küçük dişler. İnce deri."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.25,
+     "text": "no claws",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.45,
+     "text": "small teeth",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.65,
+     "text": "thin skin",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We're slow sprinters: a rabbit can outrun the fastest person on Earth.",
+    "tr": "Kısa mesafede yavaşız: Bir tavşan dünyanın en hızlı insanını geride bırakabilir."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "antelope",
+     "x": 0.72,
+     "y": 0.62,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.15,
+     "text": "faster",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Pound for pound, a chimpanzee's muscles are roughly one and a half times more powerful than ours.",
+    "tr": "Kilo başına bir şempanzenin kasları bizimkilerden yaklaşık bir buçuk kat daha güçlüdür."
+   },
+   "sketch": [
+    {
+     "el": "ape",
+     "x": 0.3,
+     "y": 0.6,
+     "s": 1.1
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.85,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.72,
+     "y": 0.85,
+     "h": 0.55,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.1,
+     "text": "×1.5",
+     "size": 1.6,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And our babies are almost uniquely helpless.",
+    "tr": "Bebeklerimiz neredeyse benzersiz derecede çaresizdir."
+   },
+   "sketch": [
+    {
+     "el": "bed",
+     "x": 0.5,
+     "y": 0.8,
+     "s": 1.1
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.68,
+     "h": 0.18,
+     "pose": "lie",
+     "face": 1,
+     "child": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A baby giraffe can stand within an hour. A human baby takes about a year to walk.",
+    "tr": "Bir zürafa yavrusu bir saat içinde ayağa kalkar. Bir insan bebeğinin yürümesi yaklaşık bir yıl sürer."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "antelope",
+     "x": 0.28,
+     "y": 0.62,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.28,
+     "y": 0.12,
+     "text": "1 hour",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "figure",
+     "x": 0.72,
+     "y": 0.8,
+     "h": 0.22,
+     "pose": "lie",
+     "face": 1,
+     "child": true
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.12,
+     "text": "1 year",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "On paper, we're one of the worst-designed animals to dominate a planet.",
+    "tr": "Kâğıt üzerinde, bir gezegene hükmetmek için en kötü tasarlanmış hayvanlardan biriyiz."
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 1.0,
+     "text": "on paper"
+    },
+    {
+     "el": "cross",
+     "x": 0.72,
+     "y": 0.45,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The first secret was *fire*.",
+    "tr": "İlk sır *ateşti*."
+   },
+   "sketch": [
+    {
+     "el": "campfire",
+     "x": 0.5,
+     "y": 0.65,
+     "s": 1.6
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "fire",
+     "size": 1.8,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Our ancestors were using fire at least hundreds of thousands of years ago, and possibly much earlier.",
+    "tr": "Atalarımız ateşi en az yüz binlerce yıl önce kullanıyordu, belki çok daha önce."
+   },
+   "sketch": [
+    {
+     "el": "campfire",
+     "x": 0.35,
+     "y": 0.7,
+     "s": 1.2
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.4,
+     "text": "100,000s",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.6,
+     "text": "of years",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Fire gave light, warmth, and protection from predators.",
+    "tr": "Ateş ışık, sıcaklık ve yırtıcılardan koruma sağladı."
+   },
+   "sketch": [
+    {
+     "el": "campfire",
+     "x": 0.45,
+     "y": 0.72,
+     "s": 1.1
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.75,
+     "h": 0.35,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.75,
+     "h": 0.35,
+     "pose": "sit",
+     "face": -1
+    },
+    {
+     "el": "eye",
+     "x": 0.88,
+     "y": 0.3,
+     "s": 0.3
+    },
+    {
+     "el": "eye",
+     "x": 0.1,
+     "y": 0.3,
+     "s": 0.3
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But its biggest gift was *cooking*.",
+    "tr": "Ama en büyük armağanı *pişirmekti*."
+   },
+   "sketch": [
+    {
+     "el": "campfire",
+     "x": 0.5,
+     "y": 0.78,
+     "s": 1.0
+    },
+    {
+     "el": "meat",
+     "x": 0.5,
+     "y": 0.4,
+     "s": 0.8,
+     "cooked": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Harvard anthropologist *Richard Wrangham* argues that cooking changed our bodies.",
+    "tr": "Harvard antropoloğu *Richard Wrangham*, pişirmenin bedenlerimizi değiştirdiğini savunur."
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.3,
+     "y": 0.72,
+     "s": 1.0,
+     "n": 1
+    },
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.4,
+     "text": "Catching Fire",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.42,
+     "text": "Wrangham · 2009",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Cooked food is softer and gives more energy for less chewing and digestion.",
+    "tr": "Pişmiş yemek daha yumuşaktır ve daha az çiğneme ve sindirimle daha fazla enerji verir."
+   },
+   "sketch": [
+    {
+     "el": "meat",
+     "x": 0.25,
+     "y": 0.5,
+     "s": 0.9
+    },
+    {
+     "el": "arrow",
+     "x": 0.42,
+     "y": 0.5,
+     "x2": 0.58,
+     "y2": 0.5,
+     "bend": 0.0
+    },
+    {
+     "el": "meat",
+     "x": 0.75,
+     "y": 0.55,
+     "s": 0.9,
+     "cooked": true
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.88,
+     "text": "+ energy",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And that energy went somewhere expensive: the *brain*.",
+    "tr": "Ve bu enerji pahalı bir yere gitti: *beyne*."
+   },
+   "sketch": [
+    {
+     "el": "meat",
+     "x": 0.25,
+     "y": 0.55,
+     "s": 0.7,
+     "cooked": true
+    },
+    {
+     "el": "arrow",
+     "x": 0.4,
+     "y": 0.5,
+     "x2": 0.55,
+     "y2": 0.45,
+     "bend": 0.0,
+     "color": "red"
+    },
+    {
+     "el": "brain",
+     "x": 0.75,
+     "y": 0.45,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Your brain is about 2% of your body weight, but it uses roughly 20% of your energy.",
+    "tr": "Beynin vücut ağırlığının yaklaşık %2'si, ama enerjinin kabaca %20'sini kullanıyor."
+   },
+   "sketch": [
+    {
+     "el": "brain",
+     "x": 0.3,
+     "y": 0.45,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.32,
+     "text": "2% weight",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.55,
+     "text": "20% energy",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A big brain is a luxury, and cooking may have helped us afford it.",
+    "tr": "Büyük bir beyin bir lükstür ve pişirmek onu karşılayabilmemize yardım etmiş olabilir."
+   },
+   "sketch": [
+    {
+     "el": "campfire",
+     "x": 0.28,
+     "y": 0.72,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.45,
+     "text": "=",
+     "size": 2.0,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "head",
+     "x": 0.75,
+     "y": 0.5,
+     "s": 0.6,
+     "glow": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In a sense, we didn't just tame fire. Fire helped make us human.",
+    "tr": "Bir anlamda ateşi sadece evcilleştirmedik. Ateş bizi insan yapmaya yardım etti."
+   },
+   "sketch": [
+    {
+     "el": "campfire",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 1.3
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.15,
+     "text": "fire made us human",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The second secret is hiding in your legs.",
+    "tr": "İkinci sır bacaklarında saklı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.6,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "circle",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 0.8,
+     "rx": 140,
+     "ry": 160
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We're bad sprinters, but we're incredible *long-distance* runners.",
+    "tr": "Kısa mesafede kötüyüz ama *uzun mesafede* inanılmaz koşucularız."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.4,
+     "text": "long distance",
+     "size": 1.4,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We sweat to cool down, we have long legs and springy Achilles tendons,",
+    "tr": "Serinlemek için terleriz, uzun bacaklarımız ve esnek Aşil tendonlarımız var"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.4,
+     "y": 0.8,
+     "h": 0.6,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "dot",
+     "x": 0.44,
+     "y": 0.3,
+     "s": 0.4,
+     "color": "blue"
+    },
+    {
+     "el": "dot",
+     "x": 0.36,
+     "y": 0.38,
+     "s": 0.4,
+     "color": "blue"
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.3,
+     "text": "sweat",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.6,
+     "text": "Achilles",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and we can keep running in the heat long after most animals have to stop.",
+    "tr": "ve çoğu hayvan durmak zorunda kaldıktan çok sonra bile sıcakta koşmaya devam edebiliriz."
+   },
+   "sketch": [
+    {
+     "el": "sun",
+     "x": 0.85,
+     "y": 0.18,
+     "s": 0.8
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "antelope",
+     "x": 0.7,
+     "y": 0.62,
+     "s": 0.7,
+     "tired": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Scientists *Daniel Lieberman* and *Dennis Bramble* argue this allowed *persistence hunting*:",
+    "tr": "Bilim insanları *Daniel Lieberman* ve *Dennis Bramble*, bunun *dayanıklılık avcılığını* mümkün kıldığını savunur:"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "persistence hunting",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.58,
+     "text": "Bramble & Lieberman · 2004",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "chasing an animal in the midday heat, for hours, until it collapses from exhaustion.",
+    "tr": "bir hayvanı öğle sıcağında saatlerce, yorgunluktan yığılıp kalana kadar kovalamak."
+   },
+   "sketch": [
+    {
+     "el": "sun",
+     "x": 0.5,
+     "y": 0.15,
+     "s": 0.7
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "antelope",
+     "x": 0.72,
+     "y": 0.65,
+     "s": 0.8,
+     "tired": true
+    },
+    {
+     "el": "hourglass",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Some hunters in the Kalahari have been documented doing exactly this in recent times.",
+    "tr": "Kalahari'de bazı avcıların yakın zamanda tam olarak bunu yaptığı belgelendi."
+   },
+   "sketch": [
+    {
+     "el": "sun",
+     "x": 0.85,
+     "y": 0.15,
+     "s": 0.6
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.42,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.4,
+     "text": "Kalahari",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And then there's *throwing*.",
+    "tr": "Bir de *fırlatmak* var."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "reach",
+     "face": 1
+    },
+    {
+     "el": "spear",
+     "x": 0.65,
+     "y": 0.35,
+     "s": 0.8
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Humans are the only animals that can throw hard and accurately.",
+    "tr": "İnsanlar güçlü ve isabetli fırlatabilen tek hayvanlardır."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "reach",
+     "face": 1
+    },
+    {
+     "el": "arrow",
+     "x": 0.3,
+     "y": 0.3,
+     "x2": 0.75,
+     "y2": 0.5,
+     "bend": -0.2,
+     "color": "red"
+    },
+    {
+     "el": "circle",
+     "x": 0.8,
+     "y": 0.55,
+     "s": 0.6
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "A 2013 study found that changes in our shoulders, appearing around two million years ago, work like a catapult,",
+    "tr": "2013'te yapılan bir çalışma, yaklaşık iki milyon yıl önce ortaya çıkan omuz değişikliklerimizin bir mancınık gibi çalıştığını buldu:"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "reach",
+     "face": 1
+    },
+    {
+     "el": "circle",
+     "x": 0.33,
+     "y": 0.35,
+     "s": 0.5,
+     "color": "blue"
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.35,
+     "text": "a catapult",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.55,
+     "text": "2 million years",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "storing energy and releasing it in a snap.",
+    "tr": "enerjiyi depolayıp bir anda serbest bırakıyor."
+   },
+   "sketch": [
+    {
+     "el": "spear",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.3
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.85,
+     "text": "snap!",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We didn't need to be strong. We could tire our prey out, and hit it from a distance.",
+    "tr": "Güçlü olmamız gerekmiyordu. Avımızı yorabilir ve ona uzaktan vurabilirdik."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "reach",
+     "face": 1
+    },
+    {
+     "el": "spear",
+     "x": 0.48,
+     "y": 0.4,
+     "s": 0.6
+    },
+    {
+     "el": "mammoth",
+     "x": 0.78,
+     "y": 0.55,
+     "s": 0.7
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But fire, running and throwing still don't explain everything.",
+    "tr": "Ama ateş, koşmak ve fırlatmak hâlâ her şeyi açıklamıyor."
+   },
+   "sketch": [
+    {
+     "el": "campfire",
+     "x": 0.2,
+     "y": 0.6,
+     "s": 0.7
+    },
+    {
+     "el": "antelope",
+     "x": 0.5,
+     "y": 0.55,
+     "s": 0.6
+    },
+    {
+     "el": "spear",
+     "x": 0.8,
+     "y": 0.5,
+     "s": 0.5
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "not enough",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Other species have had their own superpowers. None of them built cities.",
+    "tr": "Başka türlerin de kendi süper güçleri oldu. Hiçbiri şehir kurmadı."
+   },
+   "sketch": [
+    {
+     "el": "leopard",
+     "x": 0.25,
+     "y": 0.5,
+     "s": 0.7
+    },
+    {
+     "el": "fish",
+     "x": 0.25,
+     "y": 0.85,
+     "s": 0.6
+    },
+    {
+     "el": "house",
+     "x": 0.72,
+     "y": 0.8,
+     "s": 0.8
+    },
+    {
+     "el": "cross",
+     "x": 0.72,
+     "y": 0.6,
+     "s": 0.8,
+     "at": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The real secret, many researchers argue, is something you can't see in a skeleton:",
+    "tr": "Birçok araştırmacıya göre asıl sır bir iskelette göremeyeceğin bir şey:"
+   },
+   "sketch": [
+    {
+     "el": "skull",
+     "x": 0.35,
+     "y": 0.45,
+     "s": 1.0,
+     "marks": false
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.45,
+     "text": "?",
+     "size": 2.6,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "*we learn from each other, and the knowledge adds up*.",
+    "tr": "*birbirimizden öğreniyoruz ve bilgi birikiyor*."
+   },
+   "sketch": [
+    {
+     "el": "heads",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.0,
+     "n": 3
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "learning adds up",
+     "size": 1.2,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Here's a story that shows it.",
+    "tr": "Bunu gösteren bir hikâye var."
+   },
+   "sketch": [
+    {
+     "el": "scroll",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.1,
+     "text": "1860"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In 1860, the explorers *Burke* and *Wills* set out to cross Australia from south to north.",
+    "tr": "1860'ta kâşifler *Burke* ve *Wills*, Avustralya'yı güneyden kuzeye geçmek için yola çıktı."
+   },
+   "image": {
+    "file": "File:Burke and wills nicholas chevalier-2.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Burke & Wills set out · Melbourne, 1860",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "They were well funded and well equipped.",
+    "tr": "Bol paraları ve iyi teçhizatları vardı."
+   },
+   "sketch": [
+    {
+     "el": "money",
+     "x": 0.3,
+     "y": 0.6,
+     "s": 1.0,
+     "text": "£"
+    },
+    {
+     "el": "box",
+     "x": 0.7,
+     "y": 0.6,
+     "s": 1.0
+    },
+    {
+     "el": "box",
+     "x": 0.82,
+     "y": 0.62,
+     "s": 0.7
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "On the way back, they ran out of food.",
+    "tr": "Dönüş yolunda yiyecekleri bitti."
+   },
+   "sketch": [
+    {
+     "el": "sun",
+     "x": 0.82,
+     "y": 0.15,
+     "s": 0.6
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "walk",
+     "face": 1
+    },
+    {
+     "el": "basket",
+     "x": 0.75,
+     "y": 0.75,
+     "s": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.75,
+     "y": 0.5,
+     "text": "empty",
+     "size": 1.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They found a plant called *nardoo*",
+    "tr": "*Nardoo* adlı bir bitki buldular"
+   },
+   "sketch": [
+    {
+     "el": "plant",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 1.3
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "nardoo",
+     "size": 1.6,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and learned from local Aboriginal people how to grind its seeds into flour.",
+    "tr": "ve yerel Aborjin halkından tohumlarını öğütüp un yapmayı öğrendiler."
+   },
+   "sketch": [
+    {
+     "el": "plant",
+     "x": 0.25,
+     "y": 0.75,
+     "s": 0.8
+    },
+    {
+     "el": "arrow",
+     "x": 0.36,
+     "y": 0.55,
+     "x2": 0.5,
+     "y2": 0.55,
+     "bend": 0.0
+    },
+    {
+     "el": "stone",
+     "x": 0.65,
+     "y": 0.65,
+     "s": 1.0
+    },
+    {
+     "el": "dots",
+     "x": 0.85,
+     "y": 0.6,
+     "s": 0.4,
+     "n": 20,
+     "cols": 5,
+     "highlight": 0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "They ate it every day. And they kept getting weaker.",
+    "tr": "Her gün yediler. Ve giderek zayıfladılar."
+   },
+   "sketch": [
+    {
+     "el": "graph",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.0,
+     "up": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "weaker",
+     "size": 1.3,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "What they didn't know was that nardoo, prepared the wrong way, contains an enzyme that destroys vitamin B1.",
+    "tr": "Bilmedikleri şey, yanlış hazırlanan nardoonun B1 vitaminini yok eden bir enzim içermesiydi."
+   },
+   "sketch": [
+    {
+     "el": "plant",
+     "x": 0.3,
+     "y": 0.75,
+     "s": 0.9
+    },
+    {
+     "el": "warning",
+     "x": 0.72,
+     "y": 0.4,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.8,
+     "text": "destroys B1",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The local *Yandruwandha* people prepared it with careful steps, using water, that made it safe.",
+    "tr": "Yerel *Yandruwandha* halkı onu su kullanarak, dikkatli adımlarla hazırlıyor ve güvenli hale getiriyordu."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.3,
+     "text": "1. grind",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.3,
+     "text": "2. water",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.3,
+     "text": "3. wash",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "sit",
+     "face": -1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Burke and Wills skipped those steps.",
+    "tr": "Burke ve Wills bu adımları atladı."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.42,
+     "text": "1.",
+     "size": 1.6,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "2.",
+     "size": 1.6,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.8,
+     "y": 0.42,
+     "text": "3.",
+     "size": 1.6,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.5,
+     "y": 0.42,
+     "s": 0.7,
+     "at": 0.5
+    },
+    {
+     "el": "cross",
+     "x": 0.8,
+     "y": 0.42,
+     "s": 0.7,
+     "at": 0.9
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Both men died.",
+    "tr": "İkisi de öldü."
+   },
+   "image": {
+    "file": "File:Burke and Wills, 08 Death of Wills, S T Gill.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "The death of Wills · S. T. Gill",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "One of their companions survived — because the Yandruwandha took him in and fed him.",
+    "tr": "Arkadaşlarından biri hayatta kaldı, çünkü Yandruwandha halkı onu yanlarına alıp besledi."
+   },
+   "sketch": [
+    {
+     "el": "campfire",
+     "x": 0.5,
+     "y": 0.75,
+     "s": 0.9
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.78,
+     "h": 0.4,
+     "pose": "sit",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.78,
+     "h": 0.4,
+     "pose": "sit",
+     "face": -1
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.9,
+     "h": 0.35,
+     "pose": "lie",
+     "face": 1
+    },
+    {
+     "el": "heart",
+     "x": 0.5,
+     "y": 0.2,
+     "s": 0.5
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Intelligent individuals, alone, could not survive where an entire culture had learned how to live.",
+    "tr": "Zeki bireyler tek başlarına, koca bir kültürün nasıl yaşanacağını öğrendiği yerde hayatta kalamadı."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.12,
+     "text": "alone",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "figure",
+     "x": 0.55,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.65,
+     "y": 0.8,
+     "h": 0.42,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.75,
+     "y": 0.8,
+     "h": 0.38,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.85,
+     "y": 0.8,
+     "h": 0.4,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.12,
+     "text": "a culture",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Anthropologist *Joseph Henrich* calls this *cumulative culture*, and he argues it's the secret of our success.",
+    "tr": "Antropolog *Joseph Henrich* buna *birikimli kültür* diyor ve bunun başarımızın sırrı olduğunu savunuyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.35,
+     "text": "cumulative culture",
+     "size": 1.6,
+     "color": "ink",
+     "underline": "red"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.58,
+     "text": "Henrich · The Secret of Our Success",
+     "size": 1.0,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "No single person invented the bow, the canoe, or the smartphone.",
+    "tr": "Yayı, kanoyu ya da akıllı telefonu tek bir kişi icat etmedi."
+   },
+   "sketch": [
+    {
+     "el": "spear",
+     "x": 0.25,
+     "y": 0.45,
+     "s": 0.5
+    },
+    {
+     "el": "phone",
+     "x": 0.75,
+     "y": 0.45,
+     "s": 0.8
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.85,
+     "text": "no single inventor",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Each generation inherits what the last one figured out, adds a little, and passes it on.",
+    "tr": "Her nesil bir öncekinin çözdüğünü devralır, biraz ekler ve aktarır."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.2,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1,
+     "hat": "bun"
+    },
+    {
+     "el": "arrow",
+     "x": 0.28,
+     "y": 0.4,
+     "x2": 0.42,
+     "y2": 0.4,
+     "bend": -0.3
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.45,
+     "pose": "stand",
+     "face": 1
+    },
+    {
+     "el": "arrow",
+     "x": 0.58,
+     "y": 0.4,
+     "x2": 0.72,
+     "y2": 0.4,
+     "bend": -0.3
+    },
+    {
+     "el": "figure",
+     "x": 0.8,
+     "y": 0.8,
+     "h": 0.3,
+     "pose": "stand",
+     "face": 1,
+     "child": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Over thousands of years, a ladder of knowledge grows that no individual could ever climb alone.",
+    "tr": "Binlerce yıl içinde hiçbir bireyin tek başına tırmanamayacağı bir bilgi merdiveni büyür."
+   },
+   "sketch": [
+    {
+     "el": "stairs",
+     "x": 0.08,
+     "y": 0.9,
+     "s": 1.4,
+     "n": 5,
+     "labels": [
+      "stone",
+      "fire",
+      "bow",
+      "print",
+      "phone"
+     ]
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And we're built for this. Children are amazing copiers.",
+    "tr": "Ve biz bunun için yaratılmışız. Çocuklar inanılmaz taklitçilerdir."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "point",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.65,
+     "y": 0.8,
+     "h": 0.3,
+     "pose": "point",
+     "face": 1,
+     "child": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "In experiments, young children copy every step an adult shows them, even steps that are obviously useless,",
+    "tr": "Deneylerde küçük çocuklar bir yetişkinin gösterdiği her adımı, açıkça işe yaramayan adımları bile kopyalar;"
+   },
+   "sketch": [
+    {
+     "el": "box",
+     "x": 0.5,
+     "y": 0.65,
+     "s": 1.1
+    },
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.85,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.85,
+     "h": 0.3,
+     "pose": "reach",
+     "face": 1,
+     "child": true
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.15,
+     "text": "1 · 2 · 3 · 4",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "while chimpanzees skip straight to what works.",
+    "tr": "şempanzeler ise doğrudan işe yarayana atlar."
+   },
+   "sketch": [
+    {
+     "el": "box",
+     "x": 0.5,
+     "y": 0.65,
+     "s": 1.1
+    },
+    {
+     "el": "ape",
+     "x": 0.8,
+     "y": 0.7,
+     "s": 0.6,
+     "face": -1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.15,
+     "text": "1 · 4",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Psychologists call it *overimitation*.",
+    "tr": "Psikologlar buna *aşırı taklit* diyor."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "overimitation",
+     "size": 2.0,
+     "color": "ink",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "It sounds silly. But it's exactly what would have saved Burke and Wills:",
+    "tr": "Saçma görünüyor. Ama Burke ve Wills'i kurtaracak olan tam olarak buydu:"
+   },
+   "sketch": [
+    {
+     "el": "plant",
+     "x": 0.3,
+     "y": 0.75,
+     "s": 0.9
+    },
+    {
+     "el": "text",
+     "x": 0.72,
+     "y": 0.42,
+     "text": "silly?",
+     "size": 1.5,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "when you don't know *why* a step is there, copying it anyway can keep you alive.",
+    "tr": "Bir adımın *neden* orada olduğunu bilmediğinde, yine de onu kopyalamak seni hayatta tutabilir."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.3,
+     "text": "don't know why?",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.55,
+     "text": "copy it anyway",
+     "size": 1.5,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "There's one more ingredient: we cooperate on a scale no other mammal does.",
+    "tr": "Bir malzeme daha var: Başka hiçbir memelinin yapmadığı ölçekte iş birliği yapıyoruz."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "hold",
+     "face": 1
+    },
+    {
+     "el": "figure",
+     "x": 0.7,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "hold",
+     "face": -1
+    },
+    {
+     "el": "line",
+     "x": 0.33,
+     "y": 0.42,
+     "s": 1.0,
+     "x2": 0.67,
+     "y2": 0.42,
+     "w": 4.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Psychologist *Michael Tomasello* found that even toddlers spontaneously help strangers,",
+    "tr": "Psikolog *Michael Tomasello*, küçük çocukların bile yabancılara kendiliğinden yardım ettiğini,"
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.35,
+     "y": 0.8,
+     "h": 0.55,
+     "pose": "reach",
+     "face": -1
+    },
+    {
+     "el": "figure",
+     "x": 0.6,
+     "y": 0.8,
+     "h": 0.3,
+     "pose": "reach",
+     "face": 1,
+     "child": true
+    },
+    {
+     "el": "box",
+     "x": 0.45,
+     "y": 0.72,
+     "s": 0.5
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "Tomasello",
+     "size": 1.1,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "point things out to share attention, and work toward shared goals.",
+    "tr": "dikkat paylaşmak için bir şeyleri işaret ettiğini ve ortak hedefler için çalıştığını buldu."
+   },
+   "sketch": [
+    {
+     "el": "ground",
+     "x": 0.5,
+     "y": 0.8,
+     "w": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.3,
+     "y": 0.8,
+     "h": 0.3,
+     "pose": "point",
+     "face": 1,
+     "child": true
+    },
+    {
+     "el": "butterfly",
+     "x": 0.75,
+     "y": 0.3,
+     "s": 0.8
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.8,
+     "h": 0.5,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Great apes rarely do.",
+    "tr": "Büyük maymunlar bunu nadiren yapar."
+   },
+   "sketch": [
+    {
+     "el": "ape",
+     "x": 0.5,
+     "y": 0.6,
+     "s": 1.1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Anthropologist *Robin Dunbar* suggested we can keep track of around 150 personal relationships.",
+    "tr": "Antropolog *Robin Dunbar*, yaklaşık 150 kişisel ilişkiyi takip edebildiğimizi öne sürdü."
+   },
+   "sketch": [
+    {
+     "el": "dots",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 1.0,
+     "n": 150,
+     "cols": 15,
+     "highlight": 0
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.45,
+     "text": "≈150",
+     "size": 1.6,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But humans found ways to cooperate far beyond that:",
+    "tr": "Ama insanlar bunun çok ötesinde iş birliği yapmanın yollarını buldu:"
+   },
+   "sketch": [
+    {
+     "el": "dots",
+     "x": 0.5,
+     "y": 0.55,
+     "s": 0.9,
+     "n": 400,
+     "cols": 40,
+     "highlight": 0
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.08,
+     "text": "millions",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "through *stories, rules, gods and money*, things that exist because we all agree they do.",
+    "tr": "*hikâyeler, kurallar, tanrılar ve para* aracılığıyla; hepimiz var olduklarında anlaştığımız için var olan şeyler."
+   },
+   "sketch": [
+    {
+     "el": "books",
+     "x": 0.18,
+     "y": 0.6,
+     "s": 0.6,
+     "n": 2
+    },
+    {
+     "el": "scroll",
+     "x": 0.4,
+     "y": 0.45,
+     "s": 0.6
+    },
+    {
+     "el": "dot",
+     "x": 0.6,
+     "y": 0.4,
+     "s": 1.0
+    },
+    {
+     "el": "money",
+     "x": 0.82,
+     "y": 0.6,
+     "s": 0.7,
+     "text": "$"
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "we all agree",
+     "size": 1.1,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "One of the oldest monuments we know, *Göbekli Tepe* in southeastern Turkey, was built around 11,000 years ago,",
+    "tr": "Bildiğimiz en eski anıtlardan biri, Türkiye'nin güneydoğusundaki *Göbeklitepe*, yaklaşık 11.000 yıl önce"
+   },
+   "image": {
+    "file": "File:Gobekli Tepe Building F in 2014 3208.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Göbekli Tepe · Şanlıurfa, Türkiye",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "by people who, as far as we know, had not yet started farming.",
+    "tr": "bildiğimiz kadarıyla henüz tarıma başlamamış insanlar tarafından inşa edildi."
+   },
+   "sketch": [
+    {
+     "el": "pillar",
+     "x": 0.3,
+     "y": 0.85,
+     "s": 1.0
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.4,
+     "text": "before farming",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Huge carved pillars, raised by hundreds of hands working together.",
+    "tr": "Birlikte çalışan yüzlerce elin diktiği dev oymalı sütunlar."
+   },
+   "image": {
+    "file": "File:Animal hunting scene. Gobekli Tepe.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Göbekli Tepe · carved animals",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "Cooperation came first. Civilization followed.",
+    "tr": "Önce iş birliği geldi. Uygarlık sonra."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.32,
+     "text": "1. cooperation",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.55,
+     "text": "2. civilization",
+     "size": 1.4,
+     "color": "ink",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And that's how a weak, slow ape took over a planet.",
+    "tr": "İşte zayıf, yavaş bir maymun gezegeni böyle ele geçirdi."
+   },
+   "sketch": [
+    {
+     "el": "globe",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.2
+    },
+    {
+     "el": "figure",
+     "x": 0.5,
+     "y": 0.26,
+     "h": 0.2,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "When humans arrived in Australia and the Americas, many giant animals, like giant kangaroos, mammoths and ground sloths, disappeared.",
+    "tr": "İnsanlar Avustralya'ya ve Amerika'ya vardığında dev kangurular, mamutlar ve yer tembelleri gibi birçok dev hayvan ortadan kayboldu."
+   },
+   "image": {
+    "file": "File:Woolly mammoths.jpg",
+    "style": "sketch",
+    "fit": "contain",
+    "label": "Woolly mammoths · Charles R. Knight",
+    "tint": 0.3
+   }
+  },
+  {
+   "say": {
+    "en": "Scientists still debate how much was hunting and how much was climate, but the timing is hard to ignore.",
+    "tr": "Bilim insanları bunun ne kadarının avcılık, ne kadarının iklim olduğunu hâlâ tartışıyor; ama zamanlamayı görmezden gelmek zor."
+   },
+   "sketch": [
+    {
+     "el": "balance",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 0.9,
+     "tilt": 0.15,
+     "left": "?",
+     "right": "?"
+    },
+    {
+     "el": "text",
+     "x": 0.33,
+     "y": 0.88,
+     "text": "hunting",
+     "size": 1.2,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.67,
+     "y": 0.88,
+     "text": "climate",
+     "size": 1.2,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Today, if you weighed every wild mammal on Earth, they would make up only about *4%* of all mammal biomass.",
+    "tr": "Bugün Dünya'daki tüm yabani memelileri tartsan, bütün memeli kütlesinin yalnızca yaklaşık *%4*'ünü oluştururlar."
+   },
+   "sketch": [
+    {
+     "el": "dots",
+     "x": 0.5,
+     "y": 0.5,
+     "s": 1.0,
+     "n": 100,
+     "cols": 20,
+     "highlight": 4
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "wild mammals: 4%",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Humans are about a third. Our livestock — cows, pigs, sheep — make up most of the rest.",
+    "tr": "İnsanlar yaklaşık üçte biri. Geri kalanın çoğu ise hayvanlarımız: inekler, domuzlar, koyunlar."
+   },
+   "sketch": [
+    {
+     "el": "bars",
+     "x": 0.5,
+     "y": 0.78,
+     "s": 1.0
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We may not be at the top of the food chain.",
+    "tr": "Belki besin zincirinin tepesinde değiliz."
+   },
+   "sketch": [
+    {
+     "el": "stairs",
+     "x": 0.165,
+     "y": 0.85,
+     "s": 1.4,
+     "n": 4
+    },
+    {
+     "el": "figure",
+     "x": 0.25,
+     "y": 0.71,
+     "h": 0.22,
+     "pose": "stand",
+     "face": 1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "But we've become something no species has been before: the force that *shapes* the food chain.",
+    "tr": "Ama hiçbir türün daha önce olmadığı bir şey olduk: besin zincirini *şekillendiren* güç."
+   },
+   "sketch": [
+    {
+     "el": "stairs",
+     "x": 0.06,
+     "y": 0.85,
+     "s": 1.2,
+     "n": 4
+    },
+    {
+     "el": "hand",
+     "x": 0.82,
+     "y": 0.4,
+     "s": 1.0,
+     "face": -1
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "shapes the chain",
+     "size": 1.3,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Try this. Look around you right now,",
+    "tr": "Şunu dene. Şu an etrafına bak"
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.12,
+     "y": 0.1,
+     "text": "try this",
+     "size": 1.0,
+     "color": "red",
+     "underline": "red"
+    },
+    {
+     "el": "eye",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.2
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "and count how many things you can see that you could make *entirely by yourself*, from scratch.",
+    "tr": "ve *tamamen kendi başına*, sıfırdan yapabileceğin kaç şey gördüğünü say."
+   },
+   "sketch": [
+    {
+     "el": "chair",
+     "x": 0.2,
+     "y": 0.75,
+     "s": 0.9
+    },
+    {
+     "el": "tshirt",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "phone",
+     "x": 0.68,
+     "y": 0.5,
+     "s": 0.7
+    },
+    {
+     "el": "screen",
+     "x": 0.88,
+     "y": 0.6,
+     "s": 0.5
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.1,
+     "text": "by yourself?",
+     "size": 1.3,
+     "color": "blue",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "The chair? The glass? The clothes you're wearing? The device you're watching this on?",
+    "tr": "Sandalye mi? Bardak mı? Üzerindeki kıyafetler mi? Bu videoyu izlediğin cihaz mı?"
+   },
+   "sketch": [
+    {
+     "el": "chair",
+     "x": 0.2,
+     "y": 0.75,
+     "s": 0.9
+    },
+    {
+     "el": "tshirt",
+     "x": 0.45,
+     "y": 0.5,
+     "s": 0.6
+    },
+    {
+     "el": "phone",
+     "x": 0.68,
+     "y": 0.5,
+     "s": 0.7
+    },
+    {
+     "el": "screen",
+     "x": 0.88,
+     "y": 0.6,
+     "s": 0.5
+    },
+    {
+     "el": "text",
+     "x": 0.2,
+     "y": 0.2,
+     "text": "?",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.45,
+     "y": 0.15,
+     "text": "?",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.68,
+     "y": 0.15,
+     "text": "?",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.88,
+     "y": 0.2,
+     "text": "?",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "Probably zero.",
+    "tr": "Muhtemelen sıfır."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.42,
+     "text": "0",
+     "size": 4.0,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And that's not a weakness. It's the whole point.",
+    "tr": "Ve bu bir zayıflık değil. Asıl mesele bu."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.3,
+     "text": "not a weakness",
+     "size": 1.4,
+     "color": "blue",
+     "underline": false
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.55,
+     "text": "the whole point",
+     "size": 1.5,
+     "color": "red",
+     "underline": "red"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "You're surrounded by the knowledge of millions of people you'll never meet.",
+    "tr": "Hiç tanışmayacağın milyonlarca insanın bilgisiyle çevrilisin."
+   },
+   "sketch": [
+    {
+     "el": "network",
+     "x": 0.5,
+     "y": 0.48,
+     "s": 1.0,
+     "extra": true
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We didn't win because we were the strongest, or even because each of us was the smartest.",
+    "tr": "Kazanmamızın sebebi en güçlü, hatta tek tek en zeki olmamız değildi."
+   },
+   "sketch": [
+    {
+     "el": "text",
+     "x": 0.3,
+     "y": 0.35,
+     "text": "strongest",
+     "size": 1.3,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.3,
+     "y": 0.35,
+     "s": 0.6,
+     "at": 0.6
+    },
+    {
+     "el": "text",
+     "x": 0.7,
+     "y": 0.55,
+     "text": "smartest",
+     "size": 1.3,
+     "color": "ink",
+     "underline": false
+    },
+    {
+     "el": "cross",
+     "x": 0.7,
+     "y": 0.55,
+     "s": 0.6,
+     "at": 1.2
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "We won because we learned to share fire, share knowledge, and share goals with people we'd never met.",
+    "tr": "Kazandık, çünkü ateşi, bilgiyi ve hedefleri hiç tanımadığımız insanlarla paylaşmayı öğrendik."
+   },
+   "sketch": [
+    {
+     "el": "campfire",
+     "x": 0.2,
+     "y": 0.65,
+     "s": 0.7
+    },
+    {
+     "el": "books",
+     "x": 0.5,
+     "y": 0.65,
+     "s": 0.6,
+     "n": 2
+    },
+    {
+     "el": "heads",
+     "x": 0.8,
+     "y": 0.45,
+     "s": 0.6,
+     "n": 3
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.12,
+     "text": "share",
+     "size": 1.4,
+     "color": "blue",
+     "underline": "blue"
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "That's our superpower.",
+    "tr": "Bu bizim süper gücümüz."
+   },
+   "sketch": [
+    {
+     "el": "heads",
+     "x": 0.5,
+     "y": 0.45,
+     "s": 1.1,
+     "n": 5
+    },
+    {
+     "el": "text",
+     "x": 0.5,
+     "y": 0.88,
+     "text": "superpower",
+     "size": 1.4,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "And it comes with a question that no other species has ever had to answer:",
+    "tr": "Ve beraberinde başka hiçbir türün cevaplamak zorunda kalmadığı bir soru getiriyor:"
+   },
+   "sketch": [
+    {
+     "el": "globe",
+     "x": 0.5,
+     "y": 0.48,
+     "s": 1.1
+    }
+   ]
+  },
+  {
+   "say": {
+    "en": "now that we shape the planet, what will we *do* with it?",
+    "tr": "Artık gezegeni şekillendirdiğimize göre, onunla ne *yapacağız*?"
+   },
+   "sketch": [
+    {
+     "el": "globe",
+     "x": 0.4,
+     "y": 0.5,
+     "s": 1.0
+    },
+    {
+     "el": "hand",
+     "x": 0.65,
+     "y": 0.55,
+     "s": 0.9,
+     "face": -1
+    },
+    {
+     "el": "text",
+     "x": 0.82,
+     "y": 0.3,
+     "text": "?",
+     "size": 2.6,
+     "color": "red",
+     "underline": false
+    }
+   ]
+  }
+ ]
+}
