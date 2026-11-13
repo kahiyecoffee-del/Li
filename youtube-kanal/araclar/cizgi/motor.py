@@ -445,7 +445,7 @@ def draw_title(ctx, text, u):
     ctx.restore()
 
 
-def render_frame(ctx, seg, t, blink, envs):
+def render_frame(ctx, seg, t, blink, envs, subs=True):
     u = (t - seg["t0"]) / max(0.01, seg["t1"] - seg["t0"])
     if seg["kind"] == "title":
         draw_title(ctx, seg["text"], u)
@@ -535,7 +535,7 @@ def render_frame(ctx, seg, t, blink, envs):
     g.add_color_stop_rgba(1, 0, 0, 0, 0.28)
     ctx.set_source(g)
     ctx.paint()
-    if seg.get("en") and t >= seg["a0"] - 0.1:
+    if subs and seg.get("en") and t >= seg["a0"] - 0.1:
         draw_sub(ctx, seg["en"])
 
 

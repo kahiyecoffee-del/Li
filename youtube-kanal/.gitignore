@@ -25,3 +25,4 @@ cikti/budgets/*/*.wav
 cikti/budgets/*/*.mp4
 cikti/budgets/*/*.srt
 __pycache__/
+cikti/budgets/*/shorts/*.mp4
