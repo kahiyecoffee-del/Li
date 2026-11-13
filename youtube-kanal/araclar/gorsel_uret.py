@@ -34,7 +34,7 @@ _pipe = None
 def pipe():
     global _pipe
     if _pipe is None:
-        p = StableDiffusionXLPipeline.from_pretrained(MODEL, torch_dtype=torch.float32, use_safetensors=True, variant="fp16")
+        p = StableDiffusionXLPipeline.from_pretrained(MODEL, torch_dtype=torch.bfloat16, use_safetensors=True, variant="fp16")
         p.scheduler = EulerAncestralDiscreteScheduler.from_config(p.scheduler.config)
         p.enable_attention_slicing()
         p.vae.enable_tiling()
