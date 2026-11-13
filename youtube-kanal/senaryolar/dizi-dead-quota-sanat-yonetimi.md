@@ -58,6 +58,16 @@ anime, manga, chibi, big anime eyes, Pixar, Disney, 3D render, CGI, soft gradien
 
 ---
 
+# KİLİTLİ KARAKTER TASARIMLARI (kanonik referanslar)
+Bu görseller onaylandı ve **değiştirilmez**; her kare üretiminde IP-Adapter referansı olarak kullanılır:
+- Moss → `cikti/dizi/karakterler/moss_b.png` (koyu sakal, sarı kask, lacivert yelek + sarı şeritler)
+- Jessie → `cikti/dizi/karakterler/jessie_b.png` (kısa siyah bob, mor kapüşon; telefon elde)
+- Bruno → `cikti/dizi/karakterler/bruno_b.png` (kırmızı bere, beyaz sakal, flanel, lacivert yelek, levye)
+- Adler → `cikti/dizi/karakterler/adler_a.png` (kulaklık, platin topuz, beyaz ceket)
+- Rotter → `cikti/dizi/karakterler/rotter_a.png` (yeşil-gri ten, sarı parlak gözler, yırtık polo)
+
+Not: Kilitli görseller ile aşağıdaki metin blokları arasında fark varsa **görsel geçerlidir**.
+
 # KARAKTER KİMLİK BLOKLARI (sabit, kelimesi kelimesine)
 
 ## MOSS: Marcus "Moss" Okafor

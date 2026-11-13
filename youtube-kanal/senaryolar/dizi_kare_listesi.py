@@ -4,7 +4,7 @@ Karakter referansları (kilitli tasarımlar) REFS sözlüğünde. Başlık kartl
 import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 K = "cikti/dizi/karakterler/"
-REFS = {"moss": K + "moss_b.png", "jessie": K + "jessie_b.png", "bruno": K + "bruno_a.png", "adler": K + "adler_a.png", "rotter": K + "rotter_a.png"}
+REFS = {"moss": K + "moss_b.png", "jessie": K + "jessie_b.png", "bruno": K + "bruno_b.png", "adler": K + "adler_a.png", "rotter": K + "rotter_a.png"}
 plan = json.load(open(os.path.join(HERE, "dizi_pilot.json"), encoding="utf-8"))
 only = set(sys.argv[1].split(",")) if len(sys.argv) > 1 else None
 items = []
