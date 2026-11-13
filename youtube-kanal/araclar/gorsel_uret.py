@@ -35,7 +35,6 @@ def pipe():
     if _pipe is None:
         p = StableDiffusionXLPipeline.from_pretrained(MODEL, torch_dtype=torch.bfloat16, use_safetensors=True, variant="fp16")
         p.scheduler = EulerAncestralDiscreteScheduler.from_config(p.scheduler.config)
-        p.enable_attention_slicing()
         p.vae.enable_tiling()
         p.set_progress_bar_config(disable=False)
         ipa = os.environ.get("IPADAPTER_DIR")
@@ -43,6 +42,8 @@ def pipe():
             p.load_ip_adapter(ipa, subfolder="sdxl_models", weight_name="ip-adapter-plus_sdxl_vit-h.safetensors",
                               image_encoder_folder="models/image_encoder", torch_dtype=torch.bfloat16)
             p.image_encoder.to(torch.bfloat16)
+        else:
+            p.enable_attention_slicing()
         _pipe = p
     return _pipe
 
