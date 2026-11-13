@@ -1,0 +1,754 @@
+{
+ "slug": "dead-quota-pilot",
+ "title": "DEAD QUOTA · Episode 1: Quota",
+ "voices": {
+  "moss": "am_onyx",
+  "jessie": "af_nicole",
+  "bruno": "bm_george",
+  "adler": "af_heart"
+ },
+ "shots": [
+  {
+   "id": "c01",
+   "prompt": "wide shot, abandoned American suburban street at sunset, overgrown lawns, red-orange sky, a lone zombie mowing a lawn with one arm, long shadows, eerie calm",
+   "ref": null,
+   "cam": "pan_right",
+   "lines": [],
+   "sfx": "mower",
+   "min_dur": 4
+  },
+  {
+   "id": "c02",
+   "prompt": "low angle medium shot of a zombie with grey-green skin and cloudy yellow eyes, suburban dad in torn polo shirt pushing a red lawn mower, sunset backlight",
+   "ref": "rotter",
+   "cam": "zoom_in",
+   "lines": [],
+   "sfx": "mower",
+   "min_dur": 3
+  },
+  {
+   "id": "c03",
+   "prompt": "over-the-shoulder shot from behind a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest, phone screen showing a live stream, a zombie on a lawn in the distance, abandoned American suburban street at sunset, overgrown lawns, red-orange sky",
+   "ref": "jessie",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "jessie",
+     "en": "Okay chat, we're live. Look at this guy.",
+     "tr": "Tamam chat, yayındayız. Şu adama bakın."
+    },
+    {
+     "who": "jessie",
+     "en": "Three years dead and he still mows his lawn. That's more than my dad ever did.",
+     "tr": "Üç yıldır ölü, hâlâ çimini biçiyor. Babam hayatında bu kadarını yapmadı."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "c04",
+   "prompt": "close-up of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes, unimpressed tired expression, warm sunset side light",
+   "ref": "moss",
+   "cam": "zoom_in",
+   "lines": [
+    {
+     "who": "moss",
+     "en": "Phone down, Vo.",
+     "tr": "Telefonu indir, Vo."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "c05",
+   "prompt": "close-up of a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest, whispering excitedly, grinning, sunset rim light",
+   "ref": "jessie",
+   "cam": "zoom_in",
+   "lines": [
+    {
+     "who": "jessie",
+     "en": "Moss, we're at four hundred viewers. The algorithm loves commuters.",
+     "tr": "Moss, dört yüz izleyicideyiz. Algoritma commuter'lara bayılıyor."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "c06",
+   "prompt": "close-up of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes, deadpan, looking at the zombie",
+   "ref": "moss",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "moss",
+     "en": "The algorithm doesn't bleed.",
+     "tr": "Algoritma kanamıyor."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "c07",
+   "prompt": "medium shot of a zombie with grey-green skin and cloudy yellow eyes slowly turning his head toward camera, grass falling from his open mouth, menacing, sunset",
+   "ref": "rotter",
+   "cam": "zoom_in",
+   "lines": [],
+   "sfx": "growl",
+   "min_dur": 3
+  },
+  {
+   "id": "c08",
+   "prompt": "low angle dynamic shot of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes raising a red fire axe overhead with both hands, sunset sky, dramatic silhouette edge light",
+   "ref": "moss",
+   "cam": "shake",
+   "lines": [
+    {
+     "who": "moss",
+     "en": "Sorry, buddy. Lawn looks great.",
+     "tr": "Kusura bakma dostum. Çimler harika görünüyor."
+    }
+   ],
+   "sfx": "axe",
+   "min_dur": 3.0
+  },
+  {
+   "id": "c09",
+   "prompt": "black screen with the title DEAD QUOTA in bold distressed red comic lettering",
+   "ref": null,
+   "cam": "still",
+   "lines": [],
+   "sfx": "sting",
+   "min_dur": 3.5
+  },
+  {
+   "id": "v01",
+   "prompt": "wide shot, inside an armored white-and-teal transport van, bench seats, weapon racks, warm amber light, three crew members sitting on benches, a small radio screen glowing",
+   "ref": null,
+   "cam": "pan_left",
+   "lines": [],
+   "sfx": null,
+   "min_dur": 3
+  },
+  {
+   "id": "v02",
+   "prompt": "close-up of a dashboard radio screen showing a blonde woman executive in white blazer, sleek bun, headset, wide smile, cheerful",
+   "ref": "adler",
+   "cam": "zoom_in",
+   "lines": [
+    {
+     "who": "adler",
+     "en": "Good morning, Team Eleven! Happy Double Bonus Saturday!",
+     "tr": "Günaydın Onbirinci Ekip! Mutlu Çift Prim Cumartesileri!"
+    },
+    {
+     "who": "adler",
+     "en": "Every confirmed Rotter is worth twice the points this weekend. Remember: a clean zone is a happy zone!",
+     "tr": "Bu hafta sonu doğrulanmış her Rotter iki kat puan. Unutmayın: Temiz bölge, mutlu bölge!"
+    }
+   ],
+   "sfx": "radio",
+   "min_dur": 3.0
+  },
+  {
+   "id": "v03",
+   "prompt": "medium shot of a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest sitting in a van, amused, pointing at the radio, inside an armored white-and-teal transport van, bench seats, weapon racks, warm amber light",
+   "ref": "jessie",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "jessie",
+     "en": "I love her. She sounds like a yogurt commercial.",
+     "tr": "Bu kadına bayılıyorum. Yoğurt reklamı gibi konuşuyor."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "v04",
+   "prompt": "medium shot of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes sitting in a van, arms crossed, sour expression, inside an armored white-and-teal transport van, bench seats, weapon racks, warm amber light",
+   "ref": "moss",
+   "cam": "zoom_in",
+   "lines": [
+    {
+     "who": "moss",
+     "en": "She sounds like a hostage negotiator. For the kidnapper.",
+     "tr": "Bir rehine müzakerecisi gibi konuşuyor. Kaçıranın tarafında."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "v05",
+   "prompt": "close-up of a dashboard radio screen showing a blonde woman executive in white blazer, sleek bun, headset, wide smile, smiling",
+   "ref": "adler",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "adler",
+     "en": "Today's target: Pinecrest Mall. Estimated two hundred commuters. Quota: one-eighty.",
+     "tr": "Bugünkü hedef: Pinecrest AVM. Tahminen iki yüz commuter. Kota: yüz seksen."
+    },
+    {
+     "who": "adler",
+     "en": "Fall below quota and, well... you know the policy!",
+     "tr": "Kotanın altında kalırsanız... e, politikayı biliyorsunuz!"
+    }
+   ],
+   "sfx": "radio",
+   "min_dur": 3.0
+  },
+  {
+   "id": "v06",
+   "prompt": "two shot, young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest whispering to a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest in a van, inside an armored white-and-teal transport van, bench seats, weapon racks, warm amber light",
+   "ref": "jessie",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "jessie",
+     "en": "What's the policy?",
+     "tr": "Politika ne?"
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "v07",
+   "prompt": "close-up of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest, grim quiet expression, staring ahead, inside an armored white-and-teal transport van, bench seats, weapon racks, warm amber light",
+   "ref": "bruno",
+   "cam": "zoom_in",
+   "lines": [
+    {
+     "who": "bruno",
+     "en": "We don't talk about Team Nine.",
+     "tr": "Dokuzuncu Ekip'ten bahsetmiyoruz."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.5
+  },
+  {
+   "id": "m01",
+   "prompt": "wide shot, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight, dozens of zombies standing in a neat line in front of a closed burger counter",
+   "ref": null,
+   "cam": "pan_right",
+   "lines": [],
+   "sfx": "growl",
+   "min_dur": 4
+  },
+  {
+   "id": "m02",
+   "prompt": "medium shot of a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest filming with her phone, shocked and delighted, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
+   "ref": "jessie",
+   "cam": "zoom_in",
+   "lines": [
+    {
+     "who": "jessie",
+     "en": "Oh my God. They're waiting in line. Chat, they're still waiting in line.",
+     "tr": "Aman Tanrım. Sırada bekliyorlar. Chat, hâlâ sırada bekliyorlar."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "m03",
+   "prompt": "medium shot of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes holding a fire axe, dry expression, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
+   "ref": "moss",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "moss",
+     "en": "Some things survive the apocalypse. Brand loyalty's one of them.",
+     "tr": "Bazı şeyler kıyametten sağ çıkar. Marka sadakati de onlardan biri."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "m04",
+   "prompt": "medium shot of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest, nostalgic look at the burger counter, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
+   "ref": "bruno",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "bruno",
+     "en": "I waited forty minutes there once. For the fish sandwich.",
+     "tr": "Bir keresinde orada kırk dakika bekledim. Balıklı sandviç için."
+    },
+    {
+     "who": "moss",
+     "en": "Was it worth it?",
+     "tr": "Değdi mi?"
+    },
+    {
+     "who": "bruno",
+     "en": "...No.",
+     "tr": "...Hayır."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "m05",
+   "prompt": "dynamic action shot of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest swinging a steel crowbar into a crowd of zombies, speed lines, stylized comic gore, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
+   "ref": "bruno",
+   "cam": "shake",
+   "lines": [],
+   "sfx": "hit",
+   "min_dur": 2.5
+  },
+  {
+   "id": "m06",
+   "prompt": "dynamic action shot of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes swinging a fire axe at a zombie, motion blur, stylized comic gore, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
+   "ref": "moss",
+   "cam": "shake",
+   "lines": [],
+   "sfx": "axe",
+   "min_dur": 2.5
+  },
+  {
+   "id": "m07",
+   "prompt": "medium shot of a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest dodging a zombie while filming, laughing nervously, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
+   "ref": "jessie",
+   "cam": "shake",
+   "lines": [
+    {
+     "who": "jessie",
+     "en": "Okay, that one had braces. Who gets braces in the apocalypse? That's optimism!",
+     "tr": "Tamam, şunun diş teli vardı. Kıyamette kim diş teli taktırır? Buna iyimserlik denir!"
+    }
+   ],
+   "sfx": "growl",
+   "min_dur": 3.0
+  },
+  {
+   "id": "m08",
+   "prompt": "close-up of a zombie hand smashing a smartphone, cracked screen, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
+   "ref": "rotter",
+   "cam": "shake",
+   "lines": [],
+   "sfx": "crack",
+   "min_dur": 2
+  },
+  {
+   "id": "m09",
+   "prompt": "close-up of a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest screaming in horror at her broken phone",
+   "ref": "jessie",
+   "cam": "zoom_in",
+   "lines": [
+    {
+     "who": "jessie",
+     "en": "My phone! Not the phone! I have sponsors!",
+     "tr": "Telefonum! Telefona dokunma! Sponsorlarım var!"
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "s01",
+   "prompt": "wide shot, abandoned mall Santa's grotto, broken Christmas decorations, red velvet throne, cold blue light, eerie silence, a small child zombie standing alone in front of the throne holding a faded wish list",
+   "ref": null,
+   "cam": "zoom_in",
+   "lines": [],
+   "sfx": null,
+   "min_dur": 4
+  },
+  {
+   "id": "s02",
+   "prompt": "medium shot of a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest, hesitant and sad, cold blue light, abandoned mall Santa's grotto, broken Christmas decorations, red velvet throne, cold blue light",
+   "ref": "jessie",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "jessie",
+     "en": "Bruno... you want me to...",
+     "tr": "Bruno... ister misin ben..."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "s03",
+   "prompt": "close-up of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest, heartbroken but calm, cold blue light",
+   "ref": "bruno",
+   "cam": "zoom_in",
+   "lines": [
+    {
+     "who": "bruno",
+     "en": "No. I've got this one.",
+     "tr": "Hayır. Bunu ben hallederim."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "s04",
+   "prompt": "medium shot of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest kneeling down gently in front of a small child zombie, back view, abandoned mall Santa's grotto, broken Christmas decorations, red velvet throne, cold blue light",
+   "ref": "bruno",
+   "cam": "zoom_in",
+   "lines": [],
+   "sfx": "lullaby",
+   "min_dur": 4.5
+  },
+  {
+   "id": "s05",
+   "prompt": "close-up of a dim golden star on top of a broken Christmas tree, cold blue light, silence",
+   "ref": null,
+   "cam": "tilt_up",
+   "lines": [],
+   "sfx": "thud",
+   "min_dur": 3.5
+  },
+  {
+   "id": "s06",
+   "prompt": "close-up of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest holding a faded child's wish list with a drawing of a bicycle",
+   "ref": "bruno",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "bruno",
+     "en": "He wanted a bike.",
+     "tr": "Bisiklet istemiş."
+    },
+    {
+     "who": "moss",
+     "en": "Yeah.",
+     "tr": "Evet."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 4
+  },
+  {
+   "id": "r01",
+   "prompt": "medium shot, dark sporting goods store stockroom, barricaded with shelves, flashlight beams, a frightened mother with two children and an old man hiding behind shelves",
+   "ref": null,
+   "cam": "zoom_in",
+   "lines": [],
+   "sfx": null,
+   "min_dur": 3.5
+  },
+  {
+   "id": "r02",
+   "prompt": "medium shot of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes speaking into a shoulder radio, serious, dark sporting goods store stockroom, barricaded with shelves, flashlight beams",
+   "ref": "moss",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "moss",
+     "en": "Halcyon, Team Eleven. We have survivors. Four civilians. Requesting evac.",
+     "tr": "Halcyon, burası Onbirinci Ekip. Hayatta kalanlar var. Dört sivil. Tahliye istiyoruz."
+    }
+   ],
+   "sfx": "radio",
+   "min_dur": 3.0
+  },
+  {
+   "id": "r03",
+   "prompt": "close-up of a blonde woman executive in white blazer, sleek bun, headset, wide smile on a screen, polite smile, bright clean corporate office with a large window, white furniture, teal logo on the wall",
+   "ref": "adler",
+   "cam": "zoom_in",
+   "lines": [
+    {
+     "who": "adler",
+     "en": "Ooh. That's awkward. Survivors aren't really in this quarter's KPIs, Marcus.",
+     "tr": "Ooo. Bu biraz garip oldu. Hayatta kalanlar bu çeyreğin KPI'larında pek yok, Marcus."
+    }
+   ],
+   "sfx": "radio",
+   "min_dur": 3.0
+  },
+  {
+   "id": "r04",
+   "prompt": "close-up of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes, controlled anger",
+   "ref": "moss",
+   "cam": "zoom_in",
+   "lines": [
+    {
+     "who": "moss",
+     "en": "They're people.",
+     "tr": "Bunlar insan."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "r05",
+   "prompt": "medium shot of a blonde woman executive in white blazer, sleek bun, headset, wide smile in her office, cheerful, giving a thumbs up, bright clean corporate office with a large window, white furniture, teal logo on the wall",
+   "ref": "adler",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "adler",
+     "en": "And people are wonderful! But evacuation is a separate contract.",
+     "tr": "İnsanlar harikadır! Ama tahliye ayrı bir kontrat."
+    },
+    {
+     "who": "adler",
+     "en": "Please complete your quota and seal the east doors on your way out. Great energy today, team!",
+     "tr": "Lütfen kotanızı tamamlayın ve çıkarken doğu kapılarını mühürleyin. Bugün enerjiniz harikaydı ekip!"
+    }
+   ],
+   "sfx": "radio",
+   "min_dur": 3.0
+  },
+  {
+   "id": "r06",
+   "prompt": "medium shot of a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest, stunned, dark sporting goods store stockroom, barricaded with shelves, flashlight beams",
+   "ref": "jessie",
+   "cam": "zoom_in",
+   "lines": [
+    {
+     "who": "jessie",
+     "en": "Did she just tell us to lock a family in a zombie mall?",
+     "tr": "Az önce bize bir aileyi zombi dolu bir AVM'ye kilitlememizi mi söyledi?"
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "r07",
+   "prompt": "medium shot of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest, deadpan, dark sporting goods store stockroom, barricaded with shelves, flashlight beams",
+   "ref": "bruno",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "bruno",
+     "en": "She said it with a smile, though.",
+     "tr": "Ama gülümseyerek söyledi."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "r08",
+   "prompt": "extreme close-up of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes switching off a radio, determined",
+   "ref": "moss",
+   "cam": "zoom_in",
+   "lines": [],
+   "sfx": "click",
+   "min_dur": 3
+  },
+  {
+   "id": "r09",
+   "prompt": "two shot, 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes and young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest, dark sporting goods store stockroom, barricaded with shelves, flashlight beams",
+   "ref": "moss",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "moss",
+     "en": "Vo. How many people are watching your stream?",
+     "tr": "Vo. Yayınını kaç kişi izliyor?"
+    },
+    {
+     "who": "jessie",
+     "en": "With the cracked screen? Like... eleven thousand.",
+     "tr": "Çatlak ekranla mı? Şey... on bir bin."
+    },
+    {
+     "who": "moss",
+     "en": "Good. Keep it on them.",
+     "tr": "Güzel. Kamerayı onlara çevir."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "e01",
+   "prompt": "dynamic action shot, the crew escorting a family through the mall, zombies closing in, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
+   "ref": null,
+   "cam": "pan_right",
+   "lines": [],
+   "sfx": "growl",
+   "min_dur": 3
+  },
+  {
+   "id": "e02",
+   "prompt": "close-up of a cracked phone screen showing a live stream with chat comments flying: IS THIS REAL, HALCYON LEFT THEM",
+   "ref": null,
+   "cam": "zoom_in",
+   "lines": [],
+   "sfx": "ping",
+   "min_dur": 3
+  },
+  {
+   "id": "e03",
+   "prompt": "dynamic action shot of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest ramming zombies with a shopping cart like a battering ram, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
+   "ref": "bruno",
+   "cam": "shake",
+   "lines": [
+    {
+     "who": "bruno",
+     "en": "Excuse me. Pardon. Excuse me.",
+     "tr": "Pardon. Affedersiniz. Pardon."
+    }
+   ],
+   "sfx": "hit",
+   "min_dur": 3.0
+  },
+  {
+   "id": "e04",
+   "prompt": "wide shot, mall parking garage at dusk, concrete pillars, abandoned cars, the family climbing into an armored white-and-teal van, the crew covering them",
+   "ref": null,
+   "cam": "zoom_out",
+   "lines": [],
+   "sfx": "door",
+   "min_dur": 3.5
+  },
+  {
+   "id": "n01",
+   "prompt": "wide shot, inside an armored transport van at night, dim blue light, sleeping family on benches, the crew sitting exhausted",
+   "ref": null,
+   "cam": "zoom_in",
+   "lines": [],
+   "sfx": null,
+   "min_dur": 3.5
+  },
+  {
+   "id": "n02",
+   "prompt": "close-up of a cracked phone screen showing 1.2M views",
+   "ref": null,
+   "cam": "zoom_in",
+   "lines": [],
+   "sfx": null,
+   "min_dur": 2.5
+  },
+  {
+   "id": "n03",
+   "prompt": "close-up of a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest, pale and quiet, blue night light",
+   "ref": "jessie",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "jessie",
+     "en": "One point two million. That's the most I've ever had.",
+     "tr": "Bir virgül iki milyon. Bu şimdiye kadarki en yüksek sayım."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "n04",
+   "prompt": "close-up of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes, tired, blue night light",
+   "ref": "moss",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "moss",
+     "en": "How's it feel?",
+     "tr": "Nasıl hissettiriyor?"
+    },
+    {
+     "who": "jessie",
+     "en": "Like I want to throw up.",
+     "tr": "Kusmak istiyormuşum gibi."
+    },
+    {
+     "who": "moss",
+     "en": "Welcome to the job.",
+     "tr": "İşe hoş geldin."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "n05",
+   "prompt": "close-up of a dashboard radio screen showing a blonde woman executive in white blazer, sleek bun, headset, wide smile, not smiling, cold",
+   "ref": "adler",
+   "cam": "zoom_in",
+   "lines": [
+    {
+     "who": "adler",
+     "en": "Marcus. That stream was... unfortunate. Your team has been reassigned. Tomorrow, Sector Four.",
+     "tr": "Marcus. O yayın... talihsizdi. Ekibinin görev yeri değişti. Yarın Dördüncü Sektör."
+    }
+   ],
+   "sfx": "radio",
+   "min_dur": 3.0
+  },
+  {
+   "id": "n06",
+   "prompt": "close-up of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest, suspicious, blue night light",
+   "ref": "bruno",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "bruno",
+     "en": "Sector Four was cleared last year.",
+     "tr": "Dördüncü Sektör geçen yıl temizlenmişti."
+    }
+   ],
+   "sfx": null,
+   "min_dur": 3.0
+  },
+  {
+   "id": "n07",
+   "prompt": "close-up of a dashboard radio screen showing a blonde woman executive in white blazer, sleek bun, headset, wide smile, big fake smile",
+   "ref": "adler",
+   "cam": "still",
+   "lines": [
+    {
+     "who": "adler",
+     "en": "Not anymore! Sleep well, Team Eleven!",
+     "tr": "Artık değil! İyi uykular Onbirinci Ekip!"
+    }
+   ],
+   "sfx": "radio",
+   "min_dur": 3.0
+  },
+  {
+   "id": "x01",
+   "prompt": "wide shot, industrial warehouse at night, rows of teal shipping containers, harsh white floodlights, cold blue shadows, long corridor",
+   "ref": null,
+   "cam": "zoom_in",
+   "lines": [],
+   "sfx": "drone",
+   "min_dur": 4
+  },
+  {
+   "id": "x02",
+   "prompt": "medium shot, industrial warehouse at night, rows of teal shipping containers, harsh white floodlights, cold blue shadows, a forklift loading a teal container, shadows of zombie hands pressing against the container vents",
+   "ref": null,
+   "cam": "pan_left",
+   "lines": [],
+   "sfx": "growl",
+   "min_dur": 4
+  },
+  {
+   "id": "x03",
+   "prompt": "close-up of a label on a teal shipping container reading SECTOR 4: RESTOCK, harsh white light",
+   "ref": null,
+   "cam": "zoom_in",
+   "lines": [],
+   "sfx": "sting",
+   "min_dur": 3.5
+  },
+  {
+   "id": "x04",
+   "prompt": "black screen with a clean teal corporate logo and the slogan Tomorrow, safer.",
+   "ref": null,
+   "cam": "still",
+   "lines": [],
+   "sfx": "jingle",
+   "min_dur": 4
+  }
+ ]
+}
