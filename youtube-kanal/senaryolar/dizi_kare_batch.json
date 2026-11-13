@@ -16,8 +16,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/rotter_a.png",
-  "ref_scale": 0.3
+  "ref": "cikti/dizi/karakterler/rotter_a_ref.png",
+  "ref_scale": 0.22
  },
  {
   "prompt": "over-the-shoulder shot from behind a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest, phone screen showing a live stream, a zombie on a lawn in the distance, abandoned American suburban street at sunset, overgrown lawns, red-orange sky",
@@ -27,8 +27,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/jessie_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/jessie_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "close-up of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes, unimpressed tired expression, warm sunset side light",
@@ -38,8 +38,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/moss_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/moss_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "close-up of a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest, whispering excitedly, grinning, sunset rim light",
@@ -49,8 +49,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/jessie_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/jessie_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "close-up of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes, deadpan, looking at the zombie",
@@ -60,8 +60,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/moss_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/moss_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "medium shot of a zombie with grey-green skin and cloudy yellow eyes slowly turning his head toward camera, grass falling from his open mouth, menacing, sunset",
@@ -71,8 +71,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/rotter_a.png",
-  "ref_scale": 0.3
+  "ref": "cikti/dizi/karakterler/rotter_a_ref.png",
+  "ref_scale": 0.22
  },
  {
   "prompt": "low angle dynamic shot of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes raising a red fire axe overhead with both hands, sunset sky, dramatic silhouette edge light",
@@ -82,8 +82,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/moss_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/moss_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "wide shot, inside an armored white-and-teal transport van, bench seats, weapon racks, warm amber light, three crew members sitting on benches, a small radio screen glowing",
@@ -102,8 +102,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/adler_a.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/adler_a_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "medium shot of a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest sitting in a van, amused, pointing at the radio, inside an armored white-and-teal transport van, bench seats, weapon racks, warm amber light",
@@ -113,8 +113,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/jessie_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/jessie_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "medium shot of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes sitting in a van, arms crossed, sour expression, inside an armored white-and-teal transport van, bench seats, weapon racks, warm amber light",
@@ -124,8 +124,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/moss_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/moss_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "close-up of a dashboard radio screen showing a blonde woman executive in white blazer, sleek bun, headset, wide smile, smiling",
@@ -135,8 +135,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/adler_a.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/adler_a_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "two shot, young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest whispering to a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest in a van, inside an armored white-and-teal transport van, bench seats, weapon racks, warm amber light",
@@ -146,8 +146,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/jessie_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/jessie_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "close-up of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest, grim quiet expression, staring ahead, inside an armored white-and-teal transport van, bench seats, weapon racks, warm amber light",
@@ -157,8 +157,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/bruno_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/bruno_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "wide shot, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight, dozens of zombies standing in a neat line in front of a closed burger counter",
@@ -177,8 +177,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/jessie_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/jessie_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "medium shot of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes holding a fire axe, dry expression, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
@@ -188,8 +188,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/moss_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/moss_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "medium shot of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest, nostalgic look at the burger counter, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
@@ -199,8 +199,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/bruno_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/bruno_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "dynamic action shot of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest swinging a steel crowbar into a crowd of zombies, speed lines, stylized comic gore, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
@@ -210,8 +210,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/bruno_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/bruno_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "dynamic action shot of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes swinging a fire axe at a zombie, motion blur, stylized comic gore, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
@@ -221,8 +221,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/moss_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/moss_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "medium shot of a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest dodging a zombie while filming, laughing nervously, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
@@ -232,8 +232,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/jessie_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/jessie_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "close-up of a zombie hand smashing a smartphone, cracked screen, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
@@ -243,8 +243,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/rotter_a.png",
-  "ref_scale": 0.3
+  "ref": "cikti/dizi/karakterler/rotter_a_ref.png",
+  "ref_scale": 0.22
  },
  {
   "prompt": "close-up of a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest screaming in horror at her broken phone",
@@ -254,8 +254,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/jessie_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/jessie_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "wide shot, abandoned mall Santa's grotto, broken Christmas decorations, red velvet throne, cold blue light, eerie silence, a small child zombie standing alone in front of the throne holding a faded wish list",
@@ -274,8 +274,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/jessie_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/jessie_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "close-up of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest, heartbroken but calm, cold blue light",
@@ -285,8 +285,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/bruno_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/bruno_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "medium shot of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest kneeling down gently in front of a small child zombie, back view, abandoned mall Santa's grotto, broken Christmas decorations, red velvet throne, cold blue light",
@@ -296,8 +296,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/bruno_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/bruno_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "close-up of a dim golden star on top of a broken Christmas tree, cold blue light, silence",
@@ -316,8 +316,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/bruno_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/bruno_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "medium shot, dark sporting goods store stockroom, barricaded with shelves, flashlight beams, a frightened mother with two children and an old man hiding behind shelves",
@@ -336,8 +336,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/moss_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/moss_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "close-up of a blonde woman executive in white blazer, sleek bun, headset, wide smile on a screen, polite smile, bright clean corporate office with a large window, white furniture, teal logo on the wall",
@@ -347,8 +347,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/adler_a.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/adler_a_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "close-up of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes, controlled anger",
@@ -358,8 +358,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/moss_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/moss_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "medium shot of a blonde woman executive in white blazer, sleek bun, headset, wide smile in her office, cheerful, giving a thumbs up, bright clean corporate office with a large window, white furniture, teal logo on the wall",
@@ -369,8 +369,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/adler_a.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/adler_a_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "medium shot of a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest, stunned, dark sporting goods store stockroom, barricaded with shelves, flashlight beams",
@@ -380,8 +380,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/jessie_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/jessie_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "medium shot of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest, deadpan, dark sporting goods store stockroom, barricaded with shelves, flashlight beams",
@@ -391,8 +391,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/bruno_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/bruno_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "extreme close-up of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes switching off a radio, determined",
@@ -402,8 +402,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/moss_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/moss_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "two shot, 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes and young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest, dark sporting goods store stockroom, barricaded with shelves, flashlight beams",
@@ -413,8 +413,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/moss_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/moss_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "dynamic action shot, the crew escorting a family through the mall, zombies closing in, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
@@ -442,8 +442,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/bruno_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/bruno_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "wide shot, mall parking garage at dusk, concrete pillars, abandoned cars, the family climbing into an armored white-and-teal van, the crew covering them",
@@ -480,8 +480,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/jessie_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/jessie_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "close-up of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes, tired, blue night light",
@@ -491,8 +491,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/moss_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/moss_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "close-up of a dashboard radio screen showing a blonde woman executive in white blazer, sleek bun, headset, wide smile, not smiling, cold",
@@ -502,8 +502,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/adler_a.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/adler_a_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "close-up of a huge heavy older white man, short white beard, red knitted beanie, green flannel, navy vest, suspicious, blue night light",
@@ -513,8 +513,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/bruno_b.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/bruno_b_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "close-up of a dashboard radio screen showing a blonde woman executive in white blazer, sleek bun, headset, wide smile, big fake smile",
@@ -524,8 +524,8 @@
   "h": 768,
   "steps": 25,
   "skip_if_exists": true,
-  "ref": "cikti/dizi/karakterler/adler_a.png",
-  "ref_scale": 0.45
+  "ref": "cikti/dizi/karakterler/adler_a_ref.png",
+  "ref_scale": 0.32
  },
  {
   "prompt": "wide shot, industrial warehouse at night, rows of teal shipping containers, harsh white floodlights, cold blue shadows, long corridor",
