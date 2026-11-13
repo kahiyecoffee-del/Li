@@ -1,0 +1,35 @@
+[
+ {
+  "prompt": "close-up of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes, unimpressed tired expression, warm sunset side light",
+  "out": "cikti/dizi/pilot/kareler/c04.png",
+  "seed": 103,
+  "w": 1344,
+  "h": 768,
+  "steps": 25,
+  "skip_if_exists": true,
+  "ref": "cikti/dizi/karakterler/moss_b.png",
+  "ref_scale": 0.45
+ },
+ {
+  "prompt": "close-up of a young Vietnamese-American woman, short black bob with teal streak, white helmet with phone on top, purple hoodie, navy vest, whispering excitedly, grinning, sunset rim light",
+  "out": "cikti/dizi/pilot/kareler/c05.png",
+  "seed": 104,
+  "w": 1344,
+  "h": 768,
+  "steps": 25,
+  "skip_if_exists": true,
+  "ref": "cikti/dizi/karakterler/jessie_b.png",
+  "ref_scale": 0.45
+ },
+ {
+  "prompt": "medium shot of a 44 year old Black man, yellow hard hat, short grey beard, dark navy vest with yellow stripes holding a fire axe, dry expression, abandoned 90s shopping mall food court, flickering neon signs, overturned tables, dusty skylight",
+  "out": "cikti/dizi/pilot/kareler/m03.png",
+  "seed": 118,
+  "w": 1344,
+  "h": 768,
+  "steps": 25,
+  "skip_if_exists": true,
+  "ref": "cikti/dizi/karakterler/moss_b.png",
+  "ref_scale": 0.45
+ }
+]

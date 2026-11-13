@@ -173,9 +173,26 @@ def place(buf, clip, at, g=1.0):
 
 
 # ------------------------------------------------------------------ görüntü
-def load_frame(sid):
+def title_card(prompt):
+    im = Image.new("RGB", (1344, 768), (6, 5, 8))
+    d = ImageDraw.Draw(im)
+    if "DEAD QUOTA" in prompt:
+        f = ImageFont.truetype(os.path.join(ROOT, "fonts", "Kalam-Bold.ttf"), 170)
+        d.text((672, 384), "DEAD QUOTA", font=f, fill=(196, 28, 30), anchor="mm", stroke_width=4, stroke_fill=(0, 0, 0))
+        d.ellipse([1000, 455, 1018, 490], fill=(150, 15, 20))
+    else:
+        d.ellipse([622, 250, 722, 350], fill=(47, 179, 165))
+        d.pieslice([640, 275, 704, 339], 180, 360, fill=(255, 255, 255))
+        d.text((672, 420), "HALCYON", font=ImageFont.truetype(FONT, 64), fill=(235, 240, 240), anchor="mm")
+        d.text((672, 495), "Tomorrow, safer.", font=ImageFont.truetype(FONT, 34), fill=(160, 200, 196), anchor="mm")
+    return im
+
+
+def load_frame(sid, prompt=""):
     p = os.path.join(KARE, sid + ".png")
-    if os.path.exists(p):
+    if prompt.startswith("black screen"):
+        im = title_card(prompt)
+    elif os.path.exists(p):
         im = Image.open(p).convert("RGB")
     else:
         im = Image.new("RGB", (1344, 768), (24, 22, 28))
@@ -326,7 +343,7 @@ def main():
         while fi < int(st * FPS):
             proc.stdin.write(black)
             fi += 1
-        im = load_frame(s["id"])
+        im = load_frame(s["id"], s["prompt"])
         nf = int((st + dur) * FPS) - fi
         for k in range(nf):
             u = k / max(1, nf - 1)
