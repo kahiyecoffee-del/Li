@@ -24,3 +24,4 @@ cikti/budgets/test/
 cikti/budgets/*/*.wav
 cikti/budgets/*/*.mp4
 cikti/budgets/*/*.srt
+__pycache__/
