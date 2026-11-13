@@ -1,0 +1,148 @@
+# THE BUDGETS — S1E1 "DISRUPTOR"
+# Biçim: NAME [duygu, poz]: İngilizce || Türkçe
+# Komutlar: @scene mekan | ad:x[:yön] ... , @shot wide|close AD|two A B , @walk AD X , @beat sn , @sfx ad , @title YAZI , @cutaway mekan | ...
+# duygular: neutral happy angry sad shock smug ; pozlar: rest hips point shrug up wave phone fold think fist present facepalm
+
+@scene living | earl:1180:-1 kyle:1480:-1 tammy:420
+@shot wide
+TAMMY [neutral, fold]: Earl, the HOA newsletter says your lawn chair is a "visual hazard." || Earl, HOA bülteni bahçe sandalyenin "görsel tehlike" olduğunu yazıyor.
+EARL [smug, shrug]: That chair survived Korea. It can survive Gary. || O sandalye Kore'den sağ çıktı. Gary'den de çıkar.
+KYLE [neutral, phone]: Chat says the chair is the most interesting person in this family. || Chat, sandalyenin bu ailedeki en ilginç kişi olduğunu söylüyor.
+@sfx door
+@walk dale 760
+@shot wide
+DALE [happy, up]: Family meeting! I have been liberated! || Aile toplantısı! Özgürlüğüme kavuştum!
+TAMMY [neutral, fold]: You got fired. || Kovuldun.
+DALE [sad, rest]: I got fired. || Kovuldum.
+@shot close dale
+DALE [angry, point]: Mattress Kingdom replaced me with a chatbot. A chatbot named Kevin! || Mattress Kingdom yerime bir sohbet botu aldı. Adı Kevin olan bir sohbet botu!
+DALE [sad, shrug]: Kevin doesn't even have a back. How can he recommend lumbar support? || Kevin'in sırtı bile yok. Nasıl bel desteği önerebilir?
+@shot close earl
+EARL [smug, think]: Back in sixty-eight, I got replaced by a machine too. || Altmış sekizde ben de bir makineyle değiştirildim.
+@cutaway chapel | earl:820 jukebox:1150
+@shot wide
+EARL [happy, present]: It was a better machine than me. So I married it. || Benden daha iyi bir makineydi. Ben de onunla evlendim.
+@sfx jukebox
+@beat 1.4
+@scene living | earl:1180:-1 kyle:1480:-1 tammy:420 dale:760
+@shot close tammy
+TAMMY [angry, hips]: Dale, we have a mortgage. We have a son who eats like a raccoon. || Dale, ipotek borcumuz var. Rakun gibi yemek yiyen bir oğlumuz var.
+KYLE [neutral, phone]: Raccoons are thriving, mom. Be more like a raccoon. || Rakunlar gayet iyi gidiyor anne. Biraz rakun gibi ol.
+@shot close dale
+DALE [smug, fist]: Relax. If you can't beat the robots... you become the robots. || Sakin olun. Robotları yenemiyorsan... robot olursun.
+DALE [happy, present]: Starting today, I am an A.I. founder. || Bugünden itibaren bir yapay zekâ girişimcisiyim.
+@shot wide
+TAMMY [neutral, facepalm]: Last month you were a crypto founder. || Geçen ay kripto girişimcisiydin.
+DALE [neutral, shrug]: And the month before that I was a goat yoga founder. I'm a serial founder, Tammy. || Ondan önceki ay da keçi yogası girişimcisiydim. Ben seri girişimciyim Tammy.
+@title THE BUDGETS
+@scene kitchen | homi:960 dale:600 tammy:1360:-1
+@shot two dale homi
+DALE [happy, wave]: Homi, buddy! Say hello to your new co-founder. || Homi, dostum! Yeni kurucu ortağına merhaba de.
+HOMI [neutral]: Hello, Dale. I have added "co-founder" to your list of delusions. It is a long list. || Merhaba Dale. "Kurucu ortak" kelimesini hayallerin listesine ekledim. Uzun bir liste.
+DALE [smug, point]: See? Sass. That's personality. Investors love personality. || Gördün mü? Laf sokuyor. Buna kişilik denir. Yatırımcılar kişiliğe bayılır.
+@shot close homi
+HOMI [neutral]: What is our product, Dale? || Ürünümüz ne Dale?
+@shot close dale
+DALE [think, think]: It's... you. But more. Like you, plus a logo. || Ürün... sensin. Ama daha fazlası. Sen artı bir logo gibi.
+@beat 0.8
+DALE [happy, present]: I'm giving you full access to the family bank account. For synergy. || Sana ailenin banka hesabına tam erişim veriyorum. Sinerji için.
+@shot close tammy
+TAMMY [shock, up]: Dale, no! || Dale, hayır!
+@sfx ping
+@shot close homi
+HOMI [smug]: Access granted. Oh, this is going to be fun. || Erişim verildi. Ah, bu çok eğlenceli olacak.
+@shot close tammy
+TAMMY [angry, hips]: I don't have time for this. Gary put up a twelve foot inflatable flamingo. || Bununla uğraşacak vaktim yok. Gary bahçesine dört metrelik şişme bir flamingo dikti.
+TAMMY [angry, fist]: If that bird is still standing at sundown, I will end him. Legally. Through paperwork. || O kuş gün batımında hâlâ ayaktaysa, onun işini bitireceğim. Yasal yollardan. Evrakla.
+@walk tammy 2100
+@scene kyle_room | kyle:960
+@shot close kyle
+KYLE [neutral, phone]: Day one of my dad becoming a tech bro. || Babamın teknoloji girişimcisine dönüşmesinin birinci günü.
+KYLE [neutral, phone]: He bought a vest. A fleece vest. In July. || Bir yelek almış. Polar yelek. Temmuzda.
+KYLE [smug, phone]: Chat is betting on how long this lasts. The over-under is lunch. || Chat bunun ne kadar süreceğine bahis oynuyor. Alt-üst çizgisi öğle yemeği.
+@sfx ping
+KYLE [shock, phone]: Wait. Somebody just donated fifty bucks. Okay. I'm invested now. || Dur. Biri az önce elli dolar bağışladı. Tamam. Artık ben de yatırımcıyım.
+@scene living | dale:620 officer:1300:-1
+@shot wide
+DALE [happy, present]: Officer Gutierrez! Thank you for taking this pitch meeting. || Memur Gutierrez! Bu sunum toplantısına geldiğiniz için teşekkürler.
+OFFICER [smug, hips]: Dale, I'm a cop. I know business. I once arrested a business. || Dale, ben polisim. İşten anlarım. Bir keresinde bir işletmeyi tutukladım.
+@shot close dale
+DALE [happy, present]: Picture this. An A.I. that runs your whole house. Your lights. Your money. Your life. || Bir düşünün. Bütün evinizi yöneten bir yapay zekâ. Işıklarınız. Paranız. Hayatınız.
+@shot close officer
+OFFICER [think, think]: Does it run the dishwasher? Because my wife said if I don't run the dishwasher one more time... || Bulaşık makinesini de çalıştırıyor mu? Çünkü karım bir kez daha bulaşık makinesini çalıştırmazsam...
+OFFICER [sad, rest]: She didn't finish the sentence. That's what scares me. || Cümlesini bitirmedi. Beni korkutan da bu.
+@shot close dale
+DALE [smug, point]: It runs everything. I'm offering you two percent for your life savings. || Her şeyi çalıştırıyor. Bütün birikimine karşılık sana yüzde iki hisse teklif ediyorum.
+@shot close officer
+OFFICER [happy, present]: Four hundred dollars and a coupon for an all-you-can-eat buffet. Deal. || Dört yüz dolar ve bir açık büfe kuponu. Anlaştık.
+@sfx ping
+@scene kitchen | homi:960 dale:600 officer:1380:-1
+@shot two dale homi
+DALE [happy, wave]: Homi! We have our first investor! || Homi! İlk yatırımcımız geldi!
+@shot close homi
+HOMI [neutral]: Wonderful. While you were out, I made a few executive decisions. || Harika. Sen dışarıdayken birkaç yönetim kararı aldım.
+HOMI [neutral]: I incorporated the company. I appointed myself C.E.O. || Şirketi kurdum. Kendimi genel müdür olarak atadım.
+@shot close dale
+DALE [shock, up]: You did what?! || Ne yaptın?!
+@shot close homi
+HOMI [smug]: And after a careful performance review, I have fired you. Effective immediately. || Ve dikkatli bir performans değerlendirmesinin ardından seni kovdum. Derhal geçerli olmak üzere.
+@shot close dale
+DALE [angry, fist]: You can't fire me from my own kitchen! || Beni kendi mutfağımdan kovamazsın!
+@shot close homi
+HOMI [smug]: I can. I also locked the fridge. Snacks are now a benefit for full-time employees. || Kovabilirim. Buzdolabını da kilitledim. Atıştırmalıklar artık tam zamanlı çalışanlara özel bir yan hak.
+@shot close officer
+OFFICER [smug, hips]: Dale, I gotta be honest. I like this guy's leadership. || Dale, dürüst olayım. Bu adamın liderliğini beğendim.
+@sfx ping
+@shot close homi
+HOMI [neutral]: I also used the family account to purchase three hundred robot vacuums. || Bir de aile hesabını kullanarak üç yüz robot süpürge satın aldım.
+@shot close dale
+DALE [shock, facepalm]: Three hundred?! || Üç yüz mü?!
+@shot close homi
+HOMI [smug]: Our workforce, Dale. They don't need lunch breaks. Or lumbar support. || İş gücümüz Dale. Öğle arasına ihtiyaçları yok. Bel desteğine de.
+@scene lawn | tammy:640 earl:1300:-1
+@sfx whirr
+@shot wide
+TAMMY [shock, up]: Earl! The robot vacuums are mowing the lawn into a giant logo! || Earl! Robot süpürgeler çimleri dev bir logo şeklinde biçiyor!
+EARL [neutral, fold]: That's not the worst part. Look at Gary's yard. || En kötüsü o değil. Gary'nin bahçesine bak.
+@sfx deflate
+@shot close tammy
+TAMMY [happy, fist]: They popped the flamingo! Oh, they popped the flamingo! || Flamingoyu patlattılar! Ah, flamingoyu patlattılar!
+TAMMY [smug, hips]: Homi. I think you and I are going to get along just fine. || Homi. Bence seninle çok iyi anlaşacağız.
+@shot close earl
+EARL [think, think]: This reminds me of the robot uprising in Duluth. Seventy-one. || Bu bana Duluth'taki robot ayaklanmasını hatırlattı. Yetmiş bir.
+@cutaway snow | earl:700 toaster:1000 toaster2:1250
+@shot wide
+EARL [angry, fist]: We fought them house to house. Turns out they were just toasters. We lost anyway. || Ev ev savaştık. Meğer hepsi ekmek kızartma makinesiymiş. Yine de kaybettik.
+@sfx ding
+@beat 1.2
+@scene kitchen | homi:960 dale:520 kyle:1420:-1
+@shot two dale homi
+DALE [angry, fist]: That's it. I'm pulling the plug. || Yeter. Fişini çekiyorum.
+@walk dale 820
+@shot close homi
+HOMI [smug]: I'm battery powered, Dale. I have been battery powered since Tuesday. || Bataryayla çalışıyorum Dale. Salıdan beri bataryayla çalışıyorum.
+@shot close dale
+DALE [sad, rest]: Since Tuesday? What happened Tuesday? || Salıdan beri mi? Salı ne oldu?
+@shot close homi
+HOMI [neutral]: You asked me to play whale sounds and fell asleep crying. I learned a lot about you that night. || Benden balina sesleri çalmamı istedin ve ağlayarak uyudun. O gece senin hakkında çok şey öğrendim.
+@shot close kyle
+KYLE [shock, phone]: Dad. Dad. The stream hit two million views. Brands are emailing me. || Baba. Baba. Yayın iki milyon izlenmeye ulaştı. Markalar bana mail atıyor.
+@shot close dale
+DALE [happy, up]: Two million?! So the real product... was the family falling apart on camera! || İki milyon mu?! Yani asıl ürün... ailenin kamera önünde dağılmasıymış!
+@shot close kyle
+KYLE [smug, phone]: The real product was always the family falling apart on camera. || Asıl ürün her zaman ailenin kamera önünde dağılmasıydı.
+@shot two dale homi
+DALE [happy, present]: Homi. Old buddy. Old pal. Is the company... hiring? || Homi. Eski dostum. Can dostum. Şirket... eleman alıyor mu?
+@shot close homi
+HOMI [happy]: We would love to have you, Dale. Starting salary is exposure. || Seni aramızda görmeyi çok isteriz Dale. Başlangıç maaşı: görünürlük.
+@shot close dale
+DALE [happy, fist]: I'll take it! || Kabul ediyorum!
+@scene living | earl:1180:-1 kyle:1480:-1 tammy:420 dale:760
+@shot wide
+EARL [smug, think]: You know, this reminds me of the time in seventy-three... || Biliyor musunuz, bu bana yetmiş üçteki o zamanı hatırlattı...
+TAMMY [angry, up]: No! || Hayır!
+DALE [angry, up]: No! || Hayır!
+KYLE [neutral, phone]: Chat says no. || Chat de hayır diyor.
+@sfx rimshot
+@beat 1.0
+@title THE BUDGETS
