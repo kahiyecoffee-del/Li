@@ -289,7 +289,7 @@ def build(events, limit=None):
             segs.append(dict(kind="title", t0=t, t1=t + 3.0, text=e["text"]))
             t += 3.0
         elif e["t"] == "laugh":
-            x = laugh_sample(e["big"], len(audio))
+            x = laugh_sample(e["big"], len(audio)) if os.environ.get("LAUGH_TRACK") == "1" else None  # iptal edildi
             if x is not None:
                 audio.append((max(0.0, t - 0.25), x, 0.55 if e["big"] else 0.45))
                 d = 1.25 if e["big"] else 0.8
