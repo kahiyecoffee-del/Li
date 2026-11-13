@@ -136,6 +136,10 @@ class Character:
         for sx in (-1, 1):
             ellipse(ctx, sx * w * 0.49, h * 0.0, w * 0.09, h * 0.11)
             fill_stroke(ctx, c["skin"])
+            ctx.arc(sx * w * 0.50, h * 0.0, w * 0.04, math.pi * 0.6, math.pi * 1.4) if sx < 0 else ctx.arc(sx * w * 0.50, h * 0.0, w * 0.04, -math.pi * 0.4, math.pi * 0.4)
+            ctx.set_source_rgb(*darker(c["skin"], 0.6))
+            ctx.set_line_width(3)
+            ctx.stroke()
         # kafa + çene birleşik kontur
         ctx.set_source_rgb(*INK)
         self.head_path(ctx, w + 2 * LW, h + 2 * LW, chin)
@@ -143,6 +147,23 @@ class Character:
         ctx.set_source_rgb(*c["skin"])
         self.head_path(ctx, w, h, chin)
         ctx.fill()
+        ctx.save()
+        self.head_path(ctx, w, h, chin)
+        ctx.clip()
+        ctx.set_fill_rule(cairo.FILL_RULE_EVEN_ODD)
+        ctx.rectangle(-w, -h, 2 * w, 2 * h)
+        ellipse(ctx, -w * 0.13, -h * 0.13, w * 0.50, h * 0.60)
+        ctx.set_source_rgba(*darker(c["skin"], 0.72), 0.55)
+        ctx.fill()
+        ctx.set_fill_rule(cairo.FILL_RULE_WINDING)
+        ellipse(ctx, -w * 0.22, -h * 0.30, w * 0.14, h * 0.06)
+        ctx.set_source_rgba(1, 1, 1, 0.18)
+        ctx.fill()
+        for sx in (-1, 1):
+            ellipse(ctx, sx * w * 0.27, h * 0.15, w * 0.075, h * 0.04)
+            ctx.set_source_rgba(0.95, 0.45, 0.45, 0.30)
+            ctx.fill()
+        ctx.restore()
         # sakal gölgesi
         if sp.get("stubble"):
             ctx.save()
@@ -169,6 +190,12 @@ class Character:
             ctx.set_source_rgb(*INK)
             ctx.set_line_width(LW)
             ctx.stroke()
+            for k in range(3):
+                ctx.move_to(-w * (0.30 - k * 0.12), -h * 0.40)
+                ctx.curve_to(-w * (0.24 - k * 0.12), -h * 0.36, -w * (0.18 - k * 0.12), -h * 0.33, -w * (0.12 - k * 0.12), -h * 0.32)
+            ctx.set_source_rgba(1, 1, 1, 0.22)
+            ctx.set_line_width(5)
+            ctx.stroke()
             ctx.restore()
             if hs == "tuft":
                 ctx.move_to(-w * 0.04, -h * 0.47)
@@ -191,13 +218,33 @@ class Character:
             ellipse(ctx, 0, -h * 0.36, w * 0.52, h * 0.2)
             ctx.set_source_rgb(*c["hair"])
             ctx.fill()
+            ctx.arc(-w * 0.02, -h * 0.22, w * 0.30, math.pi * 1.15, math.pi * 1.5)
+            ctx.set_source_rgba(1, 1, 1, 0.35)
+            ctx.set_line_width(9)
+            ctx.stroke()
+            for k in (-0.25, 0.0, 0.22):
+                ctx.move_to(w * k, -h * 0.47)
+                ctx.curve_to(w * (k + 0.03), -h * 0.38, w * (k + 0.08), -h * 0.32, w * (k + 0.12), -h * 0.28)
+            ctx.set_source_rgb(*darker(c["hair"], 0.75))
+            ctx.set_line_width(3)
+            ctx.stroke()
         elif hs == "beanie":
             ctx.move_to(-w * 0.55, -h * 0.22)
             ctx.curve_to(-w * 0.58, -h * 0.75, w * 0.58, -h * 0.75, w * 0.55, -h * 0.22)
             ctx.close_path()
             fill_stroke(ctx, c["hat"])
+            ctx.arc(-w * 0.05, -h * 0.34, w * 0.24, math.pi * 1.15, math.pi * 1.5)
+            ctx.set_source_rgba(1, 1, 1, 0.2)
+            ctx.set_line_width(8)
+            ctx.stroke()
             rrect(ctx, -w * 0.58, -h * 0.30, w * 1.16, h * 0.13, 10)
             fill_stroke(ctx, darker(c["hat"]))
+            for k in range(-6, 7):
+                ctx.move_to(k * w * 0.085, -h * 0.29)
+                ctx.line_to(k * w * 0.085, -h * 0.18)
+            ctx.set_source_rgba(0, 0, 0, 0.25)
+            ctx.set_line_width(3)
+            ctx.stroke()
             for sx in (-1, 1):  # perçem
                 ctx.move_to(sx * w * 0.45, -h * 0.18)
                 ctx.line_to(sx * w * 0.50, -h * 0.02)
@@ -240,8 +287,12 @@ class Character:
             ellipse(ctx, ex, ey, ew * big, eh * big)
             fill_stroke(ctx, (1, 1, 1), 4.5)
             pr = 0.22 if emo == "shock" else 0.30
-            ellipse(ctx, ex + lx * ew * 0.45, ey + ly * eh * 0.35 + eh * 0.1, ew * pr, ew * pr)
+            px, py = ex + lx * ew * 0.45, ey + ly * eh * 0.35 + eh * 0.1
+            ellipse(ctx, px, py, ew * pr, ew * pr)
             ctx.set_source_rgb(*INK)
+            ctx.fill()
+            ellipse(ctx, px - ew * pr * 0.35, py - ew * pr * 0.4, ew * pr * 0.32, ew * pr * 0.32)
+            ctx.set_source_rgb(1, 1, 1)
             ctx.fill()
             lid = max(blink, sp.get("lids", 0.0) if emo not in ("shock", "happy") else 0.0)
             if emo == "angry":
@@ -353,14 +404,25 @@ class Character:
         bw, bh, lh = sp["body_w"], sp["body_h"], sp["leg_h"]
         bob = st.get("bob", 0.0)
         walk = st.get("walk")
+        ellipse(ctx, 6, -4, bw * 0.66, 18)
+        ctx.set_source_rgba(0, 0, 0, 0.22)
+        ctx.fill()
         # bacaklar
         for sx in (-1, 1):
             sw = math.sin(walk + (0 if sx > 0 else math.pi)) * 18 if walk is not None else 0
             lift = max(0, math.sin(walk + (0 if sx > 0 else math.pi))) * 14 if walk is not None else 0
             hx = sx * bw * 0.22
             limb(ctx, [(hx, -lh), (hx + sw, -lift - 12)], bw * 0.28, c["pants"])
+            ctx.move_to(hx + bw * 0.08, -lh + 10)
+            ctx.line_to(hx + sw + bw * 0.08, -lift - 26)
+            ctx.set_source_rgba(0, 0, 0, 0.18)
+            ctx.set_line_width(bw * 0.09)
+            ctx.stroke()
             ellipse(ctx, hx + sw + 16, -lift - 8, bw * 0.19, 15)
             fill_stroke(ctx, c["shoes"])
+            ellipse(ctx, hx + sw + 6, -lift - 14, bw * 0.07, 4)
+            ctx.set_source_rgba(1, 1, 1, 0.35)
+            ctx.fill()
         ctx.translate(0, -lh + bob)
         # kollar arka katman değil: gövdeden sonra çizilecek; omuz noktaları
         top = -bh
@@ -371,7 +433,47 @@ class Character:
         ctx.curve_to(bw * 0.5 + sp["belly"], top + bh * 0.8, bw * 0.55, top + bh * 0.4, bw * 0.42, top + 10)
         ctx.curve_to(bw * 0.2, top - 6, -bw * 0.2, top - 6, -bw * 0.42, top + 10)
         ctx.close_path()
+        torso = ctx.copy_path()
         fill_stroke(ctx, c["shirt"])
+        ctx.save()
+        ctx.append_path(torso)
+        ctx.clip()
+        ctx.move_to(bw * 0.16, top - 10)
+        ctx.curve_to(bw * 0.30, top + bh * 0.3, bw * 0.26, top + bh * 0.7, bw * 0.20, 10)
+        ctx.line_to(bw, 10)
+        ctx.line_to(bw, top - 10)
+        ctx.close_path()
+        ctx.set_source_rgba(*darker(c["shirt"], 0.7), 0.6)
+        ctx.fill()
+        for sx in (-1, 1):  # kıvrım çizgileri
+            ctx.move_to(sx * bw * 0.36, top + bh * 0.62)
+            ctx.curve_to(sx * bw * 0.30, top + bh * 0.70, sx * bw * 0.30, top + bh * 0.78, sx * bw * 0.34, top + bh * 0.86)
+        ctx.set_source_rgba(0, 0, 0, 0.3)
+        ctx.set_line_width(3.5)
+        ctx.stroke()
+        ctx.restore()
+        ctx.append_path(torso)
+        ctx.set_source_rgb(*INK)
+        ctx.set_line_width(LW)
+        ctx.stroke()
+        if self.name == "dale":  # cep + düğmeler
+            rrect(ctx, -bw * 0.34, top + 50, 42, 46, 4)
+            ctx.set_source_rgb(*INK)
+            ctx.set_line_width(3.5)
+            ctx.stroke()
+            for k in range(4):
+                ellipse(ctx, -24, top + 70 + k * 42, 4.5, 4.5)
+                ctx.set_source_rgb(0.75, 0.72, 0.66)
+                ctx.fill()
+        if self.name == "tammy":  # hırka açıklığı + düğmeler
+            ctx.move_to(0, top + 30)
+            ctx.line_to(0, -12)
+            ctx.set_source_rgb(*INK)
+            ctx.set_line_width(4)
+            ctx.stroke()
+            for k in range(4):
+                ellipse(ctx, -12, top + 60 + k * 40, 6, 6)
+                fill_stroke(ctx, (0.95, 0.9, 0.75), 2.5)
         # kemer
         ctx.rectangle(-bw * 0.44, -12, bw * 0.88, 16)
         fill_stroke(ctx, darker(c["pants"], 0.7), 4)
@@ -435,8 +537,24 @@ class Character:
             limb(ctx, pts, sp["arm_w"], c["shirt"])
             # kol ağzı + el
             hx, hy = pts[2]
+            ex_, ey_ = pts[1]
+            dx, dy = hx - ex_, hy - ey_
+            dl = math.hypot(dx, dy) or 1
+            cxm, cym = ex_ + dx * 0.80, ey_ + dy * 0.80
+            nx, ny = -dy / dl * sp["arm_w"] * 0.55, dx / dl * sp["arm_w"] * 0.55
+            ctx.move_to(cxm - nx, cym - ny)
+            ctx.line_to(cxm + nx, cym + ny)
+            ctx.set_source_rgb(*INK)
+            ctx.set_line_width(3.5)
+            ctx.stroke()
+            ellipse(ctx, hx - sx * sp["arm_w"] * 0.45, hy - sp["arm_w"] * 0.2, sp["arm_w"] * 0.26, sp["arm_w"] * 0.22)
+            fill_stroke(ctx, c["skin"], 4)
             ellipse(ctx, hx, hy, sp["arm_w"] * 0.62, sp["arm_w"] * 0.62)
             fill_stroke(ctx, c["skin"], 5)
+            ctx.arc(hx, hy, sp["arm_w"] * 0.62, 0.2, 1.4)
+            ctx.set_source_rgba(0, 0, 0, 0.18)
+            ctx.set_line_width(6)
+            ctx.stroke()
             if st.get("prop") == "phone" and sx > 0:
                 ctx.save()
                 ctx.translate(hx, hy - 6)

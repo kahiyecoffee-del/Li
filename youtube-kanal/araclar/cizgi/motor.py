@@ -271,13 +271,26 @@ def build(events, limit=None):
             emo[who] = e["emo"]
             if e["pose"]:
                 pose[who] = e["pose"]
-            d = lead + len(v) / SR + 0.32
+            d = lead + len(v) / SR + 0.45
             cam = shot or _auto_shot(scene, who, nlines)
             segs.append(dict(kind="shot", t0=t, t1=t + d, scene=scene, shot=cam, speaker=who, emo=dict(emo),
                              pose=dict(pose), snap=_snap(scene), audio=v, a0=t + lead, en=e["en"], tr=e["tr"]))
             audio.append((t + lead, v, 1.0))
             shot = None
             t += d
+            # tepki çekimi: dinleyenin yüzüne kısa kesme (sitcom ritmi)
+            others = [k for k in scene["cast"] if k != who and k not in PROPS]
+            if not scene["cut"] and others and nlines % 3 == 0:
+                sx = scene["cast"][who][0]
+                lis = min(others, key=lambda k: abs(scene["cast"][k][0] - sx))
+                rx = {"shock": "shock", "angry": "sad", "smug": "angry", "happy": "smug", "sad": "smug"}.get(e["emo"], "neutral")
+                if nlines % 2:
+                    rx = {"neutral": "smug", "smug": "shock"}.get(rx, rx)
+                em2 = dict(emo)
+                em2[lis] = rx
+                segs.append(dict(kind="shot", t0=t, t1=t + 1.0, scene=scene, shot=["close", lis], speaker=None,
+                                 emo=em2, pose=dict(pose), snap=_snap(scene), react=who))
+                t += 1.0
     return segs, audio, t
 
 
@@ -466,7 +479,9 @@ def render_frame(ctx, seg, t, blink, envs):
         st["emo"] = seg["emo"].get(name, "neutral")
         # bakış: konuşana / konuşan en yakına
         target = None
-        if speaker and speaker != name and speaker in cast:
+        if seg.get("react") in cast and seg["react"] != name:
+            target = cast[seg["react"]][0]
+        elif speaker and speaker != name and speaker in cast:
             target = cast[speaker][0]
         elif speaker == name:
             others = [v[0] for k, v in cast.items() if k != name]

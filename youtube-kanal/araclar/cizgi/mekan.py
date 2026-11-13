@@ -235,6 +235,328 @@ def snow(ctx):
 
 
 BGS = {"living": living, "kitchen": kitchen, "kyle_room": kyle_room, "lawn": lawn, "chapel": chapel, "snow": snow}
+# ---------------------------------------------------------------- detay katmanları
+def plant(ctx, x, y, s=1.0):
+    box(ctx, x - 40 * s, y - 70 * s, 80 * s, 70 * s, "#b5643c", r=8)
+    for i, a in enumerate((-0.9, -0.45, 0.0, 0.45, 0.9)):
+        ctx.save()
+        ctx.translate(x, y - 70 * s)
+        ctx.rotate(a)
+        ellipse(ctx, 0, -70 * s, 22 * s, 70 * s)
+        fill_stroke(ctx, rgb("#4f9a4a" if i % 2 else "#3f8040"), 4)
+        ctx.move_to(0, -10 * s)
+        ctx.line_to(0, -120 * s)
+        ctx.set_source_rgba(0, 0, 0, 0.25)
+        ctx.set_line_width(3)
+        ctx.stroke()
+        ctx.restore()
+
+
+def clock(ctx, x, y, r=48):
+    ellipse(ctx, x, y, r, r)
+    fill_stroke(ctx, rgb("#fbf7ec"))
+    for k in range(12):
+        a = k * math.pi / 6
+        ctx.move_to(x + math.cos(a) * r * 0.78, y + math.sin(a) * r * 0.78)
+        ctx.line_to(x + math.cos(a) * r * 0.9, y + math.sin(a) * r * 0.9)
+    ctx.move_to(x, y)
+    ctx.line_to(x + r * 0.5, y - r * 0.2)
+    ctx.move_to(x, y)
+    ctx.line_to(x - r * 0.1, y - r * 0.7)
+    ctx.set_source_rgb(*INK)
+    ctx.set_line_width(4)
+    ctx.stroke()
+
+
+def bookshelf(ctx, x, y, w, h):
+    box(ctx, x, y, w, h, "#7a4f2c")
+    rnd = random.Random(int(x))
+    rows = 4
+    for r in range(rows):
+        yy = y + 14 + r * (h - 20) / rows
+        box(ctx, x + 10, yy + (h - 20) / rows - 12, w - 20, 10, "#5e3b1f", 3)
+        bx = x + 14
+        while bx < x + w - 30:
+            bw_ = rnd.randint(14, 28)
+            bh_ = rnd.randint(int((h - 20) / rows * 0.55), int((h - 20) / rows * 0.8))
+            col = rnd.choice(("#c0392b", "#2e86c1", "#27ae60", "#f1c40f", "#8e44ad", "#e67e22", "#ecf0f1"))
+            box(ctx, bx, yy + (h - 20) / rows - 12 - bh_, bw_, bh_, col, 3)
+            bx += bw_ + 2
+
+
+def tv(ctx, x, y, w=300, h=180, on=True):
+    box(ctx, x - 20, y + h + 10, w + 40, 120, "#6b4a2f")
+    box(ctx, x, y, w, h, "#1b1b22", r=10)
+    if on:
+        g = cairo.LinearGradient(x, y, x + w, y + h)
+        g.add_color_stop_rgb(0, 0.35, 0.6, 0.95)
+        g.add_color_stop_rgb(1, 0.65, 0.35, 0.85)
+        rrect(ctx, x + 12, y + 12, w - 24, h - 24, 6)
+        ctx.set_source(g)
+        ctx.fill()
+
+
+def finish(ctx, floor_y=820, light_x=300):
+    """Ortam ışığı: pencere ışığı, köşe kararması, zemin temas gölgesi, kâğıt dokusu."""
+    g = cairo.RadialGradient(light_x, 200, 50, light_x, 300, 1500)
+    g.add_color_stop_rgba(0, 1, 0.97, 0.85, 0.16)
+    g.add_color_stop_rgba(0.5, 1, 0.97, 0.85, 0.0)
+    g.add_color_stop_rgba(1, 0.1, 0.05, 0.15, 0.22)
+    ctx.set_source(g)
+    ctx.paint()
+    sh = cairo.LinearGradient(0, floor_y - 30, 0, floor_y + 40)
+    sh.add_color_stop_rgba(0, 0, 0, 0, 0.0)
+    sh.add_color_stop_rgba(0.45, 0, 0, 0, 0.18)
+    sh.add_color_stop_rgba(1, 0, 0, 0, 0.0)
+    ctx.set_source(sh)
+    ctx.rectangle(0, floor_y - 30, W, 70)
+    ctx.fill()
+    rnd = random.Random(11)
+    for _ in range(5000):
+        ctx.rectangle(rnd.uniform(0, W), rnd.uniform(0, H), 1.6, 1.6)
+        v = rnd.random()
+        ctx.set_source_rgba(v, v, v, 0.05)
+        ctx.fill()
+
+
+def living_d(ctx):
+    living(ctx)
+    bookshelf(ctx, 1560, 380, 260, 440)
+    plant(ctx, 760, 820, 1.1)
+    clock(ctx, 1240, 200)
+    tv(ctx, 40, 560, 240, 140)
+    ctx.move_to(1180, 560)  # kanepe dikiş/gölge
+    ctx.line_to(1180, 640)
+    ctx.set_source_rgba(0, 0, 0, 0.3)
+    ctx.set_line_width(4)
+    ctx.stroke()
+    for (x, col) in ((960, "#e8c547"), (1300, "#6fb3d9")):  # yastıklar
+        ctx.save()
+        ctx.translate(x, 640)
+        ctx.rotate(-0.15 if x < 1100 else 0.15)
+        rrect(ctx, -70, -60, 140, 110, 30)
+        fill_stroke(ctx, rgb(col))
+        ctx.restore()
+    for k in range(6):  # halı deseni
+        ellipse(ctx, 960, 930, 560 - k * 90, 52 - k * 8)
+        ctx.set_source_rgba(1, 1, 1, 0.08 if k % 2 else 0.0)
+        ctx.set_line_width(6)
+        ctx.stroke()
+    finish(ctx, light_x=300)
+
+
+def kitchen_d(ctx):
+    kitchen(ctx)
+    for x in range(100, 1700, 48):  # fayans
+        for y in range(470, 700, 48):
+            ctx.rectangle(x, y, 46, 46)
+    ctx.set_source_rgba(1, 1, 1, 0.18)
+    ctx.fill()
+    clock(ctx, 1210, 430, 40)
+    plant(ctx, 560, 700, 0.6)
+    for i, x in enumerate((1340, 1420, 1500)):  # asılı tencereler
+        ctx.move_to(x, 380)
+        ctx.line_to(x, 420)
+        ctx.set_source_rgb(*INK)
+        ctx.set_line_width(3)
+        ctx.stroke()
+        ellipse(ctx, x, 450, 34, 30)
+        fill_stroke(ctx, rgb(("#b87333", "#9aa3ab", "#c0392b")[i]), 4)
+    box(ctx, 1730, 330, 60, 60, "#f7d774", 3)  # buzdolabı notları
+    box(ctx, 1800, 360, 60, 50, "#8fd3f4", 3)
+    box(ctx, 1745, 540, 70, 60, "#f4a6c4", 3)
+    finish(ctx, light_x=960)
+
+
+def kyle_d(ctx):
+    kyle_room(ctx)
+    ctx.set_source_rgba(0.75, 0.3, 0.95, 0.10)  # led ışığı
+    ctx.rectangle(0, 50, W, 300)
+    ctx.fill()
+    box(ctx, 900, 560, 240, 260, "#2a2f45", r=16)  # yatak kenarı
+    box(ctx, 900, 540, 240, 60, "#4b6cb7", r=16)
+    for i in range(5):  # enerji içeceği kutuları
+        box(ctx, 1210 + i * 36, 618, 24, 42, ("#36d16b", "#f1c40f")[i % 2], 3)
+    finish(ctx, light_x=1560)
+
+
+def street(ctx):
+    sky = cairo.LinearGradient(0, 0, 0, 600)
+    sky.add_color_stop_rgb(0, *rgb("#89c9f0"))
+    sky.add_color_stop_rgb(1, *rgb("#e3f2f8"))
+    ctx.set_source(sky)
+    ctx.paint()
+    cols = ("#e8c27a", "#9ec1d9", "#c7a2c9", "#a8d5a2", "#f0b48a")
+    for i, x0 in enumerate(range(-80, W, 420)):
+        box(ctx, x0, 380, 360, 330, cols[i % 5])
+        ctx.move_to(x0 - 30, 390)
+        ctx.line_to(x0 + 180, 250)
+        ctx.line_to(x0 + 390, 390)
+        ctx.close_path()
+        fill_stroke(ctx, rgb(("#8e3b2f", "#3b4f6e", "#5e3b6e", "#3f6b3a", "#7a4a2a")[i % 5]))
+        box(ctx, x0 + 140, 560, 80, 150, "#6b4a2f")
+        box(ctx, x0 + 40, 460, 80, 70, "#cfeaf7", 4)
+        box(ctx, x0 + 240, 460, 80, 70, "#cfeaf7", 4)
+    box(ctx, -10, 700, W + 20, 60, "#7cc65e", 0)  # çim şeridi
+    box(ctx, -10, 760, W + 20, 60, "#cfcac0")  # kaldırım
+    box(ctx, -10, 820, W + 20, 280, "#55585e")  # yol
+    for x in range(0, W, 220):
+        box(ctx, x, 955, 120, 14, "#f2d24b", 0)
+    for x in (300, 1300):  # sokak lambası
+        box(ctx, x, 380, 16, 380, "#3b3b3b", 4)
+        box(ctx, x - 40, 370, 96, 26, "#3b3b3b", 4, r=10)
+    # park etmiş araba
+    box(ctx, 1500, 860, 330, 90, "#c0392b", r=30)
+    box(ctx, 1570, 800, 190, 80, "#c0392b", r=24)
+    box(ctx, 1590, 815, 70, 50, "#bfe3f5", 4, r=8)
+    box(ctx, 1675, 815, 70, 50, "#bfe3f5", 4, r=8)
+    for wx in (1570, 1760):
+        ellipse(ctx, wx, 950, 40, 40)
+        fill_stroke(ctx, rgb("#222222"))
+    finish(ctx, floor_y=760, light_x=1600)
+
+
+def diner(ctx):
+    wall_floor(ctx, "#e8f1f2", "#d63c3c", "#d9d2c0")
+    for x in range(0, W, 60):  # dama zemin
+        for y in range(820, H, 60):
+            if (x // 60 + y // 60) % 2:
+                ctx.rectangle(x, y, 60, 60)
+    ctx.set_source_rgb(0.15, 0.15, 0.18)
+    ctx.fill()
+    box(ctx, -10, 560, W + 20, 40, "#d63c3c", 0)  # kırmızı şerit
+    for x in (120, 620, 1120, 1620):
+        window(ctx, x, 150, 260, 220)
+    box(ctx, 0, 640, W, 40, "#b8bcc2")  # bar tezgâhı
+    box(ctx, 0, 680, W, 140, "#d63c3c")
+    for x in range(120, W, 260):  # taburelar
+        box(ctx, x, 820, 18, 110, "#9aa3ab", 4)
+        ellipse(ctx, x + 9, 820, 56, 18)
+        fill_stroke(ctx, rgb("#d63c3c"))
+    box(ctx, 800, 40, 320, 80, "#2b2b2b", r=12)  # neon tabela
+    ctx.select_font_face("Inter", cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
+    ctx.set_font_size(52)
+    ctx.move_to(838, 98)
+    ctx.set_source_rgb(1, 0.4, 0.55)
+    ctx.show_text("EAT 24/7")
+    for x in (300, 900, 1500):  # kek/kahve
+        ellipse(ctx, x, 630, 50, 14)
+        fill_stroke(ctx, rgb("#f4f1e8"), 4)
+        box(ctx, x - 20, 590, 40, 40, "#f4f1e8", 4, r=6)
+    finish(ctx, light_x=960)
+
+
+def police(ctx):
+    wall_floor(ctx, "#b9c4cf", "#5a6a7c", "#8a8d90")
+    box(ctx, 120, 160, 520, 330, "#f2efe6")  # ilan panosu
+    rnd = random.Random(4)
+    for i in range(9):
+        box(ctx, 140 + (i % 3) * 165, 180 + (i // 3) * 100, 140, 86, ("#fbf7ec", "#f7d774", "#f4a6c4")[i % 3], 3)
+        ellipse(ctx, 210 + (i % 3) * 165, 184 + (i // 3) * 100, 7, 7)
+        fill_stroke(ctx, rgb("#c0392b"), 2)
+    box(ctx, 1500, 150, 240, 340, "#5a6a7c")  # dosya dolabı
+    for k in range(4):
+        box(ctx, 1520, 170 + k * 80, 200, 66, "#8798aa", 4)
+        box(ctx, 1600, 196 + k * 80, 40, 12, "#2b2b2b", 3)
+    box(ctx, 700, 600, 700, 50, "#6b4a2f")  # masa
+    box(ctx, 720, 650, 660, 170, "#5a3d27")
+    box(ctx, 880, 520, 170, 80, "#e8e2d0", 4)  # evrak yığını
+    box(ctx, 900, 500, 150, 24, "#f5f0e0", 4)
+    ellipse(ctx, 1250, 585, 60, 16)  # çörek kutusu
+    fill_stroke(ctx, rgb("#f2b6c6"))
+    for k in range(3):
+        ellipse(ctx, 1215 + k * 35, 570, 18, 10)
+        fill_stroke(ctx, rgb("#c47a3a"), 3)
+    clock(ctx, 1100, 220)
+    box(ctx, 1840, 300, 60, 520, "#3d4a5a")  # nezarethane parmaklık
+    for x in range(1760, 1920, 34):
+        box(ctx, x, 120, 12, 700, "#2b2b2b", 3)
+    finish(ctx, light_x=600)
+
+
+def garage(ctx):
+    wall_floor(ctx, "#a7a39a", "#6e6a62", "#7c7f84")
+    box(ctx, 100, 140, 600, 380, "#7a5a3a")  # alet panosu
+    for i in range(12):
+        x = 140 + (i % 6) * 92
+        y = 190 + (i // 6) * 160
+        ctx.move_to(x, y)
+        ctx.line_to(x + 20 * ((i % 3) - 1), y + 110)
+        ctx.set_source_rgb(*INK)
+        ctx.set_line_width(14)
+        ctx.stroke()
+        ctx.move_to(x, y)
+        ctx.line_to(x + 20 * ((i % 3) - 1), y + 110)
+        ctx.set_source_rgb(*rgb(("#c0392b", "#9aa3ab", "#e67e22")[i % 3]))
+        ctx.set_line_width(8)
+        ctx.stroke()
+    box(ctx, 1000, 120, 820, 640, "#cfcac0")  # garaj kapısı
+    for y in range(160, 760, 70):
+        ctx.move_to(1000, y)
+        ctx.line_to(1820, y)
+    ctx.set_source_rgba(0, 0, 0, 0.3)
+    ctx.set_line_width(4)
+    ctx.stroke()
+    for i in range(5):  # karton kutular
+        box(ctx, 760 + (i % 3) * 70, 700 - (i // 3) * 70, 66, 66, "#c9a06a", 4)
+    ellipse(ctx, 600, 960, 180, 24)  # yağ lekesi
+    ctx.set_source_rgba(0, 0, 0, 0.25)
+    ctx.fill()
+    finish(ctx, light_x=1400)
+
+
+def office(ctx):
+    wall_floor(ctx, "#dfe6ee", "#9aa7b4", "#6f7f8f")
+    window(ctx, 1200, 120, 620, 380)
+    for x in range(1210, 1820, 60):  # şehir silueti
+        h = 80 + (x * 37) % 160
+        ctx.rectangle(x, 500 - h - 10, 50, h)
+    ctx.set_source_rgba(0.3, 0.4, 0.55, 0.35)
+    ctx.fill()
+    box(ctx, 120, 200, 420, 260, "#ffffff")  # beyaz tahta
+    ctx.move_to(150, 420)
+    for k in range(6):
+        ctx.line_to(170 + k * 60, 420 - k * 30 - (k % 2) * 30)
+    ctx.set_source_rgb(0.2, 0.6, 0.3)
+    ctx.set_line_width(6)
+    ctx.stroke()
+    ctx.select_font_face("Inter", cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
+    ctx.set_font_size(34)
+    ctx.move_to(150, 250)
+    ctx.set_source_rgb(0.15, 0.3, 0.7)
+    ctx.show_text("SYNERGY!!!")
+    box(ctx, 600, 620, 720, 40, "#e8e2d8")  # toplantı masası
+    box(ctx, 640, 660, 20, 160, "#9aa3ab", 4)
+    box(ctx, 1260, 660, 20, 160, "#9aa3ab", 4)
+    box(ctx, 860, 520, 200, 110, "#1b1b22", r=8)  # laptop
+    box(ctx, 872, 532, 176, 86, "#5aa0e6", 3, r=4)
+    plant(ctx, 1700, 820, 1.2)
+    finish(ctx, light_x=1500)
+
+
+def chapel_d(ctx):
+    chapel(ctx)
+    for x in range(200, 1800, 300):  # sıralar
+        box(ctx, x, 760, 220, 60, "#8a5a2b")
+    finish(ctx, light_x=960)
+
+
+def snow_d(ctx):
+    snow(ctx)
+    finish(ctx, floor_y=780, light_x=960)
+
+
+def lawn_d(ctx):
+    lawn(ctx)
+    for x in (720, 1180):  # posta kutusu / çalı
+        ellipse(ctx, x, 770, 90, 50)
+        fill_stroke(ctx, rgb("#3f8040"))
+    finish(ctx, floor_y=780, light_x=1600)
+
+
+BGS.update({"living": living_d, "kitchen": kitchen_d, "kyle_room": kyle_d, "lawn": lawn_d, "chapel": chapel_d,
+            "snow": snow_d, "street": street, "diner": diner, "police": police, "garage": garage, "office": office})
+
 _cache = {}
 
 

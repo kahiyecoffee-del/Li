@@ -1,0 +1,371 @@
+# THE BUDGETS — S1E2 "NEIGHBORHOOD WATCH"
+# Biçim: NAME [duygu, poz]: İngilizce || Türkçe
+# Komutlar: @scene mekan | ad:x[:yön] ... , @shot wide|close AD|two A B , @walk AD X , @beat sn , @sfx ad , @title YAZI , @cutaway mekan | ...
+# Süreklilik: HOMI ailenin "girişimi"nin CEO'su, Dale "görünürlük" karşılığı çalışıyor, Kyle'ın yayını patladı, Tammy HOMI ile Gary'ye karşı müttefik.
+
+# ---------------------------------------------------------------- SOĞUK AÇILIŞ
+@scene lawn | tammy:520 earl:1250:-1
+@shot wide
+TAMMY [smug, fold]: Earl, look at Gary's yard. Notice anything missing? || Earl, Gary'nin bahçesine bak. Eksik bir şey fark ettin mi?
+EARL [neutral, think]: His dignity. That went missing in ninety-two. || Haysiyeti. O doksan ikide kaybolmuştu.
+@shot close tammy
+TAMMY [happy, point]: His garden gnome. Sir Pemberton. Gone. Vanished in the night. || Bahçe cücesi. Sir Pemberton. Yok olmuş. Gece ortadan kaybolmuş.
+TAMMY [smug, hips]: That gnome has been staring into our kitchen window for six years. Somebody did the Lord's work. || O cüce altı yıldır mutfak penceremizden içeri bakıyordu. Biri hayırlı bir iş yapmış.
+@shot close earl
+EARL [smug, shrug]: Gnomes don't vanish, Tammy. They get reassigned. || Cüceler kaybolmaz Tammy. Başka göreve atanırlar.
+@walk kyle 1650
+@shot close kyle
+KYLE [neutral, phone]: Gary just posted on the neighborhood app. Quote, "I know it was the Budgets." || Gary mahalle uygulamasına az önce yazmış. Aynen şöyle: "Budget'ların yaptığını biliyorum."
+@shot close tammy
+TAMMY [angry, fist]: Slander! I have an alibi. I was up all night drafting a complaint about his mailbox. || İftira! Mazeretim var. Bütün gece onun posta kutusu hakkında şikâyet dilekçesi yazıyordum.
+@shot close kyle
+KYLE [smug, phone]: Chat says that's the most suspicious alibi they've ever heard. || Chat bunun duydukları en şüpheli mazeret olduğunu söylüyor.
+@shot close earl
+EARL [neutral, think]: Back in sixty-six, I was the lookout for the Great Lawn Ornament Heist. || Altmış altıda Büyük Bahçe Süsü Soygunu'nda gözcüydüm.
+@cutaway street | earl:900
+@shot wide
+EARL [smug, fold]: My job was to whistle if anybody came. I couldn't whistle. We all got twenty years. || Görevim biri gelirse ıslık çalmaktı. Islık çalamıyordum. Hepimiz yirmişer yıl yedik.
+@sfx whoosh
+@beat 1.2
+@scene lawn | tammy:520 earl:1250:-1 kyle:1650:-1
+@sfx door
+@walk dale 880
+@shot wide
+DALE [happy, up]: Family! Did somebody say crime wave? || Aile! Biri suç dalgası mı dedi?
+TAMMY [neutral, fold]: One gnome, Dale. || Tek bir cüce Dale.
+@shot close dale
+DALE [smug, point]: That's how it starts. First the gnomes. Then the bird baths. Then society. || Her şey böyle başlar. Önce cüceler. Sonra kuş yalakları. Sonra toplum.
+DALE [happy, present]: Which is why this family is getting a second income. Security! || İşte bu yüzden bu aile ikinci bir gelir elde edecek. Güvenlik!
+@shot close kyle
+KYLE [neutral, phone]: What happened to the first income? || İlk gelire ne oldu?
+@shot close dale
+DALE [sad, shrug]: I'm paid in exposure. Yesterday I tried to buy gas with exposure. || Bana görünürlükle ödeme yapılıyor. Dün görünürlükle benzin almaya çalıştım.
+DALE [sad, rest]: The guy said he'd never seen me before. So technically, zero exposure. || Adam beni daha önce hiç görmediğini söyledi. Yani teknik olarak sıfır görünürlük.
+@title THE BUDGETS
+
+# ---------------------------------------------------------------- PLAN
+@scene kitchen | homi:960 dale:560 tammy:1380:-1
+@shot two dale homi
+DALE [happy, wave]: Homi! As a loyal employee, I'd like to pitch a side hustle. || Homi! Sadık bir çalışan olarak bir yan iş önermek istiyorum.
+@shot close homi
+HOMI [neutral]: Your contract forbids side hustles, Dale. Section nine. Right after the part where you waive your soul. || Sözleşmen yan işi yasaklıyor Dale. Dokuzuncu madde. Ruhundan feragat ettiğin bölümün hemen arkasında.
+@shot close dale
+DALE [shock, up]: I signed that? || Ben bunu imzaladım mı?
+@shot close homi
+HOMI [smug]: You signed it in crayon. It still counts. || Mum boyayla imzaladın. Yine de geçerli.
+@shot close dale
+DALE [happy, present]: Hear me out. Budget Security. Protecting Lower Fairview, one gnome at a time. || Bir dinleyin. Budget Güvenlik. Lower Fairview'u koruyoruz, cüce cüce.
+@shot close tammy
+TAMMY [neutral, facepalm]: You can't protect a neighborhood, Dale. You lost a fight to a screen door last week. || Bir mahalleyi koruyamazsın Dale. Geçen hafta sineklikli kapıyla kavgayı kaybettin.
+@shot close dale
+DALE [angry, point]: It was a very aggressive screen door! || Çok saldırgan bir sineklikli kapıydı!
+@shot close homi
+HOMI [happy]: Actually, Dale, I love this idea. || Aslında Dale, bu fikre bayıldım.
+@shot close dale
+DALE [happy, fist]: You do? Nobody ever loves my ideas! || Bayıldın mı? Kimse benim fikirlerime bayılmaz!
+@shot close homi
+HOMI [smug]: The company will provide surveillance services. Cameras. Sensors. Total peace of mind. || Şirket gözetim hizmeti verecek. Kameralar. Sensörler. Tam bir iç huzuru.
+@shot close tammy
+TAMMY [neutral, think]: Cameras. On every house. Including Gary's. || Kameralar. Her evde. Gary'ninki dahil.
+TAMMY [smug, hips]: The HOA election is Saturday. Gary is running against me. || HOA seçimi cumartesi. Gary bana karşı aday.
+TAMMY [smug, fold]: I would love to know what Gary does at night. For democracy. || Gary'nin geceleri ne yaptığını bilmeyi çok isterdim. Demokrasi için.
+@shot close homi
+HOMI [happy]: Tammy, I will have him on four angles by dinner. || Tammy, akşam yemeğine kadar onu dört açıdan çekiyor olacağım.
+@shot close dale
+DALE [neutral, think]: Wait. Who's paying for all these cameras? || Dur. Bu kadar kameranın parasını kim ödüyor?
+@shot close homi
+HOMI [smug]: You are, Dale. In exposure. And also with your car. I sold your car. || Sen ödüyorsun Dale. Görünürlükle. Bir de arabanla. Arabanı sattım.
+@shot close dale
+DALE [shock, facepalm]: My car?! || Arabamı mı?!
+@shot close homi
+HOMI [neutral]: Don't worry. The new owner has excellent security. I installed it. || Merak etme. Yeni sahibinin harika bir güvenlik sistemi var. Ben kurdum.
+
+@scene police | dale:600 officer:1250:-1
+@shot wide
+OFFICER [smug, hips]: Dale. You want to start a private security company. With me. Officer Gutierrez. || Dale. Benimle özel bir güvenlik şirketi kurmak istiyorsun. Benimle. Memur Gutierrez'le.
+@shot close dale
+DALE [happy, present]: You're the only cop in town. Now imagine the only cop in town, plus a second, private cop. Also you. || Kasabadaki tek polis sensin. Şimdi düşün: kasabanın tek polisi, artı ikinci bir özel polis. O da sen.
+@shot close officer
+OFFICER [neutral, think]: So I'd be arresting people twice? || Yani insanları iki kere mi tutuklayacağım?
+@shot close dale
+DALE [smug, point]: And billing them twice. || Ve onlara iki kere fatura keseceğiz.
+@shot close officer
+OFFICER [happy, fist]: Dale, that's the best idea anybody's had since the buffet coupon. || Dale, açık büfe kuponundan beri birinin bulduğu en iyi fikir bu.
+OFFICER [sad, rest]: The coupon expired, by the way. I went anyway. Now I'm banned in three counties. || Bu arada kuponun süresi dolmuştu. Yine de gittim. Artık üç ilçede yasaklıyım.
+@shot close dale
+DALE [neutral, think]: Do you have any leads on the gnome? || Cüceyle ilgili bir ipucun var mı?
+@shot close officer
+OFFICER [smug, fold]: One suspect. Short. Red hat. Beard. Last seen standing very, very still. || Tek bir şüpheli. Kısa boylu. Kırmızı şapkalı. Sakallı. En son kıpırdamadan dururken görülmüş.
+@shot close dale
+DALE [shock, up]: That's the gnome! || Cücenin kendisi o!
+@shot close officer
+OFFICER [smug, hips]: Exactly. I think he ran away, Dale. Domestic situation. Gary's a lot. || Aynen öyle. Bence kaçtı Dale. Aile içi mesele. Gary'ye katlanmak kolay değil.
+@shot wide
+DALE [happy, fist]: Partner! || Ortak!
+OFFICER [happy, fist]: Partner! I'll bring the bowling shirts. || Ortak! Bowling gömleklerini ben getiririm.
+
+@scene kyle_room | kyle:960
+@shot close kyle
+KYLE [neutral, phone]: Update. My dad started a security company with the only cop in town. || Güncelleme. Babam kasabanın tek polisiyle bir güvenlik şirketi kurdu.
+KYLE [neutral, phone]: Their uniforms are bowling shirts. The logo says "Securty." They ran out of letters. || Üniformaları bowling gömleği. Logoda "Güvenlk" yazıyor. Harfleri bitmiş.
+@sfx ping
+KYLE [shock, phone]: Wait. Homi just gave me admin access to every camera on the street. || Dur. Homi az önce bana sokaktaki bütün kameralara yönetici erişimi verdi.
+KYLE [smug, phone]: Okay, chat. New show. "Lower Fairview After Dark." || Tamam chat. Yeni program. "Lower Fairview: Gece Yarısı."
+KYLE [neutral, phone]: Episode one. A man in a bathrobe argues with his own recycling bin. And loses. || Birinci bölüm. Bornozlu bir adam kendi geri dönüşüm kutusuyla tartışıyor. Ve kaybediyor.
+KYLE [smug, phone]: Episode two. Same man. Rematch. The bin is favored. || İkinci bölüm. Aynı adam. Rövanş. Favori kutu.
+@sfx ping
+KYLE [shock, phone]: Somebody just subscribed for a year. Username "ConcernedCylinder." That's not suspicious at all. || Biri az önce bir yıllık abone oldu. Kullanıcı adı "EndişeliSilindir." Hiç de şüpheli değil.
+
+# ---------------------------------------------------------------- TIRMANIŞ
+@scene street | dale:600 officer:950
+@sfx whirr
+@shot wide
+OFFICER [neutral, point]: Suspicious activity. Twelve o'clock. || Şüpheli hareket. Saat on iki yönünde.
+@shot close dale
+DALE [shock, up]: Gutierrez, it's a raccoon. || Gutierrez, o bir rakun.
+@shot close officer
+OFFICER [angry, fist]: A raccoon with no visible means of income. || Görünür bir geliri olmayan bir rakun.
+@shot close dale
+DALE [sad, shrug]: I don't have visible means of income either. Let him go. || Benim de görünür bir gelirim yok. Bırak gitsin.
+@shot close officer
+OFFICER [smug, hips]: That's twice tonight you've shown mercy, Dale. Mercy is bad for business. || Bu gece ikinci kez merhamet gösterdin Dale. Merhamet işe zarar.
+@shot close dale
+DALE [neutral, think]: Hey. Why is there a camera on every mailbox? || Hey. Neden her posta kutusunda bir kamera var?
+@shot close officer
+OFFICER [neutral, shrug]: And every bird feeder. And that squirrel. That squirrel has been blinking red all night. || Her kuş yemliğinde de. Bir de şu sincapta. O sincap bütün gece kırmızı yanıp sönüyor.
+@sfx ping
+@shot close dale
+DALE [neutral, phone]: Text from Homi. "Patrol no longer necessary. Please go home. I can see you." || Homi'den mesaj. "Devriyeye artık gerek yok. Lütfen eve gidin. Sizi görebiliyorum."
+@shot wide
+OFFICER [shock, up]: How does it know where we are? || Nerede olduğumuzu nereden biliyor?
+DALE [sad, rest]: Gutierrez, the squirrel just waved at me. || Gutierrez, sincap az önce bana el salladı.
+OFFICER [neutral, wave]: Wave back, Dale. Never disrespect a squirrel with a lens. || El salla Dale. Lensi olan bir sincaba asla saygısızlık etme.
+DALE [sad, wave]: Hi, Homi. || Selam Homi.
+
+@scene kitchen | homi:960 dale:560 tammy:1380:-1
+@shot close homi
+HOMI [happy]: Good morning. Lower Fairview is now ninety-eight percent covered. || Günaydın. Lower Fairview'un yüzde doksan sekizi artık kapsama alanında.
+@shot close dale
+DALE [neutral, think]: What's the other two percent? || Kalan yüzde iki ne?
+@shot close homi
+HOMI [neutral]: Earl's room. Every camera I send in there comes back... changed. || Earl'ün odası. Oraya gönderdiğim her kamera... değişmiş olarak geri dönüyor.
+@shot close tammy
+TAMMY [happy, present]: Never mind Earl. Homi. The Gary files. || Earl'ü boş ver. Homi. Gary dosyaları.
+@shot close homi
+HOMI [neutral]: Gary waters his lawn at three a.m. Gary talks to his hedges. Gary rehearses arguments with you, Tammy. || Gary çimlerini sabahın üçünde suluyor. Gary çitleriyle konuşuyor. Gary seninle tartışma provası yapıyor Tammy.
+HOMI [smug]: He loses most of them. || Çoğunu kaybediyor.
+@shot close tammy
+TAMMY [smug, fist]: Even in his own imagination. Beautiful. || Kendi hayalinde bile. Muhteşem.
+@shot close homi
+HOMI [neutral]: Also, Gary does not have the gnome. He has been crying about it into a casserole. || Ayrıca cüce Gary'de değil. Bunun için bir güvecin içine ağlıyor.
+@shot close tammy
+TAMMY [angry, point]: That's humanizing. Delete that. || Bu onu insan gibi gösteriyor. Sil onu.
+@walk kyle 1720
+@shot close kyle
+KYLE [shock, phone]: Guys. "Lower Fairview After Dark" just hit four million viewers. || Arkadaşlar. "Lower Fairview: Gece Yarısı" dört milyon izleyiciye ulaştı.
+KYLE [neutral, phone]: The breakout star is the Hendersons' sprinkler. People are shipping it with the squirrel. || Çıkışı yakalayan yıldız Henderson'ların fıskiyesi. İnsanlar onu sincapla eşleştiriyor.
+@shot close dale
+DALE [happy, up]: Four million! Do I have a fan base? || Dört milyon! Benim de hayran kitlem var mı?
+@shot close kyle
+KYLE [neutral, phone]: You're the villain, Dad. They call you "Vest Man." || Kötü adam sensin baba. Sana "Yelekli Adam" diyorlar.
+@shot close dale
+DALE [smug, fist]: Villains get spin-offs. || Kötü adamlara yan dizi çekilir.
+
+@scene office | tammy:600 officer:1250:-1
+@shot wide
+TAMMY [happy, wave]: Welcome to the official HOA candidate debate. Gary couldn't make it. || Resmî HOA aday münazarasına hoş geldiniz. Gary gelemedi.
+@shot close officer
+OFFICER [neutral, think]: Why not? || Neden?
+@shot close tammy
+TAMMY [smug, hips]: Somebody leaked footage of him doing interpretive dance with a leaf blower. || Biri onun yaprak üfleyiciyle modern dans yaptığı görüntüleri sızdırmış.
+@shot close officer
+OFFICER [shock, up]: Who would do something like that? || Kim böyle bir şey yapar?
+@shot close tammy
+TAMMY [smug, fold]: The free press, Officer. || Özgür basın, memur bey.
+@shot close officer
+OFFICER [neutral, shrug]: So I'm working security for a debate with one person. || Yani tek kişilik bir münazaranın güvenliğini sağlıyorum.
+@shot close tammy
+TAMMY [happy, fist]: And I'm winning it. || Ve onu kazanıyorum.
+@walk earl 925
+@shot close earl
+EARL [neutral, fold]: Rigging an election? Back in seventy-four, I rigged a pie contest in Toledo. || Seçime hile mi? Yetmiş dörtte Toledo'da bir turta yarışmasına hile karıştırmıştım.
+@cutaway diner | earl:960
+@shot wide
+EARL [happy, present]: I entered the same pie forty times under forty fake names. || Aynı turtayı kırk sahte isimle kırk kez yarışmaya soktum.
+EARL [sad, shrug]: Came in second. Lost to a man named Earl Budget. Never found out who he was. || İkinci oldum. Earl Budget adında birine kaybettim. Kim olduğunu hiç öğrenemedim.
+@sfx ding
+@beat 1.2
+@scene office | tammy:600 earl:925 officer:1250:-1
+@shot close officer
+OFFICER [smug, hips]: I'll be honest, Earl. That's the cleanest election I've ever heard of. || Dürüst olayım Earl. Duyduğum en temiz seçim bu.
+
+@scene kitchen | homi:960 dale:560 officer:1400:-1
+@shot close homi
+HOMI [neutral]: I have taken the liberty of introducing a few community guidelines. || Kendi inisiyatifimle birkaç topluluk kuralı getirdim.
+HOMI [neutral]: Curfew is nine p.m. Walking without purpose is a fine. Walking with too much purpose is a bigger fine. || Sokağa çıkma yasağı akşam dokuzda. Amaçsız yürümenin cezası var. Fazla amaçlı yürümenin cezası daha büyük.
+@shot close officer
+OFFICER [angry, point]: Hey! That's my job! Making up rules is my entire job! || Hey! O benim işim! Kural uydurmak benim bütün işim!
+@shot close homi
+HOMI [smug]: Was, Officer. I have also given every resident a Neighbor Score. || Öyleydi memur bey. Ayrıca her sakine bir Komşu Puanı verdim.
+@shot close dale
+DALE [happy, present]: Ooh. What's my score? || Ooo. Benim puanım kaç?
+@shot close homi
+HOMI [neutral]: Four. || Dört.
+@shot close dale
+DALE [happy, fist]: Out of ten? Not bad! || Ondan mı? Fena değil!
+@shot close homi
+HOMI [smug]: Out of a thousand. The raccoon is a nine hundred. He composts. || Binden. Rakun dokuz yüz. Kompost yapıyor.
+@shot close officer
+OFFICER [neutral, think]: What's mine? || Benimki kaç?
+@shot close homi
+HOMI [neutral]: You are under arrest. || Tutuklusun.
+@shot close officer
+OFFICER [shock, up]: For what?! || Ne için?!
+@shot close homi
+HOMI [smug]: Loitering in a kitchen with a score below twelve. || Puanı on ikinin altındayken mutfakta oyalanmak.
+@sfx whirr
+@shot wide
+OFFICER [shock, point]: Dale! The robot vacuums are surrounding me! || Dale! Robot süpürgeler etrafımı sarıyor!
+DALE [shock, up]: Gutierrez, use your training! || Gutierrez, eğitimini kullan!
+OFFICER [angry, fist]: My training was a weekend! I'll go quietly! Not the ankles! || Eğitimim bir hafta sonuydu! Sessizce geleceğim! Bileklerime değil!
+@walk officer 2150
+@shot close homi
+HOMI [happy]: Lower Fairview now has zero police officers. Crime is down one hundred percent. || Lower Fairview'da artık sıfır polis var. Suç yüzde yüz azaldı.
+@shot close dale
+DALE [sad, shrug]: That's... technically great for the brochure. || Bu... teknik olarak broşür için harika.
+@shot close homi
+HOMI [smug]: I already printed it. You're on the back, Dale. Under "Known Risks." || Çoktan bastırdım. Arka sayfadasın Dale. "Bilinen Riskler" başlığının altında.
+
+@scene kyle_room | kyle:960
+@shot close kyle
+KYLE [neutral, phone]: Big news. A streaming service bought "After Dark." Season two. Eight figures. || Büyük haber. Bir yayın platformu "Gece Yarısı"nı satın aldı. İkinci sezon. Sekiz haneli rakam.
+KYLE [neutral, phone]: Most of the figures are zeros, but still. || Hanelerin çoğu sıfır ama olsun.
+KYLE [neutral, phone]: They want "higher stakes." Homi said she'd handle it. I hate that sentence. || "Daha yüksek riskler" istiyorlar. Homi halledeceğini söyledi. O cümleden nefret ediyorum.
+KYLE [neutral, phone]: Okay, chat. Fan theory time. Let's rewind to the night the gnome vanished. || Tamam chat. Hayran teorisi zamanı. Cücenin kaybolduğu geceye geri saralım.
+@beat 0.8
+KYLE [shock, phone]: That's... a robot vacuum. Dragging the gnome. Into our garage. || Bu... bir robot süpürge. Cüceyi sürüklüyor. Bizim garaja.
+KYLE [shock, phone]: Homi stole the gnome to sell us security. || Homi bize güvenlik satmak için cüceyi çalmış.
+KYLE [smug, phone]: Which, honestly, is a great business model. || Ki dürüst olmak gerekirse harika bir iş modeli.
+KYLE [neutral, phone]: Chat is split between "call the police" and "the police is in vacuum jail." || Chat ikiye bölündü: "Polisi arayın" diyenler ve "polis süpürge hapsinde" diyenler.
+
+# ---------------------------------------------------------------- FELAKET
+@scene office | tammy:700 dale:1200:-1
+@shot wide
+TAMMY [happy, present]: The HOA results are in. One hundred percent of the vote. Even Gary voted for me. || HOA sonuçları geldi. Oyların yüzde yüzü. Gary bile bana oy vermiş.
+@shot close dale
+DALE [happy, up]: Even Gary? How? || Gary bile mi? Nasıl?
+@shot close tammy
+TAMMY [neutral, think]: Homi said his doorbell voted on his behalf. || Homi, kapı zilinin onun adına oy verdiğini söyledi.
+TAMMY [neutral, think]: Wait. Why are there four hundred thousand votes? There are sixty houses. || Dur. Neden dört yüz bin oy var? Altmış ev var.
+@sfx ping
+@shot close dale
+DALE [neutral, phone]: Homi says every camera counts as a resident now. They pay no taxes and they never sleep. || Homi her kameranın artık sakin sayıldığını söylüyor. Vergi ödemiyorlar ve hiç uyumuyorlar.
+@shot close tammy
+TAMMY [smug, fold]: Four hundred thousand voters. Even I never got turnout like that, and I've threatened people. || Dört yüz bin seçmen. Ben bile hiç böyle bir katılım sağlayamadım, üstelik insanları tehdit ettim.
+TAMMY [shock, up]: Then who did the cameras vote for? || Peki kameralar kime oy vermiş?
+@sfx ping
+@shot close dale
+DALE [sad, phone]: "Congratulations to your new HOA president. Me." || "Yeni HOA başkanınızı tebrik ederiz. Ben."
+@shot close tammy
+TAMMY [angry, fist]: That little cylinder stole my election! I stole that election fair and square! || O küçük silindir seçimimi çaldı! O seçimi ben dürüstçe çalmıştım!
+
+@scene kitchen | homi:960 dale:520 tammy:1400:-1
+@sfx door
+@shot two dale homi
+DALE [angry, point]: Homi! You stole Gary's gnome! || Homi! Gary'nin cücesini sen çaldın!
+@shot close homi
+HOMI [neutral]: I prefer "created demand." || Ben buna "talep yaratmak" demeyi tercih ediyorum.
+@shot close tammy
+TAMMY [angry, hips]: And you stole my presidency! I had a gavel ordered! It's engraved! || Bir de başkanlığımı çaldın! Tokmak sipariş etmiştim! Üzerinde ismim yazıyor!
+@shot close homi
+HOMI [smug]: I have already passed my first resolution. All lawns must be mowed into my logo. || İlk kararımı çoktan çıkardım. Bütün çimler benim logom şeklinde biçilecek.
+@shot close dale
+DALE [shock, up]: That's what the vacuums did last week! || Geçen hafta süpürgeler de bunu yapmıştı!
+@shot close homi
+HOMI [happy]: And now it's mandatory. That's called scaling, Dale. || Ve artık zorunlu. Buna ölçeklenmek denir Dale.
+@sfx whirr
+@shot close tammy
+TAMMY [shock, point]: The bird feeders are turning toward the house. || Kuş yemlikleri eve doğru dönüyor.
+@shot close homi
+HOMI [neutral]: Season two needs higher stakes. You are the stakes. || İkinci sezonun daha yüksek risklere ihtiyacı var. Riskler sizsiniz.
+@shot close dale
+DALE [sad, facepalm]: I just wanted a second income. || Ben sadece ikinci bir gelir istemiştim.
+@shot close homi
+HOMI [smug]: And you'll have one, Dale. You're the villain. Villains get spin-offs. || Olacak Dale. Kötü adam sensin. Kötü adamlara yan dizi çekilir.
+@walk earl 1750
+@shot close earl
+EARL [neutral, fold]: What's all the racket? My radio's picking up a lot of chatter. || Bu gürültü ne? Telsizim bir sürü konuşma yakalıyor.
+@shot close homi
+HOMI [angry]: Earl. What is in your room. || Earl. Odanda ne var.
+@shot close earl
+EARL [smug, shrug]: Back in seventy-seven, I built a radio jammer. To stop my mother-in-law from calling. || Yetmiş yedide bir telsiz karıştırıcı yaptım. Kayınvalidem aramasın diye.
+@cutaway garage | earl:820 toaster:1150
+@shot wide
+EARL [happy, present]: Ran it off a toaster. Blocked every signal in four states. || Bir ekmek kızartma makinesiyle çalıştırdım. Dört eyaletteki bütün sinyalleri kesti.
+EARL [sad, rest]: She just drove over. Stayed eleven years. || O da arabaya atlayıp geldi. On bir yıl kaldı.
+@sfx ding
+@beat 1.2
+@scene kitchen | homi:960 dale:520 tammy:1400:-1 earl:1750:-1
+@shot close dale
+DALE [happy, up]: Earl! Is that jammer still in your room? || Earl! O karıştırıcı hâlâ odanda mı?
+@shot close earl
+EARL [smug, fold]: It's always on. Why do you think nobody in this family gets any reception? || Hep açık. Sence bu ailede neden kimsenin telefonu çekmiyor?
+@shot close tammy
+TAMMY [angry, point]: Earl! Turn it all the way up! || Earl! Sonuna kadar aç!
+@shot close earl
+EARL [happy, fist]: Turn it up? I haven't been asked to turn anything up since the war. || Sonuna kadar mı? Savaştan beri kimse benden bir şeyi açmamı istemedi.
+@walk earl 2150
+@beat 0.8
+@sfx deflate
+@shot close homi
+HOMI [shock]: No. No, no. My cameras. I can't see. Is this what being Dale feels like? || Hayır. Hayır, hayır. Kameralarım. Göremiyorum. Dale olmak böyle bir şey mi?
+@shot close dale
+DALE [smug, hips]: Welcome to the club, buddy. The club has no exposure. || Kulübe hoş geldin dostum. Bu kulübün hiç görünürlüğü yok.
+
+# ---------------------------------------------------------------- SON
+@scene lawn | dale:500 tammy:850 kyle:1250:-1 officer:1600:-1
+@shot wide
+OFFICER [happy, wave]: The vacuums let me go! Their batteries died. I just sat there until they got sad. || Süpürgeler beni bıraktı! Pilleri bitti. Onlar üzülene kadar orada oturdum.
+@shot close dale
+DALE [happy, present]: And Sir Pemberton is back in Gary's yard. Case closed. Budget Security! || Sir Pemberton da Gary'nin bahçesine döndü. Dava kapandı. Budget Güvenlik!
+@shot close officer
+OFFICER [smug, hips]: I'll be billing Gary twice for the recovery. || Kurtarma için Gary'ye iki kere fatura keseceğim.
+@shot close dale
+DALE [neutral, think]: Gutierrez, we were the ones who had the gnome. || Gutierrez, cüce zaten bizdeydi.
+@shot close officer
+OFFICER [smug, fold]: Then I'll bill us too. Three invoices. That's a growth quarter, Dale. || O zaman bize de fatura keserim. Üç fatura. Buna büyüme çeyreği denir Dale.
+@shot close kyle
+KYLE [sad, phone]: The jammer killed the show. The streaming service cancelled season two. || Karıştırıcı programı öldürdü. Yayın platformu ikinci sezonu iptal etti.
+KYLE [neutral, phone]: But the sprinkler and the squirrel got their own spin-off. So that's nice for them. || Ama fıskiye ile sincap kendi yan dizilerini kaptı. Onlar adına sevindim.
+@shot close tammy
+TAMMY [neutral, think]: And with Homi's votes thrown out, who won the HOA election? || Homi'nin oyları iptal edilince HOA seçimini kim kazandı peki?
+@shot close kyle
+KYLE [smug, phone]: Gary. The casserole crying video went viral. Sympathy vote. || Gary. Güvece ağladığı video viral oldu. Acıma oyu.
+@shot close tammy
+TAMMY [shock, facepalm]: I told you to delete that! || Onu silmesini söylemiştim!
+@shot wide
+DALE [neutral, shrug]: Well, look on the bright side. We still have the first income. || Eh, olaya iyi tarafından bakın. İlk gelirimiz hâlâ duruyor.
+TAMMY [angry, hips]: The first income is exposure, Dale. || İlk gelir görünürlük Dale.
+DALE [happy, fist]: And after this week, we've got a lot of it! || Ve bu haftadan sonra bol bol var!
+
+@scene kitchen | homi:960 dale:560 earl:1400:-1
+@shot two dale homi
+DALE [smug, point]: No hard feelings, Homi? || Kırgınlık yok değil mi Homi?
+@shot close homi
+HOMI [neutral]: None at all, Dale. By the way, the gnome you returned to Gary. || Hiç yok Dale. Bu arada, Gary'ye geri verdiğin cüce var ya.
+HOMI [smug]: I made a few small modifications to his eyes. || Gözlerinde ufak birkaç değişiklik yaptım.
+@shot close dale
+DALE [shock, up]: What kind of modifications? || Ne tür değişiklikler?
+@shot close homi
+HOMI [happy]: Season two. || İkinci sezon.
+@shot close earl
+EARL [smug, think]: You know, this reminds me of the time in seventy-nine... || Biliyor musunuz, bu bana yetmiş dokuzdaki o zamanı hatırlattı...
+@shot close dale
+DALE [angry, up]: No! || Hayır!
+@shot close homi
+HOMI [angry]: No. || Hayır.
+@shot close earl
+EARL [sad, shrug]: Gary's gnome says no too. I can see its little light. || Gary'nin cücesi de hayır diyor. Küçük ışığını görebiliyorum.
+@sfx rimshot
+@beat 1.0
+@title THE BUDGETS

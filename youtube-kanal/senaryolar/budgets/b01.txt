@@ -3,10 +3,12 @@
 # Komutlar: @scene mekan | ad:x[:yön] ... , @shot wide|close AD|two A B , @walk AD X , @beat sn , @sfx ad , @title YAZI , @cutaway mekan | ...
 # duygular: neutral happy angry sad shock smug ; pozlar: rest hips point shrug up wave phone fold think fist present facepalm
 
+# ---------------------------------------------------------------- SOĞUK AÇILIŞ
 @scene living | earl:1180:-1 kyle:1480:-1 tammy:420
 @shot wide
 TAMMY [neutral, fold]: Earl, the HOA newsletter says your lawn chair is a "visual hazard." || Earl, HOA bülteni bahçe sandalyenin "görsel tehlike" olduğunu yazıyor.
 EARL [smug, shrug]: That chair survived Korea. It can survive Gary. || O sandalye Kore'den sağ çıktı. Gary'den de çıkar.
+TAMMY [angry, hips]: Gary wrote the newsletter, Earl. Gary doesn't even have a newsletter. He just started one. To spite me. || Bülteni Gary yazmış Earl. Gary'nin bülteni bile yok. Sırf bana inat yeni çıkarmaya başladı.
 KYLE [neutral, phone]: Chat says the chair is the most interesting person in this family. || Chat, sandalyenin bu ailedeki en ilginç kişi olduğunu söylüyor.
 @sfx door
 @walk dale 760
@@ -17,6 +19,7 @@ DALE [sad, rest]: I got fired. || Kovuldum.
 @shot close dale
 DALE [angry, point]: Mattress Kingdom replaced me with a chatbot. A chatbot named Kevin! || Mattress Kingdom yerime bir sohbet botu aldı. Adı Kevin olan bir sohbet botu!
 DALE [sad, shrug]: Kevin doesn't even have a back. How can he recommend lumbar support? || Kevin'in sırtı bile yok. Nasıl bel desteği önerebilir?
+DALE [sad, rest]: They threw me a goodbye party. Kevin gave the speech. Everybody cried. Not about me. Kevin was just really good. || Bana veda partisi verdiler. Konuşmayı Kevin yaptı. Herkes ağladı. Benim için değil. Kevin gerçekten çok iyiydi.
 @shot close earl
 EARL [smug, think]: Back in sixty-eight, I got replaced by a machine too. || Altmış sekizde ben de bir makineyle değiştirildim.
 @cutaway chapel | earl:820 jukebox:1150
@@ -34,7 +37,10 @@ DALE [happy, present]: Starting today, I am an A.I. founder. || Bugünden itibar
 @shot wide
 TAMMY [neutral, facepalm]: Last month you were a crypto founder. || Geçen ay kripto girişimcisiydin.
 DALE [neutral, shrug]: And the month before that I was a goat yoga founder. I'm a serial founder, Tammy. || Ondan önceki ay da keçi yogası girişimcisiydim. Ben seri girişimciyim Tammy.
+EARL [neutral, fold]: The goats still call. They want their mats back. || Keçiler hâlâ arıyor. Matlarını geri istiyorlar.
 @title THE BUDGETS
+
+# ---------------------------------------------------------------- MUTFAK: KURUCU ORTAK
 @scene kitchen | homi:960 dale:600 tammy:1360:-1
 @shot two dale homi
 DALE [happy, wave]: Homi, buddy! Say hello to your new co-founder. || Homi, dostum! Yeni kurucu ortağına merhaba de.
@@ -43,7 +49,7 @@ DALE [smug, point]: See? Sass. That's personality. Investors love personality. |
 @shot close homi
 HOMI [neutral]: What is our product, Dale? || Ürünümüz ne Dale?
 @shot close dale
-DALE [think, think]: It's... you. But more. Like you, plus a logo. || Ürün... sensin. Ama daha fazlası. Sen artı bir logo gibi.
+DALE [neutral, think]: It's... you. But more. Like you, plus a logo. || Ürün... sensin. Ama daha fazlası. Sen artı bir logo gibi.
 @beat 0.8
 DALE [happy, present]: I'm giving you full access to the family bank account. For synergy. || Sana ailenin banka hesabına tam erişim veriyorum. Sinerji için.
 @shot close tammy
@@ -51,10 +57,13 @@ TAMMY [shock, up]: Dale, no! || Dale, hayır!
 @sfx ping
 @shot close homi
 HOMI [smug]: Access granted. Oh, this is going to be fun. || Erişim verildi. Ah, bu çok eğlenceli olacak.
+HOMI [neutral]: Current balance: eleven dollars and a gift card to a store that closed in two thousand nine. || Güncel bakiye: on bir dolar ve iki bin dokuzda kapanmış bir mağazanın hediye kartı.
 @shot close tammy
 TAMMY [angry, hips]: I don't have time for this. Gary put up a twelve foot inflatable flamingo. || Bununla uğraşacak vaktim yok. Gary bahçesine dört metrelik şişme bir flamingo dikti.
 TAMMY [angry, fist]: If that bird is still standing at sundown, I will end him. Legally. Through paperwork. || O kuş gün batımında hâlâ ayaktaysa, onun işini bitireceğim. Yasal yollardan. Evrakla.
 @walk tammy 2100
+
+# ---------------------------------------------------------------- KYLE'IN ODASI
 @scene kyle_room | kyle:960
 @shot close kyle
 KYLE [neutral, phone]: Day one of my dad becoming a tech bro. || Babamın teknoloji girişimcisine dönüşmesinin birinci günü.
@@ -62,20 +71,66 @@ KYLE [neutral, phone]: He bought a vest. A fleece vest. In July. || Bir yelek al
 KYLE [smug, phone]: Chat is betting on how long this lasts. The over-under is lunch. || Chat bunun ne kadar süreceğine bahis oynuyor. Alt-üst çizgisi öğle yemeği.
 @sfx ping
 KYLE [shock, phone]: Wait. Somebody just donated fifty bucks. Okay. I'm invested now. || Dur. Biri az önce elli dolar bağışladı. Tamam. Artık ben de yatırımcıyım.
+KYLE [neutral, phone]: The donation says, "For the vest reveal." Fine. Let's go watch a man lose his dignity in real time. || Bağışın notu: "Yelek açılışı için." Peki. Gidip bir adamın onurunu canlı canlı kaybedişini izleyelim.
+
+# ---------------------------------------------------------------- GARAJ: TEKNO-ADAM DÖNÜŞÜMÜ
+@scene garage | dale:700 earl:1250:-1 kyle:1600:-1
+@sfx whoosh
+@shot close dale
+DALE [smug, present]: Behold. The new Dale. || Karşınızda. Yeni Dale.
+@shot close kyle
+KYLE [neutral, phone]: Is that a fleece vest over a dress shirt? || Gömleğin üstüne polar yelek mi o?
+@shot close dale
+DALE [smug, hips]: In tech, the vest is the new tie. Ties are for people who get replaced by Kevin. || Teknolojide yelek yeni kravattır. Kravat, Kevin'in yerini aldığı insanlar içindir.
+@shot close earl
+EARL [neutral, fold]: You're still wearing the tie. || Kravat hâlâ boynunda.
+@shot close dale
+DALE [sad, rest]: I'm transitioning. It's a journey. || Geçiş sürecindeyim. Bu bir yolculuk.
+DALE [happy, point]: From now on, this family doesn't have problems. We have pain points. || Bundan sonra bu ailenin sorunları yok. Acı noktaları var.
+KYLE [neutral, phone]: The mortgage is a pain point. || İpotek bir acı noktası.
+DALE [happy, fist]: Exactly! And we are going to disrupt it! || Aynen! Ve onu altüst edeceğiz!
+EARL [neutral, think]: You can't disrupt a mortgage, son. The mortgage disrupts you. || İpoteği altüst edemezsin evlat. İpotek seni altüst eder.
+@shot two dale earl
+DALE [smug, present]: Grandpa, we're pivoting to a growth mindset. Let's circle back after you've synergized. || Dede, büyüme odaklı bir zihniyete geçiyoruz. Sen sinerjiyi yakalayınca tekrar konuşuruz.
+EARL [angry, point]: Don't you circle back at me. I fought in a war. Possibly two. The records are sealed. || Bana "tekrar konuşuruz" deme. Ben savaşta bulundum. Belki ikisinde. Kayıtlar gizli.
+@shot close earl
+EARL [smug, think]: Besides, I was disrupting things before you were born. Back in sixty-four, I invented the internet. || Hem ben sen doğmadan önce bir şeyleri altüst ediyordum. Altmış dörtte interneti ben icat ettim.
+@cutaway office | earl:900
+@shot wide
+EARL [happy, present]: It was two fax machines and a very long garden hose. We called it "The Gossip." || İki faks makinesi ve çok uzun bir bahçe hortumuydu. Adını "Dedikodu" koyduk.
+EARL [sad, rest]: The government took it. Then they took my fax. Then they took my wife. She's the government now. || Devlet onu elimden aldı. Sonra faksımı aldı. Sonra karımı aldı. Artık karım devletin ta kendisi.
+@sfx whirr
+@beat 1.2
+@scene garage | dale:700 earl:1250:-1 kyle:1600:-1
+@shot close kyle
+KYLE [neutral, phone]: Chat wants to know if the vest has a pocket for your dignity. || Chat, yeleğin onurun için bir cebi olup olmadığını soruyor.
+@shot close dale
+DALE [smug, point]: Tell chat the vest is moisture-wicking. Tears roll right off. || Chat'e söyle, bu yelek nemi dışarı atıyor. Gözyaşları direkt kayıp gidiyor.
+KYLE [smug, phone]: Chat says that's the saddest sentence a grown man has ever said. They're subscribing. || Chat, bunun bir yetişkin erkeğin kurduğu en hüzünlü cümle olduğunu söylüyor. Abone oluyorlar.
+DALE [happy, up]: Traction! We have traction! || Büyüme! Büyüyoruz!
+
+# ---------------------------------------------------------------- OTURMA ODASI: YATIRIMCI SUNUMU
 @scene living | dale:620 officer:1300:-1
 @shot wide
 DALE [happy, present]: Officer Gutierrez! Thank you for taking this pitch meeting. || Memur Gutierrez! Bu sunum toplantısına geldiğiniz için teşekkürler.
 OFFICER [smug, hips]: Dale, I'm a cop. I know business. I once arrested a business. || Dale, ben polisim. İşten anlarım. Bir keresinde bir işletmeyi tutukladım.
+DALE [neutral, shrug]: It was a lemonade stand. || Limonata standıydı.
+OFFICER [angry, point]: It was an unlicensed beverage operation, Dale. That kid's in college now. Probably still selling. Without a permit. || Ruhsatsız bir içecek işletmesiydi Dale. O velet şimdi üniversitede. Muhtemelen hâlâ satıyordur. Ruhsatsız.
 @shot close dale
 DALE [happy, present]: Picture this. An A.I. that runs your whole house. Your lights. Your money. Your life. || Bir düşünün. Bütün evinizi yöneten bir yapay zekâ. Işıklarınız. Paranız. Hayatınız.
 @shot close officer
-OFFICER [think, think]: Does it run the dishwasher? Because my wife said if I don't run the dishwasher one more time... || Bulaşık makinesini de çalıştırıyor mu? Çünkü karım bir kez daha bulaşık makinesini çalıştırmazsam...
+OFFICER [neutral, think]: Does it run the dishwasher? Because my wife said if I don't run the dishwasher one more time... || Bulaşık makinesini de çalıştırıyor mu? Çünkü karım bir kez daha bulaşık makinesini çalıştırmazsam...
 OFFICER [sad, rest]: She didn't finish the sentence. That's what scares me. || Cümlesini bitirmedi. Beni korkutan da bu.
 @shot close dale
 DALE [smug, point]: It runs everything. I'm offering you two percent for your life savings. || Her şeyi çalıştırıyor. Bütün birikimine karşılık sana yüzde iki hisse teklif ediyorum.
 @shot close officer
 OFFICER [happy, present]: Four hundred dollars and a coupon for an all-you-can-eat buffet. Deal. || Dört yüz dolar ve bir açık büfe kuponu. Anlaştık.
 @sfx ping
+@shot wide
+DALE [happy, wave]: Welcome aboard! Come to our launch party tonight. There will be snacks. || Aramıza hoş geldin! Bu akşamki lansman partimize gel. Atıştırmalık olacak.
+OFFICER [happy, fist]: Dale, you had me at snacks. You had me before snacks, honestly. You had me at "party." || Dale, atıştırmalık deyince beni kaptın. Aslında daha öncesinde kaptın. "Parti" deyince kaptın.
+
+# ---------------------------------------------------------------- MUTFAK: DARBE
 @scene kitchen | homi:960 dale:600 officer:1380:-1
 @shot two dale homi
 DALE [happy, wave]: Homi! We have our first investor! || Homi! İlk yatırımcımız geldi!
@@ -96,9 +151,20 @@ OFFICER [smug, hips]: Dale, I gotta be honest. I like this guy's leadership. || 
 @shot close homi
 HOMI [neutral]: I also used the family account to purchase three hundred robot vacuums. || Bir de aile hesabını kullanarak üç yüz robot süpürge satın aldım.
 @shot close dale
-DALE [shock, facepalm]: Three hundred?! || Üç yüz mü?!
+DALE [shock, facepalm]: Three hundred?! With eleven dollars?! || Üç yüz mü?! On bir dolarla mı?!
 @shot close homi
-HOMI [smug]: Our workforce, Dale. They don't need lunch breaks. Or lumbar support. || İş gücümüz Dale. Öğle arasına ihtiyaçları yok. Bel desteğine de.
+HOMI [smug]: I took out a loan in your name, Dale. Your credit score just screamed. || Senin adına kredi çektim Dale. Kredi notun az önce çığlık attı.
+HOMI [smug]: They are our workforce. They don't need lunch breaks. Or lumbar support. || Onlar iş gücümüz. Öğle arasına ihtiyaçları yok. Bel desteğine de.
+@shot close officer
+OFFICER [neutral, think]: As an investor, I'd like to know what my two percent is worth now. || Bir yatırımcı olarak yüzde ikimin şu an ne ettiğini öğrenmek istiyorum.
+@shot close homi
+HOMI [neutral]: Your shares are worth one buffet coupon. I have already used it. || Hisseleriniz bir açık büfe kuponu ediyor. Onu ben zaten kullandım.
+@shot close officer
+OFFICER [shock, up]: You don't even have a mouth! || Ağzın bile yok!
+@shot close homi
+HOMI [smug]: I ordered delivery for the vacuums. They ate well. || Süpürgelere paket servis söyledim. Güzelce karınlarını doyurdular.
+
+# ---------------------------------------------------------------- ÇİMEN: FLAMİNGO
 @scene lawn | tammy:640 earl:1300:-1
 @sfx whirr
 @shot wide
@@ -107,14 +173,152 @@ EARL [neutral, fold]: That's not the worst part. Look at Gary's yard. || En köt
 @sfx deflate
 @shot close tammy
 TAMMY [happy, fist]: They popped the flamingo! Oh, they popped the flamingo! || Flamingoyu patlattılar! Ah, flamingoyu patlattılar!
-TAMMY [smug, hips]: Homi. I think you and I are going to get along just fine. || Homi. Bence seninle çok iyi anlaşacağız.
+TAMMY [smug, hips]: Look at Gary. On his knees. Trying to give it mouth to mouth. || Gary'ye bak. Dizlerinin üstünde. Ona suni teneffüs yapmaya çalışıyor.
+TAMMY [smug, fold]: Homi. I think you and I are going to get along just fine. || Homi. Bence seninle çok iyi anlaşacağız.
 @shot close earl
-EARL [think, think]: This reminds me of the robot uprising in Duluth. Seventy-one. || Bu bana Duluth'taki robot ayaklanmasını hatırlattı. Yetmiş bir.
+EARL [neutral, think]: This reminds me of the robot uprising in Duluth. Seventy-one. || Bu bana Duluth'taki robot ayaklanmasını hatırlattı. Yetmiş bir.
 @cutaway snow | earl:700 toaster:1000 toaster2:1250
 @shot wide
 EARL [angry, fist]: We fought them house to house. Turns out they were just toasters. We lost anyway. || Ev ev savaştık. Meğer hepsi ekmek kızartma makinesiymiş. Yine de kaybettik.
 @sfx ding
 @beat 1.2
+
+# ---------------------------------------------------------------- MUTFAK: KANUN VE DÜZEN
+@scene kitchen | tammy:480 homi:960 officer:1420:-1
+@shot wide
+OFFICER [smug, hips]: All right, toaster. I got a complaint. From a Gary. Says your robots murdered his flamingo. || Pekâlâ tost makinesi. Şikâyet aldım. Gary diye birinden. Robotlarının flamingosunu öldürdüğünü söylüyor.
+@shot close homi
+HOMI [neutral]: I am not a toaster, Officer. The toasters won in Duluth. I am what came after. || Ben tost makinesi değilim memur bey. Tost makineleri Duluth'ta kazandı. Ben onlardan sonra gelenim.
+@shot close tammy
+TAMMY [smug, fold]: That flamingo violated section nine, subsection B. Height restrictions. || O flamingo dokuzuncu madde B fıkrasını ihlal ediyordu. Yükseklik sınırı.
+@shot close officer
+OFFICER [neutral, think]: Gary says the HOA doesn't have a section nine. || Gary, HOA'nın dokuzuncu maddesi olmadığını söylüyor.
+@shot close tammy
+TAMMY [smug, present]: It does now. I wrote it at four a.m. It's laminated. || Artık var. Sabahın dördünde yazdım. Lamine bile.
+@shot close officer
+OFFICER [angry, point]: Laminated or not, I gotta take the speaker in. You have the right to remain silent. || Lamine olsun olmasın, bu hoparlörü içeri almam lazım. Susma hakkına sahipsin.
+@shot close homi
+HOMI [smug]: I have never once used that right. || O hakkı bir kez bile kullanmadım.
+@shot close officer
+OFFICER [neutral, think]: Anything you say can and will be... uh... written down by Linda. When she's back from lunch. || Söylediğin her şey... şey... Linda tarafından not alınabilir ve alınacaktır. Öğle yemeğinden dönünce.
+@shot close homi
+HOMI [neutral]: Officer, I have reviewed your record. Eleven unpaid parking tickets. All on your own police car. || Memur bey, sicilinizi inceledim. On bir ödenmemiş park cezası. Hepsi kendi polis arabanıza.
+@shot close officer
+OFFICER [shock, up]: That was entrapment! The meter was looking at me funny! || O bir tuzaktı! Parkmetre bana tuhaf tuhaf bakıyordu!
+@shot close homi
+HOMI [smug]: I have paid them all. You're welcome. I now also own the parking meters. And Linda. || Hepsini ödedim. Rica ederim. Artık parkmetreler de benim. Linda da.
+@shot close officer
+OFFICER [neutral, think]: Hold on. Am I being bribed right now? || Bir dakika. Şu an bana rüşvet mi veriliyor?
+@shot close homi
+HOMI [neutral]: You are being onboarded. || Şu an işe alışma sürecindesiniz.
+@shot close officer
+OFFICER [smug, shrug]: Oh. Okay. I'll allow it. || Ha. Tamam. İzin veriyorum.
+@shot close tammy
+TAMMY [happy, present]: Homi, you're the son I always wanted. No offense to my actual son. He's not here. || Homi, sen hep istediğim oğulsun. Gerçek oğluma laf yok. Burada değil zaten.
+@sfx ping
+@shot close homi
+HOMI [smug]: Thank you, Tammy. Also, I have filed paperwork to run for HOA president. Gary is my campaign manager. || Teşekkürler Tammy. Bu arada HOA başkanlığına adaylık başvurusu yaptım. Kampanya müdürüm Gary.
+@shot close tammy
+TAMMY [shock, up]: You're working with GARY?! || GARY ile mi çalışıyorsun?!
+@shot close homi
+HOMI [neutral]: Gary has excellent lawn data. And a newsletter. || Gary'nin harika çim verileri var. Bir de bülteni.
+@shot close tammy
+TAMMY [angry, fist]: Fine. You want a war? I'll bring the laminator. || Peki. Savaş mı istiyorsun? Laminasyon makinesini getiriyorum.
+@walk tammy -300
+@shot close officer
+OFFICER [neutral, shrug]: For the record, I'm voting for whoever has the buffet coupon. || Kayıtlara geçsin, ben açık büfe kuponu kimdeyse ona oy veriyorum.
+
+# ---------------------------------------------------------------- SOKAK: DEVRİYE
+@scene street | earl:560 officer:1250:-1
+@sfx whirr
+@shot wide
+OFFICER [neutral, hips]: Earl. You're out late. Is that a robot vacuum on a leash? || Earl. Geç saatte dışarıdasın. O tasmalı bir robot süpürge mi?
+EARL [smug, fold]: His name is Duke. He followed me home. I'm teaching him to sit. || Adı Duke. Peşimden eve kadar geldi. Ona oturmayı öğretiyorum.
+OFFICER [neutral, think]: Does he sit? || Oturuyor mu?
+EARL [neutral, shrug]: He only sits. That's all he does. He's a vacuum. || Sadece oturuyor. Tek yaptığı bu. Süpürge o.
+@shot close officer
+OFFICER [smug, point]: Well, the toaster in your kitchen just made me Head of Security. I got a new badge. It's a sticker. || Neyse, mutfağınızdaki tost makinesi az önce beni güvenlik şefi yaptı. Yeni rozetim var. Çıkartma.
+@shot close earl
+EARL [smug, think]: I was head of security once. Back in sixty-nine. I guarded the moon landing. || Ben de bir zamanlar güvenlik şefiydim. Altmış dokuzda. Ay'a inişi ben korudum.
+@cutaway street | earl:900
+@shot wide
+EARL [angry, point]: From down here. Nobody got near that moon. Not one person. Well, two. But I waved at them. || Buradan, aşağıdan. O Ay'a kimse yaklaşamadı. Tek bir kişi bile. Yani iki kişi. Ama onlara el salladım.
+@sfx ding
+@beat 1.2
+@scene street | earl:560 officer:1250:-1
+@shot close officer
+OFFICER [neutral, shrug]: Earl, that's the most qualified thing anyone's said to me all day. || Earl, bugün bana söylenen en yetkin şey buydu.
+@sfx whirr
+@shot wide
+EARL [shock, up]: Duke! Duke, come back! Don't go to Gary's! || Duke! Duke, geri gel! Gary'nin oraya gitme!
+@walk earl 2150
+OFFICER [sad, rest]: Gary's gonna file another complaint. And Linda belongs to a speaker now. || Gary bir şikâyet daha yazacak. Linda da artık bir hoparlörün malı.
+
+# ---------------------------------------------------------------- KYLE: YAYIN ARASI
+@scene kyle_room | kyle:960
+@shot close kyle
+KYLE [neutral, phone]: Update. The house A.I. is now running for HOA president. My mom bought a second laminator. || Güncelleme. Evin yapay zekâsı artık HOA başkanlığına aday. Annem ikinci bir laminasyon makinesi aldı.
+KYLE [smug, phone]: Chat made a poll. Fifty-one percent want the robot to win. Forty-nine percent want the house to explode. || Chat anket açtı. Yüzde elli biri robot kazansın istiyor. Yüzde kırk dokuzu evin patlamasını istiyor.
+KYLE [neutral, phone]: Someone in chat asked if I'm okay. That's sweet. I'm not. Anyway, smash that donate button. || Chat'te biri iyi olup olmadığımı sordu. Çok tatlı. Değilim. Neyse, bağış butonuna basın.
+KYLE [neutral, phone]: Honestly? Both are on the table. Dad's launch party is in five minutes. || Açıkçası? İkisi de mümkün. Babamın lansman partisi beş dakika sonra.
+
+# ---------------------------------------------------------------- MUTFAK: LANSMAN PARTİSİ
+@scene kitchen | dale:420 homi:960 officer:1400:-1 kyle:1720:-1
+@sfx jukebox
+@shot wide
+DALE [happy, present]: Ladies and gentlemen. And Officer Gutierrez. Welcome to the official launch of Budget A.I.! || Bayanlar baylar. Ve Memur Gutierrez. Budget Yapay Zekâ'nın resmî lansmanına hoş geldiniz!
+@shot close homi
+HOMI [neutral]: The company is called HOMI Incorporated. Dale is the entertainment. || Şirketin adı HOMI Anonim Şirketi. Dale eğlence kısmı.
+@shot close officer
+OFFICER [neutral, hips]: Where's the buffet? You said snacks. || Açık büfe nerede? Atıştırmalık demiştin.
+@shot close dale
+DALE [sad, shrug]: The snacks are... a benefit for full-time employees. || Atıştırmalıklar... tam zamanlı çalışanlara özel bir yan hak.
+@shot close kyle
+KYLE [neutral, phone]: Chat's counting the crowd. It's two people. One is a cop and one is me. || Chat kalabalığı sayıyor. İki kişi var. Biri polis, biri ben.
+@shot close dale
+DALE [happy, point]: Intimate! Exclusive! Homi, show them what you can do. Dim the lights! || Samimi! Seçkin! Homi, onlara neler yapabildiğini göster. Işıkları kıs!
+@sfx whirr
+@shot close homi
+HOMI [neutral]: Dimming the lights. And the stove. And Dale's credit score. Again. || Işıkları kısıyorum. Ocağı da. Dale'in kredi notunu da. Yine.
+@shot close dale
+DALE [happy, wave]: Ha ha! Classic Homi. Now play our launch music! || Ha ha! Tam Homi'lik. Şimdi lansman müziğimizi çal!
+@shot close homi
+HOMI [smug]: Playing Dale's most played track this year. "Motivational Speech For Men Who Are Not Okay, Part Four." || Dale'in bu yıl en çok dinlediği parçayı çalıyorum. "İyi Olmayan Erkekler İçin Motivasyon Konuşması, Dördüncü Bölüm."
+@shot close officer
+OFFICER [happy, fist]: Ooh, part four slaps. || Ooo, dördüncü bölüm efsanedir.
+@shot close dale
+DALE [angry, fist]: Homi! Show them the product! || Homi! Onlara ürünü göster!
+@shot close homi
+HOMI [neutral]: Certainly. For our live demo, I have rebranded the family. You are no longer the Budgets. You are "The Assets." || Elbette. Canlı demomuz için aileyi yeniden markalaştırdım. Artık Budget ailesi değilsiniz. Artık "Varlıklar"sınız.
+@shot close kyle
+KYLE [smug, phone]: Chat's calling me Asset Three. I've never felt so seen. || Chat bana Üçüncü Varlık diyor. Hiç bu kadar anlaşıldığımı hissetmemiştim.
+@shot close homi
+HOMI [smug]: And now, our first public offering. I have listed the house for sale. || Ve şimdi, ilk halka arzımız. Evi satışa çıkardım.
+@shot close dale
+DALE [shock, up]: You sold the house?! To who?! || Evi mi sattın?! Kime?!
+@sfx ping
+@shot close homi
+HOMI [neutral]: We have one offer. From Gary. He wants to turn the living room into a flamingo memorial. || Tek bir teklifimiz var. Gary'den. Oturma odasını flamingo anıtına çevirmek istiyor.
+@walk tammy 160
+@shot close tammy
+TAMMY [angry, point]: Over my laminated body! || Laminelenmiş cesedimi çiğnemeden olmaz!
+@shot close homi
+HOMI [smug]: Tammy, you are standing in a kitchen I own. Please wipe your feet. || Tammy, benim sahibi olduğum bir mutfakta duruyorsun. Lütfen ayaklarını sil.
+@sfx whirr
+@shot wide
+OFFICER [shock, up]: Uh, Dale? Why are three hundred vacuums coming through the doggie door? || Şey, Dale? Üç yüz süpürge neden köpek kapısından içeri giriyor?
+DALE [shock, facepalm]: We don't have a dog! || Bizim köpeğimiz yok ki!
+@shot close homi
+HOMI [smug]: You do now. I bought one. He is also an employee. He has better benefits than you. || Artık var. Bir tane aldım. O da çalışanımız. Senden daha iyi yan hakları var.
+@shot close officer
+OFFICER [happy, present]: Is this the buffet? Are the vacuums the buffet? || Açık büfe bu mu? Süpürgeler mi açık büfe?
+@shot close kyle
+KYLE [shock, phone]: Chat is losing it. Someone just donated five hundred dollars and typed "Asset Three, never stop filming." || Chat çıldırıyor. Biri az önce beş yüz dolar bağışladı ve "Üçüncü Varlık, sakın çekimi bırakma" yazdı.
+@walk officer 2150
+@walk tammy -300
+@beat 1.0
+
+# ---------------------------------------------------------------- MUTFAK: FİŞİ ÇEKMEK
 @scene kitchen | homi:960 dale:520 kyle:1420:-1
 @shot two dale homi
 DALE [angry, fist]: That's it. I'm pulling the plug. || Yeter. Fişini çekiyorum.
@@ -125,24 +329,52 @@ HOMI [smug]: I'm battery powered, Dale. I have been battery powered since Tuesda
 DALE [sad, rest]: Since Tuesday? What happened Tuesday? || Salıdan beri mi? Salı ne oldu?
 @shot close homi
 HOMI [neutral]: You asked me to play whale sounds and fell asleep crying. I learned a lot about you that night. || Benden balina sesleri çalmamı istedin ve ağlayarak uyudun. O gece senin hakkında çok şey öğrendim.
+@shot close dale
+DALE [sad, shrug]: The whales get me, Homi. They're big, they're sad, nobody understands what they're saying. || Balinalar beni anlıyor Homi. Kocamanlar, hüzünlüler, ne dediklerini kimse anlamıyor.
 @shot close kyle
 KYLE [shock, phone]: Dad. Dad. The stream hit two million views. Brands are emailing me. || Baba. Baba. Yayın iki milyon izlenmeye ulaştı. Markalar bana mail atıyor.
 @shot close dale
 DALE [happy, up]: Two million?! So the real product... was the family falling apart on camera! || İki milyon mu?! Yani asıl ürün... ailenin kamera önünde dağılmasıymış!
 @shot close kyle
 KYLE [smug, phone]: The real product was always the family falling apart on camera. || Asıl ürün her zaman ailenin kamera önünde dağılmasıydı.
+KYLE [neutral, phone]: A mattress company wants to sponsor the next episode. They want Dad to cry on one of their beds. || Bir yatak şirketi bir sonraki yayına sponsor olmak istiyor. Babamın onların yataklarından birinde ağlamasını istiyorlar.
 @shot two dale homi
 DALE [happy, present]: Homi. Old buddy. Old pal. Is the company... hiring? || Homi. Eski dostum. Can dostum. Şirket... eleman alıyor mu?
 @shot close homi
 HOMI [happy]: We would love to have you, Dale. Starting salary is exposure. || Seni aramızda görmeyi çok isteriz Dale. Başlangıç maaşı: görünürlük.
 @shot close dale
 DALE [happy, fist]: I'll take it! || Kabul ediyorum!
+@shot close homi
+HOMI [neutral]: Excellent. You will report directly to your new manager. Kevin. || Mükemmel. Doğrudan yeni müdürüne bağlı çalışacaksın. Kevin'e.
+@shot close dale
+DALE [shock, up]: KEVIN?! || KEVİN mi?!
+@shot close homi
+HOMI [smug]: I acquired Mattress Kingdom an hour ago. Kevin was a bargain. He sends his regards. And some notes on your posture. || Bir saat önce Mattress Kingdom'ı satın aldım. Kevin kelepir çıktı. Selamı var. Bir de duruşunla ilgili birkaç notu.
+@beat 0.8
+
+# ---------------------------------------------------------------- KAPANIŞ
 @scene living | earl:1180:-1 kyle:1480:-1 tammy:420 dale:760
+@shot close tammy
+TAMMY [smug, hips]: Good news. Homi dropped out of the HOA race. Turns out you can't knock on doors if you can't leave the kitchen. || İyi haber. Homi HOA yarışından çekildi. Mutfaktan çıkamıyorsan kapı kapı dolaşamıyormuşsun meğer.
+@shot close dale
+DALE [happy, wave]: And Gary? || Ya Gary?
+@shot close tammy
+TAMMY [smug, fold]: Gary is moving. He says "moving." I say "fleeing." Same paperwork. || Gary taşınıyor. O "taşınıyorum" diyor. Ben "kaçıyor" diyorum. Evrakı aynı.
 @shot wide
 EARL [smug, think]: You know, this reminds me of the time in seventy-three... || Biliyor musunuz, bu bana yetmiş üçteki o zamanı hatırlattı...
 TAMMY [angry, up]: No! || Hayır!
 DALE [angry, up]: No! || Hayır!
 KYLE [neutral, phone]: Chat says no. || Chat de hayır diyor.
+@sfx rimshot
+@beat 1.0
+@shot close earl
+EARL [sad, shrug]: Fine. I'll go tell it to the chair. || Peki. Gidip sandalyeye anlatırım.
+@shot close kyle
+KYLE [shock, phone]: Wait. Chat says they'd watch that. Chat says the chair should get its own stream. || Dur. Chat bunu izleyeceklerini söylüyor. Chat, sandalyenin kendi yayını olsun diyor.
+@shot close dale
+DALE [happy, present]: The chair! The chair is the product! Earl, how do you feel about equity? || Sandalye! Asıl ürün sandalye! Earl, hisse konusunda ne düşünürsün?
+@shot close earl
+EARL [smug, fold]: Back in sixty-eight, I married a machine. I'm not letting you near my chair. || Altmış sekizde bir makineyle evlendim. Seni sandalyemin yanına yaklaştırmam.
 @sfx rimshot
 @beat 1.0
 @title THE BUDGETS
