@@ -19,11 +19,10 @@ from diffusers import StableDiffusionXLPipeline, EulerAncestralDiscreteScheduler
 
 MODEL = os.environ.get("SDXL_MODEL", "stabilityai/stable-diffusion-xl-base-1.0")
 
-STYLE = ("Frame from a high-end American adult animated TV series, 2D hand-drawn animation, realistic human proportions, "
-         "clean confident dark brown-black outlines of medium uniform weight, flat saturated colors, hard-edged cel shading "
-         "with a single darker shadow tone, simple realistic facial features, small eyes, painterly detailed background with "
-         "atmospheric haze, cinematic lighting, professional TV animation quality")
-NEG = ("anime, manga, chibi, big anime eyes, pixar, disney, 3d render, cgi, soft gradient shading, airbrush, glossy skin, "
+# Not: SDXL metin kodlayıcıları ~77 token görür. Önce özne/karakter, sonra kısa stil bloğu gelir.
+STYLE = ("full color, adult animated TV series still, 2D cel animation, bold clean dark outlines, hard cel shading, "
+         "flat saturated colors, painterly background, cinematic lighting")
+NEG = ("black and white, monochrome, grayscale, anime, manga, chibi, big anime eyes, pixar, disney, 3d render, cgi, soft gradient shading, airbrush, glossy skin, "
        "plastic skin, photorealistic, photograph, watercolor, pastel, sketchy lines, children's cartoon, blurry, lowres, "
        "deformed, extra fingers, extra limbs, bad anatomy, text, watermark, logo, signature")
 
@@ -45,7 +44,7 @@ def pipe():
 
 def gen(prompt, out, w=1344, h=768, steps=28, seed=7, cfg=6.5, style=True):
     p = pipe()
-    full = f"{STYLE}. {prompt}" if style else prompt
+    full = f"{prompt}, {STYLE}" if style else prompt
     g = torch.Generator("cpu").manual_seed(seed)
     t = time.time()
     with torch.inference_mode():
