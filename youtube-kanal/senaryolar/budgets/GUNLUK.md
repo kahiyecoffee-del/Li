@@ -46,6 +46,7 @@ ffprobe -v error -show_entries format=duration -of csv=p=0 cikti/budgets/bNN/bNN
 - Süre 600 saniyenin altındaysa senaryoya replik ya da `@beat` ekle ve yeniden üret.
 - 4–5 kontrol karesi çıkar (`ffmpeg -ss T -frames:v 1`) ve görsel olarak kontrol et.
 - Kapak üretmek için: `python3 araclar/cizgi/kapak.py bNN "BAŞLIK METNİ"`.
+- Shorts: `TTS_ENGINE=cb python3 araclar/cizgi/shorts.py senaryolar/budgets/bNN.txt senaryolar/budgets/bNN_shorts.json` (6 klip, her biri 7–11 replik, 60 sn altı).
 - `cikti/budgets/bNN/youtube_bilgileri.txt` dosyasını yaz: EN başlık, açıklama, etiketler, TR başlık.
 
 ## 4. Teslim
