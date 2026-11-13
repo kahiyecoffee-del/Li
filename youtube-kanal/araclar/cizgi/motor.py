@@ -59,6 +59,8 @@ def parse(path):
                 ev.append(dict(t="walk", who=n, x=float(x)))
             elif cmd == "beat":
                 ev.append(dict(t="beat", d=float(rest)))
+            elif cmd == "laugh":
+                ev.append(dict(t="laugh", big=rest.strip() == "big"))
             elif cmd == "sfx":
                 ev.append(dict(t="sfx", n=rest.strip()))
             elif cmd == "caption":
@@ -204,6 +206,31 @@ def sfx(name):
     return np.zeros(1, np.float32)
 
 
+_laughs = None
+
+
+def laugh_sample(big, seed):
+    """Stüdyo seyirci kahkahası (cikti/sesler/kahkaha/{small,big}_*.wav)."""
+    global _laughs
+    if _laughs is None:
+        import glob
+        import wave as _w
+        _laughs = {"small": [], "big": []}
+        for f in sorted(glob.glob("cikti/sesler/kahkaha/*.wav")):
+            k = "big" if os.path.basename(f).startswith("big") else "small"
+            with _w.open(f) as w:
+                a = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768
+                if w.getnchannels() == 2:
+                    a = a.reshape(-1, 2).mean(1)
+                if w.getframerate() != SR:
+                    a = np.interp(np.arange(0, len(a), w.getframerate() / SR), np.arange(len(a)), a).astype(np.float32)
+            _laughs[k].append(a / (np.abs(a).max() + 1e-6))
+    pool = _laughs["big" if big else "small"] or _laughs["small"] or _laughs["big"]
+    if not pool:
+        return None
+    return pool[seed % len(pool)]
+
+
 def sting(kind="scene"):
     """Sitcom geçiş vurgusu: slap bas + akor."""
     if kind == "title":
@@ -261,6 +288,15 @@ def build(events, limit=None):
             audio.append((t, sting("title"), 0.9))
             segs.append(dict(kind="title", t0=t, t1=t + 3.0, text=e["text"]))
             t += 3.0
+        elif e["t"] == "laugh":
+            x = laugh_sample(e["big"], len(audio))
+            if x is not None:
+                audio.append((max(0.0, t - 0.25), x, 0.55 if e["big"] else 0.45))
+                d = 1.25 if e["big"] else 0.8
+                last = next((sg for sg in reversed(segs) if sg["kind"] == "shot"), None)
+                segs.append(dict(kind="shot", t0=t, t1=t + d, scene=scene, shot=(last["shot"] if last else ["wide"]),
+                                 speaker=None, emo=dict(emo), pose=dict(pose), snap=_snap(scene)))
+                t += d
         elif e["t"] == "beat":
             for n in pending_sfx:
                 audio.append((t, sfx(n), 0.8))

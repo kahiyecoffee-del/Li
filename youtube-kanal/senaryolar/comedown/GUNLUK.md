@@ -27,6 +27,7 @@ done
   7. Kapanış şakası, `@sfx rimshot`, `@title`.
 - Kullanılabilir karakterler: `dale tammy kyle earl homi officer gary mayor jace`, dekorlar: `jukebox toaster toaster2`.
 - Kullanılabilir mekânlar: `living kitchen kyle_room lawn chapel snow street diner police garage office school townhall`. Yeni mekân ya da dekor gerekirse `araclar/cizgi/mekan.py` dosyasına ekle; kesme şakası yazısını `motor.py` içindeki `CUT_CAPTION`'a ekle.
+- Stüdyo kahkahası (Friends tarzı): espri satırından hemen sonra ayrı satıra `@laugh` (normal) ya da `@laugh big` (en iyi espriler) yaz. Bölümde yaklaşık 30–40 `@laugh` ve 6–10 `@laugh big` olsun. Duygusal ve samimi anlarda kahkaha olmaz. Arka arkaya iki kahkaha konmaz.
 - Kurallar:
   - Özgün içerik yaz. Başka dizilerin karakterlerini, repliklerini ya da sahnelerini kullanma.
   - Gerçek marka ya da kişi adı kullanma.
