@@ -1,0 +1,402 @@
+# THE BUDGETS — S1E2 "DOORBUSTER"
+# Biçim: NAME [duygu, poz]: İngilizce || Türkçe
+# Komutlar: @scene mekan | ad:x[:yön] ... , @shot wide|close AD|two A B , @walk AD X , @beat sn , @sfx ad , @title YAZI , @cutaway mekan | ... , @caption YAZI
+# Konu: Black Friday. Mağaza: Bulk Galaxy (uydurma).
+
+# ---------------------------------------------------------------- SOĞUK AÇILIŞ
+@scene living | tammy:420 earl:1180:-1 kyle:1480:-1
+@shot wide
+TAMMY [neutral, fold]: Thanksgiving is in six days. I have a potluck sign-up sheet with forty-two names and zero desserts. || Şükran Günü'ne altı gün var. Kırk iki isimli bir yemek listem var ve sıfır tatlı.
+EARL [smug, shrug]: Put me down for a pie. I'll bring the one from last year. It's aged. || Beni turtaya yaz. Geçen yılkini getiririm. Dinlendirilmiş.
+KYLE [neutral, phone]: Chat wants to know if the pie is still legally food. || Chat, turtanın hâlâ yasal olarak yiyecek sayılıp sayılmadığını soruyor.
+@sfx door
+@walk dale 760
+@shot close dale
+DALE [happy, up]: Family! Our lives are about to change forever! || Aile! Hayatımız sonsuza dek değişmek üzere!
+@shot close tammy
+TAMMY [neutral, facepalm]: You said that about the hot tub. We still don't have water in it. We have Earl in it. || Jakuzi için de aynısını söylemiştin. İçinde hâlâ su yok. İçinde Earl var.
+@shot close dale
+DALE [smug, present]: Bulk Galaxy. Black Friday. Doorbuster. An eighty-five inch TV. For forty-nine dollars. || Bulk Galaxy. Kara Cuma. Kapı kıran indirim. Seksen beş inç televizyon. Kırk dokuz dolar.
+DALE [happy, fist]: There are only three in stock. And I'm going to camp outside the store until the doors open. || Stokta sadece üç tane var. Ve kapılar açılana kadar mağazanın önünde kamp yapacağım.
+@shot close tammy
+TAMMY [shock, up]: Dale, the doors open Friday! That's six days! || Dale, kapılar cuma açılıyor! Altı gün var!
+@shot close dale
+DALE [smug, hips]: Six days of camping for a TV that will last a lifetime. Or eighteen months. Whichever comes first. || Ömür boyu dayanacak bir televizyon için altı gün kamp. Ya da on sekiz ay. Hangisi önce gelirse.
+@shot close earl
+EARL [smug, think]: Back in sixty-two, I camped out for a TV. Four days in the snow. || Altmış ikide ben de bir televizyon için kamp yaptım. Karda dört gün.
+@cutaway snow | earl:800 toaster:1150
+@caption TOLEDO, 1962
+@shot wide
+EARL [happy, present]: It only got one channel. The weather in Canada. || Tek bir kanal çekiyordu. Kanada'nın hava durumu.
+EARL [smug, fold]: I watched it for nine years. To this day, I know exactly when it's going to rain in Winnipeg. I'm never wrong. Nobody asks. || Dokuz yıl izledim. Bugün bile Winnipeg'e ne zaman yağmur yağacağını tam olarak bilirim. Hiç yanılmam. Kimse sormaz.
+@sfx ding
+@beat 1.2
+@scene living | tammy:420 dale:760 earl:1180:-1 kyle:1480:-1
+@shot close kyle
+KYLE [smug, phone]: Chat's starting a pool on what breaks first. Dad's back, Dad's spirit, or the tent. || Chat ilk neyin kırılacağına bahis açtı. Babamın beli, babamın ruhu, ya da çadır.
+@shot close dale
+DALE [happy, point]: Nothing breaks! I bought a sleeping bag rated for minus forty degrees! || Hiçbir şey kırılmayacak! Eksi kırk dereceye dayanıklı bir uyku tulumu aldım!
+TAMMY [neutral, fold]: With what money? || Hangi parayla?
+DALE [neutral, shrug]: With the TV money. So now I need the TV to be really, really cheap. || Televizyon parasıyla. O yüzden artık televizyonun çok ama çok ucuz olması lazım.
+@title THE BUDGETS
+
+# ---------------------------------------------------------------- BELEDİYE: İSİM HAKLARI
+@scene townhall | mayor:960 officer:1450:-1
+@shot close mayor
+MAYOR [happy, present]: People of Lower Fairview. In these tough economic times, your mayor has made a tough decision. || Lower Fairview halkı. Bu zor ekonomik dönemde belediye başkanınız zor bir karar aldı.
+MAYOR [smug, point]: I have sold the naming rights to Thanksgiving. || Şükran Günü'nün isim haklarını sattım.
+@shot close officer
+OFFICER [neutral, think]: You can do that? || Bunu yapabiliyor musunuz?
+@shot close mayor
+MAYOR [smug, fold]: Nobody said I couldn't. That's the whole secret of government. || Kimse yapamazsın demedi. Yönetimin bütün sırrı bu.
+MAYOR [happy, up]: From now on, it is officially "Bulk Galaxy Thanks-Buying, Presented by Bulk Galaxy." || Bundan böyle resmî adı: "Bulk Galaxy Şükran-Alışverişi, Sunan: Bulk Galaxy."
+@shot close officer
+OFFICER [happy, fist]: Do I still get turkey? || Hindi yine var mı?
+@shot close mayor
+MAYOR [neutral, shrug]: You get a coupon for ten percent off a turkey-shaped candle. || Hindi şeklinde bir mumda yüzde on indirim kuponu var.
+@walk tammy 400
+@shot close tammy
+TAMMY [angry, point]: Doreen! The HOA potluck is on Thursday. It's been on Thursday for nineteen years! || Doreen! HOA yemeği perşembe günü. On dokuz yıldır perşembe günü!
+@shot close mayor
+MAYOR [smug, hips]: Not anymore, Tammy. Bulk Galaxy needs Thursday for "early access." Thanksgiving is now Wednesday. From four to four-fifteen. || Artık değil Tammy. Bulk Galaxy'nin perşembeye "erken erişim" için ihtiyacı var. Şükran Günü artık çarşamba. Dörtten dört on beşe kadar.
+@shot close tammy
+TAMMY [shock, up]: Fifteen minutes?! You can't even thaw a turkey in fifteen minutes! || On beş dakika mı?! On beş dakikada hindinin buzu bile çözülmez!
+@shot close mayor
+MAYOR [neutral, present]: Bulk Galaxy sells pre-thawed turkeys. Pre-chewed, too. It's very convenient. || Bulk Galaxy buzu çözülmüş hindi satıyor. Çiğnenmiş olanı da var. Çok pratik.
+@shot two tammy mayor
+TAMMY [angry, fist]: This means war, Doreen. HOA war. The worst kind. With bylaws. || Bu savaş demek Doreen. HOA savaşı. En kötüsü. Yönetmelikli olanı.
+MAYOR [smug, fold]: Bring it, Tammy. I have a corporate sponsor. What do you have? || Gel bakalım Tammy. Benim kurumsal sponsorum var. Seninki ne?
+TAMMY [smug, hips]: Forty-two casseroles and a grudge. || Kırk iki güveç ve bir kin.
+@walk tammy -300
+@shot close officer
+OFFICER [neutral, think]: Mayor, should I be worried? || Başkanım, endişelenmeli miyim?
+@shot close mayor
+MAYOR [happy, wave]: Officer, you're in charge of crowd control on Friday. Bulk Galaxy is paying you in gift cards. || Memur bey, cuma günü kalabalık kontrolü sizde. Bulk Galaxy size hediye kartıyla ödeme yapıyor.
+@shot close officer
+OFFICER [happy, present]: I've never controlled a crowd. I once controlled a duck. For a minute. || Hiç kalabalık kontrol etmedim. Bir keresinde bir ördeği kontrol ettim. Bir dakikalığına.
+
+# ---------------------------------------------------------------- SOKAK: GÜN 1
+@scene street | dale:500
+@sfx whoosh
+@shot close dale
+DALE [happy, present]: Day one. Number one in line. History will remember this tent. || Birinci gün. Sırada bir numara. Tarih bu çadırı hatırlayacak.
+DALE [smug, fold]: Sleeping bag. Camping stove. Six cans of beans. And a bucket for... after the beans. || Uyku tulumu. Kamp ocağı. Altı kutu fasulye. Ve... fasulyeden sonrası için bir kova.
+@walk gary 1100
+@shot close gary
+GARY [smug, hips]: Morning, Dale. I see you're number two in line. || Günaydın Dale. Görüyorum ki sırada iki numarasın.
+@shot close dale
+DALE [shock, up]: Number two? I'm the only one here! || İki numara mı? Burada bir tek ben varım!
+@shot close gary
+GARY [smug, point]: My lawn chair has been here since Tuesday. Holding my place. That's a legal placeholder. || Bahçe sandalyem salıdan beri burada. Yerimi tutuyor. Yasal bir yer tutucu bu.
+@shot close dale
+DALE [angry, point]: That's not a chair, Gary! That's a stick with a napkin on it! || O sandalye değil Gary! Üstünde peçete olan bir sopa!
+@shot close gary
+GARY [smug, fold]: It's a minimalist chair. You wouldn't understand. You buy furniture with the word "Bonanza" in it. || Minimalist bir sandalye. Sen anlamazsın. Sen adında "Bonanza" geçen mobilyalar alıyorsun.
+@shot two dale gary
+DALE [angry, fist]: Fine. Then I'm putting up a bigger tent. || Peki. O zaman daha büyük bir çadır kuruyorum.
+GARY [smug, present]: My brother-in-law is bringing an R.V. With a hot tub. With water in it, Dale. || Kayınbiraderim karavan getiriyor. Jakuzili. İçinde su olanından Dale.
+@shot close dale
+DALE [sad, rest]: He knows about the hot tub. Everybody knows about the hot tub. || Jakuziyi biliyor. Herkes jakuziyi biliyor.
+
+# ---------------------------------------------------------------- KYLE'IN ODASI: BELGESEL
+@scene kyle_room | kyle:700 jace:1250:-1
+@shot two kyle jace
+KYLE [neutral, phone]: Okay, we're live. Welcome to "Planet Line." A nature documentary. || Tamam, yayındayız. "Kuyruk Gezegeni"ne hoş geldiniz. Bir doğa belgeseli.
+JACE [happy, phone]: I'm the narrator. I've been practicing my British voice. Listen. Hello. || Anlatıcı benim. İngiliz aksanımı çalışıyorum. Dinle. Merhaba.
+KYLE [neutral, phone]: That was your normal voice. || O senin normal sesindi.
+JACE [happy, phone]: Thank you. || Teşekkür ederim.
+@shot close kyle
+KYLE [smug, phone]: Today we observe the North American Doorbuster. A rare creature that migrates to a parking lot once a year to fight over electronics. || Bugün Kuzey Amerika Kapı Kırıcısını gözlemliyoruz. Yılda bir kez elektronik eşya için kavga etmeye otoparka göç eden nadir bir canlı.
+@shot close jace
+JACE [shock, phone]: Look! The male is building his nest out of a sleeping bag and shame. || Bak! Erkek, yuvasını uyku tulumu ve utançtan yapıyor.
+@shot close kyle
+KYLE [neutral, phone]: That's my dad. Chat has named him "The Bean Elk." || O benim babam. Chat ona "Fasulye Geyiği" adını verdi.
+@sfx ping
+@shot close jace
+JACE [happy, phone]: Somebody donated twenty bucks to see the Bean Elk fight the Pink Polo. || Biri Fasulye Geyiği ile Pembe Polo'nun kavgasını görmek için yirmi dolar bağışladı.
+@shot close kyle
+KYLE [smug, phone]: Nature is brutal, Jace. We don't interfere. We monetize. || Doğa acımasızdır Jace. Müdahale etmeyiz. Paraya çeviririz.
+
+# ---------------------------------------------------------------- MUTFAK: SAVAŞ ODASI
+@scene kitchen | tammy:520 homi:960 earl:1400:-1
+@shot wide
+TAMMY [angry, point]: Listen up. The Mayor moved Thanksgiving. So we are moving the Mayor. || Dinleyin. Başkan Şükran Günü'nü taşıdı. Biz de Başkan'ı taşıyacağız.
+TAMMY [smug, fist]: Operation Gravy Boat. Forty-two households. Every casserole has a code name. || Sos Gemisi Operasyonu. Kırk iki hane. Her güvecin bir kod adı var.
+@shot close earl
+EARL [neutral, think]: What's my code name? || Benim kod adım ne?
+@shot close tammy
+TAMMY [neutral, fold]: "Liability." || "Risk Unsuru."
+@shot close earl
+EARL [smug, fold]: I've been called worse. In Korea they called me "Sir, Please Put That Down." || Daha kötüsü de dendi. Kore'de bana "Efendim, Lütfen Onu Yere Bırakın" derlerdi.
+@shot close homi
+HOMI [smug]: Tammy, I have analyzed your battle plan. Your weakest unit is the green bean casserole. Nobody wants it. || Tammy, savaş planını analiz ettim. En zayıf birliğin yeşil fasulye güveci. Kimse onu istemiyor.
+@shot close tammy
+TAMMY [angry, hips]: The green bean casserole is a tradition. Nobody wants traditions. That's how you know they're traditions. || Yeşil fasulye güveci bir gelenek. Kimse gelenekleri istemez. Gelenek olduklarını öyle anlarsın.
+@shot close homi
+HOMI [neutral]: Also, Dale has called me eleven times from the parking lot to ask if beans can expire inside a person. || Ayrıca Dale otoparktan on bir kez arayıp fasulyenin insanın içinde bozulup bozulamayacağını sordu.
+@shot close tammy
+TAMMY [smug, present]: Good. Let him suffer. Earl, you're on surveillance. Watch the Mayor's office. || Güzel. Acı çeksin. Earl, sen gözetlemedesin. Başkan'ın ofisini izle.
+@shot close earl
+EARL [smug, think]: Surveillance. Back in seventy-five, I spied on a whole town for the government. || Gözetleme. Yetmiş beşte devlet için bütün bir kasabayı gözetledim.
+@cutaway diner | earl:900 jukebox:1300
+@caption DES MOINES, 1975
+@shot wide
+EARL [neutral, present]: I sat in this diner for six years with a newspaper. I had holes cut in it for my eyes. || Bu lokantada altı yıl boyunca bir gazeteyle oturdum. Gözlerim için delik açmıştım.
+EARL [sad, shrug]: Nobody ever told me what I was looking for. I just ordered a lot of soup. The government still owes me for soup. || Neyi aradığımı bana kimse söylemedi. Sadece bolca çorba söyledim. Devletin bana hâlâ çorba borcu var.
+@sfx jukebox
+@beat 1.2
+@scene kitchen | tammy:520 homi:960 earl:1400:-1
+@shot close tammy
+TAMMY [neutral, facepalm]: Just watch the office, Earl. And bring your own soup. || Sadece ofisi izle Earl. Çorbanı da kendin getir.
+
+# ---------------------------------------------------------------- SOKAK: GÜN 3 — KUYRUK EKONOMİSİ
+@scene street | dale:450 gary:1050:-1 officer:1550:-1
+@shot wide
+OFFICER [smug, hips]: All right, people. Day three. I'm crowd control. Everybody stay calm and form a line. || Pekâlâ millet. Üçüncü gün. Kalabalık kontrolü bende. Herkes sakin olsun ve sıraya girsin.
+DALE [neutral, shrug]: We are the line, Officer. We've been the line since Saturday. || Sıra biziz memur bey. Cumartesiden beri sıra biziz.
+OFFICER [neutral, think]: Then form a better one. Straighter. With more... feeling. || O zaman daha iyisini oluşturun. Daha düz. Daha... duygulu.
+@shot close dale
+DALE [smug, present]: Officer, behind me there are now two hundred people. You know what that makes my spot? || Memur bey, arkamda şu an iki yüz kişi var. Bu benim yerimi ne yapar biliyor musunuz?
+@shot close officer
+OFFICER [neutral, shrug]: Crowded? || Kalabalık?
+@shot close dale
+DALE [happy, point]: Valuable! I am selling shares in my spot. Ten dollars buys you one percent of standing here. || Değerli! Yerimin hisselerini satıyorum. On dolara burada durmanın yüzde birini alırsın.
+@shot close gary
+GARY [smug, fold]: Amateur. I'm selling line futures. You pay me now for a spot I might have next year. || Amatör. Ben kuyruk vadelisi satıyorum. Bana şimdi para veriyorsun, belki seneye sahip olacağım bir yer için.
+@shot close dale
+DALE [angry, fist]: Then I'm selling line insurance! If Gary's spot doesn't exist, I pay you nothing! That's the policy! || O zaman ben de kuyruk sigortası satıyorum! Gary'nin yeri yoksa sana hiçbir şey ödemem! Poliçe bu!
+@shot close officer
+OFFICER [happy, present]: I'll take two. || Ben iki tane alayım.
+@sfx ping
+@shot two dale gary
+GARY [smug, hips]: My R.V. just arrived, Dale. It has a hot tub and a chocolate fountain. || Karavanım geldi Dale. Jakuzisi ve çikolata çeşmesi var.
+DALE [smug, point]: Oh yeah? I just rented my sleeping bag to a man for two hours. He cried in it. I charged extra. || Öyle mi? Ben de uyku tulumumu bir adama iki saatliğine kiraladım. İçinde ağladı. Fazladan ücret aldım.
+GARY [shock, up]: You're monetizing grief? || Yası paraya mı çeviriyorsun?
+DALE [happy, present]: It's called the line economy, Gary. Everything here is for sale. Except the bucket. The bucket is personal. || Buna kuyruk ekonomisi denir Gary. Burada her şey satılık. Kova hariç. Kova kişisel.
+@shot close officer
+OFFICER [neutral, think]: Dale, a lady at the back is offering three hundred bucks for your spot. || Dale, arkadaki bir hanım yerine üç yüz dolar teklif ediyor.
+@shot close dale
+DALE [shock, up]: Three hundred?! The TV is forty-nine! || Üç yüz mü?! Televizyon kırk dokuz!
+@beat 0.8
+DALE [smug, fold]: No. It's not about the money. It's about the TV. I'm holding. Diamond hands. || Hayır. Mesele para değil. Mesele televizyon. Bırakmıyorum. Elmas eller.
+@shot close gary
+GARY [smug, wave]: I'll take her three hundred. And then I'll get back in line. Behind my chair. || Onun üç yüzünü ben alırım. Sonra sıraya yine girerim. Sandalyemin arkasına.
+@shot close officer
+OFFICER [neutral, shrug]: Is that legal? || Bu yasal mı?
+@shot close gary
+GARY [smug, point]: You tell me. You're the law. || Sen söyle. Kanun sensin.
+@shot close officer
+OFFICER [sad, rest]: I really wish people would stop telling me that. || İnsanların bunu bana söylemeyi bırakmasını gerçekten çok isterdim.
+
+# ---------------------------------------------------------------- SOKAK: BELGESEL DEVAM
+@scene street | kyle:600 jace:1300:-1
+@shot two kyle jace
+JACE [happy, phone]: Day four on Planet Line. The herd has grown to six hundred. There's a guy selling hot dogs from inside his coat. || Kuyruk Gezegeni'nde dördüncü gün. Sürü altı yüze ulaştı. Paltosunun içinden sosisli satan bir adam var.
+KYLE [neutral, phone]: Don't buy one. That's not a hot dog. That's just his arm in a bun. || Alma. O sosisli değil. Ekmeğin içinde kendi kolu.
+@shot close jace
+JACE [shock, phone]: Oh no. Two males are fighting over the last outlet. One is plugging in a phone. The other is plugging in a mini fridge. || Ah hayır. İki erkek son priz için kavga ediyor. Biri telefon takıyor. Diğeri mini buzdolabı.
+@shot close kyle
+KYLE [smug, phone]: The mini fridge always wins. It has nothing to lose. It's already cold inside. Like my dad. || Mini buzdolabı hep kazanır. Kaybedecek bir şeyi yok. İçi zaten soğuk. Babam gibi.
+@sfx ping
+@shot close jace
+JACE [happy, phone]: Kyle! A nature channel wants to buy the stream. They want to know if your dad is endangered. || Kyle! Bir doğa kanalı yayını satın almak istiyor. Babanın nesli tükenmekte mi diye soruyorlar.
+@shot close kyle
+KYLE [neutral, phone]: Tell them he's not endangered. He's just not doing well. || Söyle onlara, nesli tükenmiyor. Sadece pek iyi değil.
+
+# ---------------------------------------------------------------- BELEDİYE: BAŞKAN VS HOA
+@scene townhall | mayor:640 tammy:1300:-1
+@shot two mayor tammy
+TAMMY [smug, present]: Doreen. My potluck has been rescheduled. Thursday. At four a.m. In front of Bulk Galaxy. || Doreen. Yemeğimin tarihi değişti. Perşembe. Sabahın dördünde. Bulk Galaxy'nin önünde.
+MAYOR [shock, up]: You're bringing Thanksgiving to the line?! || Şükran Günü'nü kuyruğa mı getiriyorsun?!
+TAMMY [smug, fold]: If the town won't come to the potluck, the potluck comes to the town. With folding tables. And a permit I laminated an hour ago. || Kasaba yemeğe gelmiyorsa, yemek kasabaya gelir. Katlanır masalarla. Bir de bir saat önce lamine ettiğim bir izinle.
+@shot close mayor
+MAYOR [angry, point]: That's unlicensed gravy! Bulk Galaxy has exclusive gravy rights in this town! || Bu ruhsatsız sos! Bu kasabada sosun münhasır hakları Bulk Galaxy'de!
+@shot close tammy
+TAMMY [angry, hips]: You sold the GRAVY? || SOSU da mı sattın?
+@shot close mayor
+MAYOR [smug, shrug]: I sold the gravy, the stuffing, and the concept of being grateful. Gratitude now costs four ninety-nine a month. || Sosu da sattım, içi dolguyu da, minnettar olma kavramını da. Minnet artık ayda dört doksan dokuz.
+@shot close tammy
+TAMMY [shock, facepalm]: Doreen, what else did you sell? || Doreen, başka ne sattın?
+@shot close mayor
+MAYOR [neutral, think]: The park. The library. The word "Wednesday." If you say it on the radio, Bulk Galaxy gets a nickel. || Parkı. Kütüphaneyi. "Çarşamba" kelimesini. Radyoda söylersen Bulk Galaxy beş sent alıyor.
+MAYOR [smug, present]: Also your street. It's called "Doorbuster Lane" now. You live at four-twelve Doorbuster Lane. || Bir de sizin sokağınızı. Adı artık "Kapı Kıran Sokağı." Kapı Kıran Sokağı dört yüz on iki numarada oturuyorsun.
+@shot close tammy
+TAMMY [angry, fist]: Then I'll see you on Doorbuster Lane, Doreen. Bring your appetite. And a helmet. || O zaman Kapı Kıran Sokağı'nda görüşürüz Doreen. İştahını getir. Bir de kask.
+@walk tammy 2150
+@shot close mayor
+MAYOR [smug, fold]: She thinks she can fight capitalism with casseroles. Adorable. I'll sell that too. || Kapitalizmle güveçlerle savaşabileceğini sanıyor. Ne tatlı. Onu da satarım.
+
+# ---------------------------------------------------------------- SOKAK: GÜN 5 — GECE
+@scene street | dale:450 gary:1050:-1 earl:1600:-1
+@shot wide
+EARL [neutral, fold]: Brought you a thermos, son. It's soup. Government soup. They finally paid me. || Sana termos getirdim evlat. Çorba. Devlet çorbası. Sonunda ödediler.
+DALE [sad, rest]: Thanks, Earl. Day five. I can't feel my legs. I sold them. || Sağ ol Earl. Beşinci gün. Bacaklarımı hissetmiyorum. Onları sattım.
+EARL [shock, up]: You sold your legs?! || Bacaklarını mı sattın?!
+DALE [neutral, shrug]: The feeling in them. A guy bought my numbness for twenty bucks. It's the line economy. || İçlerindeki hissi. Bir adam uyuşukluğumu yirmi dolara aldı. Kuyruk ekonomisi bu.
+@shot close gary
+GARY [smug, present]: Earl! Come over to the R.V. I've got a hot tub, a chocolate fountain, and a man who plays the harp. || Earl! Karavana gel. Jakuzim, çikolata çeşmem ve arp çalan bir adamım var.
+@shot close earl
+EARL [neutral, think]: Is it a real harp? || Gerçek arp mı?
+@shot close gary
+GARY [sad, shrug]: It's a cheese slicer. But he really commits. || Peynir dilimleyici. Ama kendini çok veriyor.
+@shot close earl
+EARL [smug, think]: This line reminds me of the great bread line of sixty-seven. || Bu kuyruk bana altmış yedideki büyük ekmek kuyruğunu hatırlattı.
+@cutaway street | earl:700 toaster:1000 toaster2:1250
+@caption PITTSBURGH, 1967
+@shot wide
+EARL [angry, fist]: There was no bread. Just a line. People heard there was a line, so they got in it. || Ekmek yoktu. Sadece kuyruk vardı. İnsanlar bir kuyruk olduğunu duydu, ona girdiler.
+EARL [happy, present]: Lasted eleven years. Two weddings. One war. At the front, there was just a guy. He was also waiting. || On bir yıl sürdü. İki düğün. Bir savaş. En önde sadece bir adam vardı. O da bekliyordu.
+@sfx ding
+@beat 1.2
+@scene street | dale:450 gary:1050:-1 earl:1600:-1
+@shot close dale
+DALE [neutral, think]: Earl, what happened to the guy at the front? || Earl, en öndeki adama ne oldu?
+@shot close earl
+EARL [neutral, fold]: He's still there. I bring him soup. || Hâlâ orada. Ona çorba götürüyorum.
+@shot close gary
+GARY [smug, wave]: Good night, Dale. My R.V. has a heated toilet. It sings to me. || İyi geceler Dale. Karavanımda ısıtmalı tuvalet var. Bana şarkı söylüyor.
+@shot close dale
+DALE [angry, fist]: Enjoy it, Gary. Tomorrow I get the TV. And you get a stick with a napkin on it. || Tadını çıkar Gary. Yarın televizyon benim. Senin de üstünde peçete olan bir sopan olacak.
+
+# ---------------------------------------------------------------- SOKAK: POTLUCK CEPHESİ
+@scene street | tammy:400 mayor:1000:-1 officer:1550:-1
+@sfx whoosh
+@shot close tammy
+TAMMY [smug, point]: Four a.m. Operation Gravy Boat is live. Tables, deploy! Casseroles, flank left! || Sabahın dördü. Sos Gemisi Operasyonu başladı. Masalar, konuşlan! Güveçler, sol kanattan!
+@shot close mayor
+MAYOR [angry, point]: Officer! Arrest that woman! She's handing out free stuffing! In front of a store! || Memur bey! Tutuklayın şu kadını! Mağazanın önünde bedava iç pilav dağıtıyor!
+@shot close officer
+OFFICER [neutral, think]: Is free stuffing a crime? || Bedava iç pilav suç mu?
+@shot close mayor
+MAYOR [smug, fold]: It is now. I sold the free. Free is a Bulk Galaxy trademark. || Artık suç. Bedavayı sattım. Bedava, Bulk Galaxy'nin tescilli markası.
+@shot close tammy
+TAMMY [smug, present]: Then it's not free. It's a doorbuster. Zero dollars. Limit one per customer. While supplies last. || O zaman bedava değil. Kapı kıran indirim. Sıfır dolar. Müşteri başına bir adet. Stoklarla sınırlı.
+@shot close officer
+OFFICER [happy, present]: Ooh. Limited supply. Now I want it more. || Ooo. Sınırlı stok. Şimdi daha çok istiyorum.
+@shot two tammy mayor
+MAYOR [shock, up]: The line is leaving! They're going to the potluck! They're eating sweet potatoes! With marshmallows! || Kuyruk dağılıyor! Yemeğe gidiyorlar! Tatlı patates yiyorlar! Marşmelovlu!
+TAMMY [happy, fist]: That's the HOA, Doreen. We don't have money. But we have mini marshmallows. || İşte HOA bu Doreen. Paramız yok. Ama mini marşmelovumuz var.
+@shot close mayor
+MAYOR [angry, fist]: Fine! Officer, tell the store to open the doors early! Now! || Peki! Memur bey, mağazaya söyleyin kapıları erken açsınlar! Hemen!
+@shot close officer
+OFFICER [neutral, shrug]: I don't have a radio. I have a whistle. And it's full of gravy. || Telsizim yok. Düdüğüm var. O da sos dolu.
+@sfx whoosh
+@shot close tammy
+TAMMY [shock, up]: Wait. Doreen, what did you just do? || Dur. Doreen, ne yaptın az önce?
+@shot close mayor
+MAYOR [smug, present]: I made an announcement. Bulk Galaxy is opening in sixty seconds. And there are only three TVs. || Bir anons yaptım. Bulk Galaxy altmış saniye içinde açılıyor. Ve sadece üç televizyon var.
+
+# ---------------------------------------------------------------- KAPILAR AÇILIYOR
+@scene street | dale:300 gary:800 officer:1350:-1 kyle:1750:-1
+@sfx door
+@shot wide
+OFFICER [shock, up]: Okay! Everybody stay calm! Walk, don't run! || Tamam! Herkes sakin olsun! Yürüyün, koşmayın!
+@sfx whoosh
+OFFICER [shock, facepalm]: They're running! Why is everyone running?! I said the opposite! || Koşuyorlar! Neden herkes koşuyor?! Tam tersini söyledim!
+@shot close kyle
+KYLE [shock, phone]: Chat, we are witnessing the great migration. Six hundred people. One door. Zero dignity. || Chat, büyük göçe tanıklık ediyoruz. Altı yüz kişi. Bir kapı. Sıfır onur.
+@shot close dale
+DALE [angry, fist]: I'm number one! I have six days of beans in me! Out of my way! || Bir numara benim! İçimde altı günlük fasulye var! Çekilin yolumdan!
+@walk dale 1100
+@shot close gary
+GARY [angry, point]: My chair was here first! My chair was here first! || İlk benim sandalyem geldi! İlk benim sandalyem geldi!
+@walk gary 1500
+@shot close officer
+OFFICER [shock, up]: Somebody just took my hat! And my belt! They're selling my belt in aisle four! || Biri şapkamı aldı! Kemerimi de! Kemerimi dört numaralı reyonda satıyorlar!
+@shot close kyle
+KYLE [neutral, phone]: A grandma just suplexed a man for a waffle iron. Nature is healing. || Bir nine az önce bir waffle makinesi için bir adamı suplex'ledi. Doğa iyileşiyor.
+@sfx ding
+@shot close officer
+OFFICER [neutral, think]: Is this... is this crowd control? Am I doing it? || Bu... bu kalabalık kontrolü mü? Yapıyor muyum?
+@shot close kyle
+KYLE [smug, phone]: You're doing it, Officer. The crowd is controlling you. That counts. || Yapıyorsun memur bey. Kalabalık seni kontrol ediyor. O da sayılır.
+
+# ---------------------------------------------------------------- TV REYONU
+@scene office | dale:500 gary:1300:-1
+@shot wide
+DALE [happy, up]: There it is! The last box! It's mine! || İşte orada! Son kutu! Benim!
+GARY [angry, fist]: It's mine! I paid my chair rent! || Benim! Sandalye kiramı ödedim!
+@walk jace 900
+@shot close jace
+JACE [happy, phone]: Folks, the two alpha males are circling the final box. In the wild, this is where one of them pees on it. || Arkadaşlar, iki alfa erkek son kutunun etrafında dönüyor. Vahşi doğada burada biri kutunun üstüne çişini yapar.
+@shot two dale gary
+DALE [angry, point]: Don't you dare, Gary. || Sakın ha Gary.
+GARY [smug, hips]: I had six days of chocolate fountain, Dale. I'm not the one you should worry about. || Altı gün çikolata çeşmesi içtim Dale. Endişelenmen gereken ben değilim.
+@shot close dale
+DALE [angry, fist]: I sold my legs for this! I rented out my sorrow! Give me that TV! || Bunun için bacaklarımı sattım! Hüznümü kiraya verdim! Ver şu televizyonu!
+@sfx whoosh
+@shot close gary
+GARY [shock, up]: He jumped! He jumped over the cheese slicer guy! || Atladı! Peynir dilimleyici adamın üstünden atladı!
+@shot close dale
+DALE [happy, present]: Got it! The eighty-five inch TV! It's mine! It's... surprisingly light. || Aldım! Seksen beş inç televizyon! Benim! Şey... şaşırtıcı derecede hafif.
+@shot close jace
+JACE [shock, phone]: The box is the size of a sandwich. || Kutu bir sandviç boyunda.
+
+# ---------------------------------------------------------------- OTURMA ODASI: AÇILIŞ TÖRENİ
+@scene living | tammy:420 dale:760 earl:1180:-1 kyle:1480:-1
+@shot wide
+DALE [happy, present]: Family. Six days. Two hundred cans of beans. One TV. Behold. || Aile. Altı gün. İki yüz kutu fasulye. Bir televizyon. Karşınızda.
+@sfx ping
+@shot close kyle
+KYLE [neutral, phone]: That's an eight point five inch TV. || Bu sekiz buçuk inç bir televizyon.
+@shot close dale
+DALE [shock, up]: Eight POINT five?! || Sekiz BUÇUK mu?!
+@shot close tammy
+TAMMY [neutral, fold]: There's a decimal on the flyer, Dale. It's very small. Like the TV. || Broşürde ondalık virgül var Dale. Çok küçük. Televizyon gibi.
+@shot close dale
+DALE [sad, shrug]: I thought that was a crumb. || Ben onu kırıntı sandım.
+@shot close earl
+EARL [neutral, think]: Turn it on. Let's see what it gets. || Aç bakalım. Ne çekiyor görelim.
+@sfx whirr
+@shot close kyle
+KYLE [smug, phone]: It only gets one channel. It's an ad for next year's Black Friday. || Tek kanal çekiyor. Gelecek yılın Kara Cuma'sının reklamı.
+@shot close earl
+EARL [happy, up]: The weather in Canada! It's back! || Kanada'nın hava durumu! Geri döndü!
+@shot close kyle
+KYLE [neutral, phone]: No, Grandpa, it's an ad. || Hayır dede, bu bir reklam.
+@shot close earl
+EARL [sad, rest]: It's going to rain in Winnipeg Tuesday. Nobody asked. Nobody ever asks. || Salı günü Winnipeg'e yağmur yağacak. Kimse sormadı. Kimse hiç sormaz.
+@shot close tammy
+TAMMY [smug, hips]: Meanwhile, my potluck fed six hundred people. And Doreen. Doreen had four plates. || Bu arada benim yemeğim altı yüz kişiyi doyurdu. Bir de Doreen'i. Doreen dört tabak yedi.
+@shot close dale
+DALE [neutral, think]: What happened to Gary? || Gary'ye ne oldu?
+@shot close tammy
+TAMMY [smug, fold]: Gary sold his R.V. to buy line futures. For next year. He's living in the lawn chair now. || Gary gelecek yılın kuyruk vadelilerini almak için karavanını sattı. Artık bahçe sandalyesinde yaşıyor.
+@shot close kyle
+KYLE [shock, phone]: Wait. The nature channel bought Planet Line. Jace and I got paid. Four hundred dollars. || Durun. Doğa kanalı Kuyruk Gezegeni'ni satın aldı. Jace'le bana para ödendi. Dört yüz dolar.
+@shot close dale
+DALE [happy, fist]: Four hundred dollars! Kyle, that's eight TVs! || Dört yüz dolar! Kyle, bu sekiz televizyon eder!
+@shot close kyle
+KYLE [neutral, phone]: That's eight tiny TVs, Dad. Stacked, they make one normal TV. || Sekiz minik televizyon baba. Üst üste koyunca bir normal televizyon ediyor.
+
+# ---------------------------------------------------------------- MUTFAK: HOMI
+@scene kitchen | dale:600 homi:960
+@shot two dale homi
+DALE [sad, rest]: Homi. Do you think I wasted six days of my life? || Homi. Sence hayatımın altı gününü boşa mı harcadım?
+@shot close homi
+HOMI [smug]: No, Dale. You also wasted forty-nine dollars, your legs, and a bucket I will not discuss. || Hayır Dale. Bir de kırk dokuz doları, bacaklarını ve hakkında konuşmayacağım bir kovayı harcadın.
+
+# ---------------------------------------------------------------- KAPANIŞ
+@scene townhall | mayor:500 officer:1000:-1 dale:1550:-1
+@shot close mayor
+MAYOR [happy, present]: Great news, Lower Fairview. Black Friday was a record. Bulk Galaxy is so happy, they bought Christmas. || Müjde Lower Fairview. Kara Cuma rekor kırdı. Bulk Galaxy o kadar mutlu ki Noel'i satın aldı.
+@shot close officer
+OFFICER [neutral, think]: What's Christmas called now? || Noel'in adı ne şimdi?
+@shot close mayor
+MAYOR [smug, fold]: "Christmas." But every time you say it, a little bell rings, and you owe a dollar. || "Noel." Ama her söylediğinde küçük bir zil çalıyor ve bir dolar borçlanıyorsun.
+@sfx ding
+@shot close officer
+OFFICER [sad, rest]: I just said it in my head. Do I owe a dollar? || Az önce içimden söyledim. Bir dolar borçlu muyum?
+@shot close mayor
+MAYOR [smug, point]: Two. Thinking is premium. || İki. Düşünmek premium.
+@shot close dale
+DALE [happy, up]: You know, I learned something today. || Biliyor musunuz, bugün bir şey öğrendim.
+DALE [smug, present]: The holidays aren't about the stuff. They're about getting there first. || Bayramlar eşyayla ilgili değil. Oraya ilk varmakla ilgili.
+DALE [happy, fist]: That's why next year I'm camping out in July. || O yüzden seneye temmuzda kampa başlıyorum.
+@shot close officer
+OFFICER [happy, present]: That's beautiful, Dale. I'm gonna camp behind you. For crowd control. || Çok güzel Dale. Ben de arkanda kamp yaparım. Kalabalık kontrolü için.
+@shot close mayor
+MAYOR [smug, present]: Excellent. The spot in front of Dale is available. Starting bid: Dale's house. || Mükemmel. Dale'in önündeki yer müsait. Açılış teklifi: Dale'in evi.
+@sfx rimshot
+@beat 1.0
+@title THE BUDGETS
