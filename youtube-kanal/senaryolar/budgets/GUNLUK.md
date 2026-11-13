@@ -14,8 +14,9 @@ done
 
 ## 2. Senaryo
 - Önce `senaryolar/budgets/dizi-kitabi.md` dosyasını oku, sonra son 2 bölümün `bNN.txt` dosyalarını oku. Böylece tekrara düşülmez ve süregelen şakalar devam eder.
+- O haftanın gündemindeki bir trendi/tartışmayı seç (WebSearch ile kontrol et); son 5 bölümde işlenmemiş olsun. Yapay zekâ konusu en fazla 6 bölümde 1.
 - Yeni bölümü `senaryolar/budgets/bNN.txt` olarak yaz; NN, bir sonraki numaradır. Biçim `b01.txt` ile birebir aynı olmalı.
-- Hedef uzunluk 85–100 replik: çıktı 8:00–9:30 arası olur, mid-roll reklam için en az 8:00 gerekir.
+- Hedef uzunluk 165–185 replik: çıktı 10–15 dakika olur.
 - Yapı:
   1. Soğuk açılış.
   2. `@title THE BUDGETS`.
@@ -24,8 +25,8 @@ done
   5. En az 2 kesme şakası (`@cutaway`).
   6. Felaket.
   7. Kapanış şakası, `@sfx rimshot`, `@title`.
-- Kullanılabilir karakterler: `dale tammy kyle earl homi officer`, dekorlar: `jukebox toaster toaster2`.
-- Kullanılabilir mekânlar: `living kitchen kyle_room lawn chapel snow`. Yeni mekân ya da dekor gerekirse `araclar/cizgi/mekan.py` dosyasına ekle; kesme şakası yazısını `motor.py` içindeki `CUT_CAPTION`'a ekle.
+- Kullanılabilir karakterler: `dale tammy kyle earl homi officer gary mayor jace`, dekorlar: `jukebox toaster toaster2`.
+- Kullanılabilir mekânlar: `living kitchen kyle_room lawn chapel snow street diner police garage office school townhall`. Yeni mekân ya da dekor gerekirse `araclar/cizgi/mekan.py` dosyasına ekle; kesme şakası yazısını `motor.py` içindeki `CUT_CAPTION`'a ekle.
 - Kurallar:
   - Özgün içerik yaz. Başka dizilerin karakterlerini, repliklerini ya da sahnelerini kullanma.
   - Gerçek marka ya da kişi adı kullanma.
@@ -36,9 +37,9 @@ done
 cd youtube-kanal
 KOKORO_DIR=/home/user/models python3 araclar/cizgi/motor.py senaryolar/budgets/bNN.txt
 ffmpeg -v error -i cikti/budgets/bNN/bNN.mp4 -f null -      # hata çıkmamalı
-ffprobe -v error -show_entries format=duration -of csv=p=0 cikti/budgets/bNN/bNN.mp4   # 480 sn veya üstü olmalı
+ffprobe -v error -show_entries format=duration -of csv=p=0 cikti/budgets/bNN/bNN.mp4   # 600–900 sn olmalı
 ```
-- Süre 480 saniyenin altındaysa senaryoya replik ya da `@beat` ekle ve yeniden üret.
+- Süre 600 saniyenin altındaysa senaryoya replik ya da `@beat` ekle ve yeniden üret.
 - 4–5 kontrol karesi çıkar (`ffmpeg -ss T -frames:v 1`) ve görsel olarak kontrol et.
 - Kapak üretmek için: `python3 araclar/cizgi/kapak.py bNN "BAŞLIK METNİ"`.
 - `cikti/budgets/bNN/youtube_bilgileri.txt` dosyasını yaz: EN başlık, açıklama, etiketler, TR başlık.

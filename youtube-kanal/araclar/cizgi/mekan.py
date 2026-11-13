@@ -557,6 +557,52 @@ def lawn_d(ctx):
 BGS.update({"living": living_d, "kitchen": kitchen_d, "kyle_room": kyle_d, "lawn": lawn_d, "chapel": chapel_d,
             "snow": snow_d, "street": street, "diner": diner, "police": police, "garage": garage, "office": office})
 
+def school(ctx):
+    wall_floor(ctx, "#f1e3b6", "#7a8b99", "#b9b2a4")
+    for x in range(0, W, 120):  # dolaplar
+        box(ctx, x + 4, 330, 112, 470, ("#3f6fb5", "#3a66a8")[(x // 120) % 2])
+        for k in range(4):
+            ctx.rectangle(x + 30, 350 + k * 12, 60, 5)
+        ctx.set_source_rgba(0, 0, 0, 0.35)
+        ctx.fill()
+        box(ctx, x + 88, 560, 10, 40, "#c9ced4", 3)
+    box(ctx, 600, 120, 720, 130, "#2d6a4f", r=10)  # pano
+    ctx.select_font_face("Inter", cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
+    ctx.set_font_size(56)
+    ctx.move_to(650, 205)
+    ctx.set_source_rgb(1, 1, 1)
+    ctx.show_text("GO FIGHTING BEAVERS!")
+    clock(ctx, 300, 190, 46)
+    for x in (1500, 1640):  # duvara asılı afiş
+        box(ctx, x, 140, 110, 150, "#f4a6c4", 4)
+    finish(ctx, light_x=960)
+
+
+def townhall(ctx):
+    wall_floor(ctx, "#cdbfa6", "#7a5a3a", "#6b4a2f")
+    for x in (180, 560, 1240, 1620):  # sütunlar
+        box(ctx, x, 120, 110, 700, "#e9e1d0")
+        for k in range(4):
+            ctx.move_to(x + 22 + k * 22, 140)
+            ctx.line_to(x + 22 + k * 22, 800)
+        ctx.set_source_rgba(0, 0, 0, 0.15)
+        ctx.set_line_width(4)
+        ctx.stroke()
+    box(ctx, 720, 110, 480, 110, "#2c3e66", r=8)  # pankart
+    ctx.select_font_face("Inter", cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
+    ctx.set_font_size(46)
+    ctx.move_to(752, 182)
+    ctx.set_source_rgb(1, 0.92, 0.6)
+    ctx.show_text("LOWER FAIRVIEW")
+    box(ctx, 800, 560, 320, 260, "#7a4f2c")  # kürsü
+    box(ctx, 780, 540, 360, 40, "#5e3b1f")
+    ellipse(ctx, 960, 515, 14, 30)
+    fill_stroke(ctx, rgb("#2b2b2b"), 4)
+    finish(ctx, light_x=960)
+
+
+BGS.update({"school": school, "townhall": townhall})
+
 _cache = {}
 
 

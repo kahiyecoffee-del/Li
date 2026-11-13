@@ -26,11 +26,11 @@ FPS = 24
 SR = 24000
 MODEL_DIR = os.environ.get("KOKORO_DIR", "/home/user/models")
 VOICES = {"dale": "am_michael", "tammy": "af_bella", "kyle": "am_puck", "earl": "bm_lewis", "homi": "af_nova",
-          "officer": "am_eric"}
+          "officer": "am_eric", "gary": "bm_daniel", "mayor": "af_sarah", "jace": "am_liam"}
 SPEED = {"homi": 0.97, "earl": 0.92, "kyle": 1.02}
 EMOS = {"neutral", "happy", "angry", "sad", "shock", "smug"}
 PROPS = {"jukebox", "toaster", "toaster2"}
-CUT_CAPTION = {"chapel": "1968", "snow": "DULUTH, 1971"}
+CUT_CAPTION = {"chapel": "1968", "snow": "DULUTH, 1971"}  # bölüm içinde @caption ile değiştirilebilir
 SCALE = 0.95
 
 # ---------------------------------------------------------------- senaryo
@@ -60,6 +60,8 @@ def parse(path):
                 ev.append(dict(t="beat", d=float(rest)))
             elif cmd == "sfx":
                 ev.append(dict(t="sfx", n=rest.strip()))
+            elif cmd == "caption":
+                ev.append(dict(t="caption", text=rest.strip()))
             elif cmd == "title":
                 ev.append(dict(t="title", text=rest.strip()))
             continue
@@ -228,6 +230,8 @@ def build(events, limit=None):
             shot = None
         elif e["t"] == "shot":
             shot = e["v"]
+        elif e["t"] == "caption":
+            scene["caption"] = e["text"]
         elif e["t"] == "sfx":
             pending_sfx.append(e["n"])
         elif e["t"] == "title":
@@ -295,7 +299,8 @@ def build(events, limit=None):
 
 
 def _snap(scene):
-    return dict(bg=scene["bg"], cut=scene["cut"], cast={k: list(v) for k, v in scene["cast"].items()})
+    return dict(bg=scene["bg"], cut=scene["cut"], caption=scene.get("caption"),
+                cast={k: list(v) for k, v in scene["cast"].items()})
 
 
 def _auto_shot(scene, who, n):
@@ -513,7 +518,7 @@ def render_frame(ctx, seg, t, blink, envs):
     if snap["cut"]:  # kesme şakası: sepya + başlık
         ctx.set_source_rgba(0.55, 0.38, 0.15, 0.22)
         ctx.paint()
-        cap = CUT_CAPTION.get(bg)
+        cap = snap.get("caption") or CUT_CAPTION.get(bg)
         if cap:
             ctx.select_font_face(FONT, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
             ctx.set_font_size(54)

@@ -37,6 +37,15 @@ SPECS = {
     "officer": dict(skin="#c98e64", hair="#1c1a19", hair_style="flat", shirt="#2c3e66", accent="#e3c35a", pants="#22304f",
                     shoes="#141414", body_w=210, body_h=225, belly=40, head_w=188, head_h=200, chin=1.1, leg_h=140, arm_w=32,
                     cap=True, mustache=True),
+    "gary": dict(skin="#f0c2a2", hair="#8a6a3a", hair_style="flat", shirt="#f08aa8", accent="#f4f1e8", pants="#c8b48a",
+                 shoes="#f4f1e8", body_w=180, body_h=225, belly=22, head_w=170, head_h=210, chin=1.25, leg_h=170, arm_w=27,
+                 mustache=True, lids=0.15),
+    "mayor": dict(skin="#e9b896", hair="#bdbdbd", hair_style="bob", shirt="#b3263a", accent="#f4f1e8", pants="#2b2b33",
+                  shoes="#1b1b1b", body_w=175, body_h=220, belly=10, head_w=178, head_h=196, chin=0.95, leg_h=155, arm_w=27,
+                  glasses=True, pearls=True, lipstick="#8a1f2b"),
+    "jace": dict(skin="#8d5a3b", hair="#151212", hair_style="flat", shirt="#e67e22", accent="#f4f1e8", pants="#3a4a6b",
+                 shoes="#e74c3c", body_w=140, body_h=210, belly=0, head_w=162, head_h=186, chin=0.92, leg_h=175, arm_w=23,
+                 hoodie=True),
 }
 
 # Kol pozları: (üst kol açısı, ön kol açısı) derece; 0 = aşağı, + = dışa, 180 = yukarı. (sol_kol, sağ_kol)
