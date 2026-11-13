@@ -1,0 +1,20 @@
+[
+ {
+  "prompt": "young Asian woman with black bob hair and purple hoodie standing next to a Black man in yellow hard hat and navy vest with yellow stripes, two different people side by side, dim mall storage room",
+  "out": "cikti/dizi/pilot/kareler/r09.png",
+  "seed": 619,
+  "w": 1344,
+  "h": 768,
+  "steps": 25,
+  "ref": "cikti/dizi/karakterler/jessie_b_ref.png",
+  "ref_scale": 0.22
+ },
+ {
+  "prompt": "back view of a huge old man in red knitted beanie kneeling gently before a tiny rotting grey-skinned zombie child in torn pajamas, abandoned mall Santa's grotto, broken Christmas decorations, cold blue light",
+  "out": "cikti/dizi/pilot/kareler/s04.png",
+  "seed": 624,
+  "w": 1344,
+  "h": 768,
+  "steps": 25
+ }
+]
