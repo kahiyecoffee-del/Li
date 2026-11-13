@@ -26,3 +26,7 @@ cikti/budgets/*/*.mp4
 cikti/budgets/*/*.srt
 __pycache__/
 cikti/budgets/*/shorts/*.mp4
+cikti/comedown/*/*.mp4
+cikti/comedown/*/*.srt
+cikti/comedown/*/*.wav
+cikti/comedown/*/shorts/*.mp4

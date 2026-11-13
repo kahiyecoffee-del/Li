@@ -1,0 +1,375 @@
+# THE COMEDOWN — S1E1 "THIS ACTUALLY HAPPENED"
+# Biçim: NAME [duygu, poz]: İngilizce || Türkçe
+# Komutlar: @scene mekan | ad:x[:yön] ... , @shot wide|close AD|two A B , @walk AD X , @beat sn , @sfx ad , @title YAZI , @cutaway mekan | ... , @caption YAZI
+# Konu: Gus'a borç. Tek gecede altı yüz dolar. Bir kaz. Bir yüzük. Bir mutfak.
+# Kurallar: madde belirsiz ("Gus's stuff"), ayrıntı yok, özendirme yok, herkes 18+.
+
+# ---------------------------------------------------------------- SOĞUK AÇILIŞ: GRUP
+@scene group | pam:400 mikey:950:-1 tuna:1450:-1
+@shot wide
+PAM [neutral, fold]: Okay. Who wants to share? And Tuna, "my horoscope" is not a share. || Tamam. Kim paylaşmak ister? Ve Tuna, "burcum" bir paylaşım değil.
+TUNA [sad, shrug]: It was a really rough horoscope, though. || Ama gerçekten çok kötü bir burç yorumuydu.
+@shot close mikey
+MIKEY [neutral, up]: I'll go. Last time I didn't go, the judge added three more weeks. || Ben konuşayım. Geçen sefer konuşmadım, hâkim üç hafta daha ekledi.
+@shot close pam
+PAM [neutral, present]: That's not how it works, Mikey. || Öyle işlemiyor Mikey.
+@shot close mikey
+MIKEY [neutral, shrug]: You say that. But I've seen the paperwork. It's very vague. || Sen öyle diyorsun. Ama evrakları gördüm. Çok muğlak.
+MIKEY [neutral, rest]: Okay. So. This actually happened. || Tamam. Şöyle. Bu gerçekten yaşandı.
+@shot close tuna
+TUNA [happy, point]: It did. I was there. I'm the hero. || Yaşandı. Ben oradaydım. Kahraman benim.
+@shot close mikey
+MIKEY [neutral, facepalm]: There's no hero, Tuna. There's a goose. || Kahraman yok Tuna. Bir kaz var.
+@shot close pam
+PAM [neutral, think]: I've been doing this for twenty-two years. I've never once been excited about a goose. || Yirmi iki yıldır bu işi yapıyorum. Bir kaz yüzünden bir kez bile heyecanlanmadım.
+@shot close tuna
+TUNA [smug, fold]: Then buckle up, Pam. || O zaman kemerini bağla Pam.
+@shot close pam
+PAM [neutral, rest]: Tuna, these chairs don't have seatbelts. Last session you asked me that four times. || Tuna, bu sandalyelerin emniyet kemeri yok. Geçen seans bunu bana dört kez sordun.
+@shot close tuna
+TUNA [sad, shrug]: And I'm still not comfortable with the answer. || Ve cevaptan hâlâ rahatsızım.
+@title THE COMEDOWN
+
+# ---------------------------------------------------------------- BODRUM: BORÇ
+@scene basement | mikey:600 tuna:1150:-1
+@sfx whoosh
+VO [neutral]: Tuesday. Eleven p.m. My mom's basement. Which I call "my apartment," and which she calls "the basement." || Salı. Gece on bir. Annemin bodrumu. Ben ona "dairem" diyorum, annem "bodrum" diyor.
+VO [neutral]: Earlier that week, Gus had fronted us some of his stuff. I'm not going to say what. My lawyer says I'm not going to say what. || O hafta Gus bize veresiye bir şeyler vermişti. Ne olduğunu söylemeyeceğim. Avukatım ne olduğunu söylemeyeceğimi söylüyor.
+VO [sad]: And then we lost it. Not sold it. Not used it. Lost it. To a goose. || Sonra onu kaybettik. Satmadık. Kullanmadık. Kaybettik. Bir kaza.
+@shot close tuna
+TUNA [angry, point]: That goose knew exactly what it was doing, Mikey. It made eye contact. || O kaz ne yaptığını gayet iyi biliyordu Mikey. Göz teması kurdu.
+@shot close mikey
+MIKEY [neutral, facepalm]: You put it in your bucket hat. At the duck pond. Then you took the hat off to wave at the ducks. || Balıkçı şapkana koydun. Ördek göletinde. Sonra ördeklere el sallamak için şapkanı çıkardın.
+@shot close tuna
+TUNA [sad, shrug]: They looked lonely. || Yalnız görünüyorlardı.
+@sfx door
+@walk gus 1550
+@shot close gus
+GUS [smug, wave]: Gentlemen. Peace be with you. And also, six hundred dollars be with me. By sunrise. || Beyler. Esenlik üzerinize olsun. Ve altı yüz dolar da üzerime olsun. Gün doğumuna kadar.
+@shot close mikey
+MIKEY [shock, up]: Sunrise? Gus, we said "end of the month." || Gün doğumu mu? Gus, "ay sonu" demiştik.
+@shot close gus
+GUS [neutral, think]: Mikey, I used to be a youth pastor. You know what I learned? Every day is the end of somebody's month. || Mikey, ben eskiden gençlik papazıydım. Ne öğrendim biliyor musun? Her gün birilerinin ay sonudur.
+@shot close tuna
+TUNA [neutral, think]: That's beautiful. Is it in the Bible? || Çok güzel. İncil'de geçiyor mu?
+@shot close gus
+GUS [smug, fold]: It's on a mug I sell. Twelve bucks. I'll add it to your tab. || Sattığım bir kupada yazıyor. On iki dolar. Hesabınıza eklerim.
+@shot close tuna
+TUNA [angry, point]: Gus, a goose took it. That's an act of God. You were a pastor. You know the rules. || Gus, onu bir kaz aldı. Bu bir Tanrı'nın işi. Sen papazdın. Kuralları bilirsin.
+@shot close gus
+GUS [neutral, fold]: God doesn't front, Tuna. I front. Different department. || Tanrı veresiye vermez Tuna. Ben veririm. Farklı departman.
+@shot close mikey
+MIKEY [sad, rest]: Gus, what happens if we don't have it by sunrise? || Gus, gün doğumuna kadar bulamazsak ne olur?
+@shot close gus
+GUS [neutral, present]: Nothing dramatic, son. I just stop being your friend. And I'm a very bad person to not be friends with. || Dramatik bir şey değil evlat. Sadece arkadaşınız olmayı bırakırım. Ve ben arkadaş olmamak için çok kötü bir insanımdır.
+@walk gus 2150
+@beat 0.8
+VO [sad]: For the record, he was never our friend. He just knew our birthdays. Which is somehow worse. || Kayıtlara geçsin, hiçbir zaman arkadaşımız değildi. Sadece doğum günlerimizi biliyordu. Ki bu bir şekilde daha kötü.
+@shot two mikey tuna
+TUNA [happy, fist]: Mikey. Relax. I have a plan. || Mikey. Rahatla. Bir planım var.
+MIKEY [neutral, fold]: Tuna, you always have a plan. Your plans are why we have a court date. || Tuna, senin hep bir planın var. Mahkeme tarihimiz senin planların yüzünden.
+@shot close tuna
+TUNA [smug, hips]: My plans are visionary, Mikey. The world just isn't ready. || Planlarım vizyoner Mikey. Dünya sadece hazır değil.
+VO [neutral]: Here's a partial list of things the world wasn't ready for. || İşte dünyanın hazır olmadığı şeylerin kısmi bir listesi.
+@cutaway garage | tuna:900
+@caption TUNA'S PREVIOUS BUSINESS IDEAS
+@shot wide
+TUNA [happy, present]: Uber, but for borrowing your neighbor's lawnmower without asking. || Uber gibi, ama komşunun çim biçme makinesini sormadan ödünç almak için.
+TUNA [smug, point]: Gluten-free gravel. For people who are already eating gravel. || Glütensiz çakıl. Zaten çakıl yiyen insanlar için.
+TUNA [happy, up]: A haunted house. In my actual house. While my grandma was home. She's still not talking to me. || Perili ev. Kendi evimde. Babaannem evdeyken. Hâlâ benimle konuşmuyor.
+@sfx ding
+@beat 1.2
+@scene basement | mikey:600 tuna:1150:-1
+@shot close mikey
+MIKEY [neutral, think]: Okay. What's the plan? || Tamam. Plan ne?
+@shot close tuna
+TUNA [happy, present]: Step one. We find six hundred dollars. Step two. We give it to Gus. || Birinci adım. Altı yüz dolar buluyoruz. İkinci adım. Gus'a veriyoruz.
+@shot close mikey
+MIKEY [neutral, facepalm]: Tuna. That's not a plan. That's the problem, read out loud. || Tuna. O plan değil. O problemin yüksek sesle okunmuş hali.
+@shot close tuna
+TUNA [smug, fold]: Every plan is a problem read out loud with confidence. || Her plan, özgüvenle yüksek sesle okunmuş bir problemdir.
+VO [neutral]: And that was the scariest part. He wasn't wrong. || İşin en korkutucu kısmı da buydu. Haksız değildi.
+
+# ---------------------------------------------------------------- OTURMA ODASI: ANNEMİN EŞYALARI
+@scene living | mikey:500 tuna:1100:-1
+@shot wide
+VO [neutral]: Step one of step one. We went upstairs. My mom was on a double shift at the hospital. Which meant the house was, legally, unsupervised. || Birinci adımın birinci adımı. Yukarı çıktık. Annem hastanede çift vardiyadaydı. Yani ev, yasal olarak, gözetimsizdi.
+@shot close tuna
+TUNA [happy, point]: The microwave! People always need a microwave! || Mikrodalga! İnsanların her zaman mikrodalgaya ihtiyacı vardır!
+@shot close mikey
+MIKEY [neutral, fold]: We need the microwave, Tuna. It's the only thing in this house that still works on the first try. || Mikrodalgaya biz ihtiyaç duyuyoruz Tuna. Bu evde ilk denemede hâlâ çalışan tek şey o.
+@shot close tuna
+TUNA [smug, present]: Then it'll sell fast. That's just supply and demand. || O zaman hızlı satılır. Arz talep bu.
+@shot close mikey
+MIKEY [neutral, point]: What about your stuff? You have a whole room at your grandma's. || Senin eşyaların ne olacak? Babaannende koca bir odan var.
+@shot close tuna
+TUNA [sad, shrug]: Everything I own is in a haunted house, Mikey. Nobody's buying from a haunted house. || Sahip olduğum her şey bir perili evde Mikey. Perili evden kimse bir şey almaz.
+@shot close mikey
+MIKEY [neutral, facepalm]: It's not haunted. You just did a haunted house in it. || Perili değil. Sen sadece içinde perili ev yaptın.
+@shot close tuna
+TUNA [smug, fold]: And I did it so well, it stuck. || Ve o kadar iyi yaptım ki, tuttu.
+VO [sad]: We took the microwave. And her good lamp. And a little box from her dresser that I told myself I'd buy back by Friday. || Mikrodalgayı aldık. Bir de güzel lambasını. Bir de şifonyerindeki küçük bir kutuyu; cumaya kadar geri alırım dedim kendime.
+VO [sad]: I'd been telling myself things like that since I was fifteen. I'm very persuasive. To me. || On beş yaşımdan beri kendime böyle şeyler söylüyordum. Çok ikna ediciyimdir. Kendime karşı.
+
+# ---------------------------------------------------------------- REHİNCİ: GARY
+@scene office | gary:1300:-1 mikey:500 tuna:850
+@shot close gary
+GARY [smug, hips]: Welcome to Gary's Pre-Owned Dreams. Open twenty-four hours. Because desperation doesn't sleep. And neither do I. Medically. || Gary'nin İkinci El Hayalleri'ne hoş geldiniz. Yirmi dört saat açık. Çünkü çaresizlik uyumaz. Ben de uyumam. Tıbben.
+@shot close tuna
+TUNA [happy, present]: One microwave. Barely used. Only for popcorn and one time a sock. || Bir mikrodalga. Az kullanılmış. Sadece patlamış mısır için ve bir kere de çorap.
+@shot close gary
+GARY [neutral, think]: Eight dollars. || Sekiz dolar.
+@shot close mikey
+MIKEY [shock, up]: Eight? It has a popcorn button! || Sekiz mi? Patlamış mısır tuşu var!
+@shot close gary
+GARY [smug, fold]: Everything has a popcorn button now, Mikey. It's not special. Nothing is special. || Artık her şeyin patlamış mısır tuşu var Mikey. Özel değil. Hiçbir şey özel değil.
+@shot close mikey
+MIKEY [neutral, present]: And this. It's a ring. It was my grandma's. || Bir de bu. Yüzük. Babaannemindi.
+@shot close gary
+GARY [neutral, rest]: Ninety dollars. And I'm going to need your mom's number. For the paperwork. || Doksan dolar. Bir de annenin numarası lazım. Evrak için.
+@shot close mikey
+MIKEY [neutral, think]: Why do you need my mom's number? || Annemin numarası neden lazım?
+@shot close gary
+GARY [smug, point]: Because I've done this for a long time, kid. And moms always come in on Thursday. || Çünkü bu işi uzun zamandır yapıyorum evlat. Ve anneler hep perşembe gelir.
+@beat 0.8
+@shot close tuna
+TUNA [happy, present]: And the lamp? It's a very good lamp. It's my favorite lamp I've ever stolen. || Ya lamba? Çok iyi bir lamba. Bugüne kadar çaldığım en sevdiğim lamba.
+@shot close gary
+GARY [neutral, fold]: I'll give you nothing for the lamp. But I'll take it off your hands. As a favor to lamps. || Lamba için hiçbir şey vermem. Ama elinizden alırım. Lambalara bir iyilik olarak.
+VO [neutral]: Total: ninety-eight dollars. Five hundred and two to go. And one less lamp in the world, which Gary called "a mercy." || Toplam: doksan sekiz dolar. Beş yüz iki kaldı. Bir de dünyada bir lamba eksik; Gary buna "merhamet" dedi.
+
+# ---------------------------------------------------------------- SOKAK: 1:30
+@scene street | mikey:500 tuna:1000:-1
+@shot wide
+VO [sad]: One-thirty a.m. Walking down Main Street. My body was doing the thing it does when Gus's stuff runs out. I felt like a phone at two percent that somebody keeps opening apps on. || Gece bir buçuk. Ana caddede yürüyorduk. Gus'ın şeyleri bitince vücudumun yaptığı şeyi yapıyordu. Biri durmadan uygulama açan, şarjı yüzde iki kalmış bir telefon gibi hissediyordum.
+@shot close tuna
+TUNA [neutral, think]: You okay, man? You're shaking. || İyi misin dostum? Titriyorsun.
+@shot close mikey
+MIKEY [neutral, fold]: I'm cold. || Üşüyorum.
+@shot close tuna
+TUNA [neutral, rest]: It's seventy degrees. || Hava yirmi bir derece.
+@shot close mikey
+MIKEY [neutral, shrug]: I'm cold on the inside, Tuna. Let's keep moving. || İçim üşüyor Tuna. Yürümeye devam edelim.
+VO [sad]: That was a lie. I told a lot of them that night. That one I told to the only person who'd have believed me anyway. || O bir yalandı. O gece çok yalan söyledim. Bunu, zaten bana inanacak tek kişiye söyledim.
+
+# ---------------------------------------------------------------- BENZİNLİK: GECE 2'DE OTO YIKAMA
+@scene gas_station | mikey:450 tuna:950
+@sfx whoosh
+VO [neutral]: Two a.m. The gas station on Route 9. Tuna's next idea was a charity car wash. || Gece ikide. 9 numaralı yoldaki benzinlik. Tuna'nın bir sonraki fikri hayır amaçlı bir oto yıkamaydı.
+@shot close mikey
+MIKEY [neutral, fold]: Tuna, which charity? || Tuna, hangi hayır kurumu?
+@shot close tuna
+TUNA [smug, point]: Us. We're the charity. Look at us, Mikey. || Biz. Hayır kurumu biziz. Bize bir baksana Mikey.
+@shot close mikey
+MIKEY [sad, rest]: That's the first fully honest business you've ever started. || Bu kurduğun ilk tamamen dürüst iş.
+@shot close tuna
+TUNA [happy, wave]: Car wash! Car wash! We have one sponge and a lot of heart! || Oto yıkama! Oto yıkama! Bir süngerimiz ve kocaman bir kalbimiz var!
+TUNA [happy, up]: Two a.m.! No questions asked! || Gece ikide! Soru sorulmaz!
+@shot close mikey
+MIKEY [neutral, facepalm]: Stop saying "no questions asked." That's why nobody's stopping. || "Soru sorulmaz" demeyi bırak. Kimsenin durmamasının sebebi bu.
+VO [neutral]: In forty minutes, one car pulled in. It was a hearse. The driver wanted directions. We charged him four dollars. || Kırk dakikada tek bir araba geldi. Cenaze arabasıydı. Şoför yol tarifi istedi. Ondan dört dolar aldık.
+@shot close mikey
+MIKEY [neutral, facepalm]: We just charged a hearse for directions to a cemetery. || Az önce bir cenaze arabasından mezarlığa yol tarifi için para aldık.
+@shot close tuna
+TUNA [smug, shrug]: He got there, didn't he? That's a satisfied customer. || Oraya vardı, değil mi? Memnun müşteri bu.
+@shot close mikey
+MIKEY [neutral, fold]: The passenger didn't seem satisfied. || Yolcu memnun görünmüyordu.
+@shot close tuna
+TUNA [neutral, think]: The passenger didn't seem anything, Mikey. That's kind of the passenger's whole deal. || Yolcu hiçbir şey görünmüyordu Mikey. Yolcunun olayı biraz da bu.
+@sfx ping
+@walk officer 1500
+@shot close officer
+OFFICER [neutral, think]: Evening, boys. Somebody called in two men "aggressively sponging" at the pump. || İyi akşamlar çocuklar. Biri pompada "agresif şekilde süngerleyen" iki adam ihbar etti.
+@shot close tuna
+TUNA [happy, present]: Officer Gutierrez! Has your car been washed tonight? || Memur Gutierrez! Arabanız bu gece yıkandı mı?
+@shot close officer
+OFFICER [neutral, shrug]: My car has never been washed. It's held together by the dirt. Like a bird's nest. || Arabam hiç yıkanmadı. Kirle ayakta duruyor. Kuş yuvası gibi.
+
+# ---------------------------------------------------------------- BENZİNLİK: GARANTİ UZATMA
+@shot close mikey
+VO [neutral]: And that's when I had my idea. Which I want to be clear was worse than Tuna's. || İşte o an benim aklıma bir fikir geldi. Açık olayım, Tuna'nınkinden kötüydü.
+MIKEY [smug, present]: Officer, have you considered an extended warranty on your vehicle? || Memur bey, aracınız için uzatılmış garantiyi hiç düşündünüz mü?
+@shot close officer
+OFFICER [shock, up]: Oh my God. It's you. You're the ones who keep calling me. || Aman Tanrım. Sizsiniz. Beni sürekli arayanlar sizsiniz.
+@shot close mikey
+MIKEY [neutral, shrug]: That's not us. But we respect their hustle. || O biz değiliz. Ama emeklerine saygı duyuyoruz.
+@shot close tuna
+TUNA [smug, fold]: For only fifty dollars, if anything breaks on your cruiser, we will feel really bad about it. || Sadece elli dolara, devriye arabanızda bir şey bozulursa, buna gerçekten çok üzüleceğiz.
+@shot close officer
+OFFICER [neutral, think]: What does that cover? || Neyi kapsıyor?
+@shot close tuna
+TUNA [happy, present]: Emotionally? Everything. Financially? Nothing. It's very comprehensive. || Duygusal olarak mı? Her şeyi. Maddi olarak mı? Hiçbir şeyi. Çok kapsamlı.
+@shot close officer
+OFFICER [neutral, think]: Does it cover the time I backed into the Mayor? || Başkan'a geri geri çarptığım zamanı da kapsıyor mu?
+@shot close tuna
+TUNA [sad, rest]: Especially that. We think about it all the time. || Özellikle onu. Sürekli aklımızda.
+@shot close officer
+OFFICER [happy, present]: You know, nobody ever feels bad when my car breaks. I'll take it. || Biliyor musunuz, arabam bozulunca kimse üzülmez. Alıyorum.
+@sfx ding
+@shot close officer
+OFFICER [neutral, phone]: Hang on. I'm legally required to run your names first. || Bir dakika. Önce yasal olarak isimlerinizi sorgulamam gerekiyor.
+@shot two mikey tuna
+TUNA [shock, up]: Bad news. The warranty just expired. || Kötü haber. Garanti az önce sona erdi.
+MIKEY [neutral, wave]: Have a great night, Officer! Drive safe! It's not covered! || İyi geceler memur bey! Dikkatli sürün! Kapsam dışı!
+@walk mikey -300
+@walk tuna -300
+@shot close officer
+OFFICER [sad, rest]: They left their sponge. That's the nicest thing anyone's left me in years. || Süngerlerini bıraktılar. Yıllardır biri bana bıraktığı en güzel şey bu.
+
+# ---------------------------------------------------------------- EARL'ÜN ÇİMİ: MİRAS
+@scene lawn | mikey:450 tuna:850 earl:1450:-1
+@sfx whoosh
+VO [neutral]: Three a.m. Total: one hundred and two dollars. Tuna said old people always have cash. I want to say I stopped him. || Gece üç. Toplam: yüz iki dolar. Tuna yaşlıların hep nakdi olur dedi. Onu durdurduğumu söylemek isterdim.
+VO [sad]: I did not stop him. I held the flashlight. || Durdurmadım. Feneri ben tuttum.
+@shot close tuna
+TUNA [sad, present]: Mr. Earl, sir. I'm a lawyer. Your long-lost cousin died and left you a fortune. || Bay Earl, efendim. Ben avukatım. Uzun zamandır kayıp kuzeniniz öldü ve size servet bıraktı.
+@shot close earl
+EARL [neutral, think]: Which cousin? || Hangi kuzen?
+@shot close tuna
+TUNA [neutral, present]: Your cousin... Cousin... Mikey, what's a cousin name? || Kuzeniniz... Kuzen... Mikey, kuzen ismi ne olur?
+@shot close mikey
+MIKEY [neutral, facepalm]: Don't look at me. You said you'd been practicing. || Bana bakma. Prova yaptım demiştin.
+@shot close tuna
+TUNA [neutral, shrug]: The... long-lost one. || Şey... uzun zamandır kayıp olan.
+@shot close earl
+EARL [smug, fold]: Oh, Benny. Benny got lost in a corn maze in fifty-eight. Nobody ever went in after him. || Ha, Benny. Benny elli sekizde bir mısır labirentinde kayboldu. Kimse peşinden girmedi.
+@shot close mikey
+MIKEY [neutral, present]: Right. Benny. To release the fortune, there's a small processing fee. One hundred dollars. || Doğru. Benny. Serveti serbest bırakmak için küçük bir işlem ücreti var. Yüz dolar.
+@shot close earl
+EARL [smug, think]: Benny never had a fortune. Benny had a very nice harmonica and a lot of opinions about Canada. || Benny'nin hiç serveti olmadı. Benny'nin çok güzel bir mızıkası ve Kanada hakkında bir sürü fikri vardı.
+@cutaway snow | earl:700
+@caption THE CORN MAZE, 1958
+@shot wide
+EARL [neutral, present]: We heard that harmonica for eleven years. Every night. Coming from the corn. || O mızıkayı on bir yıl duyduk. Her gece. Mısırların içinden geliyordu.
+EARL [sad, shrug]: It was always the same song. Mostly the wrong notes. We put out soup. The soup was always gone. || Hep aynı şarkıydı. Çoğunlukla yanlış notalar. Dışarı çorba koyardık. Çorba hep bitmiş olurdu.
+@sfx ding
+@beat 1.2
+@scene lawn | mikey:450 tuna:850 earl:1450:-1
+@shot close tuna
+TUNA [shock, up]: So is Benny alive or not? || Peki Benny yaşıyor mu yaşamıyor mu?
+@shot close earl
+EARL [smug, point]: Here's the thing, young lawyer. Benny owed me forty dollars. If you represent his estate, you owe me forty dollars. || Mesele şu genç avukat. Benny bana kırk dolar borçluydu. Mirasını sen temsil ediyorsan, bana kırk dolar borçlusun.
+@shot close tuna
+TUNA [smug, fold]: Then I decline the case. I'm an ex-lawyer now. As of right now. || O zaman davayı reddediyorum. Artık eski avukatım. Şu andan itibaren.
+@shot close earl
+EARL [smug, hips]: Too late. You already said "estate." That's binding. My lawn, my rules. || Çok geç. "Miras" dedin bir kere. Bağlayıcı. Benim çimim, benim kurallarım.
+@shot close mikey
+MIKEY [shock, facepalm]: That's not how inheritance works. || Miras öyle işlemiyor.
+@shot close earl
+EARL [neutral, fold]: It's how it works on my lawn. I've got a shotgun and a very good memory for faces. Hello, Mikey. Say hi to Linda. || Benim çimimde öyle işliyor. Bir tüfeğim ve yüzleri hatırlamakta çok iyi bir hafızam var. Merhaba Mikey. Linda'ya selam söyle.
+@beat 0.8
+VO [sad]: Total: sixty-two dollars. We had gone to scam an old man and had been successfully scammed by an old man. And he knew my mom. || Toplam: altmış iki dolar. Yaşlı bir adamı dolandırmaya gitmiştik ve yaşlı bir adam tarafından başarıyla dolandırılmıştık. Üstelik annemi tanıyordu.
+
+# ---------------------------------------------------------------- LOKANTA: GÜN DOĞUMU
+@scene diner | gus:1400:-1 mikey:500 tuna:850
+@sfx jukebox
+VO [neutral]: Five-forty a.m. Sunrise was at six-twelve. Gus was eating pancakes like a man who has never once owed anybody anything. || Sabah beşi kırk geçe. Güneş altıyı on iki geçe doğuyordu. Gus, hayatında kimseye bir kuruş borçlu olmamış bir adam gibi pankek yiyordu.
+@shot close mikey
+MIKEY [sad, present]: Gus. We have sixty-two dollars. And a sponge. Actually, no. We left the sponge. || Gus. Altmış iki dolarımız var. Bir de sünger. Aslında hayır. Süngeri bıraktık.
+@shot close gus
+GUS [neutral, think]: Sixty-two. Out of six hundred and twelve. || Altmış iki. Altı yüz on ikiden.
+@shot close tuna
+TUNA [shock, up]: Twelve? Where'd the twelve come from? || On iki mi? On iki nereden çıktı?
+@shot close gus
+GUS [smug, present]: The mug, son. I told you. Every day is the end of somebody's month. || Kupa evlat. Söylemiştim. Her gün birilerinin ay sonudur.
+@shot close tuna
+TUNA [happy, present]: But we have a business now. A car wash. And a warranty company. And a law firm. Briefly. || Ama artık bir işimiz var. Oto yıkama. Bir de garanti şirketi. Bir de hukuk bürosu. Kısa süreliğine.
+@shot close gus
+GUS [smug, think]: Three businesses in one night. Tuna, that's not an empire. That's a crime spree with a logo. || Bir gecede üç şirket. Tuna, o imparatorluk değil. Logolu bir suç dalgası.
+@shot close mikey
+MIKEY [sad, rest]: Gus, please. One more week. I'll get a job. A real one. With a vest. || Gus, lütfen. Bir hafta daha. İş bulacağım. Gerçek bir iş. Yelekli.
+@shot close gus
+GUS [neutral, fold]: I'll take the sixty-two. You've got till Sunday. And Mikey? Your mom's working doubles. Don't make me see her at the hospital. || Altmış ikiyi alıyorum. Pazara kadar vaktin var. Ve Mikey? Annen çift vardiya çalışıyor. Onu hastanede görmeme sebep olma.
+@beat 1.0
+@shot close tuna
+TUNA [neutral, think]: As a patient, or a visitor? || Hasta olarak mı, ziyaretçi olarak mı?
+@shot close gus
+GUS [smug, wave]: Either. I'm very flexible. God bless, boys. || İkisi de. Ben çok esneğim. Tanrı sizi korusun çocuklar.
+@walk gus 2150
+@shot close tuna
+TUNA [neutral, think]: Mikey. Was that a threat? || Mikey. Bu bir tehdit miydi?
+@shot close mikey
+MIKEY [sad, rest]: He blessed us on the way out, Tuna. That's how you know. || Çıkarken bizi kutsadı Tuna. Oradan anlarsın.
+VO [sad]: That was the moment the night stopped being funny. Which, if you've been keeping track, was about six hours late. || Gecenin komik olmaktan çıktığı an oydu. Hesap tutuyorsanız, yaklaşık altı saat geç kalmıştı.
+
+# ---------------------------------------------------------------- MUTFAK: DİP
+@scene kitchen | mikey:650
+@sfx door
+VO [neutral]: Seven a.m. I got home. Tuna went to his grandma's. She still isn't talking to him, but she lets him sit there. || Sabah yedi. Eve geldim. Tuna babaannesine gitti. Babaannesi hâlâ onunla konuşmuyor ama orada oturmasına izin veriyor.
+VO [sad]: I figured I had an hour before my mom got off her shift. I was wrong about that too. || Annemin vardiyası bitmeden bir saatim var sandım. Onda da yanılmışım.
+@walk linda 1250
+@shot close linda
+LINDA [neutral, fold]: There's a rectangle on the counter where the microwave used to be. It's the cleanest part of my kitchen. || Tezgâhta eskiden mikrodalganın durduğu yerde bir dikdörtgen var. Mutfağımın en temiz yeri.
+@shot close mikey
+MIKEY [shock, up]: Mom. You're home. I thought you were on till eight. || Anne. Evdesin. Sekize kadar çalışıyorsun sanıyordum.
+@shot close linda
+LINDA [neutral, phone]: A man named Gary called me at four in the morning. He asked if I'd like to buy back my mother's ring. "At a very reasonable markup." || Gary diye bir adam sabahın dördünde beni aradı. Annemin yüzüğünü geri almak ister miyim diye sordu. "Çok makul bir kâr marjıyla."
+@shot close mikey
+MIKEY [sad, rest]: I was going to get it back by Friday. || Cumaya kadar geri alacaktım.
+@shot close linda
+LINDA [sad, rest]: I know, baby. You're always going to get it back by Friday. || Biliyorum bebeğim. Sen hep cumaya kadar geri alacaksın.
+@beat 1.2
+@shot two mikey linda
+MIKEY [sad, think]: Are you gonna yell? You can yell. I'd honestly prefer the yelling. || Bağıracak mısın? Bağırabilirsin. Açıkçası bağırmanı tercih ederim.
+LINDA [sad, shrug]: I worked sixteen hours, Mikey. I don't have a yell left. I spent it on a man in bed nine. || On altı saat çalıştım Mikey. Bağıracak halim kalmadı. Hepsini dokuz numaralı yataktaki adama harcadım.
+LINDA [neutral, present]: I paid Gary. With my overtime. The ring's in my pocket. The microwave, he can keep. || Gary'ye ödedim. Fazla mesaimle. Yüzük cebimde. Mikrodalga onda kalsın.
+@shot close mikey
+MIKEY [sad, rest]: I'm sorry. I'm really sorry. || Özür dilerim. Gerçekten çok özür dilerim.
+@shot close linda
+LINDA [sad, fold]: Earl called too. At five. He said you owe him forty dollars for a cousin named Benny. || Earl da aradı. Beşte. Benny diye bir kuzen yüzünden ona kırk dolar borçlu olduğunu söyledi.
+@shot close mikey
+MIKEY [neutral, think]: Did you pay him? || Ödedin mi?
+@shot close linda
+LINDA [neutral, rest]: No. Earl doesn't have a cousin named Benny. Earl has a goat named Benny. || Hayır. Earl'ün Benny diye bir kuzeni yok. Earl'ün Benny diye bir keçisi var.
+@shot close linda
+LINDA [sad, fold]: Look at me. Are you okay? Not "fine." Okay. || Bana bak. İyi misin? "İdare eder" değil. İyi misin?
+@beat 1.5
+@shot close mikey
+MIKEY [sad, rest]: No. || Hayır.
+@shot close linda
+LINDA [neutral, rest]: Okay. That's the first true thing you've said to me in a month. We can start with that. || Tamam. Bir aydır bana söylediğin ilk doğru şey bu. Oradan başlayabiliriz.
+VO [sad]: She made me toast. In the toaster. Because we didn't have a microwave. That was the whole lesson, I think. I'm still working on it. || Bana tost yaptı. Tost makinesinde. Çünkü mikrodalgamız yoktu. Sanırım bütün ders buydu. Hâlâ üzerinde çalışıyorum.
+
+# ---------------------------------------------------------------- GRUBA DÖNÜŞ
+@scene group | pam:400 mikey:950:-1 tuna:1450:-1
+@sfx whoosh
+@shot close mikey
+MIKEY [neutral, shrug]: So. That's it. That actually happened. || İşte. Bu kadar. Bu gerçekten yaşandı.
+@shot close tuna
+TUNA [happy, fist]: And the car wash is still technically open. So, if anyone here has a car that needs washing... || Ve oto yıkama teknik olarak hâlâ açık. O yüzden burada yıkanacak arabası olan varsa...
+@shot close pam
+PAM [neutral, facepalm]: Tuna, this is court-ordered therapy. You cannot do sales in court-ordered therapy. || Tuna, burası mahkeme kararıyla gelinen terapi. Mahkeme kararıyla gelinen terapide satış yapamazsın.
+@shot close tuna
+TUNA [smug, fold]: Then why is there a donut table? || O zaman neden donut masası var?
+@shot close pam
+PAM [neutral, think]: Mikey. Let me make sure I followed. You lost something that wasn't yours, to a goose. || Mikey. Doğru anlamış mıyım bakayım. Size ait olmayan bir şeyi bir kaza kaptırdınız.
+PAM [neutral, present]: Then you sold things that weren't yours, to pay a man who isn't your friend, and you ended the night owing an old man for a cousin who lives in a corn maze. || Sonra size ait olmayan şeyleri sattınız, arkadaşınız olmayan bir adama ödemek için, ve geceyi mısır labirentinde yaşayan bir kuzen yüzünden yaşlı bir adama borçlu bitirdiniz.
+@shot close mikey
+MIKEY [neutral, shrug]: When you say it like that, it sounds bad. || Öyle söyleyince kötü duruyor.
+@shot close pam
+PAM [neutral, fold]: It's the only way to say it, Mikey. I checked. || Söylemenin tek yolu bu Mikey. Kontrol ettim.
+PAM [sad, rest]: But the only thing you actually earned that night was the word "no" in your mom's kitchen. That one's yours. Don't pawn it. || Ama o gece gerçekten kazandığın tek şey, annenin mutfağındaki o "hayır" kelimesiydi. O senin. Onu rehine verme.
+@beat 1.0
+@shot close mikey
+MIKEY [sad, rest]: Gary would only give me eight bucks for it anyway. || Gary zaten ona sekiz dolardan fazla vermezdi.
+@shot close pam
+PAM [neutral, think]: And Gus? || Peki Gus?
+@shot close mikey
+MIKEY [neutral, rest]: My mom drove me to his place. She waited in the car with the engine running. I paid him the rest out of my first paycheck. I bag groceries now. With a vest. || Annem beni onun evine götürdü. Motoru çalışır halde arabada bekledi. Kalanını ilk maaşımdan ödedim. Artık markette poşetçiyim. Yelekli.
+@shot close tuna
+TUNA [happy, fist]: And I got a job at the duck pond. Security. || Ben de ördek göletinde iş buldum. Güvenlik.
+@shot close pam
+PAM [neutral, facepalm]: Against the goose. || Kaza karşı.
+@shot close tuna
+TUNA [angry, point]: It's personal now, Pam. || Artık kişisel Pam.
+@shot close pam
+PAM [neutral, wave]: Okay. Same time next week. Tuna, put the new sponge away. || Tamam. Haftaya aynı saatte. Tuna, yeni süngeri kaldır.
+@shot close tuna
+TUNA [happy, present]: Pam, it's not a car wash. It's a new idea. A car wash for feelings. || Pam, bu oto yıkama değil. Yeni bir fikir. Duygular için oto yıkama.
+@shot close pam
+PAM [neutral, facepalm]: That's just this, Tuna. That's what this is. || O zaten bu Tuna. Burası tam olarak o.
+@shot close tuna
+TUNA [shock, up]: And you charge the state for it? Pam. You're a genius. || Ve bunun için devletten para mı alıyorsun? Pam. Sen bir dâhisin.
+@sfx rimshot
+@beat 1.0
+@title THE COMEDOWN
