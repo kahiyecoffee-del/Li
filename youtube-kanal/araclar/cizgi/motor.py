@@ -26,7 +26,8 @@ FPS = 24
 SR = 24000
 MODEL_DIR = os.environ.get("KOKORO_DIR", "/home/user/models")
 VOICES = {"dale": "am_michael", "tammy": "af_bella", "kyle": "am_puck", "earl": "bm_lewis", "homi": "af_nova",
-          "officer": "am_eric", "gary": "bm_daniel", "mayor": "af_sarah", "jace": "am_liam"}
+          "officer": "am_eric", "gary": "bm_daniel", "mayor": "af_sarah", "jace": "am_liam",
+          "mikey": "am_echo", "tuna": "am_adam", "gus": "am_onyx", "pam": "af_kore", "linda": "af_jessica"}
 SPEED = {"homi": 0.97, "earl": 0.92, "kyle": 1.02}
 EMOS = {"neutral", "happy", "angry", "sad", "shock", "smug"}
 PROPS = {"jukebox", "toaster", "toaster2"}
@@ -78,6 +79,28 @@ def parse(path):
 
 # ---------------------------------------------------------------- ses
 _k = None
+
+
+KOKORO_ONLY = {"homi"}  # robot sesi Kokoro'da kalır
+
+
+def cb_key(who, emo, text):
+    import hashlib
+    return hashlib.md5(f"cb2|{who}|{emo}|{text}".encode()).hexdigest()
+
+
+VOICE_ALIAS = {"vo": "mikey"}
+
+
+def line_audio(who, emo, text):
+    """TTS_ENGINE=cb ise duygulu Chatterbox önbelleğinden (ses_cb.py üretir), yoksa Kokoro."""
+    who = VOICE_ALIAS.get(who, who)
+    if os.environ.get("TTS_ENGINE") == "cb" and who not in KOKORO_ONLY:
+        cf = os.path.join(os.environ.get("TTS_CACHE", "cikti/budgets/.tts"), "cb", cb_key(who, emo, text) + ".npy")
+        if os.path.exists(cf):
+            return np.load(cf)
+        print(f"  ! cb önbellekte yok, Kokoro: {who}: {text[:40]}", flush=True)
+    return tts(text, VOICES[who], SPEED.get(who, 1.0))
 
 
 def tts(text, voice, speed=1.0):
@@ -267,24 +290,27 @@ def build(events, limit=None):
             if limit and nlines >= limit:
                 break
             nlines += 1
-            v = tts(e["en"], VOICES[who], SPEED.get(who, 1.0))
+            v = line_audio(who, e["emo"], e["en"])
             for n in pending_sfx:
                 audio.append((t, sfx(n), 0.8))
             pending_sfx = []
             lead = 0.25
-            emo[who] = e["emo"]
-            if e["pose"]:
-                pose[who] = e["pose"]
+            vo = who == "vo"  # dış ses anlatıcı: ekranda konuşan yok
+            if not vo:
+                emo[who] = e["emo"]
+                if e["pose"]:
+                    pose[who] = e["pose"]
             d = lead + len(v) / SR + 0.45
-            cam = shot or _auto_shot(scene, who, nlines)
-            segs.append(dict(kind="shot", t0=t, t1=t + d, scene=scene, shot=cam, speaker=who, emo=dict(emo),
-                             pose=dict(pose), snap=_snap(scene), audio=v, a0=t + lead, en=e["en"], tr=e["tr"]))
+            cam = shot or (["wide"] if vo else _auto_shot(scene, who, nlines))
+            segs.append(dict(kind="shot", t0=t, t1=t + d, scene=scene, shot=cam, speaker=None if vo else who,
+                             emo=dict(emo), pose=dict(pose), snap=_snap(scene), audio=v, a0=t + lead, en=e["en"],
+                             tr=e["tr"], vo=vo))
             audio.append((t + lead, v, 1.0))
             shot = None
             t += d
             # tepki çekimi: dinleyenin yüzüne kısa kesme (sitcom ritmi)
             others = [k for k in scene["cast"] if k != who and k not in PROPS]
-            if not scene["cut"] and others and nlines % 3 == 0:
+            if not vo and not scene["cut"] and others and nlines % 3 == 0:
                 sx = scene["cast"][who][0]
                 lis = min(others, key=lambda k: abs(scene["cast"][k][0] - sx))
                 rx = {"shock": "shock", "angry": "sad", "smug": "angry", "happy": "smug", "sad": "smug"}.get(e["emo"], "neutral")
@@ -390,8 +416,8 @@ def wrap(text, n=58):
     return lines
 
 
-def draw_sub(ctx, text):
-    ctx.select_font_face(FONT, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
+def draw_sub(ctx, text, vo=False):
+    ctx.select_font_face(FONT, cairo.FONT_SLANT_ITALIC if vo else cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
     ctx.set_font_size(44)
     lines = wrap(text)
     y0 = H - 70 - (len(lines) - 1) * 56
@@ -405,7 +431,7 @@ def draw_sub(ctx, text):
         ctx.set_line_width(9)
         ctx.set_line_join(cairo.LINE_JOIN_ROUND)
         ctx.stroke_preserve()
-        ctx.set_source_rgb(1, 1, 1)
+        ctx.set_source_rgb(*((1, 0.9, 0.55) if vo else (1, 1, 1)))
         ctx.fill()
 
 
@@ -536,7 +562,14 @@ def render_frame(ctx, seg, t, blink, envs, subs=True):
     ctx.set_source(g)
     ctx.paint()
     if subs and seg.get("en") and t >= seg["a0"] - 0.1:
-        draw_sub(ctx, seg["en"])
+        draw_sub(ctx, seg["en"], seg.get("vo"))
+
+
+SHOWS = {"budgets": "THE BUDGETS", "comedown": "THE COMEDOWN"}  # @title metni senaryoda
+
+
+def series_of(script):
+    return os.path.basename(os.path.dirname(os.path.abspath(script)))
 
 
 def srt_time(s):
@@ -551,7 +584,7 @@ def main():
     ap.add_argument("--limit", type=int)
     a = ap.parse_args()
     slug = os.path.splitext(os.path.basename(a.script))[0]
-    out = a.out or f"cikti/budgets/{slug}/{slug}"
+    out = a.out or f"cikti/{series_of(a.script)}/{slug}/{slug}"
     os.makedirs(os.path.dirname(out), exist_ok=True)
     segs, audio, total = build(parse(a.script), a.limit)
     # önceki pozları geçiş için bağla

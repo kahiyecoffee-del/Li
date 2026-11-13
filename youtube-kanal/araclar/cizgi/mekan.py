@@ -603,6 +603,124 @@ def townhall(ctx):
 
 BGS.update({"school": school, "townhall": townhall})
 
+def basement(ctx):
+    wall_floor(ctx, "#8d8a7e", "#5a564c", "#5b5048")
+    for y in range(0, 800, 60):  # beton blok duvar
+        for x in range(-(y // 60 % 2) * 60, W, 120):
+            ctx.rectangle(x, y, 118, 58)
+    ctx.set_source_rgba(0, 0, 0, 0.10)
+    ctx.set_line_width(3)
+    ctx.stroke()
+    box(ctx, 1400, 90, 260, 90, "#1c2430")  # küçük üst pencere
+    box(ctx, 1412, 102, 236, 66, "#33415a", 4)
+    box(ctx, 240, 560, 760, 160, "#5f6b3a", r=26)  # eski yeşil kanepe
+    box(ctx, 200, 640, 90, 190, "#525c32", r=24)
+    box(ctx, 950, 640, 90, 190, "#525c32", r=24)
+    box(ctx, 260, 700, 720, 120, "#6b7842", r=18)
+    ctx.move_to(420, 720)  # kanepe yırtığı
+    ctx.line_to(470, 760)
+    ctx.line_to(440, 790)
+    ctx.set_source_rgb(*INK)
+    ctx.set_line_width(4)
+    ctx.stroke()
+    box(ctx, 450, 830, 360, 30, "#7a5a3a")  # sehpa
+    for i in range(4):
+        box(ctx, 480 + i * 70, 800, 34, 34, ("#c0392b", "#f1c40f", "#2e86c1", "#c0392b")[i], 3, r=4)
+    box(ctx, 1150, 600, 140, 200, "#d9d9d9", r=10)  # mini buzdolabı
+    box(ctx, 1500, 380, 34, 160, "#6b3fa0", r=16)  # lav lambası
+    ellipse(ctx, 1517, 430, 12, 18)
+    fill_stroke(ctx, rgb("#ff7a59"), 3)
+    box(ctx, 1480, 540, 74, 30, "#2b2b2b")
+    box(ctx, 1600, 260, 200, 260, "#2e2e3a", 4)  # poster
+    ellipse(ctx, 1700, 380, 60, 60)
+    fill_stroke(ctx, rgb("#7fd17f"), 4)
+    for i, x in enumerate(range(80, 1900, 260)):  # tavan boruları
+        ctx.move_to(0, 40 + (i % 2) * 6)
+    box(ctx, -10, 30, W + 20, 26, "#7f8c8d", 4)
+    box(ctx, 1240, 0, 4, 140, "#333333", 0)  # çıplak ampul
+    ellipse(ctx, 1242, 160, 22, 26)
+    fill_stroke(ctx, rgb("#fff3b0"), 4)
+    finish(ctx, light_x=1242)
+    g = cairo.RadialGradient(1242, 160, 20, 1242, 160, 900)
+    g.add_color_stop_rgba(0, 1, 0.95, 0.7, 0.18)
+    g.add_color_stop_rgba(1, 0, 0, 0.05, 0.25)
+    ctx.set_source(g)
+    ctx.paint()
+
+
+def group(ctx):
+    wall_floor(ctx, "#d9d4c4", "#8a8370", "#9c8f7a")
+    box(ctx, 160, 160, 340, 220, "#f7f3e8")  # motivasyon posteri
+    ctx.select_font_face("Inter", cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
+    ctx.set_font_size(36)
+    for i, t in enumerate(("ONE DAY", "AT A TIME", "(PLEASE)")):
+        ctx.move_to(200, 230 + i * 50)
+        ctx.set_source_rgb(0.2, 0.35, 0.6)
+        ctx.show_text(t)
+    box(ctx, 1400, 520, 300, 30, "#8a6d4b")  # kahve masası
+    box(ctx, 1420, 550, 20, 270, "#6b5038", 4)
+    box(ctx, 1660, 550, 20, 270, "#6b5038", 4)
+    box(ctx, 1460, 410, 90, 110, "#b8bcc2", r=14)  # kahve semaveri
+    for i in range(5):
+        box(ctx, 1580 + (i % 3) * 30, 480 - (i // 3) * 22, 24, 30, "#f4f1e8", 3)
+    box(ctx, 1600, 150, 180, 150, "#2d6a4f", r=6)  # pano
+    for x in (120, 420, 720, 1020):  # katlanır sandalyeler (arka)
+        box(ctx, x, 640, 120, 18, "#7f8c8d", 4)
+        box(ctx, x + 10, 560, 100, 80, "#95a5a6", 4, r=8)
+        box(ctx, x + 14, 658, 10, 160, "#5d6d7e", 3)
+        box(ctx, x + 96, 658, 10, 160, "#5d6d7e", 3)
+    clock(ctx, 960, 180, 50)
+    finish(ctx, light_x=960)
+    ctx.set_source_rgba(0.85, 1.0, 0.85, 0.06)  # floresan yeşilimsi
+    ctx.paint()
+
+
+def gas_station(ctx):
+    sky = cairo.LinearGradient(0, 0, 0, 700)
+    sky.add_color_stop_rgb(0, *rgb("#0b1026"))
+    sky.add_color_stop_rgb(1, *rgb("#2a2350"))
+    ctx.set_source(sky)
+    ctx.paint()
+    rnd = random.Random(5)
+    for _ in range(80):
+        ellipse(ctx, rnd.uniform(0, W), rnd.uniform(0, 380), 1.8, 1.8)
+        ctx.set_source_rgba(1, 1, 1, rnd.uniform(0.3, 0.9))
+        ctx.fill()
+    box(ctx, 900, 330, 900, 450, "#d9d4c4")  # market
+    box(ctx, 960, 420, 520, 260, "#ffe9a8", 5)  # vitrin ışığı
+    for x in range(990, 1460, 90):
+        box(ctx, x, 470, 60, 160, "#c9b37a", 3)
+    box(ctx, 1540, 470, 160, 310, "#3a5a7a", 5)  # kapı
+    box(ctx, 900, 300, 900, 50, "#c0392b")
+    ctx.select_font_face("Inter", cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
+    ctx.set_font_size(40)
+    ctx.move_to(1180, 338)
+    ctx.set_source_rgb(1, 1, 1)
+    ctx.show_text("QUIK-STOP 24")
+    box(ctx, 60, 200, 760, 60, "#f2f2f2")  # pompa saçağı
+    box(ctx, 120, 260, 40, 520, "#bdbdbd", 4)
+    box(ctx, 720, 260, 40, 520, "#bdbdbd", 4)
+    for x in (260, 520):  # pompalar
+        box(ctx, x, 560, 110, 220, "#c0392b", r=10)
+        box(ctx, x + 18, 590, 74, 50, "#1b1b1b", 3)
+    g = cairo.LinearGradient(0, 260, 0, 900)  # saçak ışığı
+    g.add_color_stop_rgba(0, 1, 1, 0.9, 0.35)
+    g.add_color_stop_rgba(1, 1, 1, 0.9, 0.0)
+    ctx.move_to(60, 260)
+    ctx.line_to(820, 260)
+    ctx.line_to(980, 900)
+    ctx.line_to(-100, 900)
+    ctx.close_path()
+    ctx.set_source(g)
+    ctx.fill()
+    box(ctx, -10, 780, W + 20, 320, "#3b3b44")  # asfalt
+    for x in range(40, W, 300):
+        box(ctx, x, 880, 140, 10, "#e8e2d0", 0)
+    finish(ctx, floor_y=780, light_x=1200)
+
+
+BGS.update({"basement": basement, "group": group, "gas_station": gas_station})
+
 _cache = {}
 
 

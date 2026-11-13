@@ -43,6 +43,21 @@ SPECS = {
     "mayor": dict(skin="#e9b896", hair="#bdbdbd", hair_style="bob", shirt="#b3263a", accent="#f4f1e8", pants="#2b2b33",
                   shoes="#1b1b1b", body_w=175, body_h=220, belly=10, head_w=178, head_h=196, chin=0.95, leg_h=155, arm_w=27,
                   glasses=True, pearls=True, lipstick="#8a1f2b"),
+    "mikey": dict(skin="#e9c2a0", hair="#4a3b2a", hair_style="messy", shirt="#7d838c", accent="#cfd3d8", pants="#3a3f4a",
+                  shoes="#5a4a3a", body_w=140, body_h=215, belly=0, head_w=166, head_h=192, chin=0.9, leg_h=170, arm_w=22,
+                  hoodie=True, lids=0.35, bags=True),
+    "tuna": dict(skin="#d9a27a", hair="#2b211b", hair_style="bucket", hat="#d8c25a", shirt="#c0392b", accent="#f4f1e8",
+                 pants="#6b6b5e", shoes="#f4f1e8", body_w=215, body_h=215, belly=36, head_w=186, head_h=192, chin=1.0,
+                 leg_h=150, arm_w=31, bags=True, lids=0.2),
+    "gus": dict(skin="#e4b48e", hair="#7a6a5a", hair_style="long_bald", shirt="#3b2f2a", accent="#8a6d4b", pants="#2f3440",
+                shoes="#1b1b1b", body_w=180, body_h=220, belly=24, head_w=176, head_h=200, chin=1.05, leg_h=155, arm_w=27,
+                goatee=True, lids=0.3),
+    "pam": dict(skin="#c68a63", hair="#3b2a1e", hair_style="bob", shirt="#2a9d8f", accent="#f4f1e8", pants="#3a3f4a",
+                shoes="#5a3a2a", body_w=180, body_h=220, belly=12, head_w=178, head_h=196, chin=0.95, leg_h=155, arm_w=27,
+                glasses=True),
+    "linda": dict(skin="#f0c8a8", hair="#a0522d", hair_style="bun", shirt="#6fb7c9", accent="#f4f1e8", pants="#6fb7c9",
+                  shoes="#f4f1e8", body_w=170, body_h=220, belly=8, head_w=172, head_h=194, chin=0.95, leg_h=155, arm_w=26,
+                  bags=True, lids=0.25),
     "jace": dict(skin="#8d5a3b", hair="#151212", hair_style="flat", shirt="#e67e22", accent="#f4f1e8", pants="#3a4a6b",
                  shoes="#e74c3c", body_w=140, body_h=210, belly=0, head_w=162, head_h=186, chin=0.92, leg_h=175, arm_w=23,
                  hoodie=True),
@@ -269,6 +284,66 @@ class Character:
             ctx.set_source_rgb(*darker(c["skin"], 0.7))
             ctx.set_line_width(3)
             ctx.stroke()
+        elif hs == "messy":  # dağınık, gözlere düşen perçem
+            ctx.save()
+            self.head_path(ctx, w, h, chin)
+            ctx.clip()
+            ctx.move_to(-w, -h)
+            ctx.line_to(w, -h)
+            ctx.line_to(w, -h * 0.02)
+            for k in range(7):
+                xx = w * (0.5 - (k + 1) * 0.14)
+                ctx.line_to(xx + w * 0.07, -h * (0.12 + 0.06 * (k % 2)))
+                ctx.line_to(xx, -h * (0.24 if k % 2 else 0.04))
+            ctx.line_to(-w, -h * 0.0)
+            ctx.close_path()
+            fill_stroke(ctx, c["hair"])
+            ctx.restore()
+            for k in range(-3, 4):  # tepe tutamları
+                ctx.move_to(w * k * 0.12, -h * 0.46)
+                ctx.line_to(w * (k * 0.12 + 0.05), -h * 0.58)
+                ctx.line_to(w * (k * 0.12 + 0.09), -h * 0.45)
+                ctx.close_path()
+                fill_stroke(ctx, c["hair"], 4)
+            for sx in (-1, 1):
+                ctx.move_to(sx * w * 0.47, -h * 0.25)
+                ctx.curve_to(sx * w * 0.56, -h * 0.05, sx * w * 0.55, h * 0.12, sx * w * 0.50, h * 0.20)
+                ctx.line_to(sx * w * 0.43, -h * 0.05)
+                ctx.close_path()
+                fill_stroke(ctx, c["hair"], 4)
+        elif hs == "bucket":  # balıkçı şapka
+            ctx.move_to(-w * 0.50, -h * 0.26)
+            ctx.curve_to(-w * 0.46, -h * 0.70, w * 0.46, -h * 0.70, w * 0.50, -h * 0.26)
+            ctx.close_path()
+            fill_stroke(ctx, c["hat"])
+            ellipse(ctx, 0, -h * 0.26, w * 0.66, h * 0.08)
+            fill_stroke(ctx, darker(c["hat"], 0.85))
+            ctx.move_to(-w * 0.48, -h * 0.36)
+            ctx.line_to(w * 0.48, -h * 0.36)
+            ctx.set_source_rgba(0, 0, 0, 0.35)
+            ctx.set_line_width(8)
+            ctx.stroke()
+        elif hs == "long_bald":  # tepesi açık, yanları uzun
+            for sx in (-1, 1):
+                ctx.move_to(sx * w * 0.40, -h * 0.28)
+                ctx.curve_to(sx * w * 0.62, -h * 0.20, sx * w * 0.64, h * 0.30, sx * w * 0.55, h * 0.55)
+                ctx.line_to(sx * w * 0.42, h * 0.40)
+                ctx.curve_to(sx * w * 0.48, h * 0.10, sx * w * 0.46, -h * 0.10, sx * w * 0.36, -h * 0.20)
+                ctx.close_path()
+                fill_stroke(ctx, c["hair"])
+        elif hs == "bun":  # topuz
+            ellipse(ctx, 0, -h * 0.58, w * 0.18, h * 0.12)
+            fill_stroke(ctx, c["hair"])
+            ctx.save()
+            self.head_path(ctx, w, h, chin)
+            ctx.clip()
+            ctx.move_to(-w, -h)
+            ctx.line_to(w, -h)
+            ctx.line_to(w, -h * 0.22)
+            ctx.curve_to(w * 0.3, -h * 0.34, -w * 0.3, -h * 0.34, -w, -h * 0.22)
+            ctx.close_path()
+            fill_stroke(ctx, c["hair"])
+            ctx.restore()
         if sp.get("cap"):
             ctx.move_to(-w * 0.52, -h * 0.30)
             ctx.curve_to(-w * 0.5, -h * 0.72, w * 0.5, -h * 0.72, w * 0.52, -h * 0.30)
@@ -353,6 +428,18 @@ class Character:
             ctx.curve_to(-w * 0.12, h * 0.17, w * 0.12, h * 0.17, w * 0.19, h * 0.25)
             ctx.curve_to(w * 0.08, h * 0.22, -w * 0.08, h * 0.22, -w * 0.17, h * 0.25)
             fill_stroke(ctx, c["hair"] if sp["hair_style"] == "bald" else (0.12, 0.1, 0.09), 3.5)
+        if sp.get("goatee"):
+            ctx.move_to(-w * 0.08, h * 0.38)
+            ctx.line_to(w * 0.08, h * 0.38)
+            ctx.line_to(0, h * 0.52)
+            ctx.close_path()
+            fill_stroke(ctx, c["hair"], 3.5)
+        if sp.get("bags"):  # göz altı torbaları
+            for sx in (-1, 1):
+                ctx.arc(sx * w * 0.135, -h * 0.02, w * 0.11, math.pi * 0.2, math.pi * 0.8)
+                ctx.set_source_rgba(0.35, 0.25, 0.4, 0.55)
+                ctx.set_line_width(4)
+                ctx.stroke()
         self.draw_mouth(ctx, st, w, h)
 
     def draw_mouth(self, ctx, st, w, h):

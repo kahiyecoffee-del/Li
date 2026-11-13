@@ -22,6 +22,7 @@ ap.add_argument("--pose", default="up")
 ap.add_argument("--bg", default="kitchen")
 ap.add_argument("--side", default="")
 ap.add_argument("--out")
+ap.add_argument("--series", default="budgets")
 a = ap.parse_args()
 
 W, H = 1280, 720
@@ -77,11 +78,11 @@ c.set_line_width(6)
 c.stroke()
 c.set_font_size(58)
 c.move_to(12, 0)
-c.text_path("THE BUDGETS")
+c.text_path({"budgets": "THE BUDGETS", "comedown": "THE COMEDOWN"}.get(a.series, "THE BUDGETS"))
 c.set_source_rgb(*rgb("#fff3c4"))
 c.fill()
 c.restore()
-out = a.out or f"cikti/budgets/{a.slug}/kapak.png"
+out = a.out or f"cikti/{a.series}/{a.slug}/kapak.png"
 os.makedirs(os.path.dirname(out), exist_ok=True)
 s.write_to_png(out)
 print("✔", out)

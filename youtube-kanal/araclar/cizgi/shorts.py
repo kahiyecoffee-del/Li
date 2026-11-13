@@ -24,6 +24,9 @@ from motor import FPS, SR  # noqa: E402
 VW, VH = 1080, 1920
 CTA_EN = "Full episode is on the channel. Subscribe, or Homi fires you."
 CTA_DUR = 4.2
+SHOW = "THE BUDGETS"
+CTA = {"budgets": ("dale", "Full episode is on the channel. Subscribe, or Homi fires you."),
+       "comedown": ("tuna", "Full episode is on the channel. Subscribe. It is cheaper than therapy.")}
 
 
 def wrap(ctx, text, maxw):
@@ -73,7 +76,7 @@ def header(ctx, hook):
     ctx.set_source_rgb(*INK)
     ctx.set_line_width(6)
     ctx.stroke()
-    outlined(ctx, "THE BUDGETS", 0, 0, 60, rgb("#fff3c4"), 0)
+    outlined(ctx, SHOW, 0, 0, 60, rgb("#fff3c4"), 0)
     ctx.restore()
     ctx.set_font_size(78)
     lines = wrap(ctx, hook, VW - 120)
@@ -139,7 +142,10 @@ def main():
     ap.add_argument("--only")
     a = ap.parse_args()
     slug = os.path.splitext(os.path.basename(a.script))[0]
-    outdir = f"cikti/budgets/{slug}/shorts"
+    series = motor.series_of(a.script)
+    global SHOW
+    SHOW = motor.SHOWS.get(series, "THE BUDGETS")
+    outdir = f"cikti/{series}/{slug}/shorts"
     os.makedirs(outdir, exist_ok=True)
     segs, audio, total = motor.build(motor.parse(a.script))
     prev = {}
@@ -155,7 +161,8 @@ def main():
         mix[i:i + len(x)] += x * vol
     envs = {id(s): motor.envelope(s["audio"]) for s in segs if "audio" in s}
     lines = [s for s in segs if s.get("en")]
-    cta_v = motor.tts(CTA_EN, motor.VOICES["dale"])
+    cw, ctext = CTA.get(series, CTA["budgets"])
+    cta_v = motor.line_audio(cw, "happy", ctext)
     clips = json.load(open(a.shorts, encoding="utf-8"))
     only = {int(x) for x in a.only.split(",")} if a.only else None
     for ci, c in enumerate(clips, 1):

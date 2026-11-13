@@ -35,7 +35,11 @@ done
 ## 3. Üretim
 ```bash
 cd youtube-kanal
-KOKORO_DIR=/home/user/models python3 araclar/cizgi/motor.py senaryolar/budgets/bNN.txt
+# 1) Duygulu ses (Chatterbox, ~45-60 dk): sdvenv yoksa kur (bkz. SES.md)
+HF_HOME=$SP/hf $SP/sdvenv/bin/python araclar/cizgi/ses_cb.py senaryolar/budgets/bNN.txt \
+   --extra "dale|happy|Full episode is on the channel. Subscribe, or Homi fires you."
+# 2) Render
+TTS_ENGINE=cb KOKORO_DIR=/home/user/models python3 araclar/cizgi/motor.py senaryolar/budgets/bNN.txt
 ffmpeg -v error -i cikti/budgets/bNN/bNN.mp4 -f null -      # hata çıkmamalı
 ffprobe -v error -show_entries format=duration -of csv=p=0 cikti/budgets/bNN/bNN.mp4   # 600–900 sn olmalı
 ```
