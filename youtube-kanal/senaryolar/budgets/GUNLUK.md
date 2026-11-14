@@ -2,21 +2,16 @@
 
 Her gün bir yeni bölüm üretilir. Bu dosya, otomatik oturumun izleyeceği adımlardır.
 
-## 1. Kurulum (temiz konteynerde)
+## 1. Kurulum (temiz oturum, ~10-15 dk)
 ```bash
-cd youtube-kanal
-pip install pycairo kokoro-onnx soundfile numpy
-mkdir -p /home/user/models && cd /home/user/models
-for f in kokoro-v1.0.onnx voices-v1.0.bin; do
-  [ -f $f ] || curl -sSL -o $f https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/$f
-done
+cd youtube-kanal && bash araclar/cizgi/kurulum.sh   # KURULUM_OK görmelisin
 ```
 
 ## 2. Senaryo
 - Önce `senaryolar/budgets/dizi-kitabi.md` dosyasını oku, sonra son 2 bölümün `bNN.txt` dosyalarını oku. Böylece tekrara düşülmez ve süregelen şakalar devam eder.
 - O haftanın gündemindeki bir trendi/tartışmayı seç (WebSearch ile kontrol et); son 5 bölümde işlenmemiş olsun. Yapay zekâ konusu en fazla 6 bölümde 1.
 - Yeni bölümü `senaryolar/budgets/bNN.txt` olarak yaz; NN, bir sonraki numaradır. Biçim `b01.txt` ile birebir aynı olmalı.
-- Hedef uzunluk 165–185 replik: çıktı 10–15 dakika olur.
+- Hedef uzunluk 165–172 replik: çıktı 10–15 dakika olur.
 - Yapı:
   1. Soğuk açılış.
   2. `@title THE BUDGETS`.
@@ -34,24 +29,17 @@ done
 
 ## 3. Üretim
 ```bash
-cd youtube-kanal
-# 1) Duygulu ses (Chatterbox, ~45-60 dk): sdvenv yoksa kur (bkz. SES.md)
-HF_HOME=$SP/hf $SP/sdvenv/bin/python araclar/cizgi/ses_cb.py senaryolar/budgets/bNN.txt \
-   --extra "dale|happy|Full episode is on the channel. Subscribe, or Homi fires you."
-# 2) Render
-TTS_ENGINE=cb KOKORO_DIR=/home/user/models python3 araclar/cizgi/motor.py senaryolar/budgets/bNN.txt
-ffmpeg -v error -i cikti/budgets/bNN/bNN.mp4 -f null -      # hata çıkmamalı
-ffprobe -v error -show_entries format=duration -of csv=p=0 cikti/budgets/bNN/bNN.mp4   # 600–900 sn olmalı
+cd youtube-kanal && araclar/cizgi/uret.sh budgets bNN   # ses + render + sıkıştırma + 6 Shorts + disk temizliği; URETDONE
 ```
 - Süre 600 saniyenin altındaysa senaryoya replik ya da `@beat` ekle ve yeniden üret.
-- 4–5 kontrol karesi çıkar (`ffmpeg -ss T -frames:v 1`) ve görsel olarak kontrol et.
+- Kullanım tasarrufu: alt ajan kullanma, senaryoyu kendin yaz; tek bir kontrol görseli (6 kare birleştirilmiş) yeter; ara durum mesajı gönderme.
 - Kapak üretmek için: `python3 araclar/cizgi/kapak.py bNN "BAŞLIK METNİ"`.
-- Shorts: `TTS_ENGINE=cb python3 araclar/cizgi/shorts.py senaryolar/budgets/bNN.txt senaryolar/budgets/bNN_shorts.json` (6 klip, her biri 7–11 replik, 60 sn altı).
+- Shorts klip listesi (`bNN_shorts.json`) üretimden ÖNCE yazılmış olmalı: 6 klip, her biri 7–10 replik, 60 sn altı.
 - `cikti/budgets/bNN/youtube_bilgileri.txt` dosyasını yaz: EN başlık, açıklama, etiketler, TR başlık.
 
 ## 4. Teslim
 - Dosya 100 MB'tan büyükse 2 geçişte sıkıştır.
-- `git add -f cikti/budgets/bNN/*.mp4` ve diğer dosyaları ekle. Commit at ve `claude/confident-maxwell-wmenav` dalına pushla.
+- `git add -f cikti/budgets/bNN/bNN_yt.mp4 cikti/budgets/bNN/*.srt cikti/budgets/bNN/shorts/*.mp4 cikti/budgets/bNN/kapak.png cikti/budgets/bNN/youtube_bilgileri.txt senaryolar/budgets/` Commit at ve `claude/confident-maxwell-wmenav` dalına pushla.
 - Kullanıcıya şunları kopyalanabilir olarak gönder:
   - GitHub raw linkleri (mp4, en.srt, tr.srt, kapak)
   - Başlık
