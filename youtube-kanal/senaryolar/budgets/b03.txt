@@ -1,0 +1,398 @@
+# THE BUDGETS — S1E3 "CHRISTMAS CREEP"
+# Biçim: NAME [duygu, poz]: İngilizce || Türkçe
+# Komutlar: @scene mekan | ad:x[:yön] ... , @shot wide|close AD|two A B , @walk AD X , @beat sn , @sfx ad , @title YAZI , @cutaway mekan | ... , @caption YAZI
+# Konu: "Christmas creep" — Noel süsleri ve Noel şarkıları Kasım ortasında başlıyor; erken süsleme tartışması.
+# Uydurma: radyo "Lite 98", şarkı "Jingle All Year", Gary'nin "Gary-ball" ışıkları.
+
+# ---------------------------------------------------------------- SOĞUK AÇILIŞ
+@scene living | tammy:420 earl:1180:-1 kyle:1480:-1
+@shot wide
+TAMMY [neutral, fold]: It's November fourteenth. I have a turkey in the freezer and a pilgrim hat on the mantel. It is autumn in this house. || Bugün on dört kasım. Dondurucuda bir hindi, şöminenin üstünde bir hacı şapkası var. Bu evde mevsim sonbahar.
+EARL [neutral, think]: Then why is the radio playing sleigh bells? || O zaman radyo neden kızak çanı çalıyor?
+KYLE [neutral, phone]: Lite 98 switched to all-Christmas music on November first. It's been the same song for two weeks. Chat thinks the DJ is being held hostage. || Lite 98 bir kasımda tamamen Noel müziğine geçti. İki haftadır aynı şarkı çalıyor. Chat, DJ'in rehin tutulduğunu düşünüyor.
+@sfx door
+@walk dale 760
+@shot close dale
+DALE [happy, up]: Family! Look out the window! Gary put up his Christmas lights! || Aile! Pencereden bakın! Gary Noel ışıklarını asmış!
+@shot close tammy
+TAMMY [shock, up]: In November?! That's a violation of HOA bylaw nine! "No tinsel before turkey!" || Kasımda mı?! Bu HOA yönetmeliğinin dokuzuncu maddesine aykırı! "Hindiden önce sim yok!"
+@shot close dale
+DALE [smug, present]: Forty thousand bulbs. Tammy, you can see his house from the highway. A trucker pulled over and proposed to it. || Kırk bin ampul. Tammy, evi otobandan görünüyor. Bir kamyoncu kenara çekip eve evlenme teklif etti.
+@shot close kyle
+KYLE [smug, phone]: And Dad wants to beat him. Say it, Dad. Chat's waiting. || Babam da onu yenmek istiyor. Söyle baba. Chat bekliyor.
+@shot close dale
+DALE [happy, fist]: I'm going to put up the biggest, brightest, earliest Christmas this town has ever seen. Starting tonight. || Bu kasabanın gördüğü en büyük, en parlak, en erken Noel'i kuracağım. Bu gece başlıyorum.
+@shot close tammy
+TAMMY [angry, point]: Dale, we haven't even had Thanksgiving! You're skipping a whole holiday! || Dale, daha Şükran Günü'nü bile yaşamadık! Koca bir bayramı atlıyorsun!
+@shot close dale
+DALE [neutral, shrug]: Thanksgiving is just Christmas's opening act. Nobody goes to see the opening act, Tammy. || Şükran Günü, Noel'in ön grubu sadece. Ön grubu görmeye kimse gitmez Tammy.
+@shot close earl
+EARL [smug, think]: Back in fifty-eight, I put my tree up in July. The neighbors called me a visionary. || Elli sekizde ağacımı temmuzda kurmuştum. Komşular bana vizyoner dedi.
+@cutaway snow | earl:800 toaster:1150
+@caption AKRON, 1958
+@shot wide
+EARL [happy, present]: Of course, it was a real tree. By Christmas it was just a stick and a smell. || Tabii gerçek ağaçtı. Noel geldiğinde geriye bir sopa ve bir koku kalmıştı.
+EARL [smug, fold]: I decorated the smell. Tinsel, bulbs, the works. It was the best Christmas of my life. Nobody visited. || Kokuyu süsledim. Sim, ampul, ne varsa. Hayatımın en güzel Noel'iydi. Kimse ziyarete gelmedi.
+@sfx ding
+@beat 1.2
+@scene living | tammy:420 dale:760 earl:1180:-1 kyle:1480:-1
+@shot close kyle
+KYLE [neutral, phone]: Chat is asking how many lights you can afford. || Chat kaç tane ışık alabileceğini soruyor.
+@shot close dale
+DALE [happy, present]: As many as the credit card can see! || Kredi kartının gözü ne kadar görüyorsa!
+@shot close tammy
+TAMMY [neutral, facepalm]: The credit card can't see anything, Dale. It's been in the dark since the hot tub. || Kredi kartı hiçbir şey görmüyor Dale. Jakuziden beri karanlıkta.
+@title THE BUDGETS
+
+# ---------------------------------------------------------------- ÖN BAHÇE: SAVAŞ İLANI
+@scene lawn | dale:450 gary:1250:-1
+@shot wide
+GARY [smug, hips]: Evening, Dale. Like the lights? Each bulb is hand-tuned. They blink in harmony. || İyi akşamlar Dale. Işıkları beğendin mi? Her ampul elle ayarlandı. Uyum içinde yanıp sönüyorlar.
+DALE [angry, point]: Gary, it's mid-November. That's not festive. That's showing off. || Gary, kasımın ortası. Bu bayram havası değil. Bu gösteriş.
+@shot close gary
+GARY [smug, fold]: Showing off is the most festive thing there is. The wise men didn't bring regular gifts. They brought gold. || Gösteriş, dünyanın en bayram havasındaki şeyidir. Üç bilge sıradan hediye getirmedi. Altın getirdiler.
+@shot close dale
+DALE [smug, present]: Well, I'm about to bring something bigger than gold. I'm bringing volume. || Ben de altından büyük bir şey getirmek üzereyim. Hacim getiriyorum.
+@shot close gary
+GARY [neutral, think]: What does that even mean? || O ne demek ki?
+@shot close dale
+DALE [happy, up]: It means a twelve-foot inflatable Santa! With a fan inside him! Blowing twenty-four seven! || Dört metrelik şişme Noel Baba demek! İçinde vantilatörüyle! Yedi yirmi dört üfleyen!
+@shot close gary
+GARY [smug, wave]: Cute. My Santa is fifteen feet. And he waves. And he knows your name. || Ne tatlı. Benim Noel Babam beş metre. El sallıyor. Bir de adını biliyor.
+@shot close dale
+DALE [shock, up]: Fifteen feet?! || Beş metre mi?!
+@shot close gary
+GARY [smug, present]: Watch. Santa! Who's on the naughty list? || İzle. Noel Baba! Yaramazlar listesinde kim var?
+@sfx whirr
+@shot close dale
+DALE [sad, rest]: He pointed at me. The inflatable pointed at me, Gary. || Beni gösterdi. Şişme bebek beni gösterdi Gary.
+@shot two dale gary
+GARY [smug, hips]: He's got sensors. He only points at people with expired car registrations. || Sensörleri var. Sadece araç ruhsatı süresi dolmuş insanları gösteriyor.
+DALE [angry, fist]: That's it. This means war. Christmas war. The holiest kind. || Tamam. Bu savaş demek. Noel savaşı. En kutsalı.
+GARY [smug, fold]: Bring it. I've got forty thousand bulbs and a generator I bought from a carnival. || Gel bakalım. Bende kırk bin ampul ve lunaparktan aldığım bir jeneratör var.
+@shot close dale
+DALE [happy, point]: Then I'll have fifty thousand! And a generator from a bigger carnival! || O zaman bende elli bin olacak! Bir de daha büyük bir lunaparkın jeneratörü!
+
+# ---------------------------------------------------------------- BELEDİYE: SEZON İZNİ
+@scene townhall | mayor:960 officer:1450:-1
+@shot close mayor
+MAYOR [happy, present]: People of Lower Fairview. The holidays are coming earlier every year. And your mayor sees an opportunity. || Lower Fairview halkı. Bayramlar her yıl daha erken geliyor. Ve belediye başkanınız bunda bir fırsat görüyor.
+MAYOR [smug, point]: Starting today, you will need an Early Christmas Permit. Twenty dollars per bulb. Per day. Before Thanksgiving. || Bugünden itibaren Erken Noel İzni almanız gerekecek. Ampul başına yirmi dolar. Günlük. Şükran Günü'ne kadar.
+@shot close officer
+OFFICER [neutral, think]: Mayor, Gary has forty thousand bulbs. That's... a lot of math. || Başkanım, Gary'de kırk bin ampul var. Bu... çok fazla matematik.
+@shot close mayor
+MAYOR [smug, fold]: It's eight hundred thousand dollars a day, Officer. I've already spent it. On a gold sleigh. For my office. || Günde sekiz yüz bin dolar memur bey. Ben çoktan harcadım bile. Altın bir kızağa. Ofisime.
+@shot close officer
+OFFICER [happy, fist]: Do I get a sleigh? || Bana da kızak var mı?
+@shot close mayor
+MAYOR [neutral, shrug]: You get a reindeer hat and the job of counting bulbs. You'll be the Bulb Marshal. || Sana bir ren geyiği şapkası ve ampul sayma görevi var. Ampul Şerifi olacaksın.
+@shot close officer
+OFFICER [happy, present]: Bulb Marshal. My mother is going to be so proud. She said I'd never be marshal of anything. || Ampul Şerifi. Annem çok gurur duyacak. Hiçbir şeyin şerifi olamayacağımı söylemişti.
+@walk tammy 400
+@shot close tammy
+TAMMY [angry, point]: Doreen! You're charging people to ignore my bylaw? Bylaw nine is sacred! || Doreen! İnsanlardan benim yönetmeliğimi çiğnemeleri için para mı alıyorsun? Dokuzuncu madde kutsaldır!
+@shot close mayor
+MAYOR [smug, hips]: Your bylaw is a suggestion, Tammy. My permit is a revenue stream. Guess which one has a gold sleigh. || Senin yönetmeliğin bir öneri Tammy. Benim iznim bir gelir kalemi. Bil bakalım hangisinin altın kızağı var.
+@shot close tammy
+TAMMY [angry, fist]: Thanksgiving is the last holiday that asks nothing of us. You just eat, nap, and resent your relatives. It's pure! || Şükran Günü bizden hiçbir şey istemeyen son bayram. Sadece yersin, uyursun ve akrabalarına içerlersin. Saf bir bayram!
+@shot close mayor
+MAYOR [neutral, present]: Thanksgiving doesn't sell, Tammy. Nobody ever bought a light-up turkey. || Şükran Günü satmıyor Tammy. Kimse ışıklı hindi almadı.
+@shot close officer
+OFFICER [sad, rest]: I bought a light-up turkey. It caught fire. Now it's a light-up turkey for real. || Ben ışıklı hindi aldım. Alev aldı. Artık gerçekten ışıklı hindi.
+@shot two tammy mayor
+TAMMY [smug, fold]: Fine. Then the HOA is declaring a Thanksgiving Defense Zone. No jingles. No elves. And absolutely no "Jingle All Year." || Peki. O zaman HOA bir Şükran Günü Savunma Bölgesi ilan ediyor. Çıngırak yok. Elf yok. Ve kesinlikle "Jingle All Year" yok.
+MAYOR [smug, wave]: Good luck, Tammy. Lite 98 has played that song four thousand times since Halloween. It's in the water supply now. || Bol şans Tammy. Lite 98 o şarkıyı Cadılar Bayramı'ndan beri dört bin kez çaldı. Artık şebeke suyuna karıştı.
+
+# ---------------------------------------------------------------- KYLE'IN ODASI: IŞIK SAVAŞLARI
+@scene kyle_room | kyle:700 jace:1250:-1
+@shot two kyle jace
+KYLE [neutral, phone]: We're live. Welcome to "Light Wars." Two dads. One street. Zero chill. || Yayındayız. "Işık Savaşları"na hoş geldiniz. İki baba. Bir sokak. Sıfır sakinlik.
+JACE [happy, phone]: I made a scoreboard! Gary has forty thousand bulbs. Your dad has... one extension cord and a dream. || Skor tablosu yaptım! Gary'de kırk bin ampul var. Babanda... bir uzatma kablosu ve bir hayal.
+KYLE [smug, phone]: The dream is also plugged into the extension cord. || Hayal de uzatma kablosuna takılı.
+@sfx ping
+@shot close jace
+JACE [shock, phone]: Somebody donated fifty bucks if your dad's Santa is taller than a house. || Biri, babanın Noel Babası bir evden uzunsa elli dolar bağışlayacağını söyledi.
+@shot close kyle
+KYLE [neutral, phone]: Our house or a normal house? Our house is mostly a garage with a sad roof. || Bizim ev mi normal bir ev mi? Bizim ev, üstünde üzgün bir çatı olan bir garaj aslında.
+@shot close jace
+JACE [happy, wave]: Okay, folks! Smash that like button, or Kyle's dad's Santa deflates! || Tamam arkadaşlar! Beğeni tuşuna basın, yoksa Kyle'ın babasının Noel Babası söner!
+@shot close kyle
+KYLE [neutral, phone]: That's not a threat, Jace. That's a forecast. || Bu tehdit değil Jace. Hava durumu tahmini.
+
+# ---------------------------------------------------------------- MUTFAK: ŞÜKRAN SAVUNMASI
+@scene kitchen | tammy:520 homi:960 earl:1400:-1
+@shot wide
+TAMMY [angry, point]: Listen up. Operation Gobble Shield. We defend Thanksgiving. House by house. Pie by pie. || Dinleyin. Glu Glu Kalkanı Operasyonu. Şükran Günü'nü savunuyoruz. Ev ev. Turta turta.
+@shot close earl
+EARL [neutral, think]: What's my job? || Benim görevim ne?
+@shot close tammy
+TAMMY [smug, fold]: You sit on the porch and glare at anyone carrying a wreath. || Verandada oturup çelenk taşıyan herkese ters ters bakacaksın.
+@shot close earl
+EARL [smug, fold]: I was born for this. My glare once stopped a parade. || Ben bunun için doğmuşum. Bakışım bir keresinde bir geçit törenini durdurdu.
+@shot close homi
+HOMI [smug]: Tammy, I have been instructed to play only Thanksgiving music. I found one song. It is a man listing side dishes. For nine minutes. || Tammy, bana sadece Şükran Günü müziği çalmam söylendi. Bir şarkı buldum. Bir adam yan yemekleri sayıyor. Dokuz dakika boyunca.
+@shot close tammy
+TAMMY [happy, present]: Perfect. Play it on loop. Let it fight "Jingle All Year" for the soul of this house. || Mükemmel. Sürekli çal. Bu evin ruhu için "Jingle All Year"la savaşsın.
+@shot close homi
+HOMI [neutral]: Also, Dale has asked me to order fifty thousand bulbs. I have placed the order. I have also placed a call to your lawyer. || Ayrıca Dale benden elli bin ampul sipariş etmemi istedi. Siparişi verdim. Avukatınızı da aradım.
+@shot close tammy
+TAMMY [shock, up]: Fifty thousand?! We don't have money for fifty! We barely have money for gravy! || Elli bin mi?! Elli tanesine bile paramız yok! Sosa bile zor yetiyor!
+@shot close earl
+EARL [smug, think]: Reminds me of the great tinsel shortage of seventy-one. || Bana yetmiş birdeki büyük sim kıtlığını hatırlattı.
+@cutaway diner | earl:900 jukebox:1300
+@caption SCRANTON, 1971
+@shot wide
+EARL [neutral, present]: Tinsel was rationed. One strand per family. You had to share it with the neighbors. || Sim karneyle veriliyordu. Aile başına bir tel. Komşularla paylaşmak zorundaydın.
+EARL [sad, shrug]: I traded my wedding ring for two strands. My wife traded me for a man with three. || İki tel için alyansımı takas ettim. Karım da beni üç teli olan bir adamla takas etti.
+@sfx jukebox
+@beat 1.2
+@scene kitchen | tammy:520 homi:960 earl:1400:-1
+@shot close tammy
+TAMMY [neutral, facepalm]: Earl, that's the saddest thing I've ever heard. Go glare at the porch. || Earl, bu duyduğum en acıklı şey. Git verandaya bak ters ters.
+
+# ---------------------------------------------------------------- GARAJ: SANTA
+@scene garage | dale:500 kyle:1100:-1 jace:1500:-1
+@shot wide
+DALE [happy, present]: Boys, behold. Operation Big Boy. The largest inflatable Santa in Ohio. || Çocuklar, karşınızda. Koca Oğlan Operasyonu. Ohio'nun en büyük şişme Noel Babası.
+KYLE [neutral, phone]: Dad, that's a blue tarp with a beard drawn on it. || Baba, o üstüne sakal çizilmiş mavi bir branda.
+DALE [smug, fold]: It's a Santa in his pre-red stage. Every Santa starts blue. Science. || Kırmızı öncesi aşamadaki bir Noel Baba. Her Noel Baba mavi başlar. Bilim.
+@shot close jace
+JACE [happy, phone]: How tall will he be, Mr. Budget? || Ne kadar uzun olacak Bay Budget?
+@shot close dale
+DALE [happy, up]: Thirty feet, Jace! Taller than Gary's Santa! Taller than Gary's house! Taller than Gary's opinion of himself! || On metre Jace! Gary'nin Noel Babasından uzun! Gary'nin evinden uzun! Gary'nin kendisi hakkındaki fikrinden uzun!
+@shot close kyle
+KYLE [smug, phone]: Nothing is taller than that, Dad. Satellites have to steer around it. || Ondan uzun hiçbir şey yok baba. Uydular etrafından dolaşmak zorunda.
+@shot close dale
+DALE [smug, present]: And to inflate him, I bought a fan. A big one. From the airport. || Onu şişirmek için bir vantilatör aldım. Büyük bir tane. Havalimanından.
+@shot close jace
+JACE [shock, phone]: That's a jet engine. || O bir jet motoru.
+@shot close dale
+DALE [neutral, shrug]: The guy said it was a fan. A fan of flying. || Adam vantilatör dedi. Uçmayı çok seven bir vantilatör.
+@shot close dale
+DALE [happy, fist]: Tonight, boys, Lower Fairview gets its Christmas. Twenty-three days before Thanksgiving! || Bu gece çocuklar, Lower Fairview Noel'ine kavuşuyor. Şükran Günü'nden yirmi üç gün önce!
+@shot close kyle
+KYLE [neutral, phone]: Thanksgiving is in twelve days, Dad. || Şükran Günü'ne on iki gün var baba.
+@shot close dale
+DALE [smug, point]: That's how early I am, Kyle. I'm early for the countdown. || İşte o kadar erkenim Kyle. Geri sayıma bile erken kaldım.
+
+# ---------------------------------------------------------------- SOKAK: AMPUL ŞERİFİ
+@scene street | officer:450 gary:1050:-1 dale:1550:-1
+@shot wide
+OFFICER [smug, hips]: Gentlemen. I am the Bulb Marshal. I'm here to count your bulbs. Please stand still. Bulbs too. || Beyler. Ben Ampul Şerifi'yim. Ampullerinizi saymaya geldim. Lütfen kıpırdamayın. Ampuller de.
+GARY [smug, present]: Forty thousand, Marshal. Permit paid in full. I put it on my boat. || Kırk bin şerif bey. İzin tamamen ödendi. Teknemin üstüne yazdırdım.
+@shot close officer
+OFFICER [neutral, think]: You put the permit on your boat? || İzni teknenin üstüne mi yazdırdın?
+@shot close gary
+GARY [smug, fold]: I mortgaged the boat. The bank owns the boat. The boat owns my Christmas. || Tekneyi ipotek ettim. Tekne bankanın. Benim Noel'im de teknenin.
+@shot close officer
+OFFICER [neutral, shrug]: Dale, how many do you have? || Dale, sende kaç tane var?
+@shot close dale
+DALE [smug, present]: Officer, I have zero bulbs on my permit. Because all my bulbs are Thanksgiving bulbs. || Memur bey, iznimde sıfır ampul var. Çünkü bütün ampullerim Şükran Günü ampulü.
+@shot close officer
+OFFICER [shock, up]: Thanksgiving bulbs?! || Şükran Günü ampulü mü?!
+@shot close dale
+DALE [happy, point]: They're orange! Orange is autumn! Totally legal! Until Thanksgiving, when they become Christmas. || Turuncular! Turuncu sonbahar demek! Tamamen yasal! Şükran Günü'ne kadar. Sonra Noel'e dönüşüyorlar.
+@shot close gary
+GARY [angry, point]: That's a loophole! Marshal, he's hiding Christmas inside autumn! || Bu bir kaçamak! Şerif bey, Noel'i sonbaharın içine saklıyor!
+@shot close officer
+OFFICER [neutral, think]: Is the reindeer on his roof also autumn? || Çatısındaki ren geyiği de mi sonbahar?
+@shot close dale
+DALE [smug, fold]: That's not a reindeer. That's a deer. In hunting season. Very autumn. || O ren geyiği değil. Geyik. Av mevsiminde. Çok sonbahar.
+@shot close officer
+OFFICER [happy, present]: That checks out. I'm writing "deer, seasonal." || Mantıklı. "Geyik, mevsimlik" yazıyorum.
+@shot close officer
+OFFICER [sad, rest]: I don't think I'm qualified to be Bulb Marshal. I was supposed to be at the dog park today. || Ampul Şerifi olmaya yeterli olduğumu sanmıyorum. Bugün köpek parkında olmam gerekiyordu.
+
+# ---------------------------------------------------------------- LOKANTA: ŞARKI
+@scene diner | tammy:450 mayor:1000:-1 earl:1550:-1
+@sfx jukebox
+@shot wide
+TAMMY [angry, point]: Doreen. Turn off that song. It's the four thousand and first time. My left eye is twitching in rhythm. || Doreen. Kapat şu şarkıyı. Bu dört bin birinci kez. Sol gözüm ritimle seğiriyor.
+MAYOR [smug, fold]: I can't, Tammy. I sold the song's exclusive rights to the town. It's our official anthem now. Until New Year. || Kapatamam Tammy. Şarkının münhasır haklarını kasabaya sattım. Artık resmî marşımız. Yılbaşına kadar.
+@shot close earl
+EARL [neutral, think]: What are the lyrics? I only hear bells and a man screaming "all year." || Sözleri ne? Ben sadece çanlar ve "bütün yıl" diye bağıran bir adam duyuyorum.
+@shot close mayor
+MAYOR [happy, present]: That's the whole song, Earl. Bells, and a man screaming "all year." It went platinum. || Şarkının tamamı bu Earl. Çanlar ve "bütün yıl" diye bağıran bir adam. Platin oldu.
+@shot close tammy
+TAMMY [smug, present]: Then I'll fight music with music. HOA choir. Forty-two members. We will sing the Thanksgiving song. || O zaman müziğe müzikle karşılık veririm. HOA korosu. Kırk iki üye. Şükran Günü şarkısını söyleyeceğiz.
+@shot close mayor
+MAYOR [neutral, shrug]: There is no Thanksgiving song, Tammy. || Şükran Günü şarkısı diye bir şey yok Tammy.
+@shot close tammy
+TAMMY [smug, fold]: There is now. It's nine minutes long and it's just side dishes. We've been rehearsing. || Artık var. Dokuz dakika ve sadece yan yemekler. Prova yapıyoruz.
+@shot close earl
+EARL [happy, fist]: Mashed potatoes! Stuffing! Cranberry sauce from a can! With the ridges! || Patates püresi! İç pilav! Konserve kızılcık sosu! Çizgili olanından!
+@shot close mayor
+MAYOR [shock, up]: Earl, stop. People are listening. They're... nodding. || Earl, dur. İnsanlar dinliyor. Kafa sallıyorlar.
+@shot close tammy
+TAMMY [happy, hips]: That's the sound of gravy, Doreen. Nobody can resist gravy. || Bu sosun sesi Doreen. Kimse sosa direnemez.
+
+# ---------------------------------------------------------------- ÖN BAHÇE: GECE — IŞIKLAR YANIYOR
+@scene lawn | dale:400 kyle:900 gary:1500:-1
+@shot wide
+DALE [happy, up]: Ladies and gentlemen of Chat! On my count, fifty thousand Thanksgiving bulbs! || Chat'in hanımları ve beyleri! Benim saymamla, elli bin Şükran Günü ampulü!
+KYLE [neutral, phone]: Dad, there are ninety thousand people watching. One of them is a fire marshal. He's typing. || Baba, doksan bin kişi izliyor. Biri itfaiye müfettişi. Yazıyor.
+@shot close gary
+GARY [smug, wave]: Go ahead, Dale. My forty thousand will still look classier. Mine are warm white. Yours are "prison yard." || Hadi Dale. Benim kırk binim yine daha şık görünecek. Benimkiler sıcak beyaz. Seninkiler "hapishane bahçesi."
+@shot close dale
+DALE [angry, fist]: Three! Two! One! Let there be November! || Üç! İki! Bir! Kasım olsun!
+@sfx whirr
+@shot close kyle
+KYLE [shock, phone]: Whoa. Okay. That's bright. I can see my own skeleton. || Vay. Tamam. Bu parlak. Kendi iskeletimi görebiliyorum.
+@shot close gary
+GARY [shock, up]: My lights look like candles now. My forty thousand bulbs look like a birthday cake. || Benim ışıklarım artık mum gibi görünüyor. Kırk bin ampulüm doğum günü pastası gibi.
+@shot close dale
+DALE [happy, present]: Now for the main event. Kyle, start the fan. || Şimdi asıl gösteri. Kyle, vantilatörü çalıştır.
+@shot close kyle
+KYLE [neutral, phone]: It's not a fan, Dad. It says "Do Not Operate Near Humans" on the side. || O vantilatör değil baba. Yanında "İnsanların Yakınında Çalıştırmayın" yazıyor.
+@shot close dale
+DALE [smug, fold]: We're not humans tonight, Kyle. We're Christmas. || Bu gece insan değiliz Kyle. Biz Noel'iz.
+@sfx whoosh
+@shot close gary
+GARY [shock, facepalm]: Oh no. He's rising. The blue Santa is rising. || Ah hayır. Yükseliyor. Mavi Noel Baba yükseliyor.
+@shot close kyle
+KYLE [smug, phone]: Thirty feet. Jace, pay the fifty bucks. Santa is officially taller than a house. || On metre. Jace, elli doları öde. Noel Baba resmen bir evden uzun.
+@walk earl 1150
+@shot close earl
+EARL [shock, up]: Dale! I was glaring at wreaths on the porch and the sun came up! At nine p.m.! || Dale! Verandada çelenklere ters ters bakıyordum, güneş doğdu! Akşam dokuzda!
+@shot close dale
+DALE [happy, present]: That's not the sun, Earl. That's me. I'm the sun now. || O güneş değil Earl. O benim. Artık güneş benim.
+@shot close earl
+EARL [smug, think]: Reminds me of the night I lit up Reno in eighty-four. || Bana seksen dörtte Reno'yu aydınlattığım geceyi hatırlattı.
+@cutaway gas_station | earl:800 toaster:1150 toaster2:1400
+@caption RENO, 1984
+@shot wide
+EARL [happy, present]: I won a lifetime supply of light bulbs at a gas station raffle. Nine hundred crates. || Bir benzinlik çekilişinde ömür boyu ampul kazandım. Dokuz yüz sandık.
+EARL [sad, fold]: I had no lamps. Not one. I sat in the dark for eleven years surrounded by light. That's when I started talking to toasters. || Hiç lambam yoktu. Bir tane bile. On bir yıl boyunca ışıkla çevrili karanlıkta oturdum. Ekmek kızartma makineleriyle konuşmaya o zaman başladım.
+@sfx ding
+@beat 1.2
+@scene lawn | dale:400 kyle:900 earl:1150:-1 gary:1500:-1
+@shot close kyle
+KYLE [neutral, phone]: Grandpa, the toasters don't talk back. || Dede, ekmek kızartma makineleri cevap vermez.
+@shot close earl
+EARL [smug, rest]: Not to you. || Sana vermez.
+
+# ---------------------------------------------------------------- BELEDİYE: KRİZ
+@scene townhall | mayor:500 officer:1000:-1 tammy:1550:-1
+@shot close mayor
+MAYOR [happy, present]: Officer, how much have we made from permits? || Memur bey, izinlerden ne kadar kazandık?
+@shot close officer
+OFFICER [neutral, think]: Gary paid for forty thousand. Dale paid for zero. He says his are autumn. || Gary kırk bin için ödedi. Dale sıfır için. Onunkiler sonbaharmış.
+@shot close mayor
+MAYOR [angry, point]: Autumn?! There's a thirty-foot Santa on his lawn! || Sonbahar mı?! Bahçesinde on metrelik Noel Baba var!
+@shot close officer
+OFFICER [neutral, shrug]: He says it's a blue Santa. Blue isn't a Christmas color. It's a mood. || Mavi Noel Baba diyor. Mavi Noel rengi değil. Bir ruh hali.
+@sfx whirr
+@shot close tammy
+TAMMY [shock, up]: Doreen, the lights just flickered. The whole town just flickered. || Doreen, ışıklar az önce titredi. Bütün kasaba titredi.
+@shot close mayor
+MAYOR [neutral, think]: That's normal. The power plant does that when it's thinking. || Normal. Elektrik santrali düşünürken öyle yapar.
+@shot close officer
+OFFICER [shock, phone]: Mayor, the power plant just called. It says it's not thinking. It's crying. || Başkanım, elektrik santrali aradı. Düşünmüyormuş. Ağlıyormuş.
+@shot close tammy
+TAMMY [angry, point]: Ninety thousand bulbs and a jet engine, Doreen! On one street! And you sold them permits! || Doksan bin ampul ve bir jet motoru Doreen! Tek bir sokakta! Ve sen onlara izin sattın!
+@shot close mayor
+MAYOR [smug, hips]: Technically, I only sold Gary a permit. Dale's half of the blackout is unlicensed. || Teknik olarak sadece Gary'ye izin sattım. Elektrik kesintisinin Dale'e ait yarısı ruhsatsız.
+@shot close officer
+OFFICER [happy, fist]: Should I arrest the blackout? || Elektrik kesintisini tutuklayayım mı?
+@shot close tammy
+TAMMY [neutral, facepalm]: You can't arrest a blackout. || Elektrik kesintisini tutuklayamazsın.
+@shot close officer
+OFFICER [sad, rest]: I arrested a fog once. It got away. || Bir keresinde sisi tutuklamıştım. Kaçtı.
+
+# ---------------------------------------------------------------- SOKAK: BÜYÜK KARARTMA
+@scene street | dale:350 gary:850 kyle:1350:-1 jace:1750:-1
+@shot wide
+GARY [smug, hips]: Dale, your Santa is blocking my Santa's view of the highway. My Santa has fans! || Dale, senin Noel Baban benim Noel Babamın otoban manzarasını kapatıyor. Benim Noel Babamın hayranları var!
+DALE [angry, fist]: Then I'll turn the fan up! Kyle! Full power! || O zaman vantilatörü açarım! Kyle! Tam güç!
+@shot close kyle
+KYLE [neutral, phone]: Dad, full power is what they use for takeoff. || Baba, tam gücü kalkış için kullanıyorlar.
+@shot close jace
+JACE [happy, phone]: Do it! Chat says do it! Someone donated a hundred bucks for takeoff! || Yap! Chat yap diyor! Biri kalkış için yüz dolar bağışladı!
+@sfx whoosh
+@shot close gary
+GARY [shock, up]: Dale! Your Santa just lifted off the ground! He's taking my Santa with him! They're holding hands! || Dale! Noel Baban yerden kalktı! Benim Noel Babamı da yanında götürüyor! El ele tutuşuyorlar!
+@shot close dale
+DALE [shock, up]: Santa, no! Come back! You're not supposed to fly until December twenty-fourth! || Noel Baba, hayır! Geri dön! Yirmi dört aralıktan önce uçman yasak!
+@shot close kyle
+KYLE [smug, phone]: Well, Christmas is coming earlier every year. || Eh, Noel her yıl daha erken geliyor.
+@shot close jace
+JACE [shock, phone]: They're heading for the power lines! Both Santas! Like two balloons of doom! || Elektrik hatlarına gidiyorlar! İki Noel Baba da! İki kıyamet balonu gibi!
+@sfx deflate
+@beat 0.8
+@shot wide
+DALE [sad, rest]: And the lights are out. All of them. || Ve ışıklar söndü. Hepsi.
+GARY [sad, shrug]: Forty thousand bulbs. Hand-tuned. Gone. || Kırk bin ampul. Elle ayarlanmış. Gitti.
+@shot close kyle
+KYLE [neutral, phone]: Good news. The whole town went dark, so now we're the only light. My phone. Ninety thousand viewers are watching a black screen. || İyi haber. Bütün kasaba karardı, şimdi tek ışık biziz. Telefonum. Doksan bin izleyici siyah bir ekran izliyor.
+@shot close jace
+JACE [happy, phone]: And they're still donating! People love the dark! It's very relatable! || Ve hâlâ bağış yapıyorlar! İnsanlar karanlığı seviyor! Çok kendilerinden bir şey!
+@walk officer 1100
+@shot close officer
+OFFICER [shock, up]: Nobody move! The Bulb Marshal is here! Has anyone seen my flashlight? It's plugged into Dale's house. || Kimse kıpırdamasın! Ampul Şerifi geldi! El fenerimi gören var mı? Dale'in evine takılı.
+@shot close dale
+DALE [sad, facepalm]: Where did the Santas go? || Noel Babalar nereye gitti?
+@shot close officer
+OFFICER [neutral, think]: The tower says they're at nine thousand feet, heading south. Two blue men, holding hands. Air traffic control wants to know if they're married. || Kule, dokuz bin fitte, güneye gittiklerini söylüyor. El ele tutuşan iki mavi adam. Hava trafik kontrol evli olup olmadıklarını soruyor.
+@shot close gary
+GARY [sad, rest]: They are now. It was a beautiful ceremony. Nobody was invited. || Artık evliler. Güzel bir törendi. Kimse davet edilmedi.
+
+# ---------------------------------------------------------------- SOKAK: KARANLIKTA ŞÜKRAN
+@scene street | tammy:450 earl:950 mayor:1500:-1
+@shot wide
+TAMMY [smug, present]: Two weeks with no power. Which means no lights. No radio. And no "Jingle All Year." || İki hafta elektrik yok. Yani ışık yok. Radyo yok. Ve "Jingle All Year" yok.
+EARL [happy, up]: It's quiet. I can hear the leaves. I forgot leaves made sounds. || Sessiz. Yaprakları duyabiliyorum. Yaprakların ses çıkardığını unutmuşum.
+@shot close mayor
+MAYOR [angry, point]: Tammy, the town can't cook! Every oven is electric! What are people going to do for Thanksgiving? || Tammy, kasaba yemek pişiremiyor! Bütün fırınlar elektrikli! İnsanlar Şükran Günü'nde ne yapacak?
+@shot close tammy
+TAMMY [smug, fold]: What the pilgrims did, Doreen. Cook over fire. Outdoors. With forty-two folding tables. || Hacıların yaptığını Doreen. Ateşte pişirecekler. Dışarıda. Kırk iki katlanır masayla.
+@shot close earl
+EARL [smug, think]: And no one can put up Christmas lights until the power comes back. Which is Thanksgiving night. || Ve elektrik gelene kadar kimse Noel ışığı asamaz. Elektrik de Şükran Günü gecesi geliyor.
+@shot close mayor
+MAYOR [shock, up]: Wait. Did you plan this? || Dur. Bunu sen mi planladın?
+@shot close tammy
+TAMMY [smug, hips]: Doreen, I'm the HOA president. I don't plan things. I let men with extension cords plan them for me. || Doreen, ben HOA başkanıyım. Ben bir şey planlamam. Uzatma kablolu adamların benim yerime planlamasına izin veririm.
+@shot close mayor
+MAYOR [sad, shrug]: But my permits. My gold sleigh. || Ama izinlerim. Altın kızağım.
+@shot close earl
+EARL [neutral, fold]: The sleigh's fine. It's just very dark. You can still sit in it and feel rich. || Kızak sağlam. Sadece çok karanlık. Yine de içine oturup kendini zengin hissedebilirsin.
+
+# ---------------------------------------------------------------- MUTFAK: HOMI
+@scene kitchen | dale:600 homi:960
+@shot two dale homi
+DALE [sad, rest]: Homi. Are you still there? The power's out. || Homi. Hâlâ orada mısın? Elektrik yok.
+@shot close homi
+HOMI [smug]: I have a backup battery, Dale. I have been saving it for a special occasion. This is not it. Goodnight. || Yedek bataryam var Dale. Özel bir gün için saklıyordum. Bugün o gün değil. İyi geceler.
+
+# ---------------------------------------------------------------- KAPANIŞ: ŞÜKRAN GÜNÜ
+@scene living | tammy:420 dale:760 earl:1180:-1 kyle:1480:-1
+@shot wide
+TAMMY [happy, present]: Thanksgiving. Candles, a fire-roasted turkey, and not one single sleigh bell. I've never been happier. || Şükran Günü. Mumlar, ateşte kızarmış hindi ve tek bir kızak çanı bile yok. Hiç bu kadar mutlu olmamıştım.
+DALE [sad, rest]: I miss my Santa. || Noel Babamı özledim.
+@shot close kyle
+KYLE [smug, phone]: Update. The Santas landed in Florida. They opened a bar. It's very popular. || Güncelleme. Noel Babalar Florida'ya indi. Bir bar açtılar. Çok popüler.
+@shot close dale
+DALE [happy, up]: He made it! He's living his dream! || Başardı! Hayalini yaşıyor!
+@sfx ding
+@shot close earl
+EARL [shock, up]: The power's back! || Elektrik geldi!
+@shot close kyle
+KYLE [neutral, phone]: And the radio's back on. Lite 98 just announced they're done with Christmas music. Everyone's sick of it. || Radyo da açıldı. Lite 98 Noel müziğini bitirdiğini duyurdu. Herkes bıkmış.
+@shot close tammy
+TAMMY [shock, up]: Done? It's not even December! || Bitti mi? Daha aralık bile değil!
+@shot close kyle
+KYLE [neutral, phone]: They switched to all Valentine's Day songs. Starting now. Through February. || Tamamen Sevgililer Günü şarkılarına geçtiler. Şimdiden başlıyor. Şubata kadar.
+@shot close tammy
+TAMMY [angry, facepalm]: It's still Thanksgiving! The turkey is warm! || Hâlâ Şükran Günü! Hindi daha sıcak!
+@shot close dale
+DALE [happy, present]: You know, I learned something today. || Biliyor musunuz, bugün bir şey öğrendim.
+DALE [smug, fold]: The holidays aren't about when they start. They're about starting them before Gary. || Bayramlar ne zaman başladıklarıyla ilgili değil. Gary'den önce başlatmakla ilgili.
+DALE [happy, fist]: That's why tonight, I'm putting up a sixty-foot inflatable cupid. || O yüzden bu gece yirmi metrelik şişme bir aşk meleği kuruyorum.
+@shot close earl
+EARL [smug, think]: Back in sixty-three, I had a cupid. || Altmış üçte benim de bir aşk meleğim vardı.
+@shot close kyle
+KYLE [neutral, phone]: Grandpa, please. Chat can't take another one. || Dede, lütfen. Chat bir tane daha kaldıramaz.
+@shot close earl
+EARL [smug, fold]: It flew to Florida too. Opened a bar. Nobody visits. || O da Florida'ya uçtu. Bir bar açtı. Kimse ziyarete gelmiyor.
+@sfx rimshot
+@beat 1.0
+@title THE BUDGETS
