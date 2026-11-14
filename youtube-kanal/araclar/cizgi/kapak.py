@@ -70,7 +70,7 @@ for i, ln in enumerate(lines):
 c.save()
 c.translate(40, 640)
 c.rotate(-0.04)
-c.rectangle(-10, -66, 470, 84)
+c.rectangle(-10, -66, 560 if a.series == "comedown" else 470, 84)
 c.set_source_rgb(*rgb("#d9342b"))
 c.fill_preserve()
 c.set_source_rgb(*INK)
