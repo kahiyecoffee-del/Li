@@ -161,3 +161,6 @@ Sertex, Nassguard, Reliable Safety, Petroscope, Safety Albania, Safety Art, Alro
 
 ## 11.11 akşam özeti
 Bounce: Nassguard (info.ksa@nassguard.com, adres yok). Diğer 7'si ve 10.11'deki 14 mailden başka bounce/cevap yok. Toplam 104 mail, 7 bounce, 0 cevap.
+
+## 16.11 yeni liste 3. parti gönderildi (4)
+Albo, Assly, Al Ezz, Imperia. Toplam 108 mail, 7 bounce, 0 cevap. Sonraki: 17.11 takip (14), 18.11 takip (7). Cevap kontrolü her 2 saatte.
