@@ -164,3 +164,6 @@ Bounce: Nassguard (info.ksa@nassguard.com, adres yok). Diğer 7'si ve 10.11'deki
 
 ## 16.11 yeni liste 3. parti gönderildi (4)
 Albo, Assly, Al Ezz, Imperia. Toplam 108 mail, 7 bounce, 0 cevap. Sonraki: 17.11 takip (14), 18.11 takip (7). Cevap kontrolü her 2 saatte.
+
+## 17.11 takip gönderildi (14)
+10.11 grubu (PPE-Online, Nexa, Hajajweh, Baku Eng., Specsiz, ProofLine, Leonis, Makom, Interkoncept, Univers, Textrade, Bansi, Wegmar, SafeU): thread'lerde cevap/bounce yoktu. Toplam 122 mail. Sonraki: 18.11 takip (7), 24-25.11 3. temas.
