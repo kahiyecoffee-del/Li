@@ -167,3 +167,6 @@ Albo, Assly, Al Ezz, Imperia. Toplam 108 mail, 7 bounce, 0 cevap. Sonraki: 17.11
 
 ## 17.11 takip gönderildi (14)
 10.11 grubu (PPE-Online, Nexa, Hajajweh, Baku Eng., Specsiz, ProofLine, Leonis, Makom, Interkoncept, Univers, Textrade, Bansi, Wegmar, SafeU): thread'lerde cevap/bounce yoktu. Toplam 122 mail. Sonraki: 18.11 takip (7), 24-25.11 3. temas.
+
+## 17.11 bounce
+Nexa Safety (sales@safetynexa.com): takip 'Message blocked 554 5.7.1 Mailbox delivery failure' (ilk mail geçmişti). Toplam bounce 8.
