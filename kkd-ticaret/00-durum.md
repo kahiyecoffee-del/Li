@@ -173,3 +173,6 @@ Nexa Safety (sales@safetynexa.com): takip 'Message blocked 554 5.7.1 Mailbox del
 
 ## 18.11 sabah özeti
 Yeni insan cevabı yok (gece 2 saatlik kontroller temiz). Bounce: yeni yok (Nexa 17.11'de işaretli, Al Ezz gecikme devam). LinkedIn: sadece bağlantı bildirimleri (Arda kabul etti, 2 davet). Takvim boş. Bugün 10:00: 11.11 grubuna (7) fiyatlı takip. Workspace faturalama uyarısı açık (deneme 26 Ekim'de bitti).
+
+## 18.11 takip gönderildi (7)
+11.11 grubu (Sertex, Reliable Safety, Petroscope, Safety Albania, Safety Art, Alroks, BAKAT): thread'lerde cevap/bounce yoktu; fiyatlı takip thread içinde gitti (Alroks ilk denemede hatalı thread ID ile düştü, tekrar gönderildi, mükerrer yok). Toplam ~129 mail, 8 bounce, 0 cevap. Sonraki: 23.11 (16.11 grubu), 24.11 (10.11 ikinci takip).
