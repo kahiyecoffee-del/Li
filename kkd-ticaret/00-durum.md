@@ -170,3 +170,6 @@ Albo, Assly, Al Ezz, Imperia. Toplam 108 mail, 7 bounce, 0 cevap. Sonraki: 17.11
 
 ## 17.11 bounce
 Nexa Safety (sales@safetynexa.com): takip 'Message blocked 554 5.7.1 Mailbox delivery failure' (ilk mail geçmişti). Toplam bounce 8.
+
+## 18.11 sabah özeti
+Yeni insan cevabı yok (gece 2 saatlik kontroller temiz). Bounce: yeni yok (Nexa 17.11'de işaretli, Al Ezz gecikme devam). LinkedIn: sadece bağlantı bildirimleri (Arda kabul etti, 2 davet). Takvim boş. Bugün 10:00: 11.11 grubuna (7) fiyatlı takip. Workspace faturalama uyarısı açık (deneme 26 Ekim'de bitti).
