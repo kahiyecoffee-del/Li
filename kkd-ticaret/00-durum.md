@@ -182,3 +182,6 @@ Yeni insan cevabı yok; yeni bounce yok (Al Ezz geçici gecikme, ~19.11 sabaha k
 
 ## 19.11 sabah özeti
 Yeni insan cevabı yok; yeni bounce yok (Al Ezz gecikmesi için kalıcı hata mesajı gelmedi). LinkedIn: 3 yeni davet + Batuhan Öztürk bağlantı isteği (alakasız), iş mesajı yok. Takvim boş. Bugün planlı gönderim yok; tarihi gelen takip yok (sıradaki: 23.11 16.11 grubu, 24.11 10.11 grubu 2. takip). Dün giden 7 takip firması için LinkedIn notları bugün kullanılacak. Workspace faturalama uyarısı açık (24 gün).
+
+## 19.11 bounce
+Al Ezz (info@alezzsafety.com): kalıcı hata, "recipient server did not accept our requests" (Gmail 48 saat denedi). CSV'de işaretlendi → LinkedIn yolu. Toplam bounce 9. 23.11 takibinde Al Ezz atlanacak.
