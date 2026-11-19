@@ -179,3 +179,6 @@ Yeni insan cevabı yok (gece 2 saatlik kontroller temiz). Bounce: yeni yok (Nexa
 
 ## 18.11 akşam özeti
 Yeni insan cevabı yok; yeni bounce yok (Al Ezz geçici gecikme, ~19.11 sabaha kadar deneniyor). LinkedIn: Shabir Zahid davet kabul + önceki bildirimler, iş mesajı yok. Bugün 7 takip gitti (11.11 grubu). Toplam ~129 mail, 8 bounce, 0 cevap, 0 teklif, 0 sipariş. Yarın (19.11) planlı gönderim yok; sonraki: 23.11 (16.11 grubu, 4), 24.11 (10.11 grubu 2. takip). Workspace faturalama uyarısı açık (23 gün).
+
+## 19.11 sabah özeti
+Yeni insan cevabı yok; yeni bounce yok (Al Ezz gecikmesi için kalıcı hata mesajı gelmedi). LinkedIn: 3 yeni davet + Batuhan Öztürk bağlantı isteği (alakasız), iş mesajı yok. Takvim boş. Bugün planlı gönderim yok; tarihi gelen takip yok (sıradaki: 23.11 16.11 grubu, 24.11 10.11 grubu 2. takip). Dün giden 7 takip firması için LinkedIn notları bugün kullanılacak. Workspace faturalama uyarısı açık (24 gün).
