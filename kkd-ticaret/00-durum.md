@@ -188,3 +188,6 @@ Al Ezz (info@alezzsafety.com): kalıcı hata, "recipient server did not accept o
 
 ## 19.11 akşam özeti
 Yeni insan cevabı yok. Bounce: Al Ezz kalıcı hata (CSV'de işaretli, toplam bounce 9). LinkedIn: iş mesajı yok (davet/iş ilanı bildirimleri). Bugün giden mail yok (planlı gönderim yoktu). Yarın (20.11) planlı gönderim yok; 23.11 takip (Albo, Assly, Imperia; Al Ezz hariç), 24.11 10.11 grubu 2. takip. Toplam ~129 mail, 9 bounce, 0 cevap, 0 teklif, 0 sipariş. Workspace faturalama uyarısı açık (24 gün).
+
+## 20.11 sabah özeti
+Yeni insan cevabı yok; yeni bounce yok (son bounce Al Ezz, 19.11). LinkedIn: iş mesajı yok (iş ilanı ve tanıtım bildirimleri). Takvim boş. Dün ve bugün planlı gönderim yok; sıradaki: 23.11 takip (Albo, Assly, Imperia), 24.11 10.11 grubu 2. takip. Toplam ~129 mail, 9 bounce, 0 cevap. Workspace faturalama uyarısı açık (25 gün).
