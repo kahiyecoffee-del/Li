@@ -200,3 +200,6 @@ Yeni insan cevabı yok; yeni bounce yok. LinkedIn: Rana davetini kabul etti (yen
 
 ## 21.11 Eray: "Sadece özet mi veriyorsun mail de atsana"
 Yeni listeden 6 firmaya fiyatlı ilk mail gönderildi: M2M (GE), Nairobi Safety Shop (KE), Plymot (NG), SafetyZone (KW), Himaya.ma (MA, FR), BCDIS Gros (TN, FR). Önceki yazışma yoktu. Bright Oil Services (petrol hizmeti, PPE yan iş) ve e-postasız ARC/Beier/YJ gönderilmedi. Takip: 28.11. Toplam ~135 mail.
+
+## 21.11 Eray: "Firma bul mail at kendin yönetiyorsun bu projeyi"
+Yeni firma araması: araştırma ajanı şirket sitelerini açamadı (ağ izni sadece bazı sitelere; kısıtı aşmadım), WebSearch özetlerinden sadece 2 doğrulanmış e-posta çıktı: ToolMart (Irak, info@toolmart.me) ve Disha Impex (BAE/Katar, sales@dishaimpex.com, dizin kaynağı) → ikisine de fiyatlı ilk mail gitti, CSV'ye eklendi. Bugün toplam 8 mail (6+2); toplam ~137. Daha fazla firma için şirket sitelerini açabilecek ağ erişimi gerekiyor (ortam ayarı) veya Eray'dan firma listesi.
