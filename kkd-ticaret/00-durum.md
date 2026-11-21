@@ -197,3 +197,6 @@ Yeni insan cevabı yok; yeni bounce yok. LinkedIn: "43 kişi profilinizi görün
 
 ## 21.11 sabah özeti
 Yeni insan cevabı yok; yeni bounce yok. LinkedIn: Rana davetini kabul etti (yeni bağlantı), "43 profil görüntüleme" bildirimi (20.11), iş mesajı yok. Takvim boş. Hafta sonu planlı gönderim yok. Sıradaki: 23.11 takip (Albo, Assly, Imperia), 24.11 10.11 grubu 2. takip. Toplam ~129 mail, 9 bounce, 0 cevap. Workspace faturalama uyarısı açık (26 gün).
+
+## 21.11 Eray: "Sadece özet mi veriyorsun mail de atsana"
+Yeni listeden 6 firmaya fiyatlı ilk mail gönderildi: M2M (GE), Nairobi Safety Shop (KE), Plymot (NG), SafetyZone (KW), Himaya.ma (MA, FR), BCDIS Gros (TN, FR). Önceki yazışma yoktu. Bright Oil Services (petrol hizmeti, PPE yan iş) ve e-postasız ARC/Beier/YJ gönderilmedi. Takip: 28.11. Toplam ~135 mail.
