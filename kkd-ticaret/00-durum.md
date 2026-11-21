@@ -194,3 +194,6 @@ Yeni insan cevabı yok; yeni bounce yok (son bounce Al Ezz, 19.11). LinkedIn: i�
 
 ## 20.11 akşam özeti
 Yeni insan cevabı yok; yeni bounce yok. LinkedIn: "43 kişi profilinizi görüntüledi" bildirimi (ilgi sinyali), iş mesajı yok; diğerleri Premium/hiring tanıtımı. Bugün giden mail yok. Hafta 4 (16–22.11): 25 mail (4 yeni firma, 21 takip). Toplam ~129 mail, 9 bounce, 0 cevap, 0 teklif, 0 sipariş. Sıradaki: 23.11 takip (Albo, Assly, Imperia), 24.11 10.11 grubu 2. takip. Workspace faturalama uyarısı açık (25 gün).
+
+## 21.11 sabah özeti
+Yeni insan cevabı yok; yeni bounce yok. LinkedIn: Rana davetini kabul etti (yeni bağlantı), "43 profil görüntüleme" bildirimi (20.11), iş mesajı yok. Takvim boş. Hafta sonu planlı gönderim yok. Sıradaki: 23.11 takip (Albo, Assly, Imperia), 24.11 10.11 grubu 2. takip. Toplam ~129 mail, 9 bounce, 0 cevap. Workspace faturalama uyarısı açık (26 gün).
