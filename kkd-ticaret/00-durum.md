@@ -203,3 +203,6 @@ Yeni listeden 6 firmaya fiyatlı ilk mail gönderildi: M2M (GE), Nairobi Safety 
 
 ## 21.11 Eray: "Firma bul mail at kendin yönetiyorsun bu projeyi"
 Yeni firma araması: araştırma ajanı şirket sitelerini açamadı (ağ izni sadece bazı sitelere; kısıtı aşmadım), WebSearch özetlerinden sadece 2 doğrulanmış e-posta çıktı: ToolMart (Irak, info@toolmart.me) ve Disha Impex (BAE/Katar, sales@dishaimpex.com, dizin kaynağı) → ikisine de fiyatlı ilk mail gitti, CSV'ye eklendi. Bugün toplam 8 mail (6+2); toplam ~137. Daha fazla firma için şirket sitelerini açabilecek ağ erişimi gerekiyor (ortam ayarı) veya Eray'dan firma listesi.
+
+## 21.11 akşam özeti
+Yeni insan cevabı yok; yeni bounce yok. LinkedIn: sadece Rana'nın davet kabulü bildirimi. Bugün 8 mail gitti (yeni liste 6 + ToolMart + Disha Impex). Toplam ~137 mail, 9 bounce, 0 cevap, 0 teklif, 0 sipariş. Yarın (Pazar) planlı gönderim yok; sıradaki 23.11 takip (Albo, Assly, Imperia), 24.11 10.11 grubu 2. takip, 28.11 bugünkü 8 firmanın takibi. Daha fazla yeni firma için ağ erişimi veya Eray'dan liste bekleniyor. Workspace faturalama uyarısı açık (26 gün).
