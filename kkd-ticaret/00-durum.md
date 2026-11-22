@@ -206,3 +206,6 @@ Yeni firma araması: araştırma ajanı şirket sitelerini açamadı (ağ izni s
 
 ## 21.11 akşam özeti
 Yeni insan cevabı yok; yeni bounce yok. LinkedIn: sadece Rana'nın davet kabulü bildirimi. Bugün 8 mail gitti (yeni liste 6 + ToolMart + Disha Impex). Toplam ~137 mail, 9 bounce, 0 cevap, 0 teklif, 0 sipariş. Yarın (Pazar) planlı gönderim yok; sıradaki 23.11 takip (Albo, Assly, Imperia), 24.11 10.11 grubu 2. takip, 28.11 bugünkü 8 firmanın takibi. Daha fazla yeni firma için ağ erişimi veya Eray'dan liste bekleniyor. Workspace faturalama uyarısı açık (26 gün).
+
+## 22.11 sabah özeti
+Yeni insan cevabı yok; yeni bounce yok. LinkedIn: Mehmet daveti kabul etti, bir kişi bağlantı isteği gönderdi, iş mesajı yok. Takvim boş. Pazar, planlı gönderim yok. Sıradaki: 23.11 takip (Albo, Assly, Imperia), 24.11 10.11 grubu 2. takip, 28.11 21.11 grubunun (8 firma) takibi. Toplam ~137 mail, 9 bounce, 0 cevap. Workspace faturalama uyarısı açık (27 gün). Yeni firma için ağ erişimi/Eray'dan liste bekleniyor.
