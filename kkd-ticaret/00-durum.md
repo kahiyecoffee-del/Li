@@ -212,3 +212,6 @@ Yeni insan cevabı yok; yeni bounce yok. LinkedIn: Mehmet daveti kabul etti, bir
 
 ## 22.11 akşam özeti
 Yeni insan cevabı yok; yeni bounce yok. LinkedIn: sadece davet bildirimleri (Mehmet kabul), iş mesajı yok. Bugün giden mail yok (Pazar). Toplam ~137 mail, 9 bounce, 0 cevap, 0 teklif, 0 sipariş. Yarın 23.11 Pazartesi: 16.11 grubuna takip (Albo, Assly, Imperia; Al Ezz bounce), sonra 24.11 10.11 grubu 2. takip, 28.11 21.11 grubu takibi. Yeni firma için ağ erişimi veya Eray'dan liste bekleniyor. Workspace faturalama uyarısı açık (27 gün).
+
+## 23.11 sabah özeti
+Yeni alıcı/müşteri cevabı yok; bounce yok. Proje dışı bildirimler işlenmedi. Takvim boş. Bugün 10:00: 16.11 grubuna fiyatlı takip (Albo, Assly, Imperia; Al Ezz bounce hariç). Workspace faturalama uyarısı açık (28 gün).
