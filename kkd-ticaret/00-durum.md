@@ -215,3 +215,6 @@ Yeni insan cevabı yok; yeni bounce yok. LinkedIn: sadece davet bildirimleri (Me
 
 ## 23.11 sabah özeti
 Yeni alıcı/müşteri cevabı yok; bounce yok. Proje dışı bildirimler işlenmedi. Takvim boş. Bugün 10:00: 16.11 grubuna fiyatlı takip (Albo, Assly, Imperia; Al Ezz bounce hariç). Workspace faturalama uyarısı açık (28 gün).
+
+## 23.11 takip gönderildi (3)
+16.11 grubu: Albo, Assly (FR), Imperia (RU). Thread'lerde cevap/bounce yoktu; fiyatlı takip thread içinde gitti. (Bu takip için zamanlanmış görev yoktu, elle gönderildi.) Sonraki: 24.11 10.11 grubu 2. takip (14, Nexa bounce hariç), 28.11 21.11 grubu (8). Toplam ~140 mail.
