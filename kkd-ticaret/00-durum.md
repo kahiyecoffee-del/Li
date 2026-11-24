@@ -224,3 +224,6 @@ Yeni alıcı/müşteri cevabı yok; bounce yok. LinkedIn: bir bağlantı isteği
 
 ## 24.11 sabah özeti
 Yeni alıcı/müşteri cevabı yok; bounce yok. LinkedIn: Xi'an Alen Trade (Çin, Co-Owner) 3 mesaj gönderdi (muhtemelen tedarikçi/trader tanıtımı, alıcı değil); bağlantı daveti bildirimi; geri kalanı tanıtım. Takvim boş. Bugün 10:00: 10.11 grubuna 2. takip (13 firma, Nexa hariç). Dün giden 3 takip (Albo, Assly, Imperia) için LinkedIn notları verildi. Workspace faturalama uyarısı açık (29 gün).
+
+## 24.11 3. temas gönderildi (13)
+10.11 grubu (PPE-Online, Hajajweh, Baku Eng., Specsiz, ProofLine, Leonis, Makom, Interkoncept, Univers, Textrade, Bansi, Wegmar, SafeU; Nexa hariç): thread'lerde cevap/bounce yoktu. Farklı açı: fiyatsız, tek soru (üreticiden doğrudan mı alıyorlar) + ücretsiz numune teklifi; EN ve 3 firmaya RU. Toplam ~153 mail. Sonraki: 28.11 21.11 grubu takibi (8).
