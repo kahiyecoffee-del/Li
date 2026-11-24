@@ -227,3 +227,6 @@ Yeni alıcı/müşteri cevabı yok; bounce yok. LinkedIn: Xi'an Alen Trade (Çin
 
 ## 24.11 3. temas gönderildi (13)
 10.11 grubu (PPE-Online, Hajajweh, Baku Eng., Specsiz, ProofLine, Leonis, Makom, Interkoncept, Univers, Textrade, Bansi, Wegmar, SafeU; Nexa hariç): thread'lerde cevap/bounce yoktu. Farklı açı: fiyatsız, tek soru (üreticiden doğrudan mı alıyorlar) + ücretsiz numune teklifi; EN ve 3 firmaya RU. Toplam ~153 mail. Sonraki: 28.11 21.11 grubu takibi (8).
+
+## 24.11 bounce
+Leonis (info@leonis.uz): kalıcı hata, hesap devre dışı (550). CSV'de işaretli, LinkedIn yolu. Toplam bounce 10.
