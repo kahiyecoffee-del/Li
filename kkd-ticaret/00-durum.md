@@ -236,3 +236,6 @@ Yeni alıcı/müşteri cevabı yok. Bounce: Leonis (info@leonis.uz, hesap devre 
 
 ## 25.11 sabah özeti
 Yeni alıcı/müşteri cevabı yok; yeni bounce yok (Leonis 24.11 işaretli). Gelen: DMARC raporları (Mail.Ru, Zoho, Google), LinkedIn davet/iş ilanı bildirimleri; proje dışı bildirimler işlenmedi. Takvim boş. Dün giden 13 mail (3. temas) için LinkedIn notları verildi. Bugün 10:00: 11.11 grubuna 3. temas (7 firma) planlı. 28.11: 21.11 grubu takibi (8). Workspace faturalama uyarısı açık (30 gün).
+
+## 25.11 3. temas gönderildi (7)
+11.11 grubu (Sertex, Reliable, Petroscope, Safety Albania, Safety Art, Alroks, BAKAT): thread'lerde cevap/bounce yoktu; fiyatsız tek soru + numune teklifi in-thread gitti (EN 5, RU 2). Toplam ~160 mail, 10 bounce, 0 cevap. Sonraki: 28.11 21.11 grubu takibi (8); 16.11 grubu (Albo, Assly, Imperia) 3. temas ~30.11.
