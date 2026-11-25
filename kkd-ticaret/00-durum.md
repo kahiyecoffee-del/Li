@@ -233,3 +233,6 @@ Leonis (info@leonis.uz): kalıcı hata, hesap devre dışı (550). CSV'de işare
 
 ## 24.11 akşam özeti
 Yeni alıcı/müşteri cevabı yok. Bounce: Leonis (info@leonis.uz, hesap devre dışı) CSV'de işaretli, toplam bounce 10. LinkedIn: Xi'an Alen Trade (Çin, trader/tedarikçi gibi) 3 mesaj, iş mesajı yok. Bugün 13 mail gitti (10.11 grubuna 3. temas, fiyatsız tek soru); hafta 5'te şimdiye kadar 16 mail (3 + 13). Toplam ~153 mail, 10 bounce, 0 cevap, 0 teklif, 0 sipariş. Yarın 25.11: planlı gönderim yok; 24-25.11 için planlanan 3. temas sıradaki gruplarda (11.11 grubu 7, 16.11 grubu) devam edebilir. 28.11 21.11 grubu (8) takibi. Workspace faturalama uyarısı açık (29 gün).
+
+## 25.11 sabah özeti
+Yeni alıcı/müşteri cevabı yok; yeni bounce yok (Leonis 24.11 işaretli). Gelen: DMARC raporları (Mail.Ru, Zoho, Google), LinkedIn davet/iş ilanı bildirimleri; proje dışı bildirimler işlenmedi. Takvim boş. Dün giden 13 mail (3. temas) için LinkedIn notları verildi. Bugün 10:00: 11.11 grubuna 3. temas (7 firma) planlı. 28.11: 21.11 grubu takibi (8). Workspace faturalama uyarısı açık (30 gün).
