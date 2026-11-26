@@ -242,3 +242,6 @@ Yeni alıcı/müşteri cevabı yok; yeni bounce yok (Leonis 24.11 işaretli). Ge
 
 ## 25.11 akşam özeti
 Yeni alıcı/müşteri cevabı yok; yeni bounce yok. Gelenler DMARC raporları, LinkedIn davet/iş ilanı ve proje dışı otomatik yanıtlar (işlenmedi). Bugün 7 mail gitti (11.11 grubuna 3. temas). Hafta 5: 23 mail (3+13+7). Toplam ~160 mail, 10 bounce, 0 cevap, 0 teklif, 0 sipariş. Yarın 26.11: planlı gönderim yok; 28.11 21.11 grubu takibi (8); ~30.11 16.11 grubu 3. temas. Yarın sabah özetinde bugünkü 7 firma için LinkedIn notları. Workspace faturalama uyarısı açık (30 gün).
+
+## 26.11 sabah özeti
+Yeni alıcı/müşteri cevabı yok; yeni bounce yok. LinkedIn: "45 kişi profilinizi görüntüledi" bildirimi (ilgi sinyali), Taha Anıl Pulat'tan mesaj bildirimi (içerik mailde yok, alıcı değil gibi); diğerleri DMARC ve Google tanıtımı. Takvim boş. Bugün planlı gönderim yok; 25.11'de giden 7 firma için LinkedIn notları verildi. 28.11: 21.11 grubu takibi (8). ~30.11: 16.11 grubu 3. temas. Workspace faturalama uyarısı açık (31 gün).
