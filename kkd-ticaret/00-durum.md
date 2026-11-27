@@ -251,3 +251,6 @@ Yeni alıcı/müşteri cevabı yok; yeni bounce yok. Gelenler DMARC raporları, 
 
 ## 27.11 sabah özeti
 Yeni alıcı/müşteri cevabı yok; yeni bounce yok. LinkedIn: sadece genel bildirim özeti (aramalarda görünme, ağ paylaşımları), iş mesajı yok; diğerleri DMARC ve iş ilanı bildirimleri. Takvim boş. Dün giden mail yok (LinkedIn notu gerekmedi). Bugün 10:00: 21.11 grubuna fiyatlı takip (8 firma; 28.11 Cumartesi olduğu için öne alındı, zamanlanmış görev kuruldu). ~30.11: 16.11 grubu 3. temas. Workspace faturalama uyarısı açık (32 gün).
+
+## 27.11 takip gönderildi (8)
+21.11 grubu: M2M, Nairobi Safety Shop, Plymot, SafetyZone, ToolMart, Disha Impex (EN), Himaya.ma, BCDIS Gros (FR). Thread'lerde cevap/bounce yoktu; fiyatlı takip thread içinde gitti. Hafta 6 (23.11'den itibaren değil, 30.11 haftası): bu 8 mail hafta 5'e yazıldı → hafta 5 toplam 31. Toplam ~168 mail, 10 bounce, 0 cevap. Sonraki: ~30.11 16.11 grubu (Albo, Assly, Imperia) 3. temas; 21.11 grubuna 3. temas ~4.12.
