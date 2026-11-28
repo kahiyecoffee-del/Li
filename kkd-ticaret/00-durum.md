@@ -260,3 +260,6 @@ Yeni alıcı/müşteri cevabı yok; yeni bounce yok (bu sabahki 8 takipten de bo
 
 ## 28.11 sabah özeti
 Yeni alıcı/müşteri cevabı yok; yeni bounce yok. LinkedIn: sadece genel bildirim özeti (ağ paylaşımları, aramalarda görünme), iş mesajı yok; diğerleri DMARC. Takvim boş (Cumartesi). Dün giden 8 takip için LinkedIn notları verildi. Bugün planlı gönderim yok (28.11 takibi 27.11'de yapıldı). 30.11 Pzt: 16.11 grubu (Albo, Assly, Imperia) 3. temas. Workspace faturalama uyarısı açık (33 gün).
+
+## 28.11 akşam özeti
+Yeni alıcı/müşteri cevabı yok; yeni bounce yok. Gelen: sadece LinkedIn genel bildirimleri (iş mesajı yok). Bugün (Cumartesi) giden mail yok. Hafta 5 toplam 31 mail. Toplam ~168 mail, 10 bounce, 0 cevap, 0 teklif, 0 sipariş. Yarın 29.11 Pazar: planlı gönderim yok. 30.11 Pzt: 16.11 grubu (Albo, Assly, Imperia) 3. temas; ~4.12 21.11 grubuna 3. temas. Workspace faturalama uyarısı açık (33 gün).
